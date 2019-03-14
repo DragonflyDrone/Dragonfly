@@ -1,0 +1,38 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Inter-type member declarations</title><link rel="stylesheet" href="aspectj-docs.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.44"><link rel="home" href="index.html" title="The AspectJTM Programming Guide"><link rel="up" href="quick.html" title="Appendix A. AspectJ Quick Reference"><link rel="previous" href="quick-advice.html" title="Advice"><link rel="next" href="quick-other.html" title="Other declarations"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Inter-type member declarations</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="quick-advice.html">Prev</a>&nbsp;</td><th width="60%" align="center">Appendix A. AspectJ Quick Reference</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="quick-other.html">Next</a></td></tr></table><hr></div><div class="sect1"><a name="quick-interType"></a><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="quick-interType"></a>Inter-type member declarations</h2></div></div><p>
+      Each inter-type member is one of
+    </p><div class="variablelist"><dl><dt><a name="d0e4176"></a><span class="term">
+          <tt>
+            <i><tt>Modifiers ReturnType OnType . Id</tt></i>
+            ( <i><tt>Formals</tt></i> )
+            [ throws <i><tt>TypeList</tt></i> ]
+            { <i><tt>Body</tt></i> }
+          </tt>
+        </span></dt><dd>
+          a method on <i><tt>OnType</tt></i>.
+        </dd><dt><a name="d0e4199"></a><span class="term">
+          <tt>
+            abstract <i><tt>Modifiers ReturnType OnType . Id</tt></i>
+            ( <i><tt>Formals</tt></i> )
+            [ throws <i><tt>TypeList</tt></i> ] ;
+          </tt>
+        </span></dt><dd>
+          an abstract method on <i><tt>OnType</tt></i>.
+        </dd><dt><a name="d0e4219"></a><span class="term">
+          <tt>
+            <i><tt>Modifiers OnType . </tt></i> new
+            ( <i><tt>Formals</tt></i> )
+            [ throws <i><tt>TypeList</tt></i> ]
+            { <i><tt>Body</tt></i> }
+          </tt>
+        </span></dt><dd>
+          a constructor on <i><tt>OnType</tt></i>.
+        </dd><dt><a name="d0e4242"></a><span class="term">
+          <tt>
+            <i><tt>Modifiers Type OnType . Id </tt></i>
+            [ = <i><tt>Expression</tt></i> ] ;
+          </tt>
+        </span></dt><dd>
+          a field on <i><tt>OnType</tt></i>.
+        </dd></dl></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="quick-advice.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="quick-other.html">Next</a></td></tr><tr><td width="40%" align="left">Advice&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="quick.html">Up</a></td><td width="40%" align="right">&nbsp;Other declarations</td></tr></table></div></body></html>

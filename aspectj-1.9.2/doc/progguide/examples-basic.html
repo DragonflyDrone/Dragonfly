@@ -1,0 +1,385 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Basic Techniques</title><link rel="stylesheet" href="aspectj-docs.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.44"><link rel="home" href="index.html" title="The AspectJTM Programming Guide"><link rel="up" href="examples.html" title="Chapter 3. Examples"><link rel="previous" href="examples-howto.html" title="Obtaining, Compiling and Running the Examples"><link rel="next" href="examples-development.html" title="Development Aspects"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Basic Techniques</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="examples-howto.html">Prev</a>&nbsp;</td><th width="60%" align="center">Chapter 3. Examples</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="examples-development.html">Next</a></td></tr></table><hr></div><div class="sect1"><a name="examples-basic"></a><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="examples-basic"></a>Basic Techniques</h2></div></div><p>
+      This section presents two basic techniques of using AspectJ, one each
+      from the two fundamental ways of capturing crosscutting concerns:
+      with dynamic join points and advice, and with static
+      introduction. Advice changes an application's behavior. Introduction
+      changes both an application's behavior and its structure.
+    </p><p>
+      The first example, <a href="examples-basic.html#examples-joinPoints" title="Join Points and thisJoinPoint">the section called &#8220;Join Points and <tt>thisJoinPoint</tt>&#8221;</a>, is about
+      gathering and using information about the join point that has
+      triggered some advice. The second example, <a href="examples-basic.html#examples-roles" title="Roles and Views">the section called &#8220;Roles and Views&#8221;</a>, concerns a crosscutting view of an
+      existing class hierarchy. </p><div class="sect2"><a name="examples-joinPoints"></a><div class="titlepage"><div><h3 class="title"><a name="examples-joinPoints"></a>Join Points and <tt>thisJoinPoint</tt></h3></div></div><p>
+        (The code for this example is in
+        <tt><i><tt>InstallDir</tt></i>/examples/tjp</tt>.)
+      </p><p>
+        A join point is some point in the execution of a program together
+        with a view into the execution context when that point occurs. Join
+        points are picked out by pointcuts.  When a program reaches a join
+        point, advice on that join point may run in addition to (or instead
+        of) the join point itself.
+      </p><p>
+        When using a pointcut that picks out join points of a single kind
+        by name, typicaly the the advice will know exactly what kind of
+        join point it is associated with.  The pointcut may even publish
+        context about the join point.  Here, for example, since the only
+        join points picked out by the pointcut are calls of a certain
+        method, we can get the target value and one of the argument values
+        of the method calls directly.
+      </p><pre class="programlisting">
+before(Point p, int x): target(p)
+                     &amp;&amp; args(x)
+                     &amp;&amp; call(void setX(int)) {
+    if (!p.assertX(x)) {
+        System.out.println("Illegal value for x"); return;
+    }
+}
+</pre><p>
+       But sometimes the shape of the join point is not so clear.  For
+       instance, suppose a complex application is being debugged, and we
+       want to trace when any method of some class is executed.  The
+       pointcut
+     </p><pre class="programlisting">
+pointcut execsInProblemClass(): within(ProblemClass)
+                             &amp;&amp; execution(* *(..));
+</pre><p>
+        will pick out each execution join point of every method defined
+        within <tt>ProblemClass</tt>.  Since advice executes
+        at each join point picked out by the pointcut, we can reasonably
+        ask which join point was reached.
+      </p><p>
+        Information about the join point that was matched is available to
+        advice through the special variable
+        <tt>thisJoinPoint</tt>, of type <a href="../api/org/aspectj/lang/JoinPoint.html" target="_top"><tt>org.aspectj.lang.JoinPoint</tt></a>.
+        Through this object we can access information such as</p><div class="itemizedlist"><ul compact><li><a name="d0e2091"></a>
+          the kind of join point that was matched
+        </li><li><a name="d0e2093"></a>
+          the source location of the code associated with the join point
+        </li><li><a name="d0e2095"></a>
+          normal, short and long string representations of the
+          current join point
+        </li><li><a name="d0e2097"></a>
+          the actual argument values of the join point
+        </li><li><a name="d0e2099"></a>
+          the signature of the member associated with the join point
+        </li><li><a name="d0e2101"></a>the currently executing object</li><li><a name="d0e2103"></a>the target object</li><li><a name="d0e2105"></a>
+          an object encapsulating the static information about the join
+          point. This is also available through the special variable
+          <tt>thisJoinPointStaticPart</tt>.</li></ul></div><div class="sect3"><a name="d0e2110"></a><div class="titlepage"><div><h4 class="title"><a name="d0e2110"></a>The <tt>Demo</tt> class</h4></div></div><p>The class <tt>tjp.Demo</tt> in
+          <tt>tjp/Demo.java</tt> defines two methods
+          <tt>foo</tt> and <tt>bar</tt> with different
+          parameter lists and return types. Both are called, with suitable
+          arguments, by <tt>Demo</tt>'s
+          <tt>go</tt> method which was invoked from within its
+          <tt>main</tt> method.
+        </p><pre class="programlisting">
+public class Demo {
+    static Demo d;
+
+    public static void main(String[] args){
+        new Demo().go();
+    }
+
+    void go(){
+        d = new Demo();
+        d.foo(1,d);
+        System.out.println(d.bar(new Integer(3)));
+    }
+
+    void foo(int i, Object o){
+        System.out.println("Demo.foo(" + i + ", " + o + ")\n");
+    }
+
+    String bar (Integer j){
+        System.out.println("Demo.bar(" + j + ")\n");
+        return "Demo.bar(" + j  + ")";
+    }
+}
+</pre></div><div class="sect3"><a name="d0e2141"></a><div class="titlepage"><div><h4 class="title"><a name="d0e2141"></a>The <tt>GetInfo</tt> aspect</h4></div></div><p>
+          This aspect uses around advice to intercept the execution of
+          methods <tt>foo</tt> and <tt>bar</tt> in
+          <tt>Demo</tt>, and prints out information garnered
+          from <tt>thisJoinPoint</tt> to the console.
+        </p><pre class="programlisting">
+aspect GetInfo {
+
+   static final void println(String s){ System.out.println(s); }
+
+   pointcut goCut(): cflow(this(Demo) &amp;&amp; execution(void go()));
+
+   pointcut demoExecs(): within(Demo) &amp;&amp; execution(* *(..));
+
+   Object around(): demoExecs() &amp;&amp; !execution(* go()) &amp;&amp; goCut() {
+      println("Intercepted message: " +
+          thisJoinPointStaticPart.getSignature().getName());
+      println("in class: " +
+          thisJoinPointStaticPart.getSignature().getDeclaringType().getName());
+      printParameters(thisJoinPoint);
+      println("Running original method: \n" );
+      Object result = proceed();
+      println("  result: " + result );
+      return result;
+   }
+
+   static private void printParameters(JoinPoint jp) {
+      println("Arguments: " );
+      Object[] args = jp.getArgs();
+      String[] names = ((CodeSignature)jp.getSignature()).getParameterNames();
+      Class[] types = ((CodeSignature)jp.getSignature()).getParameterTypes();
+      for (int i = 0; i &lt; args.length; i++) {
+         println("  "  + i + ". " + names[i] +
+             " : " +            types[i].getName() +
+             " = " +            args[i]);
+      }
+   }
+}
+</pre><div class="sect4"><a name="d0e2163"></a><div class="titlepage"><div><h5 class="title"><a name="d0e2163"></a>Defining the scope of a pointcut</h5></div></div><p>The pointcut <tt>goCut</tt> is defined as
+
+<pre class="programlisting">
+cflow(this(Demo)) &amp;&amp; execution(void go())
+</pre>
+
+            so that only executions made in the control flow of
+            <tt>Demo.go</tt> are intercepted. The control flow
+            from the method <tt>go</tt> includes the execution of
+            <tt>go</tt> itself, so the definition of the around
+            advice includes <tt>!execution(* go())</tt> to
+            exclude it from the set of executions advised. </p></div><div class="sect4"><a name="d0e2186"></a><div class="titlepage"><div><h5 class="title"><a name="d0e2186"></a>Printing the class and method name</h5></div></div><p>
+            The name of the method and that method's defining class are
+            available as parts of the <a href="../api/org/aspectj/lang/Signature.html" target="_top">org.aspectj.lang.Signature</a>
+            object returned by calling <tt>getSignature()</tt> on
+            either <tt>thisJoinPoint</tt> or
+            <tt>thisJoinPointStaticPart</tt>.
+          </p></div><div class="sect4"><a name="d0e2203"></a><div class="titlepage"><div><h5 class="title"><a name="d0e2203"></a>Printing the parameters</h5></div></div><p>
+            The static portions of the parameter details, the name and
+            types of the parameters, can be accessed through the <a href="../api/org/aspectj/lang/reflect/CodeSignature.html" target="_top"><tt>org.aspectj.lang.reflect.CodeSignature</tt></a>
+            associated with the join point. All execution join points have code
+            signatures, so the cast to <tt>CodeSignature</tt>
+            cannot fail. </p><p>
+            The dynamic portions of the parameter details, the actual
+            values of the parameters, are accessed directly from the
+            execution join point object.
+          </p></div></div></div><div class="sect2"><a name="examples-roles"></a><div class="titlepage"><div><h3 class="title"><a name="examples-roles"></a>Roles and Views</h3></div></div><p>
+        (The code for this example is in
+        <tt><i><tt>InstallDir</tt></i>/examples/introduction</tt>.)
+      </p><p>
+        Like advice, inter-type declarations are members of an aspect. They
+        declare members that act as if they were defined on another class.
+        Unlike advice, inter-type declarations affect not only the behavior
+        of the application, but also the structural relationship between an
+        application's classes.
+      </p><p>
+        This is crucial: Publically affecting the class structure of an
+        application makes these modifications available to other components
+        of the application.
+      </p><p>
+        Aspects can declare inter-type
+
+        <div class="itemizedlist"><ul compact><li><a name="d0e2235"></a>fields</li><li><a name="d0e2237"></a>methods</li><li><a name="d0e2239"></a>constructors</li></ul></div>
+
+        and can also declare that target types
+
+        <div class="itemizedlist"><ul compact><li><a name="d0e2243"></a>implement new interfaces</li><li><a name="d0e2245"></a>extend new classes</li></ul></div>
+      </p><p>
+        This example provides three illustrations of the use of inter-type
+        declarations to encapsulate roles or views of a class. The class
+        our aspect will be dealing with, <tt>Point</tt>, is a
+        simple class with rectangular and polar coordinates. Our inter-type
+        declarations will make the class <tt>Point</tt>, in
+        turn, cloneable, hashable, and comparable. These facilities are
+        provided by AspectJ without having to modify the code for the class
+        <tt>Point</tt>.
+      </p><div class="sect3"><a name="d0e2259"></a><div class="titlepage"><div><h4 class="title"><a name="d0e2259"></a>The <tt>Point</tt> class</h4></div></div><p>The <tt>Point</tt> class defines geometric points
+          whose interface includes polar and rectangular coordinates, plus some
+          simple operations to relocate points. <tt>Point</tt>'s
+          implementation has attributes for both its polar and rectangular
+          coordinates, plus flags to indicate which currently reflect the
+          position of the point. Some operations cause the polar coordinates to
+          be updated from the rectangular, and some have the opposite effect.
+          This implementation, which is in intended to give the minimum number
+          of conversions between coordinate systems, has the property that not
+          all the attributes stored in a <tt>Point</tt> object
+          are necessary to give a canonical representation such as might be
+          used for storing, comparing, cloning or making hash codes from
+          points. Thus the aspects, though simple, are not totally trivial.
+        </p><p>
+          The diagram below gives an overview of the aspects and their
+          interaction with the class <tt>Point</tt>.</p><p>
+          <span class="inlinemediaobject"><img src="aspects.gif"></span>
+        </p><p></p></div><div class="sect3"><a name="d0e2288"></a><div class="titlepage"><div><h4 class="title"><a name="d0e2288"></a>The <tt>CloneablePoint</tt> aspect</h4></div></div><p>
+          This first aspect is responsible for
+          <tt>Point</tt>'s implementation of the
+          <tt>Cloneable</tt> interface.  It declares that
+          <tt>Point implements Cloneable</tt> with a
+          <tt>declare parents</tt> form, and also publically
+          declares a specialized <tt>Point</tt>'s
+          <tt>clone()</tt> method.  In Java, all objects inherit
+          the method <tt>clone</tt> from the class
+          <tt>Object</tt>, but an object is not cloneable
+          unless its class also implements the interface
+          <tt>Cloneable</tt>.  In addition, classes
+          frequently have requirements over and above the simple
+          bit-for-bit copying that <tt>Object.clone</tt> does. In
+          our case, we want to update a <tt>Point</tt>'s
+          coordinate systems before we actually clone the
+          <tt>Point</tt>. So our aspect makes sure that
+          <tt>Point</tt> overrides
+          <tt>Object.clone</tt> with a new method that does what
+          we want.
+        </p><p>
+          We also define a test <tt>main</tt> method in the
+          aspect for convenience.
+        </p><pre class="programlisting">
+public aspect CloneablePoint {
+
+   declare parents: Point implements Cloneable;
+
+   public Object Point.clone() throws CloneNotSupportedException {
+      // we choose to bring all fields up to date before cloning.
+      makeRectangular();
+      makePolar();
+      return super.clone();
+   }
+
+   public static void main(String[] args){
+      Point p1 = new Point();
+      Point p2 = null;
+
+      p1.setPolar(Math.PI, 1.0);
+      try {
+         p2 = (Point)p1.clone();
+      } catch (CloneNotSupportedException e) {}
+      System.out.println("p1 =" + p1 );
+      System.out.println("p2 =" + p2 );
+
+      p1.rotate(Math.PI / -2);
+      System.out.println("p1 =" + p1 );
+      System.out.println("p2 =" + p2 );
+   }
+}
+</pre></div><div class="sect3"><a name="d0e2345"></a><div class="titlepage"><div><h4 class="title"><a name="d0e2345"></a>The <tt>ComparablePoint</tt> aspect</h4></div></div><p>
+          <tt>ComparablePoint</tt> is responsible for
+          <tt>Point</tt>'s implementation of the
+          <tt>Comparable</tt> interface. </p><p>
+          The interface <tt>Comparable</tt> defines the
+          single method <tt>compareTo</tt> which can be use to define
+          a natural ordering relation among the objects of a class that
+          implement it.
+        </p><p>
+          <tt>ComparablePoint</tt> uses <tt>declare
+          parents</tt> to declare that <tt>Point implements
+          Comparable</tt>, and also publically declares the
+          appropriate <tt>compareTo(Object)</tt> method: A
+          <tt>Point</tt> <tt>p1</tt> is said to be
+          less than another <tt>Point</tt><tt>
+          p2</tt> if <tt>p1</tt> is closer to the
+          origin.
+        </p><p>
+          We also define a test <tt>main</tt> method in the
+          aspect for convenience.
+        </p><pre class="programlisting">
+public aspect ComparablePoint {
+
+   declare parents: Point implements Comparable;
+
+   public int Point.compareTo(Object o) {
+      return (int) (this.getRho() - ((Point)o).getRho());
+   }
+
+   public static void main(String[] args){
+      Point p1 = new Point();
+      Point p2 = new Point();
+
+      System.out.println("p1 =?= p2 :" + p1.compareTo(p2));
+
+      p1.setRectangular(2,5);
+      p2.setRectangular(2,5);
+      System.out.println("p1 =?= p2 :" + p1.compareTo(p2));
+
+      p2.setRectangular(3,6);
+      System.out.println("p1 =?= p2 :" + p1.compareTo(p2));
+
+      p1.setPolar(Math.PI, 4);
+      p2.setPolar(Math.PI, 4);
+      System.out.println("p1 =?= p2 :" + p1.compareTo(p2));
+
+      p1.rotate(Math.PI / 4.0);
+      System.out.println("p1 =?= p2 :" + p1.compareTo(p2));
+
+      p1.offset(1,1);
+      System.out.println("p1 =?= p2 :" + p1.compareTo(p2));
+   }
+}
+</pre></div><div class="sect3"><a name="d0e2405"></a><div class="titlepage"><div><h4 class="title"><a name="d0e2405"></a>The <tt>HashablePoint</tt> aspect</h4></div></div><p>
+          Our third aspect is responsible for <tt>Point</tt>'s
+          overriding of <tt>Object</tt>'s
+          <tt>equals</tt> and <tt>hashCode</tt> methods
+          in order to make <tt>Point</tt>s hashable.
+        </p><p>
+          The method <tt>Object.hashCode</tt> returns an 
+          integer, suitable for use as a hash table key.  It is not required
+          that two objects which are not equal (according to the 
+          <tt>equals</tt> method) return different integer
+          results from <tt>hashCode</tt> but it can
+          improve performance when the integer is used as a key into a 
+          data structure.  However, any two objects which are equal 
+          must return the same integer value from a call to 
+          <tt>hashCode</tt>.  Since the default implementation
+          of <tt>Object.equals</tt> returns <tt>true</tt>
+          only when two objects are identical, we need to redefine both
+          <tt>equals</tt> and <tt>hashCode</tt> to work
+          correctly with objects of type <tt>Point</tt>. For
+          example, we want two <tt>Point</tt> objects to test
+          equal when they have the same <tt>x</tt> and
+          <tt>y</tt> values, or the same <tt>rho</tt> and
+          <tt>theta</tt> values, not just when they refer to the same
+          object. We do this by overriding the methods
+          <tt>equals</tt> and <tt>hashCode</tt> in the
+          class <tt>Point</tt>.
+        </p><p>
+          So <tt>HashablePoint</tt> declares
+          <tt>Point</tt>'s <tt>hashCode</tt> and
+          <tt>equals</tt> methods, using
+          <tt>Point</tt>'s rectangular coordinates to
+          generate a hash code and to test for equality. The
+          <tt>x</tt> and <tt>y</tt> coordinates are
+          obtained using the appropriate get methods, which ensure the
+          rectangular coordinates are up-to-date before returning their
+          values.
+        </p><p>
+          And again, we supply a <tt>main</tt> method in the
+          aspect for testing.
+        </p><pre class="programlisting">
+public aspect HashablePoint {
+
+   public int Point.hashCode() {
+      return (int) (getX() + getY() % Integer.MAX_VALUE);
+   }
+
+   public boolean Point.equals(Object o) {
+      if (o == this) { return true; }
+      if (!(o instanceof Point)) { return false; }
+      Point other = (Point)o;
+      return (getX() == other.getX()) &amp;&amp; (getY() == other.getY());
+   }
+
+   public static void main(String[] args) {
+      Hashtable h = new Hashtable();
+      Point p1 = new Point();
+
+      p1.setRectangular(10, 10);
+      Point p2 = new Point();
+
+      p2.setRectangular(10, 10);
+
+      System.out.println("p1 = " + p1);
+      System.out.println("p2 = " + p2);
+      System.out.println("p1.hashCode() = " + p1.hashCode());
+      System.out.println("p2.hashCode() = " + p2.hashCode());
+
+      h.put(p1, "P1");
+      System.out.println("Got: " + h.get(p2));
+   }
+}
+</pre></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="examples-howto.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="examples-development.html">Next</a></td></tr><tr><td width="40%" align="left">Obtaining, Compiling and Running the Examples&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="examples.html">Up</a></td><td width="40%" align="right">&nbsp;Development Aspects</td></tr></table></div></body></html>

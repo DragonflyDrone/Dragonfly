@@ -1,0 +1,26 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Join Point Modifiers</title><link rel="stylesheet" href="aspectj-docs.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.44"><link rel="home" href="index.html" title="The AspectJTM 5 Development Kit Developer's Notebook"><link rel="up" href="jpsigs.html" title="Chapter 1. Join Point Signatures"><link rel="previous" href="join-point-signatures.html" title="Join Point Signatures"><link rel="next" href="join-point-matching-summary.html" title="Summary of Join Point Matching"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Join Point Modifiers</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="join-point-signatures.html">Prev</a>&nbsp;</td><th width="60%" align="center">Chapter 1. Join Point Signatures</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="join-point-matching-summary.html">Next</a></td></tr></table><hr></div><div class="sect1"><a name="join-point-modifiers"></a><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="join-point-modifiers"></a>Join Point Modifiers</h2></div></div><p>Every join point has a single set of modifiers - these include
+          the standard Java modifiers such as <tt>public, private,
+          static, abstract</tt> etc., any annotations, and the throws
+          clauses of methods and constructors. These modifiers are the
+          modifiers of the <span class="emphasis"><i>subject</i></span> of the join point.</p><p>
+          The following table defines the join point subject for each kind
+          of join point.
+          </p><div class="informaltable" uniqueID="d0e435"><a name="d0e435"></a><table border="1"><colgroup><col><col></colgroup><thead><tr><th>Join Point Kind</th><th>Subject</th></tr></thead><tbody><tr><td>Method call</td><td>The method picked out by Java as
+                       the static target of the method call.</td></tr><tr><td>Method execution</td><td>The method that is executing.</td></tr><tr><td>Constructor call</td><td>The constructor being called.</td></tr><tr><td>Constructor execution</td><td>The constructor executing.</td></tr><tr><td>Field get</td><td>The field being accessed.</td></tr><tr><td>Field set</td><td>The field being set.</td></tr><tr><td>Pre-initialization</td><td>The first constructor executing in
+                       this constructor chain.</td></tr><tr><td>Initialization</td><td>The first constructor executing in
+                       this constructor chain.</td></tr><tr><td>Static initialization</td><td>The type being initialized.</td></tr><tr><td>Handler</td><td>The declared type of the
+                       exception being handled.</td></tr><tr><td>Advice execution</td><td>The advice being executed.</td></tr></tbody></table></div><p>For example, given the following types</p><pre class="programlisting">
+        public class X {        
+          @Foo
+          protected void doIt() {...} 
+        }
+        
+        public class Y extends X {        
+          public void doIt() {...}        
+        }
+		</pre><p>Then the modifiers for a call to <tt>(Y y) y.doIt()</tt>
+         are simply <tt>{public}</tt>. The modifiers for a call to
+         <tt>(X x) x.doIt()</tt> are <tt>{@Foo,protected}</tt>.
+         </p></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="join-point-signatures.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="join-point-matching-summary.html">Next</a></td></tr><tr><td width="40%" align="left">Join Point Signatures&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="jpsigs.html">Up</a></td><td width="40%" align="right">&nbsp;Summary of Join Point Matching</td></tr></table></div></body></html>

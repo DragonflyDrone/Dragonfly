@@ -1,0 +1,42 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Covariant methods and Join Point matching</title><link rel="stylesheet" href="aspectj-docs.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.44"><link rel="home" href="index.html" title="The AspectJTM 5 Development Kit Developer's Notebook"><link rel="up" href="covariance.html" title="Chapter 5. Covariance"><link rel="previous" href="covariance.html" title="Chapter 5. Covariance"><link rel="next" href="varargs.html" title="Chapter 6. Varargs"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Covariant methods and Join Point matching</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="covariance.html">Prev</a>&nbsp;</td><th width="60%" align="center">Chapter 5. Covariance</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="varargs.html">Next</a></td></tr></table><hr></div><div class="sect1"><a name="covariance-and-join-point-matching"></a><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="covariance-and-join-point-matching"></a>Covariant methods and Join Point matching</h2></div></div><p>The join point matching rules for <tt>call</tt>
+          and <tt>execution</tt> pointcut designators are extended
+          to match against covariant methods.</p><p>
+              Given the classes <tt>A</tt> and <tt>B</tt>
+              as defined in the previous section, and the program fragment
+          </p><pre class="programlisting">
+		A a = new A();
+		B b = new B();
+		a.whoAreYou();
+		b.whoAreYou();
+		</pre><p>The signatures for the call join point <tt>a.whoAreYou()</tt> are
+		simply:</p><pre class="programlisting">
+		A A.whoAreYou()
+		</pre><p>The signatures for the call join point <tt>b.whoAreYou()</tt> are:
+		</p><pre class="programlisting">
+		A A.whoAreYou()
+		B B.whoAreYou()
+		</pre><p>Following the join point matching rules given in <a href="jpsigs.html">Join Point Signatures</a>,</p><div class="variablelist"><dl><dt><a name="d0e3219"></a><span class="term">call(* whoAreYou())</span></dt><dd><p><a name="d0e3222"></a>Matches both calls, (since each call join point has at least
+            one matching signature).
+            </p></dd><dt><a name="d0e3225"></a><span class="term">call(* A.whoAreYou())</span></dt><dd><p><a name="d0e3228"></a>Matches both calls, (since each call join point has at least
+            one matching signature).
+            </p></dd><dt><a name="d0e3231"></a><span class="term">call(A whoAreYou())</span></dt><dd><p><a name="d0e3234"></a>Matches both calls, (since each call join point has at least
+            one matching signature).
+            </p></dd><dt><a name="d0e3237"></a><span class="term">call(A B.whoAreYou())</span></dt><dd><p><a name="d0e3240"></a>Does not match anything - neither of the call join points
+            has a signature matched by this pattern.  A lint warning is
+            given for the call <tt>a.whoAreYou()</tt> ("does not match
+            because declaring type is A, if match required use target(B)").
+            </p></dd><dt><a name="d0e3246"></a><span class="term">call(A+ B.whoAreYou())</span></dt><dd><p><a name="d0e3249"></a>Matches the call to <tt>b.whoAreYou()</tt> since
+            the signature pattern matches the signature <tt>B B.whoAreYou()</tt>. 
+            A lint warning is given for the call <tt>a.whoAreYou()</tt> ("does not match
+            because declaring type is A, if match required use target(B)").
+            </p></dd><dt><a name="d0e3261"></a><span class="term">call(B A.whoAreYou())</span></dt><dd><p><a name="d0e3264"></a>Does not match anything since neither join point has a 
+            signature matched by this pattern.
+            </p></dd><dt><a name="d0e3267"></a><span class="term">call(B whoAreYou())</span></dt><dd><p><a name="d0e3270"></a>Matches the call to <tt>b.whoAreYou()</tt> only.
+            </p></dd><dt><a name="d0e3276"></a><span class="term">call(B B.whoAreYou())</span></dt><dd><p><a name="d0e3279"></a>Matches the call to <tt>b.whoAreYou()</tt> only.
+            </p></dd></dl></div><p>The rule for signature matching at call and execution join points
+		is unchanged from AspectJ 1.2: a call or execution pointcut matches if
+		the signature pattern matches at least one of the signatures of the
+		join point, and if the modifiers of the method or constructor are matched
+		by any modifier pattern or annotation pattern that may be present.</p></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="covariance.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="varargs.html">Next</a></td></tr><tr><td width="40%" align="left">Chapter 5. Covariance&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="covariance.html">Up</a></td><td width="40%" align="right">&nbsp;Chapter 6. Varargs</td></tr></table></div></body></html>

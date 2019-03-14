@@ -1,0 +1,42 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Declare Soft</title><link rel="stylesheet" href="aspectj-docs.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.44"><link rel="home" href="index.html" title="The AspectJTM 5 Development Kit Developer's Notebook"><link rel="up" href="miscellaneous.html" title="Chapter 11. Other Changes in AspectJ 5"><link rel="previous" href="miscellaneous.html" title="Chapter 11. Other Changes in AspectJ 5"><link rel="next" href="ltw.html" title="Chapter 12. Load-Time Weaving"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Declare Soft</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="miscellaneous.html">Prev</a>&nbsp;</td><th width="60%" align="center">Chapter 11. Other Changes in AspectJ 5</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ltw.html">Next</a></td></tr></table><hr></div><div class="sect1"><a name="declare-soft"></a><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="declare-soft"></a>Declare Soft</h2></div></div><p>
+          The semantics of the <tt>declare soft</tt> statement have been 
+          refined in AspectJ 5 to only soften exceptions that are not already runtime 
+          exceptions. If the exception type specified in a declare soft statement is <tt>RuntimeException</tt>
+          or a subtype of <tt>RuntimeException</tt> then a new XLint warning will be issued:</p><pre class="programlisting">
+       	  declare soft : SomeRuntimeException : execution(* *(..));
+       	  
+       	  &gt;&gt; "SomeRuntimeException will not be softened as it is already a RuntimeException" [XLint:runtimeExceptionNotSoftened]
+		</pre><p>
+	       This XLint message can be controlled by setting the <tt>runtimeExceptionNotSoftened</tt> XLint parameter.
+ 	   </p><p>
+	      If the exception type specified in a declare soft statement is a super type of <tt>RuntimeException</tt>
+	      (such as <tt>Exception</tt> for example) then any <span class="emphasis"><i>checked</i></span> exception thrown at a matched join point, 
+	      where the exception is an instance of the softened exception, will be softened to an 
+	      <tt>org.aspectj.lang.SoftException</tt>. 
+      </p><pre class="programlisting">
+       	public aspect SoftenExample {
+       	
+       	  declare soft : Exception : execution(* Foo.*(..));
+       	
+       	}
+       	
+       	class Foo {
+       	
+       	  public static void main(String[] args) {
+       	    Foo foo = new Foo();
+       	    foo.foo();   
+       	    foo.bar();
+       	  }
+       	
+       	  void foo() throws Exception {
+       	    throw new Exception();        // this will be converted to a SoftException
+       	  }
+       	  
+       	  void bar() throws Exception {
+       	    throw new RuntimeException();  // this will remain a RuntimeException
+       	  }
+       	
+       	}
+		</pre></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="miscellaneous.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ltw.html">Next</a></td></tr><tr><td width="40%" align="left">Chapter 11. Other Changes in AspectJ 5&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="miscellaneous.html">Up</a></td><td width="40%" align="right">&nbsp;Chapter 12. Load-Time Weaving</td></tr></table></div></body></html>

@@ -1,0 +1,20 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Enumerated Types in AspectJ 5</title><link rel="stylesheet" href="aspectj-docs.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.44"><link rel="home" href="index.html" title="The AspectJTM 5 Development Kit Developer's Notebook"><link rel="up" href="enumeratedtypes.html" title="Chapter 7. Enumerated Types"><link rel="previous" href="enumeratedtypes.html" title="Chapter 7. Enumerated Types"><link rel="next" href="pertypewithin.html" title="Chapter 8. The pertypewithin Aspect Instantiation Model"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Enumerated Types in AspectJ 5</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="enumeratedtypes.html">Prev</a>&nbsp;</td><th width="60%" align="center">Chapter 7. Enumerated Types</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="pertypewithin.html">Next</a></td></tr></table><hr></div><div class="sect1"><a name="enums-in-aspectj5"></a><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="enums-in-aspectj5"></a>Enumerated Types in AspectJ 5</h2></div></div><p>
+      AspectJ 5 supports the declaration of enumerated types just as Java 5
+      does. Because of the special restrictions Java 5 places around enumerated
+      types, AspectJ makes the following additional restrictions:
+      </p><div class="itemizedlist"><ul><li><a name="d0e3508"></a>You cannot use declare parents to change the super type of
+          an enum.</li><li><a name="d0e3510"></a>You cannot use declare parents to declare java.lang.Enum as
+          the parent of any type.</li><li><a name="d0e3512"></a>You cannot make inter-type constructor declarations on an
+          enum.</li><li><a name="d0e3514"></a>You cannot extend the set of values in an enum via any
+          ITD-like construct.</li><li><a name="d0e3516"></a>You cannot make inter-type method or field declarations on 
+          an enum.</li><li><a name="d0e3518"></a>You cannot use declare parents to make an enum type implement
+          an interface.</li></ul></div><p>In theory, the last of these two items <span class="emphasis"><i>could</i></span>
+      be supported. However, AspectJ 5 follows the simple rule that <span class="emphasis"><i>
+      an enum type cannot be the target of an inter-type declaration or declare
+      parents statement</i></span>. This position may be relaxed in a future
+      version of AspectJ.</p><p>If an enum is named explicitly as the target of a
+    declare parents statement, a compilation error will result. If an enumerated
+    type is matched by a non-explicit type pattern used in a declare parents
+    statement it will be ignored (and an XLint warning issued).</p></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="enumeratedtypes.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="pertypewithin.html">Next</a></td></tr><tr><td width="40%" align="left">Chapter 7. Enumerated Types&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="enumeratedtypes.html">Up</a></td><td width="40%" align="right">&nbsp;Chapter 8. The pertypewithin Aspect Instantiation Model</td></tr></table></div></body></html>

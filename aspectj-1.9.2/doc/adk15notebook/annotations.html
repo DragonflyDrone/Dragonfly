@@ -1,0 +1,108 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Chapter 2. Annotations</title><link rel="stylesheet" href="aspectj-docs.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.44"><link rel="home" href="index.html" title="The AspectJTM 5 Development Kit Developer's Notebook"><link rel="up" href="index.html" title="The AspectJTM 5 Development Kit Developer's Notebook"><link rel="previous" href="join-point-matching-summary.html" title="Summary of Join Point Matching"><link rel="next" href="annotations-aspectmembers.html" title="Annotating Aspects"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Chapter 2. Annotations</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="join-point-matching-summary.html">Prev</a>&nbsp;</td><th width="60%" align="center">&nbsp;</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="annotations-aspectmembers.html">Next</a></td></tr></table><hr></div><div class="chapter"><div class="titlepage"><div><h2 class="title"><a name="annotations"></a>Chapter 2. Annotations</h2></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><a href="annotations.html#annotations-inJava5">Annotations in Java 5</a></dt><dd><dl><dt><a href="annotations.html#using-annotations">Using Annotations</a></dt><dt><a href="annotations.html#retention-policies">Retention Policies</a></dt><dt><a href="annotations.html#accessing-annotations-at-runtime">Accessing Annotations at Runtime</a></dt><dt><a href="annotations.html#annotation-inheritance">Annotation Inheritance</a></dt></dl></dd><dt><a href="annotations-aspectmembers.html">Annotating Aspects</a></dt><dt><a href="annotations-pointcuts-and-advice.html">Join Point Matching based on Annotations</a></dt><dd><dl><dt><a href="annotations-pointcuts-and-advice.html#annotation-patterns">Annotation Patterns</a></dt><dt><a href="annotations-pointcuts-and-advice.html#type-patterns">Type Patterns</a></dt><dt><a href="annotations-pointcuts-and-advice.html#signaturePatterns">Signature Patterns</a></dt><dt><a href="annotations-pointcuts-and-advice.html#example-pointcuts">Example Pointcuts</a></dt><dt><a href="annotations-pointcuts-and-advice.html#runtime-type-matching-and-context-exposure">Runtime type matching and context exposure</a></dt><dt><a href="annotations-pointcuts-and-advice.html#package-and-parameter-annotations">Package and Parameter Annotations</a></dt><dt><a href="annotations-pointcuts-and-advice.html#annotation-inheritance-and-pointcut-matching">Annotation Inheritance and pointcut matching</a></dt><dt><a href="annotations-pointcuts-and-advice.html#matchingOnAnnotationValues">Matching based on annotation values</a></dt></dl></dd><dt><a href="annotations-decp.html">Using Annotations with declare statements</a></dt><dd><dl><dt><a href="annotations-decp.html#declare-error-and-declare-warning">Declare error and declare warning</a></dt><dt><a href="annotations-decp.html#declare-parents">declare parents</a></dt><dt><a href="annotations-decp.html#declare-precedence">declare precedence</a></dt></dl></dd><dt><a href="annotations-declare.html">Declare Annotation</a></dt><dt><a href="annotations-itds.html">Inter-type Declarations</a></dt></dl></div><div class="sect1"><a name="annotations-inJava5"></a><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="annotations-inJava5"></a>Annotations in Java 5</h2></div></div><p>
+		This section provides the essential information about annotations in
+		Java 5 needed to understand how annotations are treated in AspectJ 5.
+		For a full introduction to annotations in Java, please see the
+		documentation for the Java 5 SDK.
+	</p><div class="sect2"><a name="using-annotations"></a><div class="titlepage"><div><h3 class="title"><a name="using-annotations"></a>Using Annotations</h3></div></div><p>
+	      Java 5 introduces <span class="emphasis"><i>annotation types</i></span> which can
+	      be used to express metadata relating to program members in the
+	      form of <span class="emphasis"><i>annotations</i></span>. Annotations in Java 5 
+	      can be applied to package and type declarations (classes,
+	      interfaces, enums, and annotations), constructors, methods, 
+	      fields, parameters, and variables. Annotations are specified in the
+	      program source by using the <tt>@</tt> symbol. For example,
+	      the following piece of code uses the <tt>@Deprecated</tt>
+	      annotation to indicate that the <tt>obsoleteMethod()</tt>
+	      has been deprecated:
+	    </p><pre class="programlisting">
+		@Deprecated
+		public void obsoleteMethod() { ... }
+		</pre><p>
+			Annotations may be <span class="emphasis"><i>marker annotations</i></span>,
+			<span class="emphasis"><i>single-valued annotations</i></span>, or 
+			<span class="emphasis"><i>multi-valued annotations</i></span>.
+			Annotation types with no members or that provide default values
+			for all members may be used simply as marker annotations, as in
+			the deprecation example above. Single-value annotation types have
+			a single member, and the annotation may be written in one of
+			two equivalent forms:
+		</p><pre class="programlisting">
+		@SuppressWarnings({"unchecked"})
+		public void someMethod() {...}
+		</pre><p>
+			or
+		</p><pre class="programlisting">
+		@SuppressWarnings(value={"unchecked"})
+		public void someMethod() {...}
+		</pre><p>
+			Multi-value annotations must use the <tt>member-name=value
+			</tt> syntax to specify annotation values. For example:
+		</p><pre class="programlisting">
+		@Authenticated(role="supervisor",clearanceLevel=5)
+		public void someMethod() {...}
+		</pre></div><div class="sect2"><a name="retention-policies"></a><div class="titlepage"><div><h3 class="title"><a name="retention-policies"></a>Retention Policies</h3></div></div><p>
+	      Annotations can have one of three retention policies:
+	    </p><div class="variablelist"><dl><dt><a name="d0e625"></a><span class="term">Source-file retention</span></dt><dd><p><a name="d0e628"></a>
+	            	Annotations with source-file retention are read by the 
+	            	compiler during the compilation process, but are not
+	            	rendered in the generated <tt>.class</tt> files.
+	            </p></dd><dt><a name="d0e634"></a><span class="term">Class-file retention</span></dt><dd><p><a name="d0e637"></a>
+	        			This is the default retention policy. Annotations
+	        			with class-file retention are read by the compiler
+	        			and also retained in the generated <tt>
+	        			.class</tt> files.
+	        		</p></dd><dt><a name="d0e643"></a><span class="term">Runtime retention</span></dt><dd><p><a name="d0e646"></a>
+	        			Annotations with runtime retention are read by the
+	        			compiler, retained in the generated <tt>
+	        			.class</tt> files, and also made available
+	        			at runtime.
+	        		</p></dd></dl></div><p>Local variable annotations are not retained in class files (or at runtime)
+	    regardless of the retention policy set on the annotation type. See JLS 9.6.1.2.</p></div><div class="sect2"><a name="accessing-annotations-at-runtime"></a><div class="titlepage"><div><h3 class="title"><a name="accessing-annotations-at-runtime"></a>Accessing Annotations at Runtime</h3></div></div><p>
+    		Java 5 supports a new interface, 
+    		<tt>java.lang.reflect.AnnotatedElement</tt>, that is
+    		implemented by the reflection classes in Java (<tt>Class</tt>, 
+    		<tt>Constructor</tt>,
+    		<tt>Field</tt>, <tt>Method</tt>, and 
+    		<tt>Package</tt>). This interface gives you access
+    		to annotations <span class="emphasis"><i>that have runtime retention</i></span> via
+    		the <tt>getAnnotation</tt>, <tt>getAnnotations</tt>, 
+    		and <tt>isAnnotationPresent</tt>. Because annotation types are
+    		just regular Java classes, the annotations returned by these methods
+    		can be queried just like any regular Java object.
+    	</p></div><div class="sect2"><a name="annotation-inheritance"></a><div class="titlepage"><div><h3 class="title"><a name="annotation-inheritance"></a>Annotation Inheritance</h3></div></div><p>
+    		It is important to understand the rules relating to inheritance of
+    		annotations, as these have a bearing on join point matching
+    		based on the presence or absence of annotations.
+    	</p><p>
+    		By default annotations are <span class="emphasis"><i>not</i></span> inherited. Given
+    		the following program
+    	</p><pre class="programlisting">
+			@MyAnnotation
+			class Super {
+			  @Oneway public void foo() {}
+			}
+			
+			class Sub extends Super {
+			  public void foo() {}
+			}
+			</pre><p>
+    		Then <tt>Sub</tt> <span class="emphasis"><i>does not</i></span> have
+    		the <tt>MyAnnotation</tt> annotation, and 
+    		<tt>Sub.foo()</tt> is not an <tt>@Oneway</tt>
+    		method, despite the fact that it overrides 
+    		<tt>Super.foo()</tt> which is.
+    	</p><p>
+    		If an annotation type has the meta-annotation <tt>@Inherited</tt>
+    		then an annotation of that type on a <span class="emphasis"><i>class</i></span> will cause
+    		the annotation to be inherited by sub-classes. So, in the example
+    		above, if the <tt>MyAnnotation</tt> type had the
+    		<tt>@Inherited</tt> attribute, then <tt>Sub</tt>
+    		would have the <tt>MyAnnotation</tt> annotation.    		
+    	</p><p>
+    		<tt>@Inherited</tt> annotations are not inherited when used to
+    		annotate anything other than a type. A type
+    		that implements one or more interfaces never inherits any annotations from
+    		the interfaces it implements.
+    	</p></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="join-point-matching-summary.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="annotations-aspectmembers.html">Next</a></td></tr><tr><td width="40%" align="left">Summary of Join Point Matching&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="index.html">Up</a></td><td width="40%" align="right">&nbsp;Annotating Aspects</td></tr></table></div></body></html>

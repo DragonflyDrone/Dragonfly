@@ -1,0 +1,22 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Running Programs</title><link rel="stylesheet" href="aspectj-docs.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.44"><link rel="home" href="index.html" title="The AspectJtm Development Environment Guide"><link rel="up" href="ajbrowser.html" title="Chapter 3. AspectJ Browser"><link rel="previous" href="ajbrowser-navigating.html" title="Navigating Program Structure"><link rel="next" href="ajbrowser-problems.html" title="Isolating problems running the AspectJ browser"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Running Programs</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ajbrowser-navigating.html">Prev</a>&nbsp;</td><th width="60%" align="center">Chapter 3. AspectJ Browser</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ajbrowser-problems.html">Next</a></td></tr></table><hr></div><div class="sect1"><a name="ajbrowser-running"></a><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="ajbrowser-running"></a>Running Programs</h2></div></div><p>
+    The browser supports a limited form of running compiled programs.
+    To run programs that have been built, click the run button
+    or select one of the run menu items in the project menu.
+    You can run in the same VM or spawn a new process;
+    the latter is generally better for GUI programs.
+    </p><p>Both require that any classpath you set be specified 
+    using platform-specific paths and path separators (the
+    compiler might be more tolerant).
+    Output and error streams will be
+    merged into the streams of the browser (using separate
+    threads, so it may take a few seconds for the pipe
+    threads to gain control.) Errors should 
+    be detected and displayed in a dialog.
+    </p><p>
+    The GUI does not support killing a running program,
+    so if your program might hang,
+    be sure to save your files since you may need to 
+    kill the browser itself to kill its child processes.
+    </p></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ajbrowser-navigating.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ajbrowser-problems.html">Next</a></td></tr><tr><td width="40%" align="left">Navigating Program Structure&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ajbrowser.html">Up</a></td><td width="40%" align="right">&nbsp;Isolating problems running the AspectJ browser</td></tr></table></div></body></html>

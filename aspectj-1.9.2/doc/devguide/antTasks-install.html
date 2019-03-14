@@ -1,0 +1,53 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Installing Ant Tasks</title><link rel="stylesheet" href="aspectj-docs.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.44"><link rel="home" href="index.html" title="The AspectJtm Development Environment Guide"><link rel="up" href="antTasks.html" title="Chapter 4. AspectJ Ant Tasks"><link rel="previous" href="antTasks.html" title="Chapter 4. AspectJ Ant Tasks"><link rel="next" href="antTasks-iajc.html" title="AjcTask (iajc)"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Installing Ant Tasks</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="antTasks.html">Prev</a>&nbsp;</td><th width="60%" align="center">Chapter 4. AspectJ Ant Tasks</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="antTasks-iajc.html">Next</a></td></tr></table><hr></div><div class="sect1"><a name="antTasks-install"></a><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="antTasks-install"></a>Installing Ant Tasks</h2></div></div><p>
+	Install Jakarta Ant 1.5.1:  
+	Please see the official Jakarta Ant website for more information 
+	and the 1.5.1 distribution. This release is source-compatible 
+	with Ant 1.3 and Ant 1.4, but the task sources must be 
+	compiled with those versions of the Ant libraries to be used 
+	under those versions of Ant. 
+	Sources are available under the Eclipse Public License v. 1.0 
+	at <a href="http://eclipse.org/aspectj" target="_top">http://eclipse.org/aspectj</a>.
+	</p><p>
+	In Ant 1.5, third-party tasks can be declared using a taskdef entry in 
+	the build script, to identify the name and classes. 
+	When declaring a task, include the 
+	<tt>aspectjtools.jar</tt> either in the 
+	taskdef classpath or in <tt>${ANT_HOME}/lib</tt> where it will be added 
+	to the system class path by the ant script. 
+	You may specify the task script names directly, 
+	or use the "resource" attribute to specify the default names:
+    </p><pre class="programlisting">
+    
+  &lt;taskdef 
+      resource="org/aspectj/tools/ant/taskdefs/aspectjTaskdefs.properties"/&gt;
+
+    </pre><p>
+	The current resource file retains the name "ajc" for the Ajc10 task, 
+	and uses "iajc" for the AspectJ post-1.1 task.
+    </p><p>
+	In Ant 1.6, third-party tasks are declared in their own namespace 
+	using <tt>antlib.xml</tt>.  For example, the following
+	script would build and run the spacewar example, if you put the
+	script in the examples directory and <tt>aspectjtools.jar</tt>
+	in the <tt>${ANT_HOME}/lib</tt> directory.
+    </p><pre class="programlisting">
+    
+&lt;project name="aspectj-ant1.6" default="spacewar" 
+    xmlns:aspectj="antlib:org.aspectj" basedir="."&gt;
+    &lt;target name="spacewar"&gt;
+        &lt;aspectj:iajc
+            argfiles="spacewar/debug.lst"
+            outjar="spacewar.jar"
+            classpath="../../lib/aspectjrt.jar"
+       /&gt;
+       &lt;java classname="spacewar.Game"
+        classpath="spacewar.jar:../../lib/aspectjrt.jar"/&gt;
+    &lt;/target&gt;
+&lt;/project&gt;
+
+    </pre><p>
+	For more information on using Ant, please refer to Jakarta's 
+	documentation on integrating user-defined Ant tasks into builds.
+    </p></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="antTasks.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="antTasks-iajc.html">Next</a></td></tr><tr><td width="40%" align="left">Chapter 4. AspectJ Ant Tasks&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="antTasks.html">Up</a></td><td width="40%" align="right">&nbsp;AjcTask (iajc)</td></tr></table></div></body></html>

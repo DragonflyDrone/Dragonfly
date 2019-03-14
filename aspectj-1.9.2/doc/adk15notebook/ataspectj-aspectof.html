@@ -1,0 +1,38 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>aspectOf() and hasAspect() methods</title><link rel="stylesheet" href="aspectj-docs.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.44"><link rel="home" href="index.html" title="The AspectJTM 5 Development Kit Developer's Notebook"><link rel="up" href="ataspectj.html" title="Chapter 9. An Annotation Based Development Style"><link rel="previous" href="ataspectj-declare.html" title="Declare statements"><link rel="next" href="reflection.html" title="Chapter 10. New Reflection Interfaces"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">aspectOf() and hasAspect() methods</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ataspectj-declare.html">Prev</a>&nbsp;</td><th width="60%" align="center">Chapter 9. An Annotation Based Development Style</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="reflection.html">Next</a></td></tr></table><hr></div><div class="sect1"><a name="ataspectj-aspectof"></a><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="ataspectj-aspectof"></a>aspectOf() and hasAspect() methods</h2></div></div><p>A central part of AspectJ's programming model is that aspects
+            written using the code style and compiled using ajc support
+            <tt>aspectOf</tt>
+            and
+            <tt>hasAspect</tt>
+            static
+            methods. When developing an aspect using the annotation style and compiling
+            using a regular Java 5 compiler, these methods will not be visible to the
+            compiler and will result in a compilation error if another part of the
+            program tries to call them.
+        </p><p>To provide equivalent support for AspectJ applications compiled with
+            a standard Java 5 compiler, AspectJ 5 defines the
+            <tt>Aspects</tt>
+            utility class:
+        </p><pre class="programlisting">
+      public class Aspects {
+
+        /* variation used for singleton, percflow, percflowbelow */
+        static&lt;T&gt; public static T aspectOf(T aspectType) {...}
+
+        /* variation used for perthis, pertarget */
+        static&lt;T&gt; public static T aspectOf(T aspectType, Object forObject) {...}
+
+        /* variation used for pertypewithin */
+        static&lt;T&gt; public static T aspectOf(T aspectType, Class forType) {...}
+
+        /* variation used for singleton, percflow, percflowbelow */
+        public static boolean hasAspect(Object anAspect) {...}
+
+        /* variation used for perthis, pertarget */
+        public static boolean hasAspect(Object anAspect, Object forObject) {...}
+
+        /* variation used for pertypewithin */
+        public static boolean hasAspect(Object anAspect, Class forType) {...}
+      }
+        </pre></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ataspectj-declare.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="reflection.html">Next</a></td></tr><tr><td width="40%" align="left">Declare statements&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ataspectj.html">Up</a></td><td width="40%" align="right">&nbsp;Chapter 10. New Reflection Interfaces</td></tr></table></div></body></html>

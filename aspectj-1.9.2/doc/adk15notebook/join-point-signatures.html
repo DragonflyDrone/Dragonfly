@@ -1,0 +1,131 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Join Point Signatures</title><link rel="stylesheet" href="aspectj-docs.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.44"><link rel="home" href="index.html" title="The AspectJTM 5 Development Kit Developer's Notebook"><link rel="up" href="jpsigs.html" title="Chapter 1. Join Point Signatures"><link rel="previous" href="jpsigs.html" title="Chapter 1. Join Point Signatures"><link rel="next" href="join-point-modifiers.html" title="Join Point Modifiers"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Join Point Signatures</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="jpsigs.html">Prev</a>&nbsp;</td><th width="60%" align="center">Chapter 1. Join Point Signatures</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="join-point-modifiers.html">Next</a></td></tr></table><hr></div><div class="sect1"><a name="join-point-signatures"></a><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="join-point-signatures"></a>Join Point Signatures</h2></div></div><p>Call, execution, get, and set join points may potentially have multiple
+        signatures. All other join points have exactly one signature. The
+        following table summarizes the constituent parts of a join point
+        signature for the different kinds of join point.</p><div class="informaltable" uniqueID="d0e88"><a name="d0e88"></a><table border="1"><colgroup><col><col><col><col><col><col><col></colgroup><thead><tr><th>Join Point Kind</th><th>Return Type</th><th>Declaring Type</th><th>Id</th><th>Parameter Types</th><th>Field Type</th><th>Exception Type</th></tr></thead><tbody><tr><td>Method call</td><td>+</td><td>+</td><td>+</td><td>+</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Method execution</td><td>+</td><td>+</td><td>+</td><td>+</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Constructor call</td><td>&nbsp;</td><td>+</td><td>&nbsp;</td><td>+</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Constructor execution</td><td>&nbsp;</td><td>+</td><td>&nbsp;</td><td>+</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Field get</td><td>&nbsp;</td><td>+</td><td>+</td><td>&nbsp;</td><td>+</td><td>&nbsp;</td></tr><tr><td>Field set</td><td>&nbsp;</td><td>+</td><td>+</td><td>&nbsp;</td><td>+</td><td>&nbsp;</td></tr><tr><td>Pre-initialization</td><td>&nbsp;</td><td>+</td><td>&nbsp;</td><td>+</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Initialization</td><td>&nbsp;</td><td>+</td><td>&nbsp;</td><td>+</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Static initialization</td><td>&nbsp;</td><td>+</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Handler</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>+</td></tr><tr><td>Advice execution</td><td>&nbsp;</td><td>+</td><td>&nbsp;</td><td>+</td><td>&nbsp;</td><td>&nbsp;</td></tr></tbody></table></div><p>Note that whilst an advice execution join point has a
+        signature comprising the declaring type of the advice and the
+        advice parameter types, the <tt>adviceexecution</tt>
+        pointcut designator does not support matching based on this
+        signature.</p><p>The signatures for most of the join point kinds should be
+        self-explanatory, except for field get and set, and method call and execution
+        join points, which can have multiple signatures. Each signature of 
+        a method call or execution join point has the same uniqueID and parameter
+        types, but the declaring type and return type (with covariance) may vary.
+        Each signature of a field get or set join point has the same uniqueID and field
+        type, but the declaring type may vary.
+        </p><p>The following sections examine signatures for these join points 
+        in more detail.</p><div class="sect2"><a name="method-call-join-point-signatures"></a><div class="titlepage"><div><h3 class="title"><a name="method-call-join-point-signatures"></a>Method call join point signatures</h3></div></div><p>
+          For a call join point where a call is made to a method
+          <tt>m(parameter_types)</tt> on a target type <tt>T</tt> (where
+          <tt>T</tt> is the static type of the target):
+        </p><pre class="programlisting">
+		T t = new T(); 
+		t.m("hello");  &lt;= call join point occurs when this line is executed
+		</pre><p>
+            Then the signature <tt>R(T) T.m(parameter_types)</tt> is a signature
+            of the call join point, where <tt>R(T)</tt> is the return
+            type of <tt>m</tt> in <tt>T</tt>, and 
+            <tt>parameter_types</tt> are the parameter types of
+            <tt>m</tt>. If <tt>T</tt> itself does not
+            declare a definition of <tt>m(parameter_types)</tt>, then 
+            <tt>R(T)</tt> is the return type in the definition of 
+            <tt>m</tt> that <tt>T</tt> inherits. Given the
+            call above, and the definition of <tt>T.m</tt>:                      
+        </p><pre class="programlisting">
+        interface Q {
+          R m(String s);
+        }
+        
+        class P implements Q {
+          R m(String s) {...}        
+        }
+        
+        class S extends P {
+          R' m(String s) {...}
+        }
+        
+        class T extends S {} 
+		
+		</pre><p>Then <tt>R' T.m(String)</tt> is a signature of the
+        call join point for <tt>t.m("hello")</tt>.</p><p>
+            For each ancestor (super-type) <tt>A</tt> of <tt>T</tt>, 
+            if <tt>m(parameter_types)</tt> is defined for that super-type, then
+            <tt>R(A) A.m(parameter_types)</tt> is a signature of the call join
+            point, where <tt>R(A)</tt> is the return type of <tt>
+            m(parameter_types)</tt> as defined in <tt>A</tt>, or as inherited
+            by <tt>A</tt> if <tt>A</tt> itself does not
+            provide a definition of <tt>m(parameter_types)</tt>.            
+        </p><p>
+            Continuing the example from above,we can deduce that
+        </p><pre class="programlisting">
+        R' S.m(String)
+        R  P.m(String)
+        R  Q.m(String)
+		</pre><p>are all additional signatures for the call join point arising
+        from the call <tt>t.m("hello")</tt>. Thus this call
+        join point has four signatures in total. Every signature has the same
+        uniqueID and parameter types, and a different declaring type.</p></div><div class="sect2"><a name="method-execution-join-point-signatures"></a><div class="titlepage"><div><h3 class="title"><a name="method-execution-join-point-signatures"></a>Method execution join point signatures</h3></div></div><p>Join point signatures for execution join points are defined
+          in a similar manner to signatures for call join points. Given the
+          hierarchy:
+          </p><pre class="programlisting">
+        interface Q {
+          R m(String s);
+        }
+        
+        class P implements Q {
+          R m(String s) {...}        
+        }
+        
+        class S extends P {
+          R' m(String s) {...}
+        }
+        
+        class T extends S { }
+        
+        class U extends T {
+          R' m(String s) {...}
+        }
+		
+		</pre><p>Then the execution join point signatures arising as a result
+        of the call to <tt>u.m("hello")</tt> are: </p><pre class="programlisting">
+        R' U.m(String)
+        R' S.m(String)
+        R  P.m(String)
+        R  Q.m(String)
+		</pre><p>Each signature has the same uniqueID and parameter types, and a
+        different declaring type. There is one signature for each type
+        that provides its own declaration of the method. Hence in this 
+        example there is no signature <tt>R' T.m(String)</tt>
+        as <tt>T</tt> does not provide its own declaration of
+        the method.</p></div><div class="sect2"><a name="field-get-and-set-join-point-signatures"></a><div class="titlepage"><div><h3 class="title"><a name="field-get-and-set-join-point-signatures"></a>Field get and set join point signatures</h3></div></div><p>
+            For a field get join point where an access is made to a field
+            <tt>f</tt> of type <tt>F</tt> 
+            on a object with declared type <tt>T</tt>, then
+            <tt>F T.f</tt> is a signature of the get join point.  
+        </p><p>
+            If <tt>T</tt> does not directly declare a member
+            <tt>f</tt>, then for each super type <tt>S</tt>
+            of <tt>T</tt>, up to and including the most specific
+            super type of <tt>T</tt> that does declare the member
+            <tt>f</tt>, <tt>F S.f</tt> is a signature
+            of the join point. For example, given the hierarchy:
+        </p><pre class="programlisting">        
+        class P  {
+          F f;        
+        }
+        
+        class S extends P {
+          F f;
+        }
+        
+        class T extends S { }                
+		</pre><p>
+		    Then the join point signatures for a field get join point of
+		    the field <tt>f</tt> on an object with declared type
+		    <tt>T</tt> are:
+		</p><pre class="programlisting">
+        F S.f
+        F T.f
+		</pre><p>The signatures for a field set join point are derived in an
+            identical manner.</p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="jpsigs.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="join-point-modifiers.html">Next</a></td></tr><tr><td width="40%" align="left">Chapter 1. Join Point Signatures&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="jpsigs.html">Up</a></td><td width="40%" align="right">&nbsp;Join Point Modifiers</td></tr></table></div></body></html>

@@ -1,0 +1,29 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Chapter 3. AspectJ Browser</title><link rel="stylesheet" href="aspectj-docs.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.44"><link rel="home" href="index.html" title="The AspectJtm Development Environment Guide"><link rel="up" href="index.html" title="The AspectJtm Development Environment Guide"><link rel="previous" href="aj-ref.html" title="aj"><link rel="next" href="ajbrowser-building.html" title="Building Programs"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Chapter 3. AspectJ Browser</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="aj-ref.html">Prev</a>&nbsp;</td><th width="60%" align="center">&nbsp;</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ajbrowser-building.html">Next</a></td></tr></table><hr></div><div class="chapter"><div class="titlepage"><div><h2 class="title"><a name="ajbrowser"></a>Chapter 3. AspectJ Browser</h2></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><a href="ajbrowser.html#ajbrowser-intro">Introduction</a></dt><dt><a href="ajbrowser-building.html">Building Programs</a></dt><dd><dl><dt><a href="ajbrowser-building.html#build-configurations">Build Configurations</a></dt><dt><a href="ajbrowser-building.html#compiling-a-program-build-configuration">Compiling a Program Build Configuration</a></dt></dl></dd><dt><a href="ajbrowser-navigating.html">Navigating Program Structure</a></dt><dd><dl><dt><a href="ajbrowser-navigating.html#example">Example: Exploring the "Spacewar" sample code </a></dt></dl></dd><dt><a href="ajbrowser-running.html">Running Programs</a></dt><dt><a href="ajbrowser-problems.html">Isolating problems running the AspectJ browser</a></dt><dd><dl><dt><a href="ajbrowser-problems.html#ajbrowser-knownProblems">Known issues with the AspectJ browser</a></dt><dt><a href="ajbrowser-problems.html#ajbrowser-limitations">Limitations</a></dt><dt><a href="ajbrowser-problems.html#ajbrowser-feedback">AspectJ Browser questions and bugs</a></dt></dl></dd></dl></div><div class="sect1"><a name="ajbrowser-intro"></a><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="ajbrowser-intro"></a>Introduction</h2></div></div><p>
+	AJBrowser presents a GUI for compiling programs with ajc 
+	and navigating crosscutting structure.
+	</p><p>
+            The AspectJ Browser can edit program source files,
+            compile using the AspectJ compiler <tt>ajc</tt>
+            run a program,
+            and graphically navigate the program's 
+            crosscutting structure.
+            For more information on <tt>ajc</tt>, 
+            see <a href="ajc-ref.html">The ajc Command-line Reference</a>.
+            
+            
+        </p><p>
+            Launch the browser from the command line either
+            by typing "ajbrowser" to invoke the script in
+            <tt>{aspectj}/bin</tt>
+             (if AspectJ is installed correctly) 
+            or by using the
+            <tt>aspectjtools.jar</tt> directly,
+            and specifying no arguments or some number of
+            build configuration files 
+            (suffix <tt>.lst</tt>):
+            <pre class="programlisting">
+  java -jar aspectj1.1/lib/aspectjtools.jar aspectj1.1/doc/examples/spacewar/debug.lst                    
+            </pre>
+        </p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="aj-ref.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ajbrowser-building.html">Next</a></td></tr><tr><td width="40%" align="left">aj&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="index.html">Up</a></td><td width="40%" align="right">&nbsp;Building Programs</td></tr></table></div></body></html>

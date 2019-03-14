@@ -1,0 +1,360 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Advice</title><link rel="stylesheet" href="aspectj-docs.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.44"><link rel="home" href="index.html" title="The AspectJTM Programming Guide"><link rel="up" href="semantics.html" title="Appendix B. Language Semantics"><link rel="previous" href="semantics-pointcuts.html" title="Pointcuts"><link rel="next" href="semantics-declare.html" title="Static crosscutting"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Advice</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="semantics-pointcuts.html">Prev</a>&nbsp;</td><th width="60%" align="center">Appendix B. Language Semantics</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="semantics-declare.html">Next</a></td></tr></table><hr></div><div class="sect1"><a name="semantics-advice"></a><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="semantics-advice"></a>Advice</h2></div></div><p>
+      Each piece of advice is of the form
+
+      <blockquote class="blockquote"><tt>[ strictfp ] <i><tt>AdviceSpec</tt></i> [
+        throws <i><tt>TypeList</tt></i> ] :
+        <i><tt>Pointcut</tt></i> {
+        <i><tt>Body</tt></i> } </tt></blockquote>
+
+      where <i><tt>AdviceSpec</tt></i> is one of
+    </p><div class="itemizedlist"><ul><li><a name="d0e6029"></a><tt>before( <i><tt>Formals</tt></i> ) </tt></li><li><a name="d0e6035"></a><tt>after( <i><tt>Formals</tt></i> ) returning
+        [ ( <i><tt>Formal</tt></i> ) ] </tt></li><li><a name="d0e6044"></a><tt>after( <i><tt>Formals</tt></i> ) throwing [
+        ( <i><tt>Formal</tt></i> ) ] </tt></li><li><a name="d0e6053"></a><tt>after( <i><tt>Formals</tt></i> ) </tt></li><li><a name="d0e6059"></a><tt><i><tt>Type</tt></i>
+        around( <i><tt>Formals</tt></i> )</tt></li></ul></div><p>
+      and where <i><tt>Formal</tt></i> refers to a
+        variable binding like those used for method parameters,
+        of the form 
+        <tt><i><tt>Type</tt></i></tt>
+        <tt><i><tt>Variable-Name</tt></i></tt>,
+        and <i><tt>Formals</tt></i> refers to a comma-delimited
+        list of <i><tt>Formal</tt></i>.
+    </p><p>
+      Advice defines crosscutting behavior.  It is defined in terms of
+      pointcuts. The code of a piece of advice runs at every join point
+      picked out by its pointcut. Exactly how the code runs depends on the
+      kind of advice.
+    </p><p>
+      AspectJ supports three kinds of advice. The kind of advice determines how
+      it interacts with the join points it is defined over. Thus AspectJ
+      divides advice into that which runs before its join points, that which
+      runs after its join points, and that which runs in place of (or "around")
+      its join points.
+    </p><p>
+      While before advice is relatively unproblematic, there can be three
+      interpretations of after advice: After the execution of a join point
+      completes normally, after it throws an exception, or after it does either
+      one. AspectJ allows after advice for any of these situations.
+    </p><pre class="programlisting">
+  aspect A {
+      pointcut publicCall(): call(public Object *(..));
+      after() returning (Object o): publicCall() {
+	  System.out.println("Returned normally with " + o);
+      }
+      after() throwing (Exception e): publicCall() {
+	  System.out.println("Threw an exception: " + e);
+      }
+      after(): publicCall(){
+	  System.out.println("Returned or threw an Exception");
+      }
+  }
+</pre><p>
+      After returning advice may not care about its returned object, in which
+      case it may be written
+    </p><pre class="programlisting">
+  after() returning: call(public Object *(..)) {
+      System.out.println("Returned normally");
+  }
+</pre><p>
+      If after returning does expose its returned object, then the
+      type of the parameter is considered to be an
+      <tt>instanceof</tt>-like constraint on the advice:  it
+      will run only when the return value is of the appropriate type.
+    </p><p>
+      A value is of the appropriate type if it would be assignable to
+      a variable of that type, in the Java sense.  That is, a
+      <tt>byte</tt> value is assignable to a
+      <tt>short</tt> parameter but not vice-versa, an
+      <tt>int</tt> is assignable to a
+      <tt>float</tt> parameter, <tt>boolean</tt>
+      values are only assignable to <tt>boolean</tt>
+      parameters, and reference types work by instanceof.
+    </p><p>
+      There are two special cases: If the exposed value is typed to
+      <tt>Object</tt>, then the advice is not constrained by
+      that type: the actual return value is converted to an object
+      type for the body of the advice: <tt>int</tt> values
+      are represented as <tt>java.lang.Integer</tt> objects,
+      etc, and no value (from void methods, for example) is
+      represented as <tt>null</tt>.
+    </p><p>
+      Secondly, the <tt>null</tt> value is assignable to a
+      parameter <tt>T</tt> if the join point
+      <span class="emphasis"><i>could</i></span> return something of type
+      <tt>T</tt>.
+    </p><p>
+      Around advice runs in place of the join point it operates over, rather
+      than before or after it.  Because around is allowed to return a value, it
+      must be declared with a return type, like a method.
+    </p><p>
+      Thus, a simple use of around advice is to make a particular method
+      constant:
+    </p><pre class="programlisting">
+  aspect A {
+      int around(): call(int C.foo()) {
+	  return 3;
+      }
+  }
+</pre><p>
+      Within the body of around advice, though, the computation of the original
+      join point can be executed with the special syntax
+    </p><pre class="programlisting">
+  proceed( ... )
+</pre><p>
+      The proceed form takes as arguments the context exposed by the around's
+      pointcut, and returns whatever the around is declared to return. So the
+      following around advice will double the second argument to
+      <tt>foo</tt> whenever it is called, and then halve its result:
+    </p><pre class="programlisting">
+  aspect A {
+      int around(int i): call(int C.foo(Object, int)) &amp;&amp; args(i) {
+	  int newi = proceed(i*2)
+	  return newi/2;
+      }
+  }
+</pre><p>
+      If the return value of around advice is typed to
+      <tt>Object</tt>, then the result of proceed is converted to an
+      object representation, even if it is originally a primitive value.  And
+      when the advice returns an Object value, that value is converted back to
+      whatever representation it was originally.  So another way to write the
+      doubling and halving advice is:
+    </p><pre class="programlisting">
+  aspect A {
+      Object around(int i): call(int C.foo(Object, int)) &amp;&amp; args(i) {
+	  Integer newi = (Integer) proceed(i*2)
+	  return new Integer(newi.intValue() / 2);
+      }
+  }
+</pre><p>
+		Any occurence of <tt>proceed(..)</tt> within the body of around 
+        advice is treated as the special proceed form (even if the
+		aspect defines a method named <tt>proceed</tt>), unless a 
+		target other than the aspect instance is specified as the recipient of
+		the call.
+		For example, in the following program the first 
+		call to proceed will be treated as a method call to
+		the <tt>ICanProceed</tt> instance, whereas the second call to
+		proceed is treated as the special proceed form.
+	</p><pre class="programlisting">
+  aspect A {
+     Object around(ICanProceed canProceed) : execution(* *(..)) &amp;&amp; this(canProceed) {
+        canProceed.proceed();         // a method call
+        return proceed(canProceed);   // the special proceed form
+     }
+     
+     private Object proceed(ICanProceed canProceed) {
+        // this method cannot be called from inside the body of around advice in
+        // the aspect
+     }
+  }	
+</pre><p>
+      In all kinds of advice, the parameters of the advice behave exactly like
+      method parameters.  In particular, assigning to any parameter affects
+      only the value of the parameter, not the value that it came from.  This
+      means that
+    </p><pre class="programlisting">
+  aspect A {
+      after() returning (int i): call(int C.foo()) {
+	  i = i * 2;
+      }
+  }
+</pre><p>
+      will <span class="emphasis"><i>not</i></span> double the returned value of the advice.
+      Rather, it will double the local parameter.  Changing the values of
+      parameters or return values of join points can be done by using around
+      advice.
+    </p><p>
+        With <tt>proceed(..)</tt> it is possible to change the values
+        used by less-precedent advice and the underlying join point by supplying
+        different values for the variables.  For example, this aspect replaces
+        the string bound to <tt>s</tt> in the named pointcut 
+        <tt>privateData</tt>:
+    </p><pre class="programlisting">
+  aspect A {
+    Object around(String s): MyPointcuts.privateData(s) {
+      return proceed("private data");
+    }
+  }
+</pre><p>
+        If you replace an argument to <tt>proceed(..)</tt>, you can cause 
+        a <tt>ClassCastException</tt> at runtime when the argument
+        refers to a supertype of the actual type and you do not supply a 
+        reference of the actual type.  In the following aspect, the
+        around advice replaces the declared target <tt>List</tt> 
+        with an <tt>ArrayList</tt>.  This is valid code at
+        compile-time since the types match.  
+    </p><pre class="programlisting">
+  import java.util.*;
+
+  aspect A {
+    Object around(List list): call(* List+.*()) &amp;&amp; target(list) {
+      return proceed(new ArrayList());
+    }
+  }
+</pre><p>
+        But imagine a simple program where the actual target is
+        <tt>LinkedList</tt>.  In this case, the advice would cause a
+        <tt>ClassCastException</tt> at runtime, and 
+        <tt>peek()</tt> is not declared in <tt>ArrayList</tt>.
+    </p><pre class="programlisting">
+  public class Test {
+    public static void main(String[] args) {
+      new LinkedList().peek();
+    }
+  }
+</pre><p>
+        The <tt>ClassCastException</tt> can occur even in situations
+        where it appears to be unnecessary, e.g., if the program is changed to
+        call <tt>size()</tt>, declared in <tt>List</tt>:
+    </p><pre class="programlisting">
+  public class Test {
+    public static void main(String[] args) {
+      new LinkedList().size();
+    }
+  }
+</pre><p>
+        There will still be a <tt>ClassCastException</tt> because
+        it is impossible to prove that there won't be a runtime binary-compatible
+        change in the hierarchy of <tt>LinkedList</tt> or some
+        other advice on the join point that requires a 
+        <tt>LinkedList</tt>.
+    </p><div class="sect2"><a name="advice-modifiers"></a><div class="titlepage"><div><h3 class="title"><a name="advice-modifiers"></a>Advice modifiers</h3></div></div><p>
+        The <tt>strictfp</tt> modifier is the only modifier allowed
+        on advice, and it has the effect of making all floating-point
+        expressions within the advice be FP-strict.
+      </p></div><div class="sect2"><a name="advice-and-checked-exceptions"></a><div class="titlepage"><div><h3 class="title"><a name="advice-and-checked-exceptions"></a>Advice and checked exceptions</h3></div></div><p>
+        An advice declaration must include a <tt>throws</tt> clause
+        listing the checked exceptions the body may throw.  This list of
+        checked exceptions must be compatible with each target join point
+        of the advice, or an error is signalled by the compiler.
+      </p><p>
+        For example, in the following declarations:
+      </p><pre class="programlisting">
+  import java.io.FileNotFoundException;
+
+  class C {
+      int i;
+
+      int getI() { return i; }
+  }
+
+  aspect A {
+      before(): get(int C.i) {
+	  throw new FileNotFoundException();
+      }
+      before() throws FileNotFoundException: get(int C.i) {
+	  throw new FileNotFoundException();
+      }
+  }
+</pre><p>
+        both pieces of advice are illegal.  The first because the body throws
+        an undeclared checked exception, and the second because field get join
+        points cannot throw <tt>FileNotFoundException</tt>s.
+      </p><p> The exceptions that each kind of join point in AspectJ may throw are:
+      </p><div class="variablelist"><dl><dt><a name="d0e6294"></a><span class="term">method call and execution</span></dt><dd>
+          the checked exceptions declared by the target method's
+          <tt>throws</tt> clause.
+        </dd><dt><a name="d0e6302"></a><span class="term">constructor call and execution</span></dt><dd>
+          the checked exceptions declared by the target constructor's
+          <tt>throws</tt> clause.
+        </dd><dt><a name="d0e6310"></a><span class="term">field get and set</span></dt><dd>
+          no checked exceptions can be thrown from these join points. 
+        </dd><dt><a name="d0e6315"></a><span class="term">exception handler execution</span></dt><dd>
+          the exceptions that can be thrown by the target exception handler.
+        </dd><dt><a name="d0e6320"></a><span class="term">static initializer execution</span></dt><dd>
+          no checked exceptions can be thrown from these join points. 
+        </dd><dt><a name="d0e6325"></a><span class="term">pre-initialization and initialization</span></dt><dd>
+          any exception that is in the throws clause of
+          <span class="emphasis"><i>all</i></span> constructors of the initialized class. 
+        </dd><dt><a name="d0e6333"></a><span class="term">advice execution</span></dt><dd>
+          any exception that is in the throws clause of the advice. 
+        </dd></dl></div></div><div class="sect2"><a name="advice-precedence"></a><div class="titlepage"><div><h3 class="title"><a name="advice-precedence"></a>Advice precedence</h3></div></div><p>
+        Multiple pieces of advice may apply to the same join point.  In such
+        cases, the resolution order of the advice is based on advice
+        precedence.
+      </p><div class="sect3"><a name="d0e6343"></a><div class="titlepage"><div><h4 class="title"><a name="d0e6343"></a>Determining precedence</h4></div></div><p>There are a number of rules that determine whether a particular
+        piece of advice has precedence over another when they advise the same
+        join point. </p><p>If the two pieces of advice are defined in different aspects,
+        then there are three cases: </p><div class="itemizedlist"><ul><li><a name="d0e6351"></a>If aspect A is matched earlier than aspect B in some
+          <tt>declare precedence</tt> form, then all advice in
+          concrete aspect A has precedence over all advice in concrete aspect B
+          when they are on the same join point.  </li><li><a name="d0e6356"></a>
+          Otherwise, if aspect A is a subaspect of aspect B, then all advice
+          defined in A has precedence over all advice defined in
+          B. So, unless otherwise specified with
+          <tt>declare precedence</tt>, advice in a subaspect
+          has precedence over advice in a superaspect.
+          </li><li><a name="d0e6361"></a>
+          Otherwise, if two pieces of advice are defined in two different
+          aspects, it is undefined which one has precedence.
+          </li></ul></div><p>If the two pieces of advice are defined in the same aspect, then
+        there are two cases: </p><div class="itemizedlist"><ul><li><a name="d0e6366"></a>If either are <tt>after</tt> advice, then the one that
+          appears later in the aspect has precedence over the one that appears
+          earlier. </li><li><a name="d0e6371"></a>Otherwise, then the one that appears earlier in the aspect
+          has precedence over the one that appears later.
+          </li></ul></div><p>These rules can lead to circularity, such as</p><pre class="programlisting">
+  aspect A {
+      before(): execution(void main(String[] args)) {}
+      after():  execution(void main(String[] args)) {}
+      before(): execution(void main(String[] args)) {}
+  }
+</pre><p>such circularities will result in errors signalled by the compiler. </p></div><div class="sect3"><a name="d0e6379"></a><div class="titlepage"><div><h4 class="title"><a name="d0e6379"></a>Effects of precedence</h4></div></div><p>At a particular join point, advice is ordered by precedence.</p><p>A piece of <tt>around</tt> advice controls whether
+        advice of lower precedence will run by calling
+        <tt>proceed</tt>.  The call to <tt>proceed</tt>
+        will run the advice with next precedence, or the computation under the
+        join point if there is no further advice. </p><p>A piece of <tt>before</tt> advice can prevent advice of
+        lower precedence from running by throwing an exception.  If it returns
+        normally, however, then the advice of the next precedence, or the
+        computation under the join pint if there is no further advice, will run.
+        </p><p>Running <tt>after returning</tt> advice will run the
+        advice of next precedence, or the computation under the join point if
+        there is no further advice.  Then, if that computation returned
+        normally, the body of the advice will run. </p><p>Running <tt>after throwing</tt> advice will run the
+        advice of next precedence, or the computation under the join
+        point if there is no further advice.  Then, if that computation threw
+        an exception of an appropriate type, the body of the advice will
+        run. </p><p>Running <tt>after</tt> advice will run the advice of
+        next precedence, or the computation under the join point if
+        there is no further advice.  Then the body of the advice will
+        run. </p></div></div><div class="sect2"><a name="reflective-access-to-the-join-point"></a><div class="titlepage"><div><h3 class="title"><a name="reflective-access-to-the-join-point"></a>Reflective access to the join point</h3></div></div><p>
+        Three special variables are visible within bodies of advice
+          and within <tt>if()</tt> pointcut expressions: 
+        <tt>thisJoinPoint</tt>,
+        <tt>thisJoinPointStaticPart</tt>, and
+        <tt>thisEnclosingJoinPointStaticPart</tt>. Each is bound to
+        an object that encapsulates some of the context of the advice's current
+        or enclosing join point.  These variables exist because some pointcuts
+        may pick out very large collections of join points. For example, the
+        pointcut
+      </p><pre class="programlisting">
+  pointcut publicCall(): call(public * *(..));
+</pre><p>
+        picks out calls to many methods. Yet the body of advice over this
+        pointcut may wish to have access to the method name or parameters of a
+        particular join point.
+      </p><p>
+        <tt>thisJoinPoint</tt> is bound to a complete join point
+        object.
+
+      </p><p>
+        <tt>thisJoinPointStaticPart</tt> is bound to a part of the
+        join point object that includes less information, but for which no
+        memory allocation is required on each execution of the advice.  It is
+        equivalent to <tt>thisJoinPoint.getStaticPart()</tt>.
+      </p><p>
+        <tt>thisEnclosingJoinPointStaticPart</tt> is bound to the
+        static part of the join point enclosing the current join point.  Only
+        the static part of this enclosing join point is available through this
+        mechanism.
+      </p><p>
+        Standard Java reflection uses objects from the
+        <tt>java.lang.reflect</tt> hierarchy to build up its
+        reflective objects.  Similarly, AspectJ join point objects have types
+        in a type hierarchy.  The type of objects bound to
+        <tt>thisJoinPoint</tt> is
+        <tt>org.aspectj.lang.JoinPoint</tt>, while
+        <tt>thisStaticJoinPoint</tt> is bound to objects of interface
+        type <tt>org.aspectj.lang.JoinPoint.StaticPart</tt>.
+      </p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="semantics-pointcuts.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="semantics-declare.html">Next</a></td></tr><tr><td width="40%" align="left">Pointcuts&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="semantics.html">Up</a></td><td width="40%" align="right">&nbsp;Static crosscutting</td></tr></table></div></body></html>

@@ -1,0 +1,396 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Introduction to AspectJ</title><link rel="stylesheet" href="aspectj-docs.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.44"><link rel="home" href="index.html" title="The AspectJTM Programming Guide"><link rel="up" href="starting.html" title="Chapter 1. Getting Started with AspectJ"><link rel="previous" href="starting.html" title="Chapter 1. Getting Started with AspectJ"><link rel="next" href="starting-development.html" title="Development Aspects"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Introduction to AspectJ</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="starting.html">Prev</a>&nbsp;</td><th width="60%" align="center">Chapter 1. Getting Started with AspectJ</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="starting-development.html">Next</a></td></tr></table><hr></div><div class="sect1"><a name="starting-aspectj"></a><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="starting-aspectj"></a>Introduction to AspectJ</h2></div></div><p>
+      This section presents a brief introduction to the features of AspectJ
+      used later in this chapter. These features are at the core of the
+      language, but this is by no means a complete overview of AspectJ.
+    </p><p>
+      The features are presented using a simple figure editor system. A
+      <tt>Figure</tt> consists of a number of
+      <tt>FigureElements</tt>, which can be either
+      <tt>Point</tt>s or <tt>Line</tt>s. The
+      <tt>Figure</tt> class provides factory services. There
+      is also a <tt>Display</tt>. Most example programs later
+      in this chapter are based on this system as well.
+    </p><p>
+      <div class="mediaobject"><img src="figureUML.gif"><div class="caption"><p>
+            UML for the <tt>FigureEditor</tt> example
+          </p></div></div>
+    </p><p>
+      The motivation for AspectJ (and likewise for aspect-oriented
+      programming) is the realization that there are issues or concerns
+      that are not well captured by traditional programming
+      methodologies. Consider the problem of enforcing a security policy in
+      some application. By its nature, security cuts across many of the
+      natural units of modularity of the application. Moreover, the
+      security policy must be uniformly applied to any additions as the
+      application evolves. And the security policy that is being applied
+      might itself evolve. Capturing concerns like a security policy in a
+      disciplined way is difficult and error-prone in a traditional
+      programming language.
+    </p><p>
+      Concerns like security cut across the natural units of
+      modularity. For object-oriented programming languages, the natural
+      unit of modularity is the class. But in object-oriented programming
+      languages, crosscutting concerns are not easily turned into classes
+      precisely because they cut across classes, and so these aren't
+      reusable, they can't be refined or inherited, they are spread through
+      out the program in an undisciplined way, in short, they are difficult
+      to work with.
+    </p><p>
+      Aspect-oriented programming is a way of modularizing crosscutting
+      concerns much like object-oriented programming is a way of
+      modularizing common concerns. AspectJ is an implementation of
+      aspect-oriented programming for Java.
+    </p><p>
+      AspectJ adds to Java just one new concept, a join point -- and that's
+      really just a name for an existing Java concept.  It adds to Java
+      only a few new constructs: pointcuts, advice, inter-type declarations
+      and aspects.  Pointcuts and advice dynamically affect program flow,
+      inter-type declarations statically affects a program's class
+      hierarchy, and aspects encapsulate these new constructs.
+    </p><p>
+      A <span class="emphasis"><i>join point</i></span> is a well-defined point in the
+      program flow.  A <span class="emphasis"><i>pointcut</i></span> picks out certain join
+      points and values at those points.  A piece of
+      <span class="emphasis"><i>advice</i></span> is code that is executed when a join
+      point is reached. These are the dynamic parts of AspectJ.
+    </p><p>
+      AspectJ also has different kinds of <span class="emphasis"><i>inter-type
+      declarations</i></span> that allow the programmer to modify a
+      program's static structure, namely, the members of its classes and
+      the relationship between classes.
+    </p><p>
+      AspectJ's <span class="emphasis"><i>aspect</i></span> are the unit of modularity for
+      crosscutting concerns.  They behave somewhat like Java classes, but
+      may also include pointcuts, advice and inter-type declarations.
+    </p><p>
+      In the sections immediately following, we are first going to look at
+      join points and how they compose into pointcuts. Then we will look at
+      advice, the code which is run when a pointcut is reached. We will see
+      how to combine pointcuts and advice into aspects, AspectJ's reusable,
+      inheritable unit of modularity. Lastly, we will look at how to use
+      inter-type declarations to deal with crosscutting concerns of a
+      program's class structure.
+    </p><div class="sect2"><a name="the-dynamic-join-point-model"></a><div class="titlepage"><div><h3 class="title"><a name="the-dynamic-join-point-model"></a>The Dynamic Join Point Model</h3></div></div><p>
+        A critical element in the design of any aspect-oriented language is
+        the join point model. The join point model provides the common
+        frame of reference that makes it possible to define the dynamic
+        structure of crosscutting concerns.  This chapter describes
+        AspectJ's dynamic join points, in which join points are certain
+        well-defined points in the execution of the program.
+      </p><p>
+        AspectJ provides for many kinds of join points, but this chapter
+        discusses only one of them: method call join points. A method call
+        join point encompasses the actions of an object receiving a method
+        call. It includes all the actions that comprise a method call,
+        starting after all arguments are evaluated up to and including
+        return (either normally or by throwing an exception).
+      </p><p>
+        Each method call at runtime is a different join point, even if it
+        comes from the same call expression in the program.  Many other
+        join points may run while a method call join point is executing --
+        all the join points that happen while executing the method body,
+        and in those methods called from the body.  We say that these join
+        points execute in the <span class="emphasis"><i>dynamic context</i></span> of the
+        original call join point.
+      </p></div><div class="sect2"><a name="pointcuts"></a><div class="titlepage"><div><h3 class="title"><a name="pointcuts"></a>Pointcuts</h3></div></div><p>
+        In AspectJ, <span class="emphasis"><i>pointcuts</i></span> pick out certain join
+        points in the program flow. For example, the pointcut
+      </p><pre class="programlisting">
+call(void Point.setX(int))
+</pre><p>
+        picks out each join point that is a call to a method that has the
+        signature <tt>void Point.setX(int)</tt> &#8212; that is,
+        <tt>Point</tt>'s void <tt>setX</tt>
+        method with a single <tt>int</tt> parameter.
+      </p><p>
+        A pointcut can be built out of other pointcuts with and, or, and
+        not (spelled <tt>&amp;&amp;</tt>, <tt>||</tt>,
+        and <tt>!</tt>).  For example:
+      </p><pre class="programlisting">
+call(void Point.setX(int)) ||
+call(void Point.setY(int))
+</pre><p>
+        picks out each join point that is either a call to
+        <tt>setX</tt> or a call to <tt>setY</tt>.
+      </p><p>
+        Pointcuts can identify join points from many different types
+        &#8212; in other words, they can crosscut types.  For example,
+      </p><pre class="programlisting">
+call(void FigureElement.setXY(int,int)) ||
+call(void Point.setX(int))              ||
+call(void Point.setY(int))              ||
+call(void Line.setP1(Point))            ||
+call(void Line.setP2(Point));
+</pre><p>
+        picks out each join point that is a call to one of five methods
+        (the first of which is an interface method, by the way).
+      </p><p>
+        In our example system, this pointcut captures all the join points
+        when a <tt>FigureElement</tt> moves.  While this is a
+        useful way to specify this crosscutting concern, it is a bit of a
+        mouthful.  So AspectJ allows programmers to define their own named
+        pointcuts with the <tt>pointcut</tt> form.  So the
+        following declares a new, named pointcut:
+      </p><pre class="programlisting">
+pointcut move():
+    call(void FigureElement.setXY(int,int)) ||
+    call(void Point.setX(int))              ||
+    call(void Point.setY(int))              ||
+    call(void Line.setP1(Point))            ||
+    call(void Line.setP2(Point));
+</pre><p>
+        and whenever this definition is visible, the programmer can simply
+        use <tt>move()</tt> to capture this complicated
+        pointcut.
+      </p><p>
+        The previous pointcuts are all based on explicit enumeration of a
+        set of method signatures. We sometimes call this
+        <span class="emphasis"><i>name-based</i></span> crosscutting. AspectJ also
+        provides mechanisms that enable specifying a pointcut in terms of
+        properties of methods other than their exact name. We call this
+        <span class="emphasis"><i>property-based</i></span> crosscutting. The simplest of
+        these involve using wildcards in certain fields of the method
+        signature. For example, the pointcut
+      </p><pre class="programlisting">
+call(void Figure.make*(..))
+</pre><p>
+        picks out each join point that's a call to a void method defined
+        on <tt>Figure</tt> whose the name begins with
+        "<tt>make</tt>" regardless of the method's parameters.
+        In our system, this picks out calls to the factory methods
+        <tt>makePoint</tt> and <tt>makeLine</tt>.
+        The pointcut
+      </p><pre class="programlisting">
+call(public * Figure.* (..))
+</pre><p>
+        picks out each call to <tt>Figure</tt>'s public
+        methods.
+      </p><p>
+        But wildcards aren't the only properties AspectJ supports.
+        Another pointcut, <tt>cflow</tt>, identifies join
+        points based on whether they occur in the dynamic context of
+        other join points.  So
+      </p><pre class="programlisting">
+cflow(move())
+</pre><p>
+        picks out each join point that occurs in the dynamic context of
+        the join points picked out by <tt>move()</tt>, our named
+        pointcut defined above.  So this picks out each join points that
+        occurrs between when a move method is called and when it returns
+        (either normally or by throwing an exception).
+      </p></div><div class="sect2"><a name="advice"></a><div class="titlepage"><div><h3 class="title"><a name="advice"></a>Advice</h3></div></div><p>
+        So pointcuts pick out join points.  But they don't
+        <span class="emphasis"><i>do</i></span> anything apart from picking out join
+        points.  To actually implement crosscutting behavior, we use
+        advice.  Advice brings together a pointcut (to pick out join
+        points) and a body of code (to run at each of those join points).
+      </p><p>
+        AspectJ has several different kinds of advice. <span class="emphasis"><i>Before
+        advice</i></span> runs as a join point is reached, before the
+        program proceeds with the join point.  For example, before advice
+        on a method call join point runs before the actual method starts
+        running, just after the arguments to the method call are evaluated.
+      </p><pre class="programlisting">
+before(): move() {
+    System.out.println("about to move");
+}
+</pre><p>
+        <span class="emphasis"><i>After advice</i></span> on a particular join point runs
+        after the program proceeds with that join point.  For example,
+        after advice on a method call join point runs after the method body
+        has run, just before before control is returned to the caller.
+        Because Java programs can leave a join point 'normally' or by
+        throwing an exception, there are three kinds of after advice:
+        <tt>after returning</tt>, <tt>after
+        throwing</tt>, and plain <tt>after</tt> (which runs
+        after returning <span class="emphasis"><i>or</i></span> throwing, like Java's
+        <tt>finally</tt>).
+      </p><pre class="programlisting">
+after() returning: move() {
+    System.out.println("just successfully moved");
+}
+</pre><p>
+        <span class="emphasis"><i>Around advice</i></span> on a join point runs as the join
+        point is reached, and has explicit control over whether the program
+        proceeds with the join point.  Around advice is not discussed in
+        this section.
+      </p><div class="sect3"><a name="d0e346"></a><div class="titlepage"><div><h4 class="title"><a name="d0e346"></a>Exposing Context in Pointcuts</h4></div></div><p>
+          Pointcuts not only pick out join points, they can also expose
+          part of the execution context at their join points. Values
+          exposed by a pointcut can be used in the body of advice
+          declarations.
+        </p><p>
+          An advice declaration has a parameter list (like a method) that
+          gives names to all the pieces of context that it uses.  For
+          example, the after advice
+        </p><pre class="programlisting">
+after(FigureElement fe, int x, int y) returning:
+        ...SomePointcut... {
+    ...SomeBody...
+}
+</pre><p>
+           uses three pieces of exposed context, a
+           <tt>FigureElement</tt> named fe, and two
+           <tt>int</tt>s named x and y.
+         </p><p>
+          The body of the advice uses the names just like method
+          parameters, so
+        </p><pre class="programlisting">
+after(FigureElement fe, int x, int y) returning:
+        ...SomePointcut... {
+    System.out.println(fe + " moved to (" + x + ", " + y + ")");
+}
+</pre><p>
+          The advice's pointcut publishes the values for the advice's
+          arguments.  The three primitive pointcuts
+          <tt>this</tt>, <tt>target</tt> and
+          <tt>args</tt> are used to publish these values.  So now
+          we can write the complete piece of advice:
+        </p><pre class="programlisting">
+after(FigureElement fe, int x, int y) returning:
+        call(void FigureElement.setXY(int, int))
+        &amp;&amp; target(fe)
+        &amp;&amp; args(x, y) {
+    System.out.println(fe + " moved to (" + x + ", " + y + ")");
+}
+</pre><p>
+          The pointcut exposes three values from calls to
+          <tt>setXY</tt>: the target
+          <tt>FigureElement</tt> -- which it publishes as
+          <tt>fe</tt>, so it becomes the first argument to the
+          after advice -- and the two int arguments -- which it publishes
+          as <tt>x</tt> and <tt>y</tt>, so they become
+          the second and third argument to the after advice.
+        </p><p>
+          So the advice prints the figure element
+          that was moved and its new <tt>x</tt> and
+          <tt>y</tt> coordinates after each
+          <tt>setXY</tt> method call.
+        </p><p>
+          A named pointcut may have parameters like a piece of advice.
+          When the named pointcut is used (by advice, or in another named
+          pointcut), it publishes its context by name just like the
+          <tt>this</tt>, <tt>target</tt> and
+          <tt>args</tt> pointcut.  So another way to write the
+          above advice is
+        </p><pre class="programlisting">
+pointcut setXY(FigureElement fe, int x, int y):
+    call(void FigureElement.setXY(int, int))
+    &amp;&amp; target(fe)
+    &amp;&amp; args(x, y);
+
+after(FigureElement fe, int x, int y) returning: setXY(fe, x, y) {
+    System.out.println(fe + " moved to (" + x + ", " + y + ").");
+}
+</pre></div></div><div class="sect2"><a name="inter-type-declarations"></a><div class="titlepage"><div><h3 class="title"><a name="inter-type-declarations"></a>Inter-type declarations</h3></div></div><p>
+        Inter-type declarations in AspectJ are declarations that cut across
+        classes and their hierarchies.  They may declare members that cut
+        across multiple classes, or change the inheritance relationship
+        between classes.  Unlike advice, which operates primarily
+        dynamically, introduction operates statically, at compile-time.
+      </p><p>
+        Consider the problem of expressing a capability shared by some
+        existing classes that are already part of a class hierarchy,
+        i.e. they already extend a class.  In Java, one creates an
+        interface that captures this new capability, and then adds to
+        <span class="emphasis"><i>each affected class</i></span> a method that implements
+        this interface.
+      </p><p>
+        AspectJ can express the concern in one place, by using inter-type
+        declarations.  The aspect declares the methods and fields that are
+        necessary to implement the new capability, and associates the
+        methods and fields to the existing classes.
+      </p><p>
+        Suppose we want to have <tt>Screen</tt> objects
+        observe changes to <tt>Point</tt> objects, where
+        <tt>Point</tt> is an existing class. We can implement
+        this by writing an aspect declaring that the class Point
+        <tt>Point</tt> has an instance field,
+        <tt>observers</tt>, that keeps track of the
+        <tt>Screen</tt> objects that are observing
+        <tt>Point</tt>s.
+      </p><pre class="programlisting">
+aspect PointObserving {
+    private Vector Point.observers = new Vector();
+    ...
+}
+</pre><p>
+        The <tt>observers</tt> field is private, so only
+        <tt>PointObserving</tt> can see it.  So observers are
+        added or removed with the static methods
+        <tt>addObserver</tt> and
+        <tt>removeObserver</tt> on the aspect.
+      </p><pre class="programlisting">
+aspect PointObserving {
+    private Vector Point.observers = new Vector();
+
+    public static void addObserver(Point p, Screen s) {
+        p.observers.add(s);
+    }
+    public static void removeObserver(Point p, Screen s) {
+        p.observers.remove(s);
+    }
+    ...
+}
+</pre><p>
+        Along with this, we can define a pointcut
+        <tt>changes</tt> that defines what we want to observe,
+        and the after advice defines what we want to do when we observe a
+        change.
+      </p><pre class="programlisting">
+aspect PointObserving {
+    private Vector Point.observers = new Vector();
+
+    public static void addObserver(Point p, Screen s) {
+        p.observers.add(s);
+    }
+    public static void removeObserver(Point p, Screen s) {
+        p.observers.remove(s);
+    }
+
+    pointcut changes(Point p): target(p) &amp;&amp; call(void Point.set*(int));
+
+    after(Point p): changes(p) {
+        Iterator iter = p.observers.iterator();
+        while ( iter.hasNext() ) {
+            updateObserver(p, (Screen)iter.next());
+        }
+    }
+
+    static void updateObserver(Point p, Screen s) {
+        s.display(p);
+    }
+}
+</pre><p>
+        Note that neither <tt>Screen</tt>'s nor
+        <tt>Point</tt>'s code has to be modified, and that
+        all the changes needed to support this new capability are local to
+        this aspect.
+      </p></div><div class="sect2"><a name="aspects"></a><div class="titlepage"><div><h3 class="title"><a name="aspects"></a>Aspects</h3></div></div><p>
+        Aspects wrap up pointcuts, advice, and inter-type declarations in a
+        a modular unit of crosscutting implementation.  It is defined very
+        much like a class, and can have methods, fields, and initializers
+        in addition to the crosscutting members.  Because only aspects may
+        include these crosscutting members, the declaration of these
+        effects is localized.
+      </p><p>
+        Like classes, aspects may be instantiated, but AspectJ controls how
+        that instantiation happens -- so you can't use Java's
+        <tt>new</tt> form to build new aspect instances.  By
+        default, each aspect is a singleton, so one aspect instance is
+        created.  This means that advice may use non-static fields of the
+        aspect, if it needs to keep state around:
+      </p><pre class="programlisting">
+aspect Logging {
+    OutputStream logStream = System.err;
+
+    before(): move() {
+        logStream.println("about to move");
+    }
+}
+</pre><p>
+        Aspects may also have more complicated rules for instantiation, but
+        these will be described in a later chapter.
+      </p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="starting.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="starting-development.html">Next</a></td></tr><tr><td width="40%" align="left">Chapter 1. Getting Started with AspectJ&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="starting.html">Up</a></td><td width="40%" align="right">&nbsp;Development Aspects</td></tr></table></div></body></html>

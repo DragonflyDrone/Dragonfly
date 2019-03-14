@@ -1,0 +1,119 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Chapter 3. Generics</title><link rel="stylesheet" href="aspectj-docs.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.44"><link rel="home" href="index.html" title="The AspectJTM 5 Development Kit Developer's Notebook"><link rel="up" href="index.html" title="The AspectJTM 5 Development Kit Developer's Notebook"><link rel="previous" href="annotations-itds.html" title="Inter-type Declarations"><link rel="next" href="generics-inAspectJ5.html" title="Generics in AspectJ 5"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Chapter 3. Generics</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="annotations-itds.html">Prev</a>&nbsp;</td><th width="60%" align="center">&nbsp;</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="generics-inAspectJ5.html">Next</a></td></tr></table><hr></div><div class="chapter"><div class="titlepage"><div><h2 class="title"><a name="generics"></a>Chapter 3. Generics</h2></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><a href="generics.html#generics-inJava5">Generics in Java 5</a></dt><dd><dl><dt><a href="generics.html#declaring-generic-types">Declaring Generic Types</a></dt><dt><a href="generics.html#using-generic-and-parameterized-types">Using Generic and Parameterized Types</a></dt><dt><a href="generics.html#subtypes-supertypes-and-assignability">Subtypes, Supertypes, and Assignability</a></dt><dt><a href="generics.html#generic-methods-and-constructors">Generic Methods and Constructors</a></dt><dt><a href="generics.html#erasure">Erasure</a></dt></dl></dd><dt><a href="generics-inAspectJ5.html">Generics in AspectJ 5</a></dt><dd><dl><dt><a href="generics-inAspectJ5.html#matching-generic-and-parameterized-types-in-pointcut-expressions">Matching generic and parameterized types in pointcut expressions</a></dt><dt><a href="generics-inAspectJ5.html#inter-type-declarations">Inter-type Declarations</a></dt><dt><a href="generics-inAspectJ5.html#declare-parents">Declare Parents</a></dt><dt><a href="generics-inAspectJ5.html#declare-soft">Declare Soft</a></dt><dt><a href="generics-inAspectJ5.html#generic-aspects">Generic Aspects</a></dt></dl></dd></dl></div><div class="sect1"><a name="generics-inJava5"></a><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="generics-inJava5"></a>Generics in Java 5</h2></div></div><p>
+		This section provides the essential information about generics in
+		Java 5 needed to understand how generics are treated in AspectJ 5.
+		For a full introduction to generics in Java, please see the
+		documentation for the Java 5 SDK.
+	</p><div class="sect2"><a name="declaring-generic-types"></a><div class="titlepage"><div><h3 class="title"><a name="declaring-generic-types"></a>Declaring Generic Types</h3></div></div><p>
+            A generic type is declared with one or more type parameters following the type name. 
+            By convention formal type parameters are named using a single letter, though this is not required.  
+            A simple generic list type
+            (that can contain elements of any type <tt>E</tt>) could be declared:
+        </p><pre class="programlisting">
+		interface List&lt;E&gt; {
+		   Iterator&lt;E&gt; iterator();
+		   void add(E anItem);
+		   E remove(E anItem);  
+		}
+		</pre><p>
+            It is important to understand that unlike template mechanisms there will only be one type, and one class file, corresponding to 
+            the <tt>List</tt> interface, regardless of how many different instantiations of the <tt>List</tt> interface a program
+            has (each potentially providing a different value for the type parameter <tt>E</tt>). A consequence of this
+            is that you cannot refer to the type parameters of a type declaration in a static method or initializer, or in the declaration or 
+            initializer of a static variable. 
+        </p><p>
+             A <span class="emphasis"><i>parameterized type</i></span> 
+            is an invocation of a generic type with concrete values supplied for
+            all of its type parameters (for example, <tt>List&lt;String&gt;</tt> or <tt>List&lt;Food&gt;</tt>).
+        </p><p>A generic type may be declared with multiple type parameters. In addition to simple type parameter names, type
+        parameter declarations can also constrain the set of types allowed by using the <tt>extends</tt> 
+        keyword. Some examples follow:</p><div class="variablelist"><dl><dt><a name="d0e1722"></a><span class="term">class Foo&lt;T&gt; {...}</span></dt><dd><p><a name="d0e1725"></a>A class <tt>Foo</tt> with one type parameter, <tt>T</tt>.
+            </p></dd><dt><a name="d0e1734"></a><span class="term">class Foo&lt;T,S&gt; {...}</span></dt><dd><p><a name="d0e1737"></a>A class <tt>Foo</tt> with two type parameters, <tt>T</tt> and <tt>S</tt>.
+            </p></dd><dt><a name="d0e1749"></a><span class="term">class Foo&lt;T extends Number&gt; {...}</span></dt><dd><p><a name="d0e1752"></a>A class <tt>Foo</tt> with one type parameter <tt>T</tt>, where <tt>T</tt> must be
+            instantiated as the type <tt>Number</tt> or a subtype of <tt>Number</tt>.
+            </p></dd><dt><a name="d0e1770"></a><span class="term">class Foo&lt;T, S extends T&gt; {...}</span></dt><dd><p><a name="d0e1773"></a>A class <tt>Foo</tt> with two type parameters, <tt>T</tt> and <tt>S</tt>. <tt>Foo</tt>
+            must be instantiated with a type <tt>S</tt> that is a subtype of the type specified for parameter <tt>T</tt>.
+            </p></dd><dt><a name="d0e1794"></a><span class="term">class Foo&lt;T extends Number &amp; Comparable&gt; {...}</span></dt><dd><p><a name="d0e1797"></a>A class <tt>Foo</tt> with one type parameter, <tt>T</tt>. <tt>Foo</tt>
+            must be instantiated with a type that is a subtype of <tt>Number</tt> and that implements <tt>Comparable</tt>.
+            </p></dd></dl></div></div><div class="sect2"><a name="using-generic-and-parameterized-types"></a><div class="titlepage"><div><h3 class="title"><a name="using-generic-and-parameterized-types"></a>Using Generic and Parameterized Types</h3></div></div><p>You declare a variable (or a method/constructor argument) of a parameterized type  by specifying a concrete type specfication for each type parameter in
+	        the generic type. The following example declares a list of strings and a list of numbers:</p><pre class="programlisting">
+        List&lt;String&gt; strings;
+        List&lt;Number&gt; numbers;
+		</pre><p>It is also possible to declare a variable of a generic type without specifying any values for the type
+	        parameters (a <span class="emphasis"><i>raw</i></span> type). For example, <tt>List strings</tt>. 
+	        In this case, unchecked warnings may be issued by the compiler
+	        when the referenced object is passed as a parameter to a method expecting a parameterized type such as a 
+	        <tt>List&lt;String&gt;</tt>. New code written in the Java 5 language would not be expected to use
+	        raw types.</p><p>Parameterized types are instantiated by specifying type parameter values in the constructor call expression as in
+	    the following examples:</p><pre class="programlisting">
+        List&lt;String&gt; strings = new MyListImpl&lt;String&gt;();
+        List&lt;Number&gt; numbers = new MyListImpl&lt;Number&gt;();
+		</pre><p>
+	     When declaring parameterized types, the <tt>?</tt> wildcard may be used, which stands for "some type".
+	     The <tt>extends</tt> and <tt>super</tt> keywords may be used in conjunction with the wildcard
+	     to provide upper and lower bounds on the types that may satisfy the type constraints. For example:
+	    </p><div class="variablelist"><dl><dt><a name="d0e1849"></a><span class="term">List&lt;?&gt;</span></dt><dd><p><a name="d0e1852"></a>A list containing elements of some type, the type of the elements in the list is unknown.
+            </p></dd><dt><a name="d0e1855"></a><span class="term">List&lt;? extends Number&gt;</span></dt><dd><p><a name="d0e1858"></a>A list containing elements of some type that extends Number, the exact type of the elements in the list is unknown.
+            </p></dd><dt><a name="d0e1861"></a><span class="term">List&lt;? super Double&gt;</span></dt><dd><p><a name="d0e1864"></a>A list containing elements of some type that is a super-type of Double, the exact type of the elements in the list is unknown.
+            </p></dd></dl></div><p>
+      	  A generic type may be extended as any other type. Given a generic type <tt>Foo&lt;T&gt;</tt> then
+      	  a subtype <tt>Goo</tt> may be declared in one of the following ways:      	
+      	</p><div class="variablelist"><dl><dt><a name="d0e1876"></a><span class="term">class Goo extends Foo</span></dt><dd><p><a name="d0e1879"></a>Here <tt>Foo</tt> is used as a raw type, and the appropriate warning messages will be
+            issued by the compiler on attempting to invoke methods in <tt>Foo</tt>.
+            </p></dd><dt><a name="d0e1888"></a><span class="term">class Goo&lt;E&gt; extends Foo</span></dt><dd><p><a name="d0e1891"></a><tt>Goo</tt> is a generic type, but the super-type <tt>Foo</tt> is used as a raw
+            type and the appropriate warning messages will be
+            issued by the compiler on attempting to invoke methods defined by <tt>Foo</tt>.            
+            </p></dd><dt><a name="d0e1902"></a><span class="term">class Goo&lt;E&gt; extends Foo&lt;E&gt;</span></dt><dd><p><a name="d0e1905"></a>This is the most usual form. <tt>Goo</tt> is a generic type with one parameter that extends
+            the generic type <tt>Foo</tt> with that same parameter. So <tt>Goo&lt;String&lt;</tt> is 
+            a subclass of <tt>Foo&lt;String&gt;</tt>.
+            </p></dd><dt><a name="d0e1920"></a><span class="term">class Goo&lt;E,F&gt; extends Foo&lt;E&gt;</span></dt><dd><p><a name="d0e1923"></a><tt>Goo</tt> is a generic type with two parameters that extends
+            the generic type <tt>Foo</tt> with the first type parameter of <tt>Goo</tt> being used
+            to parameterize <tt>Foo</tt>. So <tt>Goo&lt;String,Integer&lt;</tt> is 
+            a subclass of <tt>Foo&lt;String&gt;</tt>.
+            </p></dd><dt><a name="d0e1943"></a><span class="term">class Goo extends Foo&lt;String&gt;</span></dt><dd><p><a name="d0e1946"></a><tt>Goo</tt> is a type that extends
+            the parameterized type <tt>Foo&lt;String&gt;</tt>.
+            </p></dd></dl></div><p>A generic type may implement one or more generic interfaces, following the type binding
+	    rules given above. A type may also implement one or more parameterized interfaces (for example,
+	    <tt>class X implements List&lt;String&gt;</tt>, however a type may not at the same time
+	    be a subtype of two interface types which are different parameterizations of the same interface.</p></div><div class="sect2"><a name="subtypes-supertypes-and-assignability"></a><div class="titlepage"><div><h3 class="title"><a name="subtypes-supertypes-and-assignability"></a>Subtypes, Supertypes, and Assignability</h3></div></div><p>
+	      The supertype of a generic type <tt>C</tt> is the type given in the extends clause of
+	      <tt>C</tt>, or <tt>Object</tt> if no extends clause is present. Given the type declaration
+	    </p><pre class="programlisting">
+        public interface List&lt;E&gt; extends Collection&lt;E&gt; {... }
+		</pre><p>
+	      then the supertype of <tt>List&lt;E&gt;</tt> is <tt>Collection&lt;E&gt;</tt>.
+	    </p><p>
+	      The supertype of a parameterized type <tt>P</tt> is the type given in the extends clause of
+	      <tt>P</tt>, or <tt>Object</tt> if no extends clause is present. Any type parameters in
+	      the supertype are substituted in accordance with the parameterization of <tt>P</tt>. An example
+	      will make this much clearer: Given the type <tt>List&lt;Double&gt;</tt> and the definition of
+	      the <tt>List</tt> given above, the direct supertype is
+	      <tt>Collection&lt;Double&gt;</tt>. <tt>List&lt;Double&gt;</tt> is <span class="emphasis"><i>not</i></span>
+	      considered to be a subtype of <tt>List&lt;Number&gt;</tt>.
+	    </p><p>
+	      An instance of a parameterized type <tt>P&lt;T1,T2,...Tn&gt;</tt>may be assigned to a variable of 
+	      the same type or a supertype
+	      without casting. In addition it may be assigned to a variable <tt>R&lt;S1,S2,...Sm&gt;</tt> where
+	      <tt>R</tt> is a supertype of <tt>P</tt> (the supertype relationship is reflexive), 
+	      <tt>m &lt;= n</tt>, and for all type parameters <tt>S1..m</tt>, <tt>Tm</tt> equals
+	      <tt>Sm</tt> <span class="emphasis"><i>or</i></span> <tt>Sm</tt> is a wildcard type specification and 
+	      <tt>Tm</tt> falls within the bounds of the wildcard. For example, <tt>List&lt;String&gt;</tt>
+	      can be assigned to a variable of type <tt>Collection&lt;?&gt;</tt>, and <tt>List&lt;Double&gt;</tt>
+	      can be assigned to a variable of type <tt>List&lt;? extends Number&gt;</tt>. 	      
+	    </p></div><div class="sect2"><a name="generic-methods-and-constructors"></a><div class="titlepage"><div><h3 class="title"><a name="generic-methods-and-constructors"></a>Generic Methods and Constructors</h3></div></div><p>
+	      A static method may be declared with one or more type parameters as in the following declaration:
+	    </p><pre class="programlisting">
+          static &lt;T&gt; T first(List&lt;T&gt; ts) { ... }
+		</pre><p>
+	        Such a definition can appear in any type, the type parameter <tt>T</tt> does not need to
+	        be declared as a type parameter of the enclosing type.
+	    </p><p>
+	      Non-static methods may also be declared with one or more type parameters in a similar fashion:
+	    </p><pre class="programlisting">
+          &lt;T extends Number&gt; T max(T t1, T t2) { ... }
+		</pre><p>The same technique can be used to declare a generic constructor.</p></div><div class="sect2"><a name="erasure"></a><div class="titlepage"><div><h3 class="title"><a name="erasure"></a>Erasure</h3></div></div><p>Generics in Java are implemented using a technique called <span class="emphasis"><i>erasure</i></span>. All
+	  type parameter information is erased from the run-time type system. Asking an object of a parameterized
+	  type for its class will return the class object for the raw type (eg. <tt>List</tt> for an object
+	  declared to be of type <tt>List&lt;String&gt;</tt>. A consequence of this is that you cannot at
+	  runtime ask if an object is an <tt>instanceof</tt> a parameterized type.</p></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="annotations-itds.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="generics-inAspectJ5.html">Next</a></td></tr><tr><td width="40%" align="left">Inter-type Declarations&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="index.html">Up</a></td><td width="40%" align="right">&nbsp;Generics in AspectJ 5</td></tr></table></div></body></html>

@@ -1,0 +1,34 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Chapter 1. Join Point Signatures</title><link rel="stylesheet" href="aspectj-docs.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.44"><link rel="home" href="index.html" title="The AspectJTM 5 Development Kit Developer's Notebook"><link rel="up" href="index.html" title="The AspectJTM 5 Development Kit Developer's Notebook"><link rel="previous" href="index.html" title="The AspectJTM 5 Development Kit Developer's Notebook"><link rel="next" href="join-point-signatures.html" title="Join Point Signatures"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Chapter 1. Join Point Signatures</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="index.html">Prev</a>&nbsp;</td><th width="60%" align="center">&nbsp;</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="join-point-signatures.html">Next</a></td></tr></table><hr></div><div class="chapter"><div class="titlepage"><div><h2 class="title"><a name="jpsigs"></a>Chapter 1. Join Point Signatures</h2></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><a href="jpsigs.html#join-point-matching">Join Point Matching</a></dt><dt><a href="join-point-signatures.html">Join Point Signatures</a></dt><dd><dl><dt><a href="join-point-signatures.html#method-call-join-point-signatures">Method call join point signatures</a></dt><dt><a href="join-point-signatures.html#method-execution-join-point-signatures">Method execution join point signatures</a></dt><dt><a href="join-point-signatures.html#field-get-and-set-join-point-signatures">Field get and set join point signatures</a></dt></dl></dd><dt><a href="join-point-modifiers.html">Join Point Modifiers</a></dt><dt><a href="join-point-matching-summary.html">Summary of Join Point Matching</a></dt></dl></div><p>
+        Many of the extensions to the AspectJ language to address the new features of
+        Java 5 are derived from a simple set of principles for join point
+        matching. In this section, we outline these principles as a foundation
+        for understanding the matching rules in the presence of annotations,
+        generics, covariance, varargs, and autoboxing.
+    </p><div class="sect1"><a name="join-point-matching"></a><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="join-point-matching"></a>Join Point Matching</h2></div></div><p>AspectJ supports 11 different kinds of join points. These are
+        the <tt>method call, method execution, constructor call,
+        constructor execution, field get, field set, pre-initialization,
+        initialization, static initialization, handler,</tt> and
+        <tt>advice execution</tt> join points.</p><p>The <span class="emphasis"><i>kinded</i></span> pointcut designators match
+        based on the kind of a join point. These are the <tt>call,
+        execution, get, set, preinitialization, initialization, 
+        staticinitialization, handler,</tt> and <tt>adviceexecution</tt>
+        designators.</p><p>A kinded pointcut is written using patterns, some of which 
+        match based on <span class="emphasis"><i>signature</i></span>, and some of which
+        match based on <span class="emphasis"><i>modifiers</i></span>. For example, in 
+        the <tt>call</tt> pointcut designator:</p><pre class="programlisting">
+        call(ModifierPattern TypePattern TypePattern.IdPattern(TypePatternList) ThrowsPattern)
+		</pre><p>the modifiers matching patterns are <tt>ModifierPattern</tt>
+		and <tt>ThrowsPattern</tt>, and the signature matching patterns
+		are <tt>TypePattern TypePattern.IdPattern(TypePatternList)</tt>.
+		</p><p>
+		A join point has potentially multiple signatures, but only one set of
+		modifiers. <span class="emphasis"><i>A kinded primitive pointcut matches a particular join point 
+		if and only if</i></span>:
+		</p><div class="orderedlist"><ol type="1"><li><a name="d0e75"></a>They are of the same kind</li><li><a name="d0e77"></a>The signature pattern (exactly) matches at least one 
+		    signature of the join point</li><li><a name="d0e79"></a>The modifiers pattern matches the modifiers of the
+		    subject of the join point</li></ol></div><p>These rules make it very easily to quickly determine whether a 
+        given pointcut matches a given join point. In the next two sections,
+        we describe what the signature(s) of a join point are, and what the
+        subjects of join points are.</p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="index.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="join-point-signatures.html">Next</a></td></tr><tr><td width="40%" align="left">The AspectJ<sup>TM</sup> 5 Development Kit Developer's Notebook&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="index.html">Up</a></td><td width="40%" align="right">&nbsp;Join Point Signatures</td></tr></table></div></body></html>

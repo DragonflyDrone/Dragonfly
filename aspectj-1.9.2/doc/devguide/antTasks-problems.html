@@ -1,0 +1,59 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Isolating problems running the Ant tasks</title><link rel="stylesheet" href="aspectj-docs.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.44"><link rel="home" href="index.html" title="The AspectJtm Development Environment Guide"><link rel="up" href="antTasks.html" title="Chapter 4. AspectJ Ant Tasks"><link rel="previous" href="antTasks-ajc.html" title="Ajc10 (ajc)"><link rel="next" href="ltw.html" title="Chapter 5. Load-Time Weaving"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Isolating problems running the Ant tasks</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="antTasks-ajc.html">Prev</a>&nbsp;</td><th width="60%" align="center">Chapter 4. AspectJ Ant Tasks</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ltw.html">Next</a></td></tr></table><hr></div><div class="sect1"><a name="antTasks-problems"></a><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="antTasks-problems"></a>Isolating problems running the Ant tasks</h2></div></div><p>
+	If you have problems with the tasks not solved by the documentation, 
+	please try to see if you have the same problems when running ajc 
+	directly on the command line.
+	</p><div class="itemizedlist"><ul><li><p><a name="d0e2722"></a>
+		If the problem occurs on the command line also, then the problem 
+		is not in the task. 
+		(It may be in the tools; please send bug reports.)
+		</p></li><li><p><a name="d0e2725"></a>
+		If the problem does not occur on the command line, then it may 
+		lie in the parameters you are supplying in Ant or in the task's 
+		handling of them.
+		</p></li><li><p><a name="d0e2728"></a>
+		If the build script looks correct and the problem only occurs when 
+		building from Ant, then please send a report 
+		(including your build file, if possible).
+		</p></li></ul></div><div class="sect2"><a name="antTasks-knownProblems"></a><div class="titlepage"><div><h3 class="title"><a name="antTasks-knownProblems"></a>Known issues with the Ant tasks</h3></div></div><p>
+		For the most up-to-date information on known problems, 
+		see the 
+		<a href="http://bugs.eclipse.org/bugs" target="_top">bug database</a>
+		for unresolved 
+		<a href="http://bugs.eclipse.org/bugs/buglist.cgi?&amp;product=AspectJ&amp;component=Compiler&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED" target="_top">
+			compiler bugs
+			</a> or 
+		<a href="http://bugs.eclipse.org/bugs/buglist.cgi?&amp;product=AspectJ&amp;component=Ant&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED" target="_top">
+			taskdef bugs
+			</a>.
+		</p><p>
+	    When running Ant build scripts under Eclipse 2.x variants, you will get a 
+	    VerifyError because the Eclipse Ant support fails to isolate the Ant runtime
+	    properly.  To run in this context, set up iajc to fork (and use forkclasspath).
+	    Eclipse 3.0 will fork Ant processes to avoid problems like this.
+		</p><p>
+	    Memory and forking: Users email most often about the ajc task running 
+	    out of memory. 
+	    This is not a problem with the task; some compiles take a lot of 
+	    memory, often more than similar compiles using javac.
+		</p><p>      
+    	Forking is now supported in both the 
+    	<a href="antTasks-adapter.html">Ajc11CompilerAdapter (javac)</a> and 
+    	<a href="antTasks-iajc.html">AjcTask (iajc)</a>, 
+    	and you can set the maximum memory available. 
+    	You can also not fork and increase the memory available to Ant 
+    	(see the Ant documentation, searching for ANT_OPTS, 
+    	the variable they use in their scripts to pass VM options, 
+    	e.g., ANT_OPTS=-Xmx128m).
+		</p></div><div class="sect2"><a name="antTasks-feedback"></a><div class="titlepage"><div><h3 class="title"><a name="antTasks-feedback"></a>Ant task questions and bugs</h3></div></div><p>
+        For questions, you can send email to 
+        <a href="mailto:aspectj-users@dev.eclipse.org" target="_top">
+        aspectj-users@dev.eclipse.org</a>. 
+        (Do join the list to participate!) 
+        We also welcome any bug reports, patches, and features; 
+        you can submit them to the bug database at 
+        <a href="http://bugs.eclipse.org/bugs" target="_top">
+           http://bugs.eclipse.org/bugs</a>
+        using the AspectJ product and Ant component. 
+		</p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="antTasks-ajc.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ltw.html">Next</a></td></tr><tr><td width="40%" align="left">Ajc10 (ajc)&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="antTasks.html">Up</a></td><td width="40%" align="right">&nbsp;Chapter 5. Load-Time Weaving</td></tr></table></div></body></html>

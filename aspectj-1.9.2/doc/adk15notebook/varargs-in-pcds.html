@@ -1,0 +1,78 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Using Variable-length arguments in advice and pointcut expressions</title><link rel="stylesheet" href="aspectj-docs.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.44"><link rel="home" href="index.html" title="The AspectJTM 5 Development Kit Developer's Notebook"><link rel="up" href="varargs.html" title="Chapter 6. Varargs"><link rel="previous" href="varargs.html" title="Chapter 6. Varargs"><link rel="next" href="enumeratedtypes.html" title="Chapter 7. Enumerated Types"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Using Variable-length arguments in advice and pointcut expressions</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="varargs.html">Prev</a>&nbsp;</td><th width="60%" align="center">Chapter 6. Varargs</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="enumeratedtypes.html">Next</a></td></tr></table><hr></div><div class="sect1"><a name="varargs-in-pcds"></a><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="varargs-in-pcds"></a>Using Variable-length arguments in advice and pointcut expressions</h2></div></div><p>AspectJ 5 allows variable-length arguments to be used for methods declared within
+        aspects, and for inter-type declared methods and constructors, in accordance with the rules
+        outlined in the previous section.</p><p>
+        AspectJ 5 also allows variable length arguments to be matched by pointcut expressions and
+        bound as formals in advice.
+        </p><div class="sect2"><a name="matching-signatures-based-on-variable-length-argument-types"></a><div class="titlepage"><div><h3 class="title"><a name="matching-signatures-based-on-variable-length-argument-types"></a>Matching signatures based on variable length argument types</h3></div></div><p>
+            Recall from the definition of signature patterns given in the chapter on
+            annotations (<a href="annotations-pointcuts-and-advice.html#signaturePatterns">Signature Patterns</a>), that <tt>MethodPattern</tt>
+            and <tt>ConstructorPattern</tt> are extended to allow a <tt>varargs</tt>
+            pattern in the last argument position of a method or constructor signature.
+            </p><pre class="programlisting">  	
+ 		FormalsPattern := '..' (',' FormalsPatternAfterDotDot)? |
+		                  OptionalParensTypePattern (',' FormalsPattern)* |
+		                  TypePattern '...'
+		                  
+		FormalsPatternAfterDotDot := 
+		        OptionalParensTypePattern (',' FormalsPatternAfterDotDot)* |
+		        TypePattern '...'
+
+    	</pre><p>
+                Method and constructor patterns are used in the <tt>call</tt>,
+                <tt>execution</tt>, <tt>initialization</tt>,
+                <tt>preinitialization</tt>, and <tt>withincode</tt>
+                pointcut designators. Some examples of usage follow:
+            </p><div class="variablelist"><dl><dt><a name="d0e3369"></a><span class="term">call(* org.xyz.*.*(int, String...))</span></dt><dd><p><a name="d0e3372"></a>
+            	Matches a call join point for a call to a method defined in the
+            	<tt>org.xyz</tt> package, taking an <tt>int</tt>
+            	and a <tt>String vararg</tt>.
+            </p></dd><dt><a name="d0e3384"></a><span class="term">execution(* org.xyz.*.*(Integer...))</span></dt><dd><p><a name="d0e3387"></a>
+            	Matches an execution join point for the execution of a method defined in the
+            	<tt>org.xyz</tt> package, taking an <tt>Integer vararg</tt>.
+            </p></dd><dt><a name="d0e3396"></a><span class="term">initialization(org.xyz.*.new((Foo || Goo)...))</span></dt><dd><p><a name="d0e3399"></a>
+            	Matches the initialization join point for the construction of an
+            	object in the <tt>org.xyz</tt> package via a constructor
+            	taking either a variable number of <tt>Foo</tt> parameters or
+            	a variable number of <tt>Goo</tt> parameters. (This example
+            	illustrating the use of a type pattern with ...).
+            </p></dd></dl></div><p>A variable argument parameter and an array parameter are treated as distinct
+        signature elements, so given the method definitions:
+        </p><pre class="programlisting">
+    	void foo(String...);
+    	void bar(String[]);
+    	</pre><p>
+            The pointcut <tt>execution(* *.*(String...))</tt> matches the execution join point
+            for <tt>foo</tt>, but not <tt>bar</tt>. The pointcut 
+            <tt>execution(* *.*(String[]))</tt> matches the execution join point
+            for <tt>bar</tt> but not <tt>foo</tt>.
+        </p></div><div class="sect2"><a name="exposing-variable-length-arguments-as-context-in-pointcuts-and-advice"></a><div class="titlepage"><div><h3 class="title"><a name="exposing-variable-length-arguments-as-context-in-pointcuts-and-advice"></a>Exposing variable-length arguments as context in pointcuts and advice</h3></div></div><p>
+            When a varargs parameter is used within the body of a method, it has
+            an array type, as discussed in the introduction to this section. We follow the
+            same convention when binding a varargs parameter via the <tt>args</tt>
+            pointcut designator. Given a method
+            </p><pre class="programlisting">
+		public void foo(int i, String... strings) { 
+		}
+		</pre><p>
+            The call or execution join points for <tt>foo</tt> will be matched
+            by the pointcut <tt>args(int,String[])</tt>. It is not permitted
+            to use the varargs syntax within an args pointcut designator - so you
+            <span class="emphasis"><i>cannot</i></span> write <tt>args(int,String...)</tt>.
+            </p><p>
+            Binding of a varargs parameter in an advice statement is straightforward:
+            </p><pre class="programlisting">
+		before(int i, String[] ss) : call(* foo(int,String...)) &amp;&amp; args(i,ss) {
+		  // varargs String... argument is accessible in advice body through ss
+		  // ...
+		}
+		</pre><p>Since you cannot use the varargs syntax in the <tt>args</tt>
+             pointcut designator, you also cannot use the varargs syntax to declare
+             advice parameters.</p><p>Note: the proposal in this section does not allow you to 
+            distinguish between a join point with a signature (int, String...)
+            and a join point with a signature (int, String[]) based 
+            <span class="emphasis"><i>solely</i></span> on the use of the <tt>args</tt>
+            pointcut designator. If this distinction is required, <tt>args</tt>
+            can always be coupled with <tt>call</tt> or 
+            <tt>execution</tt>.</p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="varargs.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="enumeratedtypes.html">Next</a></td></tr><tr><td width="40%" align="left">Chapter 6. Varargs&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="varargs.html">Up</a></td><td width="40%" align="right">&nbsp;Chapter 7. Enumerated Types</td></tr></table></div></body></html>

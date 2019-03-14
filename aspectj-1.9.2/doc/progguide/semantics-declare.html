@@ -1,0 +1,364 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Static crosscutting</title><link rel="stylesheet" href="aspectj-docs.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.44"><link rel="home" href="index.html" title="The AspectJTM Programming Guide"><link rel="up" href="semantics.html" title="Appendix B. Language Semantics"><link rel="previous" href="semantics-advice.html" title="Advice"><link rel="next" href="semantics-aspects.html" title="Aspects"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Static crosscutting</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="semantics-advice.html">Prev</a>&nbsp;</td><th width="60%" align="center">Appendix B. Language Semantics</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="semantics-aspects.html">Next</a></td></tr></table><hr></div><div class="sect1"><a name="semantics-declare"></a><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="semantics-declare"></a>Static crosscutting</h2></div></div><p>
+      Advice declarations change the behavior of classes they crosscut, but do
+      not change their static type structure. For crosscutting concerns that do
+      operate over the static structure of type hierarchies, AspectJ provides
+      inter-type member declarations and other <tt>declare</tt> forms.
+    </p><div class="sect2"><a name="inter-type-member-declarations"></a><div class="titlepage"><div><h3 class="title"><a name="inter-type-member-declarations"></a>Inter-type member declarations</h3></div></div><p>
+          AspectJ allows the declaration of members by aspects that are
+          associated with other types.
+        </p><p>
+        An inter-type method declaration looks like
+      </p><div class="itemizedlist"><ul><li><a name="d0e6487"></a><tt>
+        [ <i><tt>Modifiers</tt></i> ]
+        <i><tt>Type</tt></i> <i><tt>OnType</tt></i>
+        .
+        <i><tt>Id</tt></i>(<i><tt>Formals</tt></i>)
+        [ <i><tt>ThrowsClause</tt></i> ]
+        { <i><tt>Body</tt></i> }</tt></li><li><a name="d0e6511"></a><tt>abstract
+        [ <i><tt>Modifiers</tt></i> ]
+        <i><tt>Type</tt></i> <i><tt>OnType</tt></i>
+        .  <i><tt>Id</tt></i>(<i><tt>Formals</tt></i>)
+        [ <i><tt>ThrowsClause</tt></i> ]
+        ;
+        </tt></li></ul></div><p>
+        The effect of such a declaration is to make <i><tt>OnType</tt></i>
+        support the new method.  Even if <i><tt>OnType</tt></i> is
+        an interface.  Even if the method is neither public nor abstract.  So the
+        following is legal AspectJ code:
+      </p><pre class="programlisting">
+  interface Iface {}
+
+  aspect A {
+      private void Iface.m() {
+	  System.err.println("I'm a private method on an interface");
+      }
+      void worksOnI(Iface iface) {
+	  // calling a private method on an interface
+	  iface.m();
+      }
+  }
+</pre><p>
+        An inter-type constructor declaration looks like
+      </p><div class="itemizedlist"><ul><li><a name="d0e6545"></a><tt>
+        [ <i><tt>Modifiers</tt></i> ]
+        <i><tt>OnType</tt></i> . new (
+        <i><tt>Formals</tt></i> )
+        [ <i><tt>ThrowsClause</tt></i> ]
+        { <i><tt>Body</tt></i> }</tt></li></ul></div><p>
+        The effect of such a declaration is to make
+        <i><tt>OnType</tt></i> support the new constructor.  It is
+        an error for <i><tt>OnType</tt></i> to be an interface.
+      </p><p>
+	    Inter-type declared constructors cannot be used to assign a
+	    value to a final variable declared in <i><tt>OnType</tt></i>.
+	    This limitation significantly increases the ability to both understand
+	    and compile the <i><tt>OnType</tt></i> class and the
+	    declaring aspect separately.
+	  </p><p>
+        Note that in the Java language, classes that define no constructors
+        have an implicit no-argument constructor that just calls
+        <tt>super()</tt>.  This means that attempting to declare
+        a no-argument inter-type constructor on such a class may result in
+        a conflict, even though it <span class="emphasis"><i>looks</i></span> like no
+        constructor is defined.
+      </p><p>
+        An inter-type field declaration looks like one of
+      </p><div class="itemizedlist"><ul><li><a name="d0e6590"></a><tt>
+        [ <i><tt>Modifiers</tt></i> ]
+        <i><tt>Type</tt></i>
+        <i><tt>OnType</tt></i> . <i><tt>Id</tt></i>
+        = <i><tt>Expression</tt></i>;</tt></li><li><a name="d0e6608"></a><tt>
+        [ <i><tt>Modifiers</tt></i> ]
+        <i><tt>Type</tt></i>
+        <i><tt>OnType</tt></i> . <i><tt>Id</tt></i>;</tt></li></ul></div><p>
+        The effect of such a declaration is to make
+        <i><tt>OnType</tt></i> support the new field. Even if
+        <i><tt>OnType</tt></i> is an interface. Even if the field is
+        neither public, nor static, nor final.
+      </p><p>
+        The initializer, if any, of an inter-type field declaration runs
+        before the class-local initializers defined in its target class.
+      </p></div><p>
+        Any occurrence of the uniqueID <tt>this</tt> in the body of
+        an inter-type constructor or method declaration, or in the initializer
+        of an inter-type field declaration, refers to the
+        <i><tt>OnType</tt></i> object rather than to the aspect
+        type; it is an error to access <tt>this</tt> in such a
+        position from a <tt>static</tt> inter-type member
+        declaration.
+      </p><div class="sect2"><a name="access-modifiers"></a><div class="titlepage"><div><h3 class="title"><a name="access-modifiers"></a>Access modifiers</h3></div></div><p>
+        Inter-type member declarations may be public or private, or have
+        default (package-protected) visibility.  AspectJ does not provide
+        protected inter-type members.
+      </p><p>
+        The access modifier applies in relation to the aspect, not in relation
+        to the target type. So a private inter-type member is visible only from
+        code that is defined within the declaring aspect. A default-visibility
+        inter-type member is visible only from code that is defined within the
+        declaring aspect's package.
+      </p><p>
+        Note that a declaring a private inter-type method (which AspectJ
+        supports) is very different from inserting a private method declaration
+        into another class.  The former allows access only from the declaring
+        aspect, while the latter would allow access only from the target type.
+        Java serialization, for example, uses the presense of a private method
+        <tt>void writeObject(ObjectOutputStream)</tt> for the
+        implementation of <tt>java.io.Serializable</tt>.  A private
+        inter-type declaration of that method would not fulfill this
+        requirement, since it would be private to the aspect, not private to
+        the target type.
+      </p><p>
+        The access modifier of abstract inter-type methods has
+        one constraint: It is illegal to declare an abstract
+        non-public inter-type method on a public interface.  This
+        is illegal because it would say that a public interface
+        has a constraint that only non-public implementors must
+        fulfill.  This would not be compatible with Java's type
+        system.  
+      </p></div><div class="sect2"><a name="conflicts"></a><div class="titlepage"><div><h3 class="title"><a name="conflicts"></a>Conflicts</h3></div></div><p>
+        Inter-type declarations raise the possibility of conflicts among
+        locally declared members and inter-type members.  For example, assuming
+        <tt>otherPackage</tt> is not the package containing the
+        aspect <tt>A</tt>, the code
+      </p><pre class="programlisting">
+  aspect A {
+      private Registry otherPackage.onType.r;
+      public void otherPackage.onType.register(Registry r) {
+	    r.register(this);
+	    this.r = r;
+      }
+  }
+</pre><p>
+        declares that <tt>onType</tt> in <tt>otherPackage</tt> has a field
+        <tt>r</tt>.  This field, however, is only accessible from the
+        code inside of aspect <tt>A</tt>.  The aspect also declares
+        that <tt>onType</tt> has a method
+        "<tt>register</tt>", but makes this method accessible from
+        everywhere.
+      </p><p>
+        If <tt>onType</tt> already defines a
+        private or package-protected field "<tt>r</tt>", there is no
+        conflict: The aspect cannot see such a field, and no code in
+        <tt>otherPackage</tt> can see the inter-type
+        "<tt>r</tt>".
+      </p><p>
+        If <tt>onType</tt> defines a public field
+        "<tt>r</tt>", there is a conflict: The expression
+      </p><pre class="programlisting">
+  this.r = r
+</pre><p>
+        is an error, since it is ambiguous whether the private inter-type
+        "<tt>r</tt>" or the public locally-defined
+        "<tt>r</tt>" should be used.
+      </p><p>
+        If <tt>onType</tt> defines a method
+        "<tt>register(Registry)</tt>" there is a conflict, since it
+        would be ambiguous to any code that could see such a defined method
+        which "<tt>register(Registry)</tt>" method was applicable.
+      </p><p>
+        Conflicts are resolved as much as possible as per Java's conflict
+        resolution rules:
+      </p><div class="itemizedlist"><ul><li><a name="d0e6743"></a>A subclass can inherit multiple <span class="emphasis"><i>fields</i></span> from its superclasses,
+        all with the same name and type.  However, it is an error to have an ambiguous
+        <span class="emphasis"><i>reference</i></span> to a field.</li><li><a name="d0e6751"></a>A subclass can only inherit multiple
+        <span class="emphasis"><i>methods</i></span> with the same name and argument types from
+        its superclasses if only zero or one of them is concrete (i.e., all but
+        one is abstract, or all are abstract).
+        </li></ul></div><p>
+        Given a potential conflict between inter-type member declarations in
+        different aspects, if one aspect has precedence over the other its
+        declaration will take effect without any conflict notice from compiler.
+        This is true both when the precedence is declared explicitly with
+        <tt>declare precedence</tt> as well as when when sub-aspects
+        implicitly have precedence over their super-aspect.
+      </p></div><div class="sect2"><a name="extension-and-implementation"></a><div class="titlepage"><div><h3 class="title"><a name="extension-and-implementation"></a>Extension and Implementation</h3></div></div><p>
+        An aspect may change the inheritance hierarchy of a system by changing
+        the superclass of a type or adding a superinterface onto a type, with
+        the <tt>declare parents</tt> form.
+      </p><div class="itemizedlist"><ul><li><a name="d0e6770"></a><tt>declare parents: <i><tt>TypePattern</tt></i> extends <i><tt>Type</tt></i>;</tt></li><li><a name="d0e6779"></a><tt>declare parents: <i><tt>TypePattern</tt></i> implements <i><tt>TypeList</tt></i>;</tt></li></ul></div><p>
+        For example, if an aspect wished to make a particular class runnable,
+        it might define appropriate inter-type <tt>void
+        run()</tt> method, but it should also declare that the class
+        fulfills the <tt>Runnable</tt> interface.  In order to
+        implement the methods in the <tt>Runnable</tt> interface, the
+        inter-type <tt>run()</tt> method must be public:
+      </p><pre class="programlisting">
+  aspect A {
+      declare parents: SomeClass implements Runnable;
+      public void SomeClass.run() { ... }
+  }
+</pre></div><div class="sect2"><a name="interfaces-with-members"></a><div class="titlepage"><div><h3 class="title"><a name="interfaces-with-members"></a>Interfaces with members</h3></div></div><p>
+        Through the use of inter-type members, interfaces may now carry
+        (non-public-static-final) fields and (non-public-abstract) methods that
+        classes can inherit. Conflicts may occur from ambiguously inheriting
+        members from a superclass and multiple superinterfaces.
+      </p><p>
+        Because interfaces may carry non-static initializers, each interface
+        behaves as if it has a zero-argument constructor containing its
+        initializers.  The order of super-interface instantiation is
+        observable. We fix this order with the following properties: A
+        supertype is initialized before a subtype, initialized code runs only
+        once, and the initializers for a type's superclass are run before the
+        initializers for its superinterfaces.  Consider the following hierarchy
+        where {<tt>Object</tt>, <tt>C</tt>,
+        <tt>D</tt>, <tt>E</tt>} are classes,
+        {<tt>M</tt>, <tt>N</tt>, <tt>O</tt>,
+        <tt>P</tt>, <tt>Q</tt>} are interfaces.
+      </p><pre class="programlisting">
+    Object  M   O
+	 \ / \ /
+	  C   N   Q
+	   \ /   /
+	    D   P
+	     \ /
+	      E
+</pre><p>
+        when a new <tt>E</tt> is instantiated, the initializers run in this order:
+      </p><pre class="programlisting">
+    Object M C O N D Q P E
+</pre></div><div class="sect2"><a name="warnings-and-errors"></a><div class="titlepage"><div><h3 class="title"><a name="warnings-and-errors"></a>Warnings and Errors</h3></div></div><p>An aspect may specify that a particular join point should never be
+      reached.  </p><div class="itemizedlist"><ul><li><a name="d0e6854"></a><tt>declare error: <i><tt>Pointcut</tt></i>: <i><tt>String</tt></i>;</tt></li><li><a name="d0e6863"></a><tt>declare warning: <i><tt>Pointcut</tt></i>: <i><tt>String</tt></i>;</tt></li></ul></div><p>If the compiler determines that a join point in
+      <i><tt>Pointcut</tt></i> could possibly be reached, then it
+      will signal either an error or warning, as declared, using the
+      <i><tt>String</tt></i> for its message.   </p></div><div class="sect2"><a name="softened-exceptions"></a><div class="titlepage"><div><h3 class="title"><a name="softened-exceptions"></a>Softened exceptions</h3></div></div><p>An aspect may specify that a particular kind of exception, if
+      thrown at a join point, should bypass Java's usual static exception
+      checking system and instead be thrown as a
+      <tt>org.aspectj.lang.SoftException</tt>, which is subtype of
+      <tt>RuntimeException</tt> and thus does not need to be
+      declared.  </p><div class="itemizedlist"><ul><li><a name="d0e6892"></a><tt>declare soft: <i><tt>Type</tt></i>: <i><tt>Pointcut</tt></i>;</tt></li></ul></div><p>For example, the aspect</p><pre class="programlisting">
+  aspect A {
+      declare soft: Exception: execution(void main(String[] args));
+  }
+</pre><p>Would, at the execution join point, catch any
+      <tt>Exception</tt> and rethrow a
+      <tt>org.aspectj.lang.SoftException</tt> containing
+      original exception. </p><p>This is similar to what the following advice would do</p><pre class="programlisting">
+  aspect A {
+      void around() execution(void main(String[] args)) {
+	  try { proceed(); }
+	  catch (Exception e) {
+	      throw new org.aspectj.lang.SoftException(e);
+	  }
+      }
+  }
+</pre><p>except, in addition to wrapping the exception, it also affects
+      Java's static exception checking mechanism. </p><p> Like advice, the declare soft form has no effect in an
+      abstract aspect that is not extended by a concreate aspect.  So
+      the following code will not compile unless it is compiled with an
+      extending concrete aspect:</p><pre class="programlisting">
+  abstract aspect A {
+    abstract pointcut softeningPC();
+
+    before() : softeningPC() {     
+      Class.forName("FooClass"); // error:  uncaught ClassNotFoundException
+    }    
+                                                      
+    declare soft : ClassNotFoundException : call(* Class.*(..));
+  }
+</pre></div><div class="sect2"><a name="advice-precedence"></a><div class="titlepage"><div><h3 class="title"><a name="advice-precedence"></a>Advice Precedence</h3></div></div><p>
+        An aspect may declare a precedence relationship between concrete
+        aspects with the <tt>declare precedence</tt> form:
+      </p><div class="itemizedlist"><ul><li><a name="d0e6932"></a><tt>declare precedence :
+        <i><tt>TypePatternList</tt></i> ; </tt></li></ul></div><p>This signifies that if any join point has advice from two
+      concrete aspects matched by some pattern in
+      <i><tt>TypePatternList</tt></i>, then the precedence of
+      the advice will be the order of in the list.  </p><p>In <i><tt>TypePatternList</tt></i>, the wildcard "*" can
+      appear at most once, and it means "any type not matched by any other
+      pattern in the list". </p><p>For example, the constraints that (1) aspects that have
+      Security as part of their name should have precedence over all other
+      aspects, and (2) the Logging aspect (and any aspect that extends it)
+      should have precedence over all non-security aspects, can be
+      expressed by:</p><pre class="programlisting">
+  declare precedence: *..*Security*, Logging+, *;
+</pre><p>
+        For another example, the CountEntry aspect might want to count the
+        entry to methods in the current package accepting a Type object as
+        its first argument.  However, it should count all entries, even
+        those that the aspect DisallowNulls causes to throw exceptions.
+        This can be accomplished by stating that CountEntry has precedence
+        over DisallowNulls.  This declaration could be in either aspect, or
+        in another, ordering aspect:
+      </p><pre class="programlisting">
+  aspect Ordering {
+      declare precedence: CountEntry, DisallowNulls;
+  }
+  aspect DisallowNulls {
+      pointcut allTypeMethods(Type obj): call(* *(..)) &amp;&amp; args(obj, ..);
+      before(Type obj):  allTypeMethods(obj) {
+	  if (obj == null) throw new RuntimeException();
+      }
+  }
+  aspect CountEntry {
+      pointcut allTypeMethods(Type obj): call(* *(..)) &amp;&amp; args(obj, ..);
+      static int count = 0;
+      before():  allTypeMethods(Type) {
+	  count++;
+      }
+  }
+</pre><div class="sect3"><a name="d0e6956"></a><div class="titlepage"><div><h4 class="title"><a name="d0e6956"></a>Various cycles</h4></div></div><p>
+          It is an error for any aspect to be matched by more than one
+          TypePattern in a single decare precedence, so:
+        </p><pre class="programlisting">
+  declare precedence:  A, B, A ;  // error
+</pre><p>
+          However, multiple declare precedence forms may legally have this
+          kind of circularity. For example, each of these declare
+          precedence is perfectly legal:
+        </p><pre class="programlisting">
+  declare precedence: B, A;
+  declare precedence: A, B;
+</pre><p>
+          And a system in which both constraints are active may also be
+          legal, so long as advice from A and B don't share a join
+          point. So this is an idiom that can be used to enforce that A and
+          B are strongly independent.
+        </p></div><div class="sect3"><a name="d0e6969"></a><div class="titlepage"><div><h4 class="title"><a name="d0e6969"></a>Applies to concrete aspects</h4></div></div><p>
+          Consider the following library aspects:
+        </p><pre class="programlisting">
+  abstract aspect Logging {
+      abstract pointcut logged();
+
+      before(): logged() {
+          System.err.println("thisJoinPoint: " + thisJoinPoint);
+      }
+  }
+
+  abstract aspect MyProfiling {
+      abstract pointcut profiled();
+
+      Object around(): profiled() {
+          long beforeTime = System.currentTimeMillis();
+          try {
+              return proceed();
+          } finally {
+              long afterTime = System.currentTimeMillis();
+              addToProfile(thisJoinPointStaticPart,
+                           afterTime - beforeTime);
+          }
+      }
+      abstract void addToProfile(
+          org.aspectj.JoinPoint.StaticPart jp,
+          long elapsed);
+  }
+</pre><p>
+          In order to use either aspect, they must be extended with
+          concrete aspects, say, MyLogging and MyProfiling. Because advice
+          only applies from concrete aspects, the declare precedence form
+          only matters when declaring precedence with concrete aspects.  So
+        </p><pre class="programlisting">
+  declare precedence: Logging, Profiling;
+</pre><p>
+          has no effect, but both
+        </p><pre class="programlisting">
+  declare precedence: MyLogging, MyProfiling;
+  declare precedence: Logging+, Profiling+;
+</pre><p>
+          are meaningful.
+        </p></div></div><div class="sect2"><a name="statically-determinable-pointcuts"></a><div class="titlepage"><div><h3 class="title"><a name="statically-determinable-pointcuts"></a>Statically determinable pointcuts</h3></div></div><p>Pointcuts that appear inside of <tt>declare</tt> forms
+      have certain restrictions.  Like other pointcuts, these pick out join
+      points, but they do so in a way that is statically determinable.  </p><p>Consequently, such pointcuts may not include, directly or
+      indirectly (through user-defined pointcut declarations) pointcuts that
+      discriminate based on dynamic (runtime) context.  Therefore, such
+      pointcuts may not be defined in terms of</p><div class="itemizedlist"><ul><li><a name="d0e6997"></a>cflow</li><li><a name="d0e6999"></a>cflowbelow</li><li><a name="d0e7001"></a>this</li><li><a name="d0e7003"></a>target</li><li><a name="d0e7005"></a>args</li><li><a name="d0e7007"></a>if</li></ul></div><p> all of which can discriminate on runtime information. </p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="semantics-advice.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="semantics-aspects.html">Next</a></td></tr><tr><td width="40%" align="left">Advice&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="semantics.html">Up</a></td><td width="40%" align="right">&nbsp;Aspects</td></tr></table></div></body></html>

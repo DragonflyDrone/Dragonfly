@@ -1,0 +1,118 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Appendix C. Implementation Notes</title><link rel="stylesheet" href="aspectj-docs.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.44"><link rel="home" href="index.html" title="The AspectJTM Programming Guide"><link rel="up" href="index.html" title="The AspectJTM Programming Guide"><link rel="previous" href="semantics-aspects.html" title="Aspects"><link rel="next" href="apcs02.html" title="Bytecode Notes"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Appendix C. Implementation Notes</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="semantics-aspects.html">Prev</a>&nbsp;</td><th width="60%" align="center">&nbsp;</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="apcs02.html">Next</a></td></tr></table><hr></div><div class="appendix"><div class="titlepage"><div><h2 class="title"><a name="implementation"></a>Appendix C. Implementation Notes</h2></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><a href="implementation.html#d0e7271">Compiler Notes</a></dt><dt><a href="apcs02.html">Bytecode Notes</a></dt><dd><dl><dt><a href="apcs02.html#the-class-expression-and-string">The .class expression and String +</a></dt><dt><a href="apcs02.html#the-handler-join-point">The Handler join point</a></dt><dt><a href="apcs02.html#initializers-and-inter-type-constructors">Initializers and Inter-type Constructors</a></dt></dl></dd><dt><a href="apcs03.html">Annotation-style Notes</a></dt><dt><a href="apcs04.html">Summary of implementation requirements</a></dt></dl></div><div class="sect1"><a name="d0e7271"></a><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="d0e7271"></a>Compiler Notes</h2></div></div><p> 
+    The initial implementations of AspectJ have all been
+    compiler-based implementations.  Certain elements of AspectJ's
+    semantics are difficult to implement without making modifications
+    to the virtual machine, which a compiler-based implementation
+    cannot do.  One way to deal with this problem would be to specify
+    only the behavior that is easiest to implement.  We have chosen a
+    somewhat different approach, which is to specify an ideal language
+    semantics, as well as a clearly defined way in which
+    implementations are allowed to deviate from that semantics.  This
+    makes it possible to develop conforming AspectJ implementations
+    today, while still making it clear what later, and presumably
+    better, implementations should do tomorrow.
+  </p><p>
+    According to the AspectJ language semantics, the declaration
+  </p><pre class="programlisting">
+  before(): get(int Point.x) { System.out.println("got x"); }
+</pre><p>
+    should advise all accesses of a field of type int and name x from
+    instances of type (or subtype of) Point.  It should do this
+    regardless of whether all the source code performing the access
+    was available at the time the aspect containing this advice was
+    compiled, whether changes were made later, etc.
+  </p><p>   
+    But AspectJ implementations are permitted to deviate from this in
+    a well-defined way -- they are permitted to advise only accesses
+    in <span class="emphasis"><i>code the implementation controls</i></span>.  Each
+    implementation is free within certain bounds to provide its own
+    definition of what it means to control code.
+  </p><p>
+    In the current AspectJ compiler, ajc, control of the code means
+    having bytecode for any aspects and all the code they should
+    affect available during the compile. This means that if some class
+    Client contains code with the expression <tt>new
+    Point().x</tt> (which results in a field get join point at
+    runtime), the current AspectJ compiler will fail to advise that
+    access unless Client.java or Client.class is compiled as well. It
+    also means that join points associated with code in native methods
+    (including their execution join points) cannot be advised.
+  </p><p>
+    Different join points have different requirements.  Method and
+    constructor call join points can be advised only if ajc controls
+    the bytecode for the caller.  Field reference or assignment join
+    points can be advised only if ajc controls the bytecode for the
+    "caller", the code actually making the reference or assignment.
+    Initialization join points can be advised only if ajc controls the
+    bytecode of the type being initialized, and execution join points
+    can be advised only if ajc controls the bytecode for the method or
+    constructor body in question.
+  	The end of an exception handler is underdetermined in bytecode,
+  	so ajc will not implement after or around advice on handler join 
+  	points.
+  	Similarly, ajc cannot implement around advice on initialization 
+  	or preinitialization join points.  
+    In cases where ajc cannot implement advice, it will emit a 
+    compile-time error noting this as a compiler limitation.
+  </p><p>
+    Aspects that are defined <tt>perthis</tt> or
+    <tt>pertarget</tt> also have restrictions based on
+    control of the code.  In particular, at a join point where the
+    bytecode for the currently executing object is not available, an
+    aspect defined <tt>perthis</tt> of that join point will
+    not be associated.  So aspects defined
+    <tt>perthis(Object)</tt> will not create aspect
+    instances for every object unless <tt>Object</tt>is part
+    of the compile.  Similar restrictions apply to
+    <tt>pertarget</tt> aspects.
+  </p><p>
+    Inter-type declarations such as <tt>declare parents</tt>
+    also have restrictions based on control of the code.  If the
+    bytecode for the target of an inter-type declaration is not
+    available, then the inter-type declaration is not made on that
+    target.  So, <tt>declare parents : String implements
+    MyInterface</tt> will not work for
+    <tt>java.lang.String</tt> unless
+    <tt>java.lang.String</tt> is part of the compile.
+  </p><p>
+  	When declaring members on interfaces, the implementation must
+  	control both the interface and the top-level implementors of 
+  	that interface (the classes that implement the interface but
+  	do not have a superclass that implements the interface).
+  	You may weave these separately, but be aware that you will get
+  	runtime exceptions if you run the affected top-level classes
+  	without the interface as produced by the same ajc implementation.  	
+  	Any intertype declaration of an abstract method on an interface 
+  	must be specified as public, you will get a compile time error 
+  	message indicating this is a compiler limitation if you do not 
+  	specify public.  A non-abstract method declared on an interface
+  	can use any access modifier except protected.  Note that this is
+  	different to normal Java rules where all members declared in 
+  	an interface are implicitly public.
+  	Finally, note that one cannot define static fields or methods 
+  	on interfaces.
+  </p><p>
+	When declaring methods on target types, only methods declared 
+	public are recognizable in the bytecode, so methods must be 
+	declared public to be overridden in any subtype or to be called 
+	from code in a later compile using the target type as a library.
+  </p><p>
+    Other AspectJ implementations, indeed, future versions of ajc, may
+    define <span class="emphasis"><i>code the implementation controls</i></span> more
+    liberally or restrictively, so long as they comport with the Java
+	language.  For example, the <tt>call</tt> pointcut does
+	not pick out reflective calls to a method implemented in 
+	<tt>java.lang.reflect.Method.invoke(Object, Object[])</tt>.
+	Some suggest that the call "happens" and the call pointcut should
+	pick it out, but the AspectJ language shouldn't anticipate what happens
+	in code outside the control of the implementation, even when it
+	is a a well-defined API in a Java standard library.
+  </p><p>
+    The important thing to remember is that core concepts of AspectJ,
+    such as the join point, are unchanged, regardless of which
+    implementation is used. During your development, you will have to
+    be aware of the limitations of the ajc compiler you're using, but
+    these limitations should not drive the design of your aspects.
+  </p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="semantics-aspects.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="apcs02.html">Next</a></td></tr><tr><td width="40%" align="left">Aspects&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="index.html">Up</a></td><td width="40%" align="right">&nbsp;Bytecode Notes</td></tr></table></div></body></html>

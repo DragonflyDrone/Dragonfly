@@ -1,0 +1,220 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Ajc10 (ajc)</title><link rel="stylesheet" href="aspectj-docs.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.44"><link rel="home" href="index.html" title="The AspectJtm Development Environment Guide"><link rel="up" href="antTasks.html" title="Chapter 4. AspectJ Ant Tasks"><link rel="previous" href="antTasks-adapter.html" title="Ajc11CompilerAdapter (javac)"><link rel="next" href="antTasks-problems.html" title="Isolating problems running the Ant tasks"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Ajc10 (ajc)</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="antTasks-adapter.html">Prev</a>&nbsp;</td><th width="60%" align="center">Chapter 4. AspectJ Ant Tasks</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="antTasks-problems.html">Next</a></td></tr></table><hr></div><div class="sect1"><a name="antTasks-ajc"></a><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="antTasks-ajc"></a>Ajc10 (ajc)</h2></div></div><p>
+	This task handles the same arguments as those used by the AspectJ 1.0 task.
+	This should permit those with existing build scripts using the Ajc Ant 
+	task to continue using the same scripts when compiling with 1.1.
+	This will list any use of options no longer supported in 1.1 
+	(e.g., <tt>lenient, strict, workingdir, preprocess, usejavac</tt>,...), 
+	and does not provide access to the new features of AspectJ 1.1. 
+	(Developers using AspectJ 1.1 only should upgrade their scripts 
+	to use AjcTask instead.  This will not work for AspectJ 1.2 or later.)
+	</p><div class="sect2"><a name="antTasks-ajc-options"></a><div class="titlepage"><div><h3 class="title"><a name="antTasks-ajc-options"></a>Ajc10 (ajc) Options</h3></div></div><p>
+	    </p><p>
+		Most attributes and nested elements are optional.	
+		The compiler requires that the same version of 
+		<tt>aspectjrt.jar</tt>
+		be specified on the classpath, and that some sources be
+		be specified
+	    (using one or more of 
+	    <tt>argfiles</tt> and 
+	    <tt>srcdir</tt> (with patterns)).
+	    </p><p>Boolean parameters default to <tt>false</tt>
+	    unless otherwise stated.
+	    </p><div class="table"><p><a name="d0e2368"></a><b>Table 4.1. AjcTask (ajc) options for specifying sources</b></p><table summary="AjcTask (ajc) options for specifying sources" border="1"><colgroup><col><col></colgroup><thead><tr><th>Attribute</th><th>Description</th></tr></thead><tbody><tr><td><p>srcdir
+				</p></td><td><p>
+				The base directory of the java files.
+				See 
+				</p></td></tr><tr><td><p>destdir
+				</p></td><td><p>
+				The target directory for the output .class files
+				</p></td></tr><tr><td><p>includes
+				</p></td><td><p>
+				Comma-separated list of patterns of files that must be included.
+				No files are included when omitted.
+				</p></td></tr><tr><td><p>includesfile
+				</p></td><td><p>
+				The path to a file containing include patterns.
+				</p></td></tr><tr><td><p>excludes
+				</p></td><td><p>
+				Comma-separated list of patterns of files that must be excluded.
+				No files (except default excludes) are excluded when omitted.
+				</p></td></tr><tr><td><p>excludesfile
+				</p></td><td><p>
+				The path to a file containing exclude patterns.
+				</p></td></tr><tr><td><p>defaultexcludes
+				</p></td><td><p>
+				If true, then default excludes are used.
+				Default excludes are used when omitted
+				(i.e., defaults to <tt>true</tt>).
+				</p></td></tr><tr><td><p>classpath, classpathref
+				</p></td><td><p>
+				The classpath to use, 
+				optionally given as a reference to a classpath Path
+				element defined elsewhere. 
+				</p></td></tr><tr><td><p>bootclasspath, bootclasspathref
+				</p></td><td><p>
+				The bootclasspath to use, 
+				optionally given as a reference to a bootclasspath Path
+				element defined elsewhere. 
+				</p></td></tr><tr><td><p>extdirs
+				</p></td><td><p>
+				Paths to directories containting installed extensions.
+				</p></td></tr><tr><td><p>debug
+				</p></td><td><p>
+				If true, emit debug info in the .class files.
+				</p></td></tr><tr><td><p>deprecation
+				</p></td><td><p>
+				If true, emit messages about use of deprecated API.
+				</p></td></tr><tr><td><p>verbose
+				</p></td><td><p>
+				Emit compiler status messages during the compile.
+				</p></td></tr><tr><td><p>version
+				</p></td><td><p>
+				Emit version information and quit.
+				</p></td></tr><tr><td><p>failonerror
+				</p></td><td><p>
+				If true, throw BuildException to halt build if there
+				are any compiler errors.
+				If false, continue notwithstanding compile errors.
+				Defaults to <tt>true</tt>.
+				</p></td></tr><tr><td><p>source
+				</p></td><td><p>
+				Value of -source option - ignored unless <tt>1.4</tt>.
+				</p></td></tr></tbody></table></div><div class="table"><p><a name="d0e2500"></a><b>Table 4.2. Parameters ignored by the old ajc taskdef, 
+				but now supported or buggy</b></p><table summary="Parameters ignored by the old ajc taskdef, &#xA;				but now supported or buggy" border="1"><colgroup><col><col><col></colgroup><thead><tr><th>Attribute</th><th>Description</th><th>Supported?</th></tr></thead><tbody><tr><td><p>encoding
+				</p></td><td><p>Default encoding of source files.
+				</p></td><td><p>yes
+				</p></td></tr><tr><td><p>optimize
+				</p></td><td><p>
+					Whether source should be compiled with optimization.
+				</p></td><td><p>yes?
+				</p></td></tr><tr><td><p>target
+				</p></td><td><p>
+				Generate class files for specific VM version, one of
+				[<tt>1.1 1.2</tt>].
+				</p></td><td><p>yes
+				</p></td></tr><tr><td><p>depend
+				</p></td><td><p>
+				Enables dependency-tracking.
+				</p></td><td><p>no
+				</p></td></tr><tr><td><p>includeAntRuntime
+				</p></td><td><p>
+				Whether to include the Ant run-time libraries.
+				</p></td><td><p>no
+				</p></td></tr><tr><td><p>includeJavaRuntime
+				</p></td><td><p>
+				Whether to include the run-time libraries from the executing VM.
+				</p></td><td><p>no
+				</p></td></tr><tr><td><p>threads
+				</p></td><td><p>Multi-threaded compilation
+				</p></td><td><p>no
+				</p></td></tr></tbody></table></div><p>
+		The following table shows that many of the unique parameters in 
+		AspectJ 1.0 are no longer supported.
+		</p><div class="table"><p><a name="d0e2588"></a><b>Table 4.3. Parameters unique to ajc</b></p><table summary="Parameters unique to ajc" border="1"><colgroup><col><col><col></colgroup><thead><tr><th>Attribute</th><th>Description</th></tr></thead><tbody><tr><td><p>X
+				</p></td><td><p>
+				 	deprecated X options include
+					reweavable (on by default)
+					reweavable:compress (compressed by default)
+				</p></td></tr><tr><td><p>emacssym
+				</p></td><td><p>
+				Generate symbols for Emacs IDE support.
+				</p></td></tr><tr><td><p>argfiles
+				</p></td><td><p>
+				A comma-delimited list of argfiles that contain a line-delimited 
+				list of source file paths (absolute or relative to the argfile).
+				</p></td></tr></tbody></table></div><div class="sect3"><a name="d0e2620"></a><div class="titlepage"><div><h4 class="title"><a name="d0e2620"></a>argfiles - argument list files</h4></div></div><p>
+		An argument file is a file (usually <tt>{file}.lst</tt>) 
+		containing a list of source file paths 
+		(absolute or relative to the argfile). 
+		You can use it to specify all source files to be compiled, 
+		which ajc requires to avoid searching every possible source file 
+		in the source path when building aspects. 
+		If you specify an argfile to the ajc task, it will not include all 
+		files in any specified source directory (which is the default 
+		behavior for the Javac task when no includes are specified). 
+		Conversely, if you specify excludes, they will be removed from 
+		the list of files compiled even if they were specified 
+		in an argument file. 
+		</p><p>
+		The compiler also accepts arguments that are not source files,
+		but the IDE support for such files varies, and Javac does not
+		support them.  Be sure to include exactly one argument on each line.
+		</p></div></div><div class="sect2"><a name="antTasks-ajc-nested"></a><div class="titlepage"><div><h3 class="title"><a name="antTasks-ajc-nested"></a>Ajc10 parameters specified as nested elements</h3></div></div><p>
+		This task forms an implicit FileSet and supports all attributes of 
+		<tt>&lt;fileset&gt;</tt> (dir becomes srcdir) as well as 
+		the nested 
+		<tt>&lt;include&gt;</tt>, 
+		<tt>&lt;exclude&gt;</tt>, and 
+		<tt>&lt;patternset&gt;</tt> elements. 
+		These can be used to specify source files. 
+	    </p><p>
+		<tt>ajc</tt>'s
+		<tt>srcdir</tt>, 
+		<tt>classpath</tt>, 
+		<tt>bootclasspath</tt>, 
+		<tt>extdirs</tt>, and 
+		<tt>jvmarg</tt>
+		attributes are path-like structures and can also be set via nested 
+		<tt>&lt;src&gt;</tt>, 
+		<tt>&lt;classpath&gt;</tt>, 
+		<tt>&lt;bootclasspath&gt;</tt>, 
+		<tt>&lt;extdirs&gt;</tt>, and 
+		<tt>&lt;jvmargs&gt;</tt> elements, respectively.
+		</p></div><div class="sect2"><a name="antTasks-ajc-sample"></a><div class="titlepage"><div><h3 class="title"><a name="antTasks-ajc-sample"></a>Sample of ajc task</h3></div></div><p>
+		Following is a declaration for the ajc task and a sample invocation 
+		that uses the ajc compiler to compile the files listed in 
+		<tt>default.lst</tt> into the dest dir:
+		</p><pre class="programlisting">
+		
+&lt;project name="example" default="compile" &gt;
+  &lt;taskdef name="ajc"
+    classname="org.aspectj.tools.ant.taskdefs.Ajc10" &gt;
+    &lt;!-- declare classes needed to run the tasks and tools --&gt;
+    &lt;classpath&gt;
+      &lt;pathelement location="${home.dir}/tools/aspectj/lib/aspectjtools.jar"/&gt;
+    &lt;/classpath&gt;
+  &lt;/taskdef&gt;
+
+  &lt;target name="compile" &gt;
+    &lt;mkdir dir="dest" /&gt;
+    &lt;ajc destdir="dest" argfiles="default.lst" &gt;
+      &lt;!-- declare classes needed to compile the target files --&gt;
+      &lt;classpath&gt;
+        &lt;pathelement location="${home.dir}/tools/aspectj/lib/aspectjrt.jar"/&gt;
+      &lt;/classpath&gt;
+    &lt;/ajc&gt;
+  &lt;/target&gt;
+&lt;/project&gt;
+
+		</pre><p>
+		This build script snippet
+		</p><pre class="programlisting">
+				
+		  &lt;ajc srcdir="${src}"
+		       destdir="${build}"
+		       argfiles="demo.lst"
+		  /&gt;
+
+		</pre><p>		
+		compiles all .java files specified in the demo.lst and stores the .class files in the ${build} directory.  Unlike the Javac task, the includes attribute is empty by default, so only those files specified in demo.lst are included.
+		</p><p>				
+		This next example
+		</p><pre class="programlisting">
+				
+		  &lt;ajc srcdir="${src}"
+		       destdir="${build}"
+		       includes="spacewar/*,coordination/*"
+		       excludes="spacewar/Debug.java"
+		  /&gt;
+
+		</pre><p>		
+		compiles .java files under the <tt>${src}</tt> directory in the 
+		spacewar and coordination packages, and stores the .class files in the 
+		<tt>${build}</tt> directory.  
+		All source files under spacewar/ and coordination/ are used, except Debug.java.		
+		</p><p>
+		See <a href="../examples/build.xml" target="_top">../examples/build.xml</a>
+		for an example build script.
+		</p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="antTasks-adapter.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="antTasks-problems.html">Next</a></td></tr><tr><td width="40%" align="left">Ajc11CompilerAdapter (javac)&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="antTasks.html">Up</a></td><td width="40%" align="right">&nbsp;Isolating problems running the Ant tasks</td></tr></table></div></body></html>

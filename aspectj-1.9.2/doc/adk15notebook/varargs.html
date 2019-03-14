@@ -1,0 +1,32 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Chapter 6. Varargs</title><link rel="stylesheet" href="aspectj-docs.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.44"><link rel="home" href="index.html" title="The AspectJTM 5 Development Kit Developer's Notebook"><link rel="up" href="index.html" title="The AspectJTM 5 Development Kit Developer's Notebook"><link rel="previous" href="covariance-and-join-point-matching.html" title="Covariant methods and Join Point matching"><link rel="next" href="varargs-in-pcds.html" title="Using Variable-length arguments in advice and pointcut expressions"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Chapter 6. Varargs</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="covariance-and-join-point-matching.html">Prev</a>&nbsp;</td><th width="60%" align="center">&nbsp;</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="varargs-in-pcds.html">Next</a></td></tr></table><hr></div><div class="chapter"><div class="titlepage"><div><h2 class="title"><a name="varargs"></a>Chapter 6. Varargs</h2></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><a href="varargs.html#varargs-inJava5">Variable-length Argument Lists in Java 5</a></dt><dd><dl><dt><a href="varargs.html#calling-methods-and-constructors-with-variable-length-arguments">Calling Methods and Constructors with variable-length arguments</a></dt></dl></dd><dt><a href="varargs-in-pcds.html">Using Variable-length arguments in advice and pointcut expressions</a></dt><dd><dl><dt><a href="varargs-in-pcds.html#matching-signatures-based-on-variable-length-argument-types">Matching signatures based on variable length argument types</a></dt><dt><a href="varargs-in-pcds.html#exposing-variable-length-arguments-as-context-in-pointcuts-and-advice">Exposing variable-length arguments as context in pointcuts and advice</a></dt></dl></dd></dl></div><div class="sect1"><a name="varargs-inJava5"></a><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="varargs-inJava5"></a>Variable-length Argument Lists in Java 5</h2></div></div><p>
+          Java 5 (and hence AspectJ 5) allows you to specify methods that take a 
+          variable number of arguments of a specified type. This is achieved using
+          an ellipsis (...) in the method signature as shown:    
+        </p><pre class="programlisting">
+		public void foo(int i, String... strings) { 
+		}
+		</pre><p>
+            A method or constructor may take at most one variable length argument, and
+            this must always be the last declared argument in the signature.
+        </p><div class="sect2"><a name="calling-methods-and-constructors-with-variable-length-arguments"></a><div class="titlepage"><div><h3 class="title"><a name="calling-methods-and-constructors-with-variable-length-arguments"></a>Calling Methods and Constructors with variable-length arguments</h3></div></div><p>
+             A <span class="emphasis"><i>varargs</i></span> method may be called with zero or more arguments
+             in the variable argument position. For example, given the definition of 
+             <tt>foo</tt> above, the following calls are all legal:
+            </p><pre class="programlisting">
+    	foo(5);
+    	foo(5,"One String");
+    	foo(7,"One String","Two Strings");
+    	foo(3,"One String","Two Strings","Three Strings");	
+    	</pre><p>A <span class="emphasis"><i>varargs</i></span> parameter is treated as an array within the 
+            defining member. So in the body of <tt>foo</tt> we could write for example:
+            </p><pre class="programlisting">
+    	public void foo(int i, String... strings) {
+    	  String[] someStrings = strings;
+    	  // rest of method body
+    	}
+    	</pre><p>One consequence of this treatment of a varargs parameter as an array
+            is that you can also call a varargs method with an array:</p><pre class="programlisting">
+    	foo(7,new String[] {"One String","Two Strings"});
+    	</pre></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="covariance-and-join-point-matching.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="varargs-in-pcds.html">Next</a></td></tr><tr><td width="40%" align="left">Covariant methods and Join Point matching&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="index.html">Up</a></td><td width="40%" align="right">&nbsp;Using Variable-length arguments in advice and pointcut expressions</td></tr></table></div></body></html>

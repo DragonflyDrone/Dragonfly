@@ -1,0 +1,27 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Obtaining, Compiling and Running the Examples</title><link rel="stylesheet" href="aspectj-docs.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.44"><link rel="home" href="index.html" title="The AspectJTM Programming Guide"><link rel="up" href="examples.html" title="Chapter 3. Examples"><link rel="previous" href="examples.html" title="Chapter 3. Examples"><link rel="next" href="examples-basic.html" title="Basic Techniques"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Obtaining, Compiling and Running the Examples</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="examples.html">Prev</a>&nbsp;</td><th width="60%" align="center">Chapter 3. Examples</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="examples-basic.html">Next</a></td></tr></table><hr></div><div class="sect1"><a name="examples-howto"></a><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="examples-howto"></a>Obtaining, Compiling and Running the Examples</h2></div></div><p>
+      The examples source code is part of the AspectJ distribution which may be
+      downloaded from the AspectJ project page ( <a href="http://eclipse.org/aspectj" target="_top">http://eclipse.org/aspectj</a> ).
+    </p><p>
+      Compiling most examples is straightforward. Go the
+      <tt><i><tt>InstallDir</tt></i>/examples</tt>
+      directory, and look for a <tt>.lst</tt> file in one of
+      the example subdirectories. Use the <tt>-arglist</tt>
+      option to <tt>ajc</tt> to compile the example. For
+      instance, to compile the telecom example with billing, type
+    </p><pre class="programlisting">
+ajc -argfile telecom/billing.lst
+</pre><p>
+      To run the examples, your classpath must include the AspectJ run-time
+      Java archive (<tt>aspectjrt.jar</tt>). You may either set the
+      <tt>CLASSPATH</tt> environment variable or use the
+      <tt>-classpath</tt> command line option to the Java
+      interpreter:
+    </p><pre class="programlisting">
+(In Unix use a : in the CLASSPATH)
+java -classpath ".:<i><tt>InstallDir</tt></i>/lib/aspectjrt.jar" telecom.billingSimulation
+</pre><pre class="programlisting">
+(In Windows use a ; in the CLASSPATH)
+java -classpath ".;<i><tt>InstallDir</tt></i>/lib/aspectjrt.jar" telecom.billingSimulation
+</pre></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="examples.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="examples-basic.html">Next</a></td></tr><tr><td width="40%" align="left">Chapter 3. Examples&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="examples.html">Up</a></td><td width="40%" align="right">&nbsp;Basic Techniques</td></tr></table></div></body></html>

@@ -1,0 +1,21 @@
+1 - Install Docker CE For Ubuntu
+
+1.1 - You can follow the official site's step-by-step (https://docs.docker.com/install/linux/docker-ce/ubuntu/);
+
+
+
+2 - Open DockerImage folder in Terminal (.../Drone-Route-Simulator/ExecuteApplication/Ubuntu/Docker/DockerImage/);
+
+
+
+3 - Execute this command in Terminal "sudo docker build --network=host -t drone-route-simulator-ubuntu ." for create Docker image from DockerFile;
+
+
+
+4 - Execute this command in Terminal "xhost +" for enables docker to access the operating system GUI;
+
+
+
+5 - Execute this command "sudo docker run --net host -it -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY drone-route-simulator-ubuntu" for run drone-route-simulator application;
+
+

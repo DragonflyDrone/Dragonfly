@@ -1,0 +1,14 @@
+1 - Download JDK-8 from "https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html", according to your system (x86 or x64);
+
+1.1 - If necessary, configure JAVA_HOME following this site: "https://www.youtube.com/watch?v=74pE3kLerAU&vl=pt"
+
+
+2 - Open .../Drone-Route-Simulator/ExecuteApplication/Windows/Normal/ folder in your gui;
+
+
+3 - Double click in Drone-Route-Simulator.jar for run drone-route-simulator application;
+
+
+
+
+

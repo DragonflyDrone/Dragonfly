@@ -1,0 +1,43 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Building Programs</title><link rel="stylesheet" href="aspectj-docs.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.44"><link rel="home" href="index.html" title="The AspectJtm Development Environment Guide"><link rel="up" href="ajbrowser.html" title="Chapter 3. AspectJ Browser"><link rel="previous" href="ajbrowser.html" title="Chapter 3. AspectJ Browser"><link rel="next" href="ajbrowser-navigating.html" title="Navigating Program Structure"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Building Programs</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ajbrowser.html">Prev</a>&nbsp;</td><th width="60%" align="center">Chapter 3. AspectJ Browser</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ajbrowser-navigating.html">Next</a></td></tr></table><hr></div><div class="sect1"><a name="ajbrowser-building"></a><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="ajbrowser-building"></a>Building Programs</h2></div></div><div class="sect2"><a name="build-configurations"></a><div class="titlepage"><div><h3 class="title"><a name="build-configurations"></a>Build Configurations</h3></div></div><p>A build configuration is a set of files to compile for a
+        program (and optionally some additional compile arguments).
+        Because <tt>ajc</tt> requires all sources to be specified
+        (at least using the <tt>-sourceroots</tt> option),
+        most users create <tt>.lst</tt> files that list
+        the files to compile (one argument per line, globbing 
+        permitted - for more details, see <a href="ajc-ref.html">The ajc Command-line Reference</a>).
+        </p><p>
+        	To work with a particular program, select the 
+        	corresponding ".lst" build configuration file
+            from the GUI using the File menu, "open" item, 
+            or by using the 
+            "Open Build Configuration" button
+	        (<span class="inlinemediaobject"><img src="openConfig.gif"></span>).
+            
+            You can populate the build list from the command line
+            by passing any number of ".lst" paths. 
+            (However, if you pass in any non-".lst" arguments, 
+            it will run the command-line compiler directly.)
+        </p><p>
+            To switch between build configurations,
+            select, add, or remove them
+            using the corresponding toolbar buttons.  
+        </p><p>Global build options are stored in an 
+        <tt>.ajbrowser</tt> file in your HOME directory.
+        Edit these from the GUI by clicking the "Options" button 
+        or selecting the Tools menu item "Options...".  
+        This is how to set classpath, aspectpath, etc.
+        </p><p>The following sections walk through a build.
+        </p></div><div class="sect2"><a name="compiling-a-program-build-configuration"></a><div class="titlepage"><div><h3 class="title"><a name="compiling-a-program-build-configuration"></a>Compiling a Program Build Configuration</h3></div></div><p>
+        To compile click the "Build" button
+        (<span class="inlinemediaobject"><img src="build.gif"></span>), or 
+		or use the tools menu. 
+	</p><p>
+        You may select
+        from different build configurations in the GUI
+        (see label 1 in the graphic below).
+        (If you get classpath or other errors, set up the
+        global build options as described above.)
+		<span class="inlinemediaobject"><img src="ajbrowser-building.gif"></span>
+    </p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ajbrowser.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ajbrowser-navigating.html">Next</a></td></tr><tr><td width="40%" align="left">Chapter 3. AspectJ Browser&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ajbrowser.html">Up</a></td><td width="40%" align="right">&nbsp;Navigating Program Structure</td></tr></table></div></body></html>

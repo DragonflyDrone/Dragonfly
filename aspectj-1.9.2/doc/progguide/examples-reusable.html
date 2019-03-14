@@ -1,0 +1,211 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Reusable Aspects</title><link rel="stylesheet" href="aspectj-docs.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.44"><link rel="home" href="index.html" title="The AspectJTM Programming Guide"><link rel="up" href="examples.html" title="Chapter 3. Examples"><link rel="previous" href="examples-production.html" title="Production Aspects"><link rel="next" href="idioms.html" title="Chapter 4. Idioms"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Reusable Aspects</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="examples-production.html">Prev</a>&nbsp;</td><th width="60%" align="center">Chapter 3. Examples</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="idioms.html">Next</a></td></tr></table><hr></div><div class="sect1"><a name="examples-reusable"></a><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="examples-reusable"></a>Reusable Aspects</h2></div></div><div class="sect2"><a name="tracing-using-aspects-revisited"></a><div class="titlepage"><div><h3 class="title"><a name="tracing-using-aspects-revisited"></a>Tracing using Aspects, Revisited</h3></div></div><p>
+        (The code for this example is in
+        <tt><i><tt>InstallDir</tt></i>/examples/tracing</tt>.)
+      </p><div class="sect3"><a name="d0e3391"></a><div class="titlepage"><div><h4 class="title"><a name="d0e3391"></a>Tracing&#8212;Version 3</h4></div></div><p>
+          One advantage of not exposing the methods traceEntry and
+          traceExit as public operations is that we can easily change their
+          interface without any dramatic consequences in the rest of the
+          code.
+        </p><p>
+	  Consider, again, the program without AspectJ. Suppose, for
+	  example, that at some point later the requirements for tracing
+	  change, stating that the trace messages should always include the
+	  string representation of the object whose methods are being
+	  traced. This can be achieved in at least two ways. One way is
+	  keep the interface of the methods <tt>traceEntry</tt>
+	  and <tt>traceExit</tt> as it was before,
+	</p><pre class="programlisting">
+  public static void traceEntry(String str);
+  public static void traceExit(String str);
+</pre><p>
+	  In this case, the caller is responsible for ensuring that the
+	  string representation of the object is part of the string given
+	  as argument.  So, calls must look like:
+	</p><pre class="programlisting">
+  Trace.traceEntry("Square.distance in " + toString());
+</pre><p>
+	  Another way is to enforce the requirement with a second argument
+	  in the trace operations, e.g.
+	</p><pre class="programlisting">
+  public static void traceEntry(String str, Object obj);
+  public static void traceExit(String str, Object obj);
+</pre><p>
+	  In this case, the caller is still responsible for sending the
+	  right object, but at least there is some guarantees that some
+	  object will be passed. The calls will look like:
+	</p><pre class="programlisting">
+  Trace.traceEntry("Square.distance", this);
+</pre><p>
+	  In either case, this change to the requirements of tracing will
+	  have dramatic consequences in the rest of the code -- every call
+	  to the trace operations traceEntry and traceExit must be changed!
+	</p><p>
+	  Here's another advantage of doing tracing with an aspect. We've
+	  already seen that in version 2 <tt>traceEntry</tt> and
+	  <tt>traceExit</tt> are not publicly exposed. So
+	  changing their interfaces, or the way they are used, has only a
+	  small effect inside the <tt>Trace</tt>
+	  class. Here's a partial view at the implementation of
+	  <tt>Trace</tt>, version 3. The differences with
+	  respect to version 2 are stressed in the comments:
+	</p><pre class="programlisting">
+abstract aspect Trace {
+
+    public static int TRACELEVEL = 0;
+    protected static PrintStream stream = null;
+    protected static int callDepth = 0;
+
+    public static void initStream(PrintStream s) {
+        stream = s;
+    }
+
+    protected static void traceEntry(String str, Object o) {
+        if (TRACELEVEL == 0) return;
+        if (TRACELEVEL == 2) callDepth++;
+        printEntering(str + ": " + o.toString());
+    }
+
+    protected static void traceExit(String str, Object o) {
+        if (TRACELEVEL == 0) return;
+        printExiting(str + ": " + o.toString());
+        if (TRACELEVEL == 2) callDepth--;
+    }
+
+    private static void printEntering(String str) {
+        printIndent();
+        stream.println("Entering " + str);
+    }
+
+    private static void printExiting(String str) {
+        printIndent();
+        stream.println("Exiting " + str);
+    }
+
+    private static void printIndent() {
+        for (int i = 0; i &lt; callDepth; i++)
+            stream.print("  ");
+    }
+
+    abstract pointcut myClass(Object obj);
+
+    pointcut myConstructor(Object obj): myClass(obj) &amp;&amp; execution(new(..));
+    pointcut myMethod(Object obj): myClass(obj) &amp;&amp;
+        execution(* *(..)) &amp;&amp; !execution(String toString());
+
+    before(Object obj): myConstructor(obj) {
+        traceEntry("" + thisJoinPointStaticPart.getSignature(), obj);
+    }
+    after(Object obj): myConstructor(obj) {
+        traceExit("" + thisJoinPointStaticPart.getSignature(), obj);
+    }
+
+    before(Object obj): myMethod(obj) {
+        traceEntry("" + thisJoinPointStaticPart.getSignature(), obj);
+    }
+    after(Object obj): myMethod(obj) {
+        traceExit("" + thisJoinPointStaticPart.getSignature(), obj);
+    }
+}
+</pre><p>
+        As you can see, we decided to apply the first design by preserving
+        the interface of the methods <tt>traceEntry</tt> and
+        <tt>traceExit</tt>. But it doesn't matter&#8212;we could
+        as easily have applied the second design (the code in the directory
+        <tt>examples/tracing/version3</tt> has the second
+        design).  The point is that the effects of this change in the
+        tracing requirements are limited to the
+        <tt>Trace</tt> aspect class.
+      </p><p>
+        One implementation change worth noticing is the specification of
+        the pointcuts. They now expose the object. To maintain full
+        consistency with the behavior of version 2, we should have included
+        tracing for static methods, by defining another pointcut for static
+        methods and advising it. We leave that as an exercise.
+      </p><p>
+        Moreover, we had to exclude the execution join point of the method
+        <tt>toString</tt> from the <tt>methods</tt>
+        pointcut. The problem here is that <tt>toString</tt> is
+        being called from inside the advice.  Therefore if we trace it, we
+        will end up in an infinite recursion of calls. This is a subtle
+        point, and one that you must be aware when writing advice. If the
+        advice calls back to the objects, there is always the possibility
+        of recursion. Keep that in mind!
+      </p><p>
+        In fact, esimply excluding the execution join point may not be
+        enough, if there are calls to other traced methods within it -- in
+        which case, the restriction should be
+      </p><pre class="programlisting">
+&amp;&amp; !cflow(execution(String toString()))
+</pre><p>
+        excluding both the execution of toString methods and all join
+        points under that execution.
+      </p><p>
+        In summary, to implement the change in the tracing requirements we
+        had to make a couple of changes in the implementation of the
+        <tt>Trace</tt> aspect class, including changing the
+        specification of the pointcuts. That's only natural. But the
+        implementation changes were limited to this aspect. Without
+        aspects, we would have to change the implementation of every
+        application class.
+      </p><p>
+        Finally, to run this version of tracing, go to the directory
+        <tt>examples</tt> and type:
+      </p><pre class="programlisting">
+ajc -argfile tracing/tracev3.lst
+</pre><p>
+        The file tracev3.lst lists the application classes as well as this
+        version of the files <tt>Trace.java</tt> and
+        <tt>TraceMyClasses.java</tt>. To run the program, type
+      </p><pre class="programlisting">
+java tracing.version3.TraceMyClasses
+</pre><p>The output should be:</p><pre class="programlisting">
+  --&gt; tracing.TwoDShape(double, double)
+  &lt;-- tracing.TwoDShape(double, double)
+  --&gt; tracing.Circle(double, double, double)
+  &lt;-- tracing.Circle(double, double, double)
+  --&gt; tracing.TwoDShape(double, double)
+  &lt;-- tracing.TwoDShape(double, double)
+  --&gt; tracing.Circle(double, double, double)
+  &lt;-- tracing.Circle(double, double, double)
+  --&gt; tracing.Circle(double)
+  &lt;-- tracing.Circle(double)
+  --&gt; tracing.TwoDShape(double, double)
+  &lt;-- tracing.TwoDShape(double, double)
+  --&gt; tracing.Square(double, double, double)
+  &lt;-- tracing.Square(double, double, double)
+  --&gt; tracing.Square(double, double)
+  &lt;-- tracing.Square(double, double)
+  --&gt; double tracing.Circle.perimeter()
+  &lt;-- double tracing.Circle.perimeter()
+c1.perimeter() = 12.566370614359172
+  --&gt; double tracing.Circle.area()
+  &lt;-- double tracing.Circle.area()
+c1.area() = 12.566370614359172
+  --&gt; double tracing.Square.perimeter()
+  &lt;-- double tracing.Square.perimeter()
+s1.perimeter() = 4.0
+  --&gt; double tracing.Square.area()
+  &lt;-- double tracing.Square.area()
+s1.area() = 1.0
+  --&gt; double tracing.TwoDShape.distance(TwoDShape)
+    --&gt; double tracing.TwoDShape.getX()
+    &lt;-- double tracing.TwoDShape.getX()
+    --&gt; double tracing.TwoDShape.getY()
+    &lt;-- double tracing.TwoDShape.getY()
+  &lt;-- double tracing.TwoDShape.distance(TwoDShape)
+c2.distance(c1) = 4.242640687119285
+  --&gt; double tracing.TwoDShape.distance(TwoDShape)
+    --&gt; double tracing.TwoDShape.getX()
+    &lt;-- double tracing.TwoDShape.getX()
+    --&gt; double tracing.TwoDShape.getY()
+    &lt;-- double tracing.TwoDShape.getY()
+  &lt;-- double tracing.TwoDShape.distance(TwoDShape)
+s1.distance(c1) = 2.23606797749979
+  --&gt; String tracing.Square.toString()
+    --&gt; String tracing.TwoDShape.toString()
+    &lt;-- String tracing.TwoDShape.toString()
+  &lt;-- String tracing.Square.toString()
+s1.toString(): Square side = 1.0 @ (1.0, 2.0)
+</pre></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="examples-production.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="idioms.html">Next</a></td></tr><tr><td width="40%" align="left">Production Aspects&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="examples.html">Up</a></td><td width="40%" align="right">&nbsp;Chapter 4. Idioms</td></tr></table></div></body></html>

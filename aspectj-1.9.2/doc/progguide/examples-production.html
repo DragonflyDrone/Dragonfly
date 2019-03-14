@@ -1,0 +1,787 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Production Aspects</title><link rel="stylesheet" href="aspectj-docs.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.44"><link rel="home" href="index.html" title="The AspectJTM Programming Guide"><link rel="up" href="examples.html" title="Chapter 3. Examples"><link rel="previous" href="examples-development.html" title="Development Aspects"><link rel="next" href="examples-reusable.html" title="Reusable Aspects"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Production Aspects</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="examples-development.html">Prev</a>&nbsp;</td><th width="60%" align="center">Chapter 3. Examples</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="examples-reusable.html">Next</a></td></tr></table><hr></div><div class="sect1"><a name="examples-production"></a><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="examples-production"></a>Production Aspects</h2></div></div><div class="sect2"><a name="a-bean-aspect"></a><div class="titlepage"><div><h3 class="title"><a name="a-bean-aspect"></a>A Bean Aspect</h3></div></div><p>
+        (The code for this example is in
+        <tt><i><tt>InstallDir</tt></i>/examples/bean</tt>.)
+      </p><p>
+        This example examines an aspect that makes Point objects into 
+        Java beans with bound properties.
+      </p><p>
+        Java beans are reusable software components that can be visually
+        manipulated in a builder tool. The requirements for an object to be
+        a bean are few. Beans must define a no-argument constructor and
+        must be either <tt>Serializable</tt> or
+        <tt>Externalizable</tt>. Any properties of the object
+        that are to be treated as bean properties should be indicated by
+        the presence of appropriate <tt>get</tt> and
+        <tt>set</tt> methods whose names are
+        <tt>get</tt><span class="emphasis"><i>property</i></span> and
+        <tt>set </tt><span class="emphasis"><i>property</i></span> where
+        <span class="emphasis"><i>property</i></span> is the name of a field in the bean
+        class. Some bean properties, known as bound properties, fire events
+        whenever their values change so that any registered listeners (such
+        as, other beans) will be informed of those changes. Making a bound
+        property involves keeping a list of registered listeners, and
+        creating and dispatching event objects in methods that change the
+        property values, such as set<span class="emphasis"><i>property</i></span>
+        methods.
+      </p><p>
+        <tt>Point</tt> is a simple class representing points
+        with rectangular coordinates. <tt>Point</tt> does not
+        know anything about being a bean: there are set methods for
+        <tt>x</tt> and <tt>y</tt> but they do not fire
+        events, and the class is not serializable. Bound is an aspect that
+        makes <tt>Point</tt> a serializable class and makes
+        its <tt>get</tt> and <tt>set</tt> methods
+        support the bound property protocol.
+      </p><div class="sect3"><a name="d0e2784"></a><div class="titlepage"><div><h4 class="title"><a name="d0e2784"></a>The <tt>Point</tt> class</h4></div></div><p>
+        The <tt>Point</tt> class is a very simple class with
+        trivial getters and setters, and a simple vector offset method.
+      </p><pre class="programlisting">
+class Point {
+
+  protected int x = 0;
+  protected int y = 0;
+
+  public int getX() {
+    return x;
+  }
+
+  public int getY() {
+    return y;
+  }
+
+  public void setRectangular(int newX, int newY) {
+    setX(newX);
+    setY(newY);
+  }
+
+  public void setX(int newX) {
+    x = newX;
+  }
+
+  public void setY(int newY) {
+    y = newY;
+  }
+
+  public void offset(int deltaX, int deltaY) {
+    setRectangular(x + deltaX, y + deltaY);
+  }
+
+  public String toString() {
+    return "(" + getX() + ", " + getY() + ")" ;
+  }
+}
+</pre></div><div class="sect3"><a name="d0e2797"></a><div class="titlepage"><div><h4 class="title"><a name="d0e2797"></a>The <tt>BoundPoint</tt> aspect</h4></div></div><p>
+        The <tt>BoundPoint</tt> aspect is responsible for
+        <tt>Point</tt>'s "beanness". The first thing it does is
+        privately declare that each <tt>Point</tt> has a
+        <tt>support</tt> field that holds reference to an
+        instance of <tt>PropertyChangeSupport</tt>.  
+
+<pre class="programlisting">
+  private PropertyChangeSupport Point.support = new PropertyChangeSupport(this);
+</pre>
+
+        The property change support object must be constructed with a
+        reference to the bean for which it is providing support, so it is
+        initialized by passing it <tt>this</tt>, an instance of
+        <tt>Point</tt>.  Since the <tt>support</tt>
+        field is private declared in the aspect, only the code in the
+        aspect can refer to it.
+      </p><p>
+        The aspect also declares <tt>Point</tt>'s methods for
+        registering and managing listeners for property change events,
+        which delegate the work to the property change support object:
+
+<pre class="programlisting">
+  public void Point.addPropertyChangeListener(PropertyChangeListener listener){
+    support.addPropertyChangeListener(listener);
+  }
+  public void Point.addPropertyChangeListener(String propertyName,
+                                              PropertyChangeListener listener){
+
+    support.addPropertyChangeListener(propertyName, listener);
+  }
+  public void Point.removePropertyChangeListener(String propertyName,
+                                                 PropertyChangeListener listener) {
+    support.removePropertyChangeListener(propertyName, listener);
+  }
+  public void Point.removePropertyChangeListener(PropertyChangeListener listener) {
+    support.removePropertyChangeListener(listener);
+  }
+  public void Point.hasListeners(String propertyName) {
+    support.hasListeners(propertyName);
+  }
+</pre>
+      </p><p>
+        The aspect is also responsible for making sure
+        <tt>Point</tt> implements the
+        <tt>Serializable</tt> interface:
+
+<pre class="programlisting">
+  declare parents: Point implements Serializable;
+</pre>
+
+        Implementing this interface in Java does not require any methods to
+        be implemented. Serialization for <tt>Point</tt>
+        objects is provided by the default serialization method.
+      </p><p>
+        The <tt>setters</tt> pointcut picks out calls to the
+        <tt>Point</tt>'s <tt>set</tt> methods: any
+        method whose name begins with "<tt>set</tt>" and takes
+        one parameter. The around advice on <tt>setters()</tt>
+        stores the values of the <tt>X</tt> and
+        <tt>Y</tt> properties, calls the original
+        <tt>set</tt> method and then fires the appropriate
+        property change event according to which set method was
+        called. 
+      </p><pre class="programlisting">
+aspect BoundPoint {
+  private PropertyChangeSupport Point.support = new PropertyChangeSupport(this);
+
+  public void Point.addPropertyChangeListener(PropertyChangeListener listener){
+    support.addPropertyChangeListener(listener);
+  }
+  public void Point.addPropertyChangeListener(String propertyName,
+                                              PropertyChangeListener listener){
+
+    support.addPropertyChangeListener(propertyName, listener);
+  }
+  public void Point.removePropertyChangeListener(String propertyName,
+                                                 PropertyChangeListener listener) {
+    support.removePropertyChangeListener(propertyName, listener);
+  }
+  public void Point.removePropertyChangeListener(PropertyChangeListener listener) {
+    support.removePropertyChangeListener(listener);
+  }
+  public void Point.hasListeners(String propertyName) {
+    support.hasListeners(propertyName);
+  }
+
+  declare parents: Point implements Serializable;
+
+  pointcut setter(Point p): call(void Point.set*(*)) &amp;&amp; target(p);
+
+  void around(Point p): setter(p) {
+        String propertyName =
+      thisJoinPointStaticPart.getSignature().getName().substring("set".length());
+        int oldX = p.getX();
+        int oldY = p.getY();
+        proceed(p);
+        if (propertyName.equals("X")){
+      firePropertyChange(p, propertyName, oldX, p.getX());
+        } else {
+      firePropertyChange(p, propertyName, oldY, p.getY());
+        }
+  }
+
+  void firePropertyChange(Point p,
+                          String property,
+                          double oldval,
+                          double newval) {
+        p.support.firePropertyChange(property,
+                                 new Double(oldval),
+                                 new Double(newval));
+  }
+}
+</pre></div><div class="sect3"><a name="d0e2882"></a><div class="titlepage"><div><h4 class="title"><a name="d0e2882"></a>The Test Program</h4></div></div><p>
+        The test program registers itself as a property change listener to
+        a <tt>Point</tt> object that it creates and then performs
+        simple manipulation of that point: calling its set methods and the
+        offset method. Then it serializes the point and writes it to a file
+        and then reads it back. The result of saving and restoring the
+        point is that a new point is created.
+      </p><pre class="programlisting">
+  class Demo implements PropertyChangeListener {
+
+    static final String fileName = "test.tmp";
+
+    public void propertyChange(PropertyChangeEvent e){
+      System.out.println("Property " + e.getPropertyName() + " changed from " +
+         e.getOldValue() + " to " + e.getNewValue() );
+    }
+
+    public static void main(String[] args){
+      Point p1 = new Point();
+      p1.addPropertyChangeListener(new Demo());
+      System.out.println("p1 =" + p1);
+      p1.setRectangular(5,2);
+      System.out.println("p1 =" + p1);
+      p1.setX( 6 );
+      p1.setY( 3 );
+      System.out.println("p1 =" + p1);
+      p1.offset(6,4);
+      System.out.println("p1 =" + p1);
+      save(p1, fileName);
+      Point p2 = (Point) restore(fileName);
+      System.out.println("Had: " + p1);
+      System.out.println("Got: " + p2);
+      }
+    ...
+  }
+</pre></div><div class="sect3"><a name="d0e2892"></a><div class="titlepage"><div><h4 class="title"><a name="d0e2892"></a>Compiling and Running the Example</h4></div></div><p>
+        To compile and run this example, go to the examples directory and type:
+      </p><pre class="programlisting">
+ajc -argfile bean/files.lst
+java bean.Demo
+</pre></div></div><div class="sect2"><a name="the-subject-observer-protocol"></a><div class="titlepage"><div><h3 class="title"><a name="the-subject-observer-protocol"></a>The Subject/Observer Protocol</h3></div></div><p>
+        (The code for this example is in
+	<tt><i><tt>InstallDir</tt></i>/examples/observer</tt>.)
+      </p><p>
+        This demo illustrates how the Subject/Observer design pattern can be
+        coded with aspects. 
+      </p><p>
+         The demo consists of the following: A colored label is a
+         renderable object that has a color that cycles through a set of
+         colors, and a number that records the number of cycles it has been
+         through. A button is an action item that records when it is
+         clicked.
+      </p><p>
+        With these two kinds of objects, we can build up a Subject/Observer
+        relationship in which colored labels observe the clicks of buttons;
+        that is, where colored labels are the observers and buttons are the
+        subjects.
+      </p><p>
+        The demo is designed and implemented using the Subject/Observer
+        design pattern. The remainder of this example explains the classes
+        and aspects of this demo, and tells you how to run it.
+      </p><div class="sect3"><a name="d0e2918"></a><div class="titlepage"><div><h4 class="title"><a name="d0e2918"></a>Generic Components</h4></div></div><p>
+        The generic parts of the protocol are the interfaces
+        <tt>Subject</tt> and <tt>Observer</tt>,
+        and the abstract aspect
+        <tt>SubjectObserverProtocol</tt>. The
+        <tt>Subject</tt> interface is simple, containing
+        methods to add, remove, and view <tt>Observer</tt>
+        objects, and a method for getting data about state changes:
+      </p><pre class="programlisting">
+    interface Subject {
+      void addObserver(Observer obs);
+      void removeObserver(Observer obs);
+      Vector getObservers();
+      Object getData();
+  }
+</pre><p> 
+        The <tt>Observer</tt> interface is just as simple,
+        with methods to set and get <tt>Subject</tt> objects,
+        and a method to call when the subject gets updated.
+      </p><pre class="programlisting">
+  interface Observer {
+      void setSubject(Subject s);
+      Subject getSubject();
+      void update();
+  }
+</pre><p>
+        The <tt>SubjectObserverProtocol</tt> aspect contains
+        within it all of the generic parts of the protocol, namely, how to
+        fire the <tt>Observer</tt> objects' update methods
+        when some state changes in a subject.
+      </p><pre class="programlisting">
+  abstract aspect SubjectObserverProtocol {
+
+      abstract pointcut stateChanges(Subject s);
+
+      after(Subject s): stateChanges(s) {
+          for (int i = 0; i &lt; s.getObservers().size(); i++) {
+              ((Observer)s.getObservers().elementAt(i)).update();
+          }
+      }
+
+      private Vector Subject.observers = new Vector();
+      public void   Subject.addObserver(Observer obs) {
+          observers.addElement(obs);
+          obs.setSubject(this);
+      }
+      public void   Subject.removeObserver(Observer obs) {
+          observers.removeElement(obs);
+          obs.setSubject(null);
+      }
+      public Vector Subject.getObservers() { return observers; }
+
+      private Subject Observer.subject = null;
+      public void     Observer.setSubject(Subject s) { subject = s; }
+      public Subject  Observer.getSubject() { return subject; }
+
+  }
+</pre><p>
+        Note that this aspect does three things. It define an abstract
+        pointcut that extending aspects can override. It defines advice
+        that should run after the join points of the pointcut. And it
+        declares an inter-tpye field and two inter-type methods so that
+        each <tt>Observer</tt> can hold onto its <tt>Subject</tt>. 
+      </p></div><div class="sect3"><a name="d0e2968"></a><div class="titlepage"><div><h4 class="title"><a name="d0e2968"></a>Application Classes</h4></div></div><p>
+        <tt>Button</tt> objects extend
+        <tt>java.awt.Button</tt>, and all they do is make
+        sure the <tt>void click()</tt> method is called whenever
+        a button is clicked.
+      </p><pre class="programlisting">
+  class Button extends java.awt.Button {
+
+      static final Color  defaultBackgroundColor = Color.gray;
+      static final Color  defaultForegroundColor = Color.black;
+      static final String defaultText = "cycle color";
+
+      Button(Display display) {
+          super();
+          setLabel(defaultText);
+          setBackground(defaultBackgroundColor);
+          setForeground(defaultForegroundColor);
+          addActionListener(new ActionListener() {
+                  public void actionPerformed(ActionEvent e) {
+                      Button.this.click();
+                  }
+              });
+          display.addToFrame(this);
+      }
+
+      public void click() {}
+
+  }
+</pre><p>
+        Note that this class knows nothing about being a Subject.
+      </p><p>
+        ColorLabel objects are labels that support the void colorCycle()
+        method. Again, they know nothing about being an observer.
+      </p><pre class="programlisting">
+  class ColorLabel extends Label {
+
+      ColorLabel(Display display) {
+          super();
+          display.addToFrame(this);
+      }
+
+      final static Color[] colors = {Color.red, Color.blue,
+                                     Color.green, Color.magenta};
+      private int colorIndex = 0;
+      private int cycleCount = 0;
+      void colorCycle() {
+          cycleCount++;
+          colorIndex = (colorIndex + 1) % colors.length;
+          setBackground(colors[colorIndex]);
+          setText("" + cycleCount);
+      }
+  }
+</pre><p>
+        Finally, the <tt>SubjectObserverProtocolImpl</tt>
+        implements the subject/observer protocol, with
+        <tt>Button</tt> objects as subjects and
+        <tt>ColorLabel</tt> objects as observers:
+      </p><pre class="programlisting">
+package observer;
+
+import java.util.Vector;
+
+aspect SubjectObserverProtocolImpl extends SubjectObserverProtocol {
+
+    declare parents: Button implements Subject;
+    public Object Button.getData() { return this; }
+
+    declare parents: ColorLabel implements Observer;
+    public void    ColorLabel.update() {
+        colorCycle();
+    }
+
+    pointcut stateChanges(Subject s):
+        target(s) &amp;&amp;
+        call(void Button.click());
+
+}</pre><p>
+        It does this by assuring that <tt>Button</tt> and
+        <tt>ColorLabel</tt> implement the appropriate
+        interfaces, declaring that they implement the methods required by
+        those interfaces, and providing a definition for the abstract
+        <tt>stateChanges</tt> pointcut. Now, every time a
+        <tt>Button</tt> is clicked, all
+        <tt>ColorLabel</tt> objects observing that button
+        will <tt>colorCycle</tt>.
+      </p></div><div class="sect3"><a name="d0e3023"></a><div class="titlepage"><div><h4 class="title"><a name="d0e3023"></a>Compiling and Running</h4></div></div><p> 
+        <tt>Demo</tt> is the top class that starts this
+        demo. It instantiates a two buttons and three observers and links
+        them together as subjects and observers. So to run the demo, go to
+        the <tt>examples</tt> directory and type:
+      </p><pre class="programlisting">
+  ajc -argfile observer/files.lst
+  java observer.Demo
+</pre></div></div><div class="sect2"><a name="a-simple-telecom-simulation"></a><div class="titlepage"><div><h3 class="title"><a name="a-simple-telecom-simulation"></a>A Simple Telecom Simulation</h3></div></div><p>
+        (The code for this example is in
+        <tt><i><tt>InstallDir</tt></i>/examples/telecom</tt>.)
+      </p><p>
+	This example illustrates some ways that dependent concerns can be
+	encoded with aspects. It uses an example system comprising a simple
+	model of telephone connections to which timing and billing features
+	are added using aspects, where the billing feature depends upon the
+	timing feature.
+      </p><div class="sect3"><a name="d0e3049"></a><div class="titlepage"><div><h4 class="title"><a name="d0e3049"></a>The Application</h4></div></div><p>
+	  The example application is a simple simulation of a telephony
+	  system in which customers make, accept, merge and hang-up both
+	  local and long distance calls. The application architecture is in
+	  three layers.
+	</p><div class="itemizedlist"><ul><li><p><a name="d0e3055"></a>
+	      The basic objects provide basic functionality to simulate
+	      customers, calls and connections (regular calls have one
+	      connection, conference calls have more than one).
+	    </p></li><li><p><a name="d0e3058"></a>
+	      The timing feature is concerned with timing the connections
+	      and keeping the total connection time per customer. Aspects
+	      are used to add a timer to each connection and to manage the
+	      total time per customer.
+	    </p></li><li><p><a name="d0e3061"></a>
+	      The billing feature is concerned with charging customers for
+	      the calls they make. Aspects are used to calculate a charge
+	      per connection and, upon termination of a connection, to add
+	      the charge to the appropriate customer's bill. The billing
+	      aspect builds upon the timing aspect: it uses a pointcut
+	      defined in Timing and it uses the timers that are associated
+	      with connections.
+	    </p></li></ul></div><p>
+          The simulation of system has three configurations: basic, timing
+          and billing. Programs for the three configurations are in classes
+          <tt>BasicSimulation</tt>,
+          <tt>TimingSimulation</tt> and
+          <tt>BillingSimulation</tt>. These share a common
+          superclass <tt>AbstractSimulation</tt>, which
+          defines the method run with the simulation itself and the method
+          wait used to simulate elapsed time.
+        </p></div><div class="sect3"><a name="d0e3078"></a><div class="titlepage"><div><h4 class="title"><a name="d0e3078"></a>The Basic Objects</h4></div></div><p>
+          The telecom simulation comprises the classes
+          <tt>Customer</tt>, <tt>Call</tt> and
+          the abstract class <tt>Connection</tt> with its two
+          concrete subclasses <tt>Local</tt> and
+          <tt>LongDistance</tt>. Customers have a name and a
+          numeric area code. They also have methods for managing
+          calls. Simple calls are made between one customer (the caller)
+          and another (the receiver), a <tt>Connection</tt>
+          object is used to connect them. Conference calls between more
+          than two customers will involve more than one connection. A
+          customer may be involved in many calls at one time.
+
+          <span class="inlinemediaobject"><img src="telecom.gif"></span>
+        </p></div><div class="sect3"><a name="d0e3105"></a><div class="titlepage"><div><h4 class="title"><a name="d0e3105"></a>The <tt>Customer</tt> class</h4></div></div><p>
+          <tt>Customer</tt> has methods
+          <tt>call</tt>, <tt>pickup</tt>,
+          <tt>hangup</tt> and <tt>merge</tt> for
+          managing calls.
+        </p><pre class="programlisting">
+public class Customer {
+
+      private String name;
+      private int areacode;
+      private Vector calls = new Vector();
+
+      protected void removeCall(Call c){
+          calls.removeElement(c);
+      }
+
+      protected void addCall(Call c){
+          calls.addElement(c);
+      }
+
+      public Customer(String name, int areacode) {
+          this.name = name;
+          this.areacode = areacode;
+      }
+
+      public String toString() {
+          return name + "(" + areacode + ")";
+      }
+
+      public int getAreacode(){
+          return areacode;
+      }
+
+      public boolean localTo(Customer other){
+          return areacode == other.areacode;
+      }
+
+      public Call call(Customer receiver) {
+          Call call = new Call(this, receiver);
+          addCall(call);
+          return call;
+      }
+
+      public void pickup(Call call) {
+          call.pickup();
+          addCall(call);
+      }
+
+      public void hangup(Call call) {
+          call.hangup(this);
+          removeCall(call);
+      }
+
+      public void merge(Call call1, Call call2){
+          call1.merge(call2);
+          removeCall(call2);
+      }
+  }
+</pre></div><div class="sect3"><a name="d0e3130"></a><div class="titlepage"><div><h4 class="title"><a name="d0e3130"></a>The <tt>Call</tt> class</h4></div></div><p>
+        Calls are created with a caller and receiver who are customers. If
+        the caller and receiver have the same area code then the call can
+        be established with a <tt>Local</tt> connection (see
+        below), otherwise a <tt>LongDistance</tt> connection
+        is required.  A call comprises a number of connections between
+        customers. Initially there is only the connection between the
+        caller and receiver but additional connections can be added if
+        calls are merged to form conference calls.
+      </p></div><div class="sect3"><a name="d0e3144"></a><div class="titlepage"><div><h4 class="title"><a name="d0e3144"></a>The <tt>Connection</tt> class</h4></div></div><p>
+        The class <tt>Connection</tt> models the physical
+        details of establishing a connection between customers. It does
+        this with a simple state machine (connections are initially
+        <tt>PENDING</tt>, then <tt>COMPLETED</tt> and
+        finally <tt>DROPPED</tt>). Messages are printed to the
+        console so that the state of connections can be
+        observed. Connection is an abstract class with two concrete
+        subclasses: <tt>Local</tt> and
+        <tt>LongDistance</tt>.
+      </p><pre class="programlisting">
+  abstract class Connection {
+
+      public static final int PENDING = 0;
+      public static final int COMPLETE = 1;
+      public static final int DROPPED = 2;
+
+      Customer caller, receiver;
+      private int state = PENDING;
+
+      Connection(Customer a, Customer b) {
+          this.caller = a;
+          this.receiver = b;
+      }
+
+      public int getState(){
+          return state;
+      }
+
+      public Customer getCaller() { return caller; }
+
+      public Customer getReceiver() { return receiver; }
+
+      void complete() {
+          state = COMPLETE;
+          System.out.println("connection completed");
+      }
+
+      void drop() {
+          state = DROPPED;
+          System.out.println("connection dropped");
+      }
+
+      public boolean connects(Customer c){
+          return (caller == c || receiver == c);
+      }
+
+  }
+</pre></div><div class="sect3"><a name="d0e3172"></a><div class="titlepage"><div><h4 class="title"><a name="d0e3172"></a>The <tt>Local</tt> and <tt>LongDistance</tt> classes</h4></div></div><p>
+        The two kinds of connections supported by our simulation are
+        <tt>Local</tt> and <tt>LongDistance</tt>
+        connections.
+      </p><pre class="programlisting">
+  class Local extends Connection {
+      Local(Customer a, Customer b) {
+          super(a, b);
+          System.out.println("[new local connection from " +
+             a + " to " + b + "]");
+      }
+  }
+</pre><pre class="programlisting">
+  class LongDistance extends Connection {
+      LongDistance(Customer a, Customer b) {
+          super(a, b);
+          System.out.println("[new long distance connection from " +
+              a + " to " + b + "]");
+      }
+  }
+</pre></div><div class="sect3"><a name="d0e3193"></a><div class="titlepage"><div><h4 class="title"><a name="d0e3193"></a>Compiling and Running the Basic Simulation</h4></div></div><p>
+        The source files for the basic system are listed in the file
+        <tt>basic.lst</tt>. To build and run the basic system,
+        in a shell window, type these commands:
+      </p><pre class="programlisting">
+ajc -argfile telecom/basic.lst
+java telecom.BasicSimulation
+</pre></div><div class="sect3"><a name="d0e3203"></a><div class="titlepage"><div><h4 class="title"><a name="d0e3203"></a>The Timing aspect</h4></div></div><p>
+        The <tt>Timing</tt> aspect keeps track of total
+        connection time for each <tt>Customer</tt> by
+        starting and stopping a timer associated with each connection. It
+        uses some helper classes:
+      </p><div class="sect4"><a name="d0e3214"></a><div class="titlepage"><div><h5 class="title"><a name="d0e3214"></a>The <tt>Timer</tt> class</h5></div></div><p>
+          A <tt>Timer</tt> object simply records the current
+          time when it is started and stopped, and returns their difference
+          when asked for the elapsed time. The aspect
+          <tt>TimerLog</tt> (below) can be used to cause the
+          start and stop times to be printed to standard output.
+        </p><pre class="programlisting">
+  class Timer {
+      long startTime, stopTime;
+
+      public void start() {
+          startTime = System.currentTimeMillis();
+          stopTime = startTime;
+      }
+
+      public void stop() {
+          stopTime = System.currentTimeMillis();
+      }
+
+      public long getTime() {
+          return stopTime - startTime;
+      }
+  }
+</pre></div></div><div class="sect3"><a name="d0e3230"></a><div class="titlepage"><div><h4 class="title"><a name="d0e3230"></a>The <tt>TimerLog</tt> aspect</h4></div></div><p>
+          The <tt>TimerLog</tt> aspect can be included in a
+          build to get the timer to announce when it is started and
+          stopped.
+        </p><pre class="programlisting">
+public aspect TimerLog {
+
+    after(Timer t): target(t) &amp;&amp; call(* Timer.start())  {
+      System.err.println("Timer started: " + t.startTime);
+    }
+
+    after(Timer t): target(t) &amp;&amp; call(* Timer.stop()) {
+      System.err.println("Timer stopped: " + t.stopTime);
+    }
+}
+</pre></div><div class="sect3"><a name="d0e3243"></a><div class="titlepage"><div><h4 class="title"><a name="d0e3243"></a>The <tt>Timing</tt> aspect</h4></div></div><p>
+          The <tt>Timing</tt> aspect is declares an
+          inter-type field <tt>totalConnectTime</tt> for 
+          <tt>Customer</tt> to store the accumulated connection
+          time per <tt>Customer</tt>.  It also declares that
+          each <tt>Connection</tt> object has a timer. 
+
+<pre class="programlisting">
+    public long Customer.totalConnectTime = 0;
+    private Timer Connection.timer = new Timer();
+</pre>
+
+          Two pieces of after advice ensure that the timer is started when
+          a connection is completed and and stopped when it is dropped. The
+          pointcut <tt>endTiming</tt> is defined so that it can
+          be used by the <tt>Billing</tt> aspect.
+        </p><pre class="programlisting">
+public aspect Timing {
+
+    public long Customer.totalConnectTime = 0;
+
+    public long getTotalConnectTime(Customer cust) {
+        return cust.totalConnectTime;
+    }
+    private Timer Connection.timer = new Timer();
+    public Timer getTimer(Connection conn) { return conn.timer; }
+
+    after (Connection c): target(c) &amp;&amp; call(void Connection.complete()) {
+        getTimer(c).start();
+    }
+
+    pointcut endTiming(Connection c): target(c) &amp;&amp;
+        call(void Connection.drop());
+
+    after(Connection c): endTiming(c) {
+        getTimer(c).stop();
+        c.getCaller().totalConnectTime += getTimer(c).getTime();
+        c.getReceiver().totalConnectTime += getTimer(c).getTime();
+    }
+}</pre></div><div class="sect3"><a name="d0e3277"></a><div class="titlepage"><div><h4 class="title"><a name="d0e3277"></a>The <tt>Billing</tt> aspect</h4></div></div><p>
+        The Billing system adds billing functionality to the telecom
+        application on top of timing.
+      </p><p>
+        The <tt>Billing</tt> aspect declares that each
+        <tt>Connection</tt> has a <tt>payer</tt>
+        inter-type field to indicate who initiated the call and therefore
+        who is responsible to pay for it. It also declares the inter-type
+        method <tt>callRate</tt> of
+        <tt>Connection</tt> so that local and long distance
+        calls can be charged differently. The call charge must be
+        calculated after the timer is stopped; the after advice on pointcut
+        <tt>Timing.endTiming</tt> does this, and
+        <tt>Billing</tt> is declared to be more precedent
+        than <tt>Timing</tt> to make sure that this advice
+        runs after <tt>Timing</tt>'s advice on the same join
+        point.  Finally, it declares inter-type methods and fields for
+        <tt>Customer</tt> to handle the
+        <tt>totalCharge</tt>. 
+      </p><pre class="programlisting">
+public aspect Billing {
+    // precedence required to get advice on endtiming in the right order
+    declare precedence: Billing, Timing;
+
+    public static final long LOCAL_RATE = 3;
+    public static final long LONG_DISTANCE_RATE = 10;
+
+    public Customer Connection.payer;
+    public Customer getPayer(Connection conn) { return conn.payer; }
+
+    after(Customer cust) returning (Connection conn):
+        args(cust, ..) &amp;&amp; call(Connection+.new(..)) {
+        conn.payer = cust;
+    }
+
+    public abstract long Connection.callRate();
+
+    public long LongDistance.callRate() { return LONG_DISTANCE_RATE; }
+    public long Local.callRate() { return LOCAL_RATE; }
+
+    after(Connection conn): Timing.endTiming(conn) {
+        long time = Timing.aspectOf().getTimer(conn).getTime();
+        long rate = conn.callRate();
+        long cost = rate * time;
+        getPayer(conn).addCharge(cost);
+    }
+
+    public long Customer.totalCharge = 0;
+    public long getTotalCharge(Customer cust) { return cust.totalCharge; }
+
+    public void Customer.addCharge(long charge){
+        totalCharge += charge;
+    }
+}
+</pre></div><div class="sect3"><a name="d0e3322"></a><div class="titlepage"><div><h4 class="title"><a name="d0e3322"></a>Accessing the inter-type state</h4></div></div><p>
+        Both the aspects <tt>Timing</tt> and
+        <tt>Billing</tt> contain the definition of operations
+        that the rest of the system may want to access. For example, when
+        running the simulation with one or both aspects, we want to find
+        out how much time each customer spent on the telephone and how big
+        their bill is. That information is also stored in the classes, but
+        they are accessed through static methods of the aspects, since the
+        state they refer to is private to the aspect.
+      </p><p>
+        Take a look at the file
+        <tt>TimingSimulation.java</tt>. The most important
+        method of this class is the method
+        <tt>report(Customer)</tt>, which is used in the method
+        run of the superclass
+        <tt>AbstractSimulation</tt>. This method is intended
+        to print out the status of the customer, with respect to the
+        <tt>Timing</tt> feature.
+      </p><pre class="programlisting">
+  protected void report(Customer c){
+      Timing t = Timing.aspectOf();
+      System.out.println(c + " spent " + t.getTotalConnectTime(c));
+  }
+</pre></div><div class="sect3"><a name="d0e3349"></a><div class="titlepage"><div><h4 class="title"><a name="d0e3349"></a>Compiling and Running</h4></div></div><p>
+        The files timing.lst and billing.lst contain file lists for the
+        timing and billing configurations. To build and run the application
+        with only the timing feature, go to the directory examples and
+        type:
+      </p><pre class="programlisting">
+  ajc -argfile telecom/timing.lst
+  java telecom.TimingSimulation
+</pre><p>
+        To build and run the application with the timing and billing
+        features, go to the directory examples and type:
+      </p><pre class="programlisting">
+  ajc -argfile telecom/billing.lst
+  java telecom.BillingSimulation
+</pre></div><div class="sect3"><a name="d0e3360"></a><div class="titlepage"><div><h4 class="title"><a name="d0e3360"></a>Discussion</h4></div></div><p>
+        There are some explicit dependencies between the aspects Billing
+        and Timing:
+
+        <div class="itemizedlist"><ul><li><p><a name="d0e3366"></a>
+              Billing is declared more precedent than Timing so that Billing's
+              after advice runs after that of Timing when they are on the
+              same join point.
+            </p></li><li><p><a name="d0e3369"></a>
+              Billing uses the pointcut Timing.endTiming.
+            </p></li><li><p><a name="d0e3372"></a>
+              Billing needs access to the timer associated with a connection.
+            </p></li></ul></div>
+      </p></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="examples-development.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="examples-reusable.html">Next</a></td></tr><tr><td width="40%" align="left">Development Aspects&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="examples.html">Up</a></td><td width="40%" align="right">&nbsp;Reusable Aspects</td></tr></table></div></body></html>

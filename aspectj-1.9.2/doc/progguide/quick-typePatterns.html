@@ -1,0 +1,23 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Type Patterns</title><link rel="stylesheet" href="aspectj-docs.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.44"><link rel="home" href="index.html" title="The AspectJTM Programming Guide"><link rel="up" href="quick.html" title="Appendix A. AspectJ Quick Reference"><link rel="previous" href="quick.html" title="Appendix A. AspectJ Quick Reference"><link rel="next" href="quick-advice.html" title="Advice"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Type Patterns</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="quick.html">Prev</a>&nbsp;</td><th width="60%" align="center">Appendix A. AspectJ Quick Reference</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="quick-advice.html">Next</a></td></tr></table><hr></div><div class="sect1"><a name="quick-typePatterns"></a><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="quick-typePatterns"></a>Type Patterns</h2></div></div><p>
+      A type pattern is one of
+    </p><div class="informaltable" uniqueID="d0e3922"><a name="d0e3922"></a><table border="0"><colgroup><col><col></colgroup><tbody valign="top"><tr><td><i><tt>TypeNamePattern</tt></i></td><td>all types in <i><tt>TypeNamePattern</tt></i></td></tr><tr><td><i><tt>SubtypePattern</tt></i></td><td>all types in <i><tt>SubtypePattern</tt></i>, a
+            pattern with a +. </td></tr><tr><td><i><tt>ArrayTypePattern</tt></i></td><td>all types in <i><tt>ArrayTypePattern</tt></i>,
+            a pattern with one or more []s. </td></tr><tr><td><tt>!<i><tt>TypePattern</tt></i></tt></td><td>all types not in <i><tt>TypePattern</tt></i></td></tr><tr><td><tt><i><tt>TypePattern0</tt></i>
+            &amp;&amp; <i><tt>TypePattern1</tt></i></tt></td><td>all types in both
+            <i><tt>TypePattern0</tt></i> and <i><tt>TypePattern1</tt></i></td></tr><tr><td><tt><i><tt>TypePattern0</tt></i> || <i><tt>TypePattern1</tt></i></tt></td><td>all types in either
+            <i><tt>TypePattern0</tt></i> or <i><tt>TypePattern1</tt></i></td></tr><tr><td><tt>( <i><tt>TypePattern</tt></i> )</tt></td><td>all types in <i><tt>TypePattern</tt></i></td></tr></tbody></table></div><p>
+      where <i><tt>TypeNamePattern</tt></i> can either be a
+      plain type name, the wildcard <tt>*</tt> (indicating all
+      types), or an uniqueID with embedded <tt>*</tt> and
+      <tt>..</tt> wildcards.
+    </p><p>
+      An embedded <tt>*</tt> in an uniqueID matches any
+      sequence of characters, but does not match the package (or
+      inner-type) separator ".".
+    </p><p>
+      An embedded <tt>..</tt> in an uniqueID matches any
+      sequence of characters that starts and ends with the package (or
+      inner-type) separator ".".
+    </p></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="quick.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="quick-advice.html">Next</a></td></tr><tr><td width="40%" align="left">Appendix A. AspectJ Quick Reference&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="quick.html">Up</a></td><td width="40%" align="right">&nbsp;Advice</td></tr></table></div></body></html>

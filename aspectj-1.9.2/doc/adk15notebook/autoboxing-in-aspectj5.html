@@ -1,0 +1,23 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Autoboxing and Join Point matching in AspectJ 5</title><link rel="stylesheet" href="aspectj-docs.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.44"><link rel="home" href="index.html" title="The AspectJTM 5 Development Kit Developer's Notebook"><link rel="up" href="autoboxing.html" title="Chapter 4. Autoboxing and Unboxing"><link rel="previous" href="autoboxing.html" title="Chapter 4. Autoboxing and Unboxing"><link rel="next" href="autoboxing-and-method-dispatch.html" title="Inter-type method declarations and method dispatch"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Autoboxing and Join Point matching in AspectJ 5</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="autoboxing.html">Prev</a>&nbsp;</td><th width="60%" align="center">Chapter 4. Autoboxing and Unboxing</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="autoboxing-and-method-dispatch.html">Next</a></td></tr></table><hr></div><div class="sect1"><a name="autoboxing-in-aspectj5"></a><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="autoboxing-in-aspectj5"></a>Autoboxing and Join Point matching in AspectJ 5</h2></div></div><p>Most of the pointcut designators match based on signatures, and
+          hence are unaffected by autoboxing. For example, a call to a method</p><pre class="programlisting">
+   		public void foo(Integer i);
+   		</pre><p>is <span class="emphasis"><i>not</i></span> matched by a pointcut
+         <tt>call(void foo(int))</tt> since the signature declares
+         a single <tt>Integer</tt> parameter, not an <tt>int</tt>.
+         </p><p>The <tt>args</tt> pointcut designator is affected by
+         autoboxing since it matches based on the runtime type of the arguments.
+         AspectJ 5 applies autoboxing and unboxing in determining argument matching.
+         In other words, <tt>args(Integer)</tt> will match any join
+         point at which there is a single argument of type <tt>Integer</tt>
+         or of type <tt>int</tt>.</p><div class="itemizedlist"><ul><li><a name="d0e3137"></a>args(Integer) and args(int) are equivalent</li><li><a name="d0e3139"></a>args(Float) and args(float) are equivalent</li><li><a name="d0e3141"></a>args(Double) and args(double) are equivalent</li><li><a name="d0e3143"></a>args(Short) and args(short) are equivalent</li><li><a name="d0e3145"></a>args(Byte) and args(byte) are equivalent</li><li><a name="d0e3147"></a>args(Long) and args(long) are equivalent</li><li><a name="d0e3149"></a>args(Boolean) and args(boolean) are equivalent</li></ul></div><p>
+        Autoboxing and unboxing are also applied when binding pointcut or 
+        advice parameters, for example:   
+      </p><pre class="programlisting">
+   		pointcut foo(int i) : args(i);
+   		
+   		before(Integer i) : foo(i) {
+   		  ...
+   		}
+   		</pre></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="autoboxing.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="autoboxing-and-method-dispatch.html">Next</a></td></tr><tr><td width="40%" align="left">Chapter 4. Autoboxing and Unboxing&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="autoboxing.html">Up</a></td><td width="40%" align="right">&nbsp;Inter-type method declarations and method dispatch</td></tr></table></div></body></html>

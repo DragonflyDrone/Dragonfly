@@ -1,0 +1,47 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Chapter 1. Introduction to the AspectJ tools</title><link rel="stylesheet" href="aspectj-docs.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.44"><link rel="home" href="index.html" title="The AspectJtm Development Environment Guide"><link rel="up" href="index.html" title="The AspectJtm Development Environment Guide"><link rel="previous" href="index.html" title="The AspectJtm Development Environment Guide"><link rel="next" href="bytecode-concepts.html" title="Bytecode weaving, incremental compilation, and memory usage"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Chapter 1. Introduction to the AspectJ tools</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="index.html">Prev</a>&nbsp;</td><th width="60%" align="center">&nbsp;</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="bytecode-concepts.html">Next</a></td></tr></table><hr></div><div class="chapter"><div class="titlepage"><div><h2 class="title"><a name="tools-intro"></a>Chapter 1. Introduction to the AspectJ tools</h2></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><a href="tools-intro.html#eclipse-aspectj">The Eclipse AspectJ implementation</a></dt><dt><a href="bytecode-concepts.html">Bytecode weaving, incremental compilation, and memory usage</a></dt><dd><dl><dt><a href="bytecode-concepts.html#classpathInpathAndAspectpath">Classpath, inpath, and aspectpath</a></dt></dl></dd></dl></div><div class="sect1"><a name="eclipse-aspectj"></a><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="eclipse-aspectj"></a>The Eclipse AspectJ implementation</h2></div></div><p>The <a href="../progguide/index.html" target="_top">AspectJ Programming Guide</a>
+        describes the AspectJ language.  This guide describes the AspectJ
+        tools produced by the AspectJ
+        team on 
+         <a href="http://eclipse.org/aspectj" target="_top">http://eclipse.org/aspectj</a>.
+        The AspectJ tools include
+        - ajc, the compiler/weaver;
+        ajdoc, a documentation tool; ajbrowser, a crosscutting code viewer;
+        Ant support for ajc; and load-time weaving support.
+        These tools are delivered in the library folder of the AspectJ tools
+        installation, mainly in <tt>aspectjtools.jar</tt> (tools) and
+        <tt>aspectjrt.jar</tt> (runtime).
+        This guide does not describe the Eclipse AspectJ development tools
+        (AJDT).  That is produced by another team (sharing some members) on
+         <a href="http://eclipse.org/aspectj" target="_top">http://eclipse.org/ajdt</a>.
+        AJDT is delivered as an Eclipse plugin, incorporating the classes in
+        the AspectJ tools libraries along with the Eclipse plugin interface
+        classes.
+       </p><p>
+        Since AspectJ 1.1, the tools have implemented the AspectJ language 
+        using bytecode weaving, which combines aspects and classes to produce
+        .class files that run in a Java VM.  There are other ways to implement the
+        language (e.g., compiler preprocessor, VM support); the AspectJ team
+        has always tried to distinguish the language and the implementation
+        so other groups could build alternative implementations of AspectJ.
+        To that end,
+         
+    <a href="../progguide/implementation.html" target="_top">The AspectJ Programming Guide,
+    Implementation Notes</a> describes how the Java bytecode form affects
+        language semantics.  VM- or source-based implementations may be free
+        of these limits or impose limits of their own, but most should be
+        fairly close to what's possible in Java bytecode.
+    </p><p> 
+        Please be careful not to confuse any description of
+        weaving or of this implementation of the AspectJ language with
+        the AspectJ language semantics.
+        If you do, you might find yourself writing code that doesn't work as
+        expected when you compile or run it on other systems.  
+        More importantly, if you
+        think about aspects in terms of weaving or of inserting or merging
+        code, then you can lose many of the design benefits of thinking
+        about an aspect as a single crosscutting module. 
+        When the text below introduces an implementation detail, it will warn if
+        users make mistakes by applying it in lieu of the language semantics.
+    </p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="index.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="bytecode-concepts.html">Next</a></td></tr><tr><td width="40%" align="left">The AspectJ<sup>tm</sup> Development Environment Guide&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="index.html">Up</a></td><td width="40%" align="right">&nbsp;Bytecode weaving, incremental compilation, and memory usage</td></tr></table></div></body></html>

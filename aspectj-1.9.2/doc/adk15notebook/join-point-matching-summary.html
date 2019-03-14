@@ -1,0 +1,45 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Summary of Join Point Matching</title><link rel="stylesheet" href="aspectj-docs.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.44"><link rel="home" href="index.html" title="The AspectJTM 5 Development Kit Developer's Notebook"><link rel="up" href="jpsigs.html" title="Chapter 1. Join Point Signatures"><link rel="previous" href="join-point-modifiers.html" title="Join Point Modifiers"><link rel="next" href="annotations.html" title="Chapter 2. Annotations"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Summary of Join Point Matching</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="join-point-modifiers.html">Prev</a>&nbsp;</td><th width="60%" align="center">Chapter 1. Join Point Signatures</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="annotations.html">Next</a></td></tr></table><hr></div><div class="sect1"><a name="join-point-matching-summary"></a><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="join-point-matching-summary"></a>Summary of Join Point Matching</h2></div></div><p>
+		A join point has potentially multiple signatures, but only one set of
+		modifiers. <span class="emphasis"><i>A kinded primitive pointcut matches a particular join point 
+		if and only if</i></span>:
+		</p><div class="orderedlist"><ol type="1"><li><a name="d0e526"></a>They are of the same kind</li><li><a name="d0e528"></a>The signature pattern (exactly) matches at least one 
+		    signature of the join point</li><li><a name="d0e530"></a>The modifiers pattern matches the modifiers of the
+		    subject of the join point</li></ol></div><p>Given the hierarchy</p><pre class="programlisting">
+        interface Q {
+          R m(String s);
+        }
+        
+        class P implements Q {
+          @Foo
+          public R m(String s) {...}        
+        }
+        
+        class S extends P {
+          @Bar
+          public R' m(String s) {...}
+        }
+        
+        class T extends S {} 
+		
+		</pre><p>and the program fragment:</p><pre class="programlisting">
+        P p = new P();
+        S s = new S();
+        T t = new T();
+        ...
+        p.m("hello");
+        s.m("hello");
+        t.m("hello");
+		</pre><p>
+        The the pointcut <tt>call(@Foo R P.m(String))</tt> matches the
+        call <tt>p.m("hello")</tt> since both the signature and the 
+        modifiers match. It does not match the call <tt>s.m("hello")</tt>
+        because even though the signature pattern matches one of the signatures
+        of the join point, the modifiers pattern does not match the modifiers of
+        the method m in S which is the static target of the call.
+        </p><p>The pointcut <tt>call(R' m(String))</tt> matches the
+        calls <tt>t.m("hello")</tt> and <tt>s.m("hello")</tt>.
+        It does not match the call <tt>p.m("hello")</tt> since the
+        signature pattern does not match any signature for the call join point
+        of m in P.</p></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="join-point-modifiers.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="annotations.html">Next</a></td></tr><tr><td width="40%" align="left">Join Point Modifiers&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="jpsigs.html">Up</a></td><td width="40%" align="right">&nbsp;Chapter 2. Annotations</td></tr></table></div></body></html>

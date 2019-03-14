@@ -1,0 +1,19 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>aj</title><link rel="stylesheet" href="aspectj-docs.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.44"><link rel="home" href="index.html" title="The AspectJtm Development Environment Guide"><link rel="up" href="aj-ref-top.html" title="aj, the AspectJ load-time weaving script"><link rel="previous" href="ajdoc-ref.html" title="ajdoc"><link rel="next" href="ajbrowser.html" title="Chapter 3. AspectJ Browser"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">aj</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ajdoc-ref.html">Prev</a>&nbsp;</td><th width="60%" align="center"><tt>aj</tt>, the AspectJ load-time weaving script</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ajbrowser.html">Next</a></td></tr></table><hr></div><div class="refentry"><h1 class="title"><a name="aj-ref"></a>aj</h1><div class="refnamediv"><a name="d0e1037"></a><h2>Name</h2>aj &#8212; command-line launcher for basic load-time weaving</div><div class="refsynopsisdiv"><a name="d0e1042"></a><h2>Synopsis</h2><div class="cmdsynopsis" uniqueID="d0e1043"><a name="d0e1043"></a><tt>aj</tt>  [<i><tt>Options</tt></i>] [<i><tt>arg...</tt></i>]</div></div><div class="refsect1"><a name="aj"></a><h2>Description</h2><p>The
+            <b>aj</b> command runs Java programs in Java 1.4 or
+            later by setting up
+            <tt>WeavingURLClassLoader</tt> as the system class
+            loader, to do load-time bytecode weaving. </p><p> The arguments are the same as those used to launch the Java program.
+            Users should define the environment variables
+            <tt>CLASSPATH</tt> and
+            <tt>ASPECTPATH</tt>. </p><p>For more information and alternatives for load-time weaving,
+        see <a href="ltw.html">Load-Time Weaving</a>.
+        </p><div class="refsect2"><a name="d0e1076"></a><h3>Examples</h3><div class="example"><p><a name="simpleajexample"></a><b>Example 2.5. A simple example</b></p><p>Use ajc to build a library, then weave at load time</p><pre class="programlisting">                     
+    REM compile library
+    ${ASPECTJ_HOME}\bin\ajc.bat -outjar lib\aspects.jar @aspects.lst
+                
+    REM run, weaving into application at load-time set
+    ASPECTPATH=lib\aspects.jar set CLASSPATH=app\app.jar
+    ${ASPECTJ_HOME}\bin\aj.bat com.company.app.Main "Hello, World!" 
+                </pre></div></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ajdoc-ref.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ajbrowser.html">Next</a></td></tr><tr><td width="40%" align="left">ajdoc&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="aj-ref-top.html">Up</a></td><td width="40%" align="right">&nbsp;Chapter 3. AspectJ Browser</td></tr></table></div></body></html>

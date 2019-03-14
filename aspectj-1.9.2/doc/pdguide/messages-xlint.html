@@ -1,0 +1,40 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Lint messages</title><link rel="stylesheet" href="aspectj-docs.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.44"><link rel="home" href="index.html" title="The AspectJtm Problem Diagnosis Guide"><link rel="up" href="messages.html" title="Chapter 1. Messages"><link rel="previous" href="messages-scenarios.html" title="Message scenarios"><link rel="next" href="pointcuts.html" title="Chapter 2. Debugging Pointcuts"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Lint messages</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="messages-scenarios.html">Prev</a>&nbsp;</td><th width="60%" align="center">Chapter 1. Messages</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="pointcuts.html">Next</a></td></tr></table><hr></div><div class="sect1"><a name="messages-xlint"></a><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="messages-xlint"></a>Lint messages</h2></div></div><p> 
+                The table below lists some useful <tt>-Xlint</tt> messages. </p><div class="informaltable" uniqueID="d0e265"><a name="d0e265"></a><table border="1"><colgroup><col><col><col></colgroup><thead><tr><th>Message</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><tt>aspectExcludedByConfiguration</tt></td><td><tt>ignore</tt></td><td>
+                            	If an aspect is not being woven, despite being
+                            	registered, it could be that it has been excluded
+                            	by either an <tt>include</tt> or <tt>exclude</tt> 
+                            	element in the 
+                            	<tt>aspects</tt> section of <tt>META-INF/aop.xml</tt>.
+                            	Enable this message to determine whether an aspect has
+                            	been excluded.
+                            </td></tr><tr><td><tt>adviceDidNotMatch</tt></td><td><tt>warning</tt></td><td>
+                            	Issued when advice did not potentially affect any join points.
+                                This means the corresponding pointcut did not match any join
+                                points in the program.  This may be valid e.g., in library 
+                                aspects or code picking up error conditions, but often the
+                                programmer simply made a mistake in the pointcut.  The best
+                                approach is to debug the pointcut.
+                            </td></tr><tr><td><tt>invalidAbsoluteTypeName</tt></td><td><tt>warning</tt></td><td>
+                            	Issued when an exact type in a pointcut does not match any type
+                                in the system.  Note that this can interact with the rules for
+                                resolving simple types, which permit unqualified names if they
+                                are imported.
+                            </td></tr><tr><td><tt>typeNotExposedToWeaver</tt></td><td><tt>warning</tt></td><td>
+                            	This means that a type which could be affected by an aspect
+                                is not available for weaving.  This happens when a class on
+                                the classpath should be woven.
+                            </td></tr><tr><td><tt>runtimeExceptionNotSoftened</tt></td><td><tt>warning</tt></td><td>
+                            	Before AspectJ 5, declare soft used to soften runtime exceptions
+                                (unnecessarily).  Since then, it does not but does issue this 
+                                warning in case the programmer did intend for the exception
+                                to be wrapped.
+                            </td></tr><tr><td><tt>unmatchedSuperTypeInCall</tt></td><td><tt>warning</tt></td><td>
+                            	Issued when a call pointcut specifies a defining type which
+                                is not matched at the call site (where the declared type of
+                                the reference is used, not the actual runtime type).  Most
+                                people should use
+                                'target(Foo) &amp;&amp; call(void foo())'
+                                instead.
+                            </td></tr></tbody></table></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="messages-scenarios.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="pointcuts.html">Next</a></td></tr><tr><td width="40%" align="left">Message scenarios&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="messages.html">Up</a></td><td width="40%" align="right">&nbsp;Chapter 2. Debugging Pointcuts</td></tr></table></div></body></html>

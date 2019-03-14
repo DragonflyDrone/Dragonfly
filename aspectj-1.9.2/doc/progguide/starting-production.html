@@ -1,0 +1,226 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Production Aspects</title><link rel="stylesheet" href="aspectj-docs.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.44"><link rel="home" href="index.html" title="The AspectJTM Programming Guide"><link rel="up" href="starting.html" title="Chapter 1. Getting Started with AspectJ"><link rel="previous" href="starting-development.html" title="Development Aspects"><link rel="next" href="starting-conclusion.html" title="Conclusion"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Production Aspects</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="starting-development.html">Prev</a>&nbsp;</td><th width="60%" align="center">Chapter 1. Getting Started with AspectJ</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="starting-conclusion.html">Next</a></td></tr></table><hr></div><div class="sect1"><a name="starting-production"></a><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="starting-production"></a>Production Aspects</h2></div></div><p>
+        This section presents examples of aspects that are inherently
+        intended to be included in the production builds of an application.
+        Production aspects tend to add functionality to an application
+        rather than merely adding more visibility of the internals of a
+        program. Again, we begin with name-based aspects and follow with
+        property-based aspects.  Name-based production aspects tend to
+        affect only a small number of methods. For this reason, they are a
+        good next step for projects adopting AspectJ. But even though they
+        tend to be small and simple, they can often have a significant
+        effect in terms of making the program easier to understand and
+        maintain.
+      </p><div class="sect2"><a name="change-monitoring"></a><div class="titlepage"><div><h3 class="title"><a name="change-monitoring"></a>Change Monitoring</h3></div></div><p>
+        The first example production aspect shows how one might implement
+        some simple functionality where it is problematic to try and do it
+        explicitly. It supports the code that refreshes the display. The
+        role of the aspect is to maintain a dirty bit indicating whether or
+        not an object has moved since the last time the display was
+        refreshed.
+      </p><p>
+        Implementing this functionality as an aspect is straightforward.
+        The <tt>testAndClear</tt> method is called by the
+        display code to find out whether a figure element has moved
+        recently. This method returns the current state of the dirty flag
+        and resets it to false. The pointcut <tt>move</tt>
+        captures all the method calls that can move a figure element. The
+        after advice on <tt>move</tt> sets the dirty flag
+        whenever an object moves.
+      </p><pre class="programlisting">
+aspect MoveTracking {
+    private static boolean dirty = false;
+
+    public static boolean testAndClear() {
+        boolean result = dirty;
+        dirty = false;
+        return result;
+    }
+
+    pointcut move():
+        call(void FigureElement.setXY(int, int)) ||
+        call(void Line.setP1(Point))             ||
+        call(void Line.setP2(Point))             ||
+        call(void Point.setX(int))               ||
+        call(void Point.setY(int));
+
+    after() returning: move() {
+        dirty = true;
+    }
+}
+</pre><p>
+        Even this simple example serves to illustrate some of the important
+        benefits of using AspectJ in production code. Consider implementing
+        this functionality with ordinary Java: there would likely be a
+        helper class that contained the <tt>dirty</tt> flag, the
+        <tt>testAndClear</tt> method, as well as a
+        <tt>setFlag</tt> method. Each of the methods that could
+        move a figure element would include a call to the
+        <tt>setFlag</tt> method. Those calls, or rather the
+        concept that those calls should happen at each move operation, are
+        the crosscutting concern in this case.
+      </p><p>
+        The AspectJ implementation has several advantages over the standard
+        implementation:
+      </p><p>
+        <span class="emphasis"><i>The structure of the crosscutting concern is captured
+        explicitly.</i></span> The moves pointcut clearly states all the
+        methods involved, so the programmer reading the code sees not just
+        individual calls to <tt>setFlag</tt>, but instead sees
+        the real structure of the code. The IDE support included with
+        AspectJ automatically reminds the programmer that this aspect
+        advises each of the methods involved.  The IDE support also
+        provides commands to jump to the advice from the method and
+        vice-versa.
+      </p><p>
+        <span class="emphasis"><i>Evolution is easier.</i></span> If, for example, the
+        aspect needs to be revised to record not just that some figure
+        element moved, but rather to record exactly which figure elements
+        moved, the change would be entirely local to the aspect. The
+        pointcut would be updated to expose the object being moved, and the
+        advice would be updated to record that object. The paper
+        <i>An Overview of AspectJ</i> (available linked off
+        of the AspectJ web site -- <a href="http://eclipse.org/aspectj" target="_top">http://eclipse.org/aspectj</a>), presented at ECOOP
+        2001, presents a detailed discussion of various ways this aspect
+        could be expected to evolve.
+      </p><p>
+        <span class="emphasis"><i>The functionality is easy to plug in and out.</i></span>
+        Just as with development aspects, production aspects may need to be
+        removed from the system, either because the functionality is no
+        longer needed at all, or because it is not needed in certain
+        configurations of a system. Because the functionality is
+        modularized in a single aspect this is easy to do.
+      </p><p>
+        <span class="emphasis"><i>The implementation is more stable.</i></span> If, for
+        example, the programmer adds a subclass of
+        <tt>Line</tt> that overrides the existing methods,
+        this advice in this aspect will still apply. In the ordinary Java
+        implementation the programmer would have to remember to add the
+        call to <tt>setFlag</tt> in the new overriding
+        method. This benefit is often even more compelling for
+        property-based aspects (see the section <a href="starting-production.html#starting-production-consistentBehavior">Providing Consistent Behavior</a>).
+      </p></div><div class="sect2"><a name="context-passing"></a><div class="titlepage"><div><h3 class="title"><a name="context-passing"></a>Context Passing</h3></div></div><p>
+        The crosscutting structure of context passing can be a significant
+        source of complexity in Java programs. Consider implementing
+        functionality that would allow a client of the figure editor (a
+        program client rather than a human) to set the color of any figure
+        elements that are created. Typically this requires passing a color,
+        or a color factory, from the client, down through the calls that
+        lead to the figure element factory. All programmers are familiar
+        with the inconvenience of adding a first argument to a number of
+        methods just to pass this kind of context information.
+      </p><p>
+        Using AspectJ, this kind of context passing can be implemented in a
+        modular way. The following code adds after advice that runs only
+        when the factory methods of <tt>Figure</tt> are
+        called in the control flow of a method on a
+        <tt>ColorControllingClient</tt>.
+      </p><pre class="programlisting">
+aspect ColorControl {
+    pointcut CCClientCflow(ColorControllingClient client):
+        cflow(call(* * (..)) &amp;&amp; target(client));
+
+    pointcut make(): call(FigureElement Figure.make*(..));
+
+    after (ColorControllingClient c) returning (FigureElement fe):
+            make() &amp;&amp; CCClientCflow(c) {
+        fe.setColor(c.colorFor(fe));
+    }
+}
+</pre><p>
+        This aspect affects only a small number of methods, but note that
+        the non-AOP implementation of this functionality might require
+        editing many more methods, specifically, all the methods in the
+        control flow from the client to the factory. This is a benefit
+        common to many property-based aspects while the aspect is short and
+        affects only a modest number of benefits, the complexity the aspect
+        saves is potentially much larger.
+      </p></div><div class="sect2"><a name="starting-production-consistentBehavior"></a><div class="titlepage"><div><h3 class="title"><a name="starting-production-consistentBehavior"></a>Providing Consistent Behavior</h3></div></div><p>
+        This example shows how a property-based aspect can be used to
+        provide consistent handling of functionality across a large set of
+        operations. This aspect ensures that all public methods of the
+        <tt>com.bigboxco</tt> package log any Errors they throw
+        to their caller (in Java, an Error is like an Exception, but it
+        indicates that something really bad and usually unrecoverable has
+        happened).  The <tt>publicMethodCall</tt> pointcut
+        captures the public method calls of the package, and the after
+        advice runs whenever one of those calls throws an Error. The advice
+        logs that Error and then the throw resumes.
+      </p><pre class="programlisting">
+aspect PublicErrorLogging {
+    Log log = new Log();
+
+    pointcut publicMethodCall():
+        call(public * com.bigboxco.*.*(..));
+
+    after() throwing (Error e): publicMethodCall() {
+        log.write(e);
+    }
+}
+</pre><p>
+        In some cases this aspect can log an exception twice. This happens
+        if code inside the <tt>com.bigboxco</tt> package itself
+        calls a public method of the package. In that case this code will
+        log the error at both the outermost call into the
+        <tt>com.bigboxco</tt> package and the re-entrant
+        call. The <tt>cflow</tt> primitive pointcut can be used
+        in a nice way to exclude these re-entrant calls:</p><pre class="programlisting">
+after() throwing (Error e):
+        publicMethodCall() &amp;&amp; !cflow(publicMethodCall()) {
+    log.write(e);
+}
+</pre><p>
+        The following aspect is taken from work on the AspectJ compiler.
+        The aspect advises about 35 methods in the
+        <tt>JavaParser</tt> class. The individual methods
+        handle each of the different kinds of elements that must be
+        parsed. They have names like <tt>parseMethodDec</tt>,
+        <tt>parseThrows</tt>, and
+        <tt>parseExpr</tt>.
+      </p><pre class="programlisting">
+aspect ContextFilling {
+    pointcut parse(JavaParser jp):
+        call(* JavaParser.parse*(..))
+        &amp;&amp; target(jp)
+        &amp;&amp; !call(Stmt parseVarDec(boolean)); // var decs
+                                              // are tricky
+
+    around(JavaParser jp) returns ASTObject: parse(jp) {
+        Token beginToken = jp.peekToken();
+        ASTObject ret = proceed(jp);
+        if (ret != null) jp.addContext(ret, beginToken);
+        return ret;
+     }
+}
+</pre><p>
+        This example exhibits a property found in many aspects with large
+        property-based pointcuts. In addition to a general property based
+        pattern <tt>call(* JavaParser.parse*(..))</tt> it
+        includes an exception to the pattern <tt>!call(Stmt
+        parseVarDec(boolean))</tt>. The exclusion of
+        <tt>parseVarDec</tt> happens because the parsing of
+        variable declarations in Java is too complex to fit with the clean
+        pattern of the other <tt>parse*</tt> methods. Even with
+        the explicit exclusion this aspect is a clear expression of a clean
+        crosscutting modularity. Namely that all
+        <tt>parse*</tt> methods that return
+        <tt>ASTObjects</tt>, except for
+        <tt>parseVarDec</tt> share a common behavior for
+        establishing the parse context of their result.
+      </p><p>
+        The process of writing an aspect with a large property-based
+        pointcut, and of developing the appropriate exceptions can clarify
+        the structure of the system. This is especially true, as in this
+        case, when refactoring existing code to use aspects. When we first
+        looked at the code for this aspect, we were able to use the IDE
+        support provided in AJDE for JBuilder to see what methods the
+        aspect was advising compared to our manual coding. We quickly
+        discovered that there were a dozen places where the aspect advice
+        was in effect but we had not manually inserted the required
+        functionality. Two of these were bugs in our prior non-AOP
+        implementation of the parser. The other ten were needless
+        performance optimizations. So, here, refactoring the code to
+        express the crosscutting structure of the aspect explicitly made
+        the code more concise and eliminated latent bugs.
+      </p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="starting-development.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="starting-conclusion.html">Next</a></td></tr><tr><td width="40%" align="left">Development Aspects&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="starting.html">Up</a></td><td width="40%" align="right">&nbsp;Conclusion</td></tr></table></div></body></html>

@@ -1,0 +1,805 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Pointcuts</title><link rel="stylesheet" href="aspectj-docs.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.44"><link rel="home" href="index.html" title="The AspectJTM Programming Guide"><link rel="up" href="semantics.html" title="Appendix B. Language Semantics"><link rel="previous" href="semantics-joinPoints.html" title="Join Points"><link rel="next" href="semantics-advice.html" title="Advice"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Pointcuts</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="semantics-joinPoints.html">Prev</a>&nbsp;</td><th width="60%" align="center">Appendix B. Language Semantics</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="semantics-advice.html">Next</a></td></tr></table><hr></div><div class="sect1"><a name="semantics-pointcuts"></a><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="semantics-pointcuts"></a>Pointcuts</h2></div></div><p>
+      A pointcut is a program element that picks out join points and
+      exposes data from the execution context of those join points.
+      Pointcuts are used primarily by advice.  They can be composed with
+      boolean operators to build up other pointcuts.  The primitive
+      pointcuts and combinators provided by the language are:
+    </p><div class="variablelist"><dl><dt><a name="d0e4771"></a><span class="term"><tt>call(<i><tt>MethodPattern</tt></i>)</tt></span></dt><dd>
+          Picks out each method call join point whose signature matches
+          <i><tt>MethodPattern</tt></i>.
+        </dd><dt><a name="d0e4783"></a><span class="term"><tt>execution(<i><tt>MethodPattern</tt></i>)</tt></span></dt><dd>
+          Picks out each method execution join point whose signature matches
+          <i><tt>MethodPattern</tt></i>.
+        </dd><dt><a name="d0e4795"></a><span class="term"><tt>get(<i><tt>FieldPattern</tt></i>)</tt></span></dt><dd>
+          Picks out each field reference join point whose signature matches
+          <i><tt>FieldPattern</tt></i>.
+          [Note that references to constant fields (static final
+          fields bound to a constant string object or primitive value) are not
+          join points, since Java requires them to be inlined.]
+        </dd><dt><a name="d0e4807"></a><span class="term"><tt>set(<i><tt>FieldPattern</tt></i>)</tt></span></dt><dd>
+          Picks out each field set join point whose signature matches
+          <i><tt>FieldPattern</tt></i>.
+          [Note that the initializations of constant fields (static
+          final fields where the initializer is a constant string object or
+          primitive value) are not join points, since Java requires their
+          references to be inlined.]
+        </dd><dt><a name="d0e4819"></a><span class="term"><tt>call(<i><tt>ConstructorPattern</tt></i>)</tt></span></dt><dd>
+          Picks out each constructor call join point whose signature matches
+          <i><tt>ConstructorPattern</tt></i>.
+        </dd><dt><a name="d0e4831"></a><span class="term"><tt>execution(<i><tt>ConstructorPattern</tt></i>)</tt></span></dt><dd>
+          Picks out each constructor execution join point whose signature matches
+          <i><tt>ConstructorPattern</tt></i>.
+        </dd><dt><a name="d0e4843"></a><span class="term"><tt>initialization(<i><tt>ConstructorPattern</tt></i>)</tt></span></dt><dd>
+          Picks out each object initialization join point whose signature matches
+          <i><tt>ConstructorPattern</tt></i>.
+        </dd><dt><a name="d0e4855"></a><span class="term"><tt>preinitialization(<i><tt>ConstructorPattern</tt></i>)</tt></span></dt><dd>
+          Picks out each object pre-initialization join point whose signature matches
+          <i><tt>ConstructorPattern</tt></i>.
+        </dd><dt><a name="d0e4867"></a><span class="term"><tt>staticinitialization(<i><tt>TypePattern</tt></i>)</tt></span></dt><dd>
+          Picks out each static initializer execution join point whose signature matches
+          <i><tt>TypePattern</tt></i>.
+        </dd><dt><a name="d0e4879"></a><span class="term"><tt>handler(<i><tt>TypePattern</tt></i>)</tt></span></dt><dd>
+          Picks out each exception handler join point whose signature matches
+          <i><tt>TypePattern</tt></i>.
+        </dd><dt><a name="d0e4891"></a><span class="term"><tt>adviceexecution()</tt></span></dt><dd>
+          Picks out all advice execution join points.
+        </dd><dt><a name="d0e4897"></a><span class="term"><tt>within(<i><tt>TypePattern</tt></i>)</tt></span></dt><dd>
+          Picks out each join point where the executing code is defined
+          in a type matched by <i><tt>TypePattern</tt></i>.
+        </dd><dt><a name="d0e4909"></a><span class="term"><tt>withincode(<i><tt>MethodPattern</tt></i>)</tt></span></dt><dd>
+          Picks out each join point where the executing code is defined in
+          a method whose signature matches
+          <i><tt>MethodPattern</tt></i>.
+        </dd><dt><a name="d0e4921"></a><span class="term"><tt>withincode(<i><tt>ConstructorPattern</tt></i>)</tt></span></dt><dd>
+          Picks out each join point where the executing code is defined
+          in a constructor whose signature matches
+          <i><tt>ConstructorPattern</tt></i>.
+        </dd><dt><a name="d0e4933"></a><span class="term"><tt>cflow(<i><tt>Pointcut</tt></i>)</tt></span></dt><dd>
+          Picks out each join point in the control flow of any join point
+          <i><tt>P</tt></i> picked out by
+          <i><tt>Pointcut</tt></i>, including
+          <i><tt>P</tt></i> itself.
+        </dd><dt><a name="d0e4951"></a><span class="term"><tt>cflowbelow(<i><tt>Pointcut</tt></i>)</tt></span></dt><dd>
+          Picks out each join point in the control flow of any join point
+          <i><tt>P</tt></i> picked out by
+          <i><tt>Pointcut</tt></i>, but not
+          <i><tt>P</tt></i> itself.
+        </dd><dt><a name="d0e4969"></a><span class="term"><tt>this(<i><tt>Type</tt></i> or <i><tt>Id</tt></i>)</tt></span></dt><dd>
+          Picks out each join point where the currently executing object
+          (the object bound to <tt>this</tt>) is an instance of
+          <i><tt>Type</tt></i>, or of the type of the
+          uniqueID <i><tt>Id</tt></i> (which must be bound in the enclosing
+          advice or pointcut definition).
+          Will not match any join points from static contexts.
+        </dd><dt><a name="d0e4990"></a><span class="term"><tt>target(<i><tt>Type</tt></i> or <i><tt>Id</tt></i>)</tt></span></dt><dd>
+          Picks out each join point where the target object (the object
+          on which a call or field operation is applied to) is an instance of
+          <i><tt>Type</tt></i>, or of the type of the uniqueID
+          <i><tt>Id</tt></i> (which must be bound in the enclosing
+          advice or pointcut definition).
+          Will not match any calls, gets, or sets of static members.
+        </dd><dt><a name="d0e5008"></a><span class="term"><tt>args(<i><tt>Type</tt></i> or <i><tt>Id</tt></i>, ...)</tt></span></dt><dd>
+          Picks out each join point where the arguments are instances of
+          the appropriate type (or type of the uniqueID if using that form). A
+          <tt>null</tt> argument is matched iff the static type of the 
+          argument (declared parameter type or field type) is the same as, or a subtype of,
+          the specified args type. 
+        </dd><dt><a name="d0e5023"></a><span class="term"><tt><i><tt>PointcutId</tt></i>(<i><tt>TypePattern</tt></i> or <i><tt>Id</tt></i>, ...)</tt></span></dt><dd>
+          Picks out each join point that is picked out by the
+          user-defined pointcut designator named by
+          <i><tt>PointcutId</tt></i>.
+        </dd><dt><a name="d0e5040"></a><span class="term"><tt>if(<i><tt>BooleanExpression</tt></i>)</tt></span></dt><dd>
+          Picks out each join point where the boolean expression
+          evaluates to <tt>true</tt>.  The boolean expression used
+          can only access static members, parameters exposed by the enclosing
+          pointcut or advice, and <tt>thisJoinPoint</tt> forms.  In
+          particular, it cannot call non-static methods on the aspect or
+		  use return values or exceptions exposed by after advice.
+        </dd><dt><a name="d0e5055"></a><span class="term"><tt>! <i><tt>Pointcut</tt></i></tt></span></dt><dd>
+          Picks out each join point that is not picked out by
+          <i><tt>Pointcut</tt></i>.
+        </dd><dt><a name="d0e5066"></a><span class="term"><tt><i><tt>Pointcut0</tt></i> &amp;&amp; <i><tt>Pointcut1</tt></i></tt></span></dt><dd>
+          Picks out each join points that is picked out by both
+          <i><tt>Pointcut0</tt></i> and
+          <i><tt>Pointcut1</tt></i>.
+        </dd><dt><a name="d0e5082"></a><span class="term"><tt><i><tt>Pointcut0</tt></i> || <i><tt>Pointcut1</tt></i></tt></span></dt><dd>
+          Picks out each join point that is picked out by either
+          pointcuts. <i><tt>Pointcut0</tt></i> or
+          <i><tt>Pointcut1</tt></i>.
+        </dd><dt><a name="d0e5098"></a><span class="term"><tt>( <i><tt>Pointcut</tt></i> )</tt></span></dt><dd>
+          Picks out each join points picked out by
+          <i><tt>Pointcut</tt></i>.
+        </dd></dl></div><div class="sect2"><a name="pointcut-definition"></a><div class="titlepage"><div><h3 class="title"><a name="pointcut-definition"></a>Pointcut definition</h3></div></div><p>
+        Pointcuts are defined and named by the programmer with the
+        <tt>pointcut</tt> declaration.
+      </p><pre class="programlisting">
+  pointcut publicIntCall(int i):
+      call(public * *(int)) &amp;&amp; args(i);
+</pre><p>
+        A named pointcut may be defined in either a class or aspect, and is
+        treated as a member of the class or aspect where it is found.  As a
+        member, it may have an access modifier such as
+        <tt>public</tt> or <tt>private</tt>.
+      </p><pre class="programlisting">
+  class C {
+      pointcut publicCall(int i):
+	  call(public * *(int)) &amp;&amp; args(i);
+  }
+
+  class D {
+      pointcut myPublicCall(int i):
+	  C.publicCall(i) &amp;&amp; within(SomeType);
+  }
+</pre><p>
+        Pointcuts that are not final may be declared abstract, and defined
+        without a body.  Abstract pointcuts may only be declared within
+        abstract aspects.
+      </p><pre class="programlisting">
+  abstract aspect A {
+      abstract pointcut publicCall(int i);
+  }
+</pre><p>
+        In such a case, an extending aspect may override the abstract
+        pointcut.
+      </p><pre class="programlisting">
+  aspect B extends A {
+      pointcut publicCall(int i): call(public Foo.m(int)) &amp;&amp; args(i);
+  }
+</pre><p>
+        For completeness, a pointcut with a declaration may be declared
+        <tt>final</tt>.
+      </p><p>
+        Though named pointcut declarations appear somewhat like method
+        declarations, and can be overridden in subaspects, they cannot be
+        overloaded. It is an error for two pointcuts to be named with the
+        same name in the same class or aspect declaration.
+      </p><p>
+        The scope of a named pointcut is the enclosing class declaration.
+        This is different than the scope of other members; the scope of
+        other members is the enclosing class <span class="emphasis"><i>body</i></span>.
+        This means that the following code is legal:
+      </p><pre class="programlisting">
+  aspect B percflow(publicCall()) {
+      pointcut publicCall(): call(public Foo.m(int));
+  }
+</pre></div><div class="sect2"><a name="context-exposure"></a><div class="titlepage"><div><h3 class="title"><a name="context-exposure"></a>Context exposure</h3></div></div><p>
+        Pointcuts have an interface; they expose some parts of the
+        execution context of the join points they pick out. For example,
+        the PublicIntCall above exposes the first argument from the
+        receptions of all public unary integer methods.  This context is
+        exposed by providing typed formal parameters to named pointcuts and
+        advice, like the formal parameters of a Java method. These formal
+        parameters are bound by name matching.
+      </p><p>
+        On the right-hand side of advice or pointcut declarations, in
+        certain pointcut designators, a Java uniqueID is allowed in place
+        of a type or collection of types.  The pointcut designators that
+        allow this are <tt>this</tt>, <tt>target</tt>,
+        and <tt>args</tt>.  In all such cases, using an
+        uniqueID rather than a type does two things.  First, it selects
+        join points as based on the type of the formal parameter.  So the
+        pointcut
+      </p><pre class="programlisting">
+  pointcut intArg(int i): args(i);
+</pre><p>
+        picks out join points where an <tt>int</tt> (or
+        a <tt>byte</tt>, <tt>short</tt>, or
+        <tt>char</tt>; anything assignable to an
+        <tt>int</tt>) is being passed as an argument.
+        Second, though, it makes the value of that argument
+        available to the enclosing advice or pointcut.  
+      </p><p>
+        Values can be exposed from named pointcuts as well, so
+      </p><pre class="programlisting">
+  pointcut publicCall(int x): call(public *.*(int)) &amp;&amp; intArg(x);
+  pointcut intArg(int i): args(i);
+</pre><p>
+        is a legal way to pick out all calls to public methods accepting an
+        int argument, and exposing that argument.
+      </p><p>
+        There is one special case for this kind of exposure.  Exposing an
+        argument of type Object will also match primitive typed arguments,
+        and expose a "boxed" version of the primitive.  So,
+      </p><pre class="programlisting">
+  pointcut publicCall(): call(public *.*(..)) &amp;&amp; args(Object);
+</pre><p>
+        will pick out all unary methods that take, as their only argument,
+        subtypes of Object (i.e., not primitive types like
+        <tt>int</tt>), but
+      </p><pre class="programlisting">
+  pointcut publicCall(Object o): call(public *.*(..)) &amp;&amp; args(o);
+</pre><p>
+        will pick out all unary methods that take any argument: And if the
+        argument was an <tt>int</tt>, then the value passed to
+        advice will be of type <tt>java.lang.Integer</tt>.
+      </p><p>
+        The "boxing" of the primitive value is based on the
+        <span class="emphasis"><i>original</i></span> primitive type.  So in the
+        following program
+      </p><pre class="programlisting">
+  public class InstanceOf {
+
+    public static void main(String[] args) {
+      doInt(5);
+    }
+
+    static void doInt(int i) {  }
+  }
+
+  aspect IntToLong {
+    pointcut el(long l) : 
+        execution(* doInt(..)) &amp;&amp; args(l);
+
+    before(Object o) : el(o) {
+         System.out.println(o.getClass());
+    }
+  }
+</pre><p>
+        The pointcut will match and expose the integer argument,
+        but it will expose it as an <tt>Integer</tt>,
+        not a <tt>Long</tt>.
+      </p></div><div class="sect2"><a name="primitive-pointcuts"></a><div class="titlepage"><div><h3 class="title"><a name="primitive-pointcuts"></a>Primitive pointcuts</h3></div></div><div class="sect3"><a name="d0e5230"></a><div class="titlepage"><div><h4 class="title"><a name="d0e5230"></a>Method-related pointcuts</h4></div></div><p>AspectJ provides two primitive pointcut designators designed to
+        capture method call and execution join points. </p><div class="itemizedlist"><ul><li><a name="d0e5236"></a><tt>call(<i><tt>MethodPattern</tt></i>)</tt></li><li><a name="d0e5242"></a><tt>execution(<i><tt>MethodPattern</tt></i>)</tt></li></ul></div></div><div class="sect3"><a name="d0e5248"></a><div class="titlepage"><div><h4 class="title"><a name="d0e5248"></a>Field-related pointcuts</h4></div></div><p>
+          AspectJ provides two primitive pointcut designators designed to
+          capture field reference and set join points:
+        </p><div class="itemizedlist"><ul><li><a name="d0e5254"></a><tt>get(<i><tt>FieldPattern</tt></i>)</tt></li><li><a name="d0e5260"></a><tt>set(<i><tt>FieldPattern</tt></i>)</tt></li></ul></div><p>
+          All set join points are treated as having one argument, the value the
+          field is being set to, so at a set join point, that value can be
+          accessed with an <tt>args</tt> pointcut.  So an aspect
+          guarding a static integer variable x declared in type T might be written as
+        </p><pre class="programlisting">
+  aspect GuardedX {
+      static final int MAX_CHANGE = 100;
+      before(int newval): set(static int T.x) &amp;&amp; args(newval) {
+	  if (Math.abs(newval - T.x) &gt; MAX_CHANGE)
+	      throw new RuntimeException();
+      }
+  }
+</pre></div><div class="sect3"><a name="d0e5273"></a><div class="titlepage"><div><h4 class="title"><a name="d0e5273"></a>Object creation-related pointcuts</h4></div></div><p>
+          AspectJ provides primitive pointcut designators designed to
+          capture the initializer execution join points of objects.
+        </p><div class="itemizedlist"><ul><li><a name="d0e5279"></a><tt>call(<i><tt>ConstructorPattern</tt></i>)</tt></li><li><a name="d0e5285"></a><tt>execution(<i><tt>ConstructorPattern</tt></i>)</tt></li><li><a name="d0e5291"></a><tt>initialization(<i><tt>ConstructorPattern</tt></i>)</tt></li><li><a name="d0e5297"></a><tt>preinitialization(<i><tt>ConstructorPattern</tt></i>)</tt></li></ul></div></div><div class="sect3"><a name="d0e5303"></a><div class="titlepage"><div><h4 class="title"><a name="d0e5303"></a>Class initialization-related pointcuts</h4></div></div><p>
+          AspectJ provides one primitive pointcut designator to pick out
+          static initializer execution join points.
+        </p><div class="itemizedlist"><ul><li><a name="d0e5309"></a><tt>staticinitialization(<i><tt>TypePattern</tt></i>)</tt></li></ul></div></div><div class="sect3"><a name="d0e5315"></a><div class="titlepage"><div><h4 class="title"><a name="d0e5315"></a>Exception handler execution-related pointcuts</h4></div></div><p>
+          AspectJ provides one primitive pointcut designator to capture
+          execution of exception handlers:
+        </p><div class="itemizedlist"><ul><li><a name="d0e5321"></a><tt>handler(<i><tt>TypePattern</tt></i>)</tt></li></ul></div><p>
+          All handler join points are treated as having one argument, the value
+          of the exception being handled.  That value can be accessed with an
+          <tt>args</tt> pointcut.  So an aspect used to put
+          <tt>FooException</tt> objects into some normal form before
+          they are handled could be written as
+        </p><pre class="programlisting">
+  aspect NormalizeFooException {
+      before(FooException e): handler(FooException) &amp;&amp; args(e) {
+	  e.normalize();
+      }
+  }
+</pre></div><div class="sect3"><a name="d0e5337"></a><div class="titlepage"><div><h4 class="title"><a name="d0e5337"></a>Advice execution-related pointcuts</h4></div></div><p>
+          AspectJ provides one primitive pointcut designator to capture
+          execution of advice
+        </p><div class="itemizedlist"><ul><li><a name="d0e5343"></a><tt>adviceexecution()</tt></li></ul></div><p>
+          This can be used, for example, to filter out any join point in the
+          control flow of advice from a particular aspect.
+        </p><pre class="programlisting">
+  aspect TraceStuff {
+      pointcut myAdvice(): adviceexecution() &amp;&amp; within(TraceStuff);
+
+      before(): call(* *(..)) &amp;&amp; !cflow(myAdvice) {
+	  // do something
+      }
+  }
+</pre></div><div class="sect3"><a name="d0e5350"></a><div class="titlepage"><div><h4 class="title"><a name="d0e5350"></a>State-based pointcuts</h4></div></div><p>
+          Many concerns cut across the dynamic times when an object of a
+          particular type is executing, being operated on, or being passed
+          around.  AspectJ provides primitive pointcuts that capture join
+          points at these times.  These pointcuts use the dynamic types of
+          their objects to pick out join points.  They may also be used to
+          expose the objects used for discrimination.
+        </p><div class="itemizedlist"><ul><li><a name="d0e5356"></a><tt>this(<i><tt>Type</tt></i> or <i><tt>Id</tt></i>)</tt></li><li><a name="d0e5365"></a><tt>target(<i><tt>Type</tt></i> or <i><tt>Id</tt></i>)</tt></li></ul></div><p>
+          The <tt>this</tt> pointcut picks out each join point where
+          the currently executing object (the object bound to
+          <tt>this</tt>) is an instance of a particular type.  The
+          <tt>target</tt> pointcut picks out each join point where
+          the target object (the object on which a method is called or a field
+          is accessed) is an instance of a particular type.  Note that
+          <tt>target</tt> should be understood to be the object the
+          current join point is transfering control to.  This means that the
+          target object is the same as the current object at a method execution
+          join point, for example, but may be different at a method call join
+          point.
+        </p><div class="itemizedlist"><ul><li><a name="d0e5389"></a><tt>args(<i><tt>Type</tt></i> or <i><tt>Id</tt></i> or "..", ...)</tt></li></ul></div><p>
+          The args pointcut picks out each join point where the arguments are
+          instances of some types.  Each element in the comma-separated list is
+          one of four things.  If it is a type name, then the argument in that
+          position must be an instance of that type. If it is an uniqueID,
+          then that uniqueID must be bound in the enclosing advice or
+          pointcut declaration, and so the argument in that position must be an
+          instance of the type of the uniqueID (or of any type if the
+          uniqueID is typed to Object).  If it is the "*" wildcard, then any
+          argument will match, and if it is the special wildcard "..", then any
+          number of arguments will match, just like in signature patterns.  So the
+          pointcut
+        </p><pre class="programlisting">
+  args(int, .., String)
+</pre><p>
+          will pick out all join points where the first argument is an
+          <tt>int</tt> and the last is a <tt>String</tt>.
+        </p></div><div class="sect3"><a name="d0e5410"></a><div class="titlepage"><div><h4 class="title"><a name="d0e5410"></a>Control flow-based pointcuts</h4></div></div><p>
+          Some concerns cut across the control flow of the program. The
+          <tt>cflow</tt> and <tt>cflowbelow</tt> primitive
+          pointcut designators capture join points based on control flow.
+        </p><div class="itemizedlist"><ul><li><a name="d0e5422"></a><tt>cflow(<i><tt>Pointcut</tt></i>)</tt></li><li><a name="d0e5428"></a><tt>cflowbelow(<i><tt>Pointcut</tt></i>)</tt></li></ul></div><p>
+          The <tt>cflow</tt> pointcut picks out all join points that
+          occur between entry and exit of each join point
+          <i><tt>P</tt></i> picked out by
+          <i><tt>Pointcut</tt></i>, including
+          <i><tt>P</tt></i> itself.  Hence, it picks out the join
+          points <span class="emphasis"><i>in</i></span> the control flow of the join points
+          picked out by <i><tt>Pointcut</tt></i>.
+        </p><p>
+          The <tt>cflowbelow</tt> pointcut picks out all join points
+          that occur between entry and exit of each join point
+          <i><tt>P</tt></i> picked out by
+          <i><tt>Pointcut</tt></i>, but not including
+          <i><tt>P</tt></i> itself.  Hence, it picks out the join
+          points <span class="emphasis"><i>below</i></span> the control flow of the join points
+          picked out by <i><tt>Pointcut</tt></i>.
+        </p><div class="sect4"><a name="d0e5474"></a><div class="titlepage"><div><h5 class="title"><a name="d0e5474"></a>Context exposure from control flows</h5></div></div><p>
+            The <tt>cflow</tt> and
+            <tt>cflowbelow</tt> pointcuts may expose context
+            state through enclosed <tt>this</tt>,
+            <tt>target</tt>, and <tt>args</tt>
+            pointcuts. 
+          </p><p>
+	    Anytime such state is accessed, it is accessed through the
+	    <span class="emphasis"><i>most recent</i></span> control flow that
+	    matched.   So the "current arg" that would be printed by
+	    the following program is zero, even though it is in many
+	    control flows.
+          </p><pre class="programlisting">
+class Test {
+    public static void main(String[] args) {
+        fact(5);
+    }
+    static int fact(int x) {
+        if (x == 0) {
+            System.err.println("bottoming out");
+            return 1;
+        }
+        else return x * fact(x - 1);
+    }
+}
+
+aspect A {
+    pointcut entry(int i): call(int fact(int)) &amp;&amp; args(i);
+    pointcut writing(): call(void println(String)) &amp;&amp; ! within(A);
+    
+    before(int i): writing() &amp;&amp; cflow(entry(i)) {
+        System.err.println("Current arg is " + i);
+    }
+}
+</pre><p>
+            It is an error to expose such state through
+            <span class="emphasis"><i>negated</i></span> control flow pointcuts, such
+            as within <tt>!
+            cflowbelow(<i><tt>P</tt></i>)</tt>.
+          </p></div></div><div class="sect3"><a name="d0e5512"></a><div class="titlepage"><div><h4 class="title"><a name="d0e5512"></a>Program text-based pointcuts</h4></div></div><p>
+          While many concerns cut across the runtime structure of the program,
+          some must deal with the lexical structure. AspectJ allows aspects to
+          pick out join points based on where their associated code is defined.
+        </p><div class="itemizedlist"><ul><li><a name="d0e5518"></a><tt>within(<i><tt>TypePattern</tt></i>)</tt></li><li><a name="d0e5524"></a><tt>withincode(<i><tt>MethodPattern</tt></i>)</tt></li><li><a name="d0e5530"></a><tt>withincode(<i><tt>ConstructorPattern</tt></i>)</tt></li></ul></div><p>
+          The <tt>within</tt> pointcut picks out each join point
+          where the code executing is defined in the declaration of one of the
+          types in <i><tt>TypePattern</tt></i>. This includes the
+          class initialization, object initialization, and method and
+          constructor execution join points for the type, as well as any join
+          points associated with the statements and expressions of the type.
+          It also includes any join points that are associated with code in a
+          type's nested types, and that type's default constructor, if there is
+          one.
+        </p><p>
+          The <tt>withincode</tt> pointcuts picks out each join point
+          where the code executing is defined in the declaration of a
+          particular method or constructor.  This includes the method or
+          constructor execution join point as well as any join points
+          associated with the statements and expressions of the method or
+          constructor.  It also includes any join points that are associated
+          with code in a method or constructor's local or anonymous types.
+        </p></div><div class="sect3"><a name="d0e5549"></a><div class="titlepage"><div><h4 class="title"><a name="d0e5549"></a>Expression-based pointcuts</h4></div></div><div class="itemizedlist"><ul><li><a name="d0e5553"></a><tt>if(<i><tt>BooleanExpression</tt></i>)</tt></li></ul></div><p>
+          The if pointcut picks out join points based on a dynamic property.
+          its syntax takes an expression, which must evaluate to a boolean
+          true or false.  Within this expression, the
+          <tt>thisJoinPoint</tt> object is available.  So one
+          (extremely inefficient) way of picking out all call join points would
+          be to use the pointcut
+        </p><pre class="programlisting">
+  if(thisJoinPoint.getKind().equals("call"))
+</pre><p>
+	    	Note that the order of evaluation for pointcut expression 
+	    	components at a join point is undefined. Writing <tt>if</tt> 
+	    	pointcuts that have side-effects is considered bad style and may also 
+	    	lead to potentially confusing or even changing behavior with regard 
+	    	to when or if the test code will run.
+	    </p></div></div><div class="sect2"><a name="signatures"></a><div class="titlepage"><div><h3 class="title"><a name="signatures"></a>Signatures</h3></div></div><p>
+        One very important property of a join point is its signature, which is
+        used by many of AspectJ's pointcut designators to select particular
+        join points.
+      </p><div class="sect3"><a name="d0e5576"></a><div class="titlepage"><div><h4 class="title"><a name="d0e5576"></a>Methods</h4></div></div><p>
+          Join points associated with methods typically have method signatures,
+          consisting of a method name, parameter types, return type, the types of
+          the declared (checked) exceptions, and some type that the method could
+          be called on (below called the "qualifying type").
+        </p><p>
+          At a method call join point, the signature is a method signature whose
+          qualifying type is the static type used to <span class="emphasis"><i>access</i></span>
+          the method.  This means that the signature for the join point created
+          from the call <tt>((Integer)i).toString()</tt> is different
+          than that for the call <tt>((Object)i).toString()</tt>, even
+          if <tt>i</tt> is the same variable.
+        </p><p>
+          At a method execution join point, the signature is a method signature
+          whose qualifying type is the declaring type of the method.
+        </p></div><div class="sect3"><a name="d0e5597"></a><div class="titlepage"><div><h4 class="title"><a name="d0e5597"></a>Fields</h4></div></div><p>
+          Join points associated with fields typically have field signatures,
+          consisting of a field name and a field type.  A field reference join
+          point has such a signature, and no parameters.  A field set join point
+          has such a signature, but has a has a single parameter whose type is
+          the same as the field type.
+        </p></div><div class="sect3"><a name="d0e5602"></a><div class="titlepage"><div><h4 class="title"><a name="d0e5602"></a>Constructors</h4></div></div><p>
+          Join points associated with constructors typically have constructor
+          signatures, consisting of a parameter types, the types of the declared
+          (checked) exceptions, and the declaring type.
+        </p><p>
+          At a constructor call join point, the signature is the constructor
+          signature of the called constructor.  At a constructor execution join
+          point, the signature is the constructor signature of the currently
+          executing constructor.
+        </p><p>
+          At object initialization and pre-initialization join points, the
+          signature is the constructor signature for the constructor that started
+          this initialization: the first constructor entered during this type's
+          initialization of this object.
+        </p></div><div class="sect3"><a name="d0e5611"></a><div class="titlepage"><div><h4 class="title"><a name="d0e5611"></a>Others</h4></div></div><p>
+          At a handler execution join point, the signature is composed of the
+          exception type that the handler handles.
+        </p><p>
+          At an advice execution join point, the signature is composed of the
+          aspect type, the parameter types of the advice, the return type (void
+          for all but around advice) and the types of the declared (checked)
+          exceptions.
+        </p></div></div><div class="sect2"><a name="matching"></a><div class="titlepage"><div><h3 class="title"><a name="matching"></a>Matching</h3></div></div><p>
+        The <tt>withincode</tt>, <tt>call</tt>,
+        <tt>execution</tt>, <tt>get</tt>, and
+        <tt>set</tt> primitive pointcut designators all use signature
+        patterns to determine the join points they describe. A signature
+        pattern is an abstract description of one or more join-point
+        signatures. Signature patterns are intended to match very closely the
+        same kind of things one would write when declaring individual members
+        and constructors.
+      </p><p>
+        Method declarations in Java include method names, method parameters,
+        return types, modifiers like static or private, and throws clauses,
+        while constructor declarations omit the return type and replace the
+        method name with the class name. The start of a particular method
+        declaration, in class <tt>Test</tt>, for example, might be
+      </p><pre class="programlisting">
+  class C {
+      public final void foo() throws ArrayOutOfBoundsException { ... }
+  }
+</pre><p>
+        In AspectJ, method signature patterns have all these, but most elements
+        can be replaced by wildcards. So
+      </p><pre class="programlisting">
+  call(public final void C.foo() throws ArrayOutOfBoundsException)
+</pre><p>
+        picks out call join points to that method, and the pointcut
+      </p><pre class="programlisting">
+  call(public final void *.*() throws ArrayOutOfBoundsException)
+</pre><p>
+        picks out all call join points to methods, regardless of their name
+        name or which class they are defined on, so long as they take no
+        arguments, return no value, are both <tt>public</tt> and
+        <tt>final</tt>, and are declared to throw
+        <tt>ArrayOutOfBounds</tt> exceptions.
+      </p><p>
+        The defining type name, if not present, defaults to *, so another way
+        of writing that pointcut would be
+      </p><pre class="programlisting">
+  call(public final void *() throws ArrayOutOfBoundsException)
+</pre><p>
+        The wildcard <tt>..</tt> indicates zero or more 
+        parameters, so
+      </p><pre class="programlisting">
+  execution(void m(..))
+</pre><p>
+        picks out execution join points for void methods named
+        <tt>m</tt>, of any number of arguments, while
+      </p><pre class="programlisting">
+  execution(void m(.., int))
+</pre><p>
+        picks out execution join points for void methods named
+        <tt>m</tt> whose last parameter is of type
+        <tt>int</tt>.
+      </p><p>
+        The modifiers also form part of the signature pattern. If an AspectJ
+        signature pattern should match methods without a particular modifier,
+        such as all non-public methods, the appropriate modifier should be
+        negated with the <tt>!</tt> operator. So,
+      </p><pre class="programlisting">
+  withincode(!public void foo())
+</pre><p>
+        picks out all join points associated with code in null non-public
+        void methods named <tt>foo</tt>, while
+      </p><pre class="programlisting">
+  withincode(void foo())
+</pre><p>
+        picks out all join points associated with code in null void methods
+        named <tt>foo</tt>, regardless of access modifier.
+      </p><p>
+        Method names may contain the * wildcard, indicating any number of
+        characters in the method name.  So
+      </p><pre class="programlisting">
+  call(int *())
+</pre><p>
+        picks out all call join points to <tt>int</tt> methods
+        regardless of name, but
+      </p><pre class="programlisting">
+  call(int get*())
+</pre><p>
+        picks out all call join points to <tt>int</tt> methods
+        where the method name starts with the characters "get".
+      </p><p>
+        AspectJ uses the <tt>new</tt> keyword for constructor
+        signature patterns rather than using a particular class name. So the
+        execution join points of private null constructor of a class C
+        defined to throw an ArithmeticException can be picked out with
+      </p><pre class="programlisting">
+  execution(private C.new() throws ArithmeticException)
+</pre><div class="sect3"><a name="d0e5733"></a><div class="titlepage"><div><h4 class="title"><a name="d0e5733"></a>Matching based on the declaring type</h4></div></div><p>
+        The signature-matching pointcuts all specify a declaring type,
+        but the meaning varies slightly for each join point signature,
+        in line with Java semantics.
+        </p><p>
+        When matching for pointcuts <tt>withincode</tt>, 
+        <tt>get</tt>, and <tt>set</tt>, the declaring
+        type is the class that contains the declaration.
+        </p><p>
+        When matching method-call join points, the 
+        declaring type is the static type used to access the method.
+        A common mistake is to specify a declaring type for the 
+        <tt>call</tt> pointcut that is a subtype of the 
+        originally-declaring type. For example, given the class
+        </p><pre class="programlisting">
+  class Service implements Runnable {
+    public void run() { ... }
+  } 
+</pre><p>
+        the following pointcut
+        </p><pre class="programlisting">
+  call(void Service.run())
+</pre><p>
+        would fail to pick out the join point for the code
+        </p><pre class="programlisting">
+  ((Runnable) new Service()).run();
+</pre><p>
+        Specifying the originally-declaring type is correct, but would
+        pick out any such call (here, calls to the <tt>run()</tt>
+        method of any Runnable).  
+        In this situation, consider instead picking out the target type:
+        </p><pre class="programlisting">
+  call(void run()) &amp;&amp; target(Service)
+</pre><p>
+        When matching method-execution join points, 
+        if the execution pointcut method signature specifies a declaring type, 
+        the pointcut will only match methods declared in that type, or methods 
+        that override methods declared in or inherited by that type.
+        So the pointcut
+      </p><pre class="programlisting">
+  execution(public void Middle.*())
+</pre><p>
+      picks out all method executions for public methods returning void
+      and having no arguments that are either declared in, or inherited by, 
+      Middle, even if those methods are overridden in a subclass of Middle. 
+      So the pointcut would pick out the method-execution join point
+      for Sub.m() in this code:
+      </p><pre class="programlisting">
+  class Super {
+    protected void m() { ... }
+  }
+  class Middle extends Super {
+  }
+  class Sub extends Middle {
+    public void m() { ... }
+  }
+</pre></div><div class="sect3"><a name="d0e5779"></a><div class="titlepage"><div><h4 class="title"><a name="d0e5779"></a>Matching based on the throws clause</h4></div></div><p>
+          Type patterns may be used to pick out methods and constructors
+          based on their throws clauses. This allows the following two
+          kinds of extremely wildcarded pointcuts:
+        </p><pre class="programlisting">
+  pointcut throwsMathlike():
+      // each call to a method with a throws clause containing at least
+      // one exception exception with "Math" in its name.
+      call(* *(..) throws *..*Math*);
+
+  pointcut doesNotThrowMathlike():
+      // each call to a method with a throws clause containing no
+      // exceptions with "Math" in its name.
+      call(* *(..) throws !*..*Math*);
+</pre><p>
+          A <i><tt>ThrowsClausePattern</tt></i> is a comma-separated list of
+          <i><tt>ThrowsClausePatternItem</tt></i>s, where
+
+          <div class="variablelist"><dl><dt><a name="d0e5795"></a><span class="term"><i><tt>ThrowsClausePatternItem</tt></i> :</span></dt><dd><tt>[ ! ]
+                <i><tt>TypeNamePattern</tt></i></tt></dd></dl></div>
+        </p><p>
+          A <i><tt>ThrowsClausePattern</tt></i> matches the
+          throws clause of any code member signature. To match, each
+          <tt>ThrowsClausePatternItem</tt> must
+          match the throws clause of the member in question. If any item
+          doesn't match, then the whole pattern doesn't match.
+        </p><p>
+          If a ThrowsClausePatternItem begins with "!", then it matches a
+          particular throws clause if and only if <span class="emphasis"><i>none</i></span>
+          of the types named in the throws clause is matched by the
+          <tt>TypeNamePattern</tt>.
+        </p><p>
+          If a <i><tt>ThrowsClausePatternItem</tt></i> does not
+          begin with "!", then it matches a throws clause if and only if
+          <span class="emphasis"><i>any</i></span> of the types named in the throws clause
+          is matched by the <span class="emphasis"><i>TypeNamePattern</i></span>.
+        </p><p>
+          The rule for "!" matching has one potentially surprising
+          property, in that these two pointcuts
+
+          <div class="itemizedlist"><ul><li><a name="d0e5836"></a> call(* *(..) throws !IOException) </li><li><a name="d0e5838"></a> call(* *(..) throws (!IOException)) </li></ul></div>
+
+          will match differently on calls to
+
+          <blockquote class="blockquote"><tt>
+              void m() throws RuntimeException, IOException {}
+            </tt></blockquote>
+        </p><p>
+          [1] will NOT match the method m(), because method m's throws
+          clause declares that it throws IOException. [2] WILL match the
+          method m(), because method m's throws clause declares the it
+          throws some exception which does not match IOException,
+          i.e. RuntimeException.
+        </p></div></div><div class="sect2"><a name="type-patterns"></a><div class="titlepage"><div><h3 class="title"><a name="type-patterns"></a>Type patterns</h3></div></div><p>
+        Type patterns are a way to pick out collections of types and use them
+        in places where you would otherwise use only one type.  The rules for
+        using type patterns are simple.
+      </p><div class="sect3"><a name="d0e5852"></a><div class="titlepage"><div><h4 class="title"><a name="d0e5852"></a>Exact type pattern</h4></div></div><p>
+          First, all type names are also type patterns.  So
+          <tt>Object</tt>, <tt>java.util.HashMap</tt>,
+          <tt>Map.Entry</tt>, <tt>int</tt> are all type
+          patterns.
+        </p><p>
+	  If a type pattern is an exact type - if it doesn't
+	  include a wildcard - then the matching works just
+	  like normal type lookup in Java: </p><div class="itemizedlist"><ul><li><a name="d0e5872"></a>Patterns that have the same names as
+          primitive types (like <tt>int</tt>) match
+          those primitive types.</li><li><a name="d0e5877"></a>Patterns that are qualified by package names
+          (like <tt>java.util.HashMap</tt>) match types
+          in other packages.
+          </li><li><a name="d0e5882"></a>Patterns that are not qualified (like
+          <tt>HashMap</tt>) match types that are
+          resolved by Java's normal scope rules.  So, for
+          example, <tt>HashMap</tt> might match a
+          package-level type in the same package or a type that
+          have been imported with java's
+          <tt>import</tt> form.  But it would not match
+          <tt>java.util.HashMap</tt> unless the aspect
+          were in <tt>java.util</tt> or the type had
+          been imported.
+          </li></ul></div><p>
+	  So exact type patterns match based on usual Java scope
+	  rules.
+        </p></div><div class="sect3"><a name="d0e5901"></a><div class="titlepage"><div><h4 class="title"><a name="d0e5901"></a>Type name patterns</h4></div></div><p>
+          There is a special type name, *, which is also a type pattern.  * picks out all
+          types, including primitive types.  So
+        </p><pre class="programlisting">
+  call(void foo(*))
+</pre><p>
+          picks out all call join points to void methods named foo, taking one
+          argument of any type.
+        </p><p>
+          Type names that contain the two wildcards "*" and
+          "<tt>..</tt>" are also type patterns.  The * wildcard matches
+          zero or more characters characters except for ".", so it can be used
+          when types have a certain naming convention.  So
+        </p><pre class="programlisting">
+  handler(java.util.*Map)
+</pre><p>
+          picks out the types java.util.Map and java.util.java.util.HashMap,
+          among others, and
+        </p><pre class="programlisting">
+  handler(java.util.*)
+</pre><p>
+          picks out all types that start with "<tt>java.util.</tt>" and
+          don't have any more "."s, that is, the types in the
+          <tt>java.util</tt> package, but not inner types
+          (such as java.util.Map.Entry).
+        </p><p>
+          The "<tt>..</tt>" wildcard matches any sequence of
+          characters that start and end with a ".", so it can be used
+          to pick out all types in any subpackage, or all inner types.  So
+        </p><pre class="programlisting">
+  within(com.xerox..*)
+</pre><p>
+          picks out all join points where the code is in any 
+          declaration of a type whose name begins with "<tt>com.xerox.</tt>".
+        </p><p>
+	  Type patterns with wildcards do not depend on Java's
+	  usual scope rules - they match against all types
+	  available to the weaver, not just those that are
+	  imported into an Aspect's declaring file.
+        </p></div><div class="sect3"><a name="d0e5943"></a><div class="titlepage"><div><h4 class="title"><a name="d0e5943"></a>Subtype patterns</h4></div></div><p>
+          It is possible to pick out all subtypes of a type (or a collection of
+          types) with the "+" wildcard.  The "+" wildcard follows immediately a
+          type name pattern.  So, while
+        </p><pre class="programlisting">
+  call(Foo.new())
+</pre><p>
+          picks out all constructor call join points where an instance of exactly
+          type Foo is constructed,
+        </p><pre class="programlisting">
+  call(Foo+.new())
+</pre><p>
+          picks out all constructor call join points where an instance of any
+          subtype of Foo (including Foo itself) is constructed, and the unlikely
+        </p><pre class="programlisting">
+  call(*Handler+.new())
+</pre><p>
+          picks out all constructor call join points where an instance of any
+          subtype of any type whose name ends in "Handler" is constructed.
+        </p></div><div class="sect3"><a name="d0e5960"></a><div class="titlepage"><div><h4 class="title"><a name="d0e5960"></a>Array type patterns</h4></div></div><p>
+          A type name pattern or subtype pattern can be followed by one or more
+          sets of square brackets to make array type patterns.  So
+          <tt>Object[]</tt> is an array type pattern, and so is
+          <tt>com.xerox..*[][]</tt>, and so is
+          <tt>Object+[]</tt>.
+        </p></div><div class="sect3"><a name="d0e5974"></a><div class="titlepage"><div><h4 class="title"><a name="d0e5974"></a>Type patterns</h4></div></div><p>
+          Type patterns are built up out of type name patterns, subtype patterns,
+          and array type patterns, and constructed with boolean operators
+          <tt>&amp;&amp;</tt>, <tt>||</tt>, and
+          <tt>!</tt>.  So
+        </p><pre class="programlisting">
+  staticinitialization(Foo || Bar)
+</pre><p>
+          picks out the static initializer execution join points of either Foo or Bar,
+          and
+        </p><pre class="programlisting">
+  call((Foo+ &amp;&amp; ! Foo).new(..))
+</pre><p>
+          picks out the constructor call join points when a subtype of Foo, but
+          not Foo itself, is constructed.
+        </p></div></div><div class="sect2"><a name="pattern-summary"></a><div class="titlepage"><div><h3 class="title"><a name="pattern-summary"></a>Pattern Summary</h3></div></div><p>
+        Here is a summary of the pattern syntax used in AspectJ:
+      </p><pre class="programlisting">
+MethodPattern = 
+  [ModifiersPattern] TypePattern 
+        [TypePattern . ] IdPattern (TypePattern | ".." , ... ) 
+        [ throws ThrowsPattern ]
+ConstructorPattern = 
+  [ModifiersPattern ] 
+        [TypePattern . ] new (TypePattern | ".." , ...) 
+        [ throws ThrowsPattern ]
+FieldPattern = 
+  [ModifiersPattern] TypePattern [TypePattern . ] IdPattern
+ThrowsPattern = 
+  [ ! ] TypePattern , ...
+TypePattern = 
+    IdPattern [ + ] [ [] ... ]
+    | ! TypePattern
+    | TypePattern &amp;&amp; TypePattern
+    | TypePattern || TypePattern
+    | ( TypePattern )  
+IdPattern =
+  Sequence of characters, possibly with special * and .. wildcards
+ModifiersPattern =
+  [ ! ] JavaModifier  ...
+</pre></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="semantics-joinPoints.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="semantics-advice.html">Next</a></td></tr><tr><td width="40%" align="left">Join Points&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="semantics.html">Up</a></td><td width="40%" align="right">&nbsp;Advice</td></tr></table></div></body></html>

@@ -1,0 +1,92 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Bytecode Notes</title><link rel="stylesheet" href="aspectj-docs.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.44"><link rel="home" href="index.html" title="The AspectJTM Programming Guide"><link rel="up" href="implementation.html" title="Appendix C. Implementation Notes"><link rel="previous" href="implementation.html" title="Appendix C. Implementation Notes"><link rel="next" href="apcs03.html" title="Annotation-style Notes"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Bytecode Notes</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="implementation.html">Prev</a>&nbsp;</td><th width="60%" align="center">Appendix C. Implementation Notes</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="apcs03.html">Next</a></td></tr></table><hr></div><div class="sect1"><a name="d0e7345"></a><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="d0e7345"></a>Bytecode Notes</h2></div></div><div class="sect2"><a name="the-class-expression-and-string"></a><div class="titlepage"><div><h3 class="title"><a name="the-class-expression-and-string"></a>The .class expression and String +</h3></div></div><p> The java language form <tt>Foo.class</tt> is
+    implemented in bytecode with a call to
+    <tt>Class.forName</tt> guarded by an exception
+    handler catching a <tt>ClassNotFoundException</tt>.
+    </p><p> The java language + operator, when applied to String
+    arguments, is implemented in bytecode by calls to
+    <tt>StringBuffer.append</tt>.
+    </p><p> In both of these cases, the current AspectJ compiler
+    operates on the bytecode implementation of these language
+    features; in short, it operates on what is really happening rather
+    than what was written in source code.  This means that there may
+    be call join points to <tt>Class.forName</tt> or
+    <tt>StringBuffer.append</tt> from programs that do not,
+    at first glance, appear to contain such calls:
+    </p><pre class="programlisting">
+  class Test {
+      void main(String[] args) {
+          System.out.println(Test.class);        // calls Class.forName
+          System.out.println(args[0] + args[1]); // calls StringBuffer.append
+      }
+  }
+</pre><p>In short, the join point model of the current AspectJ
+    compiler considers these as valid join points.
+    </p></div><div class="sect2"><a name="the-handler-join-point"></a><div class="titlepage"><div><h3 class="title"><a name="the-handler-join-point"></a>The Handler join point</h3></div></div><p>The end of exception handlers cannot reliably be found in Java
+  bytecode.  Instead of removing the handler join point entirely, the
+  current AspectJ compiler restricts what can be done with the handler
+  join point:
+  </p><div class="itemizedlist"><ul><li><a name="d0e7385"></a>After and around advice cannot apply to handler
+    join points.</li><li><a name="d0e7387"></a>The control flow of a handler join point cannot be
+    detected. </li></ul></div><p>
+  The first of these is relatively straightforward.  If any piece of
+  after advice (returning, throwing, or "finally") would normally
+  apply to a handler join point, it will not in code output by the
+  current AspectJ compiler.  A compiler warning is generated whenever
+  this is detected to be the case.  Before advice is allowed.
+  </p><p> The second is that the control flow of a handler join point
+  is not picked out.  For example, the following pointcut
+  </p><pre class="programlisting">
+  cflow(call(void foo()) || handler(java.io.IOException))
+</pre><p> will capture all join points in the control flow of a call to
+  <tt>void foo()</tt>, but it will <span class="emphasis"><i>not</i></span>
+  capture those in the control flow of an
+  <tt>IOException</tt> handler.  It is equivalent to
+  <tt>cflow(call(void foo()))</tt>.  In general,
+  <tt>cflow(handler(<i><tt>Type</tt></i>))</tt>
+  will not pick out any join points, the one exception to this is join points
+  that occur during the execution of any before advice on the handler.
+  </p><p> This does not restrict programs from placing before advice on
+  handlers inside <span class="emphasis"><i>other</i></span> control flows.  This
+  advice, for example, is perfectly fine:
+  </p><pre class="programlisting">
+  before(): handler(java.io.IOException) &amp;&amp; cflow(void parse()) {
+      System.out.println("about to handle an exception while parsing");
+  }
+</pre><p>
+    A source-code implementation of AspectJ (such as AspectJ 1.0.6) is
+    able to detect the endpoint of a handler join point, and as such
+    will likely have fewer such restrictions.
+  </p></div><div class="sect2"><a name="initializers-and-inter-type-constructors"></a><div class="titlepage"><div><h3 class="title"><a name="initializers-and-inter-type-constructors"></a>Initializers and Inter-type Constructors</h3></div></div><p>
+    The code for Java initializers, such as the assignment to the
+    field d in
+  </p><pre class="programlisting">
+  class C {
+      double d = Math.sqrt(2);
+  }
+</pre><p>
+    are considered part of constructors by the time AspectJ gets ahold
+    of bytecode.  That is, the assignment of d to the square root of
+    two happens <span class="emphasis"><i>inside</i></span> the default constructor of
+    C.  
+  </p><p>
+    Thus inter-type constructors will not necessarily run a target
+    type's initialization code.  In particular, if the inter-type
+    constructor calls a super-constructor (as opposed to a
+    <tt>this</tt> constructor), the target type's
+    initialization code will <span class="emphasis"><i>not</i></span> be run when that
+    inter-type constructor is called.
+  </p><pre class="programlisting">
+  aspect A {
+      C.new(Object o) {} // implicitly calls super()
+
+      public static void main(String[] args) {
+         System.out.println((new C()    ).d);    // prints 1.414...
+         System.out.println((new C(null)).d);    // prints 0.0
+  }
+</pre><p>
+    It is the job of an inter-type constructor to do all the required
+    initialization, or to delegate to a <tt>this</tt>
+    constructor if necessary.
+  </p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="implementation.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="apcs03.html">Next</a></td></tr><tr><td width="40%" align="left">Appendix C. Implementation Notes&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="implementation.html">Up</a></td><td width="40%" align="right">&nbsp;Annotation-style Notes</td></tr></table></div></body></html>

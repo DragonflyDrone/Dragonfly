@@ -1,0 +1,125 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>The Anatomy of an Aspect</title><link rel="stylesheet" href="aspectj-docs.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.44"><link rel="home" href="index.html" title="The AspectJTM Programming Guide"><link rel="up" href="language.html" title="Chapter 2. The AspectJ Language"><link rel="previous" href="language.html" title="Chapter 2. The AspectJ Language"><link rel="next" href="language-joinPoints.html" title="Join Points and Pointcuts"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">The Anatomy of an Aspect</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="language.html">Prev</a>&nbsp;</td><th width="60%" align="center">Chapter 2. The AspectJ Language</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="language-joinPoints.html">Next</a></td></tr></table><hr></div><div class="sect1"><a name="language-anatomy"></a><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="language-anatomy"></a>The Anatomy of an Aspect</h2></div></div><p>
+      This lesson explains the parts of AspectJ's aspects. By reading this
+      lesson you will have an overview of what's in an aspect and you will
+      be exposed to the new terminology introduced by AspectJ.
+    </p><div class="sect2"><a name="an-example-aspect"></a><div class="titlepage"><div><h3 class="title"><a name="an-example-aspect"></a>An Example Aspect</h3></div></div><p>
+        Here's an example of an aspect definition in AspectJ:
+      </p><pre class="programlisting">
+ 1 aspect FaultHandler {
+ 2
+ 3   private boolean Server.disabled = false;
+ 4
+ 5   private void reportFault() {
+ 6     System.out.println("Failure! Please fix it.");
+ 7   }
+ 8
+ 9   public static void fixServer(Server s) {
+10     s.disabled = false;
+11   }
+12
+13   pointcut services(Server s): target(s) &amp;&amp; call(public * *(..));
+14
+15   before(Server s): services(s) {
+16     if (s.disabled) throw new DisabledException();
+17   }
+18
+19   after(Server s) throwing (FaultException e): services(s) {
+20     s.disabled = true;
+21     reportFault();
+22   }
+23 }
+</pre><p>
+        The <tt>FaultHandler</tt> consists of one inter-type
+        field on <tt>Server</tt> (line 03), two methods (lines
+        05-07 and 09-11), one pointcut definition (line 13), and two pieces
+        of advice (lines 15-17 and 19-22).
+      </p><p>
+        This covers the basics of what aspects can contain. In general,
+        aspects consist of an association of other program entities,
+        ordinary variables and methods, pointcut definitions, inter-type declarations,
+        and advice, where advice may be before, after or around advice. The
+        remainder of this lesson focuses on those crosscut-related
+        constructs.
+      </p></div><div class="sect2"><a name="pointcuts"></a><div class="titlepage"><div><h3 class="title"><a name="pointcuts"></a>Pointcuts</h3></div></div><p>
+        AspectJ's pointcut definitions give names to pointcuts.  Pointcuts
+        themselves pick out join points, i.e. interesting points in the
+        execution of a program. These join points can be method or
+        constructor invocations and executions, the handling of exceptions,
+        field assignments and accesses, etc. Take, for example, the
+        pointcut definition in line 13:
+      </p><pre class="programlisting">
+pointcut services(Server s): target(s) &amp;&amp; call(public * *(..))
+</pre><p>
+        This pointcut, named <tt>services</tt>, picks out those
+        points in the execution of the program when
+        <tt>Server</tt> objects have their public methods called.
+        It also allows anyone using the <tt>services</tt>
+        pointcut to access the <tt>Server</tt> object whose
+        method is being called.
+      </p><p>
+        The idea behind this pointcut in the
+        <tt>FaultHandler</tt> aspect is that
+        fault-handling-related behavior must be triggered on the calls to
+        public methods. For example, the server may be unable to proceed
+        with the request because of some fault. The calls of those methods
+        are, therefore, interesting events for this aspect, in the sense
+        that certain fault-related things will happen when these events
+        occur.
+      </p><p>
+        Part of the context in which the events occur is exposed by the
+        formal parameters of the pointcut. In this case, that consists of
+        objects of type <tt>Server</tt>.  That formal parameter
+        is then being used on the right hand side of the declaration in
+        order to identify which events the pointcut refers to. In this
+        case, a pointcut picking out join points where a Server is the
+        target of some operation (target(s)) is being composed
+        (<tt>&amp;&amp;</tt>, meaning and) with a pointcut
+        picking out call join points (call(...)). The calls are identified
+        by signatures that can include wild cards. In this case, there are
+        wild cards in the return type position (first *), in the name
+        position (second *) and in the argument list position (..); the
+        only concrete information is given by the qualifier
+        <tt>public</tt>.
+      </p><p>
+         Pointcuts pick out arbitrarily large numbers of join points of a
+         program. But they pick out only a small number of
+         <span class="emphasis"><i>kinds</i></span> of join points. Those kinds of join
+         points correspond to some of the most important concepts in
+         Java. Here is an incomplete list: method call, method execution,
+         exception handling, instantiation, constructor execution, and
+         field access.  Each kind of join point can be picked out by its
+         own specialized pointcut that you will learn about in other parts
+         of this guide.
+      </p></div><div class="sect2"><a name="advice"></a><div class="titlepage"><div><h3 class="title"><a name="advice"></a>Advice</h3></div></div><p>
+        A piece of advice brings together a pointcut and a body of code to
+        define aspect implementation that runs at join points picked out by
+        the pointcut. For example, the advice in lines 15-17 specifies that
+        the following piece of code
+      </p><pre class="programlisting">
+{
+  if (s.disabled) throw new DisabledException();
+}
+</pre><p>
+        is executed when instances of the <tt>Server</tt> class
+        have their public methods called, as specified by the pointcut
+        <tt>services</tt>. More specifically, it runs when those
+        calls are made, just before the corresponding methods are executed.
+      </p><p>
+        The advice in lines 19-22 defines another piece of implementation
+        that is executed on the same pointcut:
+      </p><pre class="programlisting">
+{
+  s.disabled = true;
+  reportFault();
+}
+</pre><p>
+        But this second method executes after those operations throw
+        exception of type <tt>FaultException</tt>.
+      </p><p>
+        There are two other variations of after advice: upon successful
+        return and upon return, either successful or with an exception.
+        There is also a third kind of advice called around. You will see
+        those in other parts of this guide.
+      </p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="language.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="language-joinPoints.html">Next</a></td></tr><tr><td width="40%" align="left">Chapter 2. The AspectJ Language&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="language.html">Up</a></td><td width="40%" align="right">&nbsp;Join Points and Pointcuts</td></tr></table></div></body></html>

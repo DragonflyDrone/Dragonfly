@@ -1,0 +1,368 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Development Aspects</title><link rel="stylesheet" href="aspectj-docs.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.44"><link rel="home" href="index.html" title="The AspectJTM Programming Guide"><link rel="up" href="examples.html" title="Chapter 3. Examples"><link rel="previous" href="examples-basic.html" title="Basic Techniques"><link rel="next" href="examples-production.html" title="Production Aspects"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Development Aspects</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="examples-basic.html">Prev</a>&nbsp;</td><th width="60%" align="center">Chapter 3. Examples</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="examples-production.html">Next</a></td></tr></table><hr></div><div class="sect1"><a name="examples-development"></a><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="examples-development"></a>Development Aspects</h2></div></div><div class="sect2"><a name="tracing-using-aspects"></a><div class="titlepage"><div><h3 class="title"><a name="tracing-using-aspects"></a>Tracing using aspects</h3></div></div><p>
+        (The code for this example is in
+        <tt><i><tt>InstallDir</tt></i>/examples/tracing</tt>.)
+      </p><p>
+        Writing a class that provides tracing functionality is easy: a
+        couple of functions, a boolean flag for turning tracing on and
+        off, a choice for an output stream, maybe some code for
+        formatting the output -- these are all elements that
+        <tt>Trace</tt> classes have been known to
+        have. <tt>Trace</tt> classes may be highly
+        sophisticated, too, if the task of tracing the execution of a
+        program demands it.
+      </p><p>
+        But developing the support for tracing is just one part of the
+        effort of inserting tracing into a program, and, most likely, not
+        the biggest part. The other part of the effort is calling the
+        tracing functions at appropriate times. In large systems, this
+        interaction with the tracing support can be overwhelming.  Plus,
+        tracing is one of those things that slows the system down, so
+        these calls should often be pulled out of the system before the
+        product is shipped. For these reasons, it is not unusual for
+        developers to write ad-hoc scripting programs that rewrite the
+        source code by inserting/deleting trace calls before and after
+        the method bodies.
+      </p><p>
+        AspectJ can be used for some of these tracing concerns in a less
+        ad-hoc way.  Tracing can be seen as a concern that crosscuts the
+        entire system and as such is amenable to encapsulation in an
+        aspect.  In addition, it is fairly independent of what the system
+        is doing. Therefore tracing is one of those kind of system
+        aspects that can potentially be plugged in and unplugged without
+        any side-effects in the basic functionality of the system.
+      </p><div class="sect3"><a name="d0e2538"></a><div class="titlepage"><div><h4 class="title"><a name="d0e2538"></a>An Example Application</h4></div></div><p>
+          Throughout this example we will use a simple application that
+          contains only four classes. The application is about shapes. The
+          <tt>TwoDShape</tt> class is the root of the shape
+          hierarchy:
+        </p><pre class="programlisting">
+public abstract class TwoDShape {
+    protected double x, y;
+    protected TwoDShape(double x, double y) {
+        this.x = x; this.y = y;
+    }
+    public double getX() { return x; }
+    public double getY() { return y; }
+    public double distance(TwoDShape s) {
+        double dx = Math.abs(s.getX() - x);
+        double dy = Math.abs(s.getY() - y);
+        return Math.sqrt(dx*dx + dy*dy);
+    }
+    public abstract double perimeter();
+    public abstract double area();
+    public String toString() {
+        return (" @ (" + String.valueOf(x) + ", " + String.valueOf(y) + ") ");
+    }
+}
+</pre><p>
+        <tt>TwoDShape</tt> has two subclasses,
+        <tt>Circle</tt> and <tt>Square</tt>:
+      </p><pre class="programlisting">
+public class Circle extends TwoDShape {
+    protected double r;
+    public Circle(double x, double y, double r) {
+        super(x, y); this.r = r;
+    }
+    public Circle(double x, double y) { this(  x,   y, 1.0); }
+    public Circle(double r)           { this(0.0, 0.0,   r); }
+    public Circle()                   { this(0.0, 0.0, 1.0); }
+    public double perimeter() {
+        return 2 * Math.PI * r;
+    }
+    public double area() {
+        return Math.PI * r*r;
+    }
+    public String toString() {
+        return ("Circle radius = " + String.valueOf(r) + super.toString());
+    }
+}
+</pre><pre class="programlisting">
+public class Square extends TwoDShape {
+    protected double s;    // side
+    public Square(double x, double y, double s) {
+        super(x, y); this.s = s;
+    }
+    public Square(double x, double y) { this(  x,   y, 1.0); }
+    public Square(double s)           { this(0.0, 0.0,   s); }
+    public Square()                   { this(0.0, 0.0, 1.0); }
+    public double perimeter() {
+        return 4 * s;
+    }
+    public double area() {
+        return s*s;
+    }
+    public String toString() {
+        return ("Square side = " + String.valueOf(s) + super.toString());
+    }
+}
+</pre><p>
+        To run this application, compile the classes. You can do it with or
+        without ajc, the AspectJ compiler. If you've installed AspectJ, go
+        to the directory
+        <tt><i><tt>InstallDir</tt></i>/examples</tt>
+        and type:
+      </p><pre class="programlisting">
+ajc -argfile tracing/notrace.lst
+</pre><p>To run the program, type</p><pre class="programlisting">
+java tracing.ExampleMain
+</pre><p>(we don't need anything special on the classpath since this is pure
+      Java code).  You should see the following output:</p><pre class="programlisting">
+c1.perimeter() = 12.566370614359172
+c1.area() = 12.566370614359172
+s1.perimeter() = 4.0
+s1.area() = 1.0
+c2.distance(c1) = 4.242640687119285
+s1.distance(c1) = 2.23606797749979
+s1.toString(): Square side = 1.0 @ (1.0, 2.0)
+</pre></div><div class="sect3"><a name="d0e2580"></a><div class="titlepage"><div><h4 class="title"><a name="d0e2580"></a>Tracing&#8212;Version 1</h4></div></div><p>
+        In a first attempt to insert tracing in this application, we will
+        start by writing a <tt>Trace</tt> class that is
+        exactly what we would write if we didn't have aspects.  The
+        implementation is in <tt>version1/Trace.java</tt>.  Its
+        public interface is:
+      </p><pre class="programlisting">
+public class Trace {
+    public static int TRACELEVEL = 0;
+    public static void initStream(PrintStream s) {...}
+    public static void traceEntry(String str) {...}
+    public static void traceExit(String str) {...}
+}
+</pre><p>
+        If we didn't have AspectJ, we would have to insert calls to
+        <tt>traceEntry</tt> and <tt>traceExit</tt> in
+        all methods and constructors we wanted to trace, and to initialize
+        <tt>TRACELEVEL</tt> and the stream. If we wanted to trace
+        all the methods and constructors in our example, that would amount
+        to around 40 calls, and we would hope we had not forgotten any
+        method. But we can do that more consistently and reliably with the
+        following aspect (found in
+        <tt>version1/TraceMyClasses.java</tt>):
+      </p><pre class="programlisting">
+aspect TraceMyClasses {
+    pointcut myClass(): within(TwoDShape) || within(Circle) || within(Square);
+    pointcut myConstructor(): myClass() &amp;&amp; execution(new(..));
+    pointcut myMethod(): myClass() &amp;&amp; execution(* *(..));
+
+    before (): myConstructor() {
+        Trace.traceEntry("" + thisJoinPointStaticPart.getSignature());
+    }
+    after(): myConstructor() {
+        Trace.traceExit("" + thisJoinPointStaticPart.getSignature());
+    }
+
+    before (): myMethod() {
+        Trace.traceEntry("" + thisJoinPointStaticPart.getSignature());
+    }
+    after(): myMethod() {
+        Trace.traceExit("" + thisJoinPointStaticPart.getSignature());
+    }
+}</pre><p>
+        This aspect performs the tracing calls at appropriate
+        times. According to this aspect, tracing is performed at the
+        entrance and exit of every method and constructor defined within
+        the shape hierarchy.
+      </p><p>
+        What is printed at before and after each of the traced join points
+        is the signature of the method executing. Since the signature is
+        static information, we can get it through
+        <tt>thisJoinPointStaticPart</tt>.
+      </p><p>
+        To run this version of tracing, go to the directory
+        <tt><i><tt>InstallDir</tt></i>/examples</tt>
+        and type:
+      </p><pre class="programlisting">
+  ajc -argfile tracing/tracev1.lst
+</pre><p>
+        Running the main method of
+        <tt>tracing.version1.TraceMyClasses</tt> should produce
+        the output:
+      </p><pre class="programlisting">
+  --&gt; tracing.TwoDShape(double, double)
+  &lt;-- tracing.TwoDShape(double, double)
+  --&gt; tracing.Circle(double, double, double)
+  &lt;-- tracing.Circle(double, double, double)
+  --&gt; tracing.TwoDShape(double, double)
+  &lt;-- tracing.TwoDShape(double, double)
+  --&gt; tracing.Circle(double, double, double)
+  &lt;-- tracing.Circle(double, double, double)
+  --&gt; tracing.Circle(double)
+  &lt;-- tracing.Circle(double)
+  --&gt; tracing.TwoDShape(double, double)
+  &lt;-- tracing.TwoDShape(double, double)
+  --&gt; tracing.Square(double, double, double)
+  &lt;-- tracing.Square(double, double, double)
+  --&gt; tracing.Square(double, double)
+  &lt;-- tracing.Square(double, double)
+  --&gt; double tracing.Circle.perimeter()
+  &lt;-- double tracing.Circle.perimeter()
+c1.perimeter() = 12.566370614359172
+  --&gt; double tracing.Circle.area()
+  &lt;-- double tracing.Circle.area()
+c1.area() = 12.566370614359172
+  --&gt; double tracing.Square.perimeter()
+  &lt;-- double tracing.Square.perimeter()
+s1.perimeter() = 4.0
+  --&gt; double tracing.Square.area()
+  &lt;-- double tracing.Square.area()
+s1.area() = 1.0
+  --&gt; double tracing.TwoDShape.distance(TwoDShape)
+    --&gt; double tracing.TwoDShape.getX()
+    &lt;-- double tracing.TwoDShape.getX()
+    --&gt; double tracing.TwoDShape.getY()
+    &lt;-- double tracing.TwoDShape.getY()
+  &lt;-- double tracing.TwoDShape.distance(TwoDShape)
+c2.distance(c1) = 4.242640687119285
+  --&gt; double tracing.TwoDShape.distance(TwoDShape)
+    --&gt; double tracing.TwoDShape.getX()
+    &lt;-- double tracing.TwoDShape.getX()
+    --&gt; double tracing.TwoDShape.getY()
+    &lt;-- double tracing.TwoDShape.getY()
+  &lt;-- double tracing.TwoDShape.distance(TwoDShape)
+s1.distance(c1) = 2.23606797749979
+  --&gt; String tracing.Square.toString()
+    --&gt; String tracing.TwoDShape.toString()
+    &lt;-- String tracing.TwoDShape.toString()
+  &lt;-- String tracing.Square.toString()
+s1.toString(): Square side = 1.0 @ (1.0, 2.0)
+</pre><p>
+        When <tt>TraceMyClasses.java</tt> is not provided to
+        <b>ajc</b>, the aspect does not have any affect on the
+        system and the tracing is unplugged.
+      </p></div><div class="sect3"><a name="d0e2640"></a><div class="titlepage"><div><h4 class="title"><a name="d0e2640"></a>Tracing&#8212;Version 2</h4></div></div><p>
+        Another way to accomplish the same thing would be to write a
+        reusable tracing aspect that can be used not only for these
+        application classes, but for any class. One way to do this is to
+        merge the tracing functionality of
+        <tt>Trace&#8212;version1</tt> with the crosscutting
+        support of <tt>TraceMyClasses&#8212;version1</tt>. We end
+        up with a <tt>Trace</tt> aspect (found in
+        <tt>version2/Trace.java</tt>) with the following public
+        interface
+      </p><pre class="programlisting">
+abstract aspect Trace {
+
+    public static int TRACELEVEL = 2;
+    public static void initStream(PrintStream s) {...}
+    protected static void traceEntry(String str) {...}
+    protected static void traceExit(String str) {...}
+    abstract pointcut myClass();
+}
+</pre><p>
+        In order to use it, we need to define our own subclass that knows
+        about our application classes, in
+        <tt>version2/TraceMyClasses.java</tt>:
+      </p><pre class="programlisting">
+public aspect TraceMyClasses extends Trace {
+    pointcut myClass(): within(TwoDShape) || within(Circle) || within(Square);
+
+    public static void main(String[] args) {
+        Trace.TRACELEVEL = 2;
+        Trace.initStream(System.err);
+        ExampleMain.main(args);
+    }
+}
+</pre><p>
+        Notice that we've simply made the pointcut
+        <tt>classes</tt>, that was an abstract pointcut in the
+        super-aspect, concrete. To run this version of tracing, go to the
+        directory <tt>examples</tt> and type:
+      </p><pre class="programlisting">
+  ajc -argfile tracing/tracev2.lst
+</pre><p>
+        The file tracev2.lst lists the application classes as well as this
+        version of the files Trace.java and TraceMyClasses.java. Running
+        the main method of
+        <tt>tracing.version2.TraceMyClasses</tt> should
+        output exactly the same trace information as that from version 1.
+      </p><p>
+        The entire implementation of the new <tt>Trace</tt>
+        class is:
+      </p><pre class="programlisting">
+abstract aspect Trace {
+
+    // implementation part
+
+    public static int TRACELEVEL = 2;
+    protected static PrintStream stream = System.err;
+    protected static int callDepth = 0;
+
+    public static void initStream(PrintStream s) {
+        stream = s;
+    }
+    protected static void traceEntry(String str) {
+        if (TRACELEVEL == 0) return;
+        if (TRACELEVEL == 2) callDepth++;
+        printEntering(str);
+    }
+    protected static void traceExit(String str) {
+        if (TRACELEVEL == 0) return;
+        printExiting(str);
+        if (TRACELEVEL == 2) callDepth--;
+    }
+    private static void printEntering(String str) {
+        printIndent();
+        stream.println("--&gt; " + str);
+    }
+    private static void printExiting(String str) {
+        printIndent();
+        stream.println("&lt;-- " + str);
+    }
+    private static void printIndent() {
+        for (int i = 0; i &lt; callDepth; i++)
+            stream.print("  ");
+    }
+
+    // protocol part
+
+    abstract pointcut myClass();
+
+    pointcut myConstructor(): myClass() &amp;&amp; execution(new(..));
+    pointcut myMethod(): myClass() &amp;&amp; execution(* *(..));
+
+    before(): myConstructor() {
+        traceEntry("" + thisJoinPointStaticPart.getSignature());
+    }
+    after(): myConstructor() {
+        traceExit("" + thisJoinPointStaticPart.getSignature());
+    }
+
+    before(): myMethod() {
+        traceEntry("" + thisJoinPointStaticPart.getSignature());
+    }
+    after(): myMethod() {
+        traceExit("" + thisJoinPointStaticPart.getSignature());
+    }
+}
+</pre><p>
+        This version differs from version 1 in several subtle ways. The
+        first thing to notice is that this <tt>Trace</tt>
+        class merges the functional part of tracing with the crosscutting
+        of the tracing calls. That is, in version 1, there was a sharp
+        separation between the tracing support (the class
+        <tt>Trace</tt>) and the crosscutting usage of it (by
+        the class <tt>TraceMyClasses</tt>). In this version
+        those two things are merged. That's why the description of this
+        class explicitly says that "Trace messages are printed before and
+        after constructors and methods are," which is what we wanted in the
+        first place. That is, the placement of the calls, in this version,
+        is established by the aspect class itself, leaving less opportunity
+        for misplacing calls.</p><p>
+        A consequence of this is that there is no need for providing
+        <tt>traceEntry</tt> and <tt>traceExit</tt> as
+        public operations of this class. You can see that they were
+        classified as protected. They are supposed to be internal
+        implementation details of the advice.
+      </p><p>
+        The key piece of this aspect is the abstract pointcut classes that
+        serves as the base for the definition of the pointcuts constructors
+        and methods. Even though <tt>classes</tt> is
+        abstract, and therefore no concrete classes are mentioned, we can
+        put advice on it, as well as on the pointcuts that are based on
+        it. The idea is "we don't know exactly what the pointcut will be,
+        but when we do, here's what we want to do with it." In some ways,
+        abstract pointcuts are similar to abstract methods. Abstract
+        methods don't provide the implementation, but you know that the
+        concrete subclasses will, so you can invoke those methods.
+      </p></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="examples-basic.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="examples-production.html">Next</a></td></tr><tr><td width="40%" align="left">Basic Techniques&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="examples.html">Up</a></td><td width="40%" align="right">&nbsp;Production Aspects</td></tr></table></div></body></html>

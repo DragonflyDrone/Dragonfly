@@ -1,0 +1,228 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Development Aspects</title><link rel="stylesheet" href="aspectj-docs.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.44"><link rel="home" href="index.html" title="The AspectJTM Programming Guide"><link rel="up" href="starting.html" title="Chapter 1. Getting Started with AspectJ"><link rel="previous" href="starting-aspectj.html" title="Introduction to AspectJ"><link rel="next" href="starting-production.html" title="Production Aspects"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Development Aspects</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="starting-aspectj.html">Prev</a>&nbsp;</td><th width="60%" align="center">Chapter 1. Getting Started with AspectJ</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="starting-production.html">Next</a></td></tr></table><hr></div><div class="sect1"><a name="starting-development"></a><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="starting-development"></a>Development Aspects</h2></div></div><p>
+      The next two sections present the use of aspects in increasingly
+      sophisticated ways. Development aspects are easily removed from
+      production builds. Production aspects are intended to be used in
+      both development and in production, but tend to affect only a few
+      classes.
+    </p><p>
+      This section presents examples of aspects that can be used during
+      development of Java applications. These aspects facilitate debugging,
+      testing and performance tuning work. The aspects define behavior that
+      ranges from simple tracing, to profiling, to testing of internal
+      consistency within the application. Using AspectJ makes it possible
+      to cleanly modularize this kind of functionality, thereby making it
+      possible to easily enable and disable the functionality when desired.
+    </p><div class="sect2"><a name="tracing"></a><div class="titlepage"><div><h3 class="title"><a name="tracing"></a>Tracing</h3></div></div><p>
+        This first example shows how to increase the visibility of the
+        internal workings of a program. It is a simple tracing aspect that
+        prints a message at specified method calls. In our figure editor
+        example, one such aspect might simply trace whenever points are
+        drawn.
+      </p><pre class="programlisting">
+aspect SimpleTracing {
+    pointcut tracedCall():
+        call(void FigureElement.draw(GraphicsContext));
+
+    before(): tracedCall() {
+        System.out.println("Entering: " + thisJoinPoint);
+    }
+}
+</pre><p>
+        This code makes use of the <tt>thisJoinPoint</tt> special
+        variable. Within all advice bodies this variable is bound to an
+        object that describes the current join point. The effect of this
+        code is to print a line like the following every time a figure
+        element receives a <tt>draw</tt> method call:
+      </p><pre class="programlisting">
+Entering: call(void FigureElement.draw(GraphicsContext))
+</pre><p>
+        To understand the benefit of coding this with AspectJ consider
+        changing the set of method calls that are traced. With AspectJ,
+        this just requires editing the definition of the
+        <tt>tracedCalls</tt> pointcut and recompiling. The
+        individual methods that are traced do not need to be edited.
+      </p><p>
+        When debugging, programmers often invest considerable effort in
+        figuring out a good set of trace points to use when looking for a
+        particular kind of problem. When debugging is complete or appears
+        to be complete it is frustrating to have to lose that investment by
+        deleting trace statements from the code. The alternative of just
+        commenting them out makes the code look bad, and can cause trace
+        statements for one kind of debugging to get confused with trace
+        statements for another kind of debugging.
+      </p><p>
+        With AspectJ it is easy to both preserve the work of designing a
+        good set of trace points and disable the tracing when it isn t
+        being used. This is done by writing an aspect specifically for that
+        tracing mode, and removing that aspect from the compilation when it
+        is not needed.
+      </p><p>
+        This ability to concisely implement and reuse debugging
+        configurations that have proven useful in the past is a direct
+        result of AspectJ modularizing a crosscutting design element the
+        set of methods that are appropriate to trace when looking for a
+        given kind of information.
+      </p></div><div class="sect2"><a name="profiling-and-logging"></a><div class="titlepage"><div><h3 class="title"><a name="profiling-and-logging"></a>Profiling and Logging</h3></div></div><p>
+        Our second example shows you how to do some very specific
+        profiling. Although many sophisticated profiling tools are
+        available, and these can gather a variety of information and
+        display the results in useful ways, you may sometimes want to
+        profile or log some very specific behavior. In these cases, it is
+        often possible to write a simple aspect similar to the ones above
+        to do the job.
+      </p><p>
+        For example, the following aspect counts the number of calls to the
+        <tt>rotate</tt> method on a <tt>Line</tt>
+        and the number of calls to the <tt>set*</tt> methods of
+        a <tt>Point</tt> that happen within the control flow
+        of those calls to <tt>rotate</tt>:
+      </p><pre class="programlisting">
+aspect SetsInRotateCounting {
+    int rotateCount = 0;
+    int setCount = 0;
+
+    before(): call(void Line.rotate(double)) {
+        rotateCount++;
+    }
+
+    before(): call(void Point.set*(int))
+              &amp;&amp; cflow(call(void Line.rotate(double))) {
+        setCount++;
+    }
+}
+</pre><p>
+        In effect, this aspect allows the programmer to ask very specific
+        questions like
+
+        <blockquote class="blockquote">
+          How many times is the <tt>rotate</tt>
+          method defined on <tt>Line</tt> objects called?
+        </blockquote>
+
+        and
+
+        <blockquote class="blockquote">
+          How many times are methods defined on
+          <tt>Point</tt> objects whose name begins with
+          "<tt>set</tt>" called in fulfilling those rotate
+          calls?
+        </blockquote>
+
+        questions it may be difficult to express using standard
+        profiling or logging tools.
+      </p></div><div class="sect2"><a name="pre-and-post-conditions"></a><div class="titlepage"><div><h3 class="title"><a name="pre-and-post-conditions"></a>Pre- and Post-Conditions</h3></div></div><p>
+        Many programmers use the "Design by Contract" style popularized by
+        Bertand Meyer in <i>Object-Oriented Software Construction,
+        2/e</i>. In this style of programming, explicit
+        pre-conditions test that callers of a method call it properly and
+        explicit post-conditions test that methods properly do the work
+        they are supposed to.
+      </p><p>
+        AspectJ makes it possible to implement pre- and post-condition
+        testing in modular form. For example, this code
+      </p><pre class="programlisting">
+aspect PointBoundsChecking {
+
+    pointcut setX(int x):
+        (call(void FigureElement.setXY(int, int)) &amp;&amp; args(x, *))
+        || (call(void Point.setX(int)) &amp;&amp; args(x));
+
+    pointcut setY(int y):
+        (call(void FigureElement.setXY(int, int)) &amp;&amp; args(*, y))
+        || (call(void Point.setY(int)) &amp;&amp; args(y));
+
+    before(int x): setX(x) {
+        if ( x &lt; MIN_X || x &gt; MAX_X )
+            throw new IllegalArgumentException("x is out of bounds.");
+    }
+
+    before(int y): setY(y) {
+        if ( y &lt; MIN_Y || y &gt; MAX_Y )
+            throw new IllegalArgumentException("y is out of bounds.");
+    }
+}
+</pre><p>
+        implements the bounds checking aspect of pre-condition testing for
+        operations that move points. Notice that the
+        <tt>setX</tt> pointcut refers to all the operations
+        that can set a Point's <tt>x</tt> coordinate; this
+        includes the <tt>setX</tt> method, as well as half of
+        the <tt>setXY</tt> method. In this sense the
+        <tt>setX</tt> pointcut can be seen as involving very
+        fine-grained crosscutting &#8212; it names the the
+        <tt>setX</tt> method and half of the
+        <tt>setXY</tt> method.
+      </p><p>
+        Even though pre- and post-condition testing aspects can often be
+        used only during testing, in some cases developers may wish to
+        include them in the production build as well. Again, because
+        AspectJ makes it possible to modularize these crosscutting concerns
+        cleanly, it gives developers good control over this decision.
+      </p></div><div class="sect2"><a name="contract-enforcement"></a><div class="titlepage"><div><h3 class="title"><a name="contract-enforcement"></a>Contract Enforcement</h3></div></div><p>
+        The property-based crosscutting mechanisms can be very useful in
+        defining more sophisticated contract enforcement. One very powerful
+        use of these mechanisms is to identify method calls that, in a
+        correct program, should not exist. For example, the following
+        aspect enforces the constraint that only the well-known factory
+        methods can add an element to the registry of figure
+        elements. Enforcing this constraint ensures that no figure element
+        is added to the registry more than once.
+      </p><pre class="programlisting">
+aspect RegistrationProtection {
+
+    pointcut register(): call(void Registry.register(FigureElement));
+
+    pointcut canRegister(): withincode(static * FigureElement.make*(..));
+
+    before(): register() &amp;&amp; !canRegister() {
+        throw new IllegalAccessException("Illegal call " + thisJoinPoint);
+    }
+}
+</pre><p>
+        This aspect uses the withincode primitive pointcut to denote all
+        join points that occur within the body of the factory methods on
+        <tt>FigureElement</tt> (the methods with names that
+        begin with "<tt>make</tt>"). This is a property-based
+        pointcut because it identifies join points based not on their
+        signature, but rather on the property that they occur specifically
+        within the code of another method. The before advice declaration
+        effectively says signal an error for any calls to register that are
+        not within the factory methods.
+      </p><p>
+        This advice throws a runtime exception at certain join points, but
+        AspectJ can do better.  Using the <tt>declare error</tt>
+        form, we can have the <span class="emphasis"><i>compiler</i></span> signal the
+        error.
+      </p><pre class="programlisting">
+aspect RegistrationProtection {
+
+    pointcut register(): call(void Registry.register(FigureElement));
+    pointcut canRegister(): withincode(static * FigureElement.make*(..));
+
+    declare error: register() &amp;&amp; !canRegister(): "Illegal call"
+}
+</pre><p>
+        When using this aspect, it is impossible for the compiler to
+        compile programs with these illegal calls.  This early detection is
+        not always possible.  In this case, since we depend only on static
+        information (the <tt>withincode</tt> pointcut picks out
+        join points totally based on their code, and the
+        <tt>call</tt> pointcut here picks out join points
+        statically).  Other enforcement, such as the precondition
+        enforcement, above, does require dynamic information such as the
+        runtime value of parameters.
+      </p></div><div class="sect2"><a name="configuration-management"></a><div class="titlepage"><div><h3 class="title"><a name="configuration-management"></a>Configuration Management</h3></div></div><p>
+        Configuration management for aspects can be handled using a variety
+        of make-file like techniques. To work with optional aspects, the
+        programmer can simply define their make files to either include the
+        aspect in the call to the AspectJ compiler or not, as desired.
+      </p><p>
+        Developers who want to be certain that no aspects are included in
+        the production build can do so by configuring their make files so
+        that they use a traditional Java compiler for production builds. To
+        make it easy to write such make files, the AspectJ compiler has a
+        command-line interface that is consistent with ordinary Java
+        compilers.
+      </p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="starting-aspectj.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="starting-production.html">Next</a></td></tr><tr><td width="40%" align="left">Introduction to AspectJ&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="starting.html">Up</a></td><td width="40%" align="right">&nbsp;Production Aspects</td></tr></table></div></body></html>

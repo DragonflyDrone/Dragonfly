@@ -1,0 +1,34 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Appendix B. Language Semantics</title><link rel="stylesheet" href="aspectj-docs.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.44"><link rel="home" href="index.html" title="The AspectJTM Programming Guide"><link rel="up" href="index.html" title="The AspectJTM Programming Guide"><link rel="previous" href="quick-aspectAssociations.html" title="Aspects"><link rel="next" href="semantics-joinPoints.html" title="Join Points"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Appendix B. Language Semantics</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="quick-aspectAssociations.html">Prev</a>&nbsp;</td><th width="60%" align="center">&nbsp;</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="semantics-joinPoints.html">Next</a></td></tr></table><hr></div><div class="appendix"><div class="titlepage"><div><h2 class="title"><a name="semantics"></a>Appendix B. Language Semantics</h2></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><a href="semantics.html#semantics-intro">Introduction</a></dt><dt><a href="semantics-joinPoints.html">Join Points</a></dt><dt><a href="semantics-pointcuts.html">Pointcuts</a></dt><dd><dl><dt><a href="semantics-pointcuts.html#pointcut-definition">Pointcut definition</a></dt><dt><a href="semantics-pointcuts.html#context-exposure">Context exposure</a></dt><dt><a href="semantics-pointcuts.html#primitive-pointcuts">Primitive pointcuts</a></dt><dt><a href="semantics-pointcuts.html#signatures">Signatures</a></dt><dt><a href="semantics-pointcuts.html#matching">Matching</a></dt><dt><a href="semantics-pointcuts.html#type-patterns">Type patterns</a></dt><dt><a href="semantics-pointcuts.html#pattern-summary">Pattern Summary</a></dt></dl></dd><dt><a href="semantics-advice.html">Advice</a></dt><dd><dl><dt><a href="semantics-advice.html#advice-modifiers">Advice modifiers</a></dt><dt><a href="semantics-advice.html#advice-and-checked-exceptions">Advice and checked exceptions</a></dt><dt><a href="semantics-advice.html#advice-precedence">Advice precedence</a></dt><dt><a href="semantics-advice.html#reflective-access-to-the-join-point">Reflective access to the join point</a></dt></dl></dd><dt><a href="semantics-declare.html">Static crosscutting</a></dt><dd><dl><dt><a href="semantics-declare.html#inter-type-member-declarations">Inter-type member declarations</a></dt><dt><a href="semantics-declare.html#access-modifiers">Access modifiers</a></dt><dt><a href="semantics-declare.html#conflicts">Conflicts</a></dt><dt><a href="semantics-declare.html#extension-and-implementation">Extension and Implementation</a></dt><dt><a href="semantics-declare.html#interfaces-with-members">Interfaces with members</a></dt><dt><a href="semantics-declare.html#warnings-and-errors">Warnings and Errors</a></dt><dt><a href="semantics-declare.html#softened-exceptions">Softened exceptions</a></dt><dt><a href="semantics-declare.html#advice-precedence">Advice Precedence</a></dt><dt><a href="semantics-declare.html#statically-determinable-pointcuts">Statically determinable pointcuts</a></dt></dl></dd><dt><a href="semantics-aspects.html">Aspects</a></dt><dd><dl><dt><a href="semantics-aspects.html#aspect-declaration">Aspect Declaration</a></dt><dt><a href="semantics-aspects.html#aspect-extension">Aspect Extension</a></dt><dt><a href="semantics-aspects.html#aspect-instantiation">Aspect instantiation</a></dt><dt><a href="semantics-aspects.html#aspect-privilege">Aspect privilege</a></dt></dl></dd></dl></div><div class="sect1"><a name="semantics-intro"></a><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="semantics-intro"></a>Introduction</h2></div></div><p>
+      AspectJ extends Java by overlaying a concept of join points onto the
+      existing Java semantics and adding a few new program elements to Java:
+    </p><p>
+      A join point is a well-defined point in the execution of a
+      program. These include method and constructor calls, field accesses and
+      others described below.
+    </p><p>
+      A pointcut picks out join points, and exposes some of the values in the
+      execution context of those join points. There are several primitive
+      pointcut designators, and others can be named and defined by the
+      <tt>pointcut</tt> declaration.
+    </p><p>
+      A piece of advice is code that executes at each join point in a
+      pointcut. Advice has access to the values exposed by the
+      pointcut. Advice is defined by <tt>before</tt>,
+      <tt>after</tt>, and <tt>around</tt> declarations.
+    </p><p>
+      Inter-type declarations form AspectJ's static crosscutting features,
+      that is, is code that may change the type structure of a program, by
+      adding to or extending interfaces and classes with new fields,
+      constructors, or methods.  Some inter-type declarations are defined
+      through an extension of usual method, field, and constructor
+      declarations, and other declarations are made with a new
+      <tt>declare</tt> keyword.
+    </p><p>
+      An aspect is a crosscutting type that encapsulates pointcuts, advice,
+      and static crosscutting features. By type, we mean Java's notion: a
+      modular unit of code, with a well-defined interface, about which it is
+      possible to do reasoning at compile time. Aspects are defined by the
+      <tt>aspect</tt> declaration.
+    </p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="quick-aspectAssociations.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="semantics-joinPoints.html">Next</a></td></tr><tr><td width="40%" align="left">Aspects&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="index.html">Up</a></td><td width="40%" align="right">&nbsp;Join Points</td></tr></table></div></body></html>

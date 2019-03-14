@@ -1,0 +1,14 @@
+1 - Install JDK 8 Ubuntu. You can follow step-by-step from "http://tipsonubuntu.com/2016/07/31/install-oracle-java-8-9-ubuntu-16-04-linux-mint-18/"
+
+1.1 - If necessary, configure JAVA_HOME environment variable. You can follow step-by-step from "https://medium.com/@camkore525/how-to-install-oracle-jdk-8-and-setting-java-home-on-ubuntu-d99e8d1b7e6";
+
+
+
+2 - Open Normal folder in Terminal (.../Drone-Route-Simulator/ExecuteApplication/Ubuntu/Normal/);
+
+
+
+3 - Execute this command in Terminal "java -jar Drone-Route-Simulator.jar" for run drone-route-simulator application;
+
+
+

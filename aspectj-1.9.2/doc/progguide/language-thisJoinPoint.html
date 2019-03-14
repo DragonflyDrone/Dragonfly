@@ -1,0 +1,63 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>thisJoinPoint</title><link rel="stylesheet" href="aspectj-docs.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.44"><link rel="home" href="index.html" title="The AspectJTM Programming Guide"><link rel="up" href="language.html" title="Chapter 2. The AspectJ Language"><link rel="previous" href="language-interType.html" title="Inter-type declarations"><link rel="next" href="examples.html" title="Chapter 3. Examples"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">thisJoinPoint</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="language-interType.html">Prev</a>&nbsp;</td><th width="60%" align="center">Chapter 2. The AspectJ Language</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="examples.html">Next</a></td></tr></table><hr></div><div class="sect1"><a name="language-thisJoinPoint"></a><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="language-thisJoinPoint"></a>thisJoinPoint</h2></div></div><p>
+      AspectJ provides a special reference variable,
+      <tt>thisJoinPoint</tt>, that contains reflective
+      information about the current join point for the advice to use. The
+      <tt>thisJoinPoint</tt> variable can only be used in the
+      context of advice, just like <tt>this</tt> can only be used
+      in the context of non-static methods and variable initializers. In
+      advice, <tt>thisJoinPoint</tt> is an object of type <a href="../api/org/aspectj/lang/JoinPoint.html" target="_top"><tt>org.aspectj.lang.JoinPoint</tt></a>.
+    </p><p>
+      One way to use it is simply to print it out.  Like all Java objects,
+      <tt>thisJoinPoint</tt> has a <tt>toString()</tt>
+      method that makes quick-and-dirty tracing easy:
+    </p><pre class="programlisting">
+  aspect TraceNonStaticMethods {
+      before(Point p): target(p) &amp;&amp; call(* *(..)) {
+          System.out.println("Entering " + thisJoinPoint + " in " + p);
+      }
+  }
+</pre><p>
+      The type of <tt>thisJoinPoint</tt> includes a rich
+      reflective class hierarchy of signatures, and can be used to access
+      both static and dynamic information about join points such as the
+      arguments of the join point:
+
+<pre class="programlisting">
+  thisJoinPoint.getArgs()
+</pre>
+
+      In addition, it holds an object consisting of all the static
+      information about the join point such as corresponding line number
+      and static signature:
+
+<pre class="programlisting">
+  thisJoinPoint.getStaticPart()
+</pre>
+
+      If you only need the static information about the join point, you may
+      access the static part of the join point directly with the special
+      variable <tt>thisJoinPointStaticPart</tt>.  Using
+      <tt>thisJoinPointStaticPart</tt> will avoid the run-time
+      creation of the join point object that may be necessary when using
+      <tt>thisJoinPoint</tt> directly.
+    </p><p>It is always the case that
+    </p><pre class="programlisting">
+   thisJoinPointStaticPart == thisJoinPoint.getStaticPart()
+
+   thisJoinPoint.getKind() == thisJoinPointStaticPart.getKind()
+   thisJoinPoint.getSignature() == thisJoinPointStaticPart.getSignature()
+   thisJoinPoint.getSourceLocation() == thisJoinPointStaticPart.getSourceLocation()
+</pre><p>
+      One more reflective variable is available:
+      <tt>thisEnclosingJoinPointStaticPart</tt>.  This, like
+      <tt>thisJoinPointStaticPart</tt>, only holds the static
+      part of a join point, but it is not the current but the enclosing
+      join point.  So, for example, it is possible to print out the calling
+      source location (if available) with
+    </p><pre class="programlisting">
+   before() : execution (* *(..)) {
+     System.err.println(thisEnclosingJoinPointStaticPart.getSourceLocation())
+   }
+</pre></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="language-interType.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="examples.html">Next</a></td></tr><tr><td width="40%" align="left">Inter-type declarations&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="language.html">Up</a></td><td width="40%" align="right">&nbsp;Chapter 3. Examples</td></tr></table></div></body></html>

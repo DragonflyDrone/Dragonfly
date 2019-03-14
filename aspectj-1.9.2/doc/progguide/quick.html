@@ -1,0 +1,73 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Appendix A. AspectJ Quick Reference</title><link rel="stylesheet" href="aspectj-docs.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.44"><link rel="home" href="index.html" title="The AspectJTM Programming Guide"><link rel="up" href="index.html" title="The AspectJTM Programming Guide"><link rel="previous" href="pitfalls-infiniteLoops.html" title="Infinite loops"><link rel="next" href="quick-typePatterns.html" title="Type Patterns"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Appendix A. AspectJ Quick Reference</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="pitfalls-infiniteLoops.html">Prev</a>&nbsp;</td><th width="60%" align="center">&nbsp;</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="quick-typePatterns.html">Next</a></td></tr></table><hr></div><div class="appendix"><div class="titlepage"><div><h2 class="title"><a name="quick"></a>Appendix A. AspectJ Quick Reference</h2></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><a href="quick.html#quick-pointcuts">Pointcuts</a></dt><dt><a href="quick-typePatterns.html">Type Patterns</a></dt><dt><a href="quick-advice.html">Advice</a></dt><dt><a href="quick-interType.html">Inter-type member declarations</a></dt><dt><a href="quick-other.html">Other declarations</a></dt><dt><a href="quick-aspectAssociations.html">Aspects</a></dt></dl></div><div class="sect1"><a name="quick-pointcuts"></a><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="quick-pointcuts"></a>Pointcuts</h2></div></div><div class="informaltable" uniqueID="d0e3571"><a name="d0e3571"></a><table border="0"><colgroup><col align="left"><col align="left"></colgroup><tbody valign="top"><tr><td colspan="2"><span class="bold"><b>Methods and Constructors</b></span></td></tr><tr><td><tt>call(<i><tt>Signature</tt></i>)</tt></td><td>
+              every call to any method or constructor matching
+              <i><tt>Signature</tt></i> at the call site
+            </td></tr><tr><td><tt>execution(<i><tt>Signature</tt></i>)</tt></td><td>
+              every execution of any method or constructor matching
+              <i><tt>Signature</tt></i></td></tr><tr><td colspan="2"><span class="bold"><b>Fields</b></span></td></tr><tr><td><tt>get(<i><tt>Signature</tt></i>)</tt></td><td>
+              every reference to any field matching <i><tt>Signature</tt></i></td></tr><tr><td><tt>set(<i><tt>Signature</tt></i>)</tt></td><td>
+              every assignment to any field matching
+              <i><tt>Signature</tt></i>. The assigned value can
+              be exposed with an <tt>args</tt> pointcut
+            </td></tr><tr><td colspan="2"><span class="bold"><b>Exception Handlers</b></span></td></tr><tr><td><tt>handler(<i><tt>TypePattern</tt></i>)</tt></td><td>
+              every exception handler for any <tt>Throwable</tt>
+              type in <i><tt>TypePattern</tt></i>. The exception
+              value can be exposed with an <tt>args</tt> pointcut
+            </td></tr><tr><td colspan="2"><span class="bold"><b>Advice</b></span></td></tr><tr><td><tt>adviceexecution()</tt></td><td>
+              every execution of any piece of advice
+            </td></tr><tr><td colspan="2"><span class="bold"><b>Initialization</b></span></td></tr><tr><td><tt>staticinitialization(<i><tt>TypePattern</tt></i>)</tt></td><td>
+              every execution of a static initializer for any type in
+              <i><tt>TypePattern</tt></i></td></tr><tr><td><tt>initialization(<i><tt>Signature</tt></i>)</tt></td><td>
+              every initialization of an object when the first constructor
+              called in the type matches
+              <i><tt>Signature</tt></i>, encompassing the return
+              from the super constructor call to the return of the
+              first-called constructor
+            </td></tr><tr><td><tt>preinitialization(<i><tt>Signature</tt></i>)</tt></td><td>
+              every pre-initialization of an object when the first
+              constructor called in the type matches
+              <i><tt>Signature</tt></i>, encompassing the entry
+              of the first-called constructor to the call to the super
+              constructor
+            </td></tr><tr><td colspan="2"><span class="bold"><b>Lexical</b></span></td></tr><tr><td><tt>within(<i><tt>TypePattern</tt></i>)</tt></td><td>
+              every join point from code defined in a type in
+              <i><tt>TypePattern</tt></i></td></tr><tr><td><tt>withincode(<i><tt>Signature</tt></i>)</tt></td><td>
+              every join point from code defined in a method or constructor
+              matching <i><tt>Signature</tt></i></td></tr></tbody></table><table border="0"><colgroup><col align="left"><col align="left"></colgroup><tbody valign="top"><tr><td colspan="2"><span class="bold"><b>Instanceof checks and context exposure</b></span></td></tr><tr><td><tt>this(<i><tt>Type</tt></i> or <i><tt>Id</tt></i>)</tt></td><td>
+              every join point when the currently executing object is an
+              instance of <i><tt>Type</tt></i> or
+              <i><tt>Id</tt></i>'s type
+            </td></tr><tr><td><tt>target(<i><tt>Type</tt></i> or <i><tt>Id</tt></i>)</tt></td><td>
+              every join point when the target executing object is an
+              instance of <i><tt>Type</tt></i> or
+              <i><tt>Id</tt></i>'s type
+            </td></tr><tr><td><tt>args(<i><tt>Type</tt></i> or
+              <i><tt>Id</tt></i>, ...)</tt></td><td>
+              every join point when the arguments are instances of
+              <i><tt>Type</tt></i>s or the types of the
+              <i><tt>Id</tt></i>s
+            </td></tr><tr><td colspan="2"><span class="bold"><b>Control Flow</b></span></td></tr><tr><td><tt>cflow(<i><tt>Pointcut</tt></i>)</tt></td><td>
+              every join point in the control flow of each join point
+              <i><tt>P</tt></i> picked out by
+              <i><tt>Pointcut</tt></i>, including
+              <i><tt>P</tt></i> itself
+            </td></tr><tr><td><tt>cflowbelow(<i><tt>Pointcut</tt></i>)</tt></td><td>
+              every join point below the control flow of each join point
+              <i><tt>P</tt></i> picked out by
+              <i><tt>Pointcut</tt></i>; does not include
+              <i><tt>P</tt></i> itself
+            </td></tr><tr><td colspan="2"><span class="bold"><b>Conditional</b></span></td></tr><tr><td><tt>if(<i><tt>Expression</tt></i>)</tt></td><td>
+              every join point when the boolean
+              <i><tt>Expression</tt></i> is
+              <tt>true</tt></td></tr></tbody></table><table border="0"><colgroup><col align="left"><col align="left"></colgroup><tbody valign="top"><tr><td colspan="2"><span class="bold"><b>Combination</b></span></td></tr><tr><td><tt>! <i><tt>Pointcut</tt></i></tt></td><td>
+              every join point not picked out by
+              <i><tt>Pointcut</tt></i></td></tr><tr><td><tt><i><tt>Pointcut0</tt></i> &amp;&amp; <i><tt>Pointcut1</tt></i></tt></td><td>
+              each join point picked out by both
+              <i><tt>Pointcut0</tt></i> and
+              <i><tt>Pointcut1</tt></i></td></tr><tr><td><tt><i><tt>Pointcut0</tt></i> || <i><tt>Pointcut1</tt></i></tt></td><td>
+              each join point picked out by either
+              <i><tt>Pointcut0</tt></i> or
+              <i><tt>Pointcut1</tt></i></td></tr><tr><td><tt>( <i><tt>Pointcut</tt></i> )</tt></td><td>
+              each join point picked out by
+              <i><tt>Pointcut</tt></i></td></tr></tbody></table></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="pitfalls-infiniteLoops.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="quick-typePatterns.html">Next</a></td></tr><tr><td width="40%" align="left">Infinite loops&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="index.html">Up</a></td><td width="40%" align="right">&nbsp;Type Patterns</td></tr></table></div></body></html>

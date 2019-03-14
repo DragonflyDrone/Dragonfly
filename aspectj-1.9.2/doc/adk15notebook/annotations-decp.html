@@ -1,0 +1,49 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Using Annotations with declare statements</title><link rel="stylesheet" href="aspectj-docs.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.44"><link rel="home" href="index.html" title="The AspectJTM 5 Development Kit Developer's Notebook"><link rel="up" href="annotations.html" title="Chapter 2. Annotations"><link rel="previous" href="annotations-pointcuts-and-advice.html" title="Join Point Matching based on Annotations"><link rel="next" href="annotations-declare.html" title="Declare Annotation"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Using Annotations with declare statements</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="annotations-pointcuts-and-advice.html">Prev</a>&nbsp;</td><th width="60%" align="center">Chapter 2. Annotations</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="annotations-declare.html">Next</a></td></tr></table><hr></div><div class="sect1"><a name="annotations-decp"></a><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="annotations-decp"></a>Using Annotations with declare statements</h2></div></div><div class="sect2"><a name="declare-error-and-declare-warning"></a><div class="titlepage"><div><h3 class="title"><a name="declare-error-and-declare-warning"></a>Declare error and declare warning</h3></div></div><p>
+  	    Since pointcut expressions in AspectJ 5 support join point matching based
+  	    on annotations, this facility can be exploited when writing
+  	    <tt>declare warning</tt> and <tt>declare error</tt>
+  	    statements. For example:
+  	</p><pre class="programlisting">
+  	declare warning : withincode(@PerformanceCritical * *(..)) &amp;&amp;
+  	                  call(@ExpensiveOperation * *(..))
+  	                : "Expensive operation called from within performance critical section";
+	</pre><pre class="programlisting">
+  	declare error : call(* org.xyz.model.*.*(..)) &amp;&amp;
+  	                !@within(Trusted)
+  	                : "Untrusted code should not call the model classes directly";
+	</pre></div><div class="sect2"><a name="declare-parents"></a><div class="titlepage"><div><h3 class="title"><a name="declare-parents"></a>declare parents</h3></div></div><p>
+  		The general form of a <tt>declare parents</tt> statement is:
+  	</p><pre class="programlisting">
+  	declare parents : TypePattern extends Type;
+  	declare parents : TypePattern implements TypeList;
+	</pre><p>
+		Since AspectJ 5 supports annotations as part of a type pattern
+		specification, it is now possible to match types based on the presence
+		of annotations <span class="emphasis"><i>with either class-file or runtime retention</i></span>.
+		For example:
+	</p><div class="variablelist"><dl><dt><a name="d0e1520"></a><span class="term">declare parents : (@Secured *) implements SecuredObject;</span></dt><dd><p><a name="d0e1523"></a>
+	            	All types with the <tt>@Secured</tt> annotation
+	            	implement the <tt>SecuredObject</tt> inteface.
+	            </p></dd><dt><a name="d0e1532"></a><span class="term">declare parents : (@Secured BankAccount+) implements SecuredObject;</span></dt><dd><p><a name="d0e1535"></a>
+	            	The subset of types drawn from the <tt>BankAccount</tt> type and any subtype of
+	            	<tt>BankAccount</tt>, where the 
+	            	<tt>@Secured</tt> annotation is present, implement the
+	            	<tt>SecuredObject</tt> interface.
+	            </p></dd></dl></div><p>An annotation type may not be used as the target of a declare parents
+    statement. If an annotation type is named explicitly as the target of a
+    declare parents statement, a compilation error will result. If an annotation
+    type is matched by a non-explicit type pattern used in a declare parents
+    statement it will be ignored (and an XLint warning issued).</p></div><div class="sect2"><a name="declare-precedence"></a><div class="titlepage"><div><h3 class="title"><a name="declare-precedence"></a>declare precedence</h3></div></div><p>
+		The general form of a declare precedence statement is:
+	</p><pre class="programlisting">
+  	declare precedence : TypePatList;
+	</pre><p>
+		AspectJ 5 allows the type patterns in the list to include annotation information
+		as part of the pattern specification. For example:
+	</p><div class="variablelist"><dl><dt><a name="d0e1562"></a><span class="term">declare precedence : (@Security *),*;</span></dt><dd><p><a name="d0e1565"></a>
+            	All aspects with the <tt>@Security</tt> annotation
+            	take precedence over any other aspects in the system. (Or, more
+            	informally, all security-related aspects take precedence).
+            </p></dd></dl></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="annotations-pointcuts-and-advice.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="annotations-declare.html">Next</a></td></tr><tr><td width="40%" align="left">Join Point Matching based on Annotations&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="annotations.html">Up</a></td><td width="40%" align="right">&nbsp;Declare Annotation</td></tr></table></div></body></html>

@@ -1,0 +1,38 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Message scenarios</title><link rel="stylesheet" href="aspectj-docs.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.44"><link rel="home" href="index.html" title="The AspectJtm Problem Diagnosis Guide"><link rel="up" href="messages.html" title="Chapter 1. Messages"><link rel="previous" href="messages.html" title="Chapter 1. Messages"><link rel="next" href="messages-xlint.html" title="Lint messages"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Message scenarios</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="messages.html">Prev</a>&nbsp;</td><th width="60%" align="center">Chapter 1. Messages</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="messages-xlint.html">Next</a></td></tr></table><hr></div><div class="sect1"><a name="messages-scenarios"></a><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="messages-scenarios"></a>Message scenarios</h2></div></div><div class="sect2"><a name="messages-scenarios-ct"></a><div class="titlepage"><div><h3 class="title"><a name="messages-scenarios-ct"></a>Compile-time weaving scenarios</h3></div></div><div class="sect3"><a name="messages-scenarios-ct-adviceNotWoven"></a><div class="titlepage"><div><h4 class="title"><a name="messages-scenarios-ct-adviceNotWoven"></a>Advice not woven</h4></div></div><p>This means that the pointcut for the advice did not match,
+                and it should be debugged as described in 
+                    <a href="pointcuts.html">Debugging Pointcuts</a>.</p></div></div><div class="sect2"><a name="messages-scenarios-ltw"></a><div class="titlepage"><div><h3 class="title"><a name="messages-scenarios-ltw"></a>Load-time weaving scenarios</h3></div></div><p> You can use <tt>META-INF/aop.xml</tt> to control which
+            messages are produced during LTW. The following example will produce
+            basic informational messages about the lifecyle of the weaver in
+            addition to any warning or error messages. </p><pre class="programlisting">
+	&lt;aspectj&gt;
+		&lt;weaver options="-verbose"&gt;
+		&lt;/weaver&gt;
+	&lt;/aspectj&gt;
+			</pre><p>The messages indicate which <tt>META-INF/aop.xml</tt> 
+            configurations file(s) are being used. Each message is also preceeded by the 
+            name of the defining class loader associated with weaver. You can use this
+            information in a large system to distinguish between different applications each
+            of which will typically have its own class loader. </p><pre class="programlisting">
+[AppClassLoader@92e78c] info AspectJ Weaver Version 1.5.3 built on Thursday Oct 26, 2006 at 17:22:31 GMT
+[AppClassLoader@92e78c] info register classloader sun.misc.Launcher$AppClassLoader@92e78c
+[AppClassLoader@92e78c] info using configuration /C:/temp/META-INF/aop.xml
+[AppClassLoader@92e78c] info using configuration /C:/temp/META-INF/aop-ajc.xml
+[AppClassLoader@92e78c] info register aspect ExceptionHandler
+[AppClassLoader@92e78c] info processing reweavable type ExceptionHandler: ExceptionHandler.aj
+			</pre><div class="sect3"><a name="messages-scenarios-ltw-adviceNotWoven"></a><div class="titlepage"><div><h4 class="title"><a name="messages-scenarios-ltw-adviceNotWoven"></a>Advice not woven</h4></div></div><p> It is often difficult to determine, especially when using load-time weaving (LTW),
+		why advice has not been woven. Here is a quick guide to the messages to
+		look for. Firstly if you use the <tt>-verbose</tt> option you 
+		should see the following message when your aspect is registered: </p><pre class="programlisting">
+	info register aspect MyAspect
+        </pre><p> Secondly if you use the <tt>-debug</tt> option you should 
+		see a message indicating that you class is being woven: </p><pre class="programlisting">
+	debug weaving 'HelloWorld'
+        </pre><p> However this does not mean that advice has actually been woven into
+		your class; it says that the class has been passed to the weaver. To determine
+		whether your pointcuts match you can use the <tt>-showWeaveInfo</tt>
+		option which will cause a message to be issued each time a join point is woven: </p><pre class="programlisting">
+	weaveinfo Join point 'method-execution(void HelloWorld.main(java.lang.String[]))' ...
+		</pre><p>If advice is woven at this join point you should get the 
+            corresponding message.</p></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="messages.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="messages-xlint.html">Next</a></td></tr><tr><td width="40%" align="left">Chapter 1. Messages&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="messages.html">Up</a></td><td width="40%" align="right">&nbsp;Lint messages</td></tr></table></div></body></html>

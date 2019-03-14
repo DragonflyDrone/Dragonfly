@@ -1,0 +1,47 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Chapter 4. Idioms</title><link rel="stylesheet" href="aspectj-docs.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.44"><link rel="home" href="index.html" title="The AspectJTM Programming Guide"><link rel="up" href="index.html" title="The AspectJTM Programming Guide"><link rel="previous" href="examples-reusable.html" title="Reusable Aspects"><link rel="next" href="pitfalls.html" title="Chapter 5. Pitfalls"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Chapter 4. Idioms</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="examples-reusable.html">Prev</a>&nbsp;</td><th width="60%" align="center">&nbsp;</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="pitfalls.html">Next</a></td></tr></table><hr></div><div class="chapter"><div class="titlepage"><div><h2 class="title"><a name="idioms"></a>Chapter 4. Idioms</h2></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><a href="idioms.html#idioms-intro">Introduction</a></dt></dl></div><div class="sect1"><a name="idioms-intro"></a><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="idioms-intro"></a>Introduction</h2></div></div><p>
+      This chapter consists of very short snippets of AspectJ code,
+      typically pointcuts, that are particularly evocative or useful.
+      This section is a work in progress.
+    </p><p>
+      Here's an example of how to enfore a rule that code in the
+      java.sql package can only be used from one particular package in
+      your system. This doesn't require any access to code in the
+      java.sql package.
+    </p><pre class="programlisting">
+/* Any call to methods or constructors in java.sql */
+pointcut restrictedCall():
+    call(* java.sql.*.*(..)) || call(java.sql.*.new(..));
+
+/* Any code in my system not in the sqlAccess package */
+pointcut illegalSource():
+    within(com.foo..*) &amp;&amp; !within(com.foo.sqlAccess.*);
+
+declare error: restrictedCall() &amp;&amp; illegalSource():
+    "java.sql package can only be accessed from com.foo.sqlAccess";
+</pre><p>Any call to an instance of a subtype of AbstractFacade whose class is
+    not exactly equal to AbstractFacade:</p><pre class="programlisting">
+pointcut nonAbstract(AbstractFacade af):
+    call(* *(..))
+    &amp;&amp; target(af)
+    &amp;&amp; !if(af.getClass() == AbstractFacade.class);
+</pre><p> If AbstractFacade is an abstract class or an interface, then every
+    instance must be of a subtype and you can replace this with: </p><pre class="programlisting">
+pointcut nonAbstract(AbstractFacade af):
+    call(* *(..))
+    &amp;&amp; target(af);
+</pre><p> Any call to a method which is defined by a subtype of
+    AbstractFacade, but which isn't defined by the type AbstractFacade itself:
+    </p><pre class="programlisting">
+pointcut callToUndefinedMethod():
+     call(* AbstractFacade+.*(..))
+     &amp;&amp; !call(* AbstractFacade.*(..));
+</pre><p> The execution of a method that is defined in the source code for a
+    type that is a subtype of AbstractFacade but not in AbstractFacade itself:
+    </p><pre class="programlisting">
+pointcut executionOfUndefinedMethod():
+    execution(* *(..))
+    &amp;&amp; within(AbstractFacade+)
+    &amp;&amp; !within(AbstractFacade)
+</pre></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="examples-reusable.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="pitfalls.html">Next</a></td></tr><tr><td width="40%" align="left">Reusable Aspects&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="index.html">Up</a></td><td width="40%" align="right">&nbsp;Chapter 5. Pitfalls</td></tr></table></div></body></html>

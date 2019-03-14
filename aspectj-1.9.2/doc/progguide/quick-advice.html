@@ -1,0 +1,60 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Advice</title><link rel="stylesheet" href="aspectj-docs.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.44"><link rel="home" href="index.html" title="The AspectJTM Programming Guide"><link rel="up" href="quick.html" title="Appendix A. AspectJ Quick Reference"><link rel="previous" href="quick-typePatterns.html" title="Type Patterns"><link rel="next" href="quick-interType.html" title="Inter-type member declarations"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Advice</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="quick-typePatterns.html">Prev</a>&nbsp;</td><th width="60%" align="center">Appendix A. AspectJ Quick Reference</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="quick-interType.html">Next</a></td></tr></table><hr></div><div class="sect1"><a name="quick-advice"></a><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="quick-advice"></a>Advice</h2></div></div><p>
+      Each piece of advice is of the form
+
+      <blockquote class="blockquote"><tt>[ strictfp ] <i><tt>AdviceSpec</tt></i> 
+	[ throws <i><tt>TypeList</tt></i> ] :
+        <i><tt>Pointcut</tt></i> {
+        <i><tt>Body</tt></i> } </tt></blockquote>
+
+      where <i><tt>AdviceSpec</tt></i> is one of
+    </p><div class="variablelist"><dl><dt><a name="d0e4052"></a><span class="term">
+          <tt>before( <i><tt>Formals</tt></i> ) </tt>
+        </span></dt><dd>
+          runs before each join point
+        </dd><dt><a name="d0e4063"></a><span class="term">
+          <tt>after( <i><tt>Formals</tt></i> ) returning
+          [ ( <i><tt>Formal</tt></i> ) ] </tt>
+        </span></dt><dd>
+          runs after each join point that returns normally.  The
+          optional formal gives access to the returned value
+        </dd><dt><a name="d0e4077"></a><span class="term">
+          <tt>after( <i><tt>Formals</tt></i> ) throwing [
+          ( <i><tt>Formal</tt></i> ) ] </tt>
+        </span></dt><dd>
+          runs after each join point that throws a
+          <tt>Throwable</tt>.  If the optional formal is
+          present, runs only after each join point that throws a
+          <tt>Throwable</tt> of the type of
+          <i><tt>Formal</tt></i>, and
+          <i><tt>Formal</tt></i> gives access to the
+          <tt>Throwable</tt> exception value
+        </dd><dt><a name="d0e4106"></a><span class="term">
+          <tt>after( <i><tt>Formals</tt></i> ) </tt>
+        </span></dt><dd>
+          runs after each join point regardless of whether it returns
+          normally or throws a <tt>Throwable</tt></dd><dt><a name="d0e4119"></a><span class="term">
+          <tt><i><tt>Type</tt></i>
+          around( <i><tt>Formals</tt></i> ) </tt>
+        </span></dt><dd>
+          runs in place of each join point. The join point can be
+          executed by calling <tt>proceed</tt>, which takes
+          the same number and types of arguments as the around advice.
+        </dd></dl></div><p>
+      Three special variables are available inside of advice bodies:
+    </p><div class="variablelist"><dl><dt><a name="d0e4138"></a><span class="term">
+          <tt>thisJoinPoint</tt>
+        </span></dt><dd>
+          an object of type <a href="../api/org/aspectj/lang/JoinPoint.html" target="_top"><tt>org.aspectj.lang.JoinPoint</tt></a>
+      representing the join point at which the advice is executing.
+        </dd><dt><a name="d0e4150"></a><span class="term">
+          <tt>thisJoinPointStaticPart</tt>
+        </span></dt><dd>
+          equivalent to <tt>thisJoinPoint.getStaticPart()</tt>,
+          but may use fewer runtime resources.
+        </dd><dt><a name="d0e4161"></a><span class="term">
+          <tt>thisEnclosingJoinPointStaticPart</tt>
+        </span></dt><dd>
+          the static part of the dynamically enclosing join point.
+        </dd></dl></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="quick-typePatterns.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="quick-interType.html">Next</a></td></tr><tr><td width="40%" align="left">Type Patterns&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="quick.html">Up</a></td><td width="40%" align="right">&nbsp;Inter-type member declarations</td></tr></table></div></body></html>
