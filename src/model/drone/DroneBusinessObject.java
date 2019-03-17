@@ -2,9 +2,12 @@ package model.drone;
 
 import controller.EnvironmentController;
 import javafx.application.Platform;
+import javafx.scene.Node;
 import javafx.scene.input.KeyCode;
 import model.Hospital;
 import util.StopWatch;
+import view.CellView;
+import view.drone.DroneView;
 
 import java.util.Random;
 import java.util.TimerTask;
@@ -106,7 +109,34 @@ public class DroneBusinessObject{
 
     }
 
-    public static void updateBatteryPerSecond(Drone drone) {
+    public synchronized static void updateBatteryPerBlock(Drone drone) {
+
+        if(drone.isShutDown()){
+            return;
+        }
+
+        if(drone.isEconomyMode()){
+
+            Double oldCurrentBattery = drone.getCurrentBattery();
+            Double batteryPerBlock = drone.getBatteryPerBlock();
+
+            Double economyModeBatteryPerBlock = batteryPerBlock/2;
+
+            Double newCurrentBattery = oldCurrentBattery-economyModeBatteryPerBlock;
+
+            drone.setCurrentBattery(newCurrentBattery);
+
+        }else if(drone.isNormalMode()){
+            Double oldCurrentBattery = drone.getCurrentBattery();
+            Double batteryPerBlock = drone.getBatteryPerBlock();
+            Double newCurrentBattery = oldCurrentBattery-batteryPerBlock;
+
+            drone.setCurrentBattery(newCurrentBattery);
+        }
+
+    }
+
+    public synchronized static void updateBatteryPerSecond(Drone drone) {
 
         if(drone.isShutDown()){
             return;
@@ -143,13 +173,14 @@ public class DroneBusinessObject{
 
 
 
-    public static void checkStatus(Drone selectedDrone) {
+
+    public synchronized static void checkStatus(Drone selectedDrone) {
         System.out.println("checkStatus");
         System.out.println(selectedDrone.toString());
 
         KeyCode flyDirectionCommand = selectedDrone.getFlyDirectionCommand();
 
-          if(selectedDrone.getCurrentBattery()>10 && selectedDrone.getDistanceHospitalDestiny()>0 && flyDirectionCommand != null
+              if(selectedDrone.getCurrentBattery()>10 && selectedDrone.getDistanceHospitalDestiny()>0 && flyDirectionCommand != null
                 && !selectedDrone.isReturningToHome()
                 && !selectedDrone.isSafeLand()
                 && !selectedDrone.isBadConnection()
@@ -347,7 +378,7 @@ public class DroneBusinessObject{
     }*/
 
     public static void flying(Drone selectedDrone, KeyCode flyDirectionCommand) {
-
+        System.out.println("flying");
         //System.out.println("Drone["+drone.getUniqueID()+"] "+"Flying");
        // loggerController.print("Drone["+drone.getUniqueID()+"] "+"Flying");
 
@@ -411,7 +442,39 @@ public class DroneBusinessObject{
 
         updateDistances(selectedDrone);
         updateBatteryPerSecond(selectedDrone);
+        updateItIsOver(selectedDrone);
 
+
+    }
+
+    public static Node updateItIsOver(Drone drone) {
+
+
+        CellView currentCellView = (CellView) EnvironmentController.getInstance().getCellViewSelected();
+        DroneView droneView = EnvironmentController.getInstance().getDroneViewMap().get(drone.getUniqueID());
+
+        if(currentCellView == null){
+            return null;
+        }
+
+        drone.getOnTopOfList().clear();
+
+
+
+        for(Node node : currentCellView.getChildren()){
+
+            if(node==droneView){
+                continue;
+            }
+
+            drone.addOnTopOfDroneList(node);
+        }
+        if(!drone.getOnTopOfList().isEmpty()){
+            //System.out.println(drone.getOnTopOfList().get(drone.getOnTopOfList().size()-1));
+        }
+
+
+        return null;
     }
 
     /*public void goDestinyAutomatic() {
@@ -569,6 +632,7 @@ public class DroneBusinessObject{
 
           checkStatus(selectedDrone);
           updateDistances(selectedDrone);
+          updateItIsOver(selectedDrone);
 
       });
 
@@ -791,6 +855,8 @@ public class DroneBusinessObject{
        /* System.out.println("Drone["+drone.getUniqueID()+"] "+"Start Economy Mode");
         loggerController.print("Drone["+drone.getUniqueID()+"] "+"Start Economy Mode");*/
     }
+
+
 
     public static void resetSettingsDrone(Drone currentDrone) {
         currentDrone.setCurrentBattery(currentDrone.getInitialBattery());

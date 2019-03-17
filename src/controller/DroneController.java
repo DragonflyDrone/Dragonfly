@@ -12,8 +12,8 @@ import java.util.Map;
 public abstract class DroneController {
     protected static DroneController instance;
 
-    protected Map<String, DroneView> droneViewMap = new HashMap<>();
-    protected Map<String, Drone>  droneMap = new HashMap<>();
+    protected static Map<String, DroneView> droneViewMap = new HashMap<>();
+    protected static Map<String, Drone>  droneMap = new HashMap<>();
 
     public static DroneController getInstance(){
         return instance;
@@ -21,13 +21,14 @@ public abstract class DroneController {
 
     public static void init(String nameClass){
 
-        if(instance == null){
+        if(instance == null || !instance.getClass().getSimpleName().equals(nameClass)){
             if(nameClass.equals(DroneKeyBoardController.class.getSimpleName())){
                 instance = DroneKeyBoardController.getInstance();
+
             }
 
             if(nameClass.equals(DroneAutomaticController.class.getSimpleName())){
-                instance = DroneKeyBoardController.getInstance();
+                instance = DroneAutomaticController.getInstance();
             }
         }
 

@@ -14,7 +14,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.shape.Rectangle?>
 
-<AnchorPane fx:id="mainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="683.0" prefWidth="903.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="mainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="683.0" prefWidth="903.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane fx:id="environmentAnchorPane" layoutX="2.0" layoutY="30.0" prefHeight="379.0" prefWidth="899.0" AnchorPane.bottomAnchor="311.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="30.0">
          <children>
@@ -49,7 +49,7 @@
             <RadioButton fx:id="noStrongWindRadioButton" layoutX="141.0" layoutY="84.0" mnemonicParsing="false" selected="true" text="No" />
             <RadioButton fx:id="randomStrongWindRadioButton" layoutX="186.0" layoutY="84.0" mnemonicParsing="false" text="Random" />
             <Label fx:id="strongWindLabel" layoutX="4.0" layoutY="83.0" text="Strong Wind:" />
-            <CheckBox fx:id="automaticCheckBox" disable="true" layoutX="496.0" layoutY="155.0" mnemonicParsing="false" text="Automatic" />
+            <CheckBox fx:id="automaticExecutionCheckBox" layoutX="6.0" layoutY="113.0" mnemonicParsing="false" text="Automatic Execution" />
             <Label fx:id="currentDroneLabel" disable="true" layoutX="391.0" layoutY="15.0" text="Current Drone (ID):" />
             <TextField fx:id="currentDroneTextField" disable="true" layoutX="531.0" layoutY="9.0" prefHeight="26.0" prefWidth="58.0" />
             <Button fx:id="saveButton" disable="true" layoutX="541.0" layoutY="204.0" mnemonicParsing="false" text="Save" />
@@ -72,20 +72,22 @@
                   <Image url="@antenna.png" />
                </image>
             </ImageView>
-            <CheckBox fx:id="wrapperCheckBox" disable="true" layoutX="398.0" layoutY="155.0" mnemonicParsing="false" text="Wrapper" />
+           <!-- <CheckBox fx:id="wrapperCheckBox" disable="true" layoutX="505.0" layoutY="155.0" mnemonicParsing="false" text="Wrapper" />-->
             <ComboBox fx:id="sourceComboBox" disable="true" layoutX="324.0" layoutY="204.0" prefHeight="26.0" prefWidth="66.0" />
             <ComboBox fx:id="targetComboBox" disable="true" layoutX="447.0" layoutY="204.0" prefHeight="26.0" prefWidth="66.0" />
             <Label fx:id="sourceLabel" disable="true" layoutX="272.0" layoutY="209.0" text="Source:" />
             <Label fx:id="targetLabel" disable="true" layoutX="396.0" layoutY="209.0" text="Target:" />
-            <Button fx:id="deleteButton" layoutX="4.0" layoutY="110.0" mnemonicParsing="false" text="Delete" />
-            <Button fx:id="cleanButton" layoutX="68.0" layoutY="110.0" mnemonicParsing="false" text="Clean" />
+            <Button fx:id="deleteButton" layoutX="4.0" layoutY="145.0" mnemonicParsing="false" text="Delete" />
+            <Button fx:id="cleanButton" layoutX="68.0" layoutY="145.0" mnemonicParsing="false" text="Clean" />
+            <ComboBox fx:id="wrapperComboBox" disable="true" layoutX="438.0" layoutY="158.0" prefWidth="150.0" promptText="None" />
+            <Label fx:id="wrapperComboBox" disable="true" layoutX="377.0" layoutY="163.0" text="Wrapper:" />
 
                         
                                  </children>
       </AnchorPane>
       <AnchorPane fx:id="loggerAnchorPane" layoutX="602.0" layoutY="417.0" prefHeight="222.0" prefWidth="206.0">
          <children>
-            <TextArea fx:id="loggerTextArea" editable="false" layoutY="-4.0" prefHeight="231.0" prefWidth="297.0" />
+            <TextArea fx:id="loggerTextArea" editable="false" layoutY="-4.0" prefHeight="231.0" prefWidth="297.0" text="Drone[0] Start&#10;Drone[0] Take Off&#10;Drone[0] Current baterry : 100.0%&#10;Drone[4] Current baterry : 98.0%&#10;Drone[1] Current baterry : 11.0%&#10;Drone[1] Current baterry : 10.0%&#10;Drone[1] Move Aside&#10;Drone[4] Bad Connection&#10;Drone[4] Return to Home&#10;Drone[2] Current baterry : 64.0%&#10;Drone[2] Current baterry : 62.0%&#10;Drone[3] Current baterry : 11.0%&#10;Drone[3] Keep Flying&#10;Drone[3] Current baterry : 10.0%" />
          </children>
       </AnchorPane>
    </children>

@@ -1,6 +1,7 @@
 package controller;
 
 import javafx.application.Platform;
+import javafx.scene.Node;
 import javafx.scene.input.KeyCode;
 import model.Hospital;
 import model.drone.Drone;
@@ -70,7 +71,7 @@ public class DroneKeyBoardController extends DroneController {
 
 
     private void executeCommandsFromKeyBoard(Drone selectedDrone, KeyCode currentCommand) {
-        if(currentCommand == KeyCode.R){
+         if(currentCommand == KeyCode.R){
 
                 if(selectedDrone.isShutDown()){
 
@@ -110,6 +111,8 @@ public class DroneKeyBoardController extends DroneController {
                 DroneBusinessObject.updateFlyDirectionCommand(flyDirectionCommand, selectedDrone);
 
                 DroneBusinessObject.checkStatus(selectedDrone);
+
+                DroneBusinessObject.updateBatteryPerBlock(selectedDrone);
 
             }
         }
@@ -265,7 +268,7 @@ public class DroneKeyBoardController extends DroneController {
         EnvironmentController environmentController = EnvironmentController.getInstance();
         List<Drone> dronesInEnvironment = environmentController.getDroneList();
 
-        Runnable runnable = () -> Platform.runLater(() -> {
+        Runnable runnable = () -> {
 
             if(allTheDronesAreShutDown()){
                 stopWatchBattery.stop();
@@ -274,9 +277,9 @@ public class DroneKeyBoardController extends DroneController {
             for(Drone currentDroneInEnvirionment : dronesInEnvironment){
 
                 DroneBusinessObject.updateBatteryPerSecond(currentDroneInEnvirionment);
-                DroneBusinessObject.checkStatus(currentDroneInEnvirionment);
+                 DroneBusinessObject.checkStatus(currentDroneInEnvirionment);
             }
-        });
+        };
 
 
         stopWatchBattery = new StopWatch(0,1000, runnable);
@@ -284,6 +287,9 @@ public class DroneKeyBoardController extends DroneController {
         stopWatchBattery.start();
 
     }
+
+
+
 
     private boolean allTheDronesAreShutDown() {
         boolean isShutdown = false;

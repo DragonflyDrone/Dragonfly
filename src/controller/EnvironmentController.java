@@ -943,6 +943,14 @@ public class EnvironmentController implements EnvironmentView.CellClickEvent, Ce
         this.selectedElementView = selectedElementView;
     }
 
+    public Pane getCellViewSelected() {
+        return cellViewSelected;
+    }
+
+    public void setCellViewSelected(Pane cellViewSelected) {
+        this.cellViewSelected = cellViewSelected;
+    }
+
     @Override
     public void onChange(CellView cellView, String methodName, Object oldValue, Object newValue) {
 

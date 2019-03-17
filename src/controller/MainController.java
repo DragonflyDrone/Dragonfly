@@ -12,7 +12,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import model.Hospital;
 import model.drone.Drone;
-import util.MinimumHospitalQuantityException;
+import util.Wrapper;
 import view.drone.DroneView;
 import view.hospital.HospitalView;
 
@@ -37,7 +37,8 @@ public class MainController extends Application {
 
     @FXML
     private
-    Label initialBatteryLabel, consumptionPerBlockLabel, consumptionPerSecondLabel/*, badConectionLabel*/, currentDroneLabel, sourceLabel, targetLabel;
+    Label initialBatteryLabel, consumptionPerBlockLabel, consumptionPerSecondLabel/*, badConectionLabel*/,
+            currentDroneLabel, sourceLabel, targetLabel, wrapperLabel;
 
     @FXML
     private
@@ -62,7 +63,7 @@ public class MainController extends Application {
 
     @FXML
     private
-    CheckBox automaticCheckBox, wrapperCheckBox;
+    CheckBox automaticExecutionCheckBox/*, wrapperCheckBox*/;
 
     @FXML
     private
@@ -70,13 +71,15 @@ public class MainController extends Application {
 
     @FXML
     private
-    ComboBox<String> sourceComboBox, targetComboBox;
+    ComboBox<String> sourceComboBox, targetComboBox, wrapperComboBox;
 
 
     private boolean running = false;
     private boolean droneToggleButtonIsSelected = false;
     private LoggerController loggerController = LoggerController.getInstance();
     private EnvironmentController environmentController;
+
+    private List<Wrapper> wrappersList = new ArrayList<>(Arrays.asList(Wrapper.values()));
 
 
     @Override
@@ -86,7 +89,7 @@ public class MainController extends Application {
         loader.setLocation(getClass().getResource("/view/res/MainPanes.fxml"));
         loader.setController(this);
         AnchorPane rootAnchorPane = loader.load();
-        primaryStage.setTitle("Drone Simulator");
+        primaryStage.setTitle("Dragonfly Simulator");
 
         MenuBar menuBar = new MenuBar();
         VBox vBox = new VBox(menuBar);
@@ -180,12 +183,6 @@ public class MainController extends Application {
 
             selectedDroneView.removeStyleSelected();
 
-            if(automaticCheckBox.isSelected()){
-                DroneController.init(DroneAutomaticController.class.getSimpleName());
-            }else {
-                DroneController.init(DroneKeyBoardController .class.getSimpleName());
-            }
-
             updateDroneSettingsViews();
             disableDroneSettingsViews();
 
@@ -197,6 +194,13 @@ public class MainController extends Application {
         });
 
         startToggleButton.setOnAction(event -> {
+
+
+            if(automaticExecutionCheckBox.isSelected()){
+                DroneController.init(DroneAutomaticController.class.getSimpleName());
+            }else {
+                DroneController.init(DroneKeyBoardController .class.getSimpleName());
+            }
 
             disableEnvironmentSettingViews();
 
@@ -210,6 +214,7 @@ public class MainController extends Application {
             hospitalToggleButton.setSelected(false);
             antennaToggleButton.setSelected(false);
             droneToggleButton.setSelected(false);
+            automaticExecutionCheckBox.setDisable(true);
 
         });
 
@@ -316,7 +321,7 @@ public class MainController extends Application {
                 droneToggleButton.setSelected(false);
                 antennaToggleButton.setSelected(false);
                 hospitalToggleButton.setSelected(false);
-
+                automaticExecutionCheckBox.setSelected(false);
                 environmentController.clearEnverionment();
             }
 
@@ -473,8 +478,9 @@ public class MainController extends Application {
             consumptionPerBlockTextView.setText("");
             consumptionPerSecondTextView.setText("");
             initialBatteryTextView.setText("");
-            automaticCheckBox.setSelected(false);
-            wrapperCheckBox.setSelected(false);
+            //automaticExecutionCheckBox.setSelected(false);
+            wrapperComboBox.getSelectionModel().clearSelection();
+           /* wrapperCheckBox.setSelected(false);*/
 
             sourceComboBox.getSelectionModel().clearSelection();
             targetComboBox.getSelectionModel().clearSelection();
@@ -496,22 +502,34 @@ public class MainController extends Application {
             consumptionPerSecondTextView.setText(String.valueOf(batteryPerSecond));
             initialBatteryTextView.setText(String.valueOf(initialBattery));
 
-            automaticCheckBox.setSelected(isAutomatic);
-            wrapperCheckBox.setSelected(isWrapper);
+            //automaticExecutionCheckBox.setSelected(isAutomatic);
 
+           /* wrapperCheckBox.setSelected(isWrapper);*/
 
+            List<String> nameWrappers = new ArrayList<>();
+            for(Wrapper wrapper : wrappersList){
+                nameWrappers.add(wrapper.name());
+            }
+
+            ObservableList<String> options1 =
+                    FXCollections.observableArrayList(nameWrappers);
+            wrapperComboBox.setItems(options1);
+
+            Wrapper currentWrapper = selectedDrone.getWrapper();
+
+            wrapperComboBox.getSelectionModel().select(currentWrapper.name());
 
             List<String> nameHospitals = new ArrayList<>(environmentController.getHospitalViewList().size());
             for(HospitalView hospitalView : environmentController.getHospitalViewList()){
                 nameHospitals.add(hospitalView.getHospitalLabel());
             }
 
-            ObservableList<String> options =
+            ObservableList<String> options2 =
                     FXCollections.observableArrayList(nameHospitals);
-            sourceComboBox.setItems(options);
+            sourceComboBox.setItems(options2);
 
 
-            targetComboBox.setItems(options);
+            targetComboBox.setItems(options2);
             Hospital sourceHopital = environmentController.getSelectedDrone().getSourceHospital();
             Hospital destinyHopital = environmentController.getSelectedDrone().getDestinyHopistal();
 
@@ -543,6 +561,7 @@ public class MainController extends Application {
         antennaToggleButton.setDisable(true);
         deleteButton.setDisable(true);
         cleanButton.setDisable(true);
+        automaticExecutionCheckBox.setDisable(true);
     }
 
     private void enableEnvironmentSettingViews() {
@@ -553,6 +572,7 @@ public class MainController extends Application {
         antennaToggleButton.setDisable(false);
         deleteButton.setDisable(false);
         cleanButton.setDisable(false);
+        automaticExecutionCheckBox.setDisable(false);
     }
 
     private void disableDroneSettingsViews() {
@@ -565,15 +585,16 @@ public class MainController extends Application {
 
         initialBatteryLabel.setDisable(true);
         initialBatteryTextView.setDisable(true);
-        wrapperCheckBox.setDisable(true);
+        wrapperLabel.setDisable(true);
+        wrapperComboBox.setDisable(true);
         saveButton.setDisable(true);
         sourceComboBox.setDisable(true);
         sourceLabel.setDisable(true);
         targetComboBox.setDisable(true);
         targetLabel.setDisable(true);
 
-        automaticCheckBox.setDisable(true);
-        wrapperCheckBox.setDisable(true);
+        //automaticExecutionCheckBox.setDisable(true);
+      /*  wrapperCheckBox.setDisable(true);*/
 
     }
 
@@ -595,8 +616,10 @@ public class MainController extends Application {
             sourceLabel.setDisable(false);
             targetLabel.setDisable(false);
             targetComboBox.setDisable(false);
-            automaticCheckBox.setDisable(false);
-            wrapperCheckBox.setDisable(false);
+            //automaticExecutionCheckBox.setDisable(false);
+           /* wrapperCheckBox.setDisable(false);*/
+            wrapperLabel.setDisable(false);
+            wrapperComboBox.setDisable(false);
             saveButton.setDisable(false);
         }
 
@@ -616,8 +639,8 @@ public class MainController extends Application {
             selectedDrone.setBatteryPerBlock(Double.parseDouble(consumptionPerBlockTextView.getText()));
             selectedDrone.setBatteryPerSecond(Double.parseDouble(consumptionPerSecondTextView.getText()));
 
-            selectedDrone.setAspect(wrapperCheckBox.isSelected());
-
+           /* selectedDrone.setAspect(wrapperCheckBox.isSelected());*/
+            selectedDrone.setWrapper(wrappersList.get(wrapperComboBox.getSelectionModel().getSelectedIndex()));
             selectedDrone.setSourceHospital(environmentController.getHospitalList().get(sourceComboBox.getSelectionModel().getSelectedIndex()));
             selectedDrone.setDestinyHopistal(environmentController.getHospitalList().get(targetComboBox.getSelectionModel().getSelectedIndex()));
 
@@ -629,8 +652,8 @@ public class MainController extends Application {
         }
 
 
-        selectedDrone.setIsAutomatic(automaticCheckBox.isSelected());
-        selectedDrone.setIsManual(!selectedDrone.isAutomatic());
+       /* selectedDrone.setIsAutomatic(automaticExecutionCheckBox.isSelected());
+        selectedDrone.setIsManual(!selectedDrone.isAutomatic());*/
 
         /* selectedDrone.setIsBadConnection(trueBadConnectionRadioButton.isSelected());*/
 

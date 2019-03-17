@@ -2,6 +2,7 @@ package view.drone;
 
 
 import controller.LoggerController;
+import javafx.application.Platform;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -10,6 +11,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.TextAlignment;
 import model.drone.Drone;
+import util.Wrapper;
 import view.CellView;
 import view.res.EnvironmentView;
 
@@ -29,6 +31,7 @@ public class DroneViewImpl extends DroneView {
     ImageView imageViewDrone = new ImageView( new Image("/view/res/notSelectedDrone.png"));
     private LoggerController loggerController = LoggerController.getInstance();
     private Rectangle selectedRetangle;
+    private Rectangle wrapperStyleRectangule;
     // public LoggerController loggerController = LoggerController.getInstance();
 
 
@@ -68,6 +71,7 @@ public class DroneViewImpl extends DroneView {
     public String getDroneLabel() {
         return droneLabel;
     }
+
     @Override
     public void updadePositionDroneView(Drone drone) {
 
@@ -95,7 +99,7 @@ public class DroneViewImpl extends DroneView {
 
 
     }
-
+/*
     public Node updateItIsOver(Drone drone) {
 
         if(currentCellView == null){
@@ -120,7 +124,7 @@ public class DroneViewImpl extends DroneView {
 
 
         return null;
-    }
+    }*/
     @Override
     public void applyStyleLanded() {
 
@@ -227,122 +231,151 @@ public class DroneViewImpl extends DroneView {
             return;
         }
 
-        if(methodName.equals("setStarted") && !((Boolean) oldValue) && (Boolean) newValue){
+        Platform.runLater(() -> {
+            if(methodName.equals("setStarted") && !((Boolean) oldValue) && (Boolean) newValue){
 
-            applyStyleStarted();
+                applyStyleStarted();
 
-            System.out.println("Drone["+getDroneLabel()+"] "+"Start");
-            loggerController.print("Drone["+getDroneLabel()+"] "+"Start");
+                System.out.println("Drone["+getDroneLabel()+"] "+"Start");
+                loggerController.print("Drone["+getDroneLabel()+"] "+"Start");
 
-            return;
-        }
+                return;
+            }
 
-        if(methodName.equals("setStarted") && ((Boolean) oldValue) && !(Boolean) newValue){
+            if(methodName.equals("setStarted") && ((Boolean) oldValue) && !(Boolean) newValue){
 
-            applyStyleShutDown();
+                applyStyleShutDown();
 
-            System.out.println("Drone["+getDroneLabel()+"] "+"Shutdown");
-            loggerController.print("Drone["+getDroneLabel()+"] "+"Shutdown");
-            return;
-        }
+                System.out.println("Drone["+getDroneLabel()+"] "+"Shutdown");
+                loggerController.print("Drone["+getDroneLabel()+"] "+"Shutdown");
+                return;
+            }
 
-        if(methodName.equals("setIsTookOff") && !((Boolean) oldValue) && (Boolean) newValue){
+            if(methodName.equals("setIsTookOff") && !((Boolean) oldValue) && (Boolean) newValue){
 
-            applyStyleTakeOff();
+                applyStyleTakeOff();
 
-            System.out.println("Drone["+getDroneLabel()+"] "+"Take Off");
-            loggerController.print("Drone["+getDroneLabel()+"] "+"Take Off");
+                System.out.println("Drone["+getDroneLabel()+"] "+"Take Off");
+                loggerController.print("Drone["+getDroneLabel()+"] "+"Take Off");
 
-            return;
-        }
+                return;
+            }
 
-        if(methodName.equals("setIsTookOff") && ((Boolean) oldValue) && !(Boolean) newValue){
+            if(methodName.equals("setIsTookOff") && ((Boolean) oldValue) && !(Boolean) newValue){
 
-            System.out.println("Drone["+getDroneLabel()+"] "+"Landing");
-            loggerController.print("Drone["+getDroneLabel()+"] "+"Landing");
+                System.out.println("Drone["+getDroneLabel()+"] "+"Landing");
+                loggerController.print("Drone["+getDroneLabel()+"] "+"Landing");
 
-            applyStyleLanded();
+                applyStyleLanded();
 
-            System.out.println("Drone["+getDroneLabel()+"] "+"Landed");
-            loggerController.print("Drone["+getDroneLabel()+"] "+"Landed");
+                System.out.println("Drone["+getDroneLabel()+"] "+"Landed");
+                loggerController.print("Drone["+getDroneLabel()+"] "+"Landed");
 
-            return;
-        }
+                return;
+            }
 
-        if(methodName.equals("setIsStarted") && ((Boolean) oldValue) && !(Boolean) newValue){
+            if(methodName.equals("setIsStarted") && ((Boolean) oldValue) && !(Boolean) newValue){
 
-            removeStyleSelected();
+                removeStyleSelected();
 
-            System.out.println("Drone["+getDroneLabel()+"] "+"shutdown");
-            loggerController.print("Drone["+getDroneLabel()+"] "+"shutdown");
+                System.out.println("Drone["+getDroneLabel()+"] "+"shutdown");
+                loggerController.print("Drone["+getDroneLabel()+"] "+"shutdown");
 
-            checkAndPrintIfLostDrone(drone);
+                checkAndPrintIfLostDrone(drone);
 
-            return;
-        }
+                return;
+            }
 
-        if(methodName.equals("setIsStarted") && !((Boolean) oldValue) && (Boolean) newValue){
+            if(methodName.equals("setIsStarted") && !((Boolean) oldValue) && (Boolean) newValue){
 
-            applyStyleStarted();
+                applyStyleStarted();
 
-            System.out.println("Drone["+getDroneLabel()+"] "+"start");
-            loggerController.print("Drone["+getDroneLabel()+"] "+"start");
+                System.out.println("Drone["+getDroneLabel()+"] "+"start");
+                loggerController.print("Drone["+getDroneLabel()+"] "+"start");
 
-            return;
-        }
+                return;
+            }
 
-        if(methodName.equals("setIsSafeland") && !((Boolean) oldValue) && (Boolean) newValue){
+            if(methodName.equals("setIsSafeland") && !((Boolean) oldValue) && (Boolean) newValue){
 
-            System.out.println("Drone["+getDroneLabel()+"] "+"SafeLand");
-            loggerController.print("Drone["+getDroneLabel()+"] "+"SafeLand");
+                System.out.println("Drone["+getDroneLabel()+"] "+"SafeLand");
+                loggerController.print("Drone["+getDroneLabel()+"] "+"SafeLand");
 
-            applyStyleLanded();
+                applyStyleLanded();
 
-            /*System.out.println("Drone["+getDroneLabel()+"] "+"Landed");
-            loggerController.print("Drone["+getDroneLabel()+"] "+"Landed");*/
-
-
-            return;
-        }
+        /*System.out.println("Drone["+getDroneLabel()+"] "+"Landed");
+        loggerController.print("Drone["+getDroneLabel()+"] "+"Landed");*/
 
 
-        if((methodName.equals("setCurrentPositionI") || methodName.equals("setCurrentPositionJ"))
-                && ((Integer)oldValue).intValue() != ((Integer)newValue).intValue() ){
-
-            updadePositionDroneView(drone);
-            updateItIsOver(drone);
+                return;
+            }
 
 
-            return;
-        }
+            if((methodName.equals("setCurrentPositionI") || methodName.equals("setCurrentPositionJ"))
+                    && ((Integer)oldValue).intValue() != ((Integer)newValue).intValue() ){
 
-        if(methodName.equals("setCurrentBattery")
-                &&((Double)oldValue).intValue() != ((Double)newValue).intValue()){
-            System.out.println("Drone["+getDroneLabel()+"] "+"Current battery: "+drone.getCurrentBattery()+"%");
-            loggerController.print("Drone["+getDroneLabel()+"] "+"Current battery: "+drone.getCurrentBattery()+"%");
-            return;
-        }
+                updadePositionDroneView(drone);
+                // updateItIsOver(drone);
 
-        if(methodName.equals("setBadConnection")
-                &&!((Boolean) oldValue) && (Boolean) newValue){
-             applyStyleBadConnection();
-            System.out.println("Drone["+getDroneLabel()+"] "+"Bad Connection");
-            loggerController.print("Drone["+getDroneLabel()+"] "+"Bad Connection");
 
-        }
+                return;
+            }
 
-        if(methodName.equals("setBadConnection")
-                &&(Boolean) oldValue && !(Boolean) newValue){
+            if(methodName.equals("setCurrentBattery")
+                    &&((Double)oldValue).intValue() != ((Double)newValue).intValue()){
+                System.out.println("Drone["+getDroneLabel()+"] "+"Current battery: "+drone.getCurrentBattery()+"%");
+                loggerController.print("Drone["+getDroneLabel()+"] "+"Current battery: "+drone.getCurrentBattery()+"%");
+                return;
+            }
 
-             if(drone.isReturningToHome()){
-                 return;
-             }
+            if(methodName.equals("setBadConnection")
+                    &&!((Boolean) oldValue) && (Boolean) newValue){
+                applyStyleBadConnection();
+                System.out.println("Drone["+getDroneLabel()+"] "+"Bad Connection");
+                loggerController.print("Drone["+getDroneLabel()+"] "+"Bad Connection");
 
-            applyStyleNormalConnection();
-            System.out.println("Drone["+getDroneLabel()+"] "+"Normal Connection");
-            loggerController.print("Drone["+getDroneLabel()+"] "+"Normal Connection");
+            }
 
-        }
+            if(methodName.equals("setBadConnection")
+                    &&(Boolean) oldValue && !(Boolean) newValue){
+
+                if(drone.isReturningToHome()){
+                    return;
+                }
+
+                applyStyleNormalConnection();
+                System.out.println("Drone["+getDroneLabel()+"] "+"Normal Connection");
+                loggerController.print("Drone["+getDroneLabel()+"] "+"Normal Connection");
+
+                return;
+            }
+
+
+            if(methodName.equals("setWrapper")
+                    &&(Wrapper) oldValue !=(Wrapper) newValue){
+
+                if(newValue==Wrapper.Empty){
+                    this.getChildren().remove(wrapperStyleRectangule);
+
+                    wrapperStyleRectangule = null;
+                    return;
+                }
+
+                if(wrapperStyleRectangule == null){
+                    wrapperStyleRectangule = new Rectangle(30,30);
+                    wrapperStyleRectangule.setFill(Color.TRANSPARENT);
+                    wrapperStyleRectangule.setStrokeWidth(3);
+                    wrapperStyleRectangule.setStroke(((Wrapper) newValue).getColor());
+                    this.getChildren().add(wrapperStyleRectangule);
+
+                }
+
+                return;
+            }
+
+        });
+
+
     }
 
 

@@ -4,6 +4,7 @@ package model.drone;
 
 import javafx.scene.input.KeyCode;
 import model.Hospital;
+import util.Wrapper;
 import view.river.RiverView;
 
 import java.lang.reflect.Field;
@@ -54,6 +55,8 @@ public class Drone {
 
     public static int COUNT_DRONE = 0;
 
+    private Wrapper wrapper = Wrapper.Empty;
+
 
     public Drone(String uniqueID, Hospital sourceHospital, Hospital destinyHopistal, int initialPositionI, Integer initialPositionJ) {
         this.uniqueID = uniqueID;
@@ -96,6 +99,20 @@ public class Drone {
         boolean newValue = isAspect;
 
         this.isWrapper = isAspect;
+
+        notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
+
+    }
+
+    public Wrapper getWrapper() {
+        return wrapper;
+    }
+
+    public void setWrapper(Wrapper wrapper) {
+        Wrapper oldValue = this.wrapper;
+        Wrapper newValue = wrapper;
+
+        this.wrapper = wrapper;
 
         notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
 
