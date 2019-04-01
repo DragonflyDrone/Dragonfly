@@ -2,7 +2,7 @@ package view.drone;
 
 import javafx.scene.Group;
 import javafx.scene.Node;
-import model.drone.Drone;
+import model.entity.drone.Drone;
 import view.SelectableView;
 
 

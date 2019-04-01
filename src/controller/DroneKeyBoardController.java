@@ -1,16 +1,18 @@
 package controller;
 
-import javafx.application.Platform;
-import javafx.scene.Node;
 import javafx.scene.input.KeyCode;
-import model.Hospital;
-import model.drone.Drone;
-import model.drone.DroneBusinessObject;
+import javafx.scene.input.KeyEvent;
+import model.Cell;
+import model.entity.Hospital;
+import model.entity.drone.Drone;
+import model.entity.drone.DroneBusinessObject;
 import util.StopWatch;
 import view.CellView;
+import view.SelectableView;
 import view.drone.DroneView;
 import view.drone.DroneViewImpl;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -20,6 +22,7 @@ public class DroneKeyBoardController extends DroneController {
 
     private EnvironmentController environmentController;
     private StopWatch stopWatchBattery;
+    private boolean mustStopBatteryDecrementer;
 
 
     private DroneKeyBoardController() {}
@@ -37,29 +40,6 @@ public class DroneKeyBoardController extends DroneController {
     }
 */
 
-
-    @Override
-    public void notifyKeyEvent(KeyCode keyCode) {
-
-        Drone selectedDrone = EnvironmentController.getInstance().getSelectedDrone();
-
-        if(!isValidKeyCode(keyCode)){
-            return;
-        }
-
-        if(selectedDrone.isBadConnection()){
-            return;
-        }
-
-        if(selectedDrone.isAutomatic()){
-            return;
-        }
-
-        KeyCode currentCommand = keyCode;
-
-        executeCommandsFromKeyBoard(selectedDrone, currentCommand);
-    }
-
     private boolean isValidKeyCode(KeyCode keyCode) {
         if(keyCode == KeyCode.A || keyCode == KeyCode.W || keyCode == KeyCode.S || keyCode == KeyCode.D
                 || keyCode == KeyCode.R || keyCode.getName().contains("Space") ){
@@ -71,7 +51,7 @@ public class DroneKeyBoardController extends DroneController {
 
 
     private void executeCommandsFromKeyBoard(Drone selectedDrone, KeyCode currentCommand) {
-         if(currentCommand == KeyCode.R){
+            if(currentCommand == KeyCode.R){
 
                 if(selectedDrone.isShutDown()){
 
@@ -109,10 +89,11 @@ public class DroneKeyBoardController extends DroneController {
                 KeyCode flyDirectionCommand = currentCommand;
 
                 DroneBusinessObject.updateFlyDirectionCommand(flyDirectionCommand, selectedDrone);
+               // DroneBusinessObject.updateBatteryPerBlock(selectedDrone);
 
                 DroneBusinessObject.checkStatus(selectedDrone);
 
-                DroneBusinessObject.updateBatteryPerBlock(selectedDrone);
+
 
             }
         }
@@ -126,13 +107,14 @@ public class DroneKeyBoardController extends DroneController {
 
 
     @Override
-    public void notifyRunEnviroment() {
-
+    public void consumeRunEnviroment() {
+        mustStopBatteryDecrementer = false;
         Drone currentDrone;
         for(Map.Entry<String, Drone> droneEntry : droneMap.entrySet()){
 
             currentDrone = droneEntry.getValue();
-
+            currentDrone.setIsAutomatic(false);
+            currentDrone.setIsManual(true);
             DroneBusinessObject.notifyRunEnviroment(currentDrone);
 
         }
@@ -153,7 +135,7 @@ public class DroneKeyBoardController extends DroneController {
     }
 
     @Override
-    public void notifyReset() {
+    public void consumeReset() {
 
         Drone currentDrone;
         for(Map.Entry<String, Drone> droneEntry : droneMap.entrySet()){
@@ -164,24 +146,54 @@ public class DroneKeyBoardController extends DroneController {
 
         }
 
-        if(stopWatchBattery != null){
+        mustStopBatteryDecrementer = true;
+       /* if(stopWatchBattery != null){
             stopBatteryDecrementer();
-        }
+        }*/
 
 
     }
 
 
     @Override
-    public void notifyBadConnection(){
+    public void consumeBadConnection(SelectableView selectableView){
 
-        environmentController = EnvironmentController.getInstance();
+        CellController cellController = CellController.getInstance();
 
-        Drone selectedDrone = environmentController.getSelectedDrone();
+        for(DroneView droneView : droneViewMap.values()){
+           CellView cellView = droneView.getCurrentCellView();
+           Cell cell = cellController.getCellFrom(cellView);
 
-        if(selectedDrone.isTookOff()){
-            DroneBusinessObject.setBadConnection(selectedDrone);
+           if(cell.getBadConnection()){
+               Drone drone = getDroneFrom(droneView.getUniqueID());
+               if(drone.isTookOff()){
+                   DroneBusinessObject.setBadConnection(drone);
 
+               }
+           }
+        }
+
+
+
+    }
+
+
+    @Override
+    public void consumeNormalConnection(SelectableView selectableView){
+
+        CellController cellController = CellController.getInstance();
+
+        for(DroneView droneView : droneViewMap.values()){
+            CellView cellView = droneView.getCurrentCellView();
+            Cell cell = cellController.getCellFrom(cellView);
+
+            if(!cell.getBadConnection()){
+                Drone drone = getDroneFrom(droneView.getUniqueID());
+                if(drone.isTookOff() && !drone.isReturningToHome()){
+                    DroneBusinessObject.setNormalConnection(drone);
+
+                }
+            }
         }
 
     }
@@ -189,37 +201,19 @@ public class DroneKeyBoardController extends DroneController {
 
 
     @Override
-    public void notifyNormalConnection(){
+    public void consumeStrongWind() {
 
-        Drone selectedDrone = environmentController.getSelectedDrone();
-
-        if(selectedDrone.isTookOff()){
-            DroneBusinessObject.setNormalConnection(selectedDrone);
-        }
-    }
-
-
-
-    @Override
-    public void notifyStrongWind() {
-        Drone currentDrone;
-        for(Map.Entry<String, Drone> droneEntry : droneMap.entrySet()){
-
-            currentDrone = droneEntry.getValue();
-            DroneBusinessObject.setStrongWind(currentDrone);
+        for(Drone drone: droneMap.values()){
+            DroneBusinessObject.setStrongWind(drone);
 
         }
 
     }
 
     @Override
-    public void notifyNoStrongWind() {
-        Drone currentDrone;
-        for(Map.Entry<String, Drone> droneEntry : droneMap.entrySet()){
-
-            currentDrone = droneEntry.getValue();
-
-            DroneBusinessObject.setNormalWind(currentDrone);
+    public void consumeNormalWind() {
+        for(Drone drone: droneMap.values()){
+            DroneBusinessObject.setNormalWind(drone);
 
         }
     }
@@ -227,12 +221,12 @@ public class DroneKeyBoardController extends DroneController {
 
 
     @Override
-    public void createDrone(String uniqueID, String droneLabel, Hospital sourceHospital,
-                            Hospital destinyHospital, CellView currentCellView) {
+    public Drone createDrone(String uniqueID, String droneLabel, Hospital sourceHospital,
+                             Hospital destinyHospital, CellView currentCellView) {
 
 
-        Drone drone  = new Drone(uniqueID, sourceHospital, destinyHospital, currentCellView.getI(),
-                currentCellView.getJ());
+        Drone drone  = new Drone(uniqueID, droneLabel,sourceHospital, destinyHospital, currentCellView.getRowPosition(),
+                currentCellView.getCollunmPosition());
 
         droneMap.put(uniqueID, drone);
 
@@ -244,10 +238,10 @@ public class DroneKeyBoardController extends DroneController {
 
         drone.addListener(droneView);
 
-        droneView.applyStyleSelected();
+        drone.setSelected(true);
 
 
-
+        return drone;
     }
 
 
@@ -263,13 +257,58 @@ public class DroneKeyBoardController extends DroneController {
     }
 
     @Override
+    public void consumeOnKeyPressed(SelectableView selectedEntityView, KeyEvent keyEvent) {
+        if(!(selectedEntityView instanceof DroneView)){
+            return;
+        }
+
+        DroneView droneView = (DroneView) selectedEntityView;
+
+        KeyCode keyCode = keyEvent.getCode();
+
+        Drone selectedDrone = DroneController.getInstance().getDroneFrom(droneView.getUniqueID());
+
+        if(!isValidKeyCode(keyCode)){
+            return;
+        }
+
+        if(selectedDrone.isBadConnection()){
+            return;
+        }
+
+        if(selectedDrone.isAutomatic()){
+            return;
+        }
+
+        KeyCode currentCommand = keyCode;
+
+        executeCommandsFromKeyBoard(selectedDrone, currentCommand);
+    }
+
+    @Override
     public void startUpdateBatteryPerSeconds() {
 
-        EnvironmentController environmentController = EnvironmentController.getInstance();
-        List<Drone> dronesInEnvironment = environmentController.getDroneList();
+        List<Drone> dronesInEnvironment = new ArrayList<>(getDroneMap().values());
 
-        Runnable runnable = () -> {
+        stopWatchBattery = new StopWatch(0,1000) {
+            @Override
+            public void task() {
+                for(Drone currentDroneInEnvirionment : dronesInEnvironment){
 
+                    DroneBusinessObject.updateBatteryPerSecond(currentDroneInEnvirionment);
+
+                    DroneBusinessObject.checkStatus(currentDroneInEnvirionment);
+
+                }
+            }
+
+            @Override
+            public boolean conditionStop() {
+                return allTheDronesAreShutDown() || mustStopBatteryDecrementer;
+            }
+        };
+   /*     Runnable runnable = () -> {
+            System.out.println("PerSeconds inicio");
             if(allTheDronesAreShutDown()){
                 stopWatchBattery.stop();
             }
@@ -277,14 +316,16 @@ public class DroneKeyBoardController extends DroneController {
             for(Drone currentDroneInEnvirionment : dronesInEnvironment){
 
                 DroneBusinessObject.updateBatteryPerSecond(currentDroneInEnvirionment);
-                 DroneBusinessObject.checkStatus(currentDroneInEnvirionment);
+
+                DroneBusinessObject.checkStatus(currentDroneInEnvirionment);
+                System.out.println("PerSeconds fim");
             }
         };
 
 
         stopWatchBattery = new StopWatch(0,1000, runnable);
 
-        stopWatchBattery.start();
+        stopWatchBattery.start();*/
 
     }
 
@@ -302,10 +343,14 @@ public class DroneKeyBoardController extends DroneController {
     }
 
 
-    public void stopBatteryDecrementer() {
+   /* public void stopBatteryDecrementer() {
 
         System.out.println("Stop battery");
         stopWatchBattery.stop();
-    }
+    }*/
 
+    @Override
+    public void consumeSaveAttributesDrone(DroneView droneView) {
+
+    }
 }

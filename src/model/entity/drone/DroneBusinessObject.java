@@ -1,20 +1,23 @@
-package model.drone;
+package model.entity.drone;
 
-import controller.EnvironmentController;
+import controller.*;
 import javafx.application.Platform;
-import javafx.scene.Node;
 import javafx.scene.input.KeyCode;
-import model.Hospital;
+import model.entity.Hospital;
 import util.StopWatch;
 import view.CellView;
+import view.SelectableView;
 import view.drone.DroneView;
 
+import java.util.List;
 import java.util.Random;
 import java.util.TimerTask;
 import java.util.concurrent.ScheduledExecutorService;
+import java.util.logging.Logger;
 
-public class DroneBusinessObject{
+public class DroneBusinessObject {
     private static StopWatch returnToHomeStopWatch;
+    private static boolean mustStopReturnToHomeStopWatch;
     private TimerTask batteryDecrementertimerTask;
     private ScheduledExecutorService batteryDecrementerExecutor;
 
@@ -31,8 +34,8 @@ public class DroneBusinessObject{
 
     }
 
-    public static DroneBusinessObject getInstance(){
-        if(instance == null){
+    public static DroneBusinessObject getInstance() {
+        if (instance == null) {
             instance = new DroneBusinessObject();
         }
 
@@ -40,12 +43,9 @@ public class DroneBusinessObject{
     }
 
 
-
-
-
     /*Drone Normal Behaviors*/
     public static boolean takeOff(Drone selectedDrone) {
-        if(selectedDrone.isTookOff()){
+        if (selectedDrone.isTookOff()) {
             return false;
         }
 
@@ -62,13 +62,13 @@ public class DroneBusinessObject{
 
     }
 
-    public static boolean shutDown(Drone selectedDrone){
+    public static boolean shutDown(Drone selectedDrone) {
 
-        if(!selectedDrone.isStarted()){
+        if (!selectedDrone.isStarted()) {
             return false;
         }
 
-        if(selectedDrone.isTookOff()){
+        if (selectedDrone.isTookOff()) {
             return false;
         }
 
@@ -81,13 +81,13 @@ public class DroneBusinessObject{
         return true;
     }
 
-    public static boolean start(Drone selectedDrone){
+    public static boolean start(Drone selectedDrone) {
 
-        if(selectedDrone.isStarted()){
+        if (selectedDrone.isStarted()) {
             return false;
         }
 
-        if(selectedDrone.isTookOff()){
+        if (selectedDrone.isTookOff()) {
             return false;
         }
 
@@ -102,65 +102,75 @@ public class DroneBusinessObject{
     }
 
     public static void notifyRunEnviroment(Drone currentDrone) {
-
+        mustStopReturnToHomeStopWatch = false;
     }
 
     public static void notifyStopEnviroment(Drone currentDrone) {
 
     }
 
-    public synchronized static void updateBatteryPerBlock(Drone drone) {
+    //static final Object lock = new Object();
 
-        if(drone.isShutDown()){
+    public static void updateBatteryPerBlock(Drone drone) {
+
+        //synchronized (lock){
+
+        if (drone.isShutDown()) {
             return;
         }
 
-        if(drone.isEconomyMode()){
+        if (drone.isEconomyMode()) {
 
             Double oldCurrentBattery = drone.getCurrentBattery();
             Double batteryPerBlock = drone.getBatteryPerBlock();
 
-            Double economyModeBatteryPerBlock = batteryPerBlock/2;
+            Double economyModeBatteryPerBlock = batteryPerBlock / 2;
 
-            Double newCurrentBattery = oldCurrentBattery-economyModeBatteryPerBlock;
+            Double newCurrentBattery = oldCurrentBattery - economyModeBatteryPerBlock;
 
             drone.setCurrentBattery(newCurrentBattery);
 
-        }else if(drone.isNormalMode()){
+        } else if (drone.isNormalMode()) {
             Double oldCurrentBattery = drone.getCurrentBattery();
             Double batteryPerBlock = drone.getBatteryPerBlock();
-            Double newCurrentBattery = oldCurrentBattery-batteryPerBlock;
+            Double newCurrentBattery = oldCurrentBattery - batteryPerBlock;
 
             drone.setCurrentBattery(newCurrentBattery);
+
         }
+
+        // }
+
 
     }
 
-    public synchronized static void updateBatteryPerSecond(Drone drone) {
-
-        if(drone.isShutDown()){
+    public static void updateBatteryPerSecond(Drone drone) {
+        //  synchronized (lock){
+        //System.out.println("PerSecond");
+        if (drone.isShutDown()) {
             return;
         }
 
-        if(drone.isEconomyMode()){
+        if (drone.isEconomyMode()) {
 
             Double oldCurrentBattery = drone.getCurrentBattery();
             Double batteryPerSecond = drone.getBatteryPerSecond();
 
-            Double economyModeBatteryPerSecond = batteryPerSecond/2;
+            Double economyModeBatteryPerSecond = batteryPerSecond / 2;
 
-            Double newCurrentBattery = oldCurrentBattery-economyModeBatteryPerSecond;
+            Double newCurrentBattery = oldCurrentBattery - economyModeBatteryPerSecond;
 
             drone.setCurrentBattery(newCurrentBattery);
 
-        }else if(drone.isNormalMode()){
+        } else if (drone.isNormalMode()) {
             Double oldCurrentBattery = drone.getCurrentBattery();
             Double batteryPerSecond = drone.getBatteryPerSecond();
-            Double newCurrentBattery = oldCurrentBattery-batteryPerSecond;
+            Double newCurrentBattery = oldCurrentBattery - batteryPerSecond;
 
             drone.setCurrentBattery(newCurrentBattery);
         }
 
+        //      }
     }
 
     public static boolean safeLanding(Drone selectedDrone) {
@@ -172,40 +182,51 @@ public class DroneBusinessObject{
     }
 
 
+    public static void checkStatus(Drone selectedDrone) {
+
+        if (selectedDrone.isLading()) {
+            return;
+        }
+
+        if (selectedDrone.isShutDown()) {
+            return;
+        }
 
 
-    public synchronized static void checkStatus(Drone selectedDrone) {
-        System.out.println("checkStatus");
-        System.out.println(selectedDrone.toString());
+        System.out.println("checkStatus inicio, Drone " + selectedDrone.getLabel() + " " + Thread.currentThread().getName());
+        // System.out.println(selectedDrone.toString());
 
         KeyCode flyDirectionCommand = selectedDrone.getFlyDirectionCommand();
 
-              if(selectedDrone.getCurrentBattery()>10 && selectedDrone.getDistanceHospitalDestiny()>0 && flyDirectionCommand != null
+        if (selectedDrone.getCurrentBattery() > 10 && selectedDrone.getDistanceHospitalDestiny() > 0 && flyDirectionCommand != null
                 && !selectedDrone.isReturningToHome()
                 && !selectedDrone.isSafeLand()
                 && !selectedDrone.isBadConnection()
-                && !selectedDrone.isSafeLand()){
+                && !selectedDrone.isSafeLand()) {
 
-                flying(selectedDrone, flyDirectionCommand);
+            flying(selectedDrone, flyDirectionCommand);
 
-                selectedDrone.setFlyDirectionCommand(null);
+            selectedDrone.setFlyDirectionCommand(null);
 
         }
 
-        if(selectedDrone.isBadConnection()
-                && !selectedDrone.isReturningToHome()){
+        if (selectedDrone.isBadConnection()
+                && !selectedDrone.isReturningToHome()) {
+
 
             returnToHome(selectedDrone);
 
-            selectedDrone.setReturningToHome(true);
+
+
 
         }
 
-        if(selectedDrone.isBadConnection() && selectedDrone.isReturningToHome()
-                && selectedDrone.getDistanceHospitalSource() == 0){
+        if (selectedDrone.isBadConnection() && selectedDrone.isReturningToHome()
+                && selectedDrone.getDistanceHospitalSource() == 0) {
 
-           // stopReturnToHome();
-            returnToHomeStopWatch.stop();
+            // stopReturnToHome();
+            //returnToHomeStopWatch.stop();
+            mustStopReturnToHomeStopWatch = true;
             landing(selectedDrone);
 
             shutDown(selectedDrone);
@@ -216,16 +237,18 @@ public class DroneBusinessObject{
 
         }
 
-        if(selectedDrone.getCurrentBattery() <= 15 && selectedDrone.isNormalMode()){
+        if (selectedDrone.getCurrentBattery() <= 15 && selectedDrone.isNormalMode()) {
             applyEconomyMode(selectedDrone);
         }
 
-        if(selectedDrone.getCurrentBattery() <= 10 && selectedDrone.getDistanceHospitalDestiny()>0
-                && !selectedDrone.isSafeLand()){
+        if (selectedDrone.getCurrentBattery() <= 10 && selectedDrone.getDistanceHospitalDestiny() > 0
+                && !selectedDrone.isSafeLand()) {
 
-          //  stopGoAutomaticDestiny();
-
-            returnToHomeStopWatch.stop();
+            //  stopGoAutomaticDestiny();
+            if (selectedDrone.isReturningToHome()) {
+                mustStopReturnToHomeStopWatch = true;
+                //returnToHomeStopWatch.stop();
+            }
 
 
             selectedDrone.setGoingAutomaticToDestiny(false);
@@ -235,12 +258,9 @@ public class DroneBusinessObject{
             safeLanding(selectedDrone);
 
 
-
-
-
         }
 
-        if(selectedDrone.getDistanceHospitalDestiny() == 0){
+        if (selectedDrone.getDistanceHospitalDestiny() == 0) {
 
             // stopGoAutomaticDestiny();
 
@@ -254,6 +274,7 @@ public class DroneBusinessObject{
 
         }
 
+        System.out.println("checkStatus fim " + Thread.currentThread().getName());
 
     }
 
@@ -261,14 +282,13 @@ public class DroneBusinessObject{
 
         EnvironmentController environmentController = EnvironmentController.getInstance();
 
-        int newI =  selectedDrone.getCurrentPositionI();
+        int newI = selectedDrone.getCurrentPositionI();
         int newJ = selectedDrone.getCurrentPositionJ();
-        newI = newI+1;
+        newI = newI + 1;
         int minIInEnverionment = 0;
-        int maxIInEnverionment = environmentController.getCountRow()-1;
+        int maxIInEnverionment = environmentController.getCountRow() - 1;
 
-        //todo eu acho que essa checagem não deveria estar aqui ach oque era no environmentController
-        if(newI > maxIInEnverionment || newI < minIInEnverionment){
+        if (newI > maxIInEnverionment || newI < minIInEnverionment) {
 
             return;
         }
@@ -281,15 +301,15 @@ public class DroneBusinessObject{
 
         EnvironmentController environmentController = EnvironmentController.getInstance();
 
-        int newI =  selectedDrone.getCurrentPositionI();
+        int newI = selectedDrone.getCurrentPositionI();
         int newJ = selectedDrone.getCurrentPositionJ();
-        newI = newI-1;
+        newI = newI - 1;
 
         int minIInEnverionment = 0;
-        int maxIInEnverionment = environmentController.getCountRow()-1;
+        int maxIInEnverionment = environmentController.getCountRow() - 1;
 
 
-        if(newI > maxIInEnverionment || newI < minIInEnverionment){
+        if (newI > maxIInEnverionment || newI < minIInEnverionment) {
             return;
         }
 
@@ -300,34 +320,35 @@ public class DroneBusinessObject{
 
         EnvironmentController environmentController = EnvironmentController.getInstance();
 
-        int newI =  selectedDrone.getCurrentPositionI();
+        int newI = selectedDrone.getCurrentPositionI();
         int newJ = selectedDrone.getCurrentPositionJ();
-        newJ = newJ +1;
+        newJ = newJ + 1;
 
         int minJInEnverionment = 0;
-        int maxJInEnverionment = environmentController.getCountCollumn()-1;
+        int maxJInEnverionment = environmentController.getCountCollumn() - 1;
 
-        if(newJ>maxJInEnverionment  || newJ < minJInEnverionment){
+        if (newJ > maxJInEnverionment || newJ < minJInEnverionment) {
 
             return;
         }
 
         selectedDrone.setCurrentPositionJ(newJ);
+
     }
 
     public static void flyingLeft(Drone selectedDrone) {
 
         EnvironmentController environmentController = EnvironmentController.getInstance();
 
-        int newI =  selectedDrone.getCurrentPositionI();
+        int newI = selectedDrone.getCurrentPositionI();
         int newJ = selectedDrone.getCurrentPositionJ();
-        newJ = newJ -1;
+        newJ = newJ - 1;
 
         int minJInEnverionment = 0;
-        int maxJInEnverionment = environmentController.getCountCollumn()-1;
+        int maxJInEnverionment = environmentController.getCountCollumn() - 1;
 
 
-        if(newJ > maxJInEnverionment || newJ < minJInEnverionment){
+        if (newJ > maxJInEnverionment || newJ < minJInEnverionment) {
 
             return;
         }
@@ -343,7 +364,7 @@ public class DroneBusinessObject{
 
     static synchronized public void updateDistanceHospitalDestiny(Drone selectedDrone) {
         double distanceHospitalDestiny = calculeteDistanceFrom(selectedDrone, selectedDrone.getDestinyHopistal());
-          System.out.println("distanceHospitalDestiny"+ distanceHospitalDestiny);
+        // System.out.println("distanceHospitalDestiny"+ distanceHospitalDestiny);
 
 
         selectedDrone.setDistanceHospitalDestiny(distanceHospitalDestiny);
@@ -351,18 +372,18 @@ public class DroneBusinessObject{
 
     static synchronized public void updateDistanceHospitalSource(Drone selectedDrone) {
         double distanceHospitalSource = calculeteDistanceFrom(selectedDrone, selectedDrone.getSourceHospital());
-        System.out.println("distanceHospitalSource"+ distanceHospitalSource);
+        // System.out.println("distanceHospitalSource"+ distanceHospitalSource);
         selectedDrone.setDistanceHospitalSource(distanceHospitalSource);
     }
 
-     public static double calculeteDistanceFrom(Drone selectedDrone, Hospital hospital) {
+    public static double calculeteDistanceFrom(Drone selectedDrone, Hospital hospital) {
 
-        int xInitial = (selectedDrone.getCurrentPositionJ()+1)*30,
-                xFinal= (hospital.getjPosition()+1)*30,
-                yInitial = (selectedDrone.getCurrentPositionI()+1)*30,
-                yFinal =(hospital.getiPosition()+1)*30;
+        int xInitial = (selectedDrone.getCurrentPositionJ() + 1) * 30,
+                xFinal = (hospital.getCollunmPosition() + 1) * 30,
+                yInitial = (selectedDrone.getCurrentPositionI() + 1) * 30,
+                yFinal = (hospital.getRowPosition() + 1) * 30;
 
-        return Math.sqrt(((xFinal-xInitial)*(xFinal-xInitial)) + ((yFinal- yInitial)*(yFinal- yInitial)));
+        return Math.sqrt(((xFinal - xInitial) * (xFinal - xInitial)) + ((yFinal - yInitial) * (yFinal - yInitial)));
 
     }
 
@@ -380,101 +401,78 @@ public class DroneBusinessObject{
     public static void flying(Drone selectedDrone, KeyCode flyDirectionCommand) {
         System.out.println("flying");
         //System.out.println("Drone["+drone.getUniqueID()+"] "+"Flying");
-       // loggerController.print("Drone["+drone.getUniqueID()+"] "+"Flying");
+        // loggerController.print("Drone["+drone.getUniqueID()+"] "+"Flying");
 
         // irregular moviments
-        if(selectedDrone.isEconomyMode()){
+        if (selectedDrone.isEconomyMode()) {
             Random random = new Random();
             double value = random.nextDouble();
 
             // right moviments
-            if(value>0.8){
-                if(flyDirectionCommand == KeyCode.D){
+            if (value > 0.8) {
+                if (flyDirectionCommand == KeyCode.D) {
                     flyingRight(selectedDrone);
-                }
-                else if(flyDirectionCommand == KeyCode.A){
+                } else if (flyDirectionCommand == KeyCode.A) {
                     flyingLeft(selectedDrone);
-                }
-                else if(flyDirectionCommand == KeyCode.W){
+                } else if (flyDirectionCommand == KeyCode.W) {
                     flyingUp(selectedDrone);
-                }
-                else if(flyDirectionCommand == KeyCode.S){
+                } else if (flyDirectionCommand == KeyCode.S) {
                     flyingDown(selectedDrone);
                 }
-            }else {
+            } else {
                 //wrong moviments
 
                 int randomNum = 0 + (int) (Math.random() * 4);
-                System.out.println("Random number " + randomNum);
+                //System.out.println("Random number " + randomNum);
 
-                if(randomNum==0){
+                if (randomNum == 0) {
                     flyingLeft(selectedDrone);
-                }
-                else if(randomNum==1){
+                } else if (randomNum == 1) {
                     flyingLeft(selectedDrone);
-                }
-                else if(randomNum==2){
+                } else if (randomNum == 2) {
 
-                }
-                else if(randomNum==3){
+                } else if (randomNum == 3) {
 
                 }
             }
 
 
-
-        }else {
+        } else {
             // normal moviment
-            if(flyDirectionCommand == KeyCode.D){
+            if (flyDirectionCommand == KeyCode.D) {
                 flyingRight(selectedDrone);
-            }
-            else if(flyDirectionCommand == KeyCode.A){
+            } else if (flyDirectionCommand == KeyCode.A) {
                 flyingLeft(selectedDrone);
-            }
-            else if(flyDirectionCommand == KeyCode.W){
+            } else if (flyDirectionCommand == KeyCode.W) {
                 flyingUp(selectedDrone);
-            }
-            else if(flyDirectionCommand == KeyCode.S){
+            } else if (flyDirectionCommand == KeyCode.S) {
                 flyingDown(selectedDrone);
             }
         }
 
 
         updateDistances(selectedDrone);
-        updateBatteryPerSecond(selectedDrone);
-        updateItIsOver(selectedDrone);
+        updateBatteryPerBlock(selectedDrone);
+        //updateItIsOver(selectedDrone);
 
+    /*    //apply bad connection if cell is bad connection
+        CellView cellView = EnvironmentController.getInstance().getCellViewSelected();
+
+        if(CellController.getInstance().getCellFrom(cellView).getBadConnection()){
+            setBadConnection(selectedDrone);
+        }else {
+            setNormalConnection(selectedDrone);
+        }*/
 
     }
 
-    public static Node updateItIsOver(Drone drone) {
+    public static void updateItIsOver(Drone drone) {
+        /* System.out.println("updateItIsOver");*/
+        DroneView droneView = DroneController.getInstance().getDroneViewFrom(drone.getUniqueID());
 
+        List<SelectableView> selectableViewList = CellController.getInstance().getOverSelectableView(droneView);
 
-        CellView currentCellView = (CellView) EnvironmentController.getInstance().getCellViewSelected();
-        DroneView droneView = EnvironmentController.getInstance().getDroneViewMap().get(drone.getUniqueID());
-
-        if(currentCellView == null){
-            return null;
-        }
-
-        drone.getOnTopOfList().clear();
-
-
-
-        for(Node node : currentCellView.getChildren()){
-
-            if(node==droneView){
-                continue;
-            }
-
-            drone.addOnTopOfDroneList(node);
-        }
-        if(!drone.getOnTopOfList().isEmpty()){
-            //System.out.println(drone.getOnTopOfList().get(drone.getOnTopOfList().size()-1));
-        }
-
-
-        return null;
+        drone.setOnTopOfList(selectableViewList);
     }
 
     /*public void goDestinyAutomatic() {
@@ -574,72 +572,156 @@ public class DroneBusinessObject{
     }*/
 
 
+    public static void returnToHome(Drone drone) {
 
-    public static void returnToHome(Drone selectedDrone){
+        if(drone.isManual()){
+            /*This functionality is implemented within the DroneAutomaticController so when is automatic drone this methed dont need executed here*/
+            return;
+        }
+
+        drone.setReturningToHome(true);
+
+        returnToHomeStopWatch = new StopWatch(0, 1000) {
+            @Override
+            public void task() {
+                Platform.runLater(() -> {
+                    System.out.println("Return to Home inicio" + Thread.currentThread().getName());
+                    String mustGO = null;
+                    CellView hopitalCellView = null;
+
+                    CellView droneCellView = DroneController.getInstance().getDroneViewFrom(drone.getUniqueID()).getCurrentCellView();
+                    if(drone.isReturningToHome()){
+                        //go to source hospital (return to home)
+                        hopitalCellView = HospitalController.getInstance().getHospitalViewFrom(drone.getSourceHospital().getUniqueID()).getCurrentCellView();
+                    }else {
+                        //go to destiny hospital (to go destiny)
+                        hopitalCellView = HospitalController.getInstance().getHospitalViewFrom(drone.getDestinyHopistal().getUniqueID()).getCurrentCellView();
+                    }
+
+                    mustGO = closeDirection(droneCellView, hopitalCellView);
+
+                    DroneBusinessObject.getInstance().goTo(drone, mustGO);
+                    checkStatus(drone);
+                    updateDistances(drone);
+
+                });
+            }
+
+            @Override
+            public boolean conditionStop() {
+                return mustStopReturnToHomeStopWatch;
+            }
+        };
+
+//      Runnable runnable = () -> Platform.runLater(() -> {
+//          System.out.println("Return to Home inicio"+ Thread.currentThread().getName() );
+//          int oldI = selectedDrone.getCurrentPositionI();
+//          int oldJ = selectedDrone.getCurrentPositionJ();
+//          double newDistanceSource = 999999;
+//          String mustGO = null;
+//
+//          double tempDistance = distanceDroneWentRight(selectedDrone, selectedDrone.getSourceHospital());
+//
+//          if(tempDistance < newDistanceSource){
+//              newDistanceSource = tempDistance;
+//              mustGO ="->";
+//          }
+//
+//          selectedDrone.setCurrentPositionI(oldI);
+//          selectedDrone.setCurrentPositionJ(oldJ);
+//
+//          tempDistance = distanceDroneWentLeft(selectedDrone, selectedDrone.getSourceHospital());
+//
+//          if(tempDistance<newDistanceSource){
+//              newDistanceSource = tempDistance;
+//              mustGO ="<-";
+//          }
+//
+//          selectedDrone.setCurrentPositionI(oldI);
+//          selectedDrone.setCurrentPositionJ(oldJ);
+//
+//          tempDistance = distanceDroneWentUp(selectedDrone, selectedDrone.getSourceHospital());
+//
+//          if(tempDistance<newDistanceSource){
+//              newDistanceSource = tempDistance;
+//              mustGO ="/\\";
+//
+//          }
+//
+//          selectedDrone.setCurrentPositionI(oldI);
+//          selectedDrone.setCurrentPositionJ(oldJ);
+//
+//          tempDistance = distanceDroneWentDown(selectedDrone, selectedDrone.getSourceHospital());
+//
+//          if(tempDistance<newDistanceSource){
+//              newDistanceSource = tempDistance;
+//              mustGO ="\\/";
+//
+//          }
+//
+//          selectedDrone.setCurrentPositionI(oldI);
+//          selectedDrone.setCurrentPositionJ(oldJ);
+//
+//
+//          goTo(selectedDrone, mustGO);
+//
+//          checkStatus(selectedDrone);
+//          updateDistances(selectedDrone);
+//          //updateItIsOver(selectedDrone);
+//
+//         /* //apply bad connection if cell is bad connection
+//          CellView cellView = EnvironmentController.getInstance().getCellViewSelected();
+//
+//          if(CellController.getInstance().getCellFrom(cellView).getBadConnection()){
+//              setBadConnection(selectedDrone);
+//          }else {
+//              setNormalConnection(selectedDrone);
+//          }*/
+//          System.out.println("Return to Home fim" + Thread.currentThread().getName());
+//      });
+//
+//        returnToHomeStopWatch = new StopWatch(0,1000, runnable);
+//        returnToHomeStopWatch.start();
 
 
-        System.out.println("returnToHome");
-      Runnable runnable = () -> Platform.runLater(() -> {
-          int oldI = selectedDrone.getCurrentPositionI();
-          int oldJ = selectedDrone.getCurrentPositionJ();
-          double newDistanceSource = 999999;
-          String mustGO = null;
+    }
 
-          double tempDistance = distanceDroneWentRight(selectedDrone, selectedDrone.getSourceHospital());
+    public static String closeDirection(CellView srcCellView, CellView dstCellView) {
+        double newDistanceSource = 999999;
+        String mustGO = null;
 
-          if(tempDistance < newDistanceSource){
-              newDistanceSource = tempDistance;
-              mustGO ="->";
-          }
+        double tempDistance = distanceDroneWentRight(srcCellView, dstCellView);
 
-          selectedDrone.setCurrentPositionI(oldI);
-          selectedDrone.setCurrentPositionJ(oldJ);
+        if (tempDistance < newDistanceSource) {
+            newDistanceSource = tempDistance;
+            mustGO = "->";
+        }
 
-          tempDistance = distanceDroneWentLeft(selectedDrone, selectedDrone.getSourceHospital());
+        tempDistance = distanceDroneWentLeft(srcCellView, dstCellView);
 
-          if(tempDistance<newDistanceSource){
-              newDistanceSource = tempDistance;
-              mustGO ="<-";
-          }
-
-          selectedDrone.setCurrentPositionI(oldI);
-          selectedDrone.setCurrentPositionJ(oldJ);
-
-          tempDistance = distanceDroneWentUp(selectedDrone, selectedDrone.getSourceHospital());
-
-          if(tempDistance<newDistanceSource){
-              newDistanceSource = tempDistance;
-              mustGO ="/\\";
-
-          }
-
-          selectedDrone.setCurrentPositionI(oldI);
-          selectedDrone.setCurrentPositionJ(oldJ);
-
-          tempDistance = distanceDroneWentDown(selectedDrone, selectedDrone.getSourceHospital());
-
-          if(tempDistance<newDistanceSource){
-              newDistanceSource = tempDistance;
-              mustGO ="\\/";
-
-          }
-
-          selectedDrone.setCurrentPositionI(oldI);
-          selectedDrone.setCurrentPositionJ(oldJ);
+        if (tempDistance < newDistanceSource) {
+            newDistanceSource = tempDistance;
+            mustGO = "<-";
+        }
 
 
-          goTo(selectedDrone, mustGO);
+        tempDistance = distanceDroneWentUp(srcCellView, dstCellView);
 
-          checkStatus(selectedDrone);
-          updateDistances(selectedDrone);
-          updateItIsOver(selectedDrone);
+        if (tempDistance < newDistanceSource) {
+            newDistanceSource = tempDistance;
+            mustGO = "/\\";
 
-      });
+        }
 
-        returnToHomeStopWatch = new StopWatch(0,1500, runnable);
-        returnToHomeStopWatch.start();
+        tempDistance = distanceDroneWentDown(srcCellView, dstCellView);
 
+        if (tempDistance < newDistanceSource) {
+            newDistanceSource = tempDistance;
+            mustGO = "\\/";
 
+        }
+
+        return mustGO;
     }
 
 
@@ -726,15 +808,14 @@ public class DroneBusinessObject{
     }*/
 
     public static void goTo(Drone drone, String mustGO) {
-
         //irregular moviments
-        if(drone.isEconomyMode()){
+        if (drone.isEconomyMode()) {
             Random random = new Random();
             double value = random.nextDouble();
 
             // right moviments
-            if(value>0.8){
-                switch (mustGO){
+            if (value > 0.8) {
+                switch (mustGO) {
                     case "->":
                         flyingRight(drone);
                         break;
@@ -751,13 +832,13 @@ public class DroneBusinessObject{
                         flyingDown(drone);
                         break;
                 }
-            }else {
+            } else {
 
                 //wrong moviments
 
                 int randomNum = 0 + (int) (Math.random() * 4);
 
-                switch (randomNum){
+                switch (randomNum) {
                     case 0:
                         flyingLeft(drone);
                         break;
@@ -778,8 +859,8 @@ public class DroneBusinessObject{
             }
 
             // normal moviments
-        }else {
-            switch (mustGO){
+        } else {
+            switch (mustGO) {
                 case "->":
                     flyingRight(drone);
                     break;
@@ -802,51 +883,72 @@ public class DroneBusinessObject{
 
     }
 
-    public static double distanceDroneWentUp(Drone drone, Hospital hospital) {
-        drone.setCurrentPositionI(drone.getCurrentPositionI()-1);
+    public static double distanceDroneWentUp(CellView sourceCellView, CellView destinyCellView) {
 
-        if(drone.getCurrentPositionI()<0){
+        int initialRowPosition = sourceCellView.getRowPosition()-1;
+        int initialCollunmPosition = sourceCellView.getCollunmPosition();
+
+        int finalRowPosition = destinyCellView.getRowPosition();
+        int finalCollunmPosition = destinyCellView.getCollunmPosition();
+
+        if (initialRowPosition < 0) {
             return 999999;
         }
 
-        return calculeteDistanceFrom(drone,hospital);
+        return CellController.getInstance().calculeteDistanceFrom(initialRowPosition, initialCollunmPosition, finalRowPosition, finalCollunmPosition);
+
+
     }
 
-    public static double distanceDroneWentDown(Drone drone, Hospital hospital) {
-        drone.setCurrentPositionI(drone.getCurrentPositionI()+1);
+    public static double distanceDroneWentDown(CellView sourceCellView, CellView destinyCellView) {
 
-        if(drone.getCurrentPositionI()<0){
+        int initialRowPosition = sourceCellView.getRowPosition()+1;
+        int initialCollunmPosition = sourceCellView.getCollunmPosition();
+
+        int finalRowPosition = destinyCellView.getRowPosition();
+        int finalCollunmPosition = destinyCellView.getCollunmPosition();
+
+        if (initialRowPosition < 0) {
             return 999999;
         }
 
-        return calculeteDistanceFrom(drone,hospital);
+        return CellController.getInstance().calculeteDistanceFrom(initialRowPosition, initialCollunmPosition, finalRowPosition, finalCollunmPosition);
     }
 
-    public static double distanceDroneWentLeft(Drone drone, Hospital hospital) {
-        drone.setCurrentPositionJ(drone.getCurrentPositionJ()-1);
+    public static double distanceDroneWentLeft(CellView sourceCellView, CellView destinyCellView) {
 
-        if(drone.getCurrentPositionJ()<0){
+        int initialRowPosition = sourceCellView.getRowPosition();
+        int initialCollunmPosition = sourceCellView.getCollunmPosition()-1;
+
+        int finalRowPosition = destinyCellView.getRowPosition();
+        int finalCollunmPosition = destinyCellView.getCollunmPosition();
+
+        if (initialCollunmPosition < 0) {
             return 999999;
         }
 
-        return calculeteDistanceFrom(drone,hospital);
+        return CellController.getInstance().calculeteDistanceFrom(initialRowPosition, initialCollunmPosition, finalRowPosition, finalCollunmPosition);
     }
 
-    public static double distanceDroneWentRight(Drone drone, Hospital hospital) {
+    public static double distanceDroneWentRight(CellView sourceCellView, CellView destinyCellView) {
 
-        if(drone.getCurrentPositionJ()<0){
+        int initialRowPosition = sourceCellView.getRowPosition();
+        int initialCollunmPosition = sourceCellView.getCollunmPosition()+1;
+
+        int finalRowPosition = destinyCellView.getRowPosition();
+        int finalCollunmPosition = destinyCellView.getCollunmPosition();
+
+        if (initialCollunmPosition < 0) {
             return 999999;
         }
 
-        drone.setCurrentPositionJ(drone.getCurrentPositionJ()+1);
-
-        return calculeteDistanceFrom(drone,hospital);
+        return CellController.getInstance().calculeteDistanceFrom(initialRowPosition, initialCollunmPosition, finalRowPosition, finalCollunmPosition);
     }
 
 
     public static void applyEconomyMode(Drone drone) {
 
-        if(drone.isEconomyMode()){
+        if (drone.isEconomyMode()) {
             return;
         }
 
@@ -855,7 +957,6 @@ public class DroneBusinessObject{
        /* System.out.println("Drone["+drone.getUniqueID()+"] "+"Start Economy Mode");
         loggerController.print("Drone["+drone.getUniqueID()+"] "+"Start Economy Mode");*/
     }
-
 
 
     public static void resetSettingsDrone(Drone currentDrone) {
@@ -870,13 +971,15 @@ public class DroneBusinessObject{
         currentDrone.setIsSafeland(false);
         currentDrone.setIsTookOff(false);
         currentDrone.setStarted(false);
-
-        if(returnToHomeStopWatch != null){
+        currentDrone.setDistanceHospitalSource(calculeteDistanceFrom(currentDrone, currentDrone.getSourceHospital()));
+        currentDrone.setDistanceHospitalDestiny(calculeteDistanceFrom(currentDrone, currentDrone.getDestinyHopistal()));
+        mustStopReturnToHomeStopWatch = true;
+        /*if (returnToHomeStopWatch != null) {
             returnToHomeStopWatch.stop();
-        }
+        }*/
 
         //stopGoAutomaticDestiny();
-       // stopReturnToHome();
+        // stopReturnToHome();
 
 
     }

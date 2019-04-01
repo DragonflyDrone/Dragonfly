@@ -1,11 +1,9 @@
 package controller;
 
-import javafx.scene.input.KeyCode;
-import javafx.scene.layout.Pane;
-import model.Hospital;
-import model.drone.Drone;
+import javafx.scene.input.KeyEvent;
+import model.entity.Hospital;
 import view.CellView;
-import view.drone.DroneView;
+import view.SelectableView;
 import view.hospital.HospitalView;
 import view.hospital.HospitalViewImpl;
 
@@ -31,18 +29,23 @@ public class HospitalController {
         return instance;
     }
 
-    public void createHospital(String uniqueID, String identifierHospital, CellView currentCellView){
+    public Hospital createHospital(String uniqueID, String labelHospital, CellView currentCellView){
 
-        HospitalView hospitalView  = new HospitalViewImpl(uniqueID, identifierHospital,currentCellView);
+        HospitalView hospitalView  = new HospitalViewImpl(uniqueID, labelHospital,currentCellView);
 
 
         hospitalViewMap.put(uniqueID, hospitalView);
 
 
-        Hospital hospital = new Hospital(uniqueID, currentCellView.getI(), currentCellView.getJ());
+        Hospital hospital = new Hospital(uniqueID, labelHospital, currentCellView.getRowPosition(), currentCellView.getCollunmPosition());
+
+        hospital.addListener(hospitalView);
 
         hospitalMap.put(uniqueID, hospital);
 
+        hospital.setSelected(true);
+
+        return hospital;
     }
 
 
@@ -56,19 +59,26 @@ public class HospitalController {
         return hospitalMap.get(identifierHospital);
     }
 
-    public void notifyReset() {
+    public void consumeReset() {
 
     }
 
-    public void notifyClickEvent(Pane cellViewSelected) {
+    public void consumeClickEvent(SelectableView selectedEntityView ) {
+        if(selectedEntityView instanceof HospitalView){
+            Hospital hospital =  getHospitalFrom(selectedEntityView.getUniqueID());
+            hospital.setSelected(true);
+        }
+    }
+
+    public void consumeOnKeyPressed(SelectableView selectedEntityView, KeyEvent keyEvent) {
+        if(!(selectedEntityView instanceof HospitalView)){
+            return;
+        }
 
     }
 
-    public void notifyKeyEvent(KeyCode code) {
 
-    }
-
-    public void notifyRunEnviroment() {
+    public void consumeRunEnviroment() {
 
     }
 
@@ -86,5 +96,18 @@ public class HospitalController {
 
     public void setHospitalMap(Map<String, Hospital> hospitalMap) {
         this.hospitalMap = hospitalMap;
+    }
+
+    public void consumeCleanEnvironment() {
+        hospitalMap.clear();
+        hospitalViewMap.clear();
+        Hospital.restartCount();
+    }
+
+
+    public void cleanSelections() {
+        for(Hospital hospital : hospitalMap.values()){
+            hospital.setSelected(false);
+        }
     }
 }

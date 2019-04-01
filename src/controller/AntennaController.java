@@ -1,12 +1,12 @@
 package controller;
 
 import javafx.application.Platform;
-import javafx.scene.input.KeyCode;
-import javafx.scene.layout.Pane;
-import model.Antenna;
+import javafx.scene.input.KeyEvent;
+import model.entity.Antenna;
 import util.ClickOutsideRegion;
 import util.StopWatch;
 import view.CellView;
+import view.SelectableView;
 import view.antenna.AntennaView;
 import view.antenna.AntennaViewImpl;
 import java.util.HashMap;
@@ -18,6 +18,7 @@ public class AntennaController {
     private Map<String, Antenna> antennaMap = new HashMap<>();
     private Map<String, AntennaView> antennaViewMap = new HashMap<>();
     private StopWatch stopWatch;
+    private boolean antennaMustStop = false;
 
     private AntennaController() {
 
@@ -33,9 +34,9 @@ public class AntennaController {
 
 
 
-    public void createAntenna(String uniqueID, String identifierAntenna, CellView currentCellView) throws ClickOutsideRegion{
-        Antenna antenna  = new Antenna(uniqueID, currentCellView.getI(),
-                currentCellView.getJ());
+    public Antenna createAntenna(String uniqueID, String labelAntenna, CellView currentCellView) throws ClickOutsideRegion{
+        Antenna antenna  = new Antenna(uniqueID, labelAntenna, currentCellView.getRowPosition(),
+                currentCellView.getCollunmPosition());
 
         antennaMap.put(uniqueID, antenna);
 
@@ -43,12 +44,15 @@ public class AntennaController {
             throw new ClickOutsideRegion();
         }
 
-        AntennaView antennaView = new AntennaViewImpl(uniqueID, identifierAntenna, currentCellView);
+        AntennaView antennaView = new AntennaViewImpl(uniqueID, labelAntenna, currentCellView);
 
         antenna.addListener(antennaView);
 
         antennaViewMap.put(uniqueID, antennaView);
 
+        antenna.setSelected(true);
+
+        return antenna;
     }
 
     public AntennaView getAntennaViewFrom(String identifierAntenna) {
@@ -59,16 +63,46 @@ public class AntennaController {
         return antennaMap.get(identifierAntenna);
     }
 
-    public void notifyRunEnviroment() {
+    public void consumeRunEnviroment() {
+        antennaMustStop = false;
 
-        startAntenna();
+        if(antennaMap.size()>0){
+            startAntenna();
+        }
+
 
     }
 
     private void startAntenna() {
+        stopWatch = new StopWatch(0,2000) {
+            @Override
+            public void task() {
+                 Platform.runLater(() -> {
+                    for(AntennaView antennaView : antennaViewMap.values()){
 
-        Runnable runnable = () -> Platform.runLater(() -> {
-            for(Antenna antenna : antennaMap.values()){
+
+
+                        Random random = new Random();
+                        double randomDouble = random.nextDouble();
+
+                        if(randomDouble>0.6){
+                            EnvironmentController.getInstance().notifyBadConnection(antennaView.getCurrentCellView());
+
+                        }else {
+                            EnvironmentController.getInstance().notifyNormalConnection(antennaView.getCurrentCellView());
+                        }
+                    }
+                });
+            }
+
+            @Override
+            public boolean conditionStop() {
+                return antennaMustStop;
+            }
+        };
+
+    /*    Runnable runnable = () -> Platform.runLater(() -> {
+            for(AntennaView antennaView : antennaViewMap.values()){
 
 
 
@@ -76,36 +110,28 @@ public class AntennaController {
                 double randomDouble = random.nextDouble();
 
                 if(randomDouble>0.6){
-                    antenna.setIsBadConnection(true);
-
+                    EnvironmentController.getInstance().notifyBadConnection(antennaView.getCurrentCellView());
 
                 }else {
-                    antenna.setIsBadConnection(false);
-
+                    EnvironmentController.getInstance().notifyNormalConnection(antennaView.getCurrentCellView());
                 }
             }
         });
 
 
         stopWatch = new StopWatch(0 , 2000, runnable);
-        stopWatch.start();
+        stopWatch.start();*/
     }
 
-    public void notifyReset() {
-        stopWatch.stop();
+    public void consumeReset() {
+       // stopWatch.stop();
+        antennaMustStop = true;
 
         for(Antenna antenna : antennaMap.values()){
-            antenna.setIsBadConnection(false);
+            antenna.setBadConnection(false);
         }
     }
 
-    public void notifyClickEvent(Pane cellViewSelected) {
-
-    }
-
-    public void notifyKeyEvent(KeyCode code) {
-
-    }
 
     public Map<String, Antenna> getAntennaMap() {
         return antennaMap;
@@ -121,5 +147,67 @@ public class AntennaController {
 
     public void setAntennaViewMap(Map<String, AntennaView> antennaViewMap) {
         this.antennaViewMap = antennaViewMap;
+    }
+
+    public void consumeClearEnvironment() {
+        Antenna.restartCount();
+        antennaMap.clear();
+        antennaViewMap.clear();
+    }
+
+    public void consumeClickEvent(SelectableView selectedEntityView) {
+
+        if(selectedEntityView instanceof AntennaView){
+            Antenna antenna =  getAntennaFrom(selectedEntityView.getUniqueID());
+            antenna.setSelected(true);
+        }
+
+    }
+
+    public void consumeOnKeyPressed(SelectableView selectedEntityView, KeyEvent keyEvent) {
+        if(!(selectedEntityView instanceof AntennaView)){
+            return;
+        }
+
+    }
+
+    public void consumeBadConnection(SelectableView selectableView) {
+
+
+
+        /*AntennaView antennaView = (AntennaView) selectableView;
+        Antenna antenna = getAntennaFrom(antennaView.getUniqueID());
+        antenna.setBadConnection(true);*/
+
+        for(AntennaView antennaView: antennaViewMap.values()){
+            for(CellView cellView : antennaView.getBadConnectionArea()){
+                if(cellView == selectableView){
+                    Antenna antenna = getAntennaFrom(antennaView.getUniqueID());
+                    antenna.setBadConnection(true);
+                }
+            }
+        }
+
+    }
+
+    public void consumeNormalConnection(SelectableView selectableView) {
+        /*AntennaView antennaView = (AntennaView) SelectableView;
+        Antenna antenna = getAntennaFrom(antennaView.getUniqueID());
+        antenna.setBadConnection(false);*/
+
+        for(AntennaView antennaView: antennaViewMap.values()){
+            for(CellView cellView : antennaView.getBadConnectionArea()){
+                if(cellView == selectableView){
+                    Antenna antenna = getAntennaFrom(antennaView.getUniqueID());
+                    antenna.setBadConnection(false);
+                }
+            }
+        }
+    }
+
+    public void cleanSelections() {
+        for(Antenna antenna : antennaMap.values()){
+            antenna.setSelected(false);
+        }
     }
 }

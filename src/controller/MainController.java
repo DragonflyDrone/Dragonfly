@@ -7,12 +7,14 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import model.Hospital;
-import model.drone.Drone;
+import model.entity.Hospital;
+import model.entity.drone.Drone;
 import util.Wrapper;
+import view.SelectableView;
 import view.drone.DroneView;
 import view.hospital.HospitalView;
 
@@ -76,9 +78,10 @@ public class MainController extends Application {
 
     private boolean running = false;
     private boolean droneToggleButtonIsSelected = false;
-    private LoggerController loggerController = LoggerController.getInstance();
-    private EnvironmentController environmentController;
 
+    private LoggerController loggerController;
+    private EnvironmentController environmentController;
+    private static MainController instance;
     private List<Wrapper> wrappersList = new ArrayList<>(Arrays.asList(Wrapper.values()));
 
 
@@ -100,17 +103,17 @@ public class MainController extends Application {
         rootAnchorPane.getChildren().add(menuBar);
 
         exampleLodonMenuItem.setOnAction(event -> {
-         environmentController.clearEnverionment();
+         environmentController.consumeCleanEnverionment();
 
             running = false;
 
             enableEnvironmentSettingViews();
 
-            environmentController.addExampleLondon();
+           // environmentController.addExampleLondon();
         });
 
 
-        Scene scene = new Scene(rootAnchorPane, 903, 683);
+        Scene scene = new Scene(rootAnchorPane, 903, 705);
 
         primaryStage.setScene(scene);
         primaryStage.show();
@@ -121,10 +124,8 @@ public class MainController extends Application {
 
     @FXML
     private void initialize() {
-
+        initializeControllers();
         //init type of drone controller
-        DroneController.init(DroneKeyBoardController.class.getSimpleName());
-        environmentController = EnvironmentController.getInstance();
 
         loggerController.setTextArea(loggerTextArea);
 
@@ -158,37 +159,36 @@ public class MainController extends Application {
         startToggleButton.setToggleGroup(toggleGroup4);
         restartToggleButton.setToggleGroup(toggleGroup4);
 
-        environmentController.init(12, 30, environmentAnchorPane);
 
+        trueStrongWindRadioButton.setOnMouseClicked(event -> environmentController.consumeStrongWind());
 
-        trueStrongWindRadioButton.setOnMouseClicked(event -> environmentController.notifyStrongWind());
+        noStrongWindRadioButton.setOnMouseClicked(event -> environmentController.consumeNormalWind());
 
-        noStrongWindRadioButton.setOnMouseClicked(event -> environmentController.notifyNormalWind());
-
-        randomStrongWindRadioButton.setOnAction(event -> environmentController.notifyRandomWind());
+        randomStrongWindRadioButton.setOnAction(event -> environmentController.consumeRandomWind());
 
         droneToggleButton.setOnMouseClicked(event -> droneToggleButtonIsSelected = !droneToggleButtonIsSelected);
 
         saveButton.setOnAction(event -> {
+            SelectableView selectableView = EnvironmentController.getInstance().getSelectedEntityView();
 
-            startToggleButton.setDisable(false);
-            restartToggleButton.setDisable(false);
+            if(selectableView instanceof DroneView){
 
-            Drone selectedDrone = environmentController.getSelectedDrone();
-            saveAttributesDrone(selectedDrone);
+                DroneView droneView = (DroneView) selectableView;
+                Drone drone = DroneController.getInstance().getDroneFrom(droneView.getUniqueID());
 
-            updateDroneSettingsViews();
+                startToggleButton.setDisable(false);
+                restartToggleButton.setDisable(false);
 
-            DroneView selectedDroneView = environmentController.getDroneViewMap().get(selectedDrone.getUniqueID());
+                saveAttributesDrone(drone);
 
-            selectedDroneView.removeStyleSelected();
+                disableDroneSettingsViews();
 
-            updateDroneSettingsViews();
-            disableDroneSettingsViews();
+                droneToggleButton.setSelected(false);
 
-            droneToggleButton.setSelected(false);
+                environmentController.getEnvironmentView().getGridpane().requestFocus();
+            }
 
-            environmentController.getEnvironmentView().getGridpane().requestFocus();
+
 
 
         });
@@ -204,7 +204,7 @@ public class MainController extends Application {
 
             disableEnvironmentSettingViews();
 
-            environmentController.notifyRunEnviroment();
+            environmentController.consumeRunEnviroment();
 
             running = true;
 
@@ -216,11 +216,14 @@ public class MainController extends Application {
             droneToggleButton.setSelected(false);
             automaticExecutionCheckBox.setDisable(true);
 
+            loggerController.clear();
+
+
         });
 
         restartToggleButton.setOnAction(event -> {
 
-            environmentController.notifyReset();
+            environmentController.consumeReset();
 
 
             loggerController.clear();
@@ -231,84 +234,19 @@ public class MainController extends Application {
             enableEnvironmentSettingViews();
 
 
-        });
-
-
-        environmentController.getEnvironmentView().getGridpane().setOnMouseClicked(event1 -> {
-
-            //Create elements
-            if(mustCreateElements()){
-
-                createElements();
-
-            }else {
-
-                //select elements
-                EnvironmentController.getInstance().notifyClickEvent();
-
-                updateDroneSettingsViews();
-
-                if(environmentController.getSelectedDrone() != null){
-                    enableDroneSettingsViews();
-                }else {
-                    disableDroneSettingsViews();
-                }
-
-
-          /*      SelectableView selectableView = environmentController.getSelectedSelectableView();
-
-
-
-
-                if(selectableView != null){
-                    selectedSelectableView = selectableView;
-                    selectableView.applyStyleSelected();
-
-                    if(selectableView instanceof DroneView){
-                        DroneView droneView = (DroneView) selectableView;
-                        droneViewSelected = droneView;
-
-                        updateSelectedDrone((DroneViewImpl) droneView);
-                        updateDroneSettingsViews();
-
-                        enableDroneSettingsViews();
-                    }else {
-
-                        droneViewSelected = null;
-                        updateDroneSettingsViews();
-                        disableDroneSettingsViews();
-
-                    }
-                }else {
-                    selectedSelectableView = null;
-                }*/
-
-            }
-
-
-
 
 
         });
 
-        environmentController.getEnvironmentView().getGridpane().setOnKeyPressed(event -> {
 
-            if (!running) {
-                return;
-            }
+    /*    environmentController.getEnvironmentView().getGridpane().setOnMouseClicked(event1 -> {
 
-            if (environmentController.getSelectedDrone() != null) {
-                environmentController.notifyKeyEvent(event.getCode());
-            }
 
-        });
+        });*/
+
+
 
         cleanButton.setOnAction(event -> {
-
-            if(environmentController.getSelectableViews().size() == 0){
-                return;
-            }
-
             if(running){
                 return;
             }
@@ -322,7 +260,7 @@ public class MainController extends Application {
                 antennaToggleButton.setSelected(false);
                 hospitalToggleButton.setSelected(false);
                 automaticExecutionCheckBox.setSelected(false);
-                environmentController.clearEnverionment();
+                environmentController.consumeCleanEnverionment();
             }
 
 
@@ -331,8 +269,8 @@ public class MainController extends Application {
         });
 
         deleteButton.setOnAction(event -> {
-            EnvironmentController.getInstance().notifyDeleteAction();
-            System.out.println("");
+          /*  EnvironmentController.getInstance().notifyDeleteAction();
+            System.out.println("");*/
 
 
                 });
@@ -429,31 +367,31 @@ public class MainController extends Application {
     }
 
 
-    private boolean mustCreateElements() {
+    private boolean mustCreateEntitiesView() {
         return riverToggleButton.isSelected() || hospitalToggleButton.isSelected() || antennaToggleButton.isSelected()
                 || droneToggleButton.isSelected();
     }
 
-    private void createElements() {
+    private void createEntitiesView(SelectableView selectedSelectableView) {
         try {
 
         if (riverToggleButton.isSelected()) {
             //todo posso fazer o tratamento p não se sobrepor o mesmo objeto
-            environmentController.createRiver();
+            environmentController.createRiver(selectedSelectableView);
 
         } else if (hospitalToggleButton.isSelected()) {
             //todo posso fazer o tratamento p não se sobrepor o mesmo objeto
-            environmentController.createHospital();
+            environmentController.createHospital(selectedSelectableView);
 
         } else if (antennaToggleButton.isSelected()) {
             //todo posso fazer o tratamento p não se sobrepor o mesmo objeto
-            environmentController.createAntenna();
+            environmentController.createAntenna(selectedSelectableView);
         } else if (droneToggleButton.isSelected()) {
 
-                environmentController.createDrone();
-
-                updateDroneSettingsViews();
+                Drone drone = environmentController.createDrone(selectedSelectableView);
                 enableDroneSettingsViews();
+
+                updateDroneSettingsViews(drone);
         }
 
             }catch (Exception e){
@@ -469,26 +407,9 @@ public class MainController extends Application {
 
 
 
-    private void updateDroneSettingsViews() {
+    private void updateDroneSettingsViews(Drone selectedDrone) {
 
-        Drone selectedDrone = environmentController.getSelectedDrone();
-
-        if ( selectedDrone == null) {
-            currentDroneTextField.setText("");
-            consumptionPerBlockTextView.setText("");
-            consumptionPerSecondTextView.setText("");
-            initialBatteryTextView.setText("");
-            //automaticExecutionCheckBox.setSelected(false);
-            wrapperComboBox.getSelectionModel().clearSelection();
-           /* wrapperCheckBox.setSelected(false);*/
-
-            sourceComboBox.getSelectionModel().clearSelection();
-            targetComboBox.getSelectionModel().clearSelection();
-
-            /* trueBadConnectionRadioButton.setSelected(false);*/
-        } else {
-
-           String droneLabel = environmentController.getDroneLabel(selectedDrone);
+           String droneLabel = selectedDrone.getLabel();
 
             Double batteryPerBlock = selectedDrone.getBatteryPerBlock();
             Double batteryPerSecond = selectedDrone.getBatteryPerSecond();
@@ -518,9 +439,10 @@ public class MainController extends Application {
             Wrapper currentWrapper = selectedDrone.getWrapper();
 
             wrapperComboBox.getSelectionModel().select(currentWrapper.name());
+            List<HospitalView> hospitalViewList = new ArrayList<>(HospitalController.getInstance().getHospitalViewMap().values());
 
-            List<String> nameHospitals = new ArrayList<>(environmentController.getHospitalViewList().size());
-            for(HospitalView hospitalView : environmentController.getHospitalViewList()){
+            List<String> nameHospitals = new ArrayList<>(hospitalViewList.size());
+            for(HospitalView hospitalView : hospitalViewList){
                 nameHospitals.add(hospitalView.getHospitalLabel());
             }
 
@@ -530,11 +452,11 @@ public class MainController extends Application {
 
 
             targetComboBox.setItems(options2);
-            Hospital sourceHopital = environmentController.getSelectedDrone().getSourceHospital();
-            Hospital destinyHopital = environmentController.getSelectedDrone().getDestinyHopistal();
+            Hospital sourceHopital = selectedDrone.getSourceHospital();
+            Hospital destinyHopital = selectedDrone.getDestinyHopistal();
 
-            String labelSourceHospitalView = environmentController.getHospitalLabel(sourceHopital);
-            String labelDestinyHospitalView = environmentController.getHospitalLabel(destinyHopital);
+            String labelSourceHospitalView = sourceHopital.getLabel();
+            String labelDestinyHospitalView = destinyHopital.getLabel();
 
             sourceComboBox.getSelectionModel().select(labelSourceHospitalView);
 
@@ -546,7 +468,7 @@ public class MainController extends Application {
         }
 
 
-    }
+
 
 /*    private void updateSelectedDrone(DroneViewImpl droneView) {
         droneViewSelected = droneView;
@@ -641,8 +563,10 @@ public class MainController extends Application {
 
            /* selectedDrone.setAspect(wrapperCheckBox.isSelected());*/
             selectedDrone.setWrapper(wrappersList.get(wrapperComboBox.getSelectionModel().getSelectedIndex()));
-            selectedDrone.setSourceHospital(environmentController.getHospitalList().get(sourceComboBox.getSelectionModel().getSelectedIndex()));
-            selectedDrone.setDestinyHopistal(environmentController.getHospitalList().get(targetComboBox.getSelectionModel().getSelectedIndex()));
+            List<Hospital> hospitalList  = new ArrayList<>(HospitalController.getInstance().getHospitalMap().values());
+
+            selectedDrone.setSourceHospital(hospitalList.get(sourceComboBox.getSelectionModel().getSelectedIndex()));
+            selectedDrone.setDestinyHopistal(hospitalList.get(targetComboBox.getSelectionModel().getSelectedIndex()));
 
         }
 
@@ -655,22 +579,154 @@ public class MainController extends Application {
        /* selectedDrone.setIsAutomatic(automaticExecutionCheckBox.isSelected());
         selectedDrone.setIsManual(!selectedDrone.isAutomatic());*/
 
-        /* selectedDrone.setIsBadConnection(trueBadConnectionRadioButton.isSelected());*/
+        /* selectedDrone.setBadConnection(trueBadConnectionRadioButton.isSelected());*/
 
 
-        if (running) {
+      /*  if (running) {
 
                 if (selectedDrone.isBadConnection()) {
-                    environmentController.notifyBadConnection(selectedDrone);
+                    environmentController.consumeBadConnection(selectedDrone);
                 } else {
-                    environmentController.notifyNormalConnection(selectedDrone);
+                    environmentController.consumeNormalConnection(selectedDrone);
                 }
 
 
 
-        }
+        }*/
+    }
+
+    private void initializeControllers() {
+        this.instance = this;
+
+        DroneController.init(DroneKeyBoardController.class.getSimpleName());
+
+        environmentController = EnvironmentController.getInstance();
+        environmentController.init(12, 30, environmentAnchorPane);
+
+        loggerController = LoggerController.getInstance();
+
+
+
+    }
+
+    public static MainController getInstance(){
+        return instance;
     }
 
 
+    public void notifyMouseClick(SelectableView selectedSelectableView) {
+        //Create elements
+        EnvironmentController.getInstance().consumeMouseClick(selectedSelectableView);
 
+        if(mustCreateEntitiesView()){
+
+            createEntitiesView(selectedSelectableView);
+
+        }else {
+                SelectableView selectableView = EnvironmentController.getInstance().getSelectedEntityView();
+            if(selectableView instanceof DroneView){
+                DroneView droneView = (DroneView) selectableView;
+                Drone drone = DroneController.getInstance().getDroneFrom(droneView.getUniqueID());
+                enableDroneSettingsViews();
+                updateDroneSettingsViews(drone);
+            }else {
+                disableDroneSettingsViews();
+                clearDroneSettingView();
+            }
+/*
+            //select elements
+            EnvironmentController.getInstance().consumeClickEvent();
+
+            updateDroneSettingsViews();
+
+            if(environmentController.getSelectedDrone() != null){
+                enableDroneSettingsViews();
+            }else {
+                disableDroneSettingsViews();
+            }
+
+
+            SelectableView selectableView = environmentController.getSelectedEntityView();
+
+
+
+
+            if(selectableView != null){
+                selectedSelectableView = selectableView;
+                selectableView.applyStyleSelected();
+
+                if(selectableView instanceof DroneView){
+                    DroneView droneView = (DroneView) selectableView;
+                    droneViewSelected = droneView;
+
+                    updateSelectedDrone((DroneViewImpl) droneView);
+                    updateDroneSettingsViews();
+
+                    enableDroneSettingsViews();
+                }else {
+
+                    droneViewSelected = null;
+                    updateDroneSettingsViews();
+                    disableDroneSettingsViews();
+
+                }
+            }else {
+                selectedSelectableView = null;
+            }*/
+
+        }
+
+
+
+
+
+    }
+
+    private void clearDroneSettingView() {
+            currentDroneTextField.setText("");
+            consumptionPerBlockTextView.setText("");
+            consumptionPerSecondTextView.setText("");
+            initialBatteryTextView.setText("");
+            //automaticExecutionCheckBox.setSelected(false);
+            wrapperComboBox.getSelectionModel().clearSelection();
+            /* wrapperCheckBox.setSelected(false);*/
+
+            sourceComboBox.getSelectionModel().clearSelection();
+            targetComboBox.getSelectionModel().clearSelection();
+
+            /* trueBadConnectionRadioButton.setSelected(false);*/
+
+    }
+
+
+ /*          environmentController.getEnvironmentView().getGridpane().setOnKeyPressed(event -> {
+
+        if (!running) {
+            return;
+        }
+
+        if (environmentController.getSelectedDrone() != null) {
+            environmentController.notifyKeyEvent(event.getCode());
+        }
+
+    });*/
+
+
+
+
+    public void notifyOnKeyPressed(KeyEvent event, SelectableView selectableView) {
+        if (!running) {
+            return;
+        }
+
+        EnvironmentController.getInstance().consumeOnKeyPressed(event, selectableView);
+    }
+
+    public void notifyBadConnection(SelectableView selectableView) {
+        EnvironmentController.getInstance().consumeBadConnection(selectableView);
+    }
+
+    public void notifyNormalConnection(SelectableView selectableView) {
+        EnvironmentController.getInstance().consumeNormalConnection(selectableView);
+    }
 }

@@ -1,10 +1,11 @@
 package controller;
 
-import javafx.scene.input.KeyCode;
-import javafx.scene.layout.Pane;
-import model.Hospital;
-import model.drone.Drone;
+import javafx.scene.input.KeyEvent;
+import model.entity.Hospital;
+import model.entity.drone.Drone;
 import view.CellView;
+import view.SelectableView;
+import view.antenna.AntennaView;
 import view.drone.DroneView;
 import java.util.HashMap;
 import java.util.Map;
@@ -34,28 +35,35 @@ public abstract class DroneController {
 
     }
 
+    public static void consumeCleanEnvironment() {
+        droneMap.clear();
+        droneViewMap.clear();
+        Drone.restartCount();
+    }
 
-  /*  abstract public void notifyChangeInModel();*/
 
-    abstract public void notifyRunEnviroment();
+    /*  abstract public void notifyChangeInModel();*/
 
-    abstract public void notifyBadConnection();
+    abstract public void consumeRunEnviroment();
 
-    abstract public void notifyNormalConnection();
+    abstract public void consumeBadConnection(SelectableView selectableView);
+
 
     abstract void notifyStopEnviroment();
 
-    abstract public void notifyStrongWind();
+    public abstract void consumeNormalConnection(SelectableView selectableView);
 
-    abstract public void notifyNoStrongWind();
+    abstract public void consumeStrongWind();
 
-    abstract public void notifyReset();
+    abstract public void consumeNormalWind();
+
+    abstract public void consumeReset();
 
     abstract public void startUpdateBatteryPerSeconds();
 
 
-    public abstract void createDrone(String uniqueID, String droneLabel, Hospital sourceHospital,
-                                     Hospital destinyHospital, CellView currentCellView);
+    public abstract Drone createDrone(String uniqueID, String droneLabel, Hospital sourceHospital,
+                                      Hospital destinyHospital, CellView currentCellView);
 
     public Map<String, DroneView> getDroneViewMap() {
         return droneViewMap;
@@ -76,11 +84,24 @@ public abstract class DroneController {
     public abstract DroneView getDroneViewFrom(String identifierDrone);
     public abstract Drone getDroneFrom(String identifierDrone);
 
-    public void notifyKeyEvent(KeyCode code) {
 
+
+    public void consumeClickEvent(SelectableView selectedEntityView) {
+        if(selectedEntityView instanceof DroneView){
+            Drone drone =  getDroneFrom(selectedEntityView.getUniqueID());
+            drone.setSelected(true);
+        }
+    }
+    public abstract void consumeOnKeyPressed(SelectableView selectedEntityView, KeyEvent keyEvent);
+
+    public  void cleanSelections(){
+        for(Drone drone : droneMap.values()){
+            drone.setSelected(false);
+        }
     }
 
-    public void notifyClickEvent(Pane cellViewSelected) {
+
+    public void consumeSaveAttributesDrone(DroneView droneView) {
 
     }
 }

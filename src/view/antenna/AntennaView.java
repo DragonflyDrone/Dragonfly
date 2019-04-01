@@ -2,7 +2,7 @@ package view.antenna;
 
 import javafx.scene.Group;
 import javafx.scene.Node;
-import model.Antenna;
+import model.entity.Antenna;
 import view.CellView;
 import view.SelectableView;
 
@@ -31,11 +31,10 @@ public abstract class AntennaView extends Group implements SelectableView, Anten
         return uniqueID;
     }
 
-    public abstract List<CellView> getInterferenceArea();
 
-    public abstract void addBadConnectionInArea();
+    public abstract void applyStyleBadConnection();
 
-    public abstract void removeBadConnectionInArea();
+    public abstract void applyStyleNormalConnection();
 
     public Node getNode() {
         return null;
@@ -50,4 +49,11 @@ public abstract class AntennaView extends Group implements SelectableView, Anten
     public void applyStyleSelected() {
 
     }
+
+    @Override
+    public CellView getCurrentCellView() {
+        return null;
+    }
+
+    public abstract List<CellView> getBadConnectionArea();
 }

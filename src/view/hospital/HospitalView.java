@@ -2,13 +2,10 @@ package view.hospital;
 
 import javafx.scene.Group;
 import javafx.scene.Node;
+import model.entity.Hospital;
 import view.SelectableView;
 
-
-import java.util.ArrayList;
-import java.util.List;
-
-public abstract class HospitalView  extends Group implements SelectableView {
+public abstract class HospitalView  extends Group implements SelectableView, Hospital.Listener {
     protected String uniqueID = null;
   /*  public static List<HospitalView> hospitalViewList = new ArrayList<>();
     public Object getHospital() {

@@ -1,6 +1,6 @@
 ///*
 //import javafx.application.Platform;
-//import model.drone.Drone;
+//import model.entity.drone.Drone;
 //import view.drone.DroneViewImpl;
 //
 //import java.util.Timer;
@@ -74,7 +74,7 @@
 //            droneView.stopGoAutomaticDestiny();
 //        }
 //
-//        if(drone.isReturningToHome() || drone.isBadConnection()){
+//        if(drone.isReturningToHome() || drone.badConnection()){
 //            droneView.stopReturnToHome();
 //        }
 //
@@ -192,7 +192,7 @@
 //                  drone.setIsManual(false);
 //              }
 //
-//                if (drone.isBadConnection()) {
+//                if (drone.badConnection()) {
 //                    droneView.stopReturnToHome();
 //
 //                }

@@ -3,13 +3,16 @@ package view.river;
 import javafx.scene.Node;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import model.entity.River;
+import util.SelectHelper;
 import view.CellView;
 
 
-public class RiverViewImpl extends RiverView {
+public class RiverViewImpl extends RiverView implements River.Listener{
+    private final CellView currentCellView;
+    SelectHelper selectHelper = new SelectHelper(Color.RED);
 
-
-    public RiverViewImpl(String uniqueID, CellView cellView) {
+    public RiverViewImpl(String uniqueID, CellView currentCellView) {
         this.uniqueID = uniqueID;
 
         Rectangle rectangle = new Rectangle( 30, 30);
@@ -19,25 +22,28 @@ public class RiverViewImpl extends RiverView {
 
         this.getChildren().add(rectangle);
 
-        cellView.getChildren().add(this);
+        currentCellView.getChildren().add(this);
+        this.currentCellView = currentCellView;
 
 
     }
 
     @Override
-    public void removeStyleSelected() {
-        ((Rectangle)this.getChildren().get(0)).setStroke(Color.BLUE);
-        ((Rectangle)this.getChildren().get(0)).setStrokeWidth(1);
+    public void removeStyleSelected(){
+        if(getChildren().contains(selectHelper)){
+            getChildren().remove(selectHelper);
+        }
+
     }
 
     @Override
     public void applyStyleSelected() {
-        /*String style = "-fx-stroke: " + "black" + ";);";
-        style+= "-fx-stroke-width: "+"50"+";";*/
+        if(!getChildren().contains(selectHelper)){
+            getChildren().add(selectHelper);
+        }
 
-        ((Rectangle)this.getChildren().get(0)).setStroke(Color.BLACK);
-        ((Rectangle)this.getChildren().get(0)).setStrokeWidth(3.0);
     }
+
 
   /*  @Override
     public Object getRiver() {
@@ -47,6 +53,30 @@ public class RiverViewImpl extends RiverView {
     @Override
     public Node getNode() {
         return this;
+    }
+
+    @Override
+    public CellView getCurrentCellView() {
+        return currentCellView;
+    }
+
+    @Override
+    public void onChange(River river, String methodName, Object oldValue, Object newValue) {
+        if(uniqueID != river.getUniqueID()){
+            return;
+        }
+
+        if(methodName.equals("setSelected")
+                &&!(Boolean) oldValue && (Boolean) newValue){
+            applyStyleSelected();
+            return;
+        }
+
+        if(methodName.equals("setSelected")
+                && (Boolean) oldValue && !(Boolean) newValue){
+            removeStyleSelected();
+            return;
+        }
     }
 
     /*public void setRiverViewList(List<RiverView> riverViewList) {

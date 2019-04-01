@@ -1,14 +1,19 @@
 package controller;
 
 import javafx.application.Platform;
-import model.Hospital;
-import model.drone.Drone;
-import model.drone.DroneBusinessObject;
+import javafx.scene.input.KeyEvent;
+import model.Cell;
+import model.entity.Hospital;
+import model.entity.drone.Drone;
+import model.entity.drone.DroneBusinessObject;
 import util.StopWatch;
 import view.CellView;
+import view.SelectableView;
 import view.drone.DroneView;
 import view.drone.DroneViewImpl;
+import view.hospital.HospitalView;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -17,6 +22,8 @@ public class DroneAutomaticController extends DroneController {
     private EnvironmentController environmentController;
     private StopWatch stopWatchBattery;
     private StopWatch automaticExecutionStopWatch;
+    private boolean mustStopBatteryDecrementer = false;
+    private boolean mustStopAutomaticExecution = false;
 
     private DroneAutomaticController() {
     }
@@ -27,155 +34,228 @@ public class DroneAutomaticController extends DroneController {
     }
 
     @Override
-    public void notifyRunEnviroment() {
+    public void consumeRunEnviroment() {
 
-        final Drone[] currentDrone = new Drone[1];
-        for (Map.Entry<String, Drone> droneEntry : droneMap.entrySet()) {
+        mustStopAutomaticExecution = false;
+        mustStopBatteryDecrementer = false;
 
-            currentDrone[0] = droneEntry.getValue();
-
-            DroneBusinessObject.notifyRunEnviroment(currentDrone[0]);
-            DroneBusinessObject.start(currentDrone[0]);
-            DroneBusinessObject.takeOff(currentDrone[0]);
+        Platform.runLater(() -> {
+        for (Drone drone : droneMap.values()) {
+            drone.setIsAutomatic(true);
+            drone.setIsManual(false);
+            DroneBusinessObject.notifyRunEnviroment(drone);
+            DroneBusinessObject.start(drone);
+            DroneBusinessObject.takeOff(drone);
 
         }
 
-        startUpdateBatteryPerSeconds();
+            automaticExecutionStopWatch = new StopWatch(0, 1000) {
+                @Override
+                public void task() {
+                    Platform.runLater(() -> {
 
-        Runnable runnable = () ->{
+                        for (Drone drone : droneMap.values()) {
+
+//                    if(drone.isShutDown()){
+//                        DroneBusinessObject.start(drone);
+//                        DroneBusinessObject.takeOff(drone);
+//                    }
+                            // Platform.runLater(() -> {
+                            goDestinyAutomatic(drone);
+                            //  });
+                            DroneBusinessObject.updateBatteryPerSecond(drone);
+                            DroneBusinessObject.updateBatteryPerBlock(drone);
+                            DroneBusinessObject.updateDistances(drone);
+                            DroneBusinessObject.checkStatus(drone);
+
+                            // DroneBusinessObject.updateItIsOver(drone);
+                        }
+                    });
+
+
+                }
+
+                @Override
+                public boolean conditionStop() {
+                    return allTheDronesAreShutDown()|| mustStopAutomaticExecution;
+                }
+
+            };
+        });
+
+
+        //startUpdateBatteryPerSeconds();
+
+
+
+  /*      Runnable runnable = () ->{
 
             if(allTheDronesAreShutDown()){
                 automaticExecutionStopWatch.stop();
             }
 
-            for (Map.Entry<String, Drone> droneEntry : droneMap.entrySet()) {
+            for (Drone drone : droneMap.values()) {
 
-                currentDrone[0] = droneEntry.getValue();
+                Platform.runLater(() -> {
+                    goDestinyAutomatic(drone);
+                });
 
-                goDestinyAutomatic(currentDrone[0]);
-                DroneBusinessObject.updateBatteryPerBlock(currentDrone[0]);
-                DroneBusinessObject.updateDistances(currentDrone[0]);
-                DroneBusinessObject.updateItIsOver(currentDrone[0]);
+                DroneBusinessObject.updateBatteryPerBlock(drone);
+                DroneBusinessObject.updateDistances(drone);
+               // DroneBusinessObject.updateItIsOver(drone);
             }
         };
 
 
         automaticExecutionStopWatch = new StopWatch(0, 1000, runnable);
-        automaticExecutionStopWatch.start();
-    }
-
-
-
-
-
-    @Override
-    public void notifyBadConnection() {
-        environmentController = EnvironmentController.getInstance();
-
-        Drone selectedDrone = environmentController.getSelectedDrone();
-
-        if (selectedDrone.isTookOff()) {
-            DroneBusinessObject.setBadConnection(selectedDrone);
-
-        }
-    }
-
-    @Override
-    public void notifyNormalConnection() {
-        Drone selectedDrone = environmentController.getSelectedDrone();
-
-        if (selectedDrone.isTookOff()) {
-            DroneBusinessObject.setNormalConnection(selectedDrone);
-        }
+        automaticExecutionStopWatch.start();*/
     }
 
     @Override
     void notifyStopEnviroment() {
-        Drone currentDrone;
-        for (Map.Entry<String, Drone> droneEntry : droneMap.entrySet()) {
 
-            currentDrone = droneEntry.getValue();
-
-            DroneBusinessObject.notifyStopEnviroment(currentDrone);
+        for (Drone drone : droneMap.values()) {
+            DroneBusinessObject.notifyStopEnviroment(drone);
 
         }
     }
 
     @Override
-    public void notifyStrongWind() {
-        Drone currentDrone;
-        for (Map.Entry<String, Drone> droneEntry : droneMap.entrySet()) {
+    public void consumeReset() {
 
-            currentDrone = droneEntry.getValue();
-            DroneBusinessObject.setStrongWind(currentDrone);
-
-        }
-    }
-
-    @Override
-    public void notifyNoStrongWind() {
-        Drone currentDrone;
-        for (Map.Entry<String, Drone> droneEntry : droneMap.entrySet()) {
-
-            currentDrone = droneEntry.getValue();
-
-            DroneBusinessObject.setNormalWind(currentDrone);
-
-        }
-    }
-
-    @Override
-    public void notifyReset() {
-
-        Drone currentDrone;
-        for (Map.Entry<String, Drone> droneEntry : droneMap.entrySet()) {
-
-            currentDrone = droneEntry.getValue();
-
-            DroneBusinessObject.resetSettingsDrone(currentDrone);
+        for (Drone drone : droneMap.values()) {
+            DroneBusinessObject.resetSettingsDrone(drone);
 
         }
 
-        if (stopWatchBattery != null) {
+        mustStopBatteryDecrementer = true;
+        mustStopAutomaticExecution = true;
+        /*if (stopWatchBattery != null) {
             stopBatteryDecrementer();
         }
         if(automaticExecutionStopWatch != null){
             stopAutomaticExecution();
+        }*/
+
+    }
+
+
+
+
+
+    @Override
+    public void consumeBadConnection(SelectableView selectableView) {
+        CellController cellController = CellController.getInstance();
+
+        for(DroneView droneView : droneViewMap.values()){
+            CellView cellView = droneView.getCurrentCellView();
+            Cell cell = cellController.getCellFrom(cellView);
+
+            if(cell.getBadConnection()){
+                Drone drone = getDroneFrom(droneView.getUniqueID());
+                if(drone.isTookOff()){
+                    DroneBusinessObject.setBadConnection(drone);
+
+                }
+            }
+        }
+
+
+    }
+
+
+
+    @Override
+    public void consumeNormalConnection(SelectableView selectableView) {
+        CellController cellController = CellController.getInstance();
+
+        for(DroneView droneView : droneViewMap.values()){
+            CellView cellView = droneView.getCurrentCellView();
+            Cell cell = cellController.getCellFrom(cellView);
+
+            if(!cell.getBadConnection()){
+                Drone drone = getDroneFrom(droneView.getUniqueID());
+                if(drone.isTookOff() && !drone.isReturningToHome()){
+                    DroneBusinessObject.setNormalConnection(drone);
+
+                }
+            }
+        }
+    }
+
+    @Override
+    public void consumeStrongWind() {
+
+        for(Drone drone: droneMap.values()){
+            DroneBusinessObject.setStrongWind(drone);
+
         }
 
     }
 
     @Override
+    public void consumeNormalWind() {
+        for(Drone drone: droneMap.values()){
+            DroneBusinessObject.setNormalWind(drone);
+
+        }
+    }
+
+
+
+
+    //não estou usando mais, depois apagar
+    @Override
     public void startUpdateBatteryPerSeconds() {
-        EnvironmentController environmentController = EnvironmentController.getInstance();
-        List<Drone> dronesInEnvironment = environmentController.getDroneList();
 
-        Runnable runnable = () -> Platform.runLater(() -> {
+        stopWatchBattery = new StopWatch(0,1000) {
+            @Override
+            public void task() {
+                    System.out.println("PerSeconds inicio" + Thread.currentThread().getName());
 
-            if (allTheDronesAreShutDown()) {
+                    for(Drone currentDroneInEnvirionment : getDroneMap().values()){
+
+                        DroneBusinessObject.updateBatteryPerSecond(currentDroneInEnvirionment);
+
+                        DroneBusinessObject.checkStatus(currentDroneInEnvirionment);
+                        System.out.println("PerSeconds fim" + Thread.currentThread().getName());
+                    }
+            }
+
+            @Override
+            public boolean conditionStop() {
+                return allTheDronesAreShutDown() || mustStopBatteryDecrementer;
+            }
+        };
+    /*    Runnable runnable = () -> {
+            System.out.println("PerSeconds inicio" + Thread.currentThread().getName());
+            if(allTheDronesAreShutDown()){
                 stopWatchBattery.stop();
             }
 
-            for (Drone currentDroneInEnvirionment : dronesInEnvironment) {
+            for(Drone currentDroneInEnvirionment : dronesInEnvironment){
 
                 DroneBusinessObject.updateBatteryPerSecond(currentDroneInEnvirionment);
-               /* System.out.println("Drone["+getDroneLabel()+"] "+"Current battery: "+currentDroneInEnvirionment.getCurrentBattery()+"%");
-                LoggerController.getInstance().print("Drone["+getDroneLabel()+"] "+"Current battery: "+currentDroneInEnvirionment.getCurrentBattery()+"%");*/
+
                 DroneBusinessObject.checkStatus(currentDroneInEnvirionment);
+                System.out.println("PerSeconds fim" + Thread.currentThread().getName());
             }
-        });
+        };
 
 
-        stopWatchBattery = new StopWatch(0, 1000, runnable);
+        stopWatchBattery = new StopWatch(0,1000, runnable);
 
-        stopWatchBattery.start();
+        stopWatchBattery.start();*/
+
     }
 
     @Override
-    public void createDrone(String uniqueID, String droneLabel, Hospital sourceHospital, Hospital destinyHospital, CellView currentCellView) {
+    public Drone createDrone(String uniqueID, String droneLabel, Hospital sourceHospital,
+                             Hospital destinyHospital, CellView currentCellView) {
 
-        Drone drone = new Drone(uniqueID, sourceHospital, destinyHospital, currentCellView.getI(),
-                currentCellView.getJ());
+
+        Drone drone  = new Drone(uniqueID, droneLabel,sourceHospital, destinyHospital, currentCellView.getRowPosition(),
+                currentCellView.getCollunmPosition());
 
         droneMap.put(uniqueID, drone);
 
@@ -187,7 +267,10 @@ public class DroneAutomaticController extends DroneController {
 
         drone.addListener(droneView);
 
-        droneView.applyStyleSelected();
+        drone.setSelected(true);
+
+
+        return drone;
     }
 
     @Override
@@ -200,7 +283,22 @@ public class DroneAutomaticController extends DroneController {
         return droneMap.get(identifierDrone);
     }
 
+    @Override
+    public void consumeOnKeyPressed(SelectableView selectedEntityView, KeyEvent keyEvent) {
+
+    }
+
+    @Override
+    public void cleanSelections() {
+
+    }
+
     private void goDestinyAutomatic(Drone drone) {
+        //essas tres condições são necessárias por causa do problema das threads
+
+        if(drone.isLading()){
+            return;
+        }
 
         if(drone.isShutDown()){
             return;
@@ -210,28 +308,34 @@ public class DroneAutomaticController extends DroneController {
         int oldJ = drone.getCurrentPositionJ();
         double newDistanceDestiny = 999999;
         String mustGO = null;
+        CellView hopitalCellView = null;
 
-        double tempDistance = distanceDroneWentRight(drone, drone.getDestinyHopistal());
+        CellView droneCellView = DroneController.getInstance().getDroneViewFrom(drone.getUniqueID()).getCurrentCellView();
+        if(drone.isReturningToHome()){
+            //go to source hospital (return to home)
+             hopitalCellView = HospitalController.getInstance().getHospitalViewFrom(drone.getSourceHospital().getUniqueID()).getCurrentCellView();
+        }else {
+            //go to destiny hospital (to go destiny)
+             hopitalCellView = HospitalController.getInstance().getHospitalViewFrom(drone.getDestinyHopistal().getUniqueID()).getCurrentCellView();
+        }
+
+
+        double tempDistance = DroneBusinessObject.distanceDroneWentRight(droneCellView, hopitalCellView);
 
         if (tempDistance < newDistanceDestiny) {
             newDistanceDestiny = tempDistance;
             mustGO = "->";
         }
 
-        drone.setCurrentPositionI(oldI);
-        drone.setCurrentPositionJ(oldJ);
-
-        tempDistance = distanceDroneWentLeft(drone, drone.getDestinyHopistal());
+        tempDistance = DroneBusinessObject.distanceDroneWentLeft(droneCellView, hopitalCellView);
 
         if (tempDistance < newDistanceDestiny) {
             newDistanceDestiny = tempDistance;
             mustGO = "<-";
         }
 
-        drone.setCurrentPositionI(oldI);
-        drone.setCurrentPositionJ(oldJ);
 
-        tempDistance = distanceDroneWentUp(drone, drone.getDestinyHopistal());
+        tempDistance = DroneBusinessObject.distanceDroneWentUp(droneCellView, hopitalCellView);
 
         if (tempDistance < newDistanceDestiny) {
             newDistanceDestiny = tempDistance;
@@ -239,10 +343,7 @@ public class DroneAutomaticController extends DroneController {
 
         }
 
-        drone.setCurrentPositionI(oldI);
-        drone.setCurrentPositionJ(oldJ);
-
-        tempDistance = distanceDroneWentDown(drone, drone.getDestinyHopistal());
+        tempDistance = DroneBusinessObject.distanceDroneWentDown(droneCellView, hopitalCellView);
 
         if (tempDistance < newDistanceDestiny) {
             newDistanceDestiny = tempDistance;
@@ -250,69 +351,15 @@ public class DroneAutomaticController extends DroneController {
 
         }
 
-        drone.setCurrentPositionI(oldI);
-        drone.setCurrentPositionJ(oldJ);
-
-
         DroneBusinessObject.getInstance().goTo(drone, mustGO);
 
 
-        DroneBusinessObject.getInstance().checkStatus(drone);
+//        DroneBusinessObject.getInstance().checkStatus(drone);
 
     }
 
-    public double distanceDroneWentUp(Drone drone, Hospital hospital) {
-        drone.setCurrentPositionI(drone.getCurrentPositionI() - 1);
 
-        if (drone.getCurrentPositionI() < 0) {
-            return 999999;
-        }
 
-        return calculeteDistanceFrom(drone, hospital);
-    }
-
-    public double distanceDroneWentDown(Drone drone, Hospital hospital) {
-        drone.setCurrentPositionI(drone.getCurrentPositionI() + 1);
-
-        if (drone.getCurrentPositionI() < 0) {
-            return 999999;
-        }
-
-        return calculeteDistanceFrom(drone, hospital);
-    }
-
-    public double distanceDroneWentLeft(Drone drone, Hospital hospital) {
-        drone.setCurrentPositionJ(drone.getCurrentPositionJ() - 1);
-
-        if (drone.getCurrentPositionJ() < 0) {
-            return 999999;
-        }
-
-        return calculeteDistanceFrom(drone, hospital);
-    }
-
-    public double distanceDroneWentRight(Drone drone, Hospital hospital) {
-
-        if (drone.getCurrentPositionJ() < 0) {
-            return 999999;
-        }
-
-        drone.setCurrentPositionJ(drone.getCurrentPositionJ() + 1);
-
-        return calculeteDistanceFrom(drone, hospital);
-    }
-
-    public double calculeteDistanceFrom(Drone drone, Hospital hospital) {
-
-        /* System.out.println((drone.getCurrentPositionI()+1)+" "+(drone.getCurrentPositionJ()+1)+" "+ (hospital.getiPosition()+1) +" "+ (hospital.getjPosition()+1));*/
-        int xInitial = (drone.getCurrentPositionJ() + 1) * 30,
-                xFinal = (hospital.getjPosition() + 1) * 30,
-                yInitial = (drone.getCurrentPositionI() + 1) * 30,
-                yFinal = (hospital.getiPosition() + 1) * 30;
-
-        return Math.sqrt(((xFinal - xInitial) * (xFinal - xInitial)) + ((yFinal - yInitial) * (yFinal - yInitial)));
-
-    }
 
     private boolean allTheDronesAreShutDown() {
         boolean isShutdown = false;
@@ -324,16 +371,16 @@ public class DroneAutomaticController extends DroneController {
         return isShutdown;
     }
 
-    public void stopBatteryDecrementer() {
+  /*  public void stopBatteryDecrementer() {
 
         System.out.println("Stop battery");
         stopWatchBattery.stop();
-    }
+    }*/
 
-    public void stopAutomaticExecution() {
+   /* public void stopAutomaticExecution() {
 
         System.out.println("Stop Automatic Execution");
         automaticExecutionStopWatch.stop();
-    }
+    }*/
 
 }

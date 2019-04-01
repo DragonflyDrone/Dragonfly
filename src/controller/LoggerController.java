@@ -26,7 +26,7 @@ public final class LoggerController {
         this.textArea = textArea;
     }
 
-    public void print(String s){
+    synchronized public void print(String s){
         Platform.runLater(() ->  textArea.appendText("\n"+s));
 
     }

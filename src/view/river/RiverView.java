@@ -2,9 +2,10 @@ package view.river;
 
 import javafx.scene.Group;
 import javafx.scene.Node;
+import model.entity.River;
 import view.SelectableView;
 
-public abstract class RiverView  extends Group implements SelectableView {
+public abstract class RiverView  extends Group implements SelectableView, River.Listener {
   /*  public static List<RiverView> riverViewList = new ArrayList<>();*/
 
    String uniqueID = null;

@@ -1,24 +1,26 @@
-package model.drone;
+package model.entity.drone;
 
 
 
 import javafx.scene.input.KeyCode;
-import model.Hospital;
+import model.entity.Entity;
+import model.entity.Hospital;
 import util.Wrapper;
+import view.SelectableView;
 import view.river.RiverView;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Drone {
+public class Drone extends Entity {
 
     //Do not changes in Runtime
     private Hospital sourceHospital;
     private Hospital destinyHopistal;
     private String uniqueID;
     private Integer initialPosistionI, initialPositionJ;
-    private Double initialBattery = 100.D;
+    private Double initialBattery = 12.D;
     private Double batteryPerBlock = 1.D;
     private Double batteryPerSecond = 1.D;
 
@@ -48,17 +50,20 @@ public class Drone {
     private Boolean isWrapper = false;
     private Boolean isLost = false;
 
+    private Boolean selected = false;
 
-    private List<Object> onTopOfList = new ArrayList<>();
+
+    private List<SelectableView> onTopOfList = new ArrayList<>();
     private List<Listener> listeners = new ArrayList<>();
     private KeyCode directionCommand;
 
-    public static int COUNT_DRONE = 0;
+    public static int COUNT_DRONE = 1;
 
-    private Wrapper wrapper = Wrapper.Empty;
+    private Wrapper wrapper = Wrapper.None;
+    private String label = "";
 
 
-    public Drone(String uniqueID, Hospital sourceHospital, Hospital destinyHopistal, int initialPositionI, Integer initialPositionJ) {
+    public Drone(String uniqueID, String label, Hospital sourceHospital, Hospital destinyHopistal, int initialPositionI, Integer initialPositionJ) {
         this.uniqueID = uniqueID;
         this.currentPositionI = initialPositionI;
         this.currentPositionJ = initialPositionJ;
@@ -67,8 +72,13 @@ public class Drone {
 
         this.sourceHospital = sourceHospital;
         this.destinyHopistal = destinyHopistal;
+        this.label = label;
 
         COUNT_DRONE++;
+    }
+
+    public static void restartCount() {
+        COUNT_DRONE = 1;
     }
 
     public boolean isShutDown(){
@@ -93,16 +103,22 @@ public class Drone {
         return isWrapper;
     }
 
+/*
     public void setAspect(boolean isAspect) {
 
         boolean oldValue = this.isWrapper;
         boolean newValue = isAspect;
+
+        if(oldValue == newValue){
+            return;
+        }
 
         this.isWrapper = isAspect;
 
         notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
 
     }
+*/
 
     public Wrapper getWrapper() {
         return wrapper;
@@ -111,6 +127,10 @@ public class Drone {
     public void setWrapper(Wrapper wrapper) {
         Wrapper oldValue = this.wrapper;
         Wrapper newValue = wrapper;
+
+        if(oldValue == newValue){
+            return;
+        }
 
         this.wrapper = wrapper;
 
@@ -122,6 +142,10 @@ public class Drone {
         boolean oldValue = this.isSafeland;
         boolean newValue = isSafeland;
 
+        if(oldValue == newValue){
+            return;
+        }
+
         this.isSafeland = isSafeland;
 
         notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
@@ -131,6 +155,10 @@ public class Drone {
         boolean oldValue = this.isManual;
         boolean newValue = isManual;
 
+        if(oldValue == newValue){
+            return;
+        }
+
         this.isManual = isManual;
 
         notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
@@ -139,6 +167,10 @@ public class Drone {
     public void setReturningToHome(boolean isReturningToHome) {
         boolean oldValue = this.isReturningToHome;
         boolean newValue = isReturningToHome;
+
+        if(oldValue == newValue){
+            return;
+        }
 
         this.isReturningToHome = isReturningToHome;
 
@@ -155,6 +187,10 @@ public class Drone {
         boolean oldValue = this.isGoingAutomaticToDestiny;
         boolean newValue = isGoingAutomaticToDestiny;
 
+        if(oldValue == newValue){
+            return;
+        }
+
         this.isGoingAutomaticToDestiny = isGoingAutomaticToDestiny;
 
         notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
@@ -167,6 +203,10 @@ public class Drone {
     public void setInitialPosistionI(Integer initialPosistionI) {
         Integer oldValue = this.initialPosistionI;
         Integer newValue = initialPosistionI;
+
+        if(oldValue == newValue){
+            return;
+        }
 
         this.initialPosistionI = initialPosistionI;
 
@@ -181,6 +221,10 @@ public class Drone {
          Integer oldValue = this.initialPositionJ;
          Integer newValue = initialPositionJ;
 
+         if(oldValue == newValue){
+             return;
+         }
+
         this.initialPositionJ = initialPositionJ;
 
          notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
@@ -193,6 +237,10 @@ public class Drone {
     public void setInitialBattery(Double initialBattery) {
         Double oldValue = this.initialBattery;
         Double newValue = initialBattery;
+
+        if(oldValue == newValue){
+            return;
+        }
 
         this.initialBattery = initialBattery;
 
@@ -217,6 +265,10 @@ public class Drone {
         Double newValue = distanceHospitalDestiny;
         this.distanceHospitalDestiny = distanceHospitalDestiny;
 
+        if(oldValue == newValue){
+            return;
+        }
+
         notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
     }
 
@@ -226,6 +278,10 @@ public class Drone {
 
         this.batteryPerBlock = batteryPerBlock;
 
+        if(oldValue == newValue){
+            return;
+        }
+
         notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
     }
 
@@ -233,6 +289,9 @@ public class Drone {
         Double oldValue = this.batteryPerSecond;
         Double newValue = batteryPerSecond;
 
+        if(oldValue == newValue){
+            return;
+        }
 
         this.batteryPerSecond = batteryPerSecond;
 
@@ -242,6 +301,10 @@ public class Drone {
     public void setDistanceHospitalSource(Double distanceHospitalSource) {
        Double oldValue = this.distanceHospitalSource;
        Double newValue = distanceHospitalSource;
+
+        if(oldValue == newValue){
+            return;
+        }
 
        this.distanceHospitalSource = distanceHospitalSource;
 
@@ -256,6 +319,10 @@ public class Drone {
         boolean oldValue = this.isStrongWind;
         boolean newValue = isStrongWind;
 
+        if(oldValue == newValue){
+            return;
+        }
+
         this.isStrongWind = isStrongWind;
 
         notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
@@ -264,6 +331,10 @@ public class Drone {
     public void setIsAutomatic(boolean isAutomatic) {
         boolean oldValue = this.isAutomatic;
         boolean newValue = isAutomatic;
+
+        if(oldValue == newValue){
+            return;
+        }
 
         this.isAutomatic = isAutomatic;
 
@@ -288,8 +359,12 @@ public class Drone {
     }
 
     public void setCurrentPositionI(Integer currentPositionI) {
-        Integer oldValue = this.currentPositionI;
-        Integer newValue = currentPositionI;
+        int oldValue = this.currentPositionI;
+        int newValue = currentPositionI;
+
+        if(oldValue == newValue){
+            return;
+        }
         this.currentPositionI = currentPositionI;
 
         notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
@@ -300,19 +375,23 @@ public class Drone {
     }
 
     public void setCurrentPositionJ(Integer currentPositionJ) {
-        Integer oldValue = this.currentPositionJ;
-        Integer newValue = currentPositionJ;
+        int oldValue = this.currentPositionJ;
+        int newValue = currentPositionJ;
+
+        if(oldValue == newValue){
+            return;
+        }
 
         this.currentPositionJ = currentPositionJ;
 
         notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
     }
 
-    public List<Object> getOnTopOfList() {
+    public List<SelectableView> getOnTopOfList() {
         return onTopOfList;
     }
 
-    public void addOnTopOfDroneList(Object onTopOf) {
+    public void addOnTopOfDroneList(SelectableView onTopOf) {
         this.onTopOfList.add(onTopOf);
     }
 
@@ -320,9 +399,13 @@ public class Drone {
         return currentBattery;
     }
 
-    public void setCurrentBattery(Double currentBattery) {
-        Double oldValue = this.currentBattery;
-        Double newValue = currentBattery;
+     public void setCurrentBattery(Double currentBattery) {
+        double oldValue = this.currentBattery;
+        double newValue = currentBattery;
+
+         if(oldValue == newValue){
+             return;
+         }
 
         this.currentBattery = currentBattery;
 
@@ -338,6 +421,10 @@ public class Drone {
         boolean oldValue = this.isStarted;
         boolean newValue = isStarted;
 
+        if(oldValue == newValue){
+            return;
+        }
+
         this.isStarted = isStarted;
 
         notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
@@ -351,6 +438,10 @@ public class Drone {
         boolean oldValue = this.isTookOff;
         boolean newValue = isTookOff;
 
+        if(oldValue == newValue){
+            return;
+        }
+
         this.isTookOff = isTookOff;
 
         notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
@@ -363,6 +454,10 @@ public class Drone {
     public void setUniqueID(String uniqueID) {
         String oldValue = this.uniqueID;
         String newValue = uniqueID;
+
+        if(oldValue == newValue){
+            return;
+        }
 
         this.uniqueID = uniqueID;
 
@@ -385,6 +480,9 @@ public class Drone {
         boolean oldValue = this.isEconomyMode;
         boolean newValue = isEconomyMode;
 
+        if(oldValue == newValue){
+            return;
+        }
         this.isEconomyMode = isEconomyMode;
 
         notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
@@ -392,7 +490,7 @@ public class Drone {
 
     }
 
-    public void setOnTopOfList(List<Object> onTopOfList) {
+    public void setOnTopOfList(List<SelectableView> onTopOfList) {
         this.onTopOfList = onTopOfList;
     }
 
@@ -403,6 +501,10 @@ public class Drone {
     public void setBadConnection(boolean isBadConnection) {
         boolean oldValue = this.isBadConnection;
         boolean newValue = isBadConnection;
+
+        if(oldValue == newValue){
+            return;
+        }
 
         this.isBadConnection = isBadConnection;
 
@@ -423,12 +525,20 @@ public class Drone {
 
         this.sourceHospital = sourceHospital;
 
+        if(oldValue == newValue){
+            return;
+        }
+
         notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
     }
 
     public void setDestinyHopistal(Hospital destinyHopistal) {
         Hospital oldValue = this.destinyHopistal;
         Hospital newValue = destinyHopistal;
+
+        if(oldValue == newValue){
+            return;
+        }
 
         this.destinyHopistal = destinyHopistal;
 
@@ -442,6 +552,10 @@ public class Drone {
     public void setGoingManualToDestiny(boolean isGoingManualToDestiny) {
         boolean oldValue = this.isGoingManualToDestiny;
         boolean newValue = isGoingManualToDestiny;
+
+        if(oldValue == newValue){
+            return;
+        }
 
         this.isGoingManualToDestiny = isGoingManualToDestiny;
 
@@ -470,6 +584,10 @@ public class Drone {
         boolean oldValue = this.isLost;
         boolean newValue = isLost;
 
+        if(oldValue == newValue){
+            return;
+        }
+
         this.isLost = isLost;
 
         notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
@@ -484,10 +602,34 @@ public class Drone {
         KeyCode oldValue = this.directionCommand;
         KeyCode newValue = directionCommand;
 
+
         this.directionCommand = directionCommand;
 
         notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
     }
+
+    public boolean isSelected(){
+        return selected;
+    }
+
+    public void setSelected(boolean selected) {
+        boolean oldValue = this.selected;
+        boolean newValue = selected;
+
+        if(oldValue == newValue){
+            return;
+        }
+
+        this.selected = selected;
+
+        notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
+    }
+
+    public String getLabel() {
+        return label;
+    }
+
+
 
 
     public interface Listener{
@@ -507,9 +649,13 @@ public class Drone {
     }
 
     private void notifiesListeners(String attributeName, Object oldValue, Object newValue){
-        for (Listener listener : listeners){
-            listener.onChange(this, attributeName, oldValue, newValue);
+
+        synchronized (this){
+            for (Listener listener : listeners){
+                listener.onChange(this, attributeName, oldValue, newValue);
+            }
         }
+
     }
 
    /*  private String getCurrentNameMethed(){

@@ -1,9 +1,9 @@
 package controller;
 
-import javafx.scene.input.KeyCode;
-import javafx.scene.layout.Pane;
-import model.River;
+import javafx.scene.input.KeyEvent;
+import model.entity.River;
 import view.CellView;
+import view.SelectableView;
 import view.river.RiverView;
 import view.river.RiverViewImpl;
 
@@ -28,18 +28,21 @@ public class RiverController {
     }
 
 
-    public void createRiver(String uniqueID, CellView currentCellView){
+    public River createRiver(String uniqueID, CellView currentCellView){
 
-        River river  = new River(uniqueID, currentCellView.getI(), currentCellView.getJ());
+        River river  = new River(uniqueID, currentCellView.getRowPosition(), currentCellView.getCollunmPosition());
 
         riverMap.put(uniqueID, river);
 
 
         RiverView riverView = new RiverViewImpl(uniqueID, currentCellView);
+
+        river.addListener(riverView);
         riverViewMap.put(uniqueID, riverView);
 
+        river.setSelected(true);
 
-
+        return river;
     }
 
     public RiverView getRiverViewFrom(String identifierRiver) {
@@ -50,19 +53,20 @@ public class RiverController {
         return riverMap.get(identifierRiver);
     }
 
-    public void notifyReset() {
+    public void consumeReset() {
 
     }
 
-    public void notifyClickEvent(Pane cellViewSelected) {
+    public void consumeClickEvent(SelectableView selectedEntityView) {
+
+        if(selectedEntityView instanceof RiverView){
+          River river =  getRiverFrom(selectedEntityView.getUniqueID());
+          river.setSelected(true);
+        }
 
     }
 
-    public void notifyKeyEvent(KeyCode code) {
-
-    }
-
-    public void notifyRunEnviroment() {
+    public void consumeRunEnviroment() {
 
     }
 
@@ -80,5 +84,23 @@ public class RiverController {
 
     public void setRiverMap(Map<String, River> riverMap) {
         this.riverMap = riverMap;
+    }
+
+    public void consumeClearEnvirironment() {
+        riverViewMap.clear();
+        riverMap.clear();
+    }
+
+    public void consumeOnKeyPressed(SelectableView selectedEntityView, KeyEvent keyEvent) {
+        if(!(selectedEntityView instanceof RiverView)){
+            return;
+        }
+
+    }
+
+    public void cleanSelections() {
+        for(River river : riverMap.values()){
+            river.setSelected(false);
+        }
     }
 }

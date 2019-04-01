@@ -3,21 +3,24 @@ package util;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public abstract class StopWatch {
+public class StopWatchCopy {
+    private  Runnable runnable;
     private Integer intialDelay, periodForNextExecution;
     private Timer timer;
     private TimerTask timerTask;
     private Boolean isStart = false;
 
 
-    public StopWatch(Integer intialDelay, Integer periodForNextExecution) {
+    public StopWatchCopy(Integer intialDelay, Integer periodForNextExecution, Runnable runnable) {
         this.intialDelay = intialDelay;
         this.periodForNextExecution = periodForNextExecution;
-        start();
+        this.runnable = runnable;
+
+
 
     }
 
-    private void start(){
+    public void start(){
         if(isStart){
             return;
         }
@@ -29,30 +32,16 @@ public abstract class StopWatch {
 
             @Override
             public void run() {
-                if(conditionStop()){
-                    stop();
-                    return;
-                }
-
-                task();
-
-                if(conditionStop()){
-                    stop();
-                    return;
-                }
+                runnable.run();
             }
         };
 
         timer.scheduleAtFixedRate(timerTask,intialDelay, periodForNextExecution);
-        timerTask.run();
+
 
     }
 
-    public abstract void task();
-
-    public abstract boolean conditionStop();
-
-    private void stop(){
+    public void stop(){
        if(isStart){
            timerTask.cancel();
 
