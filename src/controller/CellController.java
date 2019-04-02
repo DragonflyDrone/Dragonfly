@@ -258,7 +258,7 @@ public class CellController {
 
     public double calculeteDistanceFrom(SelectableView initialCell, SelectableView finalCell) {
 
-        //System.out.println((drone.getCurrentPositionI()+1)+" "+(drone.getCurrentPositionJ()+1)+" "+ (hospital.getRowPosition()+1) +" "+ (hospital.getCollunmPosition()+1));
+        //System.out.println((drone.getCurrentPositionI()+1)+" "+(drone.getCurrentPositionJ()+1)+" "+ (hospital.getInitialRowPosition()+1) +" "+ (hospital.getInitialCollunmPosition()+1));
 
         int xInitial = (initialCell.getCurrentCellView().getCollunmPosition() + 1) * CellView.SIZE,
                 xFinal = (finalCell.getCurrentCellView().getCollunmPosition() + 1) * CellView.SIZE,

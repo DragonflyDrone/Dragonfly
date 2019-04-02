@@ -14,7 +14,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.shape.Rectangle?>
 
-<AnchorPane fx:id="mainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="710.0" prefWidth="903.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="mainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="710.0" prefWidth="903.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane fx:id="environmentAnchorPane" layoutX="2.0" layoutY="30.0" prefHeight="379.0" prefWidth="899.0" AnchorPane.bottomAnchor="311.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="30.0">
          <children>
@@ -45,10 +45,10 @@
             <RadioButton fx:id="noBadConnectionRadioButton" disable="true" layoutX="543.0" layoutY="150.0" mnemonicParsing="false" selected="true" text="No" />-->
            <!-- <RadioButton fx:id="randomBadConnectionRadioButton" disable="true" layoutX="521.0" layoutY="151.0" mnemonicParsing="false" text="Random" />-->
           <!--  <Label fx:id="badConectionLabel" disable="true" layoutX="375.0" layoutY="151.0" text="Bad Connection:" />-->
-            <RadioButton fx:id="trueStrongWindRadioButton" layoutX="90.0" layoutY="83.0" mnemonicParsing="false" text="Yes" />
-            <RadioButton fx:id="noStrongWindRadioButton" layoutX="141.0" layoutY="84.0" mnemonicParsing="false" selected="true" text="No" />
-            <RadioButton fx:id="randomStrongWindRadioButton" layoutX="186.0" layoutY="84.0" mnemonicParsing="false" text="Random" />
-            <Label fx:id="strongWindLabel" layoutX="4.0" layoutY="83.0" text="Strong Wind:" />
+            <RadioButton fx:id="trueStrongWindRadioButton" layoutX="90.0" layoutY="161.0" mnemonicParsing="false" text="Yes" />
+            <RadioButton fx:id="noStrongWindRadioButton" layoutX="141.0" layoutY="162.0" mnemonicParsing="false" selected="true" text="No" />
+            <RadioButton fx:id="randomStrongWindRadioButton" layoutX="186.0" layoutY="162.0" mnemonicParsing="false" text="Random" />
+            <Label fx:id="strongWindLabel" layoutX="4.0" layoutY="161.0" text="Strong Wind:" />
             <Label fx:id="currentDroneLabel" disable="true" layoutX="391.0" layoutY="15.0" text="Current Drone (ID):" />
             <TextField fx:id="currentDroneTextField" disable="true" layoutX="531.0" layoutY="9.0" prefHeight="26.0" prefWidth="58.0" text="0" />
             <Button fx:id="saveButton" disable="true" layoutX="541.0" layoutY="204.0" mnemonicParsing="false" text="Save" />
@@ -64,7 +64,7 @@
                   <Image url="@selectedDrone.png" />
                </image>
             </ImageView>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="blue" height="32.0" layoutX="12.0" layoutY="41.0" stroke="BLACK" strokeType="INSIDE" width="32.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="blue" height="32.0" layoutX="12.0" layoutY="42.0" stroke="BLACK" strokeType="INSIDE" width="32.0" />
             <ToggleButton fx:id="antennaToggleButton" layoutX="134.0" layoutY="5.0" mnemonicParsing="false" text="Antenna" />
             <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="155.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -76,10 +76,16 @@
             <ComboBox fx:id="targetComboBox" disable="true" layoutX="447.0" layoutY="204.0" prefHeight="26.0" prefWidth="66.0" />
             <Label fx:id="sourceLabel" disable="true" layoutX="272.0" layoutY="209.0" text="Source:" />
             <Label fx:id="targetLabel" disable="true" layoutX="396.0" layoutY="209.0" text="Target:" />
-            <Button fx:id="deleteButton" layoutX="4.0" layoutY="114.0" mnemonicParsing="false" text="Delete" />
-            <Button fx:id="cleanButton" layoutX="68.0" layoutY="114.0" mnemonicParsing="false" text="Clean" />
+            <Button fx:id="deleteButton" layoutX="4.0" layoutY="192.0" mnemonicParsing="false" text="Delete" />
+            <Button fx:id="cleanButton" layoutX="68.0" layoutY="192.0" mnemonicParsing="false" text="Clean" />
             <ComboBox fx:id="wrapperComboBox" disable="true" layoutX="438.0" layoutY="158.0" prefWidth="150.0" promptText="None" />
             <Label fx:id="wrapperLabel" disable="true" layoutX="377.0" layoutY="163.0" text="Wrapper:" />
+            <ToggleButton fx:id="boatToggleButton" layoutX="2.0" layoutY="84.0" selected="false" text="Boat" />
+            <ImageView layoutX="9.0" layoutY="116.0">
+               <image>
+                  <Image url="@boat.png" />
+               </image>
+            </ImageView>
 
                         
                                  </children>

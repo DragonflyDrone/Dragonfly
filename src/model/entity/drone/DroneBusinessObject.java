@@ -456,7 +456,7 @@ public class DroneBusinessObject {
         //updateItIsOver(selectedDrone);
 
     /*    //apply bad connection if cell is bad connection
-        CellView cellView = EnvironmentController.getInstance().getCellViewSelected();
+        CellView cellView = EnvironmentController.getInstance().getCurrentCellView();
 
         if(CellController.getInstance().getCellFrom(cellView).getBadConnection()){
             setBadConnection(selectedDrone);
@@ -670,7 +670,7 @@ public class DroneBusinessObject {
 //          //updateItIsOver(selectedDrone);
 //
 //         /* //apply bad connection if cell is bad connection
-//          CellView cellView = EnvironmentController.getInstance().getCellViewSelected();
+//          CellView cellView = EnvironmentController.getInstance().getCurrentCellView();
 //
 //          if(CellController.getInstance().getCellFrom(cellView).getBadConnection()){
 //              setBadConnection(selectedDrone);

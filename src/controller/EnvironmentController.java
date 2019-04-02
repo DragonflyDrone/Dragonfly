@@ -8,6 +8,7 @@ import model.entity.Antenna;
 import model.Environment;
 import model.entity.Hospital;
 import model.entity.River;
+import model.entity.boat.Boat;
 import model.entity.drone.Drone;
 import util.ClickOutsideRegion;
 import util.MinimumHospitalQuantityException;
@@ -117,6 +118,7 @@ public class EnvironmentController {
             AntennaController.getInstance().consumeClickEvent(selectedEntityView);
             HospitalController.getInstance().consumeClickEvent(selectedEntityView);
             DroneController.getInstance().consumeClickEvent(selectedEntityView);
+            BoatController.getInstance().consumeClickEvent(selectedEntityView);
         }else {
             CellController.getInstance().consumeClickEvent(selectedCellView);
         }
@@ -144,6 +146,7 @@ public class EnvironmentController {
             AntennaController.getInstance().consumeOnKeyPressed(selectedEntityView, keyEvent);
             HospitalController.getInstance().consumeOnKeyPressed(selectedEntityView, keyEvent);
             DroneController.getInstance().consumeOnKeyPressed(selectedEntityView, keyEvent);
+            BoatController.getInstance().consumeOnKeyPressed(selectedEntityView,keyEvent);
         } else {
             CellController.getInstance().consumeOnKeyPressed(selectedCellView, keyEvent);
         }
@@ -206,6 +209,7 @@ public class EnvironmentController {
         DroneController.getInstance().consumeCleanEnvironment();
         HospitalController.getInstance().consumeCleanEnvironment();
         AntennaController.getInstance().consumeClearEnvironment();
+        BoatController.getInstance().consumeCleanEnvironment();
         RiverController.getInstance().consumeClearEnvirironment();
 
     }
@@ -215,6 +219,7 @@ public class EnvironmentController {
         AntennaController.getInstance().consumeRunEnviroment();
         HospitalController.getInstance().consumeRunEnviroment();
         DroneController.getInstance().consumeRunEnviroment();
+        BoatController.getInstance().consumeRunEnviroment();
         CellController.getInstance().consumeRunEnviroment();
     }
 
@@ -230,6 +235,7 @@ public class EnvironmentController {
         HospitalController.getInstance().consumeReset();
         DroneController.getInstance().consumeReset();
         CellController.getInstance().consumeReset();
+        BoatController.getInstance().consumeReset();
 
 
     }
@@ -360,6 +366,34 @@ public class EnvironmentController {
 
     }
 
+    public Boat createBoat(SelectableView selectedSelectableView) throws ClickOutsideRegion {
+
+       RiverView riverView = RiverController.getInstance().getRiverViewFrom(selectedSelectableView);
+
+       if(riverView == null){
+           throw new ClickOutsideRegion("You must put the BoatView on top of a RiverView. ");
+       }
+
+        clearSelectionOnAllSelectableView();
+
+        CellView selectedCellView = (CellView) selectedSelectableView;
+        BoatController boatController = BoatController.getInstance();
+
+
+        if (selectedCellView == null) {
+            throw new ClickOutsideRegion();
+        }
+
+
+        String uniqueID = UniqueIDGenenator.generate();
+
+        String boatLabel = String.valueOf(Boat.COUNT_BOAT);
+
+        Boat boat = boatController.createBoat(uniqueID, boatLabel, selectedCellView);
+        return boat;
+
+    }
+
 
     private void stopRandomStrongWind() {
         try {
@@ -377,6 +411,7 @@ public class EnvironmentController {
         RiverController.getInstance().cleanSelections();
         HospitalController.getInstance().cleanSelections();
         CellController.getInstance().cleanSelections();
+        BoatController.getInstance().cleanSelections();
     }
 
     public CellView getCloserLand(Drone drone){

@@ -78,7 +78,7 @@ public class DroneViewImpl extends DroneView {
     @Override
     public void updadePositionDroneView(Drone drone) {
         //Platform.runLater(() -> {
-        System.out.println("updadePositionDroneView" + Thread.currentThread().getName());
+        System.out.println("updadePositionDroneView");
         if(currentCellView == null){
             return;
         }

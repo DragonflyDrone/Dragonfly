@@ -5,4 +5,8 @@ public class ClickOutsideRegion extends Exception {
     public ClickOutsideRegion() {
         super(message);
     }
+
+    public ClickOutsideRegion(String message) {
+        super(message);
+    }
 }

@@ -48,7 +48,7 @@ public class MainController extends Application {
 
     @FXML
     private
-    ToggleButton riverToggleButton, hospitalToggleButton, droneToggleButton, antennaToggleButton;
+    ToggleButton riverToggleButton, hospitalToggleButton, droneToggleButton, antennaToggleButton, boatToggleButton;
 
     /*@FXML
     private
@@ -83,6 +83,7 @@ public class MainController extends Application {
     private EnvironmentController environmentController;
     private static MainController instance;
     private List<Wrapper> wrappersList = new ArrayList<>(Arrays.asList(Wrapper.values()));
+
 
 
     @Override
@@ -149,6 +150,7 @@ public class MainController extends Application {
         hospitalToggleButton.setToggleGroup(toggleGroup1);
         droneToggleButton.setToggleGroup(toggleGroup1);
         antennaToggleButton.setToggleGroup(toggleGroup1);
+        boatToggleButton.setToggleGroup(toggleGroup1);
 
         ToggleGroup toggleGroup3 = new ToggleGroup();
         trueStrongWindRadioButton.setToggleGroup(toggleGroup3);
@@ -214,6 +216,7 @@ public class MainController extends Application {
             hospitalToggleButton.setSelected(false);
             antennaToggleButton.setSelected(false);
             droneToggleButton.setSelected(false);
+            boatToggleButton.setSelected(false);
             automaticExecutionCheckBox.setDisable(true);
 
             loggerController.clear();
@@ -259,6 +262,7 @@ public class MainController extends Application {
                 droneToggleButton.setSelected(false);
                 antennaToggleButton.setSelected(false);
                 hospitalToggleButton.setSelected(false);
+                boatToggleButton.setSelected(false);
                 automaticExecutionCheckBox.setSelected(false);
                 environmentController.consumeCleanEnverionment();
             }
@@ -369,7 +373,7 @@ public class MainController extends Application {
 
     private boolean mustCreateEntitiesView() {
         return riverToggleButton.isSelected() || hospitalToggleButton.isSelected() || antennaToggleButton.isSelected()
-                || droneToggleButton.isSelected();
+                || droneToggleButton.isSelected() || boatToggleButton.isSelected();
     }
 
     private void createEntitiesView(SelectableView selectedSelectableView) {
@@ -392,6 +396,8 @@ public class MainController extends Application {
                 enableDroneSettingsViews();
 
                 updateDroneSettingsViews(drone);
+        }else if(boatToggleButton.isSelected()){
+            environmentController.createBoat(selectedSelectableView);
         }
 
             }catch (Exception e){
@@ -481,6 +487,7 @@ public class MainController extends Application {
         hospitalToggleButton.setDisable(true);
         droneToggleButton.setDisable(true);
         antennaToggleButton.setDisable(true);
+        boatToggleButton.setDisable(true);
         deleteButton.setDisable(true);
         cleanButton.setDisable(true);
         automaticExecutionCheckBox.setDisable(true);
@@ -492,6 +499,7 @@ public class MainController extends Application {
         hospitalToggleButton.setDisable(false);
         droneToggleButton.setDisable(false);
         antennaToggleButton.setDisable(false);
+        boatToggleButton.setDisable(false);
         deleteButton.setDisable(false);
         cleanButton.setDisable(false);
         automaticExecutionCheckBox.setDisable(false);

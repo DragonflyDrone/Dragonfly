@@ -351,7 +351,7 @@ public class DroneAutomaticController extends DroneController {
 
         }
 
-        DroneBusinessObject.getInstance().goTo(drone, mustGO);
+        DroneBusinessObject.goTo(drone, mustGO);
 
 
 //        DroneBusinessObject.getInstance().checkStatus(drone);

@@ -1,4 +1,3 @@
-
 package wrappers;
 
 import controller.DroneController;
@@ -11,11 +10,11 @@ import view.CellView;
 import view.drone.DroneView;
 import util.Wrapper;
 
-public aspect Wrapper2 {
-
+public aspect Wrapper3 {
 
     pointcut safeLanding(): call (* model.entity.drone.DroneBusinessObject.safeLanding(*));
     pointcut returnToHome() : call (void model.entity.drone.DroneBusinessObject.returnToHome(*));
+    pointcut applyEconomyMode() : call (void model.entity.drone.DroneBusinessObject.applyEconomyMode(*));
 
     //estou testando isso aqui só para automático, pode ser que no manual eu tenho que lidar com mais threads
     before(): safeLanding()
@@ -29,7 +28,7 @@ public aspect Wrapper2 {
 
             &&
 
-            (((Drone)thisJoinPoint.getArgs()[0]).getWrapper() == Wrapper.Wrapper2)
+            (((Drone)thisJoinPoint.getArgs()[0]).getWrapper() == Wrapper.Wrapper3)
 
             ){
         moveASide(thisJoinPoint);
@@ -43,7 +42,7 @@ public aspect Wrapper2 {
             &&
             (((Drone)thisJoinPoint.getArgs()[0]).isStrongWind())
             &&
-            (((Drone)thisJoinPoint.getArgs()[0]).getWrapper() == Wrapper.Wrapper2)
+            (((Drone)thisJoinPoint.getArgs()[0]).getWrapper() == Wrapper.Wrapper3)
             ){
 
         keepFlying(thisJoinPoint);
@@ -58,7 +57,7 @@ public aspect Wrapper2 {
             &&
             (((Drone)thisJoinPoint.getArgs()[0]).getCurrentBattery() > 10)
             &&
-            (((Drone)thisJoinPoint.getArgs()[0]).getWrapper() == Wrapper.Wrapper2)
+            (((Drone)thisJoinPoint.getArgs()[0]).getWrapper() == Wrapper.Wrapper3)
             ){
         glide(thisJoinPoint);
     }
@@ -77,7 +76,7 @@ public aspect Wrapper2 {
 
         while (drone.isOnWater()) {
             String goDirection = DroneBusinessObject.closeDirection(droneView.getCurrentCellView(), closerLandCellView);
-           // drone.setEconomyMode(false);
+            // drone.setEconomyMode(false);
             DroneBusinessObject.goTo(drone, goDirection);
         }
 
@@ -95,16 +94,16 @@ public aspect Wrapper2 {
     pointcut goDestinyAutomatic() : call (void controller.DroneAutomaticController.goDestinyAutomatic(*));
 
     void around(): goDestinyAutomatic()
-    && if(
+            && if(
             (isGlide == true)
             &&
             (((Drone)thisJoinPoint.getArgs()[0]).isBadConnection())
-    )
-           {
+            )
+            {
 
-               //jump goDestinyAutomatic while is glide
+                //jump goDestinyAutomatic while is glide
 
-    }
+            }
 
     private void glide(JoinPoint thisJoinPoint) {
         Drone drone = (Drone) thisJoinPoint.getArgs()[0];
@@ -113,8 +112,20 @@ public aspect Wrapper2 {
         isGlide = true;
     }
 
+    void around(): applyEconomyMode()
+            &&
+            if(
+            (((Drone)thisJoinPoint.getArgs()[0]).getWrapper() == Wrapper.Wrapper3)
+            ){
 
+        notinueNormalMode(thisJoinPoint);
+    }
+
+    private void notinueNormalMode(JoinPoint thisJoinPoint) {
+        Drone drone = (Drone) thisJoinPoint.getArgs()[0];
+        System.out.println("Drone["+drone.getLabel()+"] "+" Continue Normal Mode");
+        LoggerController.getInstance().print("Drone["+drone.getLabel()+"] "+"Continue Normal Mode");
+    }
 
 
 }
-

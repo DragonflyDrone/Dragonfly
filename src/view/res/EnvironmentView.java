@@ -84,7 +84,7 @@ public class EnvironmentView {
 
    /* public CellView getCellFrom(int i, int j){
         for(CellView cellView : getCellViews()){
-            if(cellView.getRowPosition() == i && cellView.getCollunmPosition() == j){
+            if(cellView.getInitialRowPosition() == i && cellView.getInitialCollunmPosition() == j){
                 return cellView;
             }
         }

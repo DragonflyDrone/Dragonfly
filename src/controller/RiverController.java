@@ -1,5 +1,6 @@
 package controller;
 
+import javafx.scene.Node;
 import javafx.scene.input.KeyEvent;
 import model.entity.River;
 import view.CellView;
@@ -102,5 +103,15 @@ public class RiverController {
         for(River river : riverMap.values()){
             river.setSelected(false);
         }
+    }
+
+    public RiverView getRiverViewFrom(SelectableView selectedSelectableView) {
+
+        for(Node node :((CellView) selectedSelectableView).getChildren()){
+            if(node instanceof RiverView){
+                return (RiverView)node;
+            }
+        }
+        return null;
     }
 }
