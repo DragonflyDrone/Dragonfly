@@ -2,6 +2,7 @@ package model.entity;
 
 
 
+import javax.xml.bind.annotation.XmlElement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,9 +15,10 @@ public class River extends Entity{
     private List<Listener> listeners = new ArrayList<>();
 
     public River(String uniqueID, int rowPosition, int collunmPosition) {
-        this.rowPosition = rowPosition;
-        this.collunmPosition = collunmPosition;
-        this.uniqueID = uniqueID;
+        setUniqueID(uniqueID);
+        setRowPosition(rowPosition);
+        setCollunmPosition(collunmPosition);
+
         COUNT_RIVER++;
     }
 
@@ -29,6 +31,7 @@ public class River extends Entity{
         return collunmPosition;
     }
 
+    @XmlElement
     public void setCollunmPosition(int collunmPosition) {
         this.collunmPosition = collunmPosition;
     }
@@ -37,6 +40,7 @@ public class River extends Entity{
         return rowPosition;
     }
 
+    @XmlElement
     public void setRowPosition(int rowPosition) {
         this.rowPosition = rowPosition;
     }
@@ -45,10 +49,17 @@ public class River extends Entity{
         return uniqueID;
     }
 
+    @XmlElement
+    public void setUniqueID(String uniqueID) {
+        this.uniqueID = uniqueID;
+    }
+
     public Boolean getSelected() {
         return selected;
     }
 
+
+    @XmlElement
     public void setSelected(boolean selected) {
         boolean oldValue = this.selected;
         boolean newValue = selected;
@@ -68,6 +79,7 @@ public class River extends Entity{
     public void addListener(Listener listener) {
         this.listeners.add(listener);
     }
+
     private void notifiesListeners(String attributeName, Object oldValue, Object newValue){
 
         synchronized (this){

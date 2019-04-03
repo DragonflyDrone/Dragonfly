@@ -31,6 +31,9 @@ public class Drone extends Entity {
 
     private Boolean isTookOff = false;
 
+    private Boolean landing = false;
+    private Boolean landed = false;
+
     private Boolean isBadConnection = false;
 
 
@@ -85,10 +88,6 @@ public class Drone extends Entity {
         return !isStarted();
     }
 
-    public boolean isLading(){
-        return !isTookOff();
-    }
-
     public boolean isNormalMode(){
         return !isEconomyMode();
     }
@@ -119,6 +118,28 @@ public class Drone extends Entity {
 
     }
 */
+
+    public Boolean getLanding() {
+        return landing;
+    }
+
+    public void setLanding(Boolean landing) {
+        boolean oldValue = this.landing;
+        boolean newValue = landing;
+
+        if(oldValue == newValue){
+            return;
+        }
+
+        this.landing = landing;
+
+        notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
+    }
+
+    public Boolean getLanded() {
+        return !isTookOff;
+    }
+
 
     public Wrapper getWrapper() {
         return wrapper;

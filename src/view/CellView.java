@@ -33,6 +33,8 @@ public class CellView extends Pane implements SelectableView, Cell.Listener {
         this.rowPosition = cell.getRowPosition();
         this.collunmPosition = cell.getCollunmPosition();
 
+        
+
         getChildren().addListener((ListChangeListener<Node>) c -> {
             c.next();
             if(c.wasAdded()){

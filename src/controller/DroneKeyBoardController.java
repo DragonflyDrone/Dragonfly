@@ -72,6 +72,7 @@ public class DroneKeyBoardController extends DroneController {
 
                 if(selectedDrone.isTookOff()){
                     DroneBusinessObject.landing(selectedDrone);
+                    DroneBusinessObject.landed(selectedDrone);
 
                 }else {
                     DroneBusinessObject.takeOff(selectedDrone);

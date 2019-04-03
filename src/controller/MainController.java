@@ -95,24 +95,7 @@ public class MainController extends Application {
         AnchorPane rootAnchorPane = loader.load();
         primaryStage.setTitle("Dragonfly Simulator");
 
-        MenuBar menuBar = new MenuBar();
-        VBox vBox = new VBox(menuBar);
-        Menu menuExamples = new Menu("Menu");
-        MenuItem exampleLodonMenuItem = new MenuItem("SEAMS Paper Example");
-        menuExamples.getItems().add(exampleLodonMenuItem);
-        menuBar.getMenus().add(menuExamples);
-        rootAnchorPane.getChildren().add(menuBar);
-
-        exampleLodonMenuItem.setOnAction(event -> {
-         environmentController.consumeCleanEnverionment();
-
-            running = false;
-
-            enableEnvironmentSettingViews();
-
-           // environmentController.addExampleLondon();
-        });
-
+        MenuController menuControler = new MenuController(rootAnchorPane, primaryStage);
 
         Scene scene = new Scene(rootAnchorPane, 903, 705);
 

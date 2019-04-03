@@ -139,7 +139,7 @@ public aspect Wrapper1 {
 //                    for(Thread thread: threadList) {
 //                    if (thread.getName().equals("Timer-0")) {
 //                        try {
-//                            thread.join();
+//                            thread.join(a);
 //                        } catch (InterruptedException e) {
 //                            e.printStackTrace();
 //                        }

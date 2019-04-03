@@ -6,19 +6,20 @@ import javafx.scene.shape.Rectangle;
 import model.entity.River;
 import util.SelectHelper;
 import view.CellView;
+import view.SelectableView;
 
 
 public class RiverViewImpl extends RiverView implements River.Listener{
     private final CellView currentCellView;
-    SelectHelper selectHelper = new SelectHelper(Color.RED);
+    SelectHelper selectHelper = new SelectHelper(SelectHelper.DEFAULT_COLOR);
 
     public RiverViewImpl(String uniqueID, CellView currentCellView) {
         this.uniqueID = uniqueID;
 
         Rectangle rectangle = new Rectangle( 30, 30);
-        rectangle.setStroke(Color.BLUE);
+        rectangle.setStroke(Color.LIGHTBLUE);
         rectangle.setStrokeWidth(1);
-        rectangle.setFill(Color.BLUE);
+        rectangle.setFill(Color.LIGHTBLUE);
 
         this.getChildren().add(rectangle);
 

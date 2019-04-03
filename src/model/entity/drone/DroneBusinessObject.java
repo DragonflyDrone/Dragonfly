@@ -13,7 +13,6 @@ import java.util.List;
 import java.util.Random;
 import java.util.TimerTask;
 import java.util.concurrent.ScheduledExecutorService;
-import java.util.logging.Logger;
 
 public class DroneBusinessObject {
     private static StopWatch returnToHomeStopWatch;
@@ -54,7 +53,7 @@ public class DroneBusinessObject {
         return true;
     }
 
-    public static boolean landing(Drone selectedDrone) {
+    public static boolean landed(Drone selectedDrone) {
 
         selectedDrone.setIsTookOff(false);
 
@@ -175,25 +174,21 @@ public class DroneBusinessObject {
 
     public static boolean safeLanding(Drone selectedDrone) {
         selectedDrone.setIsSafeland(true);
-        selectedDrone.setIsTookOff(false);
 
-        return shutDown(selectedDrone);
+
+        return true;
 
     }
 
 
     public static void checkStatus(Drone selectedDrone) {
 
-        if (selectedDrone.isLading()) {
-            return;
-        }
-
         if (selectedDrone.isShutDown()) {
             return;
         }
 
 
-        System.out.println("checkStatus inicio, Drone " + selectedDrone.getLabel() + " " + Thread.currentThread().getName());
+
         // System.out.println(selectedDrone.toString());
 
         KeyCode flyDirectionCommand = selectedDrone.getFlyDirectionCommand();
@@ -226,13 +221,34 @@ public class DroneBusinessObject {
 
             // stopReturnToHome();
             //returnToHomeStopWatch.stop();
-            mustStopReturnToHomeStopWatch = true;
-            landing(selectedDrone);
 
-            shutDown(selectedDrone);
 
-            selectedDrone.setGoingAutomaticToDestiny(false);
-            selectedDrone.setGoingManualToDestiny(false);
+            boolean landingExecuted = landing(selectedDrone);
+            if(landingExecuted){
+
+                boolean landedExecuted =  landed(selectedDrone);
+
+                if(landedExecuted){
+                    boolean shutDownExecuted = shutDown(selectedDrone);
+
+                    if(shutDownExecuted){
+
+                        mustStopReturnToHomeStopWatch = true;
+
+                        selectedDrone.setGoingAutomaticToDestiny(false);
+                        selectedDrone.setGoingManualToDestiny(false);
+
+                        checkAndPrintIfLostDrone(selectedDrone);
+
+                    }
+
+
+                }
+
+
+            }
+
+
 
 
         }
@@ -244,38 +260,88 @@ public class DroneBusinessObject {
         if (selectedDrone.getCurrentBattery() <= 10 && selectedDrone.getDistanceHospitalDestiny() > 0
                 && !selectedDrone.isSafeLand()) {
 
-            //  stopGoAutomaticDestiny();
-            if (selectedDrone.isReturningToHome()) {
-                mustStopReturnToHomeStopWatch = true;
-                //returnToHomeStopWatch.stop();
+            //SafeLanding
+            boolean safeLandingExecuted = safeLanding(selectedDrone);
+
+            if(safeLandingExecuted){
+                boolean landingExecuted = landing(selectedDrone);
+                if(landingExecuted){
+
+                    boolean landedExecuted =  landed(selectedDrone);
+
+                    if(landedExecuted){
+
+                        boolean shutDownExecuted = shutDown(selectedDrone);
+
+                        if(shutDownExecuted){
+
+                            if (selectedDrone.isReturningToHome()) {
+                                mustStopReturnToHomeStopWatch = true;
+
+                            }
+                            selectedDrone.setGoingAutomaticToDestiny(false);
+                            selectedDrone.setGoingManualToDestiny(false);
+
+                            checkAndPrintIfLostDrone(selectedDrone);
+                        }
+
+
+                    }
+
+
+                }
             }
 
 
-            selectedDrone.setGoingAutomaticToDestiny(false);
-            selectedDrone.setGoingManualToDestiny(false);
-
-
-            safeLanding(selectedDrone);
 
 
         }
 
         if (selectedDrone.getDistanceHospitalDestiny() == 0) {
+            //arrived at destination
+            boolean landingExecuted = landing(selectedDrone);
+            if(landingExecuted){
 
-            // stopGoAutomaticDestiny();
+                boolean landedExecuted =  landed(selectedDrone);
 
-            selectedDrone.setGoingAutomaticToDestiny(false);
-            selectedDrone.setGoingManualToDestiny(false);
+                if(landedExecuted){
 
-            landing(selectedDrone);
+                    boolean shutDownExecuted = shutDown(selectedDrone);
 
-            shutDown(selectedDrone);
+                    if(shutDownExecuted){
+
+                        if (selectedDrone.isReturningToHome()) {
+
+                            selectedDrone.setGoingAutomaticToDestiny(false);
+                            selectedDrone.setGoingManualToDestiny(false);
+
+
+                        }
+
+                        checkAndPrintIfLostDrone(selectedDrone);
+
+                    }
+
+
+                }
+
+
+            }
+
+
+
 
 
         }
 
-        System.out.println("checkStatus fim " + Thread.currentThread().getName());
 
+
+    }
+
+    public static boolean landing(Drone selectedDrone) {
+        selectedDrone.setLanding(true);
+
+        return true;
     }
 
     public static void flyingDown(Drone selectedDrone) {
@@ -971,6 +1037,7 @@ public class DroneBusinessObject {
         currentDrone.setIsSafeland(false);
         currentDrone.setIsTookOff(false);
         currentDrone.setStarted(false);
+        currentDrone.setLanding(false);
         currentDrone.setDistanceHospitalSource(calculeteDistanceFrom(currentDrone, currentDrone.getSourceHospital()));
         currentDrone.setDistanceHospitalDestiny(calculeteDistanceFrom(currentDrone, currentDrone.getDestinyHopistal()));
         mustStopReturnToHomeStopWatch = true;
@@ -980,6 +1047,39 @@ public class DroneBusinessObject {
 
         //stopGoAutomaticDestiny();
         // stopReturnToHome();
+
+
+    }
+
+
+    static public void checkAndPrintIfLostDrone(Drone drone) {
+
+        // System.out.println(ANSI_RED + "drone.getDistanceHospitalDestiny():"+ drone.getDistanceHospitalDestiny() + ANSI_RESET );
+
+        if (drone.isReturningToHome() && drone.getDistanceHospitalSource() == 0) {
+            System.out.println("Drone[" + drone.getLabel() + "] " + "Return to home completed successfully");
+            LoggerController.getInstance().print("Drone[" + drone.getLabel() + "] " + "Return to home completed successfully");
+            return;
+        }
+        if (drone.getDistanceHospitalDestiny() == 0) {
+            System.out.println("Drone[" + drone.getLabel() + "] " + "Arrived at destination");
+            LoggerController.getInstance().print("Drone[" + drone.getLabel() + "] " + "Arrived at destination");
+            return;
+        }
+
+       /* if(drone.isGoingManualToDestiny()){
+            System.out.println("Drone["+getDroneLabel()+"] "+"Arrived at destination");
+            loggerController.print("Drone["+getDroneLabel()+"] "+"Arrived at destination");
+            return;
+        }*/
+
+        if (drone.isOnWater()) {
+            System.out.println("Drone[" + drone.getLabel() + "] " + "Drone landed on water");
+            LoggerController.getInstance().print("Drone[" + drone.getLabel() + "] " + "Drone landed on water");
+        } else {
+            System.out.println("Drone[" + drone.getLabel() + "] " + "Drone landed successfully");
+            LoggerController.getInstance().print("Drone[" + drone.getLabel() + "] " + "Drone landed successfully");
+        }
 
 
     }

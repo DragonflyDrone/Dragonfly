@@ -16,7 +16,7 @@ import view.river.RiverView;
 import util.Wrapper;
 import java.util.*;
 
-public aspect Wrapper4 {
+public aspect Wrapper7 {
 
     pointcut safeLanding(): call (* model.entity.drone.DroneBusinessObject.safeLanding(*));
     pointcut returnToHome(): call (* model.entity.drone.DroneBusinessObject.returnToHome(*));
@@ -32,13 +32,13 @@ public aspect Wrapper4 {
     after(): safeLanding()
             &&
             if
-                    (
+            (
             (((Drone)thisJoinPoint.getArgs()[0]).isOnWater())
             &&
-            (((Drone)thisJoinPoint.getArgs()[0]).getWrapper() == Wrapper.Wrapper4)
+            (((Drone)thisJoinPoint.getArgs()[0]).getWrapper() == Wrapper.Wrapper7)
             ){
-        callBoat(thisJoinPoint);
-    }
+                callBoat(thisJoinPoint);
+            }
 
     boolean around(): safeLanding()
             &&
@@ -48,13 +48,13 @@ public aspect Wrapper4 {
             &&
             (((Drone)thisJoinPoint.getArgs()[0]).isStrongWind())
             &&
-            (((Drone)thisJoinPoint.getArgs()[0]).getWrapper() == Wrapper.Wrapper4)
+            (((Drone)thisJoinPoint.getArgs()[0]).getWrapper() == Wrapper.Wrapper7)
             ){
 
-        keepFlying(thisJoinPoint);
+                keepFlying(thisJoinPoint);
 
-        return false;
-    }
+                return false;
+            }
 
     void around(): returnToHome()
             &&
@@ -64,11 +64,11 @@ public aspect Wrapper4 {
             &&
             (((Drone)thisJoinPoint.getArgs()[0]).getCurrentBattery() > 10)
             &&
-            (((Drone)thisJoinPoint.getArgs()[0]).getWrapper() == Wrapper.Wrapper4)
+            (((Drone)thisJoinPoint.getArgs()[0]).getWrapper() == Wrapper.Wrapper7)
             ){
 
-        glide(thisJoinPoint);
-    }
+                glide(thisJoinPoint);
+            }
 
 
 
@@ -93,7 +93,7 @@ public aspect Wrapper4 {
     void around(): applyEconomyMode()
             &&
             if(
-            (((Drone)thisJoinPoint.getArgs()[0]).getWrapper() == Wrapper.Wrapper4)
+            (((Drone)thisJoinPoint.getArgs()[0]).getWrapper() == Wrapper.Wrapper7)
             ){
 
         notinueNormalMode(thisJoinPoint);
@@ -173,17 +173,17 @@ public aspect Wrapper4 {
             public void task() {
                 Platform.runLater(() -> {
 
-                if (CellController.getInstance().calculeteDistanceFrom(droneView.getCurrentCellView(), boatView.getCurrentCellView()) == 30 || gotDrone[0]) {
-                    gotDrone[0] = true;
-                    droneView.getCurrentCellView().getChildren().remove(droneView);
-                    BoatController.getInstance().goDestinyAutomatic(boatView, newCloserRiverView.getCurrentCellView());
+                    if (CellController.getInstance().calculeteDistanceFrom(droneView.getCurrentCellView(), boatView.getCurrentCellView()) == 30 || gotDrone[0]) {
+                        gotDrone[0] = true;
+                        droneView.getCurrentCellView().getChildren().remove(droneView);
+                        BoatController.getInstance().goDestinyAutomatic(boatView, newCloserRiverView.getCurrentCellView());
 
-                    DroneBusinessObject.landing(drone);
-                    DroneBusinessObject.landed(drone);
+                        DroneBusinessObject.landing(drone);
+                        DroneBusinessObject.landed(drone);
 
-                } else {
-                    BoatController.getInstance().goDestinyAutomatic(boatView, droneView.getCurrentCellView());
-                }
+                    } else {
+                        BoatController.getInstance().goDestinyAutomatic(boatView, droneView.getCurrentCellView());
+                    }
                 });
 
 

@@ -296,7 +296,7 @@ public class DroneAutomaticController extends DroneController {
     private void goDestinyAutomatic(Drone drone) {
         //essas tres condições são necessárias por causa do problema das threads
 
-        if(drone.isLading()){
+        if(drone.isSafeLand()){
             return;
         }
 

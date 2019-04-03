@@ -98,7 +98,6 @@ public class EnvironmentController {
         return instance;
     }
 
-    //esse método sempre acontece primeiro do que o método de baixo (PRIMEIRO)
     public void notifyMouseClick(CellView cellViewSelected) {
 
         MainController mainController = MainController.getInstance();
@@ -127,7 +126,6 @@ public class EnvironmentController {
 
     }
 
-    //(SEGUNDO)
     public void notifyOnKeyPressed(KeyEvent event, SelectableView selectableView) {
         this.keyEvent = event;
 

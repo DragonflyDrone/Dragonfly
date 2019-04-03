@@ -64,7 +64,7 @@
                   <Image url="@selectedDrone.png" />
                </image>
             </ImageView>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="blue" height="32.0" layoutX="12.0" layoutY="42.0" stroke="BLACK" strokeType="INSIDE" width="32.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ADD8E6" height="32.0" layoutX="12.0" layoutY="42.0" stroke="BLACK" strokeType="INSIDE" width="32.0" />
             <ToggleButton fx:id="antennaToggleButton" layoutX="134.0" layoutY="5.0" mnemonicParsing="false" text="Antenna" />
             <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="155.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
                <image>
