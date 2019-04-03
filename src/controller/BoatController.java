@@ -1,7 +1,7 @@
 package controller;
 
-import javafx.application.Platform;
 import javafx.scene.input.KeyEvent;
+import model.Cell;
 import model.entity.boat.Boat;
 import model.entity.boat.BoatBusinessObject;
 import util.StopWatch;
@@ -10,7 +10,6 @@ import view.SelectableView;
 import view.boat.BoatView;
 
 import java.util.HashMap;
-import java.util.IdentityHashMap;
 import java.util.Map;
 
 public class BoatController {
@@ -66,9 +65,11 @@ public class BoatController {
 
     public void consumeReset() {
         for (Boat boat : boatMap.values()) {
-            BoatBusinessObject.resetSettingsDrone(boat);
+            BoatBusinessObject.resetSettingsBoat(boat);
 
         }
+
+        lastCellViewMap.clear();
     }
 
     public void consumeClickEvent(SelectableView selectedEntityView ) {
@@ -107,22 +108,29 @@ public class BoatController {
             boat.setSelected(false);
         }
     }
+    //todo pog
+    Map<BoatView,CellView > lastCellViewMap = new HashMap<>();
 
     public void goDestinyAutomatic(BoatView boatView, CellView dstCellView) {
 
         CellView boatCellView = boatView.getCurrentCellView();
 
-        int oldI = boatCellView.getRowPosition();
-        int oldJ = boatCellView.getCollunmPosition();
-
-
+        int oldRownPosition = boatCellView.getRowPosition();
+        int oldCollunmPosition = boatCellView.getCollunmPosition();
+        CellView oldCellView =  boatCellView;
 
         double newDistanceDestiny = 999999;
         String mustGO = null;
 
-
-
         double tempDistance = BoatBusinessObject.distanceDroneWentRight(boatCellView, dstCellView);
+
+        //avoid return last cellView
+        Cell cell = CellController.getInstance().getCellFrom(oldRownPosition, oldCollunmPosition+1);
+        CellView cellView = CellController.getInstance().getCellViewFrom(cell);
+
+        if(lastCellViewMap.get(boatView) == cellView){
+            tempDistance = 999999;
+        }
 
         if (tempDistance < newDistanceDestiny) {
             newDistanceDestiny = tempDistance;
@@ -130,6 +138,13 @@ public class BoatController {
         }
 
         tempDistance = BoatBusinessObject.distanceDroneWentLeft(boatCellView, dstCellView);
+
+         cell = CellController.getInstance().getCellFrom(oldRownPosition, oldCollunmPosition-1);
+         cellView = CellController.getInstance().getCellViewFrom(cell);
+
+        if(lastCellViewMap.get(boatView) == cellView){
+            tempDistance = 999999;
+        }
 
         if (tempDistance < newDistanceDestiny) {
             newDistanceDestiny = tempDistance;
@@ -139,6 +154,13 @@ public class BoatController {
 
         tempDistance = BoatBusinessObject.distanceDroneWentUp(boatCellView, dstCellView);
 
+        cell = CellController.getInstance().getCellFrom(oldRownPosition-1, oldCollunmPosition);
+        cellView = CellController.getInstance().getCellViewFrom(cell);
+
+        if(lastCellViewMap.get(boatView) == cellView){
+            tempDistance = 999999;
+        }
+
         if (tempDistance < newDistanceDestiny) {
             newDistanceDestiny = tempDistance;
             mustGO = "/\\";
@@ -147,12 +169,20 @@ public class BoatController {
 
         tempDistance = BoatBusinessObject.distanceDroneWentDown(boatCellView, dstCellView);
 
+        cell = CellController.getInstance().getCellFrom(oldRownPosition+1, oldCollunmPosition);
+        cellView = CellController.getInstance().getCellViewFrom(cell);
+
+        if(lastCellViewMap.get(boatView) == cellView){
+            tempDistance = 999999;
+        }
+
         if (tempDistance < newDistanceDestiny) {
             newDistanceDestiny = tempDistance;
             mustGO = "\\/";
 
         }
         Boat boat = getBoatFrom(boatView.getUniqueID());
+        lastCellViewMap.put(boatView, oldCellView);
         BoatBusinessObject.goTo(boat, mustGO);
 
 

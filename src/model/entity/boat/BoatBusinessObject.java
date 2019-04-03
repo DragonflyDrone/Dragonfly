@@ -3,9 +3,12 @@ package model.entity.boat;
 import controller.CellController;
 import controller.EnvironmentController;
 import view.CellView;
+import view.boat.BoatView;
 import view.river.RiverView;
 
 import javax.xml.soap.Node;
+import java.util.HashMap;
+import java.util.Map;
 
 public abstract class BoatBusinessObject {
 
@@ -114,6 +117,9 @@ public abstract class BoatBusinessObject {
         return CellController.getInstance().calculeteDistanceFrom(initialRowPosition, initialCollunmPosition, finalRowPosition, finalCollunmPosition);
     }
 
+    //todo pog
+    Map<BoatView,CellView > lastCellViewMap = new HashMap<>();
+
     public static void goTo(Boat boat, String mustGO) {
 
             switch (mustGO) {
@@ -215,7 +221,7 @@ public abstract class BoatBusinessObject {
         boat.setCurrentCollunmPosition(newJ);
     }
 
-    public static void resetSettingsDrone(Boat boat) {
+    public static void resetSettingsBoat(Boat boat) {
         boat.setCurrentRowPosition(boat.getInitialRowPosition());
         boat.setCurrentCollunmPosition(boat.getInitialCollunmPosition());
         boat.setStarted(false);
