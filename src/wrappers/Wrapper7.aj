@@ -23,8 +23,8 @@ public aspect Wrapper7 {
     pointcut landing(): call (* model.entity.drone.DroneBusinessObject.landing(*));
     pointcut resetSettingsDrone(): call (void model.entity.drone.DroneBusinessObject.resetSettingsDrone(*));
     pointcut goDestinyAutomatic(): call (void controller.DroneAutomaticController.goDestinyAutomatic(*));
-
-
+    //tirar esse pointcut, eu só deixei para fazer o around do eco. mode para eu não precisar remover esse do cod. do drone
+    pointcut applyEconomyMode() : call (void model.entity.drone.DroneBusinessObject.applyEconomyMode(*));
 
     //todo esses wrappers não foram testados para vários drones no mesmo ambiente
     private static boolean isGlide = false;
@@ -150,6 +150,7 @@ public aspect Wrapper7 {
         Drone drone = (Drone) thisJoinPoint.getArgs()[0];
 
         DroneView droneView = DroneController.getInstance().getDroneViewFrom(drone.getUniqueID());
+
         BoatView boatView = getCloserBoatFromDrone(droneView);
 
         if(CellController.getInstance().calculeteDistanceFrom(droneView.getCurrentCellView(),
@@ -283,6 +284,15 @@ public aspect Wrapper7 {
 
 
         return closerRiverView;
+    }
+
+    void around(): applyEconomyMode()
+            &&
+            if(
+            (((Drone)thisJoinPoint.getArgs()[0]).getWrapper() == Wrapper.Wrapper3)
+            ){
+
+        //       notinueNormalMode(thisJoinPoint);
     }
 
 }

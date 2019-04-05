@@ -254,7 +254,7 @@ public class DroneBusinessObject {
         }
 
         if (selectedDrone.getCurrentBattery() <= 15 && selectedDrone.isNormalMode()) {
-            applyEconomyMode(selectedDrone);
+           // applyEconomyMode(selectedDrone);
         }
 
         if (selectedDrone.getCurrentBattery() <= 10 && selectedDrone.getDistanceHospitalDestiny() > 0

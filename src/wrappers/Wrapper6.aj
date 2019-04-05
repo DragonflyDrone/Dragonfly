@@ -22,6 +22,9 @@ public aspect Wrapper6 {
     pointcut returnToHome(): call (* model.entity.drone.DroneBusinessObject.returnToHome(*));
     pointcut goDestinyAutomatic(): call (void controller.DroneAutomaticController.goDestinyAutomatic(*));
 
+    //tirar esse pointcut, eu só deixei para fazer o around do eco. mode para eu não precisar remover esse do cod. do drone
+    pointcut applyEconomyMode() : call (void model.entity.drone.DroneBusinessObject.applyEconomyMode(*));
+
     private static boolean isGlide = false;
 
     public static Set<Drone> dronesAreGlide = new HashSet<>();
@@ -84,6 +87,16 @@ public aspect Wrapper6 {
         LoggerController.getInstance().print("Drone[" + drone.getLabel() + "] " + "Glide");
         dronesAreGlide.add(drone);
     }
+
+    void around(): applyEconomyMode()
+            &&
+            if(
+            (((Drone)thisJoinPoint.getArgs()[0]).getWrapper() == Wrapper.Wrapper4)
+            ){
+
+        /* notinueNormalMode(thisJoinPoint);*/
+    }
+
 
 
 }

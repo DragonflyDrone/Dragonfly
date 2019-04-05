@@ -20,6 +20,9 @@ public aspect Wrapper5 {
 
     pointcut safeLanding(): call (* model.entity.drone.DroneBusinessObject.safeLanding(*));
 
+    //tirar esse pointcut, eu só deixei para fazer o around do eco. mode para eu não precisar remover esse do cod. do drone
+    pointcut applyEconomyMode() : call (void model.entity.drone.DroneBusinessObject.applyEconomyMode(*));
+
     boolean around(): safeLanding()
             &&
             if
@@ -34,6 +37,15 @@ public aspect Wrapper5 {
         keepFlying(thisJoinPoint);
 
         return false;
+    }
+
+    void around(): applyEconomyMode()
+            &&
+            if(
+            (((Drone)thisJoinPoint.getArgs()[0]).getWrapper() == Wrapper.Wrapper4)
+            ){
+
+        /* notinueNormalMode(thisJoinPoint);*/
     }
 
 

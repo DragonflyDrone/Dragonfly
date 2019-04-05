@@ -362,10 +362,10 @@ public class DroneAutomaticController extends DroneController {
 
 
     private boolean allTheDronesAreShutDown() {
-        boolean isShutdown = false;
+        boolean isShutdown = true;
 
         for (Drone drone : droneMap.values()) {
-            isShutdown = isShutdown || drone.isShutDown();
+            isShutdown = isShutdown && drone.isShutDown();
         }
 
         return isShutdown;
