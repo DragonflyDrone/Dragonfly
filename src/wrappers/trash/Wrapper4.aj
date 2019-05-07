@@ -1,30 +1,30 @@
-package wrappers;
+/*
+package wrappers.trash;
 
 import controller.*;
 import javafx.application.Platform;
-import model.entity.Hospital;
 import model.entity.drone.Drone;
 import model.entity.drone.DroneBusinessObject;
 import org.aspectj.lang.JoinPoint;
 import util.StopWatch;
-import util.Wrapper;
+import view.CellView;
 import view.boat.BoatView;
 import view.drone.DroneView;
-import view.hospital.HospitalView;
 import view.river.RiverView;
 
 import java.util.*;
 
-public aspect Wrapper7 {
+public aspect Wrapper4 {
 
     pointcut safeLanding(): call (* model.entity.drone.DroneBusinessObject.safeLanding(*));
     pointcut returnToHome(): call (* model.entity.drone.DroneBusinessObject.returnToHome(*));
     pointcut updateBatteryPerSecond(): call (* model.entity.drone.DroneBusinessObject.updateBatteryPerSecond(*));
+    pointcut applyEconomyMode(): call (* model.entity.drone.DroneBusinessObject.applyEconomyMode(*));
     pointcut landing(): call (* model.entity.drone.DroneBusinessObject.landing(*));
     pointcut resetSettingsDrone(): call (void model.entity.drone.DroneBusinessObject.resetSettingsDrone(*));
     pointcut goDestinyAutomatic(): call (void controller.DroneAutomaticController.goDestinyAutomatic(*));
-    //tirar esse pointcut, eu só deixei para fazer o around do eco. mode para eu não precisar remover esse do cod. do drone
-    pointcut applyEconomyMode() : call (void model.entity.drone.DroneBusinessObject.applyEconomyMode(*));
+
+
 
     //todo esses wrappers não foram testados para vários drones no mesmo ambiente
     private static boolean isGlide = false;
@@ -38,57 +38,57 @@ public aspect Wrapper7 {
     after(): safeLanding()
             &&
             if
-            (
+                    (
             (((Drone)thisJoinPoint.getArgs()[0]).isOnWater())
             &&
-            (((Drone)thisJoinPoint.getArgs()[0]).getWrapper() == Wrapper.Wrapper7)
+            (((Drone)thisJoinPoint.getArgs()[0]).getWrapperId() == 4)
             ){
-                callBoat(thisJoinPoint);
+        callBoat(thisJoinPoint);
 
-            }
+    }
 
     boolean around(): safeLanding()
             &&
             if
-            (
-            (((Drone)thisJoinPoint.getArgs()[0]).getDistanceHospitalDestiny() <=60)
+                    (
+            (((Drone)thisJoinPoint.getArgs()[0]).getDistanceDestiny() <=60)
             &&
             (((Drone)thisJoinPoint.getArgs()[0]).isStrongWind())
             &&
-            (((Drone)thisJoinPoint.getArgs()[0]).getWrapper() == Wrapper.Wrapper7)
+            (((Drone)thisJoinPoint.getArgs()[0]).getWrapperId() == 4)
             ){
 
-                keepFlying(thisJoinPoint);
+        keepFlying(thisJoinPoint);
 
-                return false;
-            }
+        return false;
+    }
 
-            boolean around(): landing()
+    boolean around(): landing()
             &&
             if(
             (dronesAreWaitBoatInSet.contains(((Drone)thisJoinPoint.getArgs()[0])) == true)
             &&
-            (((Drone)thisJoinPoint.getArgs()[0]).getWrapper() == Wrapper.Wrapper7)
+            (((Drone)thisJoinPoint.getArgs()[0]).getWrapperId() == 4)
             ){
-                // pass o landing when drone are waiting boat
-                return false;
-            }
+        // pass o landing when drone are waiting boat
+        return false;
+    }
 
-            void around(): updateBatteryPerSecond()
+    void around(): updateBatteryPerSecond()
             &&
             if(
             (dronesAreWaitBoatInSet.contains(((Drone)thisJoinPoint.getArgs()[0])) == true)
             &&
-            (((Drone)thisJoinPoint.getArgs()[0]).getWrapper() == Wrapper.Wrapper7)
+            (((Drone)thisJoinPoint.getArgs()[0]).getWrapperId() == 4)
             ){
-                // pass o updateBatteryPerSecond when drone are waiting boat
+        // pass o updateBatteryPerSecond when drone are waiting boat
 
-            }
+    }
 
-         after(): resetSettingsDrone()
+    after(): resetSettingsDrone()
             &&
             if(
-            (((Drone)thisJoinPoint.getArgs()[0]).getWrapper() == Wrapper.Wrapper7)
+            (((Drone)thisJoinPoint.getArgs()[0]).getWrapperId() == 4)
             &&(
             (dronesAreWaitBoatInSet.contains(((Drone)thisJoinPoint.getArgs()[0])) == true)
             ||
@@ -96,23 +96,23 @@ public aspect Wrapper7 {
             )
             )
             {
-             reset = true;
-    }
+                reset = true;
+            }
 
 
     void around(): returnToHome()
             &&
             if
                     (
-            (((Drone)thisJoinPoint.getArgs()[0]).getDistanceHospitalDestiny() < ((Drone)thisJoinPoint.getArgs()[0]).getDistanceHospitalSource())
+            (((Drone)thisJoinPoint.getArgs()[0]).getDistanceDestiny() < ((Drone)thisJoinPoint.getArgs()[0]).getDistanceSource())
             &&
             (((Drone)thisJoinPoint.getArgs()[0]).getCurrentBattery() > 10)
             &&
-            (((Drone)thisJoinPoint.getArgs()[0]).getWrapper() == Wrapper.Wrapper7)
+            (((Drone)thisJoinPoint.getArgs()[0]).getWrapperId() == 4)
             ){
 
-                glide(thisJoinPoint);
-            }
+        glide(thisJoinPoint);
+    }
 
 
 
@@ -134,6 +134,17 @@ public aspect Wrapper7 {
     }
 
 
+    void around(): applyEconomyMode()
+            &&
+            if(
+            (((Drone)thisJoinPoint.getArgs()[0]).getWrapperId() == 4)
+            ){
+
+       */
+/* notinueNormalMode(thisJoinPoint);*//*
+
+    }
+
 
     private void glide(JoinPoint thisJoinPoint) {
         Drone drone = (Drone) thisJoinPoint.getArgs()[0];
@@ -143,6 +154,14 @@ public aspect Wrapper7 {
     }
 
 
+   */
+/* private void notinueNormalMode(JoinPoint thisJoinPoint) {
+        Drone drone = (Drone) thisJoinPoint.getArgs()[0];
+        System.out.println("Drone[" + drone.getLabel() + "] " + " Continue Normal Mode");
+        LoggerController.getInstance().print("Drone[" + drone.getLabel() + "] " + "Continue Normal Mode");
+    }*//*
+
+
 
     private boolean callBoat(JoinPoint thisJoinPoint) {
 
@@ -150,10 +169,9 @@ public aspect Wrapper7 {
         Drone drone = (Drone) thisJoinPoint.getArgs()[0];
 
         DroneView droneView = DroneController.getInstance().getDroneViewFrom(drone.getUniqueID());
-
         BoatView boatView = getCloserBoatFromDrone(droneView);
 
-        if(CellController.getInstance().calculeteDistanceFrom(droneView.getCurrentCellView(),
+        if(CellController.getInstance().calculeteDisplacementFrom(droneView.getCurrentCellView(),
                 boatView.getCurrentCellView()) > 150){
             return false;
         }
@@ -175,13 +193,13 @@ public aspect Wrapper7 {
 
     private BoatView getCloserBoatFromDrone(DroneView droneView) {
 
-        BoatController boatController = BoatController.getInstance();
+        BoatAutomaticController boatAutomaticController = BoatAutomaticController.getInstance();
         CellController cellController = CellController.getInstance();
         Double closerDistance = 99999999D;
         BoatView closerBoatView = null;
 
-        for (BoatView boatView : boatController.getBoatViewMap().values()) {
-            double tempDistance = cellController.calculeteDistanceFrom(boatView, droneView);
+        for (BoatView boatView : boatAutomaticController.getBoatViewMap().values()) {
+            double tempDistance = cellController.calculeteDisplacementFrom(boatView, droneView);
 
             if (tempDistance < closerDistance) {
                 closerDistance = tempDistance;
@@ -196,8 +214,8 @@ public aspect Wrapper7 {
     private void recoveryDrone(BoatView boatView, DroneView droneView) {
 
         Drone drone = DroneController.getInstance().getDroneFrom(droneView.getUniqueID());
-        Hospital hospital = HospitalController.getInstance().getHospitalFrom(drone.getDestinyHopistal().getUniqueID());
-        HospitalView hospitalView = HospitalController.getInstance().getHospitalViewFrom(hospital.getUniqueID());
+        CellView destinyCellView = CellController.getInstance().getCellViewFrom(drone.getDestinyCell().getUniqueID());
+
 
         new StopWatch(0, 1000) {
 
@@ -206,7 +224,7 @@ public aspect Wrapper7 {
             public void task() {
                 Platform.runLater(() -> {
 
-                    if (!dronesAreOnBoatInSet.contains(drone) && CellController.getInstance().calculeteDistanceFrom(droneView.getCurrentCellView(), boatView.getCurrentCellView()) == 30) {
+                    if (!dronesAreOnBoatInSet.contains(drone) && CellController.getInstance().calculeteDisplacementFrom(droneView.getCurrentCellView(), boatView.getCurrentCellView()) == 30) {
                         // boat catch drone
                         droneView.getCurrentCellView().getChildren().remove(droneView);
                         System.out.println("Boat[" + boatView.getBoatLabel() + "] " + " Recovered Drone ["+drone.getLabel()+"]");
@@ -219,19 +237,19 @@ public aspect Wrapper7 {
 
                     } else if(!dronesAreOnBoatInSet.contains(drone)) {
                         // boat go drone
-                        BoatController.getInstance().goDestinyAutomatic(boatView, droneView.getCurrentCellView());
+                        BoatAutomaticController.getInstance().goDestinyAutomatic(boatView, droneView.getCurrentCellView());
 
                     }else {
                         //boat go hospital
 
-                        RiverView newCloserRiverView = getCloserRiverView(drone, hospitalView);
+                        RiverView newCloserRiverView = getCloserRiverView(drone, destinyCellView);
 
                         if(!lastCloserRiverViewInMap.containsKey(drone)){
                             lastCloserRiverViewInMap.put(drone, RiverController.getInstance().getRiverViewFrom(boatView.getCurrentCellView()));
                         }
 
 
-                        BoatController.getInstance().goDestinyAutomatic(boatView, newCloserRiverView.getCurrentCellView());
+                        BoatAutomaticController.getInstance().goDestinyAutomatic(boatView, newCloserRiverView.getCurrentCellView());
                     }
                 });
 
@@ -241,7 +259,7 @@ public aspect Wrapper7 {
 
             @Override
             public boolean conditionStop() {
-                if (CellController.getInstance().calculeteDistanceFrom(boatView.getCurrentCellView(), hospitalView) == 30) {
+                if (CellController.getInstance().calculeteDisplacementFrom(boatView.getCurrentCellView(), destinyCellView) == 30) {
 
                     dronesAreOnBoatInSet.remove(drone);
                     System.out.println("Drone[" + drone.getLabel() + "] " + "Arrived at Destination");
@@ -263,7 +281,7 @@ public aspect Wrapper7 {
     }
 
 
-    private RiverView getCloserRiverView(Drone drone, HospitalView hospitalView) {
+    private RiverView getCloserRiverView(Drone drone, CellView cellView) {
         CellController cellController = CellController.getInstance();
         RiverView closerRiverView = null;
         double closerDistance = 99999999D;
@@ -274,7 +292,7 @@ public aspect Wrapper7 {
                 continue;
             }
 
-            double tempDistance = cellController.calculeteDistanceFrom(riverView, hospitalView);
+            double tempDistance = cellController.calculeteDisplacementFrom(riverView, cellView);
 
             if (tempDistance < closerDistance) {
                 closerDistance = tempDistance;
@@ -286,13 +304,7 @@ public aspect Wrapper7 {
         return closerRiverView;
     }
 
-    void around(): applyEconomyMode()
-            &&
-            if(
-            (((Drone)thisJoinPoint.getArgs()[0]).getWrapper() == Wrapper.Wrapper3)
-            ){
 
-        //       notinueNormalMode(thisJoinPoint);
-    }
 
 }
+*/

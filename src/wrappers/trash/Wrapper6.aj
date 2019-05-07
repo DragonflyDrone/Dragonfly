@@ -1,4 +1,4 @@
-package wrappers;
+package wrappers.trash;
 
 import controller.*;
 import javafx.application.Platform;
@@ -13,7 +13,6 @@ import view.boat.BoatView;
 import view.drone.DroneView;
 import view.hospital.HospitalView;
 import view.river.RiverView;
-import util.Wrapper;
 import java.util.*;
 
 public aspect Wrapper6 {
@@ -34,11 +33,11 @@ public aspect Wrapper6 {
             &&
             if
                     (
-            (((Drone)thisJoinPoint.getArgs()[0]).getDistanceHospitalDestiny() <=60)
+            (((Drone)thisJoinPoint.getArgs()[0]).getDistanceDestiny() <=60)
             &&
             (((Drone)thisJoinPoint.getArgs()[0]).isStrongWind())
             &&
-            (((Drone)thisJoinPoint.getArgs()[0]).getWrapper() == Wrapper.Wrapper6)
+            (((Drone)thisJoinPoint.getArgs()[0]).getWrapperId() == 6)
             ){
 
                 keepFlying(thisJoinPoint);
@@ -50,11 +49,11 @@ public aspect Wrapper6 {
             &&
             if
                     (
-            (((Drone)thisJoinPoint.getArgs()[0]).getDistanceHospitalDestiny() < ((Drone)thisJoinPoint.getArgs()[0]).getDistanceHospitalSource())
+            (((Drone)thisJoinPoint.getArgs()[0]).getDistanceDestiny() < ((Drone)thisJoinPoint.getArgs()[0]).getDistanceSource())
             &&
             (((Drone)thisJoinPoint.getArgs()[0]).getCurrentBattery() > 10)
             &&
-            (((Drone)thisJoinPoint.getArgs()[0]).getWrapper() == Wrapper.Wrapper6)
+            (((Drone)thisJoinPoint.getArgs()[0]).getWrapperId() == 6)
             ){
 
                 glide(thisJoinPoint);
@@ -91,7 +90,7 @@ public aspect Wrapper6 {
     void around(): applyEconomyMode()
             &&
             if(
-            (((Drone)thisJoinPoint.getArgs()[0]).getWrapper() == Wrapper.Wrapper4)
+            (((Drone)thisJoinPoint.getArgs()[0]).getWrapperId() == 6)
             ){
 
         /* notinueNormalMode(thisJoinPoint);*/

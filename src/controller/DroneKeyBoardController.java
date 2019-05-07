@@ -222,12 +222,11 @@ public class DroneKeyBoardController extends DroneController {
 
 
     @Override
-    public Drone createDrone(String uniqueID, String droneLabel, Hospital sourceHospital,
-                             Hospital destinyHospital, CellView currentCellView) {
+    public Drone createDrone(String uniqueID, String droneLabel,
+                             CellView currentCellView) {
 
-
-        Drone drone  = new Drone(uniqueID, droneLabel,sourceHospital, destinyHospital, currentCellView.getRowPosition(),
-                currentCellView.getCollunmPosition());
+        Cell currentCell = CellController.getInstance().getCellFrom(currentCellView.getUniqueID());
+        Drone drone  = new Drone(uniqueID, droneLabel, currentCell);
 
         droneMap.put(uniqueID, drone);
 

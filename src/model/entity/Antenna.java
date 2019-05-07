@@ -6,16 +6,16 @@ import java.util.List;
 public class Antenna extends Entity{
     private final String uniqueID;
     private final String label;
-    Integer rowPosition =0, collunmPosition = 0;
+    Integer rowPosition =0, columnPosition = 0;
     public static Integer COUNT_ANTENNA = 1;
     private Boolean badConnection =false;
     private List<Listener> listeners = new ArrayList<>();
     private Boolean selected = false;
 
-    public Antenna(String uniqueID, String label, int rowPosition, int CollunmPosition) {
+    public Antenna(String uniqueID, String label, int rowPosition, int columnPosition) {
         this.uniqueID = uniqueID;
         this.rowPosition = rowPosition;
-        this.collunmPosition = CollunmPosition;
+        this.columnPosition = columnPosition;
         this.label = label;
         COUNT_ANTENNA++;
     }
@@ -44,16 +44,16 @@ public class Antenna extends Entity{
         notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
     }
 
-    public int getCollunmPosition() {
-        return collunmPosition;
+    public int getColumnPosition() {
+        return columnPosition;
     }
 
-    public void setCollunmPosition(int collunmPosition) {
+    public void setColumnPosition(int columnPosition) {
 
-        int oldValue = this.collunmPosition;
-        int newValue = collunmPosition;
+        int oldValue = this.columnPosition;
+        int newValue = columnPosition;
 
-        this.collunmPosition = collunmPosition;
+        this.columnPosition = columnPosition;
         notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
     }
 

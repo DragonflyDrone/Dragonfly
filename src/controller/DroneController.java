@@ -1,6 +1,7 @@
 package controller;
 
 import javafx.scene.input.KeyEvent;
+import model.Cell;
 import model.entity.Hospital;
 import model.entity.drone.Drone;
 import view.CellView;
@@ -62,8 +63,7 @@ public abstract class DroneController {
     abstract public void startUpdateBatteryPerSeconds();
 
 
-    public abstract Drone createDrone(String uniqueID, String droneLabel, Hospital sourceHospital,
-                                      Hospital destinyHospital, CellView currentCellView);
+    public abstract Drone createDrone(String uniqueID, String droneLabel,CellView currentCellView);
 
     public Map<String, DroneView> getDroneViewMap() {
         return droneViewMap;

@@ -1,6 +1,10 @@
 package model.entity.boat;
 
+import controller.CellController;
+import model.Cell;
 import model.entity.Entity;
+import view.CellView;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,12 +19,23 @@ public class Boat extends Entity {
     private String label;
     private boolean started = false;
 
-    public Boat(String uniqueID, String label, int initialRowPosition, int initialCollunmPosition) {
+    private Cell sourceCell = CellController.getInstance().getCellFrom(0,0);
+    private Cell destinyCell = CellController.getInstance().getCellFrom(0,0);
+    private Double distanceDestiny;
+    private Double distanceSource;
+    private boolean returnToHome = false;
+    private boolean stocked = false;
+    private List<CellView> route = new ArrayList<>();
+    private int wrapperId = 5;
+
+
+    public Boat(String uniqueID, String label, Cell sourceCell) {
         this.uniqueID = uniqueID;
-        this.initialRowPosition = initialRowPosition;
-        this.initialCollunmPosition = initialCollunmPosition;
-        this.currentRowPosition = initialRowPosition;
-        this.currentCollunmPosition = initialCollunmPosition;
+        this.initialRowPosition = sourceCell.getRowPosition();
+        this.initialCollunmPosition = sourceCell.getColumnPosition();
+        this.currentRowPosition = sourceCell.getRowPosition();
+        this.currentCollunmPosition = sourceCell.getColumnPosition();
+        this.sourceCell = sourceCell;
         this.label = label;
 
         COUNT_BOAT++;
@@ -28,6 +43,64 @@ public class Boat extends Entity {
 
     public static void restartCount() {
         COUNT_BOAT =1;
+    }
+
+    public void setReturnToHome(boolean returnToHome) {
+        boolean oldValue = this.returnToHome;
+        boolean newValue = returnToHome;
+
+        if(oldValue == returnToHome){
+            return;
+        }
+        this.returnToHome = returnToHome;
+
+        notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
+    }
+
+    public boolean isReturnToHome() {
+        return returnToHome;
+    }
+
+    public void setStocked(boolean stocked) {
+        boolean oldValue = this.stocked;
+        boolean newValue = stocked;
+
+        if(oldValue == newValue){
+            return;
+        }
+        this.stocked = stocked;
+
+        notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
+
+    }
+
+    public boolean isStocked() {
+        return stocked;
+    }
+
+    public void setRoute(List<CellView> route) {
+        this.route = route;
+    }
+
+    public List<CellView> getRoute() {
+        return route;
+    }
+
+    public int getWrapperId() {
+        return this.wrapperId;
+    }
+
+    public void setWrapperId(int wrapperId) {
+        int oldValue = this.wrapperId;
+        int newValue = wrapperId;
+
+        if(oldValue == newValue){
+            return;
+        }
+
+        this.wrapperId = wrapperId;
+
+        notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
     }
 
     public interface Listener {
@@ -47,7 +120,15 @@ public class Boat extends Entity {
     }
 
     public void setStarted(boolean started) {
+        boolean oldValue = this.started;
+        boolean newValue = started;
+
+        if(oldValue == newValue){
+            return;
+        }
         this.started = started;
+
+        notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
     }
 
     public boolean isShitDown() {
@@ -146,6 +227,75 @@ public class Boat extends Entity {
 
     public void setLabel(String label) {
         this.label = label;
+    }
+
+    public Cell getSourceCell() {
+        return sourceCell;
+    }
+
+    public void setSourceCell(Cell sourceCell) {
+        Cell oldValue = this.sourceCell;
+        Cell newValue = sourceCell;
+
+        this.sourceCell = sourceCell;
+
+        if(oldValue == newValue){
+            return;
+        }
+
+        notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
+    }
+
+    public Cell getDestinyCell() {
+        return destinyCell;
+    }
+
+    public void setDestinyCell(Cell destinyCell) {
+        Cell oldValue = this.destinyCell;
+        Cell newValue = destinyCell;
+
+        this.destinyCell = destinyCell;
+
+        if(oldValue == newValue){
+            return;
+        }
+
+        notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
+    }
+
+
+
+    public Double getDistanceDestiny() {
+        return distanceDestiny;
+    }
+
+    public void setDistanceDestiny(Double distanceDestiny) {
+        Double oldValue = this.distanceDestiny;
+        Double newValue = distanceDestiny;
+        this.distanceDestiny = distanceDestiny;
+
+        if(oldValue == newValue){
+            return;
+        }
+
+        notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
+    }
+
+    public void setDistanceSource(Double distanceSource) {
+        Double oldValue = this.distanceSource;
+        Double newValue = distanceSource;
+
+        if(oldValue == newValue){
+            return;
+        }
+
+        this.distanceSource = distanceSource;
+
+        notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
+    }
+
+    public Double getDistanceSource() {
+        return distanceSource;
     }
 
     public List<Listener> getListeners() {

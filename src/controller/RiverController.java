@@ -7,13 +7,14 @@ import view.CellView;
 import view.SelectableView;
 import view.river.RiverView;
 import view.river.RiverViewImpl;
-
 import java.util.HashMap;
 import java.util.Map;
 
 public class RiverController {
    private static RiverController instance;
-    protected Map<String, RiverView> riverViewMap = new HashMap<>();
+   protected Map<String, RiverView> riverViewMap = new HashMap<>();
+
+
     protected Map<String, River>  riverMap = new HashMap<>();
 
     private RiverController() {

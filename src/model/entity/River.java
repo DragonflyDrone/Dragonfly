@@ -3,63 +3,71 @@ package model.entity;
 
 
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.util.ArrayList;
 import java.util.List;
 
+@XmlRootElement(name = "river")
+//@XmlType(propOrder = { "uniqueID", "rowPosition", "columnPosition", "selected" })
 public class River extends Entity{
 
     public static int COUNT_RIVER = 0;
     private String uniqueID;
-    private Integer rowPosition, collunmPosition;
+    private Integer rowPosition, columnPosition;
     private Boolean selected = false;
     private List<Listener> listeners = new ArrayList<>();
 
-    public River(String uniqueID, int rowPosition, int collunmPosition) {
+    public River(String uniqueID, int rowPosition, int columnPosition) {
         setUniqueID(uniqueID);
         setRowPosition(rowPosition);
-        setCollunmPosition(collunmPosition);
+        setColumnPosition(columnPosition);
 
         COUNT_RIVER++;
+    }
+
+    public River() {
     }
 
     public interface Listener{
         public void onChange(River river, String methodName, Object oldValue, Object newValue);
     }
 
-
-    public int getCollunmPosition() {
-        return collunmPosition;
+    @XmlElement()
+    public int getColumnPosition() {
+        return columnPosition;
     }
 
-    @XmlElement
-    public void setCollunmPosition(int collunmPosition) {
-        this.collunmPosition = collunmPosition;
+
+    public void setColumnPosition(int columnPosition) {
+        this.columnPosition = columnPosition;
     }
 
+    @XmlElement()
     public int getRowPosition() {
         return rowPosition;
     }
 
-    @XmlElement
+
     public void setRowPosition(int rowPosition) {
         this.rowPosition = rowPosition;
     }
 
+
+    @XmlElement()
     public String getUniqueID() {
         return uniqueID;
     }
 
-    @XmlElement
     public void setUniqueID(String uniqueID) {
         this.uniqueID = uniqueID;
     }
 
+    @XmlElement()
     public Boolean getSelected() {
         return selected;
     }
 
 
-    @XmlElement
     public void setSelected(boolean selected) {
         boolean oldValue = this.selected;
         boolean newValue = selected;
@@ -68,9 +76,10 @@ public class River extends Entity{
 
         notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
     }
-    public List<Listener> getListeners() {
+
+  /*  public List<Listener> getListeners() {
         return listeners;
-    }
+    }*/
 
     public void setListeners(List<Listener> listeners) {
         this.listeners = listeners;

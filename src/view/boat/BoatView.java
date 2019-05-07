@@ -1,6 +1,7 @@
 package view.boat;
 
 import controller.CellController;
+import controller.LoggerController;
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
@@ -15,7 +16,8 @@ import view.SelectableView;
 
 public class BoatView  extends Group implements SelectableView, Boat.Listener {
 
-    private final ImageView imageView;
+    private final ImageView boatImageView;
+    private final ImageView boxImageView;
     private CellView currentCellView;
     private String boatLabel;
     private String uniqueID;
@@ -32,11 +34,19 @@ public class BoatView  extends Group implements SelectableView, Boat.Listener {
         label.setTextFill(Color.RED);
         label.setTextAlignment(TextAlignment.CENTER);
 
-        imageView = new ImageView();
+        boatImageView = new ImageView();
         Image image = new Image("/view/res/boat.png");
-        imageView.setImage(image);
+        boatImageView.setImage(image);
 
-        this.getChildren().addAll(imageView, label);
+
+        boxImageView = new ImageView();
+        image = new Image("/view/res/box.png");
+        boxImageView.setImage(image);
+        boxImageView.setLayoutX(5);
+        boxImageView.setLayoutY(5);
+        boxImageView.setVisible(false);
+
+        this.getChildren().addAll( boatImageView, boxImageView, label);
 
         currentCellView.getChildren().add(this);
 
@@ -144,19 +154,51 @@ public class BoatView  extends Group implements SelectableView, Boat.Listener {
             return;
 
         }
+
+
+        if(methodName.equals("setStocked") && (boolean)oldValue != (boolean)newValue){
+
+            if((boolean)newValue){
+                boxImageView.setVisible(true);
+                LoggerController.getInstance().print("Boat[" + boat.getLabel() + "] " + "Stocked");
+
+            }else {
+                boxImageView.setVisible(false);
+                LoggerController.getInstance().print("Boat[" + boat.getLabel() + "] " + "Shortage");
+
+            }
+
+            return;
+
+        }
+
+        if(methodName.equals("setStarted") && (boolean)oldValue != (boolean)newValue){
+
+            if((boolean)newValue){
+                LoggerController.getInstance().print("Boat[" + boat.getLabel() + "] " + "Start");
+
+            }else {
+                LoggerController.getInstance().print("Boat[" + boat.getLabel() + "] " + "ShutDown");
+
+            }
+
+            return;
+
+        }
+
+
         }
 
 
     private void updatateRotation(Boat boat, double rotation) {
-        imageView.setRotate(0);
+        boatImageView.setRotate(0);
 
-        imageView.setRotate(imageView.getRotate() + rotation);
+        boatImageView.setRotate(boatImageView.getRotate() + rotation);
 
 
     }
 
     private void updadePositionBoatView(Boat boat) {
-        System.out.println("updadePositionBoatView");
         if(currentCellView == null){
             return;
         }

@@ -43,7 +43,7 @@ public class Cell {
         notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
     }
 
-    public int getCollunmPosition() {
+    public int getColumnPosition() {
         return collunmPosition;
     }
 

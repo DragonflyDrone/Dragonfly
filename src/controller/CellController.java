@@ -8,7 +8,7 @@ import util.UniqueIDGenenator;
 import view.CellView;
 import view.SelectableView;
 import view.drone.DroneView;
-import view.res.EnvironmentView;
+import view.EnvironmentView;
 import view.river.RiverView;
 
 import java.util.ArrayList;
@@ -184,7 +184,7 @@ public class CellController {
 
     public Cell getCellFrom(int rowPosition, int collunmPosition){
         for(Cell cell : cellMap.values()){
-            if(cell.getRowPosition() == rowPosition && cell.getCollunmPosition() == collunmPosition){
+            if(cell.getRowPosition() == rowPosition && cell.getColumnPosition() == collunmPosition){
                 return cell;
             }
         }
@@ -216,7 +216,7 @@ public class CellController {
 
     }
 
-    public void consumeOnKeyPressed(SelectableView selectedCellView, KeyEvent keyEvent) {
+    public void consumeOnKeyPressed(CellView selectedCellView, KeyEvent keyEvent) {
 
     }
 
@@ -240,14 +240,23 @@ public class CellController {
 
     }
 
-    public SelectableView getSelectedEntityView(SelectableView selectedCellView) {
-        System.out.println("selectedCellView "+selectedCellView);
-        System.out.println("getCurrentCellView "+selectedCellView.getCurrentCellView());
+    public SelectableView getSelectedEntityView(CellView selectedCellView) {
+
         if(selectedCellView.getCurrentCellView().getChildren().isEmpty()){
             return null;
         }
 
-        return (SelectableView) selectedCellView.getCurrentCellView().getChildren().get(selectedCellView.getCurrentCellView().getChildren().size()-1);
+        for(int i =selectedCellView.getCurrentCellView().getChildren().size()-1; i >= 0; i--){
+
+            if(selectedCellView.getCurrentCellView().getChildren().get(i) instanceof SelectableView){
+                if(!(selectedCellView.getCurrentCellView().getChildren().get(i) instanceof CellView)){
+                    return (SelectableView) selectedCellView.getCurrentCellView().getChildren().get(i);
+                }
+
+            }
+        }
+
+        return null;
     }
 
  /*   public SelectableView getTopperSelectableView(SelectableView selectedEntityView) {
@@ -256,9 +265,8 @@ public class CellController {
     }*/
 
 
-    public double calculeteDistanceFrom(SelectableView initialCell, SelectableView finalCell) {
+    public double calculeteDisplacementFrom(SelectableView initialCell, SelectableView finalCell) {
 
-        //System.out.println((drone.getCurrentPositionI()+1)+" "+(drone.getCurrentPositionJ()+1)+" "+ (hospital.getInitialRowPosition()+1) +" "+ (hospital.getInitialCollunmPosition()+1));
 
         int xInitial = (initialCell.getCurrentCellView().getCollunmPosition() + 1) * CellView.SIZE,
                 xFinal = (finalCell.getCurrentCellView().getCollunmPosition() + 1) * CellView.SIZE,
@@ -269,11 +277,45 @@ public class CellController {
 
     }
 
-    public double calculeteDistanceFrom(int initialRowPosition, int initialCollunmPosition, int finalRowPosition, int finalCollunmPosition) {
-        return calculeteDistanceFrom(getCellViewFrom(initialRowPosition,initialCollunmPosition), getCellViewFrom(finalRowPosition,finalCollunmPosition));
+    /*The displacement is the measure of the straight line joining the initial position and the final position;
+     its value depends only on these positions, it does not depend on the trajectory.*/
+    public double calculeteDisplacementFrom(int initialRowPosition, int initialColumnPosition, int finalRowPosition, int finalColumnPosition) {
+
+        return calculeteDisplacementFrom(getCellViewFrom(initialRowPosition,initialColumnPosition), getCellViewFrom(finalRowPosition,finalColumnPosition));
 
     }
 
+    /*The distance traveled (or space traveled) is the measure of the trajectory described in the movement;
+     its value depends on the trajectory.*/
+    public double traveledDistance(int initialRowPosition, int initialColumnPosition, int finalRowPosition, int finalColumnPosition){
+        int deltaRow = Math.abs(finalRowPosition - initialRowPosition);
+        int deltaColumn = Math.abs(finalColumnPosition - initialColumnPosition);
+
+        double travelledDistance = (deltaRow + deltaColumn)*CellView.SIZE;
+
+        return travelledDistance;
+    }
+
+    public double traveledDistance(SelectableView initialCell, SelectableView finalCell){
 
 
+        return traveledDistance(
+                initialCell.getCurrentCellView().getRowPosition(),
+                initialCell.getCurrentCellView().getCollunmPosition(),
+                finalCell.getCurrentCellView().getRowPosition(),
+                finalCell.getCurrentCellView().getCollunmPosition());
+    }
+
+
+    public boolean isRiverView(int rowPosition, int columnPosition) {
+        CellView cellView =getCellViewFrom(rowPosition, columnPosition);
+
+        for(javafx.scene.Node node : cellView.getChildren()){
+            if(node instanceof RiverView){
+                return true;
+
+            }
+        }
+        return false;
+    }
 }

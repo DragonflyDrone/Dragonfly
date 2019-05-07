@@ -2,7 +2,6 @@ package view.drone;
 
 
 import controller.CellController;
-import controller.DroneController;
 import controller.LoggerController;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
@@ -14,9 +13,12 @@ import javafx.scene.text.TextAlignment;
 import model.entity.drone.Drone;
 import model.entity.drone.DroneBusinessObject;
 import util.SelectHelper;
-import util.Wrapper;
+import util.WrapperHelper;
 import view.CellView;
-import view.res.EnvironmentView;
+import view.EnvironmentView;
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 
 public class DroneViewImpl extends DroneView {
@@ -49,12 +51,12 @@ public class DroneViewImpl extends DroneView {
         this.currentCellView = currentCellView;
 
 
-      /*  double distanceHospitalSource = calculeteDistanceFrom(drone.getSourceHospital());
-        double distanceHospitalDestiny = calculeteDistanceFrom(drone.getDestinyHopistal());
+      /*  double distanceHospitalSource = calculeteDisplacementFrom(drone.getSourceHospital());
+        double distanceHospitalDestiny = calculeteDisplacementFrom(drone.getDestinyHopistal());
 
 
-        drone.setDistanceHospitalSource(distanceHospitalSource);
-        drone.setDistanceHospitalDestiny(distanceHospitalDestiny);*/
+        drone.setDistanceSource(distanceHospitalSource);
+        drone.setDistanceDestiny(distanceHospitalDestiny);*/
 
         Label label = new Label();
         label.setText(droneLabel);
@@ -92,8 +94,6 @@ public class DroneViewImpl extends DroneView {
         }
 
 
-        // System.out.println((drone.getCurrentPositionI()+" "+drone.getCurrentPositionJ()));
-        /*System.out.println("updade position");*/
         CellView newCellView = CellController.getInstance().getCellViewFrom(drone.getCurrentPositionI(), drone.getCurrentPositionJ());
         currentCellView = newCellView;
 
@@ -245,7 +245,6 @@ public class DroneViewImpl extends DroneView {
 
             applyStyleStarted();
 
-            System.out.println("Drone[" + getDroneLabel() + "] " + "Start");
             loggerController.print("Drone[" + getDroneLabel() + "] " + "Start");
 
             return;
@@ -255,7 +254,6 @@ public class DroneViewImpl extends DroneView {
 
             applyStyleShutDown();
 
-            System.out.println("Drone[" + getDroneLabel() + "] " + "Shutdown");
             loggerController.print("Drone[" + getDroneLabel() + "] " + "Shutdown");
 
             return;
@@ -265,7 +263,6 @@ public class DroneViewImpl extends DroneView {
 
             applyStyleTakeOff();
 
-            System.out.println("Drone[" + getDroneLabel() + "] " + "Take Off");
             loggerController.print("Drone[" + getDroneLabel() + "] " + "Take Off");
 
             return;
@@ -275,7 +272,6 @@ public class DroneViewImpl extends DroneView {
 
             applyStyleLanded();
 
-            System.out.println("Drone[" + getDroneLabel() + "] " + "Landed");
             loggerController.print("Drone[" + getDroneLabel() + "] " + "Landed");
 
             return;
@@ -283,8 +279,6 @@ public class DroneViewImpl extends DroneView {
 
         if (methodName.equals("setLanding") && !((Boolean) oldValue) && (Boolean) newValue) {
 
-
-            System.out.println("Drone[" + getDroneLabel() + "] " + "Landing");
             loggerController.print("Drone[" + getDroneLabel() + "] " + "Landing");
 
             return;
@@ -293,7 +287,6 @@ public class DroneViewImpl extends DroneView {
 
         if (methodName.equals("setIsSafeland") && !((Boolean) oldValue) && (Boolean) newValue) {
 
-            System.out.println("Drone[" + getDroneLabel() + "] " + "SafeLand");
             loggerController.print("Drone[" + getDroneLabel() + "] " + "SafeLand");
 
 
@@ -309,12 +302,14 @@ public class DroneViewImpl extends DroneView {
             DroneBusinessObject.updateItIsOver(drone);
 
 
+
+
             return;
         }
 
         if (methodName.equals("setCurrentBattery")
                 && ((Double) oldValue).intValue() != ((Double) newValue).intValue()) {
-            System.out.println("Drone[" + getDroneLabel() + "] " + "Current battery: " + drone.getCurrentBattery() + "%");
+
             loggerController.print("Drone[" + getDroneLabel() + "] " + "Current battery: " + drone.getCurrentBattery() + "%");
 
             return;
@@ -323,7 +318,7 @@ public class DroneViewImpl extends DroneView {
         if (methodName.equals("setBadConnection")
                 && !((Boolean) oldValue) && (Boolean) newValue) {
             applyStyleBadConnection();
-            System.out.println("Drone[" + getDroneLabel() + "] " + "Bad Connection");
+
             loggerController.print("Drone[" + getDroneLabel() + "] " + "Bad Connection");
 
         }
@@ -336,7 +331,7 @@ public class DroneViewImpl extends DroneView {
             }
 
             applyStyleNormalConnection();
-            System.out.println("Drone[" + getDroneLabel() + "] " + "Normal Connection");
+
             loggerController.print("Drone[" + getDroneLabel() + "] " + "Normal Connection");
 
             return;
@@ -346,7 +341,6 @@ public class DroneViewImpl extends DroneView {
         if (methodName.equals("setEconomyMode")
                 && !((Boolean) oldValue) && (Boolean) newValue) {
 
-            System.out.println("Drone[" + getDroneLabel() + "] " + "Economy Mode");
             loggerController.print("Drone[" + getDroneLabel() + "] " + "Economy Mode");
 
         }
@@ -354,7 +348,6 @@ public class DroneViewImpl extends DroneView {
         if (methodName.equals("setEconomyMode")
                 && (Boolean) oldValue && !(Boolean) newValue) {
 
-            System.out.println("Drone[" + getDroneLabel() + "] " + "Normal Mode");
             loggerController.print("Drone[" + getDroneLabel() + "] " + "Normal Mode");
 
             return;
@@ -373,8 +366,8 @@ public class DroneViewImpl extends DroneView {
             return;
         }
 
-        if (methodName.equals("setWrapper")
-                && (Wrapper) oldValue != (Wrapper) newValue) {
+        if (methodName.equals("setWrapperId")
+                && (int) oldValue != (int) newValue) {
 
             if (wrapperStyleRectangule != null) {
                 this.getChildren().remove(wrapperStyleRectangule);
@@ -386,7 +379,7 @@ public class DroneViewImpl extends DroneView {
                 wrapperStyleRectangule = new Rectangle(30, 30);
                 wrapperStyleRectangule.setFill(Color.TRANSPARENT);
                 wrapperStyleRectangule.setStrokeWidth(3);
-                wrapperStyleRectangule.setStroke(((Wrapper) newValue).getColor());
+                wrapperStyleRectangule.setStroke(WrapperHelper.getInstance().getColorFrom((Integer) newValue));
                 this.getChildren().add(wrapperStyleRectangule);
 
             }

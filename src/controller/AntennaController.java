@@ -3,7 +3,7 @@ package controller;
 import javafx.application.Platform;
 import javafx.scene.input.KeyEvent;
 import model.entity.Antenna;
-import util.ClickOutsideRegion;
+import util.exceptions.ClickOutsideRegionException;
 import util.StopWatch;
 import view.CellView;
 import view.SelectableView;
@@ -34,15 +34,11 @@ public class AntennaController {
 
 
 
-    public Antenna createAntenna(String uniqueID, String labelAntenna, CellView currentCellView) throws ClickOutsideRegion{
+    public Antenna createAntenna(String uniqueID, String labelAntenna, CellView currentCellView) {
         Antenna antenna  = new Antenna(uniqueID, labelAntenna, currentCellView.getRowPosition(),
                 currentCellView.getCollunmPosition());
 
         antennaMap.put(uniqueID, antenna);
-
-        if(currentCellView == null){
-            throw new ClickOutsideRegion();
-        }
 
         AntennaView antennaView = new AntennaViewImpl(uniqueID, labelAntenna, currentCellView);
 
@@ -85,7 +81,7 @@ public class AntennaController {
                         Random random = new Random();
                         double randomDouble = random.nextDouble();
 
-                        if(randomDouble>0.6){
+                        if(randomDouble>/*0.85*/0){
                             EnvironmentController.getInstance().notifyBadConnection(antennaView.getCurrentCellView());
 
                         }else {

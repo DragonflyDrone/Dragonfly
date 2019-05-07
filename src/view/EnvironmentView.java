@@ -1,4 +1,4 @@
-package view.res;
+package view;
 
 
 import controller.CellController;
@@ -7,7 +7,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.*;
 import model.Cell;
-import view.CellView;
 
 import java.util.List;
 

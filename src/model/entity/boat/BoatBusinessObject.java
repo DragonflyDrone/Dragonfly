@@ -2,11 +2,11 @@ package model.entity.boat;
 
 import controller.CellController;
 import controller.EnvironmentController;
+import model.Cell;
 import view.CellView;
 import view.boat.BoatView;
 import view.river.RiverView;
 
-import javax.xml.soap.Node;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -26,6 +26,11 @@ public abstract class BoatBusinessObject {
         CellView cellView = cellController.getCellViewFrom(initialRowPosition, initialCollunmPosition);
         boolean containRiverView = false;
 
+        if(cellView == null){
+            return 999999;
+        }
+
+
         for(javafx.scene.Node node : cellView.getChildren()){
             if(node instanceof RiverView){
                 containRiverView = true;
@@ -36,7 +41,7 @@ public abstract class BoatBusinessObject {
             return 999999;
         }
 
-        return CellController.getInstance().calculeteDistanceFrom(initialRowPosition, initialCollunmPosition, finalRowPosition, finalCollunmPosition);
+        return CellController.getInstance().calculeteDisplacementFrom(initialRowPosition, initialCollunmPosition, finalRowPosition, finalCollunmPosition);
     }
 
     public static double distanceDroneWentUp(CellView boatCellView, CellView dstCellView) {
@@ -52,6 +57,11 @@ public abstract class BoatBusinessObject {
         CellView cellView = cellController.getCellViewFrom(initialRowPosition, initialCollunmPosition);
         boolean containRiverView = false;
 
+        if(cellView == null){
+            return 999999;
+        }
+
+
         for(javafx.scene.Node node : cellView.getChildren()){
             if(node instanceof RiverView){
                 containRiverView = true;
@@ -62,7 +72,7 @@ public abstract class BoatBusinessObject {
             return 999999;
         }
 
-        return CellController.getInstance().calculeteDistanceFrom(initialRowPosition, initialCollunmPosition, finalRowPosition, finalCollunmPosition);
+        return CellController.getInstance().calculeteDisplacementFrom(initialRowPosition, initialCollunmPosition, finalRowPosition, finalCollunmPosition);
     }
 
     public static double distanceDroneWentLeft(CellView boatCellView, CellView dstCellView) {
@@ -76,6 +86,11 @@ public abstract class BoatBusinessObject {
         CellController cellController = CellController.getInstance();
 
         CellView cellView = cellController.getCellViewFrom(initialRowPosition, initialCollunmPosition);
+
+        if(cellView == null){
+            return 999999;
+        }
+
         boolean containRiverView = false;
 
         for(javafx.scene.Node node : cellView.getChildren()){
@@ -87,7 +102,7 @@ public abstract class BoatBusinessObject {
             return 999999;
         }
 
-        return CellController.getInstance().calculeteDistanceFrom(initialRowPosition, initialCollunmPosition, finalRowPosition, finalCollunmPosition);
+        return CellController.getInstance().calculeteDisplacementFrom(initialRowPosition, initialCollunmPosition, finalRowPosition, finalCollunmPosition);
     }
 
     public static double distanceDroneWentRight(CellView boatCellView, CellView dstCellView) {
@@ -103,9 +118,15 @@ public abstract class BoatBusinessObject {
         CellView cellView = cellController.getCellViewFrom(initialRowPosition, initialCollunmPosition);
         boolean containRiverView = false;
 
+        if(cellView == null){
+            return 999999;
+        }
+
+
         for(javafx.scene.Node node : cellView.getChildren()){
             if(node instanceof RiverView){
                 containRiverView = true;
+                break;
             }
         }
 
@@ -114,7 +135,7 @@ public abstract class BoatBusinessObject {
             return 999999;
         }
 
-        return CellController.getInstance().calculeteDistanceFrom(initialRowPosition, initialCollunmPosition, finalRowPosition, finalCollunmPosition);
+        return CellController.getInstance().calculeteDisplacementFrom(initialRowPosition, initialCollunmPosition, finalRowPosition, finalCollunmPosition);
     }
 
     //todo pog
@@ -225,9 +246,78 @@ public abstract class BoatBusinessObject {
         boat.setCurrentRowPosition(boat.getInitialRowPosition());
         boat.setCurrentCollunmPosition(boat.getInitialCollunmPosition());
         boat.setStarted(false);
+        boat.setReturnToHome(false);
+        boat.setStocked(false);
+        updateDistances(boat);
+
     }
 
     public static void start(Boat boat) {
         boat.setStarted(true);
     }
+
+    public static void shutDown(Boat boat) {
+        boat.setStarted(false);
+    }
+
+    public static void notifyRunEnviroment(Boat boat) {
+        //
+    }
+
+    public static void updateDistances(Boat boat) {
+        updateDistanceSource(boat);
+        updateDistanceDestiny(boat);
+    }
+
+    static synchronized public void updateDistanceDestiny(Boat selectedBoat) {
+        double distanceHospitalDestiny = calculeteDistanceFrom(selectedBoat, selectedBoat.getDestinyCell());
+        // System.out.println("distanceHospitalDestiny"+ distanceHospitalDestiny);
+
+
+        selectedBoat.setDistanceDestiny(distanceHospitalDestiny);
+    }
+
+    static synchronized public void updateDistanceSource(Boat selectedBoat) {
+        double distanceHospitalSource = calculeteDistanceFrom(selectedBoat, selectedBoat.getSourceCell());
+        // System.out.println("distanceHospitalSource"+ distanceHospitalSource);
+        selectedBoat.setDistanceSource(distanceHospitalSource);
+    }
+
+    public static double calculeteDistanceFrom(Boat selectedBoat, Cell cell) {
+
+        int xInitial = (selectedBoat.getCurrentCollunmPosition() + 1) * 30,
+                xFinal = (cell.getColumnPosition() + 1) * 30,
+                yInitial = (selectedBoat.getCurrentRowPosition() + 1) * 30,
+                yFinal = (cell.getRowPosition() + 1) * 30;
+
+        return Math.sqrt(((xFinal - xInitial) * (xFinal - xInitial)) + ((yFinal - yInitial) * (yFinal - yInitial)));
+
+    }
+
+    public static void returnToHome(Boat boat) {
+        boat.setReturnToHome(true);
+
+    }
+
+  /*  public static void generateRoute(BoatView boatView, CellView dstCellView, double distanceMaxFromDestine){
+        Boat boat = BoatAutomaticController.getInstance().getBoatFrom(boatView.getUniqueID());
+        boat.setRoute(AStarAlgorithm.buildRoute(boatView.getCurrentCellView(), dstCellView, distanceMaxFromDestine));
+
+    }*/
+
+    public static void normalDestiny(Boat boat) {
+        boat.setReturnToHome(false);
+    }
+
+
+    public static void stocked(Boat boat) {
+        boat.setStocked(true);
+    }
+
+    public static void shortage(Boat boat) {
+        boat.setStocked(false);
+    }
+
+
+
 }

@@ -11,7 +11,6 @@ import javafx.scene.layout.Pane;
 import model.Cell;
 import util.SelectHelper;
 import view.drone.DroneView;
-import view.res.EnvironmentView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +30,7 @@ public class CellView extends Pane implements SelectableView, Cell.Listener {
         this.uniqueID = uniqueID;
         this.environmentView = environmentView;
         this.rowPosition = cell.getRowPosition();
-        this.collunmPosition = cell.getCollunmPosition();
+        this.collunmPosition = cell.getColumnPosition();
 
         
 

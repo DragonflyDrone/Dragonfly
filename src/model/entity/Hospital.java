@@ -5,16 +5,16 @@ import java.util.List;
 
 public class Hospital extends Entity{
     private final String uniqueID;
-    int rowPosition, collunmPosition;
+    int rowPosition, columnPosition;
     public static  int COUNT_HOSPITAL = 1;
     private Boolean selected = false;
     private List<Listener> listeners = new ArrayList<>();
     private String label;
 
-    public Hospital(String uniqueID, String label, int rowPosition, int collunmPosition) {
+    public Hospital(String uniqueID, String label, int rowPosition, int columnPosition) {
         this.uniqueID = uniqueID;
         this.rowPosition = rowPosition;
-        this.collunmPosition = collunmPosition;
+        this.columnPosition = columnPosition;
         this.label = label;
         COUNT_HOSPITAL++;
     }
@@ -39,12 +39,12 @@ public class Hospital extends Entity{
         this.rowPosition = rowPosition;
     }
 
-    public int getCollunmPosition() {
-        return collunmPosition;
+    public int getColumnPosition() {
+        return columnPosition;
     }
 
-    public void setCollunmPosition(int collunmPosition) {
-        this.collunmPosition = collunmPosition;
+    public void setColumnPosition(int columnPosition) {
+        this.columnPosition = columnPosition;
     }
 
     public String getUniqueID() {

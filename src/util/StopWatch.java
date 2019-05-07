@@ -44,7 +44,6 @@ public abstract class StopWatch {
         };
 
         timer.scheduleAtFixedRate(timerTask,intialDelay, periodForNextExecution);
-        timerTask.run();
 
     }
 

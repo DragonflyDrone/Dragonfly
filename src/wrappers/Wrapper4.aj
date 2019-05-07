@@ -1,304 +1,35 @@
 package wrappers;
 
-import controller.*;
-import javafx.application.Platform;
-import model.entity.Hospital;
+import controller.BoatAutomaticController;
+import controller.CellController;
+import controller.DroneController;
+import controller.LoggerController;
+import model.entity.boat.Boat;
 import model.entity.drone.Drone;
-import model.entity.drone.DroneBusinessObject;
-import org.aspectj.lang.JoinPoint;
-import util.StopWatch;
-import util.Wrapper;
 import view.boat.BoatView;
 import view.drone.DroneView;
-import view.hospital.HospitalView;
-import view.river.RiverView;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public aspect Wrapper4 {
-
-    pointcut safeLanding(): call (* model.entity.drone.DroneBusinessObject.safeLanding(*));
-    pointcut returnToHome(): call (* model.entity.drone.DroneBusinessObject.returnToHome(*));
-    pointcut updateBatteryPerSecond(): call (* model.entity.drone.DroneBusinessObject.updateBatteryPerSecond(*));
-    pointcut applyEconomyMode(): call (* model.entity.drone.DroneBusinessObject.applyEconomyMode(*));
-    pointcut landing(): call (* model.entity.drone.DroneBusinessObject.landing(*));
-    pointcut resetSettingsDrone(): call (void model.entity.drone.DroneBusinessObject.resetSettingsDrone(*));
-    pointcut goDestinyAutomatic(): call (void controller.DroneAutomaticController.goDestinyAutomatic(*));
+    pointcut isEnable() : call ( boolean wrappers.NoneBoatWrapper.isEnable(*));
 
 
-
-    //todo esses wrappers não foram testados para vários drones no mesmo ambiente
-    private static boolean isGlide = false;
-    private static Set<Drone> dronesAreOnBoatInSet = new HashSet<>();
-    private static Set<Drone> dronesAreWaitBoatInSet = new HashSet<>();
-    private static Set<Drone> dronesAreGlideInSet = new HashSet<>();
-    private static Map<Drone, RiverView> lastCloserRiverViewInMap= new HashMap<>();
-    private static boolean reset = false;
-
-
-    after(): safeLanding()
-            &&
-            if
-                    (
-            (((Drone)thisJoinPoint.getArgs()[0]).isOnWater())
-            &&
-            (((Drone)thisJoinPoint.getArgs()[0]).getWrapper() == Wrapper.Wrapper4)
-            ){
-        callBoat(thisJoinPoint);
-
-    }
-
-    boolean around(): safeLanding()
-            &&
-            if
-                    (
-            (((Drone)thisJoinPoint.getArgs()[0]).getDistanceHospitalDestiny() <=60)
-            &&
-            (((Drone)thisJoinPoint.getArgs()[0]).isStrongWind())
-            &&
-            (((Drone)thisJoinPoint.getArgs()[0]).getWrapper() == Wrapper.Wrapper4)
-            ){
-
-        keepFlying(thisJoinPoint);
-
-        return false;
-    }
-
-    boolean around(): landing()
+    boolean around(): isEnable()
             &&
             if(
-            (dronesAreWaitBoatInSet.contains(((Drone)thisJoinPoint.getArgs()[0])) == true)
-            &&
-            (((Drone)thisJoinPoint.getArgs()[0]).getWrapper() == Wrapper.Wrapper4)
-            ){
-        // pass o landing when drone are waiting boat
-        return false;
-    }
-
-    void around(): updateBatteryPerSecond()
-            &&
-            if(
-            (dronesAreWaitBoatInSet.contains(((Drone)thisJoinPoint.getArgs()[0])) == true)
-            &&
-            (((Drone)thisJoinPoint.getArgs()[0]).getWrapper() == Wrapper.Wrapper4)
-            ){
-        // pass o updateBatteryPerSecond when drone are waiting boat
-
-    }
-
-    after(): resetSettingsDrone()
-            &&
-            if(
-            (((Drone)thisJoinPoint.getArgs()[0]).getWrapper() == Wrapper.Wrapper4)
-            &&(
-            (dronesAreWaitBoatInSet.contains(((Drone)thisJoinPoint.getArgs()[0])) == true)
-            ||
-            (dronesAreOnBoatInSet.contains(((Drone)thisJoinPoint.getArgs()[0])) == true)
-            )
-            )
-            {
-                reset = true;
-            }
-
-
-    void around(): returnToHome()
-            &&
-            if
-                    (
-            (((Drone)thisJoinPoint.getArgs()[0]).getDistanceHospitalDestiny() < ((Drone)thisJoinPoint.getArgs()[0]).getDistanceHospitalSource())
-            &&
-            (((Drone)thisJoinPoint.getArgs()[0]).getCurrentBattery() > 10)
-            &&
-            (((Drone)thisJoinPoint.getArgs()[0]).getWrapper() == Wrapper.Wrapper4)
+            (((Boat)thisJoinPoint.getArgs()[0]).getWrapperId() == 6)
             ){
 
-        glide(thisJoinPoint);
-    }
+            Boat boat = ((Boat)thisJoinPoint.getArgs()[0]);
 
+            //the boat wrapper will always be available to help drone, even if it is delivering a product.
 
+        return  !NoneBoatWrapper.boatGoingToCatchDrone.containsKey(boat)
+                && !NoneBoatWrapper.boatGoingToDeliverDrone.containsKey(boat)
+                && !NoneBoatWrapper.boatGoingToFixRoute.contains(boat);
 
-    private void keepFlying(JoinPoint thisJoinPoint) {
-        Drone drone = (Drone) thisJoinPoint.getArgs()[0];
-        System.out.println("Drone[" + drone.getLabel() + "] " + "Keep Flying");
-        LoggerController.getInstance().print("Drone[" + drone.getLabel() + "] " + "Keep Flying");
-    }
-
-
-    void around(): goDestinyAutomatic()
-            &&
-            if(
-            ((dronesAreGlideInSet.contains((Drone)thisJoinPoint.getArgs()[0])) == true)
-            &&
-            (((Drone)thisJoinPoint.getArgs()[0]).isBadConnection())
-            ){
-        //not execute goDestinyAutomatic while is glide
-    }
-
-
-    void around(): applyEconomyMode()
-            &&
-            if(
-            (((Drone)thisJoinPoint.getArgs()[0]).getWrapper() == Wrapper.Wrapper4)
-            ){
-
-       /* notinueNormalMode(thisJoinPoint);*/
-    }
-
-
-    private void glide(JoinPoint thisJoinPoint) {
-        Drone drone = (Drone) thisJoinPoint.getArgs()[0];
-        System.out.println("Drone[" + drone.getLabel() + "] " + "Glide");
-        LoggerController.getInstance().print("Drone[" + drone.getLabel() + "] " + "Glide");
-        dronesAreGlideInSet.add(drone);
-    }
-
-
-   /* private void notinueNormalMode(JoinPoint thisJoinPoint) {
-        Drone drone = (Drone) thisJoinPoint.getArgs()[0];
-        System.out.println("Drone[" + drone.getLabel() + "] " + " Continue Normal Mode");
-        LoggerController.getInstance().print("Drone[" + drone.getLabel() + "] " + "Continue Normal Mode");
-    }*/
-
-
-    private boolean callBoat(JoinPoint thisJoinPoint) {
-
-
-        Drone drone = (Drone) thisJoinPoint.getArgs()[0];
-
-        DroneView droneView = DroneController.getInstance().getDroneViewFrom(drone.getUniqueID());
-        BoatView boatView = getCloserBoatFromDrone(droneView);
-
-        if(CellController.getInstance().calculeteDistanceFrom(droneView.getCurrentCellView(),
-                boatView.getCurrentCellView()) > 150){
-            return false;
-        }
-
-        dronesAreWaitBoatInSet.add(drone);
-        System.out.println("Drone[" + drone.getLabel() + "] " + " Call Boat");
-        LoggerController.getInstance().print("Drone[" + drone.getLabel() + "] " + "Call Boat");
-
-
-
-        System.out.println("Boat[" + boatView.getBoatLabel() + "] " + "Call Received");
-        LoggerController.getInstance().print("Boat[" + boatView.getBoatLabel() + "] " + "Call received");
-
-        recoveryDrone(boatView, droneView);
-
-        return true;
-
-    }
-
-    private BoatView getCloserBoatFromDrone(DroneView droneView) {
-
-        BoatController boatController = BoatController.getInstance();
-        CellController cellController = CellController.getInstance();
-        Double closerDistance = 99999999D;
-        BoatView closerBoatView = null;
-
-        for (BoatView boatView : boatController.getBoatViewMap().values()) {
-            double tempDistance = cellController.calculeteDistanceFrom(boatView, droneView);
-
-            if (tempDistance < closerDistance) {
-                closerDistance = tempDistance;
-                closerBoatView = boatView;
-            }
-        }
-
-        return closerBoatView;
-    }
-
-
-    private void recoveryDrone(BoatView boatView, DroneView droneView) {
-
-        Drone drone = DroneController.getInstance().getDroneFrom(droneView.getUniqueID());
-        Hospital hospital = HospitalController.getInstance().getHospitalFrom(drone.getDestinyHopistal().getUniqueID());
-        HospitalView hospitalView = HospitalController.getInstance().getHospitalViewFrom(hospital.getUniqueID());
-
-        new StopWatch(0, 1000) {
-
-
-            @Override
-            public void task() {
-                Platform.runLater(() -> {
-
-                    if (!dronesAreOnBoatInSet.contains(drone) && CellController.getInstance().calculeteDistanceFrom(droneView.getCurrentCellView(), boatView.getCurrentCellView()) == 30) {
-                        // boat catch drone
-                        droneView.getCurrentCellView().getChildren().remove(droneView);
-                        System.out.println("Boat[" + boatView.getBoatLabel() + "] " + " Recovered Drone ["+drone.getLabel()+"]");
-                        LoggerController.getInstance().print("Boat[" + boatView.getBoatLabel() + "] " + " Recovered Drone ["+drone.getLabel()+"]");
-                        dronesAreWaitBoatInSet.remove(drone);
-                        DroneBusinessObject.landing(drone);
-                        DroneBusinessObject.landed(drone);
-                        DroneBusinessObject.shutDown(drone);
-                        dronesAreOnBoatInSet.add(drone);
-
-                    } else if(!dronesAreOnBoatInSet.contains(drone)) {
-                        // boat go drone
-                        BoatController.getInstance().goDestinyAutomatic(boatView, droneView.getCurrentCellView());
-
-                    }else {
-                        //boat go hospital
-
-                        RiverView newCloserRiverView = getCloserRiverView(drone, hospitalView);
-
-                        if(!lastCloserRiverViewInMap.containsKey(drone)){
-                            lastCloserRiverViewInMap.put(drone, RiverController.getInstance().getRiverViewFrom(boatView.getCurrentCellView()));
-                        }
-
-
-                        BoatController.getInstance().goDestinyAutomatic(boatView, newCloserRiverView.getCurrentCellView());
-                    }
-                });
-
-
-            }
-
-
-            @Override
-            public boolean conditionStop() {
-                if (CellController.getInstance().calculeteDistanceFrom(boatView.getCurrentCellView(), hospitalView) == 30) {
-
-                    dronesAreOnBoatInSet.remove(drone);
-                    System.out.println("Drone[" + drone.getLabel() + "] " + "Arrived at Destination");
-                    LoggerController.getInstance().print("Drone[" + drone.getLabel() + "] " + " Arrived at Destination");
-                    return true;
-                }
-
-                if(reset){
-                    dronesAreOnBoatInSet.remove(drone);
-                    dronesAreWaitBoatInSet.remove(drone);
-                    reset = false;
-                    return true;
-                }
-
-                return false;
-            }
-
-        };
-    }
-
-
-    private RiverView getCloserRiverView(Drone drone, HospitalView hospitalView) {
-        CellController cellController = CellController.getInstance();
-        RiverView closerRiverView = null;
-        double closerDistance = 99999999D;
-
-        for (RiverView riverView : RiverController.getInstance().getRiverViewMap().values()) {
-
-            if(riverView == lastCloserRiverViewInMap.get(drone)){
-                continue;
-            }
-
-            double tempDistance = cellController.calculeteDistanceFrom(riverView, hospitalView);
-
-            if (tempDistance < closerDistance) {
-                closerDistance = tempDistance;
-                closerRiverView = riverView;
-            }
-        }
-
-
-        return closerRiverView;
     }
 
 

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="droneSettingsPanelAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="229.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TextField fx:id="initialBatteryTextView" disable="true" layoutX="280.0" layoutY="106.0" prefHeight="26.0" prefWidth="52.0" promptText="100%" />
+      <Label fx:id="initialBatteryLabel" disable="true" layoutX="157.0" layoutY="110.0" text="Initial Battery:" />
+      <TextField fx:id="consumptionPerBlockTextView" disable="true" layoutX="274.0" layoutY="34.0" prefHeight="26.0" prefWidth="58.0" promptText="100%" />
+      <Label fx:id="consumptionPerBlockLabel" disable="true" layoutX="57.0" layoutY="39.0" text="Battery consumption per block:" />
+      <TextField fx:id="consumptionPerSecondTextView" disable="true" layoutX="274.0" layoutY="70.0" prefHeight="26.0" prefWidth="58.0" promptText="&gt;=60%" />
+      <Label fx:id="consumptionPerSecondLabel" disable="true" layoutX="47.0" layoutY="75.0" text="Battery consumption per seconds:" />
+      <Label fx:id="currentDroneLabel" disable="true" layoutX="134.0" layoutY="11.0" text="Current Drone (ID):" />
+      <TextField fx:id="currentDroneTextField" disable="true" layoutX="274.0" layoutY="5.0" prefHeight="26.0" prefWidth="58.0" text="0" />
+      <Button fx:id="saveButton" disable="true" layoutX="282.0" layoutY="199.0" mnemonicParsing="false" text="Save" />
+      <Label fx:id="sourceLabel" disable="true" layoutX="83.0" layoutY="176.0" text="Source:" />
+      <Label fx:id="targetLabel" disable="true" layoutX="203.0" layoutY="177.0" text="Target:" />
+      <ComboBox fx:id="wrapperComboBox" disable="true" layoutX="159.0" layoutY="140.0" prefWidth="150.0" promptText="None" />
+      <Label fx:id="wrapperLabel" disable="true" layoutX="98.0" layoutY="144.0" text="Wrapper:" />
+      <Label fx:id="currentSourceCell" disable="true" layoutX="142.0" layoutY="178.0" text="&lt;0,0&gt;" />
+      <Label fx:id="currentDestinyCell" disable="true" layoutX="259.0" layoutY="176.0" text="&lt;0,0&gt;" />
+      <!--<ImageView fx:id="sourceSettingsImageView" disable="true" layoutX="176.0" layoutY="177.0" opacity="0.3">-->
+         <!--<image>-->
+            <!--<Image url="@../settings.png" />-->
+         <!--</image>-->
+      <!--</ImageView>-->
+      <ImageView fx:id="destinySettingsImageView" disable="true" layoutX="312.0" layoutY="176.0" opacity="0.3">
+         <image>
+            <Image url="@../settings.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="wrapperInformationImageView" layoutX="312.0" layoutY="146.0">
+         <image>
+            <Image url="@../information.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

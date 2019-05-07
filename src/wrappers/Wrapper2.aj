@@ -9,58 +9,85 @@ import model.entity.drone.DroneBusinessObject;
 import org.aspectj.lang.JoinPoint;
 import view.CellView;
 import view.drone.DroneView;
-import util.Wrapper;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
 
 public aspect Wrapper2 {
 
 
     pointcut safeLanding(): call (* model.entity.drone.DroneBusinessObject.safeLanding(*));
     pointcut returnToHome() : call (void model.entity.drone.DroneBusinessObject.returnToHome(*));
+    pointcut applyEconomyMode() : call (void model.entity.drone.DroneBusinessObject.applyEconomyMode(*));
+    pointcut goDestinyAutomatic() : call (void controller.DroneAutomaticController.goDestinyAutomatic(*));
+
+    static private Set<Drone> isGlideSet = new HashSet<>();
+
 
     //estou testando isso aqui só para automático, pode ser que no manual eu tenho que lidar com mais threads
     before(): safeLanding()
-            && if
-            (
+            &&
+            if(
+            (((Drone)thisJoinPoint.getArgs()[0]).getWrapperId() == 2)
+            &&
+            (((Drone)thisJoinPoint.getArgs()[0]).getDistanceDestiny() > 60)
+            &&
             (((Drone)thisJoinPoint.getArgs()[0]).isOnWater())
-
-            &&
-
-            (((Drone)thisJoinPoint.getArgs()[0]).getDistanceHospitalDestiny() > 60)
-
-            &&
-
-            (((Drone)thisJoinPoint.getArgs()[0]).getWrapper() == Wrapper.Wrapper2)
-
             ){
         moveASide(thisJoinPoint);
     }
 
     //60 representa 2 bloquinhos de distancia
     boolean around(): safeLanding()
-            && if
-            (
-            (((Drone)thisJoinPoint.getArgs()[0]).getDistanceHospitalDestiny() <=60)
+            &&
+            if(
+            (((Drone)thisJoinPoint.getArgs()[0]).getWrapperId() == 2)
             &&
             (((Drone)thisJoinPoint.getArgs()[0]).isStrongWind())
             &&
-            (((Drone)thisJoinPoint.getArgs()[0]).getWrapper() == Wrapper.Wrapper2)
+            (((Drone)thisJoinPoint.getArgs()[0]).getDistanceDestiny() <=60)
             ){
-
         keepFlying(thisJoinPoint);
-
         return false;
     }
 
     void around(): returnToHome()
-            && if
-            (
-            (((Drone)thisJoinPoint.getArgs()[0]).getDistanceHospitalDestiny() < ((Drone)thisJoinPoint.getArgs()[0]).getDistanceHospitalSource())
+            &&
+            if(
+            (((Drone)thisJoinPoint.getArgs()[0]).getWrapperId() == 2)
             &&
             (((Drone)thisJoinPoint.getArgs()[0]).getCurrentBattery() > 10)
             &&
-            (((Drone)thisJoinPoint.getArgs()[0]).getWrapper() == Wrapper.Wrapper2)
+            (((Drone)thisJoinPoint.getArgs()[0]).getDistanceDestiny() < ((Drone)thisJoinPoint.getArgs()[0]).getDistanceSource())
             ){
         glide(thisJoinPoint);
+    }
+
+
+    void around(): goDestinyAutomatic()
+            &&
+            if(
+            (((Drone)thisJoinPoint.getArgs()[0]).getWrapperId() == 2)
+            &&
+            (isGlideSet.contains((Drone)thisJoinPoint.getArgs()[0]))
+            &&
+            (((Drone)thisJoinPoint.getArgs()[0]).isBadConnection())
+            ){
+
+        // around goDestinyAutomatic while is glide
+
+        Drone drone = (Drone) thisJoinPoint.getArgs()[0];
+        isGlideSet.remove(drone);
+
+    }
+
+    void around(): applyEconomyMode()
+            &&
+            if
+            (
+            (((Drone)thisJoinPoint.getArgs()[0]).getWrapperId() == 2)
+            ){
+        // around applyEconomyMode
     }
 
 
@@ -77,7 +104,7 @@ public aspect Wrapper2 {
 
         while (drone.isOnWater()) {
             String goDirection = DroneBusinessObject.closeDirection(droneView.getCurrentCellView(), closerLandCellView);
-           // drone.setEconomyMode(false);
+            // drone.setEconomyMode(false);
             DroneBusinessObject.goTo(drone, goDirection);
         }
 
@@ -90,31 +117,14 @@ public aspect Wrapper2 {
         LoggerController.getInstance().print("Drone["+drone.getLabel()+"] "+"Keep Flying");
     }
 
-    private static boolean isGlide =false;
-
-    pointcut goDestinyAutomatic() : call (void controller.DroneAutomaticController.goDestinyAutomatic(*));
-
-    void around(): goDestinyAutomatic()
-    && if(
-            (isGlide == true)
-            &&
-            (((Drone)thisJoinPoint.getArgs()[0]).isBadConnection())
-    )
-           {
-
-               //jump goDestinyAutomatic while is glide
-
-    }
 
     private void glide(JoinPoint thisJoinPoint) {
         Drone drone = (Drone) thisJoinPoint.getArgs()[0];
         System.out.println("Drone["+drone.getLabel()+"] "+"Glide");
         LoggerController.getInstance().print("Drone["+drone.getLabel()+"] "+"Glide");
-        isGlide = true;
+        isGlideSet.add(drone);
+
     }
 
 
-
-
 }
-

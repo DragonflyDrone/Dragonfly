@@ -1,4 +1,4 @@
-package wrappers;
+package wrappers.trash;
 
 import controller.*;
 import javafx.application.Platform;
@@ -13,7 +13,6 @@ import view.boat.BoatView;
 import view.drone.DroneView;
 import view.hospital.HospitalView;
 import view.river.RiverView;
-import util.Wrapper;
 import java.util.*;
 
 public aspect Wrapper5 {
@@ -27,11 +26,11 @@ public aspect Wrapper5 {
             &&
             if
                     (
-            (((Drone)thisJoinPoint.getArgs()[0]).getDistanceHospitalDestiny() <=60)
+            (((Drone)thisJoinPoint.getArgs()[0]).getDistanceDestiny() <=60)
             &&
             (((Drone)thisJoinPoint.getArgs()[0]).isStrongWind())
             &&
-            (((Drone)thisJoinPoint.getArgs()[0]).getWrapper() == Wrapper.Wrapper5)
+            (((Drone)thisJoinPoint.getArgs()[0]).getWrapperId() == 5)
             ){
 
         keepFlying(thisJoinPoint);
@@ -42,7 +41,7 @@ public aspect Wrapper5 {
     void around(): applyEconomyMode()
             &&
             if(
-            (((Drone)thisJoinPoint.getArgs()[0]).getWrapper() == Wrapper.Wrapper4)
+            (((Drone)thisJoinPoint.getArgs()[0]).getWrapperId() == 5)
             ){
 
         /* notinueNormalMode(thisJoinPoint);*/
