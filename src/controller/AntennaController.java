@@ -81,7 +81,7 @@ public class AntennaController {
                         Random random = new Random();
                         double randomDouble = random.nextDouble();
 
-                        if(randomDouble>/*0.85*/0){
+                        if(randomDouble>0.15){
                             EnvironmentController.getInstance().notifyBadConnection(antennaView.getCurrentCellView());
 
                         }else {
@@ -205,5 +205,11 @@ public class AntennaController {
         for(Antenna antenna : antennaMap.values()){
             antenna.setSelected(false);
         }
+    }
+
+    public void deleteAntenna(Antenna antenna) {
+        antennaMap.remove(antenna.getUniqueID());
+        AntennaView antennaView = antennaViewMap.remove(antenna.getUniqueID());
+        antennaView.getCurrentCellView().getChildren().remove(antennaView);
     }
 }

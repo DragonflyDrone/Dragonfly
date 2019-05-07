@@ -10,8 +10,18 @@ import javafx.scene.control.*;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import model.entity.Antenna;
+import model.entity.Hospital;
+import model.entity.River;
+import model.entity.boat.Boat;
+import model.entity.drone.Drone;
 import view.CellView;
 import view.SelectableView;
+import view.antenna.AntennaView;
+import view.boat.BoatView;
+import view.drone.DroneView;
+import view.hospital.HospitalView;
+import view.river.RiverView;
 
 public class MainController extends Application {
 
@@ -167,6 +177,8 @@ public class MainController extends Application {
             droneToggleButton.setSelected(false);
             boatToggleButton.setSelected(false);
             automaticExecutionCheckBox.setDisable(true);
+            cleanButton.setDisable(true);
+            deleteButton.setDisable(true);
 
             loggerController.clear();
 
@@ -220,99 +232,40 @@ public class MainController extends Application {
         });
 
         deleteButton.setOnAction(event -> {
-          /*  EnvironmentController.getInstance().notifyDeleteAction();
-            System.out.println("");*/
+
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure you want to delete this view?", ButtonType.YES ,ButtonType.CANCEL);
+            alert.showAndWait();
+
+            if(alert.getResult() == ButtonType.YES){
+                SelectableView selectableView = EnvironmentController.getInstance().getSelectedEntityView();
+
+                if(selectableView instanceof DroneView){
+                    Drone drone = DroneController.getInstance().getDroneFrom(selectableView.getUniqueID());
+                    DroneController.getInstance().deleteDrone(drone);
+
+                }else if( selectableView instanceof BoatView){
+                    Boat boat = BoatAutomaticController.getInstance().getBoatFrom(selectableView.getUniqueID());
+                    BoatAutomaticController.getInstance().deleteBoat(boat);
+
+                }else if( selectableView instanceof RiverView){
+                    River river = RiverController.getInstance().getRiverFrom(selectableView.getUniqueID());
+                    RiverController.getInstance().deleteRiver(river);
+
+                }else if( selectableView instanceof AntennaView){
+                    Antenna antenna = AntennaController.getInstance().getAntennaFrom(selectableView.getUniqueID());
+                    AntennaController.getInstance().deleteAntenna(antenna);
+
+                }
+                else if( selectableView instanceof HospitalView){
+                    Hospital hospital = HospitalController.getInstance().getHospitalFrom(selectableView.getUniqueID());
+                    HospitalController.getInstance().deleteHospital(hospital);
+
+                }
+            }
 
 
                 });
 
-//        deleteButton.setOnAction(event -> {
-//
-//            if(selectableViews.size()==0){
-//                return;
-//            }
-//
-//            if(selectedSelectableView==null){
-//                return;
-//            }
-//
-//            if(running){
-//                return;
-//            }
-//
-//            Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure you want to delete this view?", ButtonType.YES ,ButtonType.CANCEL);
-//            alert.showAndWait();
-//
-//            if(alert.getResult() == ButtonType.YES){
-//                for(CellView cellView : environmentView.getCellViews()){
-//                    if(cellView.getChildren().contains(selectedSelectableView)){
-//                        cellView.getChildren().remove(selectedSelectableView);
-//                    }
-//                }
-//
-//
-//
-//                selectableViews.remove(selectedSelectableView);
-//
-//
-//                if(selectedSelectableView == droneViewSelected){
-//                    droneViewSelected = null;
-//                }
-//
-//                Method removeMethed = null;
-//                try {
-//                    removeMethed = selectedSelectableView.getClass()
-//                            .getMethod("remove"+selectedSelectableView.getClass().getSimpleName()
-//                                    .replace("Impl","")+"FromList",selectedSelectableView.getClass().getSuperclass());
-//                    removeMethed.invoke(selectedSelectableView, selectedSelectableView);
-//                } catch (NoSuchMethodException e) {
-//                    e.printStackTrace();
-//                } catch (IllegalAccessException e) {
-//                    e.printStackTrace();
-//                } catch (InvocationTargetException e) {
-//                    e.printStackTrace();
-//                }
-//
-//                if(selectedSelectableView instanceof HospitalView){
-//                    for(DroneView droneView : new ArrayList<>(DroneViewImpl.getDroneViewList())){
-//                        if(((Drone)droneView.getDrone()).getSourceHospital()
-//                                == ((HospitalView)selectedSelectableView).getHospital()){
-//                            DroneViewImpl.removeDroneViewFromList(droneView);
-//                        }
-//
-//                        if(((Drone)droneView.getDrone()).getDestinyHopistal()
-//                                == ((HospitalView)selectedSelectableView).getHospital()){
-//                            DroneViewImpl.removeDroneViewFromList(droneView);
-//                        }
-//                    }
-//                }
-//
-//
-//                //  DroneView.removeDroneViewFromList(selectedSelectableView);
-//
-//              /*  if(DroneView.getDroneViewList().contains(selectedSelectableView)){
-//                    DroneView.getDroneViewList().remove(selectedSelectableView);
-//                }
-//
-//                if(antennaViews.contains(selectedSelectableView)){
-//                    antennaViews.remove(selectedSelectableView);
-//                }
-//
-//                if(riverViews.contains(selectedSelectableView)){
-//                    riverViews.remove(selectedSelectableView);
-//                }
-//
-//                if(hospitalViews.contains(selectedSelectableView)){
-//                    hospitalViews.remove(selectedSelectableView);
-//                }*/
-//
-//                selectedSelectableView = null;
-//            }
-//
-//
-//
-//
-//        });
 
         toggleGroup1.selectedToggleProperty().addListener((observable, oldValue, newValue) -> {
 

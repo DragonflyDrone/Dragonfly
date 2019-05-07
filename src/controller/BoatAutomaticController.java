@@ -495,4 +495,10 @@ public class BoatAutomaticController {
     public void setBoatMap(Map<String, Boat> boatMap) {
         this.boatMap = boatMap;
     }
+
+    public void deleteBoat(Boat boat) {
+        boatMap.remove(boat.getUniqueID());
+        BoatView boatView = boatViewMap.remove(boat.getUniqueID());
+        boatView.getCurrentCellView().getChildren().remove(boatView);
+    }
 }

@@ -65,6 +65,12 @@ public abstract class DroneController {
 
     public abstract Drone createDrone(String uniqueID, String droneLabel,CellView currentCellView);
 
+    public void deleteDrone(Drone drone){
+        droneMap.remove(drone.getUniqueID());
+        DroneView droneView = droneViewMap.remove(drone.getUniqueID());
+        droneView.getCurrentCellView().getChildren().remove(droneView);
+    }
+
     public Map<String, DroneView> getDroneViewMap() {
         return droneViewMap;
     }

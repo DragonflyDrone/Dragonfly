@@ -110,4 +110,10 @@ public class HospitalController {
             hospital.setSelected(false);
         }
     }
+
+    public void deleteHospital(Hospital hospital) {
+        hospitalMap.remove(hospital.getUniqueID());
+        HospitalView hospitalView = hospitalViewMap.remove(hospital.getUniqueID());
+        hospitalView.getCurrentCellView().getChildren().remove(hospitalView);
+    }
 }

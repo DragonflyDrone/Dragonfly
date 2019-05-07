@@ -274,6 +274,8 @@ public class DroneAutomaticController extends DroneController {
         return drone;
     }
 
+
+
     @Override
     public DroneView getDroneViewFrom(String identifierDrone) {
         return droneViewMap.get(identifierDrone);

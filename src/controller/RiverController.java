@@ -115,4 +115,10 @@ public class RiverController {
         }
         return null;
     }
+
+    public void deleteRiver(River river) {
+        riverMap.remove(river.getUniqueID());
+        RiverView riverView = riverViewMap.remove(river.getUniqueID());
+        riverView.getCurrentCellView().getChildren().remove(riverView);
+    }
 }
