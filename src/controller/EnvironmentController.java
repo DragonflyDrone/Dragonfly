@@ -4,10 +4,8 @@ import javafx.application.Platform;
 import javafx.scene.Node;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
-import model.entity.Antenna;
+import model.entity.*;
 import model.Environment;
-import model.entity.Hospital;
-import model.entity.River;
 import model.entity.boat.Boat;
 import model.entity.drone.Drone;
 import util.exceptions.ClickOutsideRegionException;
@@ -26,30 +24,6 @@ public class EnvironmentController {
     private CellView selectedCellView;
     private EnvironmentView environmentView;
     private Environment environment;
-
-
-//    private List<Map> selectableElementMapsList = new ArrayList<>();
-//    private List<Map> selectableElementMapsViewList = new ArrayList<>();
-    
-  /*  private Map<String, DroneView> droneViewMap = DroneController.getInstance().getDroneViewMap();
-    private Map<String, Drone>  droneMap = DroneController.getInstance().getDroneMap();
-
-
-    private Map<String, HospitalView> hospitalViewMap = HospitalController.getInstance().getHospitalViewMap();
-    private Map<String, Hospital> hospitalMap = HospitalController.getInstance().getHospitalMap();
-
-    private Map<String, RiverView> riverViewMap = RiverController.getInstance().getRiverViewMap();
-    private Map<String, River> riverMap = RiverController.getInstance().getRiverMap();
-
-    private Map<String, AntennaView> antennaViewMap = AntennaController.getInstance().getAntennaViewMap();
-    private Map<String, Antenna> antennaMap = AntennaController.getInstance().getAntennaMap();
-
-    private Map<String, CellView> cellViewMap = CellController.getInstance().getCellViewMap();
-    private Map<String, Cell> cellMap = CellController.getInstance().getCellMap();*/
-
-
-    // private SelectableView selectedSelectableView = null;
-
     private Timer ramdomStrongWind;
     private ScheduledExecutorService executor;
 
@@ -68,19 +42,6 @@ public class EnvironmentController {
         this.countCollumn = countCollumn;
         environmentView = new EnvironmentView(countRow, countCollumn, environmentAnchorPane);
         environment = new Environment(countRow, countCollumn);
-
-     /*   selectableElementMapsList.add(droneMap);
-        selectableElementMapsList.add(hospitalMap);
-        selectableElementMapsList.add(riverMap);
-        selectableElementMapsList.add(antennaMap);
-        selectableElementMapsList.add(cellMap);
-
-
-        selectableElementMapsViewList.add(droneViewMap);
-        selectableElementMapsViewList.add(hospitalViewMap);
-        selectableElementMapsViewList.add(riverViewMap);
-        selectableElementMapsViewList.add(antennaViewMap);
-        selectableElementMapsViewList.add(cellViewMap);*/
 
     }
 
@@ -117,6 +78,8 @@ public class EnvironmentController {
             HospitalController.getInstance().consumeClickEvent(selectedEntityView);
             DroneController.getInstance().consumeClickEvent(selectedEntityView);
             BoatAutomaticController.getInstance().consumeClickEvent(selectedEntityView);
+            HouseController.getInstance().consumeClickEvent(selectedEntityView);
+            TreeController.getInstance().consumeClickEvent(selectedEntityView);
         }else {
             CellController.getInstance().consumeClickEvent(selectedCellView);
         }
@@ -144,6 +107,8 @@ public class EnvironmentController {
             HospitalController.getInstance().consumeOnKeyPressed(selectedEntityView, keyEvent);
             DroneController.getInstance().consumeOnKeyPressed(selectedEntityView, keyEvent);
             BoatAutomaticController.getInstance().consumeOnKeyPressed(selectedEntityView,keyEvent);
+            HouseController.getInstance().consumeOnKeyPressed(selectedEntityView,keyEvent);
+            TreeController.getInstance().consumeOnKeyPressed(selectedEntityView,keyEvent);
         } else {
             CellController.getInstance().consumeOnKeyPressed(selectedCellView, keyEvent);
         }
@@ -208,6 +173,8 @@ public class EnvironmentController {
         AntennaController.getInstance().consumeClearEnvironment();
         BoatAutomaticController.getInstance().consumeCleanEnvironment();
         RiverController.getInstance().consumeClearEnvirironment();
+        HouseController.getInstance().consumeCleanEnvironment();
+        TreeController.getInstance().consumeCleanEnvironment();
 
     }
 
@@ -218,6 +185,8 @@ public class EnvironmentController {
         DroneController.getInstance().consumeRunEnviroment();
         BoatAutomaticController.getInstance().consumeRunEnviroment();
         CellController.getInstance().consumeRunEnviroment();
+        HouseController.getInstance().consumeRunEnviroment();
+        TreeController.getInstance().consumeRunEnviroment();
     }
 
     public void consumeReset() {
@@ -233,6 +202,8 @@ public class EnvironmentController {
         DroneController.getInstance().consumeReset();
         CellController.getInstance().consumeReset();
         BoatAutomaticController.getInstance().consumeReset();
+        HouseController.getInstance().consumeReset();
+        TreeController.getInstance().consumeReset();
 
 
     }
@@ -402,6 +373,69 @@ public class EnvironmentController {
 
     }
 
+    public House createHouse(CellView selectedCellView) throws ClickOutsideRegionException {
+
+        String uniqueID = UniqueIDGenenator.generate();
+
+        return createHouse(uniqueID, selectedCellView);
+
+    }
+
+    public House createHouse( String uniqueID , CellView selectedCellView) throws ClickOutsideRegionException {
+        clearSelectionOnAllSelectableView();
+
+        HouseController houseController = HouseController.getInstance();
+
+
+        if (selectedCellView == null) {
+            throw new ClickOutsideRegionException();
+        }
+
+
+
+
+        String houseLabel = String.valueOf(House.COUNT_HOUSE);
+
+        House house = houseController.createHouse(uniqueID, houseLabel, selectedCellView);
+
+        this.selectedEntityView = CellController.getInstance().getSelectedEntityView(selectedCellView);
+
+        return house;
+
+
+    }
+
+    public Tree createTree(CellView selectedCellView) throws ClickOutsideRegionException {
+
+        String uniqueID = UniqueIDGenenator.generate();
+
+        return createTree(uniqueID, selectedCellView);
+
+    }
+
+    public Tree createTree( String uniqueID , CellView selectedCellView) throws ClickOutsideRegionException {
+        clearSelectionOnAllSelectableView();
+
+       TreeController treeController = TreeController.getInstance();
+
+
+        if (selectedCellView == null) {
+            throw new ClickOutsideRegionException();
+        }
+
+
+
+
+        String treeLabel = String.valueOf(Tree.COUNT_TREE);
+
+        Tree tree = treeController.createTree(uniqueID, treeLabel, selectedCellView);
+
+        this.selectedEntityView = CellController.getInstance().getSelectedEntityView(selectedCellView);
+
+        return tree;
+
+
+    }
 
     private void stopRandomStrongWind() {
         try {
@@ -420,6 +454,8 @@ public class EnvironmentController {
         HospitalController.getInstance().cleanSelections();
         CellController.getInstance().cleanSelections();
         BoatAutomaticController.getInstance().cleanSelections();
+        HouseController.getInstance().cleanSelections();
+        TreeController.getInstance().cleanSelections();
     }
 
     public CellView getCloserLand(Drone drone){
@@ -499,3 +535,5 @@ public class EnvironmentController {
         this.selectedEntityView = selectedEntityView;
     }
 }
+
+

@@ -34,6 +34,11 @@ public class DroneViewImpl extends DroneView {
 
     ImageView imageViewBadConnection = new ImageView(new Image("/view/res/lostConnection.png"));
     ImageView imageViewDrone = new ImageView(new Image("/view/res/notSelectedDrone.png"));
+
+    ImageView imageViewLostDrone = new ImageView(new Image("/view/res/lostDrone.png"));
+
+
+
     private LoggerController loggerController = LoggerController.getInstance();
     private SelectHelper selectHelper = new SelectHelper(SelectHelper.DEFAULT_COLOR);
     private Rectangle wrapperStyleRectangule;
@@ -45,6 +50,7 @@ public class DroneViewImpl extends DroneView {
         this.droneLabel = droneLabel;
 
         imageViewBadConnection.setVisible(false);
+        imageViewLostDrone.setVisible(false);
 
 
         environmentView = currentCellView.getEnvironmentView();
@@ -64,7 +70,7 @@ public class DroneViewImpl extends DroneView {
         label.setTextAlignment(TextAlignment.CENTER);
 
 
-        getChildren().addAll(imageViewDrone, label, imageViewBadConnection);
+        getChildren().addAll(imageViewDrone, label, imageViewBadConnection,imageViewLostDrone);
 
         currentCellView.getChildren().add(this);
 
@@ -165,9 +171,18 @@ public class DroneViewImpl extends DroneView {
         imageViewBadConnection.setVisible(true);
     }
 
+    public void applyStyleLostDrone() {
+        imageViewLostDrone.setVisible(true);
+    }
+
+    public void applyStyleNotLostDrone() {
+        imageViewLostDrone.setVisible(false);
+    }
+
     public void applyStyleNormalConnection() {
         imageViewBadConnection.setVisible(false);
     }
+
 
     @Override
     public void removeStyleSelected() {
@@ -251,8 +266,12 @@ public class DroneViewImpl extends DroneView {
         }
 
         if (methodName.equals("setStarted") && ((Boolean) oldValue) && !(Boolean) newValue) {
-
+            applyStyleNotLostDrone();
             applyStyleShutDown();
+
+            if(drone.isOnWater()){
+                applyStyleLostDrone();
+            }
 
             loggerController.print("Drone[" + getDroneLabel() + "] " + "Shutdown");
 
@@ -386,6 +405,10 @@ public class DroneViewImpl extends DroneView {
 
             return;
         }
+
+
+
+
 
         // });
     }

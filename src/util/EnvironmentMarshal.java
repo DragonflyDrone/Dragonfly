@@ -2,9 +2,7 @@ package util;
 
 import controller.*;
 import model.Cell;
-import model.entity.Antenna;
-import model.entity.Hospital;
-import model.entity.River;
+import model.entity.*;
 import model.entity.boat.Boat;
 import model.entity.boat.BoatBusinessObject;
 import model.entity.drone.Drone;
@@ -68,6 +66,40 @@ abstract public class EnvironmentMarshal {
             hospitalElement.setAttribute(ConstantXml.SOURCE_ROW_POSITION_ATTRIBUTE, String.valueOf(hospital.getRowPosition()));
 
             hospitalElements.appendChild(hospitalElement);
+
+        }
+
+        //HOUSE
+        Element houseElements = document.createElement(ConstantXml.ROOT_HOUSE_ELEMENT);
+        environmentElements.appendChild(houseElements);
+
+        for(House house : HouseController.getInstance().getHouseMap().values()){
+
+            Element houseElement = document.createElement(ConstantXml.HOUSE_ELEMENT);
+
+            houseElement.setAttribute(ConstantXml.UNIQUE_ID_ATTRIBUTE,house.getUniqueID());
+            houseElement.setAttribute(ConstantXml.LABEL_ATTRIBUTE, house.getLabel());
+            houseElement.setAttribute(ConstantXml.SOURCE_COLUMN_POSITION_ATTRIBUTE, String.valueOf(house.getColumnPosition()));
+            houseElement.setAttribute(ConstantXml.SOURCE_ROW_POSITION_ATTRIBUTE, String.valueOf(house.getRowPosition()));
+
+            houseElements.appendChild(houseElement);
+
+        }
+
+        //HOUSE
+        Element treeElements = document.createElement(ConstantXml.ROOT_TREE_ELEMENT);
+        environmentElements.appendChild(treeElements);
+
+        for(Tree tree : TreeController.getInstance().getTreeMap().values()){
+
+            Element treeElement = document.createElement(ConstantXml.TREE_ELEMENT);
+
+            treeElement.setAttribute(ConstantXml.UNIQUE_ID_ATTRIBUTE,tree.getUniqueID());
+            treeElement.setAttribute(ConstantXml.LABEL_ATTRIBUTE, tree.getLabel());
+            treeElement.setAttribute(ConstantXml.SOURCE_COLUMN_POSITION_ATTRIBUTE, String.valueOf(tree.getColumnPosition()));
+            treeElement.setAttribute(ConstantXml.SOURCE_ROW_POSITION_ATTRIBUTE, String.valueOf(tree.getRowPosition()));
+
+            treeElements.appendChild(treeElement);
 
         }
 
@@ -210,17 +242,56 @@ abstract public class EnvironmentMarshal {
             CellController cellController = CellController.getInstance();
             CellView cellView = cellController.getCellViewFrom(rowPosition,columnPosition);
 
-         /*   EnvironmentController environmentController = EnvironmentController.getInstance();
 
-            try {
-                environmentController.createHospital(uniqueID, cellView);
-            } catch (ClickOutsideRegionException e) {
-                e.printStackTrace();
-            }
-*/
-
-         HospitalController.getInstance().createHospital(uniqueID, label, cellView);
+            HospitalController.getInstance().createHospital(uniqueID, label, cellView);
         }
+
+        //HOUSE
+        Node rootHouseElement = root.getElementsByTagName(ConstantXml.ROOT_HOUSE_ELEMENT).item(0);
+
+
+        for(int i=0; i<rootHouseElement.getChildNodes().getLength(); i++){
+            Node houseNode = rootHouseElement.getChildNodes().item(i);
+
+            if(houseNode.getNodeName().equals("#text")){ // I dont now why this problem
+                continue;
+            }
+
+            String uniqueID = houseNode.getAttributes().getNamedItem(ConstantXml.UNIQUE_ID_ATTRIBUTE).getNodeValue();
+            String label = houseNode.getAttributes().getNamedItem(ConstantXml.LABEL_ATTRIBUTE).getNodeValue();
+            int columnPosition = Integer.parseInt(houseNode.getAttributes().getNamedItem(ConstantXml.SOURCE_COLUMN_POSITION_ATTRIBUTE).getNodeValue());
+            int rowPosition = Integer.parseInt(houseNode.getAttributes().getNamedItem(ConstantXml.SOURCE_ROW_POSITION_ATTRIBUTE).getNodeValue());
+
+            CellController cellController = CellController.getInstance();
+            CellView cellView = cellController.getCellViewFrom(rowPosition,columnPosition);
+
+
+            HouseController.getInstance().createHouse(uniqueID, label, cellView);
+        }
+
+        //TREE
+        Node rootTreeElement = root.getElementsByTagName(ConstantXml.ROOT_TREE_ELEMENT).item(0);
+
+
+        for(int i=0; i<rootTreeElement.getChildNodes().getLength(); i++){
+            Node treeNode = rootTreeElement.getChildNodes().item(i);
+
+            if(treeNode.getNodeName().equals("#text")){ // I dont now why this problem
+                continue;
+            }
+
+            String uniqueID = treeNode.getAttributes().getNamedItem(ConstantXml.UNIQUE_ID_ATTRIBUTE).getNodeValue();
+            String label = treeNode.getAttributes().getNamedItem(ConstantXml.LABEL_ATTRIBUTE).getNodeValue();
+            int columnPosition = Integer.parseInt(treeNode.getAttributes().getNamedItem(ConstantXml.SOURCE_COLUMN_POSITION_ATTRIBUTE).getNodeValue());
+            int rowPosition = Integer.parseInt(treeNode.getAttributes().getNamedItem(ConstantXml.SOURCE_ROW_POSITION_ATTRIBUTE).getNodeValue());
+
+            CellController cellController = CellController.getInstance();
+            CellView cellView = cellController.getCellViewFrom(rowPosition,columnPosition);
+
+
+            TreeController.getInstance().createTree(uniqueID, label, cellView);
+        }
+
 
         //ANTENNA
         Node rootAntennaElement = root.getElementsByTagName(ConstantXml.ROOT_ANTENNA_ELEMENT).item(0);

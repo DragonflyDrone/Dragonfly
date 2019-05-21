@@ -3,6 +3,8 @@ package controller;
 import controller.settings_panel.BoatSettingsPanelController;
 import controller.settings_panel.DroneSettingsPanelController;
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -10,9 +12,7 @@ import javafx.scene.control.*;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import model.entity.Antenna;
-import model.entity.Hospital;
-import model.entity.River;
+import model.entity.*;
 import model.entity.boat.Boat;
 import model.entity.drone.Drone;
 import view.CellView;
@@ -21,7 +21,11 @@ import view.antenna.AntennaView;
 import view.boat.BoatView;
 import view.drone.DroneView;
 import view.hospital.HospitalView;
+import view.house.HouseView;
 import view.river.RiverView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainController extends Application {
 
@@ -42,14 +46,11 @@ public class MainController extends Application {
 
     @FXML
     private
-    ToggleButton riverToggleButton, hospitalToggleButton, droneToggleButton, antennaToggleButton, boatToggleButton;
+    ToggleButton riverToggleButton, hospitalToggleButton, droneToggleButton, antennaToggleButton, boatToggleButton, houseToggleButton, treeToggleButton;
 
     @FXML
     AnchorPane defaultPanelSettingsAnchorPane;
 
-    @FXML
-    private
-    RadioButton trueStrongWindRadioButton, randomStrongWindRadioButton, noStrongWindRadioButton;
 
     @FXML
     private
@@ -62,6 +63,10 @@ public class MainController extends Application {
     @FXML
     private
     Button deleteButton, cleanButton;
+
+    @FXML
+    private
+    ComboBox windForceCombBox;
 
 
     private boolean running = false;
@@ -119,26 +124,47 @@ public class MainController extends Application {
         ToggleGroup toggleGroup1 = new ToggleGroup();
         riverToggleButton.setToggleGroup(toggleGroup1);
         hospitalToggleButton.setToggleGroup(toggleGroup1);
+        houseToggleButton.setToggleGroup(toggleGroup1);
+        treeToggleButton.setToggleGroup(toggleGroup1);
         droneToggleButton.setToggleGroup(toggleGroup1);
         antennaToggleButton.setToggleGroup(toggleGroup1);
         boatToggleButton.setToggleGroup(toggleGroup1);
-
-        ToggleGroup toggleGroup3 = new ToggleGroup();
-        trueStrongWindRadioButton.setToggleGroup(toggleGroup3);
-        noStrongWindRadioButton.setToggleGroup(toggleGroup3);
-        randomStrongWindRadioButton.setToggleGroup(toggleGroup3);
 
         ToggleGroup toggleGroup4 = new ToggleGroup();
         startToggleButton.setToggleGroup(toggleGroup4);
         restartToggleButton.setToggleGroup(toggleGroup4);
 
+        List<String> forceWindTypes = new ArrayList<>();
+        forceWindTypes.add("Strong");
+        forceWindTypes.add("Slow");
+        forceWindTypes.add("Random");
 
-        trueStrongWindRadioButton.setOnMouseClicked(event -> environmentController.consumeStrongWind());
+        ObservableList<String> nameOptions =
+                FXCollections.observableArrayList(forceWindTypes);
+        windForceCombBox.setItems(nameOptions);
+
+        windForceCombBox.getSelectionModel().select(1);
+
+        windForceCombBox.valueProperty().addListener((observable, oldValue, newValue) -> {
+            if(oldValue.equals(newValue)){return;}
+
+            if(newValue.equals("Strong")){
+                environmentController.consumeStrongWind();
+            }else if(newValue.equals("Slow")){
+                environmentController.consumeNormalWind();
+            }else if(newValue.equals("Random")){
+                environmentController.consumeRandomWind();
+            }
+        });
+
+
+
+       /* trueStrongWindRadioButton.setOnMouseClicked(event -> environmentController.consumeStrongWind());
 
         noStrongWindRadioButton.setOnMouseClicked(event -> environmentController.consumeNormalWind());
 
         randomStrongWindRadioButton.setOnAction(event -> environmentController.consumeRandomWind());
-
+*/
         droneToggleButton.setOnMouseClicked(event -> droneToggleButtonIsSelected = !droneToggleButtonIsSelected);
 
 
@@ -173,6 +199,8 @@ public class MainController extends Application {
 
             riverToggleButton.setSelected(false);
             hospitalToggleButton.setSelected(false);
+            houseToggleButton.setSelected(false);
+            treeToggleButton.setSelected(false);
             antennaToggleButton.setSelected(false);
             droneToggleButton.setSelected(false);
             boatToggleButton.setSelected(false);
@@ -221,6 +249,8 @@ public class MainController extends Application {
                 droneToggleButton.setSelected(false);
                 antennaToggleButton.setSelected(false);
                 hospitalToggleButton.setSelected(false);
+                houseToggleButton.setSelected(false);
+                treeToggleButton.setSelected(false);
                 boatToggleButton.setSelected(false);
                 automaticExecutionCheckBox.setSelected(false);
                 environmentController.consumeCleanEnverionment();
@@ -259,6 +289,16 @@ public class MainController extends Application {
                 else if( selectableView instanceof HospitalView){
                     Hospital hospital = HospitalController.getInstance().getHospitalFrom(selectableView.getUniqueID());
                     HospitalController.getInstance().deleteHospital(hospital);
+
+                }
+                else if( selectableView instanceof HouseView){
+                    House house = HouseController.getInstance().getHouseFrom(selectableView.getUniqueID());
+                    HouseController.getInstance().deleteHouse(house);
+
+                }
+                else if( selectableView instanceof TreeView){
+                    Tree tree = TreeController.getInstance().getTreeFrom(selectableView.getUniqueID());
+                    TreeController.getInstance().deleteTree(tree);
 
                 }
             }
@@ -338,7 +378,8 @@ public class MainController extends Application {
 
     private boolean mustCreateEntitiesView() {
         return riverToggleButton.isSelected() || hospitalToggleButton.isSelected() || antennaToggleButton.isSelected()
-                || droneToggleButton.isSelected() || boatToggleButton.isSelected();
+                || droneToggleButton.isSelected() || boatToggleButton.isSelected() || houseToggleButton.isSelected()
+                || treeToggleButton.isSelected();
     }
 
     private void createEntitiesView(CellView selectedCellView) {
@@ -377,6 +418,11 @@ public class MainController extends Application {
 
 
             boatToggleButton.setSelected(false);
+        }else if(houseToggleButton.isSelected()){
+            environmentController.createHouse(selectedCellView);
+        }
+        else if(treeToggleButton.isSelected()){
+            environmentController.createTree(selectedCellView);
         }
 
             }catch (Exception e){
@@ -394,24 +440,28 @@ public class MainController extends Application {
     private void disableEnvironmentSettingViews() {
         riverToggleButton.setDisable(true);
         hospitalToggleButton.setDisable(true);
+        houseToggleButton.setDisable(true);
         droneToggleButton.setDisable(true);
         antennaToggleButton.setDisable(true);
         boatToggleButton.setDisable(true);
         deleteButton.setDisable(true);
         cleanButton.setDisable(true);
         automaticExecutionCheckBox.setDisable(true);
+        treeToggleButton.setDisable(true);
     }
 
     private void enableEnvironmentSettingViews() {
         settingsAnchorPane.requestFocus();
         riverToggleButton.setDisable(false);
         hospitalToggleButton.setDisable(false);
+        houseToggleButton.setDisable(false);
         droneToggleButton.setDisable(false);
         antennaToggleButton.setDisable(false);
         boatToggleButton.setDisable(false);
         deleteButton.setDisable(false);
         cleanButton.setDisable(false);
         automaticExecutionCheckBox.setDisable(false);
+        treeToggleButton.setDisable(false);
     }
 
 

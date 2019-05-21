@@ -8,6 +8,7 @@ import util.StopWatch;
 import view.CellView;
 import view.SelectableView;
 import view.drone.DroneView;
+import view.drone.DroneViewImpl;
 
 import java.util.List;
 import java.util.Random;
@@ -1130,6 +1131,9 @@ public class DroneBusinessObject {
         currentDrone.setDistanceSource(calculeteDistanceFrom(currentDrone, currentDrone.getSourceCell()));
         currentDrone.setDistanceDestiny(calculeteDistanceFrom(currentDrone, currentDrone.getDestinyCell()));
         mustStopReturnToHomeStopWatch = true;
+
+        //todo pog
+        ((DroneViewImpl)DroneController.getInstance().getDroneViewFrom(currentDrone.getUniqueID())).applyStyleNotLostDrone();
         /*if (returnToHomeStopWatch != null) {
             returnToHomeStopWatch.stop();
         }*/

@@ -2,8 +2,8 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.image.Image?>
@@ -11,16 +11,15 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="mainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="710.0" prefWidth="903.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <AnchorPane fx:id="environmentAnchorPane" layoutX="2.0" layoutY="30.0" prefHeight="379.0" prefWidth="899.0" AnchorPane.bottomAnchor="311.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="30.0">
+      <AnchorPane fx:id="environmentAnchorPane" layoutX="2.0" layoutY="29.0" prefHeight="379.0" prefWidth="899.0" AnchorPane.bottomAnchor="312.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="29.0">
          <children>
-            <ToggleButton fx:id="startToggleButton" disable="false" layoutX="841.0" layoutY="646.0" mnemonicParsing="false" text="Start" />
-            <ToggleButton fx:id="restartToggleButton" disable="false" layoutX="763.0" layoutY="646.0" mnemonicParsing="false" text="Restart" />
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="settingsAnchorPane" layoutY="409.0" prefHeight="303.0" prefWidth="601.0">
+      <AnchorPane fx:id="settingsAnchorPane" layoutY="413.0" prefHeight="303.0" prefWidth="903.0">
          <children>
 
                         
@@ -33,14 +32,7 @@
             <ToggleButton fx:id="droneToggleButton" layoutX="209.0" layoutY="5.0" text="Drone">
 
             </ToggleButton>
-            <!--<RadioButton fx:id="trueBadConnectionRadioButton" disable="true" layoutX="486.0" layoutY="150.0" mnemonicParsing="false" text="Yes" />
-            <RadioButton fx:id="noBadConnectionRadioButton" disable="true" layoutX="543.0" layoutY="150.0" mnemonicParsing="false" selected="true" text="No" />-->
-           <!-- <RadioButton fx:id="randomBadConnectionRadioButton" disable="true" layoutX="521.0" layoutY="151.0" mnemonicParsing="false" text="Random" />-->
-          <!--  <Label fx:id="badConectionLabel" disable="true" layoutX="375.0" layoutY="151.0" text="Bad Connection:" />-->
-            <RadioButton fx:id="trueStrongWindRadioButton" layoutX="90.0" layoutY="161.0" mnemonicParsing="false" text="Yes" />
-            <RadioButton fx:id="noStrongWindRadioButton" layoutX="141.0" layoutY="162.0" mnemonicParsing="false" selected="true" text="No" />
-            <RadioButton fx:id="randomStrongWindRadioButton" layoutX="186.0" layoutY="162.0" mnemonicParsing="false" text="Random" />
-            <Label fx:id="strongWindLabel" layoutX="4.0" layoutY="161.0" text="Strong Wind:" />
+            <Label fx:id="strongWindLabel" layoutX="4.0" layoutY="161.0" text="Wind force:" />
             <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="76.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@hospital.png" />
@@ -66,18 +58,48 @@
                   <Image url="@boat.png" />
                </image>
             </ImageView>
-            <Line endX="-34.0" endY="-23.0" layoutX="301.0" layoutY="28.0" startX="-34.0" startY="205.20709228515625" />
-            <Line endX="281.0" endY="241.70709228515625" layoutX="322.0" layoutY="-9.0" startX="-54.29290771484375" startY="241.70709228515625" />
+            <Line endX="-34.0" endY="-22.0" layoutX="301.0" layoutY="27.0" startX="-34.0" startY="209.20709228515625" />
+            <Line endX="581.0" endY="241.70709228515625" layoutX="322.0" layoutY="-5.0" startX="-322.0" startY="241.70709228515625" />
             <AnchorPane fx:id="defaultPanelSettingsAnchorPane" layoutX="269.0" layoutY="4.0" maxHeight="242.0" maxWidth="337.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="227.0" prefWidth="336.0" />
+            <ImageView fitHeight="26.0" fitWidth="23.0" layoutX="79.0" layoutY="116.0">
+               <image>
+                  <Image url="@house.png" />
+               </image>
+            </ImageView>
+            <ImageView layoutX="153.0" layoutY="112.0">
+               <image>
+                  <Image url="@tree.png" />
+               </image>
+            </ImageView>
+            <ToggleButton fx:id="houseToggleButton" layoutX="60.0" layoutY="84.0" mnemonicParsing="false" text="House" />
+            <ToggleButton fx:id="treeToggleButton" layoutX="145.0" layoutY="84.0" mnemonicParsing="false" text="Tree" />
+            <ComboBox fx:id="windForceCombBox" layoutX="80.0" layoutY="157.0" prefWidth="150.0" />
 
                         
                                  </children>
       </AnchorPane>
-      <AnchorPane fx:id="loggerAnchorPane" layoutX="602.0" layoutY="417.0" prefHeight="222.0" prefWidth="206.0">
+      <AnchorPane fx:id="loggerAnchorPane" layoutX="602.0" layoutY="421.0" prefHeight="222.0" prefWidth="206.0">
          <children>
             <TextArea fx:id="loggerTextArea" editable="false" layoutY="-4.0" prefHeight="231.0" prefWidth="297.0" />
          </children>
       </AnchorPane>
-      <CheckBox fx:id="automaticExecutionCheckBox" layoutX="739.0" layoutY="650.0" mnemonicParsing="false" text="Automatic Execution" />
+      <CheckBox fx:id="automaticExecutionCheckBox" layoutX="739.0" layoutY="654.0" mnemonicParsing="false" text="Automatic Execution" />
+      <ToggleButton fx:id="startToggleButton" disable="false" layoutX="846.0" layoutY="678.0" mnemonicParsing="false" text="Start" />
+      <ToggleButton fx:id="restartToggleButton" disable="false" layoutX="768.0" layoutY="678.0" mnemonicParsing="false" text="Restart" />
+      <Label disable="true" layoutX="39.0" layoutY="394.0" text="Graphical elements panel">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label disable="true" layoutX="715.0" layoutY="394.0" text="Trace log panel">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label disable="true" layoutX="379.0" layoutY="394.0" text="Properties panel">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
