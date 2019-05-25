@@ -29,7 +29,7 @@ The easiest way to run the artifact is by running the .JAR file, since it only n
 
 ## Running the Simulator - Step-by-step
 
-This section presents a step-by-step tutorial to use the artifact. In addition, it is possible to watch a usage demonstration of the simulator in https://www.youtube.com/watch?v=iY0xKX4J9yk.
+This section presents a step-by-step tutorial to use the artifact.
 
 ### 1) Setting up Environment
 
