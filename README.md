@@ -39,6 +39,9 @@ The first step of using the simulator is the environment construction. The avail
 - **Hospital**, which can be set by the user as the Source and Target hospitals of the flight;
 - **Antenna**, which emits waves that cause a bad connection in the drones located in its adjacent blocks;
 - **Drone**, the main element that has its own properties, as described in the next steps.
+- **Boat**, a boat that can save drones that are about to execute a safety landing and carry them to their destination.
+- **House**, a graphic representation of a House. 
+- **Tree**, a graphic representation of a Tree.
 
 This simulator provides two options for setting the environment:
 
@@ -52,8 +55,9 @@ The next step consists of configuring the following drone properties:
 - **Battery consumption per block**: it sets the percentage of battery consumed when the selected drone moves from a block to an adjacent block.
 - **Battery consumption per second**: it sets the percentage of battery consumed per second while the selected drone is flying.
 - **Initial battery**: the initial percentage value for the selected drone.
-- **Wrapper checkbox**: by checking this box, the user selects a drone with the wrapper implementation, while leaving the box unchecked means that the selected drone will flight according to its original behaviour.
+- **Wrapper dropdown**: The user selects the desired wrapper implementation, or selects the "None" option for executing with its original behavior.
 - **Automatic checkbox**:  by checking this box, the user  turns the automatic pilot feature of the drone on, so it will move independently following a minimal path algorithm.  On the other hand, leaving the box unchecked implies that the user will pilot the drone manually.
+- **Drone's Destination**: by clicking the gear icon, the user can select on the environment the destination's position.
 
 Controls for piloting drones manually:
 - **R** key: turn on/off the drone.
