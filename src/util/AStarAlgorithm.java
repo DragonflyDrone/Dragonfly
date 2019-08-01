@@ -1,6 +1,5 @@
 package util;
 
-import com.sun.istack.internal.Nullable;
 import controller.CellController;
 import controller.EnvironmentController;
 import view.CellView;
@@ -178,7 +177,7 @@ public class AStarAlgorithm {
         CellView cellView = null;
         private String key;
 
-        public Node(@Nullable Node father, CellView cellView, Double distanceTraveledFromTheSource, Double distanceTraveledToTheDestiny) {
+        public Node(/*@Nullable */ Node father, CellView cellView, Double distanceTraveledFromTheSource, Double distanceTraveledToTheDestiny) {
             this.father = father;
             this.cellView = cellView;
             this.distanceTraveledFromTheSource = distanceTraveledFromTheSource;
