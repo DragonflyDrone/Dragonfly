@@ -2,13 +2,9 @@ package model.entity;
 
 
 
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
 import java.util.ArrayList;
 import java.util.List;
 
-@XmlRootElement(name = "river")
-//@XmlType(propOrder = { "uniqueID", "rowPosition", "columnPosition", "selected" })
 public class River extends Entity{
 
     public static int COUNT_RIVER = 0;
@@ -32,7 +28,6 @@ public class River extends Entity{
         public void onChange(River river, String methodName, Object oldValue, Object newValue);
     }
 
-    @XmlElement()
     public int getColumnPosition() {
         return columnPosition;
     }
@@ -42,7 +37,6 @@ public class River extends Entity{
         this.columnPosition = columnPosition;
     }
 
-    @XmlElement()
     public int getRowPosition() {
         return rowPosition;
     }
@@ -53,7 +47,6 @@ public class River extends Entity{
     }
 
 
-    @XmlElement()
     public String getUniqueID() {
         return uniqueID;
     }
@@ -62,7 +55,6 @@ public class River extends Entity{
         this.uniqueID = uniqueID;
     }
 
-    @XmlElement()
     public Boolean getSelected() {
         return selected;
     }
