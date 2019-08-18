@@ -134,7 +134,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     }
   }
   private EditorCell createConstant_1() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Call:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Call");
     editorCell.setCellId("Constant_32ttl5_b1a");
     editorCell.setDefaultText("");
     return editorCell;

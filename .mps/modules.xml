@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MPSProject">
+    <projectModules>
+      <modulePath path="$PROJECT_DIR$/languages/WrapperDSL/WrapperDSL.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/WrapperDSL/runtime/WrapperDSL.runtime.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/WrapperDSL/sandbox/WrapperDSL.sandbox.msd" folder="" />
+    </projectModules>
+  </component>
+</project>

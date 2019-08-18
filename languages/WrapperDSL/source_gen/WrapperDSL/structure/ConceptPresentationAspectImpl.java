@@ -13,23 +13,32 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_After;
   private ConceptPresentation props_Around;
   private ConceptPresentation props_Before;
+  private ConceptPresentation props_Boat;
   private ConceptPresentation props_CommandCall;
   private ConceptPresentation props_Drone;
   private ConceptPresentation props_Entity;
   private ConceptPresentation props_Environment;
   private ConceptPresentation props_Given;
-  private ConceptPresentation props_IfStatement;
+  private ConceptPresentation props_If;
   private ConceptPresentation props_Land;
   private ConceptPresentation props_ListEntity;
   private ConceptPresentation props_LogicalExpression;
+  private ConceptPresentation props_OnLand;
+  private ConceptPresentation props_OnWater;
+  private ConceptPresentation props_Primitive;
   private ConceptPresentation props_Repeat;
   private ConceptPresentation props_Script;
   private ConceptPresentation props_ShutDown;
   private ConceptPresentation props_Start;
+  private ConceptPresentation props_State;
   private ConceptPresentation props_Statement;
-  private ConceptPresentation props_StatementAPI;
-  private ConceptPresentation props_StatementAbstract;
+  private ConceptPresentation props_StatementApi;
   private ConceptPresentation props_StepLest;
+  private ConceptPresentation props_StepNearestToDestiny;
+  private ConceptPresentation props_StepNearestToLand;
+  private ConceptPresentation props_StepNearestToOrigem;
+  private ConceptPresentation props_StepNearestToPosition;
+  private ConceptPresentation props_StepNearestToWater;
   private ConceptPresentation props_StepNorth;
   private ConceptPresentation props_StepSouth;
   private ConceptPresentation props_StepWest;
@@ -42,7 +51,18 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_When;
   private ConceptPresentation props_While;
   private ConceptPresentation props_WrapperScript;
+  private ConceptPresentation props__false;
+  private ConceptPresentation props__true;
   private ConceptPresentation props_and;
+  private ConceptPresentation props_clause;
+  private ConceptPresentation props_constante;
+  private ConceptPresentation props_greater;
+  private ConceptPresentation props_greaterEqual;
+  private ConceptPresentation props_is;
+  private ConceptPresentation props_not;
+  private ConceptPresentation props_or;
+  private ConceptPresentation props_smaller;
+  private ConceptPresentation props_smallerEqual;
 
   @Override
   @Nullable
@@ -65,7 +85,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Around:
         if (props_Around == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("Around");
+          cpb.rawPresentation("Arround");
           props_Around = cpb.create();
         }
         return props_Around;
@@ -76,6 +96,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Before = cpb.create();
         }
         return props_Before;
+      case LanguageConceptSwitch.Boat:
+        if (props_Boat == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Boat");
+          props_Boat = cpb.create();
+        }
+        return props_Boat;
       case LanguageConceptSwitch.CommandCall:
         if (props_CommandCall == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -110,13 +137,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Given = cpb.create();
         }
         return props_Given;
-      case LanguageConceptSwitch.IfStatement:
-        if (props_IfStatement == null) {
+      case LanguageConceptSwitch.If:
+        if (props_If == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.rawPresentation("if");
-          props_IfStatement = cpb.create();
+          props_If = cpb.create();
         }
-        return props_IfStatement;
+        return props_If;
       case LanguageConceptSwitch.Land:
         if (props_Land == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -138,6 +165,26 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_LogicalExpression = cpb.create();
         }
         return props_LogicalExpression;
+      case LanguageConceptSwitch.OnLand:
+        if (props_OnLand == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("on Land");
+          props_OnLand = cpb.create();
+        }
+        return props_OnLand;
+      case LanguageConceptSwitch.OnWater:
+        if (props_OnWater == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("on Water");
+          props_OnWater = cpb.create();
+        }
+        return props_OnWater;
+      case LanguageConceptSwitch.Primitive:
+        if (props_Primitive == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_Primitive = cpb.create();
+        }
+        return props_Primitive;
       case LanguageConceptSwitch.Repeat:
         if (props_Repeat == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -155,7 +202,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.ShutDown:
         if (props_ShutDown == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("ShutDown");
+          cpb.rawPresentation("Shut Down");
           props_ShutDown = cpb.create();
         }
         return props_ShutDown;
@@ -166,57 +213,92 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Start = cpb.create();
         }
         return props_Start;
+      case LanguageConceptSwitch.State:
+        if (props_State == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("State");
+          props_State = cpb.create();
+        }
+        return props_State;
       case LanguageConceptSwitch.Statement:
         if (props_Statement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("Statement");
           props_Statement = cpb.create();
         }
         return props_Statement;
-      case LanguageConceptSwitch.StatementAPI:
-        if (props_StatementAPI == null) {
+      case LanguageConceptSwitch.StatementApi:
+        if (props_StatementApi == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          props_StatementAPI = cpb.create();
+          props_StatementApi = cpb.create();
         }
-        return props_StatementAPI;
-      case LanguageConceptSwitch.StatementAbstract:
-        if (props_StatementAbstract == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          props_StatementAbstract = cpb.create();
-        }
-        return props_StatementAbstract;
+        return props_StatementApi;
       case LanguageConceptSwitch.StepLest:
         if (props_StepLest == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("StepLest");
+          cpb.rawPresentation("Step Lest");
           props_StepLest = cpb.create();
         }
         return props_StepLest;
+      case LanguageConceptSwitch.StepNearestToDestiny:
+        if (props_StepNearestToDestiny == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Step Nearest To Destiny");
+          props_StepNearestToDestiny = cpb.create();
+        }
+        return props_StepNearestToDestiny;
+      case LanguageConceptSwitch.StepNearestToLand:
+        if (props_StepNearestToLand == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Step Nearest To Land");
+          props_StepNearestToLand = cpb.create();
+        }
+        return props_StepNearestToLand;
+      case LanguageConceptSwitch.StepNearestToOrigem:
+        if (props_StepNearestToOrigem == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Step Nearest To Origem");
+          props_StepNearestToOrigem = cpb.create();
+        }
+        return props_StepNearestToOrigem;
+      case LanguageConceptSwitch.StepNearestToPosition:
+        if (props_StepNearestToPosition == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Step Nearest To Position");
+          props_StepNearestToPosition = cpb.create();
+        }
+        return props_StepNearestToPosition;
+      case LanguageConceptSwitch.StepNearestToWater:
+        if (props_StepNearestToWater == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Step Nearest To Water");
+          props_StepNearestToWater = cpb.create();
+        }
+        return props_StepNearestToWater;
       case LanguageConceptSwitch.StepNorth:
         if (props_StepNorth == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("StepNorth");
+          cpb.rawPresentation("Step North");
           props_StepNorth = cpb.create();
         }
         return props_StepNorth;
       case LanguageConceptSwitch.StepSouth:
         if (props_StepSouth == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("StepSouth");
+          cpb.rawPresentation("Step South");
           props_StepSouth = cpb.create();
         }
         return props_StepSouth;
       case LanguageConceptSwitch.StepWest:
         if (props_StepWest == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("StepWest");
+          cpb.rawPresentation("Step West");
           props_StepWest = cpb.create();
         }
         return props_StepWest;
       case LanguageConceptSwitch.TakeOff:
         if (props_TakeOff == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("TakeOff");
+          cpb.rawPresentation("Take Off");
           props_TakeOff = cpb.create();
         }
         return props_TakeOff;
@@ -230,28 +312,28 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.TurnLest:
         if (props_TurnLest == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("TurnLest");
+          cpb.rawPresentation("Turn Lest");
           props_TurnLest = cpb.create();
         }
         return props_TurnLest;
       case LanguageConceptSwitch.TurnNorth:
         if (props_TurnNorth == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("TurnNorth");
+          cpb.rawPresentation("Turn North");
           props_TurnNorth = cpb.create();
         }
         return props_TurnNorth;
       case LanguageConceptSwitch.TurnSouth:
         if (props_TurnSouth == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("TurnSouth");
+          cpb.rawPresentation("Turn South");
           props_TurnSouth = cpb.create();
         }
         return props_TurnSouth;
       case LanguageConceptSwitch.TurnWest:
         if (props_TurnWest == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("TurnWest");
+          cpb.rawPresentation("Turn West");
           props_TurnWest = cpb.create();
         }
         return props_TurnWest;
@@ -276,6 +358,20 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_WrapperScript = cpb.create();
         }
         return props_WrapperScript;
+      case LanguageConceptSwitch._false:
+        if (props__false == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("false");
+          props__false = cpb.create();
+        }
+        return props__false;
+      case LanguageConceptSwitch._true:
+        if (props__true == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("true");
+          props__true = cpb.create();
+        }
+        return props__true;
       case LanguageConceptSwitch.and:
         if (props_and == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -283,6 +379,68 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_and = cpb.create();
         }
         return props_and;
+      case LanguageConceptSwitch.clause:
+        if (props_clause == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_clause = cpb.create();
+        }
+        return props_clause;
+      case LanguageConceptSwitch.constante:
+        if (props_constante == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("constante");
+          props_constante = cpb.create();
+        }
+        return props_constante;
+      case LanguageConceptSwitch.greater:
+        if (props_greater == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation(">");
+          props_greater = cpb.create();
+        }
+        return props_greater;
+      case LanguageConceptSwitch.greaterEqual:
+        if (props_greaterEqual == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation(">=");
+          props_greaterEqual = cpb.create();
+        }
+        return props_greaterEqual;
+      case LanguageConceptSwitch.is:
+        if (props_is == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("is");
+          props_is = cpb.create();
+        }
+        return props_is;
+      case LanguageConceptSwitch.not:
+        if (props_not == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("not");
+          props_not = cpb.create();
+        }
+        return props_not;
+      case LanguageConceptSwitch.or:
+        if (props_or == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("or");
+          props_or = cpb.create();
+        }
+        return props_or;
+      case LanguageConceptSwitch.smaller:
+        if (props_smaller == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("<");
+          props_smaller = cpb.create();
+        }
+        return props_smaller;
+      case LanguageConceptSwitch.smallerEqual:
+        if (props_smallerEqual == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("<=");
+          props_smallerEqual = cpb.create();
+        }
+        return props_smallerEqual;
     }
     return null;
   }

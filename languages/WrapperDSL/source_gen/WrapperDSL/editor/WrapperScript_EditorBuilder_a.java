@@ -10,6 +10,11 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
+import jetbrains.mps.nodeEditor.MPSColors;
 import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.openapi.editor.menus.transformation.SPropertyInfo;
@@ -18,9 +23,6 @@ import jetbrains.mps.nodeEditor.cells.SPropertyAccessor;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSPropertyOrNode;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
-import jetbrains.mps.openapi.editor.style.Style;
-import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellMenu.SPropertySubstituteInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
@@ -64,6 +66,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     editorCell.setBig(true);
     setCellContext(editorCell);
     editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createConstant_1());
     editorCell.addEditorCell(createProperty_0());
     editorCell.addEditorCell(createRefNode_0());
     editorCell.addEditorCell(createRefNode_1());
@@ -71,8 +74,20 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     return editorCell;
   }
   private EditorCell createConstant_0() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Exceptional Scenario");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Exceptional");
     editorCell.setCellId("Constant_n43u1z_a0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.red));
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createConstant_1() {
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Scenario");
+    editorCell.setCellId("Constant_n43u1z_b0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.red));
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -107,14 +122,14 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     }
   }
   private EditorCell createRefNode_0() {
-    SingleRoleCellProvider provider = new WrapperScript_EditorBuilder_a.GivenSingleRoleHandler_n43u1z_c0(myNode, MetaAdapterFactory.getContainmentLink(0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x5ef0a89f564c5022L, 0x5ef0a89f564c5025L, "Given"), getEditorContext());
+    SingleRoleCellProvider provider = new WrapperScript_EditorBuilder_a.GivenSingleRoleHandler_n43u1z_d0(myNode, MetaAdapterFactory.getContainmentLink(0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x5ef0a89f564c5022L, 0x5ef0a89f564c5025L, "Given"), getEditorContext());
     return provider.createCell();
   }
-  private static class GivenSingleRoleHandler_n43u1z_c0 extends SingleRoleCellProvider {
+  private static class GivenSingleRoleHandler_n43u1z_d0 extends SingleRoleCellProvider {
     @NotNull
     private SNode myNode;
 
-    public GivenSingleRoleHandler_n43u1z_c0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+    public GivenSingleRoleHandler_n43u1z_d0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(containmentLink, context);
       myNode = ownerNode;
     }
@@ -166,14 +181,14 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     }
   }
   private EditorCell createRefNode_1() {
-    SingleRoleCellProvider provider = new WrapperScript_EditorBuilder_a.WhenSingleRoleHandler_n43u1z_d0(myNode, MetaAdapterFactory.getContainmentLink(0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x5ef0a89f564c5022L, 0x5ef0a89f564c5027L, "When"), getEditorContext());
+    SingleRoleCellProvider provider = new WrapperScript_EditorBuilder_a.WhenSingleRoleHandler_n43u1z_e0(myNode, MetaAdapterFactory.getContainmentLink(0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x5ef0a89f564c5022L, 0x5ef0a89f564c5027L, "When"), getEditorContext());
     return provider.createCell();
   }
-  private static class WhenSingleRoleHandler_n43u1z_d0 extends SingleRoleCellProvider {
+  private static class WhenSingleRoleHandler_n43u1z_e0 extends SingleRoleCellProvider {
     @NotNull
     private SNode myNode;
 
-    public WhenSingleRoleHandler_n43u1z_d0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+    public WhenSingleRoleHandler_n43u1z_e0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(containmentLink, context);
       myNode = ownerNode;
     }
@@ -225,14 +240,14 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     }
   }
   private EditorCell createRefNode_2() {
-    SingleRoleCellProvider provider = new WrapperScript_EditorBuilder_a.ThenSingleRoleHandler_n43u1z_e0(myNode, MetaAdapterFactory.getContainmentLink(0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x5ef0a89f564c5022L, 0x5ef0a89f564c502aL, "Then"), getEditorContext());
+    SingleRoleCellProvider provider = new WrapperScript_EditorBuilder_a.ThenSingleRoleHandler_n43u1z_f0(myNode, MetaAdapterFactory.getContainmentLink(0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x5ef0a89f564c5022L, 0x5ef0a89f564c502aL, "Then"), getEditorContext());
     return provider.createCell();
   }
-  private static class ThenSingleRoleHandler_n43u1z_e0 extends SingleRoleCellProvider {
+  private static class ThenSingleRoleHandler_n43u1z_f0 extends SingleRoleCellProvider {
     @NotNull
     private SNode myNode;
 
-    public ThenSingleRoleHandler_n43u1z_e0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+    public ThenSingleRoleHandler_n43u1z_f0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(containmentLink, context);
       myNode = ownerNode;
     }
