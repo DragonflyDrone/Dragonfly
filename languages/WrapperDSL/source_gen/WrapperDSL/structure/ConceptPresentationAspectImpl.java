@@ -9,30 +9,46 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
+  private ConceptPresentation props_Actuator;
   private ConceptPresentation props_AdviceAbstract;
   private ConceptPresentation props_After;
   private ConceptPresentation props_Around;
+  private ConceptPresentation props_BatterySensorNormalLogicalExpression;
   private ConceptPresentation props_Before;
-  private ConceptPresentation props_Boat;
-  private ConceptPresentation props_CommandCall;
-  private ConceptPresentation props_Drone;
-  private ConceptPresentation props_Entity;
-  private ConceptPresentation props_Environment;
+  private ConceptPresentation props_Command;
+  private ConceptPresentation props_Component;
+  private ConceptPresentation props_ConjunctionExpression;
+  private ConceptPresentation props_Constant;
+  private ConceptPresentation props_CoordinatesState;
+  private ConceptPresentation props_DestinyRegion;
+  private ConceptPresentation props_DisjunctionExpression;
+  private ConceptPresentation props_GPSSensorNormalLogicalExpression;
   private ConceptPresentation props_Given;
   private ConceptPresentation props_If;
+  private ConceptPresentation props_IntegerConstant;
   private ConceptPresentation props_Land;
-  private ConceptPresentation props_ListEntity;
+  private ConceptPresentation props_LandRegionState;
+  private ConceptPresentation props_LightWindState;
+  private ConceptPresentation props_LoadActuator;
+  private ConceptPresentation props_LoadSensorNormalExpression;
+  private ConceptPresentation props_LoadedState;
+  private ConceptPresentation props_LoadingState;
   private ConceptPresentation props_LogicalExpression;
-  private ConceptPresentation props_OnLand;
-  private ConceptPresentation props_OnWater;
-  private ConceptPresentation props_Primitive;
+  private ConceptPresentation props_MathConstant;
+  private ConceptPresentation props_MathElement;
+  private ConceptPresentation props_NormalLogicalExpression;
+  private ConceptPresentation props_NormalWindState;
+  private ConceptPresentation props_Operator;
+  private ConceptPresentation props_OrigemRegion;
+  private ConceptPresentation props_RegionState;
   private ConceptPresentation props_Repeat;
-  private ConceptPresentation props_Script;
+  private ConceptPresentation props_SafeLand;
+  private ConceptPresentation props_SensorConstant;
+  private ConceptPresentation props_SensorNormalLogicalExpression;
   private ConceptPresentation props_ShutDown;
   private ConceptPresentation props_Start;
   private ConceptPresentation props_State;
   private ConceptPresentation props_Statement;
-  private ConceptPresentation props_StatementApi;
   private ConceptPresentation props_StepLest;
   private ConceptPresentation props_StepNearestToDestiny;
   private ConceptPresentation props_StepNearestToLand;
@@ -42,33 +58,33 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_StepNorth;
   private ConceptPresentation props_StepSouth;
   private ConceptPresentation props_StepWest;
+  private ConceptPresentation props_StringConstant;
+  private ConceptPresentation props_StrongWindState;
   private ConceptPresentation props_TakeOff;
   private ConceptPresentation props_Then;
   private ConceptPresentation props_TurnLest;
   private ConceptPresentation props_TurnNorth;
   private ConceptPresentation props_TurnSouth;
   private ConceptPresentation props_TurnWest;
+  private ConceptPresentation props_UnloadedState;
+  private ConceptPresentation props_WaterRegionState;
   private ConceptPresentation props_When;
   private ConceptPresentation props_While;
+  private ConceptPresentation props_WindSensorNormalLogicalExpression;
+  private ConceptPresentation props_WindState;
   private ConceptPresentation props_WrapperScript;
-  private ConceptPresentation props__false;
-  private ConceptPresentation props__true;
-  private ConceptPresentation props_and;
-  private ConceptPresentation props_clause;
-  private ConceptPresentation props_constante;
-  private ConceptPresentation props_greater;
-  private ConceptPresentation props_greaterEqual;
-  private ConceptPresentation props_is;
-  private ConceptPresentation props_not;
-  private ConceptPresentation props_or;
-  private ConceptPresentation props_smaller;
-  private ConceptPresentation props_smallerEqual;
 
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.Actuator:
+        if (props_Actuator == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_Actuator = cpb.create();
+        }
+        return props_Actuator;
       case LanguageConceptSwitch.AdviceAbstract:
         if (props_AdviceAbstract == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -89,6 +105,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Around = cpb.create();
         }
         return props_Around;
+      case LanguageConceptSwitch.BatterySensorNormalLogicalExpression:
+        if (props_BatterySensorNormalLogicalExpression == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("BatteryExpression");
+          props_BatterySensorNormalLogicalExpression = cpb.create();
+        }
+        return props_BatterySensorNormalLogicalExpression;
       case LanguageConceptSwitch.Before:
         if (props_Before == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -96,40 +119,59 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Before = cpb.create();
         }
         return props_Before;
-      case LanguageConceptSwitch.Boat:
-        if (props_Boat == null) {
+      case LanguageConceptSwitch.Command:
+        if (props_Command == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("Boat");
-          props_Boat = cpb.create();
+          props_Command = cpb.create();
         }
-        return props_Boat;
-      case LanguageConceptSwitch.CommandCall:
-        if (props_CommandCall == null) {
+        return props_Command;
+      case LanguageConceptSwitch.Component:
+        if (props_Component == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.presentationByName();
-          props_CommandCall = cpb.create();
+          props_Component = cpb.create();
         }
-        return props_CommandCall;
-      case LanguageConceptSwitch.Drone:
-        if (props_Drone == null) {
+        return props_Component;
+      case LanguageConceptSwitch.ConjunctionExpression:
+        if (props_ConjunctionExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("Drone");
-          props_Drone = cpb.create();
+          cpb.rawPresentation("ConjunctionExpression");
+          props_ConjunctionExpression = cpb.create();
         }
-        return props_Drone;
-      case LanguageConceptSwitch.Entity:
-        if (props_Entity == null) {
+        return props_ConjunctionExpression;
+      case LanguageConceptSwitch.Constant:
+        if (props_Constant == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          props_Entity = cpb.create();
+          props_Constant = cpb.create();
         }
-        return props_Entity;
-      case LanguageConceptSwitch.Environment:
-        if (props_Environment == null) {
+        return props_Constant;
+      case LanguageConceptSwitch.CoordinatesState:
+        if (props_CoordinatesState == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("Environment");
-          props_Environment = cpb.create();
+          cpb.rawPresentation("CoordinatesState");
+          props_CoordinatesState = cpb.create();
         }
-        return props_Environment;
+        return props_CoordinatesState;
+      case LanguageConceptSwitch.DestinyRegion:
+        if (props_DestinyRegion == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Destiny");
+          props_DestinyRegion = cpb.create();
+        }
+        return props_DestinyRegion;
+      case LanguageConceptSwitch.DisjunctionExpression:
+        if (props_DisjunctionExpression == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("DisjunctionExpression");
+          props_DisjunctionExpression = cpb.create();
+        }
+        return props_DisjunctionExpression;
+      case LanguageConceptSwitch.GPSSensorNormalLogicalExpression:
+        if (props_GPSSensorNormalLogicalExpression == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("GpsExpression");
+          props_GPSSensorNormalLogicalExpression = cpb.create();
+        }
+        return props_GPSSensorNormalLogicalExpression;
       case LanguageConceptSwitch.Given:
         if (props_Given == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -144,6 +186,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_If = cpb.create();
         }
         return props_If;
+      case LanguageConceptSwitch.IntegerConstant:
+        if (props_IntegerConstant == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("IntegerConstant");
+          props_IntegerConstant = cpb.create();
+        }
+        return props_IntegerConstant;
       case LanguageConceptSwitch.Land:
         if (props_Land == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -151,40 +200,100 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Land = cpb.create();
         }
         return props_Land;
-      case LanguageConceptSwitch.ListEntity:
-        if (props_ListEntity == null) {
+      case LanguageConceptSwitch.LandRegionState:
+        if (props_LandRegionState == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("ListEntity");
-          props_ListEntity = cpb.create();
+          cpb.rawPresentation("land region");
+          props_LandRegionState = cpb.create();
         }
-        return props_ListEntity;
+        return props_LandRegionState;
+      case LanguageConceptSwitch.LightWindState:
+        if (props_LightWindState == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("light wind");
+          props_LightWindState = cpb.create();
+        }
+        return props_LightWindState;
+      case LanguageConceptSwitch.LoadActuator:
+        if (props_LoadActuator == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("LoadActuator");
+          props_LoadActuator = cpb.create();
+        }
+        return props_LoadActuator;
+      case LanguageConceptSwitch.LoadSensorNormalExpression:
+        if (props_LoadSensorNormalExpression == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("LoadExpression");
+          props_LoadSensorNormalExpression = cpb.create();
+        }
+        return props_LoadSensorNormalExpression;
+      case LanguageConceptSwitch.LoadedState:
+        if (props_LoadedState == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("loaded");
+          props_LoadedState = cpb.create();
+        }
+        return props_LoadedState;
+      case LanguageConceptSwitch.LoadingState:
+        if (props_LoadingState == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_LoadingState = cpb.create();
+        }
+        return props_LoadingState;
       case LanguageConceptSwitch.LogicalExpression:
         if (props_LogicalExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("LogicalExpression");
           props_LogicalExpression = cpb.create();
         }
         return props_LogicalExpression;
-      case LanguageConceptSwitch.OnLand:
-        if (props_OnLand == null) {
+      case LanguageConceptSwitch.MathConstant:
+        if (props_MathConstant == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("on Land");
-          props_OnLand = cpb.create();
+          cpb.rawPresentation("MathConstant");
+          props_MathConstant = cpb.create();
         }
-        return props_OnLand;
-      case LanguageConceptSwitch.OnWater:
-        if (props_OnWater == null) {
+        return props_MathConstant;
+      case LanguageConceptSwitch.MathElement:
+        if (props_MathElement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("on Water");
-          props_OnWater = cpb.create();
+          props_MathElement = cpb.create();
         }
-        return props_OnWater;
-      case LanguageConceptSwitch.Primitive:
-        if (props_Primitive == null) {
+        return props_MathElement;
+      case LanguageConceptSwitch.NormalLogicalExpression:
+        if (props_NormalLogicalExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          props_Primitive = cpb.create();
+          cpb.rawPresentation("NormalLogicalExpression");
+          props_NormalLogicalExpression = cpb.create();
         }
-        return props_Primitive;
+        return props_NormalLogicalExpression;
+      case LanguageConceptSwitch.NormalWindState:
+        if (props_NormalWindState == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("normal wind");
+          props_NormalWindState = cpb.create();
+        }
+        return props_NormalWindState;
+      case LanguageConceptSwitch.Operator:
+        if (props_Operator == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Operator");
+          props_Operator = cpb.create();
+        }
+        return props_Operator;
+      case LanguageConceptSwitch.OrigemRegion:
+        if (props_OrigemRegion == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Origem");
+          props_OrigemRegion = cpb.create();
+        }
+        return props_OrigemRegion;
+      case LanguageConceptSwitch.RegionState:
+        if (props_RegionState == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_RegionState = cpb.create();
+        }
+        return props_RegionState;
       case LanguageConceptSwitch.Repeat:
         if (props_Repeat == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -192,13 +301,26 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Repeat = cpb.create();
         }
         return props_Repeat;
-      case LanguageConceptSwitch.Script:
-        if (props_Script == null) {
+      case LanguageConceptSwitch.SafeLand:
+        if (props_SafeLand == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.presentationByName();
-          props_Script = cpb.create();
+          cpb.rawPresentation("SafeLand");
+          props_SafeLand = cpb.create();
         }
-        return props_Script;
+        return props_SafeLand;
+      case LanguageConceptSwitch.SensorConstant:
+        if (props_SensorConstant == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("SensorConstant");
+          props_SensorConstant = cpb.create();
+        }
+        return props_SensorConstant;
+      case LanguageConceptSwitch.SensorNormalLogicalExpression:
+        if (props_SensorNormalLogicalExpression == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_SensorNormalLogicalExpression = cpb.create();
+        }
+        return props_SensorNormalLogicalExpression;
       case LanguageConceptSwitch.ShutDown:
         if (props_ShutDown == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -216,7 +338,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.State:
         if (props_State == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("State");
           props_State = cpb.create();
         }
         return props_State;
@@ -226,12 +347,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Statement = cpb.create();
         }
         return props_Statement;
-      case LanguageConceptSwitch.StatementApi:
-        if (props_StatementApi == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          props_StatementApi = cpb.create();
-        }
-        return props_StatementApi;
       case LanguageConceptSwitch.StepLest:
         if (props_StepLest == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -295,6 +410,20 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_StepWest = cpb.create();
         }
         return props_StepWest;
+      case LanguageConceptSwitch.StringConstant:
+        if (props_StringConstant == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("StringConstant");
+          props_StringConstant = cpb.create();
+        }
+        return props_StringConstant;
+      case LanguageConceptSwitch.StrongWindState:
+        if (props_StrongWindState == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("strong wind");
+          props_StrongWindState = cpb.create();
+        }
+        return props_StrongWindState;
       case LanguageConceptSwitch.TakeOff:
         if (props_TakeOff == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -337,6 +466,20 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_TurnWest = cpb.create();
         }
         return props_TurnWest;
+      case LanguageConceptSwitch.UnloadedState:
+        if (props_UnloadedState == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("unloaded");
+          props_UnloadedState = cpb.create();
+        }
+        return props_UnloadedState;
+      case LanguageConceptSwitch.WaterRegionState:
+        if (props_WaterRegionState == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("water region");
+          props_WaterRegionState = cpb.create();
+        }
+        return props_WaterRegionState;
       case LanguageConceptSwitch.When:
         if (props_When == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -351,6 +494,19 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_While = cpb.create();
         }
         return props_While;
+      case LanguageConceptSwitch.WindSensorNormalLogicalExpression:
+        if (props_WindSensorNormalLogicalExpression == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("WindExpression");
+          props_WindSensorNormalLogicalExpression = cpb.create();
+        }
+        return props_WindSensorNormalLogicalExpression;
+      case LanguageConceptSwitch.WindState:
+        if (props_WindState == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_WindState = cpb.create();
+        }
+        return props_WindState;
       case LanguageConceptSwitch.WrapperScript:
         if (props_WrapperScript == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -358,89 +514,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_WrapperScript = cpb.create();
         }
         return props_WrapperScript;
-      case LanguageConceptSwitch._false:
-        if (props__false == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("false");
-          props__false = cpb.create();
-        }
-        return props__false;
-      case LanguageConceptSwitch._true:
-        if (props__true == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("true");
-          props__true = cpb.create();
-        }
-        return props__true;
-      case LanguageConceptSwitch.and:
-        if (props_and == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("and");
-          props_and = cpb.create();
-        }
-        return props_and;
-      case LanguageConceptSwitch.clause:
-        if (props_clause == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          props_clause = cpb.create();
-        }
-        return props_clause;
-      case LanguageConceptSwitch.constante:
-        if (props_constante == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("constante");
-          props_constante = cpb.create();
-        }
-        return props_constante;
-      case LanguageConceptSwitch.greater:
-        if (props_greater == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation(">");
-          props_greater = cpb.create();
-        }
-        return props_greater;
-      case LanguageConceptSwitch.greaterEqual:
-        if (props_greaterEqual == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation(">=");
-          props_greaterEqual = cpb.create();
-        }
-        return props_greaterEqual;
-      case LanguageConceptSwitch.is:
-        if (props_is == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("is");
-          props_is = cpb.create();
-        }
-        return props_is;
-      case LanguageConceptSwitch.not:
-        if (props_not == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("not");
-          props_not = cpb.create();
-        }
-        return props_not;
-      case LanguageConceptSwitch.or:
-        if (props_or == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("or");
-          props_or = cpb.create();
-        }
-        return props_or;
-      case LanguageConceptSwitch.smaller:
-        if (props_smaller == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("<");
-          props_smaller = cpb.create();
-        }
-        return props_smaller;
-      case LanguageConceptSwitch.smallerEqual:
-        if (props_smallerEqual == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("<=");
-          props_smallerEqual = cpb.create();
-        }
-        return props_smallerEqual;
     }
     return null;
   }
