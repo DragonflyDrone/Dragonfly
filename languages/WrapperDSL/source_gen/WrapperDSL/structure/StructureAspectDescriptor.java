@@ -47,7 +47,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptOrigemRegion = createDescriptorForOrigemRegion();
   /*package*/ final ConceptDescriptor myConceptRegionState = createDescriptorForRegionState();
   /*package*/ final ConceptDescriptor myConceptRepeat = createDescriptorForRepeat();
-  /*package*/ final ConceptDescriptor myConceptSafeLand = createDescriptorForSafeLand();
+  /*package*/ final ConceptDescriptor myConceptSafeLanding = createDescriptorForSafeLanding();
   /*package*/ final ConceptDescriptor myConceptSensorConstant = createDescriptorForSensorConstant();
   /*package*/ final ConceptDescriptor myConceptSensorNormalLogicalExpression = createDescriptorForSensorNormalLogicalExpression();
   /*package*/ final ConceptDescriptor myConceptShutDown = createDescriptorForShutDown();
@@ -92,7 +92,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptActuator, myConceptAdviceAbstract, myConceptAfter, myConceptAround, myConceptBatterySensorNormalLogicalExpression, myConceptBefore, myConceptCommand, myConceptComponent, myConceptConjunctionExpression, myConceptConstant, myConceptCoordinatesState, myConceptDestinyRegion, myConceptDisjunctionExpression, myConceptGPSSensorNormalLogicalExpression, myConceptGiven, myConceptIf, myConceptIntegerConstant, myConceptLand, myConceptLandRegionState, myConceptLightWindState, myConceptLoadActuator, myConceptLoadSensorNormalExpression, myConceptLoadedState, myConceptLoadingState, myConceptLogicalExpression, myConceptMathConstant, myConceptMathElement, myConceptNormalLogicalExpression, myConceptNormalWindState, myConceptOperator, myConceptOrigemRegion, myConceptRegionState, myConceptRepeat, myConceptSafeLand, myConceptSensorConstant, myConceptSensorNormalLogicalExpression, myConceptShutDown, myConceptStart, myConceptState, myConceptStatement, myConceptStepLest, myConceptStepNearestToDestiny, myConceptStepNearestToLand, myConceptStepNearestToOrigem, myConceptStepNearestToPosition, myConceptStepNearestToWater, myConceptStepNorth, myConceptStepSouth, myConceptStepWest, myConceptStringConstant, myConceptStrongWindState, myConceptTakeOff, myConceptThen, myConceptTurnLest, myConceptTurnNorth, myConceptTurnSouth, myConceptTurnWest, myConceptUnloadedState, myConceptWaterRegionState, myConceptWhen, myConceptWhile, myConceptWindSensorNormalLogicalExpression, myConceptWindState, myConceptWrapperScript);
+    return Arrays.asList(myConceptActuator, myConceptAdviceAbstract, myConceptAfter, myConceptAround, myConceptBatterySensorNormalLogicalExpression, myConceptBefore, myConceptCommand, myConceptComponent, myConceptConjunctionExpression, myConceptConstant, myConceptCoordinatesState, myConceptDestinyRegion, myConceptDisjunctionExpression, myConceptGPSSensorNormalLogicalExpression, myConceptGiven, myConceptIf, myConceptIntegerConstant, myConceptLand, myConceptLandRegionState, myConceptLightWindState, myConceptLoadActuator, myConceptLoadSensorNormalExpression, myConceptLoadedState, myConceptLoadingState, myConceptLogicalExpression, myConceptMathConstant, myConceptMathElement, myConceptNormalLogicalExpression, myConceptNormalWindState, myConceptOperator, myConceptOrigemRegion, myConceptRegionState, myConceptRepeat, myConceptSafeLanding, myConceptSensorConstant, myConceptSensorNormalLogicalExpression, myConceptShutDown, myConceptStart, myConceptState, myConceptStatement, myConceptStepLest, myConceptStepNearestToDestiny, myConceptStepNearestToLand, myConceptStepNearestToOrigem, myConceptStepNearestToPosition, myConceptStepNearestToWater, myConceptStepNorth, myConceptStepSouth, myConceptStepWest, myConceptStringConstant, myConceptStrongWindState, myConceptTakeOff, myConceptThen, myConceptTurnLest, myConceptTurnNorth, myConceptTurnSouth, myConceptTurnWest, myConceptUnloadedState, myConceptWaterRegionState, myConceptWhen, myConceptWhile, myConceptWindSensorNormalLogicalExpression, myConceptWindState, myConceptWrapperScript);
   }
 
   @Override
@@ -165,8 +165,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptRegionState;
       case LanguageConceptSwitch.Repeat:
         return myConceptRepeat;
-      case LanguageConceptSwitch.SafeLand:
-        return myConceptSafeLand;
+      case LanguageConceptSwitch.SafeLanding:
+        return myConceptSafeLanding;
       case LanguageConceptSwitch.SensorConstant:
         return myConceptSensorConstant;
       case LanguageConceptSwitch.SensorNormalLogicalExpression:
@@ -271,7 +271,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("WrapperDSL.structure.AdviceAbstract", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x6b53188b89b66863L);
     b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/7733551972715227240");
     b.version(2);
-    b.alias("Arround");
+    b.alias("Around");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForBatterySensorNormalLogicalExpression() {
@@ -530,13 +530,13 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.alias("repeat");
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForSafeLand() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "SafeLand", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x2bffada189a3a7d9L);
+  private static ConceptDescriptor createDescriptorForSafeLanding() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "SafeLanding", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x2bffada189a3a7d9L);
     b.class_(false, false, false);
     b.super_("WrapperDSL.structure.Command", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x3d4e131fa1842b5dL);
     b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/3170443572002662361");
     b.version(2);
-    b.alias("SafeLand");
+    b.alias("SafeLanding");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForSensorConstant() {

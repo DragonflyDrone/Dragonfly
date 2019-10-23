@@ -7,8 +7,8 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class SafeLand_Editor extends DefaultNodeEditor {
+public class SafeLanding_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return new SafeLand_EditorBuilder_a(editorContext, node).createCell();
+    return new SafeLanding_EditorBuilder_a(editorContext, node).createCell();
   }
 }

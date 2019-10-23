@@ -27,7 +27,7 @@ public final class GPSSensorNormalLogicalExpression__BehaviorDescriptor extends 
 
   private static void ___init___(@NotNull SNode __thisNode__) {
     SNode stringConstantNode = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x2bffada1898d13c7L, "WrapperDSL.structure.StringConstant"));
-    SPropertyOperations.assign(stringConstantNode, PROPS.value$aI20, "Location");
+    SPropertyOperations.assign(stringConstantNode, PROPS.value$aI20, "Distance to Destiny");
     SLinkOperations.setTarget(__thisNode__, LINKS.leftElement$blNu, stringConstantNode);
   }
 

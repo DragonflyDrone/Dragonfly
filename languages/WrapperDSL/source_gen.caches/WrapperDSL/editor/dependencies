@@ -148,7 +148,7 @@
     <classNode dependClassName="WrapperDSL.editor.NormalWindState_Editor" />
     <classNode dependClassName="WrapperDSL.editor.Operator_Editor" />
     <classNode dependClassName="WrapperDSL.editor.OrigemRegion_Editor" />
-    <classNode dependClassName="WrapperDSL.editor.SafeLand_Editor" />
+    <classNode dependClassName="WrapperDSL.editor.SafeLanding_Editor" />
     <classNode dependClassName="WrapperDSL.editor.StepNearestToOrigem_Editor" />
     <classNode dependClassName="WrapperDSL.editor.StringConstant_Editor" />
     <classNode dependClassName="WrapperDSL.editor.StrongWindState_Editor" />
@@ -388,14 +388,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="WrapperDSL.editor.SafeLand_Editor">
-    <classNode dependClassName="WrapperDSL.editor.SafeLand_EditorBuilder_a" />
+  <dependency className="WrapperDSL.editor.SafeLanding_Editor">
+    <classNode dependClassName="WrapperDSL.editor.SafeLanding_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="WrapperDSL.editor.SafeLand_EditorBuilder_a">
+  <dependency className="WrapperDSL.editor.SafeLanding_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />

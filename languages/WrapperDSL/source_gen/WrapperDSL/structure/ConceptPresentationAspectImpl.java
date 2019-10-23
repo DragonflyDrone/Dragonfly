@@ -42,7 +42,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_OrigemRegion;
   private ConceptPresentation props_RegionState;
   private ConceptPresentation props_Repeat;
-  private ConceptPresentation props_SafeLand;
+  private ConceptPresentation props_SafeLanding;
   private ConceptPresentation props_SensorConstant;
   private ConceptPresentation props_SensorNormalLogicalExpression;
   private ConceptPresentation props_ShutDown;
@@ -101,7 +101,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Around:
         if (props_Around == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("Arround");
+          cpb.rawPresentation("Around");
           props_Around = cpb.create();
         }
         return props_Around;
@@ -301,13 +301,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Repeat = cpb.create();
         }
         return props_Repeat;
-      case LanguageConceptSwitch.SafeLand:
-        if (props_SafeLand == null) {
+      case LanguageConceptSwitch.SafeLanding:
+        if (props_SafeLanding == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("SafeLand");
-          props_SafeLand = cpb.create();
+          cpb.rawPresentation("SafeLanding");
+          props_SafeLanding = cpb.create();
         }
-        return props_SafeLand;
+        return props_SafeLanding;
       case LanguageConceptSwitch.SensorConstant:
         if (props_SensorConstant == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

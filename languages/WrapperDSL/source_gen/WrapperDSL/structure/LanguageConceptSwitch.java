@@ -42,7 +42,7 @@ public final class LanguageConceptSwitch {
   public static final int OrigemRegion = 30;
   public static final int RegionState = 31;
   public static final int Repeat = 32;
-  public static final int SafeLand = 33;
+  public static final int SafeLanding = 33;
   public static final int SensorConstant = 34;
   public static final int SensorNormalLogicalExpression = 35;
   public static final int ShutDown = 36;
@@ -109,7 +109,7 @@ public final class LanguageConceptSwitch {
     builder.put(0x2bffada189a44a44L, OrigemRegion);
     builder.put(0x570c33aa52836173L, RegionState);
     builder.put(0xf8231681b95e21aL, Repeat);
-    builder.put(0x2bffada189a3a7d9L, SafeLand);
+    builder.put(0x2bffada189a3a7d9L, SafeLanding);
     builder.put(0x2bffada18999c8dcL, SensorConstant);
     builder.put(0x2bffada189922149L, SensorNormalLogicalExpression);
     builder.put(0x2481d1255afb532fL, ShutDown);

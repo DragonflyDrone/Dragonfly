@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<product version="3" modelHash="-asknpzkjcb4tebt2aummlpexpboh3ke">
+  <files names="Around_TextGen.java:Before_TextGen.java:Command_TextGen.java:ConjunctionExpression_TextGen.java:GPSSensorNormalLogicalExpression_TextGen.java:Given_TextGen.java:IntegerConstant_TextGen.java:Land_TextGen.java:LightWindState_TextGen.java:NormalWindState_TextGen.java:Operator_TextGen.java:SafeLanding_TextGen.java:ShutDown_TextGen.java:Start_TextGen.java:StepLest_TextGen.java:StepNearestToDestiny_TextGen.java:StepNearestToLand_TextGen.java:StepNearestToOrigem_TextGen.java:StepNearestToPosition_TextGen.java:StepNearestToWater_TextGen.java:StepNorth_TextGen.java:StepSouth_TextGen.java:StepWest_TextGen.java:StringConstant_TextGen.java:StrongWindState_TextGen.java:TakeOff_TextGen.java:TextGenAspectDescriptor.java:TurnLest_TextGen.java:TurnNorth_TextGen.java:TurnSouth_TextGen.java:TurnWest_TextGen.java:WindSensorNormalLogicalExpression_TextGen.java:WrapperScriptToWrapperDragonFly.java:WrapperScript_TextGen.java" />
+</product>
+

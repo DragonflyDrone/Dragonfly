@@ -186,7 +186,7 @@
               </node>
             </node>
             <node concept="Xl_RD" id="2JZFq69A4aP" role="37vLTx">
-              <property role="Xl_RC" value="Location" />
+              <property role="Xl_RC" value="Distance to Destiny" />
             </node>
           </node>
         </node>

@@ -250,7 +250,7 @@
     <property role="EcuMT" value="7733551972715227240" />
     <property role="TrG5h" value="Around" />
     <property role="3GE5qa" value="advice" />
-    <property role="34LRSv" value="Arround" />
+    <property role="34LRSv" value="Around" />
     <ref role="1TJDcQ" node="6Hj68I9HAxz" resolve="AdviceAbstract" />
   </node>
   <node concept="1TIwiD" id="2i1OilqYPcI">
@@ -621,8 +621,8 @@
   <node concept="1TIwiD" id="2JZFq69CUvp">
     <property role="EcuMT" value="3170443572002662361" />
     <property role="3GE5qa" value="commands" />
-    <property role="TrG5h" value="SafeLand" />
-    <property role="34LRSv" value="SafeLand" />
+    <property role="TrG5h" value="SafeLanding" />
+    <property role="34LRSv" value="SafeLanding" />
     <ref role="1TJDcQ" node="3Pe4LYxx2Ht" resolve="Command" />
   </node>
   <node concept="1TIwiD" id="2JZFq69D4D3">

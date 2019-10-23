@@ -9,11 +9,11 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.editor.runtime.cells.BigCellUtil;
 
-/*package*/ class SafeLand_EditorBuilder_a extends AbstractEditorBuilder {
+/*package*/ class SafeLanding_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
   private SNode myNode;
 
-  public SafeLand_EditorBuilder_a(@NotNull EditorContext context, @NotNull SNode node) {
+  public SafeLanding_EditorBuilder_a(@NotNull EditorContext context, @NotNull SNode node) {
     super(context);
     myNode = node;
   }

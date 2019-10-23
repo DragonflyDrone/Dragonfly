@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="4lgnxokztq8jwdptrsri51b8beferf9">
+<product version="3" modelHash="67uy0uu6gykk5m687dcplbxknfar68y">
   <files names="BatterySensorNormalLogicalExpression__BehaviorDescriptor.java:BehaviorAspectDescriptor.java:GPSSensorNormalLogicalExpression__BehaviorDescriptor.java:LoadSensorNormalExpression__BehaviorDescriptor.java:When__BehaviorDescriptor.java:WindSensorNormalLogicalExpression__BehaviorDescriptor.java" />
 </product>
 

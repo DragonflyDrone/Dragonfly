@@ -531,7 +531,7 @@
       <property role="eg7rD" value="false" />
       <property role="34CwA1" value="false" />
       <property role="3TUv4t" value="false" />
-      <property role="TrG5h" value="props_SafeLand" />
+      <property role="TrG5h" value="props_SafeLanding" />
       <node concept="3uibUv" id="27" role="1tU5fm">
         <ref role="3uigEE" to="ze1i:~ConceptPresentation" resolve="ConceptPresentation" />
       </node>
@@ -1089,7 +1089,7 @@
                       <node concept="liA8E" id="5J" role="2OqNvi">
                         <ref role="37wK5l" to="ze1i:~ConceptPresentationBuilder.rawPresentation(java.lang.String)" resolve="rawPresentation" />
                         <node concept="Xl_RD" id="5K" role="37wK5m">
-                          <property role="Xl_RC" value="Arround" />
+                          <property role="Xl_RC" value="Around" />
                           <node concept="cd27G" id="5M" role="lGtFl">
                             <node concept="3u3nmq" id="5N" role="cd27D">
                               <property role="3u3nmv" value="7733551972715227240" />
@@ -3148,7 +3148,7 @@
                       <node concept="liA8E" id="im" role="2OqNvi">
                         <ref role="37wK5l" to="ze1i:~ConceptPresentationBuilder.rawPresentation(java.lang.String)" resolve="rawPresentation" />
                         <node concept="Xl_RD" id="in" role="37wK5m">
-                          <property role="Xl_RC" value="SafeLand" />
+                          <property role="Xl_RC" value="SafeLanding" />
                           <node concept="cd27G" id="ip" role="lGtFl">
                             <node concept="3u3nmq" id="iq" role="cd27D">
                               <property role="3u3nmv" value="3170443572002662361" />
@@ -3174,7 +3174,7 @@
                         </node>
                       </node>
                       <node concept="37vLTw" id="iu" role="37vLTJ">
-                        <ref role="3cqZAo" node="z" resolve="props_SafeLand" />
+                        <ref role="3cqZAo" node="z" resolve="props_SafeLanding" />
                       </node>
                     </node>
                   </node>
@@ -3182,19 +3182,19 @@
                 <node concept="3clFbC" id="ic" role="3clFbw">
                   <node concept="10Nm6u" id="ix" role="3uHU7w" />
                   <node concept="37vLTw" id="iy" role="3uHU7B">
-                    <ref role="3cqZAo" node="z" resolve="props_SafeLand" />
+                    <ref role="3cqZAo" node="z" resolve="props_SafeLanding" />
                   </node>
                 </node>
               </node>
               <node concept="3cpWs6" id="ia" role="3cqZAp">
                 <node concept="37vLTw" id="iz" role="3cqZAk">
-                  <ref role="3cqZAo" node="z" resolve="props_SafeLand" />
+                  <ref role="3cqZAo" node="z" resolve="props_SafeLanding" />
                 </node>
               </node>
             </node>
             <node concept="10M0yZ" id="i8" role="3Kbmr1">
               <ref role="1PxDUh" node="vF" resolve="LanguageConceptSwitch" />
-              <ref role="3cqZAo" node="we" resolve="SafeLand" />
+              <ref role="3cqZAo" node="we" resolve="SafeLanding" />
             </node>
           </node>
           <node concept="3KbdKl" id="3U" role="3KbHQx">
@@ -5733,7 +5733,7 @@
       <property role="2dlcS1" value="false" />
       <property role="2dld4O" value="false" />
       <property role="3TUv4t" value="true" />
-      <property role="TrG5h" value="SafeLand" />
+      <property role="TrG5h" value="SafeLanding" />
       <node concept="3Tm1VV" id="yp" role="1B3o_S" />
       <node concept="10Oyi0" id="yq" role="1tU5fm" />
       <node concept="3cmrfG" id="yr" role="33vP2m">
@@ -6633,7 +6633,7 @@
                 <property role="1adDun" value="0x2bffada189a3a7d9L" />
               </node>
               <node concept="37vLTw" id="BE" role="37wK5m">
-                <ref role="3cqZAo" node="we" resolve="SafeLand" />
+                <ref role="3cqZAo" node="we" resolve="SafeLanding" />
               </node>
             </node>
           </node>
@@ -7595,12 +7595,12 @@
       <property role="eg7rD" value="false" />
       <property role="34CwA1" value="false" />
       <property role="3TUv4t" value="true" />
-      <property role="TrG5h" value="myConceptSafeLand" />
+      <property role="TrG5h" value="myConceptSafeLanding" />
       <node concept="3uibUv" id="HH" role="1tU5fm">
         <ref role="3uigEE" to="ze1i:~ConceptDescriptor" resolve="ConceptDescriptor" />
       </node>
       <node concept="1rXfSq" id="HI" role="33vP2m">
-        <ref role="37wK5l" node="Gc" resolve="createDescriptorForSafeLand" />
+        <ref role="37wK5l" node="Gc" resolve="createDescriptorForSafeLanding" />
       </node>
     </node>
     <node concept="312cEg" id="EX" role="jymVt">
@@ -8139,7 +8139,7 @@
               <ref role="3cqZAo" node="EV" resolve="myConceptRepeat" />
             </node>
             <node concept="37vLTw" id="JD" role="37wK5m">
-              <ref role="3cqZAo" node="EW" resolve="myConceptSafeLand" />
+              <ref role="3cqZAo" node="EW" resolve="myConceptSafeLanding" />
             </node>
             <node concept="37vLTw" id="JE" role="37wK5m">
               <ref role="3cqZAo" node="EX" resolve="myConceptSensorConstant" />
@@ -8693,13 +8693,13 @@
             <node concept="3clFbS" id="Nn" role="3Kbo56">
               <node concept="3cpWs6" id="Np" role="3cqZAp">
                 <node concept="37vLTw" id="Nq" role="3cqZAk">
-                  <ref role="3cqZAo" node="EW" resolve="myConceptSafeLand" />
+                  <ref role="3cqZAo" node="EW" resolve="myConceptSafeLanding" />
                 </node>
               </node>
             </node>
             <node concept="10M0yZ" id="No" role="3Kbmr1">
               <ref role="1PxDUh" node="vF" resolve="LanguageConceptSwitch" />
-              <ref role="3cqZAo" node="we" resolve="SafeLand" />
+              <ref role="3cqZAo" node="we" resolve="SafeLanding" />
             </node>
           </node>
           <node concept="3KbdKl" id="KN" role="3KbHQx">
@@ -9600,7 +9600,7 @@
             <node concept="liA8E" id="Sd" role="2OqNvi">
               <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2.alias(java.lang.String)" resolve="alias" />
               <node concept="Xl_RD" id="Se" role="37wK5m">
-                <property role="Xl_RC" value="Arround" />
+                <property role="Xl_RC" value="Around" />
               </node>
             </node>
           </node>
@@ -13815,7 +13815,7 @@
       <property role="od$2w" value="false" />
       <property role="DiZV1" value="false" />
       <property role="2aFKle" value="false" />
-      <property role="TrG5h" value="createDescriptorForSafeLand" />
+      <property role="TrG5h" value="createDescriptorForSafeLanding" />
       <node concept="3clFbS" id="1hb" role="3clF47">
         <node concept="3cpWs8" id="1he" role="3cqZAp">
           <node concept="3cpWsn" id="1hl" role="3cpWs9">
@@ -13830,7 +13830,7 @@
                   <property role="Xl_RC" value="WrapperDSL" />
                 </node>
                 <node concept="Xl_RD" id="1hq" role="37wK5m">
-                  <property role="Xl_RC" value="SafeLand" />
+                  <property role="Xl_RC" value="SafeLanding" />
                 </node>
                 <node concept="1adDum" id="1hr" role="37wK5m">
                   <property role="1adDun" value="0x3c0688eb4e024d93L" />
@@ -13914,7 +13914,7 @@
             <node concept="liA8E" id="1hP" role="2OqNvi">
               <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2.alias(java.lang.String)" resolve="alias" />
               <node concept="Xl_RD" id="1hQ" role="37wK5m">
-                <property role="Xl_RC" value="SafeLand" />
+                <property role="Xl_RC" value="SafeLanding" />
               </node>
             </node>
           </node>

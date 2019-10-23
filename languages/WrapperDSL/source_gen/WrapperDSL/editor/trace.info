@@ -1448,18 +1448,18 @@
     </file>
   </root>
   <root nodeRef="r:459d547e-9141-4960-a4f3-13d8ce4018e1(WrapperDSL.editor)/3170443572002672381">
-    <file name="SafeLand_Editor.java">
-      <node id="3170443572002672381" at="11,79,12,74" concept="6" />
+    <file name="SafeLanding_Editor.java">
+      <node id="3170443572002672381" at="11,79,12,77" concept="6" />
       <node id="3170443572002672381" at="11,0,14,0" concept="4" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <scope id="3170443572002672381" at="11,79,12,74" />
+      <scope id="3170443572002672381" at="11,79,12,77" />
       <scope id="3170443572002672381" at="11,0,14,0">
         <var name="editorContext" id="3170443572002672381" />
         <var name="node" id="3170443572002672381" />
       </scope>
-      <unit id="3170443572002672381" at="10,0,15,0" name="WrapperDSL.editor.SafeLand_Editor" />
+      <unit id="3170443572002672381" at="10,0,15,0" name="WrapperDSL.editor.SafeLanding_Editor" />
     </file>
-    <file name="SafeLand_EditorBuilder_a.java">
-      <node id="3170443572002672381" at="16,88,17,19" concept="8" />
+    <file name="SafeLanding_EditorBuilder_a.java">
+      <node id="3170443572002672381" at="16,91,17,19" concept="8" />
       <node id="3170443572002672381" at="17,19,18,18" concept="1" />
       <node id="3170443572002672381" at="23,26,24,18" concept="6" />
       <node id="3170443572002672381" at="27,39,28,31" concept="6" />
@@ -1470,13 +1470,13 @@
       <node id="3170443572002672383" at="37,5,38,22" concept="6" />
       <node id="3170443572002672381" at="13,0,15,0" concept="2" trace="myNode" />
       <node id="3170443572002672381" at="27,0,30,0" concept="4" trace="createCell#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <node id="3170443572002672381" at="16,0,20,0" concept="0" trace="SafeLand_EditorBuilder_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="3170443572002672381" at="16,0,20,0" concept="0" trace="SafeLanding_EditorBuilder_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="3170443572002672383" at="33,72,37,5" concept="3" />
       <node id="3170443572002672381" at="21,0,26,0" concept="4" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="3170443572002672383" at="31,0,40,0" concept="4" trace="createComponent_0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <scope id="3170443572002672381" at="23,26,24,18" />
       <scope id="3170443572002672381" at="27,39,28,31" />
-      <scope id="3170443572002672381" at="16,88,18,18" />
+      <scope id="3170443572002672381" at="16,91,18,18" />
       <scope id="3170443572002672383" at="34,26,36,30" />
       <scope id="3170443572002672381" at="27,0,30,0" />
       <scope id="3170443572002672381" at="16,0,20,0">
@@ -1489,7 +1489,7 @@
         <var name="editorCell" id="3170443572002672383" />
       </scope>
       <scope id="3170443572002672383" at="31,0,40,0" />
-      <unit id="3170443572002672381" at="12,0,41,0" name="WrapperDSL.editor.SafeLand_EditorBuilder_a" />
+      <unit id="3170443572002672381" at="12,0,41,0" name="WrapperDSL.editor.SafeLanding_EditorBuilder_a" />
     </file>
   </root>
   <root nodeRef="r:459d547e-9141-4960-a4f3-13d8ce4018e1(WrapperDSL.editor)/3170443572002703953">

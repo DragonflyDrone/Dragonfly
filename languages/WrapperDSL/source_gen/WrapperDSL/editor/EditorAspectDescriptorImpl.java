@@ -46,7 +46,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       case 13:
         return Collections.<ConceptEditor>singletonList(new OrigemRegion_Editor());
       case 14:
-        return Collections.<ConceptEditor>singletonList(new SafeLand_Editor());
+        return Collections.<ConceptEditor>singletonList(new SafeLanding_Editor());
       case 15:
         return Collections.<ConceptEditor>singletonList(new StepNearestToOrigem_Editor());
       case 16:
