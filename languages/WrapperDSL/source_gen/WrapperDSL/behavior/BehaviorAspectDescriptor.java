@@ -12,11 +12,11 @@ import jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myBatterySensorNormalLogicalExpression__BehaviorDescriptor = new BatterySensorNormalLogicalExpression__BehaviorDescriptor();
-  private final BHDescriptor myGPSSensorNormalLogicalExpression__BehaviorDescriptor = new GPSSensorNormalLogicalExpression__BehaviorDescriptor();
-  private final BHDescriptor myLoadSensorNormalExpression__BehaviorDescriptor = new LoadSensorNormalExpression__BehaviorDescriptor();
-  private final BHDescriptor myWindSensorNormalLogicalExpression__BehaviorDescriptor = new WindSensorNormalLogicalExpression__BehaviorDescriptor();
-  private final BHDescriptor myWhen__BehaviorDescriptor = new When__BehaviorDescriptor();
+  private final BHDescriptor myConjuctionLogicalExpression__BehaviorDescriptor = new ConjuctionLogicalExpression__BehaviorDescriptor();
+  private final BHDescriptor myDisjuctionNormalExpression__BehaviorDescriptor = new DisjuctionNormalExpression__BehaviorDescriptor();
+  private final BHDescriptor myWindSensorExpression__BehaviorDescriptor = new WindSensorExpression__BehaviorDescriptor();
+  private final BHDescriptor myRegionSensorExpression__BehaviorDescriptor = new RegionSensorExpression__BehaviorDescriptor();
+  private final BHDescriptor myBatterySensorExpression__BehaviorDescriptor = new BatterySensorExpression__BehaviorDescriptor();
 
   public BehaviorAspectDescriptor() {
   }
@@ -26,18 +26,18 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     SAbstractConcept cncpt = concept;
     switch (conceptIndex.index(cncpt)) {
       case 0:
-        return myBatterySensorNormalLogicalExpression__BehaviorDescriptor;
+        return myBatterySensorExpression__BehaviorDescriptor;
       case 1:
-        return myGPSSensorNormalLogicalExpression__BehaviorDescriptor;
+        return myConjuctionLogicalExpression__BehaviorDescriptor;
       case 2:
-        return myLoadSensorNormalExpression__BehaviorDescriptor;
+        return myDisjuctionNormalExpression__BehaviorDescriptor;
       case 3:
-        return myWhen__BehaviorDescriptor;
+        return myRegionSensorExpression__BehaviorDescriptor;
       case 4:
-        return myWindSensorNormalLogicalExpression__BehaviorDescriptor;
+        return myWindSensorExpression__BehaviorDescriptor;
       default:
     }
     return null;
   }
-  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x570c33aa527a9790L), MetaIdFactory.conceptId(0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x570c33aa527a9793L), MetaIdFactory.conceptId(0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x570c33aa527a9830L), MetaIdFactory.conceptId(0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x7cbf9892eb647163L), MetaIdFactory.conceptId(0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x570c33aa52836144L)).seal();
+  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc04699240L), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8c9bL), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8c9cL), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8ce0L), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8cddL)).seal();
 }

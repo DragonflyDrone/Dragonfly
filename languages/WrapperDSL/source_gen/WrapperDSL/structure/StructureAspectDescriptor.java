@@ -4,6 +4,7 @@ package WrapperDSL.structure;
 
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.EnumerationDescriptor;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
@@ -11,73 +12,41 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.runtime.DataTypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  /*package*/ final ConceptDescriptor myConceptActuator = createDescriptorForActuator();
-  /*package*/ final ConceptDescriptor myConceptAdviceAbstract = createDescriptorForAdviceAbstract();
-  /*package*/ final ConceptDescriptor myConceptAfter = createDescriptorForAfter();
-  /*package*/ final ConceptDescriptor myConceptAround = createDescriptorForAround();
-  /*package*/ final ConceptDescriptor myConceptBatterySensorNormalLogicalExpression = createDescriptorForBatterySensorNormalLogicalExpression();
-  /*package*/ final ConceptDescriptor myConceptBefore = createDescriptorForBefore();
+  /*package*/ final ConceptDescriptor myConceptAdviseScript = createDescriptorForAdviseScript();
+  /*package*/ final ConceptDescriptor myConceptBatterySensorExpression = createDescriptorForBatterySensorExpression();
   /*package*/ final ConceptDescriptor myConceptCommand = createDescriptorForCommand();
-  /*package*/ final ConceptDescriptor myConceptComponent = createDescriptorForComponent();
-  /*package*/ final ConceptDescriptor myConceptConjunctionExpression = createDescriptorForConjunctionExpression();
+  /*package*/ final ConceptDescriptor myConceptConjuctionLogicalExpression = createDescriptorForConjuctionLogicalExpression();
   /*package*/ final ConceptDescriptor myConceptConstant = createDescriptorForConstant();
-  /*package*/ final ConceptDescriptor myConceptCoordinatesState = createDescriptorForCoordinatesState();
-  /*package*/ final ConceptDescriptor myConceptDestinyRegion = createDescriptorForDestinyRegion();
-  /*package*/ final ConceptDescriptor myConceptDisjunctionExpression = createDescriptorForDisjunctionExpression();
-  /*package*/ final ConceptDescriptor myConceptGPSSensorNormalLogicalExpression = createDescriptorForGPSSensorNormalLogicalExpression();
+  /*package*/ final ConceptDescriptor myConceptCoordenateSensorExpression = createDescriptorForCoordenateSensorExpression();
+  /*package*/ final ConceptDescriptor myConceptDisjuctionNormalExpression = createDescriptorForDisjuctionNormalExpression();
+  /*package*/ final ConceptDescriptor myConceptDistanceSensorExpression = createDescriptorForDistanceSensorExpression();
   /*package*/ final ConceptDescriptor myConceptGiven = createDescriptorForGiven();
   /*package*/ final ConceptDescriptor myConceptIf = createDescriptorForIf();
-  /*package*/ final ConceptDescriptor myConceptIntegerConstant = createDescriptorForIntegerConstant();
-  /*package*/ final ConceptDescriptor myConceptLand = createDescriptorForLand();
-  /*package*/ final ConceptDescriptor myConceptLandRegionState = createDescriptorForLandRegionState();
-  /*package*/ final ConceptDescriptor myConceptLightWindState = createDescriptorForLightWindState();
-  /*package*/ final ConceptDescriptor myConceptLoadActuator = createDescriptorForLoadActuator();
-  /*package*/ final ConceptDescriptor myConceptLoadSensorNormalExpression = createDescriptorForLoadSensorNormalExpression();
-  /*package*/ final ConceptDescriptor myConceptLoadedState = createDescriptorForLoadedState();
-  /*package*/ final ConceptDescriptor myConceptLoadingState = createDescriptorForLoadingState();
+  /*package*/ final ConceptDescriptor myConceptInteger = createDescriptorForInteger();
   /*package*/ final ConceptDescriptor myConceptLogicalExpression = createDescriptorForLogicalExpression();
-  /*package*/ final ConceptDescriptor myConceptMathConstant = createDescriptorForMathConstant();
   /*package*/ final ConceptDescriptor myConceptMathElement = createDescriptorForMathElement();
+  /*package*/ final ConceptDescriptor myConceptMathExpression = createDescriptorForMathExpression();
   /*package*/ final ConceptDescriptor myConceptNormalLogicalExpression = createDescriptorForNormalLogicalExpression();
-  /*package*/ final ConceptDescriptor myConceptNormalWindState = createDescriptorForNormalWindState();
-  /*package*/ final ConceptDescriptor myConceptOperator = createDescriptorForOperator();
-  /*package*/ final ConceptDescriptor myConceptOrigemRegion = createDescriptorForOrigemRegion();
-  /*package*/ final ConceptDescriptor myConceptRegionState = createDescriptorForRegionState();
-  /*package*/ final ConceptDescriptor myConceptRepeat = createDescriptorForRepeat();
-  /*package*/ final ConceptDescriptor myConceptSafeLanding = createDescriptorForSafeLanding();
-  /*package*/ final ConceptDescriptor myConceptSensorConstant = createDescriptorForSensorConstant();
-  /*package*/ final ConceptDescriptor myConceptSensorNormalLogicalExpression = createDescriptorForSensorNormalLogicalExpression();
-  /*package*/ final ConceptDescriptor myConceptShutDown = createDescriptorForShutDown();
-  /*package*/ final ConceptDescriptor myConceptStart = createDescriptorForStart();
-  /*package*/ final ConceptDescriptor myConceptState = createDescriptorForState();
+  /*package*/ final ConceptDescriptor myConceptPointCut = createDescriptorForPointCut();
+  /*package*/ final ConceptDescriptor myConceptRegionSensorExpression = createDescriptorForRegionSensorExpression();
+  /*package*/ final ConceptDescriptor myConceptSensorExpression = createDescriptorForSensorExpression();
   /*package*/ final ConceptDescriptor myConceptStatement = createDescriptorForStatement();
-  /*package*/ final ConceptDescriptor myConceptStepLest = createDescriptorForStepLest();
-  /*package*/ final ConceptDescriptor myConceptStepNearestToDestiny = createDescriptorForStepNearestToDestiny();
-  /*package*/ final ConceptDescriptor myConceptStepNearestToLand = createDescriptorForStepNearestToLand();
-  /*package*/ final ConceptDescriptor myConceptStepNearestToOrigem = createDescriptorForStepNearestToOrigem();
-  /*package*/ final ConceptDescriptor myConceptStepNearestToPosition = createDescriptorForStepNearestToPosition();
-  /*package*/ final ConceptDescriptor myConceptStepNearestToWater = createDescriptorForStepNearestToWater();
-  /*package*/ final ConceptDescriptor myConceptStepNorth = createDescriptorForStepNorth();
-  /*package*/ final ConceptDescriptor myConceptStepSouth = createDescriptorForStepSouth();
-  /*package*/ final ConceptDescriptor myConceptStepWest = createDescriptorForStepWest();
-  /*package*/ final ConceptDescriptor myConceptStringConstant = createDescriptorForStringConstant();
-  /*package*/ final ConceptDescriptor myConceptStrongWindState = createDescriptorForStrongWindState();
-  /*package*/ final ConceptDescriptor myConceptTakeOff = createDescriptorForTakeOff();
+  /*package*/ final ConceptDescriptor myConceptText = createDescriptorForText();
   /*package*/ final ConceptDescriptor myConceptThen = createDescriptorForThen();
-  /*package*/ final ConceptDescriptor myConceptTurnLest = createDescriptorForTurnLest();
-  /*package*/ final ConceptDescriptor myConceptTurnNorth = createDescriptorForTurnNorth();
-  /*package*/ final ConceptDescriptor myConceptTurnSouth = createDescriptorForTurnSouth();
-  /*package*/ final ConceptDescriptor myConceptTurnWest = createDescriptorForTurnWest();
-  /*package*/ final ConceptDescriptor myConceptUnloadedState = createDescriptorForUnloadedState();
-  /*package*/ final ConceptDescriptor myConceptWaterRegionState = createDescriptorForWaterRegionState();
   /*package*/ final ConceptDescriptor myConceptWhen = createDescriptorForWhen();
   /*package*/ final ConceptDescriptor myConceptWhile = createDescriptorForWhile();
-  /*package*/ final ConceptDescriptor myConceptWindSensorNormalLogicalExpression = createDescriptorForWindSensorNormalLogicalExpression();
-  /*package*/ final ConceptDescriptor myConceptWindState = createDescriptorForWindState();
+  /*package*/ final ConceptDescriptor myConceptWindSensorExpression = createDescriptorForWindSensorExpression();
   /*package*/ final ConceptDescriptor myConceptWrapperScript = createDescriptorForWrapperScript();
+  /*package*/ final EnumerationDescriptor myEnumerationCommandEnum = new EnumerationDescriptor_CommandEnum();
+  /*package*/ final EnumerationDescriptor myEnumerationOperationEnum = new EnumerationDescriptor_OperationEnum();
+  /*package*/ final EnumerationDescriptor myEnumerationRegionStateEnum = new EnumerationDescriptor_RegionStateEnum();
+  /*package*/ final EnumerationDescriptor myEnumerationSensorType = new EnumerationDescriptor_SensorType();
+  /*package*/ final EnumerationDescriptor myEnumerationTypePointCutEnum = new EnumerationDescriptor_TypePointCutEnum();
+  /*package*/ final EnumerationDescriptor myEnumerationWindStateEnum = new EnumerationDescriptor_WindStateEnum();
   private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
@@ -92,139 +61,61 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptActuator, myConceptAdviceAbstract, myConceptAfter, myConceptAround, myConceptBatterySensorNormalLogicalExpression, myConceptBefore, myConceptCommand, myConceptComponent, myConceptConjunctionExpression, myConceptConstant, myConceptCoordinatesState, myConceptDestinyRegion, myConceptDisjunctionExpression, myConceptGPSSensorNormalLogicalExpression, myConceptGiven, myConceptIf, myConceptIntegerConstant, myConceptLand, myConceptLandRegionState, myConceptLightWindState, myConceptLoadActuator, myConceptLoadSensorNormalExpression, myConceptLoadedState, myConceptLoadingState, myConceptLogicalExpression, myConceptMathConstant, myConceptMathElement, myConceptNormalLogicalExpression, myConceptNormalWindState, myConceptOperator, myConceptOrigemRegion, myConceptRegionState, myConceptRepeat, myConceptSafeLanding, myConceptSensorConstant, myConceptSensorNormalLogicalExpression, myConceptShutDown, myConceptStart, myConceptState, myConceptStatement, myConceptStepLest, myConceptStepNearestToDestiny, myConceptStepNearestToLand, myConceptStepNearestToOrigem, myConceptStepNearestToPosition, myConceptStepNearestToWater, myConceptStepNorth, myConceptStepSouth, myConceptStepWest, myConceptStringConstant, myConceptStrongWindState, myConceptTakeOff, myConceptThen, myConceptTurnLest, myConceptTurnNorth, myConceptTurnSouth, myConceptTurnWest, myConceptUnloadedState, myConceptWaterRegionState, myConceptWhen, myConceptWhile, myConceptWindSensorNormalLogicalExpression, myConceptWindState, myConceptWrapperScript);
+    return Arrays.asList(myConceptAdviseScript, myConceptBatterySensorExpression, myConceptCommand, myConceptConjuctionLogicalExpression, myConceptConstant, myConceptCoordenateSensorExpression, myConceptDisjuctionNormalExpression, myConceptDistanceSensorExpression, myConceptGiven, myConceptIf, myConceptInteger, myConceptLogicalExpression, myConceptMathElement, myConceptMathExpression, myConceptNormalLogicalExpression, myConceptPointCut, myConceptRegionSensorExpression, myConceptSensorExpression, myConceptStatement, myConceptText, myConceptThen, myConceptWhen, myConceptWhile, myConceptWindSensorExpression, myConceptWrapperScript);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
     switch (myIndexSwitch.index(id)) {
-      case LanguageConceptSwitch.Actuator:
-        return myConceptActuator;
-      case LanguageConceptSwitch.AdviceAbstract:
-        return myConceptAdviceAbstract;
-      case LanguageConceptSwitch.After:
-        return myConceptAfter;
-      case LanguageConceptSwitch.Around:
-        return myConceptAround;
-      case LanguageConceptSwitch.BatterySensorNormalLogicalExpression:
-        return myConceptBatterySensorNormalLogicalExpression;
-      case LanguageConceptSwitch.Before:
-        return myConceptBefore;
+      case LanguageConceptSwitch.AdviseScript:
+        return myConceptAdviseScript;
+      case LanguageConceptSwitch.BatterySensorExpression:
+        return myConceptBatterySensorExpression;
       case LanguageConceptSwitch.Command:
         return myConceptCommand;
-      case LanguageConceptSwitch.Component:
-        return myConceptComponent;
-      case LanguageConceptSwitch.ConjunctionExpression:
-        return myConceptConjunctionExpression;
+      case LanguageConceptSwitch.ConjuctionLogicalExpression:
+        return myConceptConjuctionLogicalExpression;
       case LanguageConceptSwitch.Constant:
         return myConceptConstant;
-      case LanguageConceptSwitch.CoordinatesState:
-        return myConceptCoordinatesState;
-      case LanguageConceptSwitch.DestinyRegion:
-        return myConceptDestinyRegion;
-      case LanguageConceptSwitch.DisjunctionExpression:
-        return myConceptDisjunctionExpression;
-      case LanguageConceptSwitch.GPSSensorNormalLogicalExpression:
-        return myConceptGPSSensorNormalLogicalExpression;
+      case LanguageConceptSwitch.CoordenateSensorExpression:
+        return myConceptCoordenateSensorExpression;
+      case LanguageConceptSwitch.DisjuctionNormalExpression:
+        return myConceptDisjuctionNormalExpression;
+      case LanguageConceptSwitch.DistanceSensorExpression:
+        return myConceptDistanceSensorExpression;
       case LanguageConceptSwitch.Given:
         return myConceptGiven;
       case LanguageConceptSwitch.If:
         return myConceptIf;
-      case LanguageConceptSwitch.IntegerConstant:
-        return myConceptIntegerConstant;
-      case LanguageConceptSwitch.Land:
-        return myConceptLand;
-      case LanguageConceptSwitch.LandRegionState:
-        return myConceptLandRegionState;
-      case LanguageConceptSwitch.LightWindState:
-        return myConceptLightWindState;
-      case LanguageConceptSwitch.LoadActuator:
-        return myConceptLoadActuator;
-      case LanguageConceptSwitch.LoadSensorNormalExpression:
-        return myConceptLoadSensorNormalExpression;
-      case LanguageConceptSwitch.LoadedState:
-        return myConceptLoadedState;
-      case LanguageConceptSwitch.LoadingState:
-        return myConceptLoadingState;
+      case LanguageConceptSwitch.Integer:
+        return myConceptInteger;
       case LanguageConceptSwitch.LogicalExpression:
         return myConceptLogicalExpression;
-      case LanguageConceptSwitch.MathConstant:
-        return myConceptMathConstant;
       case LanguageConceptSwitch.MathElement:
         return myConceptMathElement;
+      case LanguageConceptSwitch.MathExpression:
+        return myConceptMathExpression;
       case LanguageConceptSwitch.NormalLogicalExpression:
         return myConceptNormalLogicalExpression;
-      case LanguageConceptSwitch.NormalWindState:
-        return myConceptNormalWindState;
-      case LanguageConceptSwitch.Operator:
-        return myConceptOperator;
-      case LanguageConceptSwitch.OrigemRegion:
-        return myConceptOrigemRegion;
-      case LanguageConceptSwitch.RegionState:
-        return myConceptRegionState;
-      case LanguageConceptSwitch.Repeat:
-        return myConceptRepeat;
-      case LanguageConceptSwitch.SafeLanding:
-        return myConceptSafeLanding;
-      case LanguageConceptSwitch.SensorConstant:
-        return myConceptSensorConstant;
-      case LanguageConceptSwitch.SensorNormalLogicalExpression:
-        return myConceptSensorNormalLogicalExpression;
-      case LanguageConceptSwitch.ShutDown:
-        return myConceptShutDown;
-      case LanguageConceptSwitch.Start:
-        return myConceptStart;
-      case LanguageConceptSwitch.State:
-        return myConceptState;
+      case LanguageConceptSwitch.PointCut:
+        return myConceptPointCut;
+      case LanguageConceptSwitch.RegionSensorExpression:
+        return myConceptRegionSensorExpression;
+      case LanguageConceptSwitch.SensorExpression:
+        return myConceptSensorExpression;
       case LanguageConceptSwitch.Statement:
         return myConceptStatement;
-      case LanguageConceptSwitch.StepLest:
-        return myConceptStepLest;
-      case LanguageConceptSwitch.StepNearestToDestiny:
-        return myConceptStepNearestToDestiny;
-      case LanguageConceptSwitch.StepNearestToLand:
-        return myConceptStepNearestToLand;
-      case LanguageConceptSwitch.StepNearestToOrigem:
-        return myConceptStepNearestToOrigem;
-      case LanguageConceptSwitch.StepNearestToPosition:
-        return myConceptStepNearestToPosition;
-      case LanguageConceptSwitch.StepNearestToWater:
-        return myConceptStepNearestToWater;
-      case LanguageConceptSwitch.StepNorth:
-        return myConceptStepNorth;
-      case LanguageConceptSwitch.StepSouth:
-        return myConceptStepSouth;
-      case LanguageConceptSwitch.StepWest:
-        return myConceptStepWest;
-      case LanguageConceptSwitch.StringConstant:
-        return myConceptStringConstant;
-      case LanguageConceptSwitch.StrongWindState:
-        return myConceptStrongWindState;
-      case LanguageConceptSwitch.TakeOff:
-        return myConceptTakeOff;
+      case LanguageConceptSwitch.Text:
+        return myConceptText;
       case LanguageConceptSwitch.Then:
         return myConceptThen;
-      case LanguageConceptSwitch.TurnLest:
-        return myConceptTurnLest;
-      case LanguageConceptSwitch.TurnNorth:
-        return myConceptTurnNorth;
-      case LanguageConceptSwitch.TurnSouth:
-        return myConceptTurnSouth;
-      case LanguageConceptSwitch.TurnWest:
-        return myConceptTurnWest;
-      case LanguageConceptSwitch.UnloadedState:
-        return myConceptUnloadedState;
-      case LanguageConceptSwitch.WaterRegionState:
-        return myConceptWaterRegionState;
       case LanguageConceptSwitch.When:
         return myConceptWhen;
       case LanguageConceptSwitch.While:
         return myConceptWhile;
-      case LanguageConceptSwitch.WindSensorNormalLogicalExpression:
-        return myConceptWindSensorNormalLogicalExpression;
-      case LanguageConceptSwitch.WindState:
-        return myConceptWindState;
+      case LanguageConceptSwitch.WindSensorExpression:
+        return myConceptWindSensorExpression;
       case LanguageConceptSwitch.WrapperScript:
         return myConceptWrapperScript;
       default:
@@ -234,576 +125,233 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<DataTypeDescriptor> getDataTypeDescriptors() {
-    return Arrays.asList();
+    return Arrays.asList(myEnumerationCommandEnum, myEnumerationOperationEnum, myEnumerationRegionStateEnum, myEnumerationSensorType, myEnumerationTypePointCutEnum, myEnumerationWindStateEnum);
   }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
     return myIndexSwitch.index(c);
   }
 
-  private static ConceptDescriptor createDescriptorForActuator() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "Actuator", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x570c33aa527a97cbL);
-    b.class_(false, true, false);
-    b.super_("WrapperDSL.structure.Component", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x570c33aa527a9797L);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/6272445187641481163");
-    b.version(2);
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForAdviceAbstract() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "AdviceAbstract", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x6b53188b89b66863L);
-    b.class_(false, true, false);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/7733551972715227235");
-    b.version(2);
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForAfter() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "After", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x6b53188b89b66867L);
+  private static ConceptDescriptor createDescriptorForAdviseScript() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "AdviseScript", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc046e0b54L);
     b.class_(false, false, false);
-    b.super_("WrapperDSL.structure.AdviceAbstract", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x6b53188b89b66863L);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/7733551972715227239");
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
+    b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596691614548");
     b.version(2);
-    b.alias("After");
+    b.aggregate("body", 0x53be3ecc0480a64aL).target(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045b453cL).optional(false).ordered(true).multiple(false).origin("6034329596692833866").done();
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForAround() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "Around", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x6b53188b89b66868L);
+  private static ConceptDescriptor createDescriptorForBatterySensorExpression() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "BatterySensorExpression", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc04699240L);
     b.class_(false, false, false);
-    b.super_("WrapperDSL.structure.AdviceAbstract", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x6b53188b89b66863L);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/7733551972715227240");
+    b.super_("WrapperDSL.structure.SensorExpression", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8c9dL);
+    b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596691321408");
     b.version(2);
-    b.alias("Around");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForBatterySensorNormalLogicalExpression() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "BatterySensorNormalLogicalExpression", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x570c33aa527a9790L);
-    b.class_(false, false, false);
-    b.super_("WrapperDSL.structure.SensorNormalLogicalExpression", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x2bffada189922149L);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/6272445187641481104");
-    b.version(2);
-    b.alias("BatteryExpression");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForBefore() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "Before", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x6b53188b89b66866L);
-    b.class_(false, false, false);
-    b.super_("WrapperDSL.structure.AdviceAbstract", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x6b53188b89b66863L);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/7733551972715227238");
-    b.version(2);
-    b.alias("Before");
+    b.aggregate("right", 0x53be3ecc04699241L).target(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc0462d3fbL).optional(false).ordered(true).multiple(false).origin("6034329596691321409").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForCommand() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "Command", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x3d4e131fa1842b5dL);
-    b.class_(false, true, false);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/4417489311071742813");
-    b.version(2);
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForComponent() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "Component", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x570c33aa527a9797L);
-    b.class_(false, true, false);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/6272445187641481111");
-    b.version(2);
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForConjunctionExpression() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "ConjunctionExpression", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x2bffada1898cef7cL);
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "Command", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc047dcb4aL);
     b.class_(false, false, false);
-    b.super_("WrapperDSL.structure.LogicalExpression", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0xf8231681b95e20fL);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/3170443572001173372");
+    b.super_("WrapperDSL.structure.Statement", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045b453cL);
+    b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596692646730");
+    b.version(2);
+    b.property("commandValue", 0x53be3ecc04847a19L).type(MetaIdFactory.dataTypeId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045b44aeL)).origin("6034329596693084697").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForConjuctionLogicalExpression() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "ConjuctionLogicalExpression", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8c9bL);
+    b.class_(false, false, false);
+    b.super_("WrapperDSL.structure.MathExpression", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bd7L);
+    b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690336923");
     b.version(2);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForConstant() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "Constant", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x2bffada1898cef83L);
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "Constant", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc0462d3f8L);
     b.class_(false, true, false);
-    b.super_("WrapperDSL.structure.MathElement", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x2bffada1898cef7bL);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/3170443572001173379");
+    b.super_("WrapperDSL.structure.MathElement", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bd6L);
+    b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690879480");
     b.version(2);
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForCoordinatesState() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "CoordinatesState", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x570c33aa528361a8L);
+  private static ConceptDescriptor createDescriptorForCoordenateSensorExpression() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "CoordenateSensorExpression", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8ce3L);
     b.class_(false, false, false);
-    b.super_("WrapperDSL.structure.RegionState", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x570c33aa52836173L);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/6272445187642057128");
+    b.super_("WrapperDSL.structure.SensorExpression", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8c9dL);
+    b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690336995");
     b.version(2);
-    b.aggregate("i", 0x2bffada189a0c785L).target(0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x2bffada1898cef84L).optional(false).ordered(true).multiple(false).origin("3170443572002473861").done();
-    b.aggregate("j", 0x2bffada189a0c787L).target(0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x2bffada1898cef84L).optional(false).ordered(true).multiple(false).origin("3170443572002473863").done();
+    b.property("longitude", 0x53be3ecc045a8ce4L).type(PrimitiveTypeId.INTEGER).origin("6034329596690336996").done();
+    b.property("latitude", 0x53be3ecc045a8ce6L).type(PrimitiveTypeId.INTEGER).origin("6034329596690336998").done();
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForDestinyRegion() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "DestinyRegion", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x2bffada189a44a43L);
+  private static ConceptDescriptor createDescriptorForDisjuctionNormalExpression() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "DisjuctionNormalExpression", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8c9cL);
     b.class_(false, false, false);
-    b.super_("WrapperDSL.structure.RegionState", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x570c33aa52836173L);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/3170443572002703939");
-    b.version(2);
-    b.aggregate("value", 0x2bffada189a44a47L).target(0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x2bffada1898cef84L).optional(false).ordered(true).multiple(false).origin("3170443572002703943").done();
-    b.alias("Destiny");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForDisjunctionExpression() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "DisjunctionExpression", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x2bffada1898cef7dL);
-    b.class_(false, false, false);
-    b.super_("WrapperDSL.structure.LogicalExpression", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0xf8231681b95e20fL);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/3170443572001173373");
+    b.super_("WrapperDSL.structure.MathExpression", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bd7L);
+    b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690336924");
     b.version(2);
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForGPSSensorNormalLogicalExpression() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "GPSSensorNormalLogicalExpression", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x570c33aa527a9793L);
+  private static ConceptDescriptor createDescriptorForDistanceSensorExpression() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "DistanceSensorExpression", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc048c5944L);
     b.class_(false, false, false);
-    b.super_("WrapperDSL.structure.SensorNormalLogicalExpression", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x2bffada189922149L);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/6272445187641481107");
+    b.super_("WrapperDSL.structure.SensorExpression", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8c9dL);
+    b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596693600580");
     b.version(2);
-    b.alias("GpsExpression");
+    b.aggregate("distance", 0x53be3ecc048c5945L).target(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc0462d3fbL).optional(false).ordered(true).multiple(false).origin("6034329596693600581").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForGiven() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "Given", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x7cbf9892eb647158L);
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "Given", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bcaL);
     b.class_(false, false, false);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/8989071138036674904");
+    b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690336714");
     b.version(2);
-    b.aggregate("context", 0x72fece6dc77fc942L).target(0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0xf8231681b95e20fL).optional(false).ordered(true).multiple(false).origin("8286287335302089026").done();
+    b.aggregate("logicalExpression", 0x53be3ecc045b453aL).target(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc046bd51aL).optional(false).ordered(true).multiple(false).origin("6034329596690384186").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForIf() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "If", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0xf8231681b95e1ffL);
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "If", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045b45abL);
     b.class_(false, false, false);
-    b.super_("WrapperDSL.structure.Statement", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0xf8231681b95e1fbL);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/1117509980750471679");
+    b.super_("WrapperDSL.structure.Statement", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045b453cL);
+    b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690384299");
     b.version(2);
-    b.aggregate("condition", 0xf8231681b95e200L).target(0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0xf8231681b95e20fL).optional(false).ordered(true).multiple(false).origin("1117509980750471680").done();
-    b.aggregate("trueBranch", 0xf8231681b95e203L).target(0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0xf8231681b95e1fbL).optional(false).ordered(true).multiple(true).origin("1117509980750471683").done();
-    b.aggregate("falseBranch", 0xf8231681b95e208L).target(0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0xf8231681b95e1fbL).optional(false).ordered(true).multiple(true).origin("1117509980750471688").done();
-    b.alias("if");
+    b.aggregate("condition", 0x53be3ecc045b4670L).target(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc046bd51aL).optional(false).ordered(true).multiple(false).origin("6034329596690384496").done();
+    b.aggregate("body", 0x53be3ecc045b4672L).target(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045b453cL).optional(true).ordered(true).multiple(false).origin("6034329596690384498").done();
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForIntegerConstant() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "IntegerConstant", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x2bffada1898cef84L);
+  private static ConceptDescriptor createDescriptorForInteger() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "Integer", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc0462d3fbL);
     b.class_(false, false, false);
-    b.super_("WrapperDSL.structure.MathConstant", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x2bffada18999c8a3L);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/3170443572001173380");
+    b.super_("WrapperDSL.structure.Constant", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc0462d3f8L);
+    b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690879483");
     b.version(2);
-    b.property("value", 0x2bffada1898cef85L).type(PrimitiveTypeId.INTEGER).origin("3170443572001173381").done();
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForLand() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "Land", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x2481d1255afb5331L);
-    b.class_(false, false, false);
-    b.super_("WrapperDSL.structure.Command", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x3d4e131fa1842b5dL);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/2630613615731495729");
-    b.version(2);
-    b.alias("Land");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForLandRegionState() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "LandRegionState", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x570c33aa52836172L);
-    b.class_(false, false, false);
-    b.super_("WrapperDSL.structure.RegionState", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x570c33aa52836173L);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/6272445187642057074");
-    b.version(2);
-    b.alias("land region");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForLightWindState() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "LightWindState", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x570c33aa5283616aL);
-    b.class_(false, false, false);
-    b.super_("WrapperDSL.structure.WindState", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x570c33aa5283616cL);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/6272445187642057066");
-    b.version(2);
-    b.alias("light wind");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForLoadActuator() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "LoadActuator", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x570c33aa527a9796L);
-    b.class_(false, false, false);
-    b.super_("WrapperDSL.structure.Actuator", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x570c33aa527a97cbL);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/6272445187641481110");
-    b.version(2);
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForLoadSensorNormalExpression() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "LoadSensorNormalExpression", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x570c33aa527a9830L);
-    b.class_(false, false, false);
-    b.super_("WrapperDSL.structure.SensorNormalLogicalExpression", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x2bffada189922149L);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/6272445187641481264");
-    b.version(2);
-    b.alias("LoadExpression");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForLoadedState() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "LoadedState", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x570c33aa52849c5cL);
-    b.class_(false, false, false);
-    b.super_("WrapperDSL.structure.LoadingState", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x570c33aa52849c5eL);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/6272445187642137692");
-    b.version(2);
-    b.alias("loaded");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForLoadingState() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "LoadingState", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x570c33aa52849c5eL);
-    b.class_(false, true, false);
-    b.super_("WrapperDSL.structure.State", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x2bffada1898d1413L);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/6272445187642137694");
-    b.version(2);
+    b.property("value", 0x53be3ecc0462d3fcL).type(PrimitiveTypeId.INTEGER).origin("6034329596690879484").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForLogicalExpression() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "LogicalExpression", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0xf8231681b95e20fL);
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "LogicalExpression", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc046bd51aL);
     b.class_(false, true, false);
-    b.super_("WrapperDSL.structure.MathElement", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x2bffada1898cef7bL);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/1117509980750471695");
-    b.version(2);
-    b.aggregate("leftElement", 0x2bffada1898cef7eL).target(0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x2bffada1898cef7bL).optional(false).ordered(true).multiple(false).origin("3170443572001173374").done();
-    b.aggregate("rightElement", 0x2bffada1898cef80L).target(0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x2bffada1898cef7bL).optional(false).ordered(true).multiple(false).origin("3170443572001173376").done();
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForMathConstant() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "MathConstant", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x2bffada18999c8a3L);
-    b.class_(false, false, false);
-    b.super_("WrapperDSL.structure.Constant", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x2bffada1898cef83L);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/3170443572002015395");
+    b.super_("WrapperDSL.structure.MathElement", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bd6L);
+    b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596691469594");
     b.version(2);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForMathElement() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "MathElement", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x2bffada1898cef7bL);
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "MathElement", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bd6L);
     b.class_(false, true, false);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/3170443572001173371");
+    b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690336726");
     b.version(2);
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForMathExpression() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "MathExpression", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bd7L);
+    b.class_(false, true, false);
+    b.super_("WrapperDSL.structure.LogicalExpression", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc046bd51aL);
+    b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690336727");
+    b.version(2);
+    b.property("operation", 0x53be3ecc045a8c62L).type(MetaIdFactory.dataTypeId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bdfL)).origin("6034329596690336866").done();
+    b.aggregate("right", 0x53be3ecc045a8bdaL).target(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bd6L).optional(false).ordered(true).multiple(false).origin("6034329596690336730").done();
+    b.aggregate("left", 0x53be3ecc045a8bdcL).target(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bd6L).optional(false).ordered(true).multiple(false).origin("6034329596690336732").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForNormalLogicalExpression() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "NormalLogicalExpression", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x2bffada1898cefa7L);
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "NormalLogicalExpression", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8c64L);
     b.class_(false, false, false);
-    b.super_("WrapperDSL.structure.LogicalExpression", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0xf8231681b95e20fL);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/3170443572001173415");
+    b.super_("WrapperDSL.structure.MathExpression", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bd7L);
+    b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690336868");
     b.version(2);
-    b.aggregate("operator", 0x2bffada1898d12f2L).target(0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x2bffada1898cefa8L).optional(false).ordered(true).multiple(false).origin("3170443572001182450").done();
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForNormalWindState() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "NormalWindState", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x570c33aa5283616bL);
+  private static ConceptDescriptor createDescriptorForPointCut() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "PointCut", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc046e0b59L);
     b.class_(false, false, false);
-    b.super_("WrapperDSL.structure.WindState", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x570c33aa5283616cL);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/6272445187642057067");
+    b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596691614553");
     b.version(2);
-    b.alias("normal wind");
+    b.property("typePointCut", 0x53be3ecc046e0b64L).type(MetaIdFactory.dataTypeId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045b44a3L)).origin("6034329596691614564").done();
+    b.property("call", 0x53be3ecc047cf223L).type(MetaIdFactory.dataTypeId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045b44aeL)).origin("6034329596692591139").done();
+    b.associate("adviseScript", 0x53be3ecc046e0b68L).target(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc046e0b54L).optional(false).origin("6034329596691614568").done();
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForOperator() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "Operator", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x2bffada1898cefa8L);
+  private static ConceptDescriptor createDescriptorForRegionSensorExpression() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "RegionSensorExpression", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8ce0L);
     b.class_(false, false, false);
-    b.super_("WrapperDSL.structure.MathElement", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x2bffada1898cef7bL);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/3170443572001173416");
+    b.super_("WrapperDSL.structure.SensorExpression", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8c9dL);
+    b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690336992");
     b.version(2);
-    b.property("operator", 0x2bffada1898cefa9L).type(PrimitiveTypeId.STRING).origin("3170443572001173417").done();
+    b.property("right", 0x53be3ecc045a8ce1L).type(MetaIdFactory.dataTypeId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8ca0L)).origin("6034329596690336993").done();
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForOrigemRegion() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "OrigemRegion", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x2bffada189a44a44L);
-    b.class_(false, false, false);
-    b.super_("WrapperDSL.structure.RegionState", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x570c33aa52836173L);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/3170443572002703940");
-    b.version(2);
-    b.aggregate("value", 0x2bffada189a44a45L).target(0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x2bffada1898cef84L).optional(false).ordered(true).multiple(false).origin("3170443572002703941").done();
-    b.alias("Origem");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForRegionState() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "RegionState", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x570c33aa52836173L);
+  private static ConceptDescriptor createDescriptorForSensorExpression() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "SensorExpression", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8c9dL);
     b.class_(false, true, false);
-    b.super_("WrapperDSL.structure.State", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x2bffada1898d1413L);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/6272445187642057075");
+    b.super_("WrapperDSL.structure.LogicalExpression", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc046bd51aL);
+    b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690336925");
     b.version(2);
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForRepeat() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "Repeat", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0xf8231681b95e21aL);
-    b.class_(false, false, false);
-    b.super_("WrapperDSL.structure.Statement", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0xf8231681b95e1fbL);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/1117509980750471706");
-    b.version(2);
-    b.property("count", 0xf8231681b95e21bL).type(PrimitiveTypeId.INTEGER).origin("1117509980750471707").done();
-    b.aggregate("body", 0xf8231681b95e21eL).target(0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0xf8231681b95e1fbL).optional(false).ordered(true).multiple(true).origin("1117509980750471710").done();
-    b.alias("repeat");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForSafeLanding() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "SafeLanding", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x2bffada189a3a7d9L);
-    b.class_(false, false, false);
-    b.super_("WrapperDSL.structure.Command", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x3d4e131fa1842b5dL);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/3170443572002662361");
-    b.version(2);
-    b.alias("SafeLanding");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForSensorConstant() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "SensorConstant", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x2bffada18999c8dcL);
-    b.class_(false, false, false);
-    b.super_("WrapperDSL.structure.Constant", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x2bffada1898cef83L);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/3170443572002015452");
-    b.version(2);
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForSensorNormalLogicalExpression() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "SensorNormalLogicalExpression", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x2bffada189922149L);
-    b.class_(false, true, false);
-    b.super_("WrapperDSL.structure.NormalLogicalExpression", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x2bffada1898cefa7L);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/3170443572001513801");
-    b.version(2);
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForShutDown() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "ShutDown", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x2481d1255afb532fL);
-    b.class_(false, false, false);
-    b.super_("WrapperDSL.structure.Command", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x3d4e131fa1842b5dL);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/2630613615731495727");
-    b.version(2);
-    b.alias("Shut Down");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForStart() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "Start", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x2481d1255afb532eL);
-    b.class_(false, false, false);
-    b.super_("WrapperDSL.structure.Command", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x3d4e131fa1842b5dL);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/2630613615731495726");
-    b.version(2);
-    b.alias("Start");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForState() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "State", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x2bffada1898d1413L);
-    b.class_(false, true, false);
-    b.super_("WrapperDSL.structure.SensorConstant", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x2bffada18999c8dcL);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/3170443572001182739");
-    b.version(2);
+    b.property("operation", 0x53be3ecc0462d409L).type(MetaIdFactory.dataTypeId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bdfL)).origin("6034329596690879497").done();
+    b.property("left", 0x53be3ecc0468105bL).type(MetaIdFactory.dataTypeId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc04681056L)).origin("6034329596691222619").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForStatement() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "Statement", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0xf8231681b95e1fbL);
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "Statement", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045b453cL);
     b.class_(false, true, false);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/1117509980750471675");
+    b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690384188");
     b.version(2);
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForStepLest() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "StepLest", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x2481d1255afb5339L);
+  private static ConceptDescriptor createDescriptorForText() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "Text", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc0462d3feL);
     b.class_(false, false, false);
-    b.super_("WrapperDSL.structure.Command", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x3d4e131fa1842b5dL);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/2630613615731495737");
+    b.super_("WrapperDSL.structure.Constant", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc0462d3f8L);
+    b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690879486");
     b.version(2);
-    b.alias("Step Lest");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForStepNearestToDestiny() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "StepNearestToDestiny", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x6875dbacb66bbb46L);
-    b.class_(false, false, false);
-    b.super_("WrapperDSL.structure.Command", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x3d4e131fa1842b5dL);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/7527163887061023558");
-    b.version(2);
-    b.alias("Step Nearest To Destiny");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForStepNearestToLand() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "StepNearestToLand", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x6875dbacb66bbb3eL);
-    b.class_(false, false, false);
-    b.super_("WrapperDSL.structure.Command", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x3d4e131fa1842b5dL);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/7527163887061023550");
-    b.version(2);
-    b.alias("Step Nearest To Land");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForStepNearestToOrigem() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "StepNearestToOrigem", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x6875dbacb66bbb47L);
-    b.class_(false, false, false);
-    b.super_("WrapperDSL.structure.Command", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x3d4e131fa1842b5dL);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/7527163887061023559");
-    b.version(2);
-    b.alias("Step Nearest To Origem");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForStepNearestToPosition() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "StepNearestToPosition", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x6875dbacb66bbb40L);
-    b.class_(false, false, false);
-    b.super_("WrapperDSL.structure.Command", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x3d4e131fa1842b5dL);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/7527163887061023552");
-    b.version(2);
-    b.property("latitude", 0x6875dbacb66bbb41L).type(PrimitiveTypeId.INTEGER).origin("7527163887061023553").done();
-    b.property("longitude", 0x6875dbacb66bbb43L).type(PrimitiveTypeId.INTEGER).origin("7527163887061023555").done();
-    b.alias("Step Nearest To Position");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForStepNearestToWater() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "StepNearestToWater", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x6875dbacb66bbb3fL);
-    b.class_(false, false, false);
-    b.super_("WrapperDSL.structure.Command", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x3d4e131fa1842b5dL);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/7527163887061023551");
-    b.version(2);
-    b.alias("Step Nearest To Water");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForStepNorth() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "StepNorth", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x2481d1255afb5336L);
-    b.class_(false, false, false);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/2630613615731495734");
-    b.version(2);
-    b.alias("Step North");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForStepSouth() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "StepSouth", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x2481d1255afb5337L);
-    b.class_(false, false, false);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/2630613615731495735");
-    b.version(2);
-    b.alias("Step South");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForStepWest() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "StepWest", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x2481d1255afb5338L);
-    b.class_(false, false, false);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/2630613615731495736");
-    b.version(2);
-    b.alias("Step West");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForStringConstant() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "StringConstant", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x2bffada1898d13c7L);
-    b.class_(false, false, false);
-    b.super_("WrapperDSL.structure.MathConstant", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x2bffada18999c8a3L);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/3170443572001182663");
-    b.version(2);
-    b.property("value", 0x2bffada1898d13c8L).type(PrimitiveTypeId.STRING).origin("3170443572001182664").done();
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForStrongWindState() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "StrongWindState", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x570c33aa52836169L);
-    b.class_(false, false, false);
-    b.super_("WrapperDSL.structure.WindState", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x570c33aa5283616cL);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/6272445187642057065");
-    b.version(2);
-    b.alias("strong wind");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForTakeOff() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "TakeOff", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x2481d1255afb5330L);
-    b.class_(false, false, false);
-    b.super_("WrapperDSL.structure.Command", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x3d4e131fa1842b5dL);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/2630613615731495728");
-    b.version(2);
-    b.alias("Take Off");
+    b.property("value", 0x53be3ecc0462d3ffL).type(PrimitiveTypeId.STRING).origin("6034329596690879487").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForThen() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "Then", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x7cbf9892eb647164L);
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "Then", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bccL);
     b.class_(false, false, false);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/8989071138036674916");
+    b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690336716");
     b.version(2);
-    b.aggregate("statements", 0x6b53188b89b69f49L).target(0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0xf8231681b95e1fbL).optional(true).ordered(true).multiple(false).origin("7733551972715241289").done();
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForTurnLest() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "TurnLest", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x2481d1255afb5335L);
-    b.class_(false, false, false);
-    b.super_("WrapperDSL.structure.Command", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x3d4e131fa1842b5dL);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/2630613615731495733");
-    b.version(2);
-    b.alias("Turn Lest");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForTurnNorth() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "TurnNorth", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x2481d1255afb5332L);
-    b.class_(false, false, false);
-    b.super_("WrapperDSL.structure.Command", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x3d4e131fa1842b5dL);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/2630613615731495730");
-    b.version(2);
-    b.alias("Turn North");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForTurnSouth() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "TurnSouth", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x2481d1255afb5333L);
-    b.class_(false, false, false);
-    b.super_("WrapperDSL.structure.Command", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x3d4e131fa1842b5dL);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/2630613615731495731");
-    b.version(2);
-    b.alias("Turn South");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForTurnWest() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "TurnWest", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x2481d1255afb5334L);
-    b.class_(false, false, false);
-    b.super_("WrapperDSL.structure.Command", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x3d4e131fa1842b5dL);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/2630613615731495732");
-    b.version(2);
-    b.alias("Turn West");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForUnloadedState() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "UnloadedState", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x570c33aa52849c5dL);
-    b.class_(false, false, false);
-    b.super_("WrapperDSL.structure.LoadingState", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x570c33aa52849c5eL);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/6272445187642137693");
-    b.version(2);
-    b.alias("unloaded");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForWaterRegionState() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "WaterRegionState", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x570c33aa5283616fL);
-    b.class_(false, false, false);
-    b.super_("WrapperDSL.structure.RegionState", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x570c33aa52836173L);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/6272445187642057071");
-    b.version(2);
-    b.alias("water region");
+    b.aggregate("adviseScript", 0x53be3ecc045b45a9L).target(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc046e0b54L).optional(false).ordered(true).multiple(true).origin("6034329596690384297").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForWhen() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "When", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x7cbf9892eb647163L);
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "When", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bcbL);
     b.class_(false, false, false);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/8989071138036674915");
+    b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690336715");
     b.version(2);
-    b.aggregate("call", 0x1fc7448200dd6d10L).target(0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x3d4e131fa1842b5dL).optional(false).ordered(true).multiple(false).origin("2289874260692135184").done();
-    b.aggregate("advice", 0x6b53188b89b670f5L).target(0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x6b53188b89b66863L).optional(false).ordered(true).multiple(false).origin("7733551972715229429").done();
+    b.aggregate("pointCut", 0x53be3ecc046e0bf5L).target(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc046e0b59L).optional(false).ordered(true).multiple(true).origin("6034329596691614709").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForWhile() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "While", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0xf8231681b95e221L);
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "While", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045b45acL);
     b.class_(false, false, false);
-    b.super_("WrapperDSL.structure.Statement", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0xf8231681b95e1fbL);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/1117509980750471713");
+    b.super_("WrapperDSL.structure.Statement", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045b453cL);
+    b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690384300");
     b.version(2);
-    b.aggregate("condition", 0xf8231681b95e222L).target(0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0xf8231681b95e20fL).optional(false).ordered(true).multiple(false).origin("1117509980750471714").done();
-    b.aggregate("body", 0xf8231681b95e225L).target(0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x3d4e131fa1842b5dL).optional(false).ordered(true).multiple(true).origin("1117509980750471717").done();
-    b.alias("while");
+    b.aggregate("condition", 0x53be3ecc045b45d2L).target(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc046bd51aL).optional(false).ordered(true).multiple(false).origin("6034329596690384338").done();
+    b.aggregate("body", 0x53be3ecc045b45d4L).target(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045b453cL).optional(true).ordered(true).multiple(false).origin("6034329596690384340").done();
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForWindSensorNormalLogicalExpression() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "WindSensorNormalLogicalExpression", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x570c33aa52836144L);
+  private static ConceptDescriptor createDescriptorForWindSensorExpression() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "WindSensorExpression", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8cddL);
     b.class_(false, false, false);
-    b.super_("WrapperDSL.structure.SensorNormalLogicalExpression", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x2bffada189922149L);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/6272445187642057028");
+    b.super_("WrapperDSL.structure.SensorExpression", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8c9dL);
+    b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690336989");
     b.version(2);
-    b.alias("WindExpression");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForWindState() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "WindState", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x570c33aa5283616cL);
-    b.class_(false, true, false);
-    b.super_("WrapperDSL.structure.State", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x2bffada1898d1413L);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/6272445187642057068");
-    b.version(2);
+    b.property("right", 0x53be3ecc045a8cdeL).type(MetaIdFactory.dataTypeId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8cd0L)).origin("6034329596690336990").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForWrapperScript() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "WrapperScript", 0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x5ef0a89f564c5022L);
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "WrapperScript", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bc3L);
     b.class_(false, false, true);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
-    b.origin("r:eaaea31a-4f59-4dab-b633-fc8803df80fe(WrapperDSL.structure)/6841153236276891682");
+    b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690336707");
     b.version(2);
-    b.aggregate("Given", 0x5ef0a89f564c5025L).target(0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x7cbf9892eb647158L).optional(false).ordered(true).multiple(false).origin("6841153236276891685").done();
-    b.aggregate("When", 0x5ef0a89f564c5027L).target(0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x7cbf9892eb647163L).optional(false).ordered(true).multiple(false).origin("6841153236276891687").done();
-    b.aggregate("Then", 0x5ef0a89f564c502aL).target(0x3c0688eb4e024d93L, 0x86be1d02f4019544L, 0x7cbf9892eb647164L).optional(false).ordered(true).multiple(false).origin("6841153236276891690").done();
-    b.alias("Wrapper Script");
+    b.aggregate("given", 0x53be3ecc045a8bcdL).target(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bcaL).optional(false).ordered(true).multiple(false).origin("6034329596690336717").done();
+    b.aggregate("when", 0x53be3ecc045a8bcfL).target(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bcbL).optional(false).ordered(true).multiple(false).origin("6034329596690336719").done();
+    b.aggregate("then", 0x53be3ecc045a8bd2L).target(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bccL).optional(false).ordered(true).multiple(false).origin("6034329596690336722").done();
     return b.create();
   }
 }

@@ -8,19 +8,17 @@ import java.util.Collection;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
-import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import WrapperDSL.editor.EditorAspectDescriptorImpl;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspect;
 import WrapperDSL.structure.ConceptPresentationAspectImpl;
-import jetbrains.mps.text.rt.TextGenAspectDescriptor;
 
 public class Language extends LanguageRuntime {
   private final SLanguageId myId;
 
   public Language() {
-    myId = SLanguageId.deserialize("3c0688eb-4e02-4d93-86be-1d02f4019544");
+    myId = SLanguageId.deserialize("3e1c68c4-ebe6-40bd-a27f-e74585aa2487");
   }
 
   @Override
@@ -49,9 +47,6 @@ public class Language extends LanguageRuntime {
     if (aspectClass == BehaviorAspectDescriptor.class) {
       return aspectClass.cast(new WrapperDSL.behavior.BehaviorAspectDescriptor());
     }
-    if (aspectClass == ConstraintsAspectDescriptor.class) {
-      return aspectClass.cast(new WrapperDSL.constraints.ConstraintsAspectDescriptor());
-    }
     if (aspectClass == EditorAspectDescriptor.class) {
       return aspectClass.cast(new EditorAspectDescriptorImpl());
     }
@@ -60,9 +55,6 @@ public class Language extends LanguageRuntime {
     }
     if (aspectClass == ConceptPresentationAspect.class) {
       return aspectClass.cast(new ConceptPresentationAspectImpl());
-    }
-    if (aspectClass == TextGenAspectDescriptor.class) {
-      return aspectClass.cast(new WrapperDSL.textGen.TextGenAspectDescriptor());
     }
     return null;
   }

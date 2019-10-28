@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="00000000-0000-4000-5f02-5beb5f025beb/i:fe599c6(checkpoints/WrapperDSL.typesystem@descriptorclasses)">
+<model ref="00000000-0000-4000-5f02-5beb5f025beb/i:f19c10a(checkpoints/WrapperDSL.typesystem@descriptorclasses)">
   <persistence version="9" />
   <attribute name="checkpoint" value="DescriptorClasses" />
   <attribute name="generation-plan" value="AspectCPS" />
   <languages />
   <imports>
-    <import index="jtqp" ref="r:e29030e7-e467-4ea5-8eb3-e81a4f395e09(WrapperDSL.typesystem)" />
+    <import index="7y59" ref="r:8d7df24b-080c-453c-bf3d-0bbe70cd2c54(WrapperDSL.typesystem)" />
     <import index="qurh" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.lang.typesystem.runtime(MPS.Core/)" />
   </imports>
   <registry>
