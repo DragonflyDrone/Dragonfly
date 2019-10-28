@@ -509,28 +509,28 @@
     <property role="TrG5h" value="SensorType" />
     <node concept="25R33" id="5eYfGK4q11n" role="25R1y">
       <property role="3tVfz5" value="6034329596691222615" />
-      <property role="1L1pqM" value="wind" />
+      <property role="1L1pqM" value="Wind" />
       <property role="TrG5h" value="wind" />
     </node>
     <node concept="25R33" id="5eYfGK4q11o" role="25R1y">
       <property role="3tVfz5" value="6034329596691222616" />
       <property role="TrG5h" value="region" />
-      <property role="1L1pqM" value="region" />
+      <property role="1L1pqM" value="Region" />
     </node>
     <node concept="25R33" id="5eYfGK4q_BE" role="25R1y">
       <property role="3tVfz5" value="6034329596691372522" />
       <property role="TrG5h" value="battery" />
-      <property role="1L1pqM" value="battery" />
+      <property role="1L1pqM" value="Battery" />
     </node>
     <node concept="25R33" id="5eYfGK4zk9C" role="25R1y">
       <property role="3tVfz5" value="6034329596693660264" />
       <property role="TrG5h" value="origem_distance" />
-      <property role="1L1pqM" value="origem distance" />
+      <property role="1L1pqM" value="Origem Distance" />
     </node>
     <node concept="25R33" id="5eYfGK4zk9H" role="25R1y">
       <property role="3tVfz5" value="6034329596693660269" />
       <property role="TrG5h" value="destiny_distance" />
-      <property role="1L1pqM" value="destiny distance" />
+      <property role="1L1pqM" value="Destination Distance" />
     </node>
   </node>
   <node concept="1TIwiD" id="5eYfGK4qp90">

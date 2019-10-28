@@ -8226,7 +8226,7 @@
             </node>
           </node>
           <node concept="Xl_RD" id="Lg" role="37wK5m">
-            <property role="Xl_RC" value="wind" />
+            <property role="Xl_RC" value="Wind" />
             <node concept="cd27G" id="Lm" role="lGtFl">
               <node concept="3u3nmq" id="Ln" role="cd27D">
                 <property role="3u3nmv" value="6034329596691222614" />
@@ -8297,7 +8297,7 @@
             </node>
           </node>
           <node concept="Xl_RD" id="LE" role="37wK5m">
-            <property role="Xl_RC" value="region" />
+            <property role="Xl_RC" value="Region" />
             <node concept="cd27G" id="LK" role="lGtFl">
               <node concept="3u3nmq" id="LL" role="cd27D">
                 <property role="3u3nmv" value="6034329596691222614" />
@@ -8368,7 +8368,7 @@
             </node>
           </node>
           <node concept="Xl_RD" id="M4" role="37wK5m">
-            <property role="Xl_RC" value="battery" />
+            <property role="Xl_RC" value="Battery" />
             <node concept="cd27G" id="Ma" role="lGtFl">
               <node concept="3u3nmq" id="Mb" role="cd27D">
                 <property role="3u3nmv" value="6034329596691222614" />
@@ -8439,7 +8439,7 @@
             </node>
           </node>
           <node concept="Xl_RD" id="Mu" role="37wK5m">
-            <property role="Xl_RC" value="origem distance" />
+            <property role="Xl_RC" value="Origem Distance" />
             <node concept="cd27G" id="M$" role="lGtFl">
               <node concept="3u3nmq" id="M_" role="cd27D">
                 <property role="3u3nmv" value="6034329596691222614" />
@@ -8510,7 +8510,7 @@
             </node>
           </node>
           <node concept="Xl_RD" id="MS" role="37wK5m">
-            <property role="Xl_RC" value="destiny distance" />
+            <property role="Xl_RC" value="Destination Distance" />
             <node concept="cd27G" id="MY" role="lGtFl">
               <node concept="3u3nmq" id="MZ" role="cd27D">
                 <property role="3u3nmv" value="6034329596691222614" />

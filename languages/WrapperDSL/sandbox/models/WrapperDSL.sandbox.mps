@@ -92,6 +92,11 @@
         <property role="1nKGNJ" value="5eYfGK4mOiK/SafeLand" />
         <ref role="1nO3m$" node="5eYfGK4_AoS" resolve="MoveaSide" />
       </node>
+      <node concept="1nO3ml" id="3Ivd_nw4CqC" role="1nO3kT">
+        <property role="1nO3mC" value="5eYfGK4mOi_/around" />
+        <property role="1nKGNJ" value="5eYfGK4mOiK/SafeLand" />
+        <ref role="1nO3m$" node="3Ivd_nw4CqG" resolve="KeepFly" />
+      </node>
     </node>
     <node concept="1nTbk0" id="5eYfGK4z5$P" role="1nTbku">
       <node concept="1nO3mo" id="5eYfGK4_AoL" role="1nTnH_">
@@ -111,6 +116,12 @@
           <node concept="1nKZm6" id="5eYfGK4_P2c" role="1nTnGo">
             <property role="1ne$jl" value="5eYfGK4mOjq/stepNearestToLand" />
           </node>
+        </node>
+      </node>
+      <node concept="1nO3mo" id="3Ivd_nw4CqG" role="1nTnH_">
+        <property role="TrG5h" value="KeepFly" />
+        <node concept="1nKZm6" id="3Ivd_nw4CqQ" role="1nfDy6">
+          <property role="1ne$jl" value="5eYfGK4$UtP/none" />
         </node>
       </node>
     </node>
