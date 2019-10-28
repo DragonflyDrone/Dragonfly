@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="710.0" prefWidth="903.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane fx:id="environmentAnchorPane" layoutX="2.0" layoutY="29.0" prefHeight="379.0" prefWidth="899.0" AnchorPane.bottomAnchor="312.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="29.0">
+         <children>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="settingsAnchorPane" layoutY="413.0" prefHeight="303.0" prefWidth="903.0">
+         <children>
+
+                        
+             <ToggleButton fx:id="riverToggleButton" layoutX="2.0" layoutY="5.0" selected="false" text="River">
+
+            </ToggleButton>
+            <ToggleButton fx:id="hospitalToggleButton" layoutX="56.0" layoutY="5.0" prefHeight="26.0" prefWidth="76.0" text="Hospital">
+
+            </ToggleButton>
+            <ToggleButton fx:id="droneToggleButton" layoutX="209.0" layoutY="5.0" text="Drone">
+
+            </ToggleButton>
+            <Label fx:id="strongWindLabel" layoutX="4.0" layoutY="161.0" text="Wind force:" />
+            <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="76.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@hospital.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="220.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@selectedDrone.png" />
+               </image>
+            </ImageView>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ADD8E6" height="32.0" layoutX="12.0" layoutY="42.0" stroke="BLACK" strokeType="INSIDE" width="32.0" />
+            <ToggleButton fx:id="antennaToggleButton" layoutX="134.0" layoutY="5.0" mnemonicParsing="false" text="Antenna" />
+            <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="155.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@antenna.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="deleteButton" layoutX="4.0" layoutY="192.0" mnemonicParsing="false" text="Delete" />
+            <Button fx:id="cleanButton" layoutX="68.0" layoutY="192.0" mnemonicParsing="false" text="Clean" />
+            <ToggleButton fx:id="boatToggleButton" layoutX="2.0" layoutY="84.0" selected="false" text="Boat" />
+            <ImageView layoutX="9.0" layoutY="116.0">
+               <image>
+                  <Image url="@boat.png" />
+               </image>
+            </ImageView>
+            <Line endX="-34.0" endY="-22.0" layoutX="301.0" layoutY="27.0" startX="-34.0" startY="209.20709228515625" />
+            <Line endX="581.0" endY="241.70709228515625" layoutX="322.0" layoutY="-5.0" startX="-322.0" startY="241.70709228515625" />
+            <AnchorPane fx:id="defaultPanelSettingsAnchorPane" layoutX="269.0" layoutY="4.0" maxHeight="242.0" maxWidth="337.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="227.0" prefWidth="336.0" />
+            <ImageView fitHeight="26.0" fitWidth="23.0" layoutX="79.0" layoutY="116.0">
+               <image>
+                  <Image url="@house.png" />
+               </image>
+            </ImageView>
+            <ImageView layoutX="153.0" layoutY="112.0">
+               <image>
+                  <Image url="@tree.png" />
+               </image>
+            </ImageView>
+            <ToggleButton fx:id="houseToggleButton" layoutX="60.0" layoutY="84.0" mnemonicParsing="false" text="House" />
+            <ToggleButton fx:id="treeToggleButton" layoutX="145.0" layoutY="84.0" mnemonicParsing="false" text="Tree" />
+            <ComboBox fx:id="windForceCombBox" layoutX="80.0" layoutY="157.0" prefWidth="150.0" />
+
+                        
+                                 </children>
+      </AnchorPane>
+      <AnchorPane fx:id="loggerAnchorPane" layoutX="602.0" layoutY="421.0" prefHeight="222.0" prefWidth="206.0">
+         <children>
+            <TextArea fx:id="loggerTextArea" editable="false" layoutY="-4.0" prefHeight="231.0" prefWidth="297.0" />
+         </children>
+      </AnchorPane>
+      <CheckBox fx:id="automaticExecutionCheckBox" layoutX="739.0" layoutY="654.0" mnemonicParsing="false" text="Automatic Execution" />
+      <ToggleButton fx:id="startToggleButton" disable="false" layoutX="846.0" layoutY="678.0" mnemonicParsing="false" text="Start" />
+      <ToggleButton fx:id="restartToggleButton" disable="false" layoutX="768.0" layoutY="678.0" mnemonicParsing="false" text="Restart" />
+      <Label disable="true" layoutX="39.0" layoutY="394.0" text="Graphical elements panel">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label disable="true" layoutX="715.0" layoutY="394.0" text="Trace log panel">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label disable="true" layoutX="379.0" layoutY="394.0" text="Properties panel">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

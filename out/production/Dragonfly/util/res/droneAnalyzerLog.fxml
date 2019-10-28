@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane maxHeight="-Infinity" prefHeight="425.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="util.DroneAnalyzerLog">
+    <children>
+        <Button fx:uniqueID="chooseBtn" layoutX="421.0" layoutY="12.0" mnemonicParsing="false" text="Choose" />
+        <TextField fx:uniqueID="pathLogsFileTxtFild" disable="true" editable="false" layoutX="9.0" layoutY="12.0" prefHeight="26.0" prefWidth="407.0" text="Path logs file" />
+
+        <TextArea fx:uniqueID="answerTextArea" editable="false" layoutX="11.0" layoutY="44.0" maxHeight="-Infinity" maxWidth="480.0" minHeight="30.0" minWidth="480.0" prefHeight="344.0" prefWidth="480.0" />
+        <Button fx:uniqueID="clearButton" layoutX="230.0" layoutY="391.0" mnemonicParsing="false" text="Clear" />
+
+
+    </children>
+
+
+
+</AnchorPane>
