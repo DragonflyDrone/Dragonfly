@@ -131,9 +131,9 @@ abstract public class EnvironmentMarshal {
 
             droneElement.setAttribute(ConstantXml.UNIQUE_ID_ATTRIBUTE, drone.getUniqueID());
             droneElement.setAttribute(ConstantXml.LABEL_ATTRIBUTE, drone.getLabel());
-            droneElement.setAttribute(ConstantXml.BATERRY_CONSUMPTION_PER_BLOCK_ATTRIBUTE, String.valueOf(drone.getBatteryPerBlock()));
-            droneElement.setAttribute(ConstantXml.BATERRY_CONSUMPTION_PER_SECONDS_ATTRIBUTE, String.valueOf(drone.getBatteryPerSecond()));
-            droneElement.setAttribute(ConstantXml.INITIAL_BATERRY_ATTRIBUTE, String.valueOf(drone.getInitialBattery()));
+            droneElement.setAttribute(ConstantXml.BATTERY_CONSUMPTION_PER_BLOCK_ATTRIBUTE, String.valueOf(drone.getBatteryPerBlock()));
+            droneElement.setAttribute(ConstantXml.BATTERY_CONSUMPTION_PER_SECONDS_ATTRIBUTE, String.valueOf(drone.getBatteryPerSecond()));
+            droneElement.setAttribute(ConstantXml.INITIAL_BATTERY_ATTRIBUTE, String.valueOf(drone.getInitialBattery()));
             droneElement.setAttribute(ConstantXml.WRAPPER_ID_ATTRIBUTE, String.valueOf(drone.getWrapperId()));
 
             droneElement.setAttribute(ConstantXml.SOURCE_COLUMN_POSITION_ATTRIBUTE, String.valueOf(drone.getSourceCell().getColumnPosition()));
@@ -340,9 +340,9 @@ abstract public class EnvironmentMarshal {
             String uniqueID = droneNode.getAttributes().getNamedItem(ConstantXml.UNIQUE_ID_ATTRIBUTE).getNodeValue();
             String label = droneNode.getAttributes().getNamedItem(ConstantXml.LABEL_ATTRIBUTE).getNodeValue();
 
-            double batteryConsumptionPerBlock = Double.parseDouble(droneNode.getAttributes().getNamedItem(ConstantXml.BATERRY_CONSUMPTION_PER_BLOCK_ATTRIBUTE).getNodeValue());
-            double batteryConsumptionPerSeconds = Double.parseDouble(droneNode.getAttributes().getNamedItem(ConstantXml.BATERRY_CONSUMPTION_PER_SECONDS_ATTRIBUTE).getNodeValue());
-            double initialBattery = Double.parseDouble(droneNode.getAttributes().getNamedItem(ConstantXml.INITIAL_BATERRY_ATTRIBUTE).getNodeValue());
+            double batteryConsumptionPerBlock = Double.parseDouble(droneNode.getAttributes().getNamedItem(ConstantXml.BATTERY_CONSUMPTION_PER_BLOCK_ATTRIBUTE).getNodeValue());
+            double batteryConsumptionPerSeconds = Double.parseDouble(droneNode.getAttributes().getNamedItem(ConstantXml.BATTERY_CONSUMPTION_PER_SECONDS_ATTRIBUTE).getNodeValue());
+            double initialBattery = Double.parseDouble(droneNode.getAttributes().getNamedItem(ConstantXml.INITIAL_BATTERY_ATTRIBUTE).getNodeValue());
             int wrapperId = Integer.parseInt(droneNode.getAttributes().getNamedItem(ConstantXml.WRAPPER_ID_ATTRIBUTE).getNodeValue());
 
             int sourceColumnPosition = Integer.parseInt(droneNode.getAttributes().getNamedItem(ConstantXml.SOURCE_COLUMN_POSITION_ATTRIBUTE).getNodeValue());

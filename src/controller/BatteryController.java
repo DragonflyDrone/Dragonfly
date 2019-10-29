@@ -19,6 +19,25 @@ public class BatteryController {
     private double vWind;
     private double maxVD;
     private double maxVw;
+    private double lastCapacity;
+
+    public BatteryController(double discharge, double auw, double voltage, double timeFly, double devicesConsumption,
+                             double droneMotorConsumption, int angDrone, double vDrone, int angWind, double vWind,
+                             double maxVD, double maxVw, double lastCapacity) {
+        this.discharge = discharge;
+        this.auw = auw;
+        this.voltage = voltage;
+        this.timeFly = timeFly;
+        this.devicesConsumption = devicesConsumption;
+        this.droneMotorConsumption = droneMotorConsumption;
+        this.angDrone = angDrone;
+        this.vDrone = vDrone;
+        this.angWind = angWind;
+        this.vWind = vWind;
+        this.maxVD = maxVD;
+        this.maxVw = maxVw;
+        this.lastCapacity = lastCapacity;
+    }
 
     public double getDischarge() {
         return discharge;
@@ -116,6 +135,14 @@ public class BatteryController {
         this.maxVw = maxVw;
     }
 
+    public double getLastCapacity() {
+        return lastCapacity;
+    }
+
+    public void setLastCapacity(double lastCapacity) {
+        this.lastCapacity = lastCapacity;
+    }
+
     public double[] convertAngtoRad(int[] angs){
         double[] newAngs = new double[angs.length];
         for (int i = 0; i < angs.length; i++){
@@ -151,9 +178,9 @@ public class BatteryController {
     public double windInfluence(){
         double minV = 0.0;
 
-        if (this.maxVD + this.maxVw <= 0){
+        if (getMaxVD() + getMaxVw() <= 0){
             return 0.0;
-        }else if (this.vWind == 0){
+        }else if (getVWind() == 0){
             return 1.0;
         }
 
@@ -161,10 +188,12 @@ public class BatteryController {
         double[] tempAngsWind = refactoryAng(getAngWind());
 
         double angDrone = tempAngsDrone[0];
-        double angDroneX = tempAngsWind[0];
-        double angDroneY = tempAngsDrone[1];
-        double angWind = tempAngsWind[1];
-        double angWindX = tempAngsDrone[2];
+        double angWind = tempAngsWind[0];
+
+        double angDroneX = tempAngsDrone[1];
+        double angWindX = tempAngsWind[1];
+
+        double angDroneY = tempAngsDrone[2];
         double angWindY = tempAngsWind[2];
 
         double Vry = getVDrone() * Math.abs(Math.sin(angDrone)) * Math.cos(angDroneY) +
@@ -179,8 +208,16 @@ public class BatteryController {
     public double newBatteryConsumption(){
         double aad = getAuw() * 170 / getVoltage();
         double totalConsumption = aad + getDevicesConsumption() + getDroneMotorConsumption() * windInfluence();
-        double capacity = (getTimeFly() + totalConsumption) / getDischarge();
-        return capacity;
+        double capacity = (getTimeFly() * totalConsumption) / getDischarge();
+        return getLastCapacity() - capacity;
     }
 
+    /*public static void main (String args[]){
+        BatteryController batteryController = new BatteryController(0.9, 2.5, 36, (double)1/3600, 100, 500, 90, 20, 270
+        , 20, 20, 20, 3.6);
+        System.out.println(batteryController.newBatteryConsumption());
+    }*/
+
 }
+
+

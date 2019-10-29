@@ -10,9 +10,9 @@ public class ConstantXml {
 
     //Specifiques attribuites
     public static final String LABEL_ATTRIBUTE = "label";
-    public static final String BATERRY_CONSUMPTION_PER_BLOCK_ATTRIBUTE = "baterryConsumptionPerBlock";
-    public static final String BATERRY_CONSUMPTION_PER_SECONDS_ATTRIBUTE = "baterryConsumptionPerBlock";
-    public static final String INITIAL_BATERRY_ATTRIBUTE = "initialBaterry";
+    public static final String BATTERY_CONSUMPTION_PER_BLOCK_ATTRIBUTE = "baterryConsumptionPerBlock";
+    public static final String BATTERY_CONSUMPTION_PER_SECONDS_ATTRIBUTE = "baterryConsumptionPerBlock";
+    public static final String INITIAL_BATTERY_ATTRIBUTE = "initialBaterry";
     public static final String WRAPPER_ID_ATTRIBUTE = "wrapperId";
 
 

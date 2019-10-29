@@ -167,7 +167,21 @@ public class DroneBusinessObject {
             Double batteryPerSecond = drone.getBatteryPerSecond();
             Double newCurrentBattery = oldCurrentBattery - batteryPerSecond;
 
-            drone.setCurrentBattery(newCurrentBattery);
+            // Começo do teste
+            /* Teste com uma bateria de 3.6Ah */
+            double lastCapacity = (3.6 * oldCurrentBattery) / 100;
+
+            BatteryController batteryController = new BatteryController(0.9, 2.5, 36,
+                    (double)30/20/3600, 100, 300, 90, 20,
+                    270, 20, 20, 20, lastCapacity);
+
+            double resultCapacity = (100 * batteryController.newBatteryConsumption()) / 3.6;
+            System.out.println(batteryController.newBatteryConsumption());
+            drone.setCurrentBattery(resultCapacity);
+
+            // Fim do teste
+
+            // drone.setCurrentBattery(newCurrentBattery);
         }
 
         //      }
