@@ -15,12 +15,12 @@ public class EnumerationDescriptor_WindStateEnum extends EnumerationDescriptorBa
     super(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8cd0L, "WindStateEnum", "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690336976");
   }
 
-  private final EnumerationDescriptor.MemberDescriptor myMember_light_0 = new EnumerationDescriptor.MemberDescriptor("light", "light wind", 0x53be3ecc045a8ca5L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690336933");
-  private final EnumerationDescriptor.MemberDescriptor myMember_strong_0 = new EnumerationDescriptor.MemberDescriptor("strong", "strong wind", 0x53be3ecc045a8ca9L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690336937");
-  private final EnumerationDescriptor.MemberDescriptor myMember_normal_0 = new EnumerationDescriptor.MemberDescriptor("normal", "normal wind", 0x53be3ecc045a8caeL, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690336942");
+  private final EnumerationDescriptor.MemberDescriptor myMember_isLightWind_0 = new EnumerationDescriptor.MemberDescriptor("isLightWind", "Light Wind", 0x53be3ecc045a8ca5L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690336933");
+  private final EnumerationDescriptor.MemberDescriptor myMember_isStrongWind_0 = new EnumerationDescriptor.MemberDescriptor("isStrongWind", "Strong Wind", 0x53be3ecc045a8ca9L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690336937");
+  private final EnumerationDescriptor.MemberDescriptor myMember_isNormalWind_0 = new EnumerationDescriptor.MemberDescriptor("isNormalWind", "Normal Wind", 0x53be3ecc045a8caeL, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690336942");
 
   private final EnumerationLiteralsIndex myIndex = EnumerationLiteralsIndex.build(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8cd0L, 0x53be3ecc045a8ca5L, 0x53be3ecc045a8ca9L, 0x53be3ecc045a8caeL);
-  private final List<EnumerationDescriptor.MemberDescriptor> myMembers = new EnumerationDescriptorBase.MembersList(myIndex, myMember_light_0, myMember_strong_0, myMember_normal_0);
+  private final List<EnumerationDescriptor.MemberDescriptor> myMembers = new EnumerationDescriptorBase.MembersList(myIndex, myMember_isLightWind_0, myMember_isStrongWind_0, myMember_isNormalWind_0);
 
   @Nullable
   @Override
@@ -41,12 +41,12 @@ public class EnumerationDescriptor_WindStateEnum extends EnumerationDescriptorBa
       return null;
     }
     switch (memberName) {
-      case "light":
-        return myMember_light_0;
-      case "strong":
-        return myMember_strong_0;
-      case "normal":
-        return myMember_normal_0;
+      case "isLightWind":
+        return myMember_isLightWind_0;
+      case "isStrongWind":
+        return myMember_isStrongWind_0;
+      case "isNormalWind":
+        return myMember_isNormalWind_0;
     }
     return null;
   }

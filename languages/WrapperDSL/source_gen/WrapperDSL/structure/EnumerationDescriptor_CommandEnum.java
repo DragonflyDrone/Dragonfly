@@ -15,26 +15,27 @@ public class EnumerationDescriptor_CommandEnum extends EnumerationDescriptorBase
     super(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045b44aeL, "CommandEnum", "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690384046");
   }
 
-  private final EnumerationDescriptor.MemberDescriptor myMember_land_0 = new EnumerationDescriptor.MemberDescriptor("land", "land", 0x53be3ecc045b44afL, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690384047");
-  private final EnumerationDescriptor.MemberDescriptor myMember_SafeLand_0 = new EnumerationDescriptor.MemberDescriptor("SafeLand", "safe Land", 0x53be3ecc045b44b0L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690384048");
-  private final EnumerationDescriptor.MemberDescriptor myMember_shutDown_0 = new EnumerationDescriptor.MemberDescriptor("shutDown", "shutDown", 0x53be3ecc045b44b3L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690384051");
-  private final EnumerationDescriptor.MemberDescriptor myMember_start_0 = new EnumerationDescriptor.MemberDescriptor("start", "start", 0x53be3ecc045b44b7L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690384055");
-  private final EnumerationDescriptor.MemberDescriptor myMember_stepLest_0 = new EnumerationDescriptor.MemberDescriptor("stepLest", "step Lest", 0x53be3ecc045b44bcL, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690384060");
-  private final EnumerationDescriptor.MemberDescriptor myMember_stepNearestToDestiny_0 = new EnumerationDescriptor.MemberDescriptor("stepNearestToDestiny", "step Nearest To Destiny", 0x53be3ecc045b44c2L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690384066");
-  private final EnumerationDescriptor.MemberDescriptor myMember_stepNearestToOrigem_0 = new EnumerationDescriptor.MemberDescriptor("stepNearestToOrigem", "step Nearest To Origem", 0x53be3ecc045b44c9L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690384073");
-  private final EnumerationDescriptor.MemberDescriptor myMember_stepNearestToWater_0 = new EnumerationDescriptor.MemberDescriptor("stepNearestToWater", "step Nearest To Water", 0x53be3ecc045b44d1L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690384081");
-  private final EnumerationDescriptor.MemberDescriptor myMember_stepNearestToLand_0 = new EnumerationDescriptor.MemberDescriptor("stepNearestToLand", "step Nearest To Land", 0x53be3ecc045b44daL, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690384090");
-  private final EnumerationDescriptor.MemberDescriptor myMember_stepNearestToPosition_0 = new EnumerationDescriptor.MemberDescriptor("stepNearestToPosition", "step Nearest To Position", 0x53be3ecc045b44e4L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690384100");
-  private final EnumerationDescriptor.MemberDescriptor myMember_takeOff_0 = new EnumerationDescriptor.MemberDescriptor("takeOff", "take Off", 0x53be3ecc045b44efL, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690384111");
-  private final EnumerationDescriptor.MemberDescriptor myMember_turnLeft_0 = new EnumerationDescriptor.MemberDescriptor("turnLeft", "turn Left", 0x53be3ecc045b44fbL, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690384123");
-  private final EnumerationDescriptor.MemberDescriptor myMember_turnWest_0 = new EnumerationDescriptor.MemberDescriptor("turnWest", "turn West", 0x53be3ecc045b4508L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690384136");
-  private final EnumerationDescriptor.MemberDescriptor myMember_turnSouth_0 = new EnumerationDescriptor.MemberDescriptor("turnSouth", "turn South", 0x53be3ecc045b4516L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690384150");
-  private final EnumerationDescriptor.MemberDescriptor myMember_turnNorth_0 = new EnumerationDescriptor.MemberDescriptor("turnNorth", "turn North", 0x53be3ecc045b4525L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690384165");
-  private final EnumerationDescriptor.MemberDescriptor myMember_economyMode_0 = new EnumerationDescriptor.MemberDescriptor("economyMode", "economy mode", 0x53be3ecc048f15aeL, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596693779886");
-  private final EnumerationDescriptor.MemberDescriptor myMember_none_0 = new EnumerationDescriptor.MemberDescriptor("none", "none", 0x53be3ecc0493a775L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596694079349");
+  private final EnumerationDescriptor.MemberDescriptor myMember_land_0 = new EnumerationDescriptor.MemberDescriptor("land", "Land", 0x53be3ecc045b44afL, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690384047");
+  private final EnumerationDescriptor.MemberDescriptor myMember_safeLand_0 = new EnumerationDescriptor.MemberDescriptor("safeLand", "Safe Land", 0x53be3ecc045b44b0L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690384048");
+  private final EnumerationDescriptor.MemberDescriptor myMember_shutDown_0 = new EnumerationDescriptor.MemberDescriptor("shutDown", "ShutDown", 0x53be3ecc045b44b3L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690384051");
+  private final EnumerationDescriptor.MemberDescriptor myMember_start_0 = new EnumerationDescriptor.MemberDescriptor("start", "Start", 0x53be3ecc045b44b7L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690384055");
+  private final EnumerationDescriptor.MemberDescriptor myMember_stepLest_0 = new EnumerationDescriptor.MemberDescriptor("stepLest", "Step to Lest", 0x53be3ecc045b44bcL, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690384060");
+  private final EnumerationDescriptor.MemberDescriptor myMember_stepNearestToDestiny_0 = new EnumerationDescriptor.MemberDescriptor("stepNearestToDestiny", "Step Nearest To Destination", 0x53be3ecc045b44c2L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690384066");
+  private final EnumerationDescriptor.MemberDescriptor myMember_stepNearestToOrigem_0 = new EnumerationDescriptor.MemberDescriptor("stepNearestToOrigem", "Step Nearest To Origem", 0x53be3ecc045b44c9L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690384073");
+  private final EnumerationDescriptor.MemberDescriptor myMember_stepNearestToWater_0 = new EnumerationDescriptor.MemberDescriptor("stepNearestToWater", "Step Nearest To Water", 0x53be3ecc045b44d1L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690384081");
+  private final EnumerationDescriptor.MemberDescriptor myMember_stepNearestToLand_0 = new EnumerationDescriptor.MemberDescriptor("stepNearestToLand", "Step Nearest To Land", 0x53be3ecc045b44daL, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690384090");
+  private final EnumerationDescriptor.MemberDescriptor myMember_stepNearestToPosition_0 = new EnumerationDescriptor.MemberDescriptor("stepNearestToPosition", "Step Nearest To Coordenates", 0x53be3ecc045b44e4L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690384100");
+  private final EnumerationDescriptor.MemberDescriptor myMember_takeOff_boolean_0 = new EnumerationDescriptor.MemberDescriptor("takeOff_boolean", "Takeoff", 0x53be3ecc045b44efL, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690384111");
+  private final EnumerationDescriptor.MemberDescriptor myMember_landed_boolean_0 = new EnumerationDescriptor.MemberDescriptor("landed_boolean", "Landed", 0x33ec957814b8f1a6L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/3741529733414318502");
+  private final EnumerationDescriptor.MemberDescriptor myMember_turnLeft_0 = new EnumerationDescriptor.MemberDescriptor("turnLeft", "Turn Left", 0x53be3ecc045b44fbL, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690384123");
+  private final EnumerationDescriptor.MemberDescriptor myMember_turnWest_0 = new EnumerationDescriptor.MemberDescriptor("turnWest", "Turn West", 0x53be3ecc045b4508L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690384136");
+  private final EnumerationDescriptor.MemberDescriptor myMember_turnSouth_0 = new EnumerationDescriptor.MemberDescriptor("turnSouth", "Turn South", 0x53be3ecc045b4516L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690384150");
+  private final EnumerationDescriptor.MemberDescriptor myMember_turnNorth_0 = new EnumerationDescriptor.MemberDescriptor("turnNorth", "Turn North", 0x53be3ecc045b4525L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690384165");
+  private final EnumerationDescriptor.MemberDescriptor myMember_applyEconomyMode_0 = new EnumerationDescriptor.MemberDescriptor("applyEconomyMode", "Economy Mode", 0x53be3ecc048f15aeL, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596693779886");
+  private final EnumerationDescriptor.MemberDescriptor myMember_doNothing_0 = new EnumerationDescriptor.MemberDescriptor("doNothing", "Do Nothing", 0x53be3ecc0493a775L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596694079349");
 
-  private final EnumerationLiteralsIndex myIndex = EnumerationLiteralsIndex.build(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045b44aeL, 0x53be3ecc045b44afL, 0x53be3ecc045b44b0L, 0x53be3ecc045b44b3L, 0x53be3ecc045b44b7L, 0x53be3ecc045b44bcL, 0x53be3ecc045b44c2L, 0x53be3ecc045b44c9L, 0x53be3ecc045b44d1L, 0x53be3ecc045b44daL, 0x53be3ecc045b44e4L, 0x53be3ecc045b44efL, 0x53be3ecc045b44fbL, 0x53be3ecc045b4508L, 0x53be3ecc045b4516L, 0x53be3ecc045b4525L, 0x53be3ecc048f15aeL, 0x53be3ecc0493a775L);
-  private final List<EnumerationDescriptor.MemberDescriptor> myMembers = new EnumerationDescriptorBase.MembersList(myIndex, myMember_land_0, myMember_SafeLand_0, myMember_shutDown_0, myMember_start_0, myMember_stepLest_0, myMember_stepNearestToDestiny_0, myMember_stepNearestToOrigem_0, myMember_stepNearestToWater_0, myMember_stepNearestToLand_0, myMember_stepNearestToPosition_0, myMember_takeOff_0, myMember_turnLeft_0, myMember_turnWest_0, myMember_turnSouth_0, myMember_turnNorth_0, myMember_economyMode_0, myMember_none_0);
+  private final EnumerationLiteralsIndex myIndex = EnumerationLiteralsIndex.build(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045b44aeL, 0x53be3ecc045b44afL, 0x53be3ecc045b44b0L, 0x53be3ecc045b44b3L, 0x53be3ecc045b44b7L, 0x53be3ecc045b44bcL, 0x53be3ecc045b44c2L, 0x53be3ecc045b44c9L, 0x53be3ecc045b44d1L, 0x53be3ecc045b44daL, 0x53be3ecc045b44e4L, 0x53be3ecc045b44efL, 0x33ec957814b8f1a6L, 0x53be3ecc045b44fbL, 0x53be3ecc045b4508L, 0x53be3ecc045b4516L, 0x53be3ecc045b4525L, 0x53be3ecc048f15aeL, 0x53be3ecc0493a775L);
+  private final List<EnumerationDescriptor.MemberDescriptor> myMembers = new EnumerationDescriptorBase.MembersList(myIndex, myMember_land_0, myMember_safeLand_0, myMember_shutDown_0, myMember_start_0, myMember_stepLest_0, myMember_stepNearestToDestiny_0, myMember_stepNearestToOrigem_0, myMember_stepNearestToWater_0, myMember_stepNearestToLand_0, myMember_stepNearestToPosition_0, myMember_takeOff_boolean_0, myMember_landed_boolean_0, myMember_turnLeft_0, myMember_turnWest_0, myMember_turnSouth_0, myMember_turnNorth_0, myMember_applyEconomyMode_0, myMember_doNothing_0);
 
   @Nullable
   @Override
@@ -57,8 +58,8 @@ public class EnumerationDescriptor_CommandEnum extends EnumerationDescriptorBase
     switch (memberName) {
       case "land":
         return myMember_land_0;
-      case "SafeLand":
-        return myMember_SafeLand_0;
+      case "safeLand":
+        return myMember_safeLand_0;
       case "shutDown":
         return myMember_shutDown_0;
       case "start":
@@ -75,8 +76,10 @@ public class EnumerationDescriptor_CommandEnum extends EnumerationDescriptorBase
         return myMember_stepNearestToLand_0;
       case "stepNearestToPosition":
         return myMember_stepNearestToPosition_0;
-      case "takeOff":
-        return myMember_takeOff_0;
+      case "takeOff_boolean":
+        return myMember_takeOff_boolean_0;
+      case "landed_boolean":
+        return myMember_landed_boolean_0;
       case "turnLeft":
         return myMember_turnLeft_0;
       case "turnWest":
@@ -85,10 +88,10 @@ public class EnumerationDescriptor_CommandEnum extends EnumerationDescriptorBase
         return myMember_turnSouth_0;
       case "turnNorth":
         return myMember_turnNorth_0;
-      case "economyMode":
-        return myMember_economyMode_0;
-      case "none":
-        return myMember_none_0;
+      case "applyEconomyMode":
+        return myMember_applyEconomyMode_0;
+      case "doNothing":
+        return myMember_doNothing_0;
     }
     return null;
   }

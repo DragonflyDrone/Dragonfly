@@ -17,12 +17,12 @@ public class EnumerationDescriptor_SensorType extends EnumerationDescriptorBase 
 
   private final EnumerationDescriptor.MemberDescriptor myMember_wind_0 = new EnumerationDescriptor.MemberDescriptor("wind", "Wind", 0x53be3ecc04681057L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596691222615");
   private final EnumerationDescriptor.MemberDescriptor myMember_region_0 = new EnumerationDescriptor.MemberDescriptor("region", "Region", 0x53be3ecc04681058L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596691222616");
-  private final EnumerationDescriptor.MemberDescriptor myMember_battery_0 = new EnumerationDescriptor.MemberDescriptor("battery", "Battery", 0x53be3ecc046a59eaL, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596691372522");
-  private final EnumerationDescriptor.MemberDescriptor myMember_origem_distance_0 = new EnumerationDescriptor.MemberDescriptor("origem_distance", "Origem Distance", 0x53be3ecc048d4268L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596693660264");
-  private final EnumerationDescriptor.MemberDescriptor myMember_destiny_distance_0 = new EnumerationDescriptor.MemberDescriptor("destiny_distance", "Destination Distance", 0x53be3ecc048d426dL, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596693660269");
+  private final EnumerationDescriptor.MemberDescriptor myMember_getCurrentBattery_0 = new EnumerationDescriptor.MemberDescriptor("getCurrentBattery", "Battery", 0x53be3ecc046a59eaL, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596691372522");
+  private final EnumerationDescriptor.MemberDescriptor myMember_getDistanceOrigem_0 = new EnumerationDescriptor.MemberDescriptor("getDistanceOrigem", "Origem Distance", 0x53be3ecc048d4268L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596693660264");
+  private final EnumerationDescriptor.MemberDescriptor myMember_getDistanceDestiny_0 = new EnumerationDescriptor.MemberDescriptor("getDistanceDestiny", "Destination Distance", 0x53be3ecc048d426dL, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596693660269");
 
   private final EnumerationLiteralsIndex myIndex = EnumerationLiteralsIndex.build(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc04681056L, 0x53be3ecc04681057L, 0x53be3ecc04681058L, 0x53be3ecc046a59eaL, 0x53be3ecc048d4268L, 0x53be3ecc048d426dL);
-  private final List<EnumerationDescriptor.MemberDescriptor> myMembers = new EnumerationDescriptorBase.MembersList(myIndex, myMember_wind_0, myMember_region_0, myMember_battery_0, myMember_origem_distance_0, myMember_destiny_distance_0);
+  private final List<EnumerationDescriptor.MemberDescriptor> myMembers = new EnumerationDescriptorBase.MembersList(myIndex, myMember_wind_0, myMember_region_0, myMember_getCurrentBattery_0, myMember_getDistanceOrigem_0, myMember_getDistanceDestiny_0);
 
   @Nullable
   @Override
@@ -47,12 +47,12 @@ public class EnumerationDescriptor_SensorType extends EnumerationDescriptorBase 
         return myMember_wind_0;
       case "region":
         return myMember_region_0;
-      case "battery":
-        return myMember_battery_0;
-      case "origem_distance":
-        return myMember_origem_distance_0;
-      case "destiny_distance":
-        return myMember_destiny_distance_0;
+      case "getCurrentBattery":
+        return myMember_getCurrentBattery_0;
+      case "getDistanceOrigem":
+        return myMember_getDistanceOrigem_0;
+      case "getDistanceDestiny":
+        return myMember_getDistanceDestiny_0;
     }
     return null;
   }

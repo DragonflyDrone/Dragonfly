@@ -15,13 +15,13 @@ public class EnumerationDescriptor_RegionStateEnum extends EnumerationDescriptor
     super(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8ca0L, "RegionStateEnum", "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690336928");
   }
 
-  private final EnumerationDescriptor.MemberDescriptor myMember_land_0 = new EnumerationDescriptor.MemberDescriptor("land", "land region", 0x53be3ecc045a8ca1L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690336929");
-  private final EnumerationDescriptor.MemberDescriptor myMember_water_0 = new EnumerationDescriptor.MemberDescriptor("water", "water region", 0x53be3ecc045a8ca2L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690336930");
-  private final EnumerationDescriptor.MemberDescriptor myMember_destiny_0 = new EnumerationDescriptor.MemberDescriptor("destiny", "destiny region", 0x53be3ecc045a8cc0L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690336960");
-  private final EnumerationDescriptor.MemberDescriptor myMember_origem_0 = new EnumerationDescriptor.MemberDescriptor("origem", "origem region", 0x53be3ecc045a8cc7L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690336967");
+  private final EnumerationDescriptor.MemberDescriptor myMember_isOnland_0 = new EnumerationDescriptor.MemberDescriptor("isOnland", "Land Region", 0x53be3ecc045a8ca1L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690336929");
+  private final EnumerationDescriptor.MemberDescriptor myMember_isOnWater_0 = new EnumerationDescriptor.MemberDescriptor("isOnWater", "Water Region", 0x53be3ecc045a8ca2L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690336930");
+  private final EnumerationDescriptor.MemberDescriptor myMember_isOnDestination_0 = new EnumerationDescriptor.MemberDescriptor("isOnDestination", "Destination Region", 0x53be3ecc045a8cc0L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690336960");
+  private final EnumerationDescriptor.MemberDescriptor myMember_isOnOrigem_0 = new EnumerationDescriptor.MemberDescriptor("isOnOrigem", "Origem Region", 0x53be3ecc045a8cc7L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690336967");
 
   private final EnumerationLiteralsIndex myIndex = EnumerationLiteralsIndex.build(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8ca0L, 0x53be3ecc045a8ca1L, 0x53be3ecc045a8ca2L, 0x53be3ecc045a8cc0L, 0x53be3ecc045a8cc7L);
-  private final List<EnumerationDescriptor.MemberDescriptor> myMembers = new EnumerationDescriptorBase.MembersList(myIndex, myMember_land_0, myMember_water_0, myMember_destiny_0, myMember_origem_0);
+  private final List<EnumerationDescriptor.MemberDescriptor> myMembers = new EnumerationDescriptorBase.MembersList(myIndex, myMember_isOnland_0, myMember_isOnWater_0, myMember_isOnDestination_0, myMember_isOnOrigem_0);
 
   @Nullable
   @Override
@@ -42,14 +42,14 @@ public class EnumerationDescriptor_RegionStateEnum extends EnumerationDescriptor
       return null;
     }
     switch (memberName) {
-      case "land":
-        return myMember_land_0;
-      case "water":
-        return myMember_water_0;
-      case "destiny":
-        return myMember_destiny_0;
-      case "origem":
-        return myMember_origem_0;
+      case "isOnland":
+        return myMember_isOnland_0;
+      case "isOnWater":
+        return myMember_isOnWater_0;
+      case "isOnDestination":
+        return myMember_isOnDestination_0;
+      case "isOnOrigem":
+        return myMember_isOnOrigem_0;
     }
     return null;
   }

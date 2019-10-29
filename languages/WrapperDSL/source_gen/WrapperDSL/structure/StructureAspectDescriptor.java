@@ -321,7 +321,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690336715");
     b.version(2);
-    b.aggregate("pointCut", 0x53be3ecc046e0bf5L).target(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc046e0b59L).optional(false).ordered(true).multiple(true).origin("6034329596691614709").done();
+    b.aggregate("pointCuts", 0x53be3ecc046e0bf5L).target(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc046e0b59L).optional(false).ordered(true).multiple(true).origin("6034329596691614709").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForWhile() {

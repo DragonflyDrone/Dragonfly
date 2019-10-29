@@ -73,17 +73,17 @@ import org.jetbrains.mps.openapi.language.SConcept;
     return editorCell;
   }
   private EditorCell createRefNodeList_0() {
-    AbstractCellListHandler handler = new pointCutListHandler_32ttl5_a1a(myNode, getEditorContext());
+    AbstractCellListHandler handler = new pointCutsListHandler_32ttl5_a1a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
-    editorCell.setCellId("refNodeList_pointCut");
+    editorCell.setCellId("refNodeList_pointCuts");
     editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
-  private static class pointCutListHandler_32ttl5_a1a extends RefNodeListHandler {
+  private static class pointCutsListHandler_32ttl5_a1a extends RefNodeListHandler {
     @NotNull
     private SNode myNode;
 
-    public pointCutListHandler_32ttl5_a1a(SNode ownerNode, EditorContext context) {
+    public pointCutsListHandler_32ttl5_a1a(SNode ownerNode, EditorContext context) {
       super(context, false);
       myNode = ownerNode;
     }
@@ -93,7 +93,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
       return myNode;
     }
     public SContainmentLink getSLink() {
-      return LINKS.pointCut$EZUY;
+      return LINKS.pointCuts$EZUY;
     }
     public SAbstractConcept getChildSConcept() {
       return CONCEPTS.PointCut$wc;
@@ -106,7 +106,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     }
     public EditorCell createEmptyCell() {
       getCellFactory().pushCellContext();
-      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(pointCutListHandler_32ttl5_a1a.this.getNode(), LINKS.pointCut$EZUY));
+      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(pointCutsListHandler_32ttl5_a1a.this.getNode(), LINKS.pointCuts$EZUY));
       try {
         EditorCell emptyCell = null;
         emptyCell = super.createEmptyCell();
@@ -132,7 +132,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
   }
 
   private static final class LINKS {
-    /*package*/ static final SContainmentLink pointCut$EZUY = MetaAdapterFactory.getContainmentLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bcbL, 0x53be3ecc046e0bf5L, "pointCut");
+    /*package*/ static final SContainmentLink pointCuts$EZUY = MetaAdapterFactory.getContainmentLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bcbL, 0x53be3ecc046e0bf5L, "pointCuts");
   }
 
   private static final class CONCEPTS {

@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info version="2">
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1082113931046:jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1144226303539:jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123159:jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123157:jetbrains.mps.baseLanguage.structure.Statement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070462154015:jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1163670490218:jetbrains.mps.baseLanguage.structure.SwitchStatement" />
+  <root>
+    <file name="TextGenAspectDescriptor.java">
+      <unit at="52,0,55,0" name="WrapperDSL.textGen.TextGenAspectDescriptor$CONCEPTS" />
+      <unit at="16,0,56,0" name="WrapperDSL.textGen.TextGenAspectDescriptor" />
+    </file>
+  </root>
+  <root nodeRef="r:98ce4f8d-75ef-41b6-8025-6561aecf815f(WrapperDSL.textGen)/3741529733414534349">
+    <file name="DisjuctionNormalExpression_TextGen.java">
+      <node id="3741529733414534349" at="11,54,12,55" concept="5" />
+      <node id="3741529733414548414" at="12,55,13,80" concept="1" />
+      <node id="3741529733414534349" at="10,0,15,0" concept="4" trace="generateText#(Ljetbrains/mps/text/rt/TextGenContext;)V" />
+      <scope id="3741529733414534349" at="11,54,13,80">
+        <var name="tgs" id="3741529733414534349" />
+      </scope>
+      <scope id="3741529733414534349" at="10,0,15,0">
+        <var name="ctx" id="3741529733414534349" />
+      </scope>
+      <unit id="3741529733414534349" at="9,0,16,0" name="WrapperDSL.textGen.DisjuctionNormalExpression_TextGen" />
+    </file>
+    <file name="TextGenAspectDescriptor.java">
+      <node id="3741529733414534349" at="26,60,27,56" concept="6" />
+      <scope id="3741529733414534349" at="26,60,27,56" />
+    </file>
+  </root>
+  <root nodeRef="r:98ce4f8d-75ef-41b6-8025-6561aecf815f(WrapperDSL.textGen)/4296212311995704519">
+    <file name="TextGenAspectDescriptor.java">
+      <node id="4296212311995704519" at="28,47,29,43" concept="6" />
+      <node id="4296212311995704519" at="37,63,38,55" concept="5" />
+      <node id="4296212311995704519" at="38,55,39,58" concept="5" />
+      <node id="4296212311995704519" at="39,58,40,84" concept="1" />
+      <node id="4296212311995704519" at="40,84,41,17" concept="0" />
+      <node id="4296212311995704519" at="45,63,46,26" concept="6" />
+      <node id="4296212311995711760" at="48,68,49,16" concept="6" />
+      <node id="4296212311995704519" at="45,0,48,0" concept="9" trace="getFileName_WrapperScript#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="4296212311995704519" at="48,0,51,0" concept="9" trace="getFileExtension_WrapperScript#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="4296212311995704519" at="36,58,42,7" concept="3" />
+      <scope id="4296212311995704519" at="28,47,29,43" />
+      <scope id="4296212311995704519" at="45,63,46,26" />
+      <scope id="4296212311995704519" at="48,68,49,16" />
+      <scope id="4296212311995704519" at="45,0,48,0">
+        <var name="node" id="4296212311995704519" />
+      </scope>
+      <scope id="4296212311995704519" at="48,0,51,0">
+        <var name="node" id="4296212311995704519" />
+      </scope>
+      <scope id="4296212311995704519" at="37,63,41,17">
+        <var name="ext" id="4296212311995704519" />
+        <var name="fname" id="4296212311995704519" />
+      </scope>
+    </file>
+    <file name="WrapperScript_TextGen.java">
+      <node id="4296212311995704519" at="11,54,12,55" concept="5" />
+      <node id="4296212311995711316" at="12,55,13,67" concept="1" />
+      <node id="4296212311995704519" at="10,0,15,0" concept="4" trace="generateText#(Ljetbrains/mps/text/rt/TextGenContext;)V" />
+      <scope id="4296212311995704519" at="11,54,13,67">
+        <var name="tgs" id="4296212311995704519" />
+      </scope>
+      <scope id="4296212311995704519" at="10,0,15,0">
+        <var name="ctx" id="4296212311995704519" />
+      </scope>
+      <unit id="4296212311995704519" at="9,0,16,0" name="WrapperDSL.textGen.WrapperScript_TextGen" />
+    </file>
+  </root>
+  <root nodeRef="r:98ce4f8d-75ef-41b6-8025-6561aecf815f(WrapperDSL.textGen)/4296212311995704544">
+    <file name="WrapperFile.java">
+      <node id="4296212311995704545" at="19,65,20,55" concept="5" />
+      <node id="342433809826515821" at="20,55,21,36" concept="1" />
+      <node id="342433809826516444" at="21,36,22,18" concept="1" />
+      <node id="342433809826516033" at="22,18,23,53" concept="1" />
+      <node id="342433809826516415" at="23,53,24,18" concept="1" />
+      <node id="342433809826516499" at="24,18,25,59" concept="1" />
+      <node id="342433809826516500" at="25,59,26,18" concept="1" />
+      <node id="342433809826516525" at="26,18,27,54" concept="1" />
+      <node id="342433809826516526" at="27,54,28,18" concept="1" />
+      <node id="342433809826516554" at="28,18,29,54" concept="1" />
+      <node id="342433809826516555" at="29,54,30,18" concept="1" />
+      <node id="342433809826516572" at="30,18,31,49" concept="1" />
+      <node id="342433809826516573" at="31,49,32,18" concept="1" />
+      <node id="342433809826516593" at="32,18,33,51" concept="1" />
+      <node id="342433809826516594" at="33,51,34,18" concept="1" />
+      <node id="342433809826516617" at="34,18,35,65" concept="1" />
+      <node id="342433809826516618" at="35,65,36,18" concept="1" />
+      <node id="342433809826516644" at="36,18,37,53" concept="1" />
+      <node id="342433809826516645" at="37,53,38,18" concept="1" />
+      <node id="342433809826516674" at="38,18,39,40" concept="1" />
+      <node id="342433809826516675" at="39,40,40,18" concept="1" />
+      <node id="342433809826516707" at="40,18,41,47" concept="1" />
+      <node id="342433809826516708" at="41,47,42,18" concept="1" />
+      <node id="342433809826516743" at="42,18,43,47" concept="1" />
+      <node id="342433809826516744" at="43,47,44,18" concept="1" />
+      <node id="342433809826517057" at="44,18,45,18" concept="1" />
+      <node id="342433809826517072" at="45,18,46,18" concept="1" />
+      <node id="342433809826517167" at="46,18,47,46" concept="1" />
+      <node id="342433809826517168" at="47,46,48,18" concept="1" />
+      <node id="342433809826517274" at="48,18,49,41" concept="1" />
+      <node id="342433809826517275" at="49,41,50,18" concept="1" />
+      <node id="4296212311995780093" at="52,84,53,55" concept="5" />
+      <node id="4296212311995781534" at="53,55,54,33" concept="1" />
+      <node id="4296212311995781617" at="54,33,55,28" concept="1" />
+      <node id="4296212311995783989" at="57,93,58,55" concept="5" />
+      <node id="4296212311995800626" at="59,64,60,29" concept="1" />
+      <node id="4296212311995800687" at="60,29,61,22" concept="1" />
+      <node id="4296212311995805422" at="61,22,62,137" concept="1" />
+      <node id="4296212311995808083" at="62,137,63,22" concept="1" />
+      <node id="4296212311995808248" at="63,22,64,25" concept="1" />
+      <node id="4296212311995879966" at="64,25,65,22" concept="1" />
+      <node id="4296212311995808415" at="65,22,66,62" concept="1" />
+      <node id="4296212311995808709" at="66,62,67,138" concept="1" />
+      <node id="4296212311995880213" at="67,138,68,22" concept="1" />
+      <node id="4296212311995812165" at="68,22,69,20" concept="1" />
+      <node id="4296212311995801445" at="72,101,73,55" concept="5" />
+      <node id="4296212311995802050" at="73,55,74,25" concept="1" />
+      <node id="4296212311995802411" at="74,25,75,20" concept="1" />
+      <node id="4296212311995802534" at="75,20,76,22" concept="1" />
+      <node id="4296212311995802929" at="76,22,77,20" concept="1" />
+      <node id="3741529733414552564" at="79,116,80,55" concept="5" />
+      <node id="3741529733414558996" at="82,243,83,25" concept="1" />
+      <node id="3741529733414559967" at="84,253,85,25" concept="1" />
+      <node id="3741529733414560104" at="86,250,87,24" concept="1" />
+      <node id="3741529733414560612" at="88,253,89,24" concept="1" />
+      <node id="3741529733414560948" at="90,262,91,25" concept="1" />
+      <node id="3741529733414561132" at="92,265,93,25" concept="1" />
+      <node id="3741529733414561592" at="94,244,95,25" concept="1" />
+      <node id="3741529733414562074" at="96,243,97,25" concept="1" />
+      <node id="3741529733414546343" at="100,118,101,55" concept="5" />
+      <node id="3741529733414552541" at="101,55,102,0" concept="7" />
+      <node id="3741529733414548546" at="102,0,103,91" concept="1" />
+      <node id="3741529733414553145" at="103,91,104,133" concept="1" />
+      <node id="3741529733414552034" at="104,133,105,92" concept="1" />
+      <node id="4296212311996016183" at="107,105,108,55" concept="5" />
+      <node id="3741529733413685410" at="108,55,109,90" concept="1" />
+      <node id="3741529733413687888" at="109,90,110,20" concept="1" />
+      <node id="3741529733413687979" at="110,20,111,20" concept="1" />
+      <node id="3741529733413688054" at="111,20,112,20" concept="1" />
+      <node id="3741529733413688372" at="112,20,113,135" concept="1" />
+      <node id="3741529733413690787" at="113,135,114,18" concept="1" />
+      <node id="3741529733413692453" at="114,18,115,21" concept="1" />
+      <node id="3741529733413692643" at="115,21,116,21" concept="1" />
+      <node id="3741529733413693012" at="116,21,117,18" concept="1" />
+      <node id="3741529733413693735" at="117,18,118,20" concept="1" />
+      <node id="3741529733413694213" at="118,20,119,18" concept="1" />
+      <node id="3741529733414532907" at="119,18,120,83" concept="1" />
+      <node id="3741529733413693969" at="120,83,121,20" concept="1" />
+      <node id="3741529733413694569" at="121,20,122,18" concept="1" />
+      <node id="3741529733413693970" at="122,18,123,0" concept="7" />
+      <node id="3741529733413693835" at="123,0,124,0" concept="7" />
+      <node id="4296212311995704575" at="126,92,127,55" concept="5" />
+      <node id="4296212311995716304" at="127,55,128,38" concept="1" />
+      <node id="4296212311995782278" at="128,38,129,18" concept="1" />
+      <node id="4296212311995780304" at="129,18,130,100" concept="1" />
+      <node id="4296212311995782198" at="130,100,131,20" concept="1" />
+      <node id="4296212311995782245" at="131,20,132,18" concept="1" />
+      <node id="4296212311995786372" at="132,18,133,150" concept="1" />
+      <node id="3741529733414522599" at="134,160,135,121" concept="1" />
+      <node id="3741529733414530195" at="136,5,137,0" concept="7" />
+      <node id="4296212311995782362" at="137,0,138,20" concept="1" />
+      <node id="4296212311995704544" at="142,0,143,0" concept="8" trace="call$26oK" />
+      <node id="4296212311995704544" at="143,0,144,0" concept="8" trace="operation$BCG5" />
+      <node id="4296212311995704544" at="144,0,145,0" concept="8" trace="typePointCut$$H91" />
+      <node id="4296212311995704544" at="145,0,146,0" concept="8" trace="name$tAp1" />
+      <node id="4296212311995704544" at="149,0,150,0" concept="8" trace="left$BwFB" />
+      <node id="4296212311995704544" at="150,0,151,0" concept="8" trace="right$BwED" />
+      <node id="4296212311995704544" at="151,0,152,0" concept="8" trace="logicalExpression$1QZ_" />
+      <node id="4296212311995704544" at="152,0,153,0" concept="8" trace="when$Bwg0" />
+      <node id="4296212311995704544" at="153,0,154,0" concept="8" trace="pointCuts$EZUY" />
+      <node id="4296212311995704544" at="154,0,155,0" concept="8" trace="given$Bwf2" />
+      <node id="3741529733414527700" at="133,150,136,5" concept="2" />
+      <node id="4296212311995780093" at="52,0,57,0" concept="9" trace="headerOperation#(Ljava/lang/String;Ljetbrains/mps/text/rt/TextGenContext;)V" />
+      <node id="4296212311995801445" at="72,0,79,0" concept="9" trace="callToMethedOperation#(Ljava/lang/String;Ljava/lang/String;Ljetbrains/mps/text/rt/TextGenContext;)V" />
+      <node id="3741529733414546343" at="100,0,107,0" concept="9" trace="disjuctionNormalExpressionOperation#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/text/rt/TextGenContext;)V" />
+      <node id="4296212311995799579" at="58,55,70,5" concept="2" />
+      <node id="4296212311995704575" at="126,0,140,0" concept="9" trace="wrapperScriptOperation#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/text/rt/TextGenContext;)V" />
+      <node id="4296212311995783989" at="57,0,72,0" concept="9" trace="pointcutsOperation#(Ljava/util/List;Ljetbrains/mps/text/rt/TextGenContext;)V" />
+      <node id="3741529733414555037" at="80,55,98,5" concept="10" />
+      <node id="4296212311996016183" at="107,0,126,0" concept="9" trace="conditionsPointCutOperation#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/text/rt/TextGenContext;)V" />
+      <node id="3741529733414552564" at="79,0,100,0" concept="9" trace="mappingOperationForSignOperation#(Lorg/jetbrains/mps/openapi/language/SEnumerationLiteral;Ljetbrains/mps/text/rt/TextGenContext;)V" />
+      <node id="4296212311995704545" at="19,0,52,0" concept="9" trace="importsOperation#(Ljetbrains/mps/text/rt/TextGenContext;)V" />
+      <scope id="3741529733414555838" at="82,243,83,25" />
+      <scope id="3741529733414559023" at="84,253,85,25" />
+      <scope id="3741529733414560102" at="86,250,87,24" />
+      <scope id="3741529733414560610" at="88,253,89,24" />
+      <scope id="3741529733414560946" at="90,262,91,25" />
+      <scope id="3741529733414561130" at="92,265,93,25" />
+      <scope id="3741529733414561590" at="94,244,95,25" />
+      <scope id="3741529733414562072" at="96,243,97,25" />
+      <scope id="3741529733414527706" at="134,160,135,121" />
+      <scope id="4296212311995780093" at="52,84,55,28">
+        <var name="tgs" id="4296212311995780093" />
+      </scope>
+      <scope id="3741529733414527700" at="133,150,136,5">
+        <var name="pointCut" id="3741529733414527702" />
+      </scope>
+      <scope id="4296212311995780093" at="52,0,57,0">
+        <var name="ctx" id="4296212311995780093" />
+        <var name="nameWrapper" id="4296212311995780198" />
+      </scope>
+      <scope id="4296212311995801445" at="72,101,77,20">
+        <var name="tgs" id="4296212311995801445" />
+      </scope>
+      <scope id="3741529733414546343" at="100,118,105,92">
+        <var name="tgs" id="3741529733414546343" />
+      </scope>
+      <scope id="4296212311995801445" at="72,0,79,0">
+        <var name="callName" id="4296212311995801630" />
+        <var name="ctx" id="4296212311995801445" />
+        <var name="param" id="4296212311995802438" />
+      </scope>
+      <scope id="3741529733414546343" at="100,0,107,0">
+        <var name="ctx" id="3741529733414546343" />
+        <var name="disjuctionNormalExpression" id="3741529733414547727" />
+      </scope>
+      <scope id="4296212311995799582" at="59,64,69,20" />
+      <scope id="4296212311995799579" at="58,55,70,5">
+        <var name="pointCut" id="4296212311995799580" />
+      </scope>
+      <scope id="4296212311995704575" at="126,92,138,20">
+        <var name="tgs" id="4296212311995704575" />
+      </scope>
+      <scope id="4296212311995783989" at="57,93,70,5">
+        <var name="tgs" id="4296212311995783989" />
+      </scope>
+      <scope id="4296212311995704575" at="126,0,140,0">
+        <var name="ctx" id="4296212311995704575" />
+        <var name="wrapperScript" id="4296212311995704641" />
+      </scope>
+      <scope id="4296212311995783989" at="57,0,72,0">
+        <var name="ctx" id="4296212311995783989" />
+        <var name="pointCutList" id="4296212311995786295" />
+      </scope>
+      <scope id="4296212311996016183" at="107,105,124,0">
+        <var name="tgs" id="4296212311996016183" />
+      </scope>
+      <scope id="3741529733414552564" at="79,116,98,5">
+        <var name="tgs" id="3741529733414552564" />
+      </scope>
+      <scope id="4296212311996016183" at="107,0,126,0">
+        <var name="ctx" id="4296212311996016183" />
+        <var name="given" id="4296212311996016457" />
+        <var name="pointCut" id="4296212311996016408" />
+      </scope>
+      <scope id="3741529733414552564" at="79,0,100,0">
+        <var name="ctx" id="3741529733414552564" />
+        <var name="operationEnum" id="3741529733414553009" />
+      </scope>
+      <scope id="4296212311995704545" at="19,65,50,18">
+        <var name="tgs" id="4296212311995704545" />
+      </scope>
+      <scope id="4296212311995704545" at="19,0,52,0">
+        <var name="ctx" id="4296212311995704545" />
+      </scope>
+      <unit id="4296212311995704544" at="141,0,147,0" name="WrapperDSL.textGen.WrapperFile$PROPS" />
+      <unit id="4296212311995704544" at="148,0,156,0" name="WrapperDSL.textGen.WrapperFile$LINKS" />
+      <unit id="4296212311995704544" at="18,0,157,0" name="WrapperDSL.textGen.WrapperFile" />
+    </file>
+  </root>
+</debug-info>
+

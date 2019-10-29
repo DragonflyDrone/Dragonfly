@@ -283,7 +283,7 @@
     <file name="BatterySensorExpression__BehaviorDescriptor.java">
       <node id="6034329596691369103" at="21,0,22,0" concept="6" trace="CONCEPT" />
       <node id="6034329596691369103" at="24,0,25,0" concept="6" trace="BH_METHODS" />
-      <node id="6034329596691369115" at="26,63,27,258" concept="1" />
+      <node id="6034329596691369115" at="26,63,27,268" concept="1" />
       <node id="6034329596691369103" at="35,114,36,21" concept="1" />
       <node id="6034329596691369103" at="40,114,41,49" concept="4" />
       <node id="6034329596691369103" at="42,26,43,56" concept="9" />
@@ -306,7 +306,7 @@
       <node id="6034329596691369103" at="39,0,50,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <node id="6034329596691369103" at="51,0,62,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="6034329596691369103" at="31,61,31,61" />
-      <scope id="6034329596691369103" at="26,63,27,258" />
+      <scope id="6034329596691369103" at="26,63,27,268" />
       <scope id="6034329596691369103" at="35,114,36,21" />
       <scope id="6034329596691369103" at="42,26,43,56" />
       <scope id="6034329596691369103" at="46,14,47,58" />

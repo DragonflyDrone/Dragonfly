@@ -106,7 +106,7 @@
     <node concept="1TJgyj" id="5eYfGK4rwJP" role="1TKVEi">
       <property role="IQ2ns" value="6034329596691614709" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="pointCut" />
+      <property role="20kJfa" value="pointCuts" />
       <property role="20lbJX" value="fLJekj6/_1__n" />
       <ref role="20lvS9" node="5eYfGK4rwHp" resolve="PointCut" />
     </node>
@@ -164,32 +164,32 @@
     <node concept="25R33" id="5eYfGK4mCKX" role="25R1y">
       <property role="3tVfz5" value="6034329596690336829" />
       <property role="TrG5h" value="is" />
-      <property role="1L1pqM" value="==" />
+      <property role="1L1pqM" value="is" />
     </node>
     <node concept="25R33" id="5eYfGK4mCL3" role="25R1y">
       <property role="3tVfz5" value="6034329596690336835" />
       <property role="TrG5h" value="not_equal_to" />
-      <property role="1L1pqM" value="!=" />
+      <property role="1L1pqM" value="not equal to" />
     </node>
     <node concept="25R33" id="5eYfGK4mCL6" role="25R1y">
       <property role="3tVfz5" value="6034329596690336838" />
       <property role="TrG5h" value="less_than" />
-      <property role="1L1pqM" value="&lt;" />
+      <property role="1L1pqM" value="less than" />
     </node>
     <node concept="25R33" id="5eYfGK4mCLa" role="25R1y">
       <property role="3tVfz5" value="6034329596690336842" />
       <property role="TrG5h" value="greater_than" />
-      <property role="1L1pqM" value="&gt;" />
+      <property role="1L1pqM" value="greater than" />
     </node>
     <node concept="25R33" id="5eYfGK4mCLl" role="25R1y">
       <property role="3tVfz5" value="6034329596690336853" />
       <property role="TrG5h" value="less_than_or_equal_to" />
-      <property role="1L1pqM" value="&lt;=" />
+      <property role="1L1pqM" value="less than or equal to" />
     </node>
     <node concept="25R33" id="5eYfGK4mCLf" role="25R1y">
       <property role="3tVfz5" value="6034329596690336847" />
       <property role="TrG5h" value="greater_than_or_equal_to" />
-      <property role="1L1pqM" value="&gt;=" />
+      <property role="1L1pqM" value="greater than or equal to" />
     </node>
     <node concept="25R33" id="5eYfGK4nkaD" role="25R1y">
       <property role="3tVfz5" value="6034329596690514601" />
@@ -243,23 +243,23 @@
     <property role="TrG5h" value="RegionStateEnum" />
     <node concept="25R33" id="5eYfGK4mCMx" role="25R1y">
       <property role="3tVfz5" value="6034329596690336929" />
-      <property role="TrG5h" value="land" />
-      <property role="1L1pqM" value="land region" />
+      <property role="TrG5h" value="isOnland" />
+      <property role="1L1pqM" value="Land Region" />
     </node>
     <node concept="25R33" id="5eYfGK4mCMy" role="25R1y">
       <property role="3tVfz5" value="6034329596690336930" />
-      <property role="TrG5h" value="water" />
-      <property role="1L1pqM" value="water region" />
+      <property role="TrG5h" value="isOnWater" />
+      <property role="1L1pqM" value="Water Region" />
     </node>
     <node concept="25R33" id="5eYfGK4mCN0" role="25R1y">
       <property role="3tVfz5" value="6034329596690336960" />
-      <property role="TrG5h" value="destiny" />
-      <property role="1L1pqM" value="destiny region" />
+      <property role="TrG5h" value="isOnDestination" />
+      <property role="1L1pqM" value="Destination Region" />
     </node>
     <node concept="25R33" id="5eYfGK4mCN7" role="25R1y">
       <property role="3tVfz5" value="6034329596690336967" />
-      <property role="TrG5h" value="origem" />
-      <property role="1L1pqM" value="origem region" />
+      <property role="TrG5h" value="isOnOrigem" />
+      <property role="1L1pqM" value="Origem Region" />
     </node>
   </node>
   <node concept="25R3W" id="5eYfGK4mCNg">
@@ -268,18 +268,18 @@
     <property role="TrG5h" value="WindStateEnum" />
     <node concept="25R33" id="5eYfGK4mCM_" role="25R1y">
       <property role="3tVfz5" value="6034329596690336933" />
-      <property role="TrG5h" value="light" />
-      <property role="1L1pqM" value="light wind" />
+      <property role="TrG5h" value="isLightWind" />
+      <property role="1L1pqM" value="Light Wind" />
     </node>
     <node concept="25R33" id="5eYfGK4mCMD" role="25R1y">
       <property role="3tVfz5" value="6034329596690336937" />
-      <property role="TrG5h" value="strong" />
-      <property role="1L1pqM" value="strong wind" />
+      <property role="TrG5h" value="isStrongWind" />
+      <property role="1L1pqM" value="Strong Wind" />
     </node>
     <node concept="25R33" id="5eYfGK4mCMI" role="25R1y">
       <property role="3tVfz5" value="6034329596690336942" />
-      <property role="TrG5h" value="normal" />
-      <property role="1L1pqM" value="normal wind" />
+      <property role="TrG5h" value="isNormalWind" />
+      <property role="1L1pqM" value="Normal Wind" />
     </node>
   </node>
   <node concept="1TIwiD" id="5eYfGK4mCNt">
@@ -346,87 +346,92 @@
     <node concept="25R33" id="5eYfGK4mOiJ" role="25R1y">
       <property role="3tVfz5" value="6034329596690384047" />
       <property role="TrG5h" value="land" />
-      <property role="1L1pqM" value="land" />
+      <property role="1L1pqM" value="Land" />
     </node>
     <node concept="25R33" id="5eYfGK4mOiK" role="25R1y">
       <property role="3tVfz5" value="6034329596690384048" />
-      <property role="TrG5h" value="SafeLand" />
-      <property role="1L1pqM" value="safe Land" />
+      <property role="TrG5h" value="safeLand" />
+      <property role="1L1pqM" value="Safe Land" />
     </node>
     <node concept="25R33" id="5eYfGK4mOiN" role="25R1y">
       <property role="3tVfz5" value="6034329596690384051" />
       <property role="TrG5h" value="shutDown" />
-      <property role="1L1pqM" value="shutDown" />
+      <property role="1L1pqM" value="ShutDown" />
     </node>
     <node concept="25R33" id="5eYfGK4mOiR" role="25R1y">
       <property role="3tVfz5" value="6034329596690384055" />
       <property role="TrG5h" value="start" />
-      <property role="1L1pqM" value="start" />
+      <property role="1L1pqM" value="Start" />
     </node>
     <node concept="25R33" id="5eYfGK4mOiW" role="25R1y">
       <property role="3tVfz5" value="6034329596690384060" />
       <property role="TrG5h" value="stepLest" />
-      <property role="1L1pqM" value="step Lest" />
+      <property role="1L1pqM" value="Step to Lest" />
     </node>
     <node concept="25R33" id="5eYfGK4mOj2" role="25R1y">
       <property role="3tVfz5" value="6034329596690384066" />
       <property role="TrG5h" value="stepNearestToDestiny" />
-      <property role="1L1pqM" value="step Nearest To Destiny" />
+      <property role="1L1pqM" value="Step Nearest To Destination" />
     </node>
     <node concept="25R33" id="5eYfGK4mOj9" role="25R1y">
       <property role="3tVfz5" value="6034329596690384073" />
       <property role="TrG5h" value="stepNearestToOrigem" />
-      <property role="1L1pqM" value="step Nearest To Origem" />
+      <property role="1L1pqM" value="Step Nearest To Origem" />
     </node>
     <node concept="25R33" id="5eYfGK4mOjh" role="25R1y">
       <property role="3tVfz5" value="6034329596690384081" />
       <property role="TrG5h" value="stepNearestToWater" />
-      <property role="1L1pqM" value="step Nearest To Water" />
+      <property role="1L1pqM" value="Step Nearest To Water" />
     </node>
     <node concept="25R33" id="5eYfGK4mOjq" role="25R1y">
       <property role="3tVfz5" value="6034329596690384090" />
       <property role="TrG5h" value="stepNearestToLand" />
-      <property role="1L1pqM" value="step Nearest To Land" />
+      <property role="1L1pqM" value="Step Nearest To Land" />
     </node>
     <node concept="25R33" id="5eYfGK4mOj$" role="25R1y">
       <property role="3tVfz5" value="6034329596690384100" />
       <property role="TrG5h" value="stepNearestToPosition" />
-      <property role="1L1pqM" value="step Nearest To Position" />
+      <property role="1L1pqM" value="Step Nearest To Coordenates" />
     </node>
     <node concept="25R33" id="5eYfGK4mOjJ" role="25R1y">
       <property role="3tVfz5" value="6034329596690384111" />
-      <property role="1L1pqM" value="take Off" />
-      <property role="TrG5h" value="takeOff" />
+      <property role="1L1pqM" value="Takeoff" />
+      <property role="TrG5h" value="takeOff_boolean" />
+    </node>
+    <node concept="25R33" id="3fG_nwkIf6A" role="25R1y">
+      <property role="3tVfz5" value="3741529733414318502" />
+      <property role="TrG5h" value="landed_boolean" />
+      <property role="1L1pqM" value="Landed" />
     </node>
     <node concept="25R33" id="5eYfGK4mOjV" role="25R1y">
       <property role="3tVfz5" value="6034329596690384123" />
       <property role="TrG5h" value="turnLeft" />
-      <property role="1L1pqM" value="turn Left" />
+      <property role="1L1pqM" value="Turn Left" />
     </node>
     <node concept="25R33" id="5eYfGK4mOk8" role="25R1y">
       <property role="3tVfz5" value="6034329596690384136" />
       <property role="TrG5h" value="turnWest" />
-      <property role="1L1pqM" value="turn West" />
+      <property role="1L1pqM" value="Turn West" />
     </node>
     <node concept="25R33" id="5eYfGK4mOkm" role="25R1y">
       <property role="3tVfz5" value="6034329596690384150" />
       <property role="TrG5h" value="turnSouth" />
-      <property role="1L1pqM" value="turn South" />
+      <property role="1L1pqM" value="Turn South" />
     </node>
     <node concept="25R33" id="5eYfGK4mOk_" role="25R1y">
       <property role="3tVfz5" value="6034329596690384165" />
       <property role="TrG5h" value="turnNorth" />
-      <property role="1L1pqM" value="turn North" />
+      <property role="1L1pqM" value="Turn North" />
     </node>
     <node concept="25R33" id="5eYfGK4zLmI" role="25R1y">
       <property role="3tVfz5" value="6034329596693779886" />
-      <property role="TrG5h" value="economyMode" />
-      <property role="1L1pqM" value="economy mode" />
+      <property role="TrG5h" value="applyEconomyMode" />
+      <property role="1L1pqM" value="Economy Mode" />
     </node>
     <node concept="25R33" id="5eYfGK4$UtP" role="25R1y">
       <property role="3tVfz5" value="6034329596694079349" />
-      <property role="TrG5h" value="none" />
-      <property role="1L1pqM" value="none" />
+      <property role="TrG5h" value="doNothing" />
+      <property role="1L1pqM" value="Do Nothing" />
     </node>
   </node>
   <node concept="1TIwiD" id="5eYfGK4mOkW">
@@ -519,17 +524,17 @@
     </node>
     <node concept="25R33" id="5eYfGK4q_BE" role="25R1y">
       <property role="3tVfz5" value="6034329596691372522" />
-      <property role="TrG5h" value="battery" />
+      <property role="TrG5h" value="getCurrentBattery" />
       <property role="1L1pqM" value="Battery" />
     </node>
     <node concept="25R33" id="5eYfGK4zk9C" role="25R1y">
       <property role="3tVfz5" value="6034329596693660264" />
-      <property role="TrG5h" value="origem_distance" />
+      <property role="TrG5h" value="getDistanceOrigem" />
       <property role="1L1pqM" value="Origem Distance" />
     </node>
     <node concept="25R33" id="5eYfGK4zk9H" role="25R1y">
       <property role="3tVfz5" value="6034329596693660269" />
-      <property role="TrG5h" value="destiny_distance" />
+      <property role="TrG5h" value="getDistanceDestiny" />
       <property role="1L1pqM" value="Destination Distance" />
     </node>
   </node>
