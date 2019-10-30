@@ -26,7 +26,8 @@ Around():safeLand()
 &&(((Drone)thisJoinPoint.getArgs()[0]).isStrongWind())
 )
 {
-while(region==isOnWater){
+while((((Drone)thisJoinPoint.getArgs()[0]).isOnWater())
+){
 ((Drone)thisJoinPoint.getArgs()[0]).stepNearestToLand()
 }
 }

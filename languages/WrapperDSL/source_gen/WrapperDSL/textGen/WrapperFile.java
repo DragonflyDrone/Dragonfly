@@ -102,9 +102,11 @@ public abstract class WrapperFile {
   }
   public static void regionSensorExpressionOperation(SNode regionSensorExpression, final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
-    tgs.append(SPropertyOperations.getEnum(regionSensorExpression, PROPS.left$EP9q).getName());
-    WrapperFile.mappingOperationForSignOperation(SPropertyOperations.getEnum(regionSensorExpression, PROPS.operation$6pQJ), ctx);
-    tgs.append(SPropertyOperations.getEnum(regionSensorExpression, PROPS.right$BLaw).getName());
+    tgs.append("(");
+    tgs.append("((Drone)thisJoinPoint.getArgs()[0]).");
+    WrapperFile.callToMethedOperation(SPropertyOperations.getEnum(regionSensorExpression, PROPS.right$BLaw).getName(), "", ctx);
+    tgs.append(")");
+    tgs.newLine();
   }
   public static void distanceSensorExpressionOperation(SNode distanceSensorExpression, final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
@@ -231,9 +233,9 @@ public abstract class WrapperFile {
 
   private static final class PROPS {
     /*package*/ static final SProperty call$26oK = MetaAdapterFactory.getProperty(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc046e0b59L, 0x53be3ecc047cf223L, "call");
+    /*package*/ static final SProperty right$BLaw = MetaAdapterFactory.getProperty(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8ce0L, 0x53be3ecc045a8ce1L, "right");
     /*package*/ static final SProperty left$EP9q = MetaAdapterFactory.getProperty(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8c9dL, 0x53be3ecc0468105bL, "left");
     /*package*/ static final SProperty operation$6pQJ = MetaAdapterFactory.getProperty(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8c9dL, 0x53be3ecc0462d409L, "operation");
-    /*package*/ static final SProperty right$BLaw = MetaAdapterFactory.getProperty(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8ce0L, 0x53be3ecc045a8ce1L, "right");
     /*package*/ static final SProperty value$QRR0 = MetaAdapterFactory.getProperty(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc0462d3fbL, 0x53be3ecc0462d3fcL, "value");
     /*package*/ static final SProperty operation$BCG5 = MetaAdapterFactory.getProperty(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bd7L, 0x53be3ecc045a8c62L, "operation");
     /*package*/ static final SProperty right$BL8F = MetaAdapterFactory.getProperty(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8cddL, 0x53be3ecc045a8cdeL, "right");

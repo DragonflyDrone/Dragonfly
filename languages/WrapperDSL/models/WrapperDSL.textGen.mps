@@ -647,48 +647,42 @@
       <property role="TrG5h" value="regionSensorExpressionOperation" />
       <node concept="3cqZAl" id="3IZH$xcuNvu" role="3clF45" />
       <node concept="3clFbS" id="3IZH$xcuNvv" role="3clF47">
-        <node concept="lc7rE" id="3IZH$xcuNCB" role="3cqZAp">
-          <node concept="l9hG8" id="3IZH$xcuNCQ" role="lcghm">
-            <node concept="2OqwBi" id="3IZH$xcuObn" role="lb14g">
-              <node concept="2OqwBi" id="3IZH$xcuNNh" role="2Oq$k0">
-                <node concept="37vLTw" id="3IZH$xcuNDB" role="2Oq$k0">
+        <node concept="lc7rE" id="65ufIfNTNXJ" role="3cqZAp">
+          <node concept="la8eA" id="65ufIfNTNXK" role="lcghm">
+            <property role="lacIc" value="(" />
+          </node>
+        </node>
+        <node concept="lc7rE" id="65ufIfNTNXL" role="3cqZAp">
+          <node concept="la8eA" id="65ufIfNTNXM" role="lcghm">
+            <property role="lacIc" value="((Drone)thisJoinPoint.getArgs()[0])." />
+          </node>
+        </node>
+        <node concept="lc7rE" id="65ufIfNTNXN" role="3cqZAp">
+          <node concept="1bDJIP" id="65ufIfNTNXO" role="lcghm">
+            <ref role="1rvKf6" node="3Ivd_nwaPX_" resolve="callToMethedOperation" />
+            <node concept="2OqwBi" id="65ufIfNUa9_" role="1ryhcI">
+              <node concept="2OqwBi" id="65ufIfNTNXQ" role="2Oq$k0">
+                <node concept="37vLTw" id="65ufIfNTO2$" role="2Oq$k0">
                   <ref role="3cqZAo" node="3IZH$xcuNC5" resolve="regionSensorExpression" />
                 </node>
-                <node concept="3TrcHB" id="3IZH$xcuNYz" role="2OqNvi">
-                  <ref role="3TsBF5" to="lpas:5eYfGK4q11r" resolve="left" />
-                </node>
-              </node>
-              <node concept="liA8E" id="3IZH$xcuOkG" role="2OqNvi">
-                <ref role="37wK5l" to="c17a:~SEnumerationLiteral.getName()" resolve="getName" />
-              </node>
-            </node>
-          </node>
-          <node concept="1bDJIP" id="3IZH$xcuOKH" role="lcghm">
-            <ref role="1rvKf6" node="3fG_nwkJ8fO" resolve="mappingOperationForSignOperation" />
-            <node concept="2OqwBi" id="3IZH$xcuOYi" role="1ryhcI">
-              <node concept="37vLTw" id="3IZH$xcuOOW" role="2Oq$k0">
-                <ref role="3cqZAo" node="3IZH$xcuNC5" resolve="regionSensorExpression" />
-              </node>
-              <node concept="3TrcHB" id="3IZH$xcuP9m" role="2OqNvi">
-                <ref role="3TsBF5" to="lpas:5eYfGK4oHg9" resolve="operation" />
-              </node>
-            </node>
-          </node>
-          <node concept="l9hG8" id="3IZH$xcuPcI" role="lcghm">
-            <node concept="2OqwBi" id="3IZH$xcuPIy" role="lb14g">
-              <node concept="2OqwBi" id="3IZH$xcuPnN" role="2Oq$k0">
-                <node concept="37vLTw" id="3IZH$xcuPeh" role="2Oq$k0">
-                  <ref role="3cqZAo" node="3IZH$xcuNC5" resolve="regionSensorExpression" />
-                </node>
-                <node concept="3TrcHB" id="3IZH$xcuPz5" role="2OqNvi">
+                <node concept="3TrcHB" id="65ufIfNUa0n" role="2OqNvi">
                   <ref role="3TsBF5" to="lpas:5eYfGK4mCNx" resolve="right" />
                 </node>
               </node>
-              <node concept="liA8E" id="3IZH$xcuPPK" role="2OqNvi">
+              <node concept="liA8E" id="65ufIfNUai$" role="2OqNvi">
                 <ref role="37wK5l" to="c17a:~SEnumerationLiteral.getName()" resolve="getName" />
               </node>
             </node>
+            <node concept="Xl_RD" id="65ufIfNTNXU" role="1ryhcI">
+              <property role="Xl_RC" value="" />
+            </node>
           </node>
+        </node>
+        <node concept="lc7rE" id="65ufIfNTNXV" role="3cqZAp">
+          <node concept="la8eA" id="65ufIfNTNXW" role="lcghm">
+            <property role="lacIc" value=")" />
+          </node>
+          <node concept="l8MVK" id="65ufIfNTNXX" role="lcghm" />
         </node>
       </node>
       <node concept="37vLTG" id="3IZH$xcuNC5" role="3clF46">
