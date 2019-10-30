@@ -172,7 +172,7 @@ public class DroneBusinessObject {
             double lastCapacity = (3.6 * oldCurrentBattery) / 100;
 
             BatteryController batteryController = new BatteryController(0.9, 2.5, 36,
-                    (double)30/20/3600, 100, 300, 90, 20,
+                    (double)30/20/3600, 50, 300, 90, 20,
                     270, 20, 20, 20, lastCapacity);
 
             double resultCapacity = (100 * batteryController.newBatteryConsumption()) / 3.6;

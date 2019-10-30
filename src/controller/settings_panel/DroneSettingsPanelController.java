@@ -35,12 +35,15 @@ public class DroneSettingsPanelController extends SettingsPanelController<Drone>
     private AnchorPane droneSettingsPanelAnchorPane;
     @FXML
     private
-    TextField initialBatteryTextView, consumptionPerBlockTextView, consumptionPerSecondTextView, currentDroneTextField;
+    TextField currentDroneTextField, speedTextField, voltageTextField, dischargeTextField, capacityTextField,
+            consumptionDevicesTextField, consumptionMotorTextField;
 
     @FXML
     private
     Label initialBatteryLabel, consumptionPerBlockLabel, consumptionPerSecondLabel/*, badConectionLabel*/,
             currentDroneLabel, sourceLabel, targetLabel, wrapperLabel;
+    Label voltageLabel, capacityLabel, speedLabel, currentDroneLabel, sourceLabel, targetLabel, wrapperLabel,
+            dischargeLabel, consumptionLabel, consumptionDevicesLabel, consumptionMotorLabel;
 
     @FXML
     private
