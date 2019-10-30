@@ -16,17 +16,28 @@ import java.util.ArrayList;
 import java.util.List;
 
 public aspect Wrapper1{
-pointcut applyEconomyMode():call(* model.entity.drone.DroneBusinessObject.applyEconomyMode(*))
 pointcut safeLand():call(* model.entity.drone.DroneBusinessObject.safeLand(*))
+pointcut applyEconomyMode():call(* model.entity.drone.DroneBusinessObject.applyEconomyMode(*))
 
+Around():safeLand()
+&& if
+(
+(((Drone)thisJoinPoint.getArgs()[0]).getDistanceDestiny()<=60)
+&&(((Drone)thisJoinPoint.getArgs()[0]).isStrongWind())
+)
+{
+while(region==isOnWater){
+((Drone)thisJoinPoint.getArgs()[0]).stepNearestToLand()
+}
+}
 Around():applyEconomyMode()
 && if
 (
-testgetDistanceDestiny>60&&region==isOnWater)
-
-Before():safeLand()
-&& if
-(
-testgetDistanceDestiny>60&&region==isOnWater)
+(((Drone)thisJoinPoint.getArgs()[0]).getDistanceDestiny()<=60)
+&&(((Drone)thisJoinPoint.getArgs()[0]).isStrongWind())
+)
+{
+// Do nothing
+}
 
 }

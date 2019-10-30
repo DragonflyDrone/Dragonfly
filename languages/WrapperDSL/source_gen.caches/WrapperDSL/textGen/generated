@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="2iwlbpe6uqtgqeu6sdna0tx214mt9kp">
-  <files names="ConjuctionLogicalExpression_TextGen.java:DisjuctionNormalExpression_TextGen.java:DistanceSensorExpression_TextGen.java:RegionSensorExpression_TextGen.java:TextGenAspectDescriptor.java:WrapperFile.java:WrapperScript_TextGen.java" />
+<product version="3" modelHash="-bvv9eklb3xjaw4vvtjhfggyriqqq4s8">
+  <files names="AdviseScript_TextGen.java:Command_TextGen.java:ConjuctionLogicalExpression_TextGen.java:DisjuctionNormalExpression_TextGen.java:DistanceSensorExpression_TextGen.java:If_TextGen.java:RegionSensorExpression_TextGen.java:TextGenAspectDescriptor.java:While_TextGen.java:WindSensorExpression_TextGen.java:WrapperFile.java:WrapperScript_TextGen.java" />
 </product>
 

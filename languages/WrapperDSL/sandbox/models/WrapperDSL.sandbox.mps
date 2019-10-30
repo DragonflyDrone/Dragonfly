@@ -29,6 +29,9 @@
       <concept id="6034329596690879483" name="WrapperDSL.structure.Integer" flags="ng" index="1nReOR">
         <property id="6034329596690879484" name="value" index="1nReOK" />
       </concept>
+      <concept id="6034329596690336989" name="WrapperDSL.structure.WindSensorExpression" flags="ng" index="1nTb8h">
+        <property id="6034329596690336990" name="right" index="1nTb8i" />
+      </concept>
       <concept id="6034329596690336992" name="WrapperDSL.structure.RegionSensorExpression" flags="ng" index="1nTb8G">
         <property id="6034329596690336993" name="right" index="1nTb8H" />
       </concept>
@@ -62,61 +65,55 @@
       </concept>
     </language>
   </registry>
-  <node concept="1nTbkf" id="5eYfGK4z5$K">
+  <node concept="1nTbkf" id="65ufIfNM9u2">
     <property role="TrG5h" value="Wrapper1" />
-    <node concept="1nTbk6" id="5eYfGK4z5$L" role="1nTbk1">
-      <node concept="1nTb9n" id="5eYfGK4z5$Q" role="1nTnJQ">
+    <node concept="1nTbk6" id="65ufIfNM9u3" role="1nTbk1">
+      <node concept="1nTb9n" id="65ufIfNM9ua" role="1nTnJQ">
         <property role="1nTbaI" value="5eYfGK4nkaD/and" />
-        <node concept="1nTb8G" id="5eYfGK4zyJz" role="1nTbkm">
-          <property role="1nPyUn" value="5eYfGK4q11o/region" />
+        <node concept="1nTb8h" id="65ufIfNM9up" role="1nTbkm">
+          <property role="1nPyUn" value="5eYfGK4q11n/wind" />
           <property role="1nReF5" value="5eYfGK4mCKX/is" />
-          <property role="1nTb8H" value="5eYfGK4mCMy/water" />
+          <property role="1nTb8i" value="5eYfGK4mCMD/isStrongWind" />
         </node>
-        <node concept="1ncAu8" id="5eYfGK4zyJn" role="1nTbkg">
-          <property role="1nPyUn" value="5eYfGK4zk9H/destiny_distance" />
-          <property role="1nReF5" value="5eYfGK4mCLa/greater_than" />
-          <node concept="1nReOR" id="5eYfGK4zyJw" role="1ncAu9">
+        <node concept="1ncAu8" id="65ufIfNM9uj" role="1nTbkg">
+          <property role="1nPyUn" value="5eYfGK4zk9H/getDistanceDestiny" />
+          <property role="1nReF5" value="5eYfGK4mCLl/less_than_or_equal_to" />
+          <node concept="1nReOR" id="65ufIfNM9ul" role="1ncAu9">
             <property role="1nReOK" value="60" />
           </node>
         </node>
       </node>
     </node>
-    <node concept="1nTbk7" id="5eYfGK4z5$N" role="1nTbk3">
-      <node concept="1nO3ml" id="5eYfGK4z5$O" role="1nO3kT">
+    <node concept="1nTbk7" id="65ufIfNM9u5" role="1nTbk3">
+      <node concept="1nO3ml" id="65ufIfNM9u6" role="1nO3kT">
         <property role="1nO3mC" value="5eYfGK4mOi_/around" />
-        <property role="1nKGNJ" value="5eYfGK4zLmI/economyMode" />
-        <ref role="1nO3m$" node="5eYfGK4_AoL" resolve="NormalMode" />
+        <property role="1nKGNJ" value="5eYfGK4mOiK/safeLand" />
+        <ref role="1nO3m$" node="65ufIfNM9u8" resolve="moveAside" />
       </node>
-      <node concept="1nO3ml" id="5eYfGK4$e_R" role="1nO3kT">
-        <property role="1nO3mC" value="5eYfGK4mOi$/before" />
-        <property role="1nKGNJ" value="5eYfGK4mOiK/SafeLand" />
-        <ref role="1nO3m$" node="5eYfGK4_AoS" resolve="MoveaSide" />
+      <node concept="1nO3ml" id="65ufIfNM9us" role="1nO3kT">
+        <property role="1nO3mC" value="5eYfGK4mOi_/around" />
+        <property role="1nKGNJ" value="5eYfGK4zLmI/applyEconomyMode" />
+        <ref role="1nO3m$" node="65ufIfNM9uv" resolve="normalMode" />
       </node>
     </node>
-    <node concept="1nTbk0" id="5eYfGK4z5$P" role="1nTbku">
-      <node concept="1nO3mo" id="5eYfGK4_AoL" role="1nTnH_">
-        <property role="TrG5h" value="NormalMode" />
-        <node concept="1nKZm6" id="5eYfGK4_AoP" role="1nfDy6">
-          <property role="1ne$jl" value="5eYfGK4$UtP/none" />
-        </node>
-      </node>
-      <node concept="1nO3mo" id="5eYfGK4_AoS" role="1nTnH_">
-        <property role="TrG5h" value="MoveaSide" />
-        <node concept="1nTnHw" id="5eYfGK4_P23" role="1nfDy6">
-          <node concept="1nTb8G" id="5eYfGK4_P29" role="1nTnGu">
+    <node concept="1nTbk0" id="65ufIfNM9u7" role="1nTbku">
+      <node concept="1nO3mo" id="65ufIfNM9u8" role="1nTnH_">
+        <property role="TrG5h" value="moveAside" />
+        <node concept="1nTnHw" id="65ufIfNM9u_" role="1nfDy6">
+          <node concept="1nTb8G" id="65ufIfNM9uF" role="1nTnGu">
             <property role="1nPyUn" value="5eYfGK4q11o/region" />
             <property role="1nReF5" value="5eYfGK4mCKX/is" />
-            <property role="1nTb8H" value="5eYfGK4mCMy/water" />
+            <property role="1nTb8H" value="5eYfGK4mCMy/isOnWater" />
           </node>
-          <node concept="1nKZm6" id="5eYfGK4_P2c" role="1nTnGo">
+          <node concept="1nKZm6" id="65ufIfNM9uI" role="1nTnGo">
             <property role="1ne$jl" value="5eYfGK4mOjq/stepNearestToLand" />
           </node>
         </node>
       </node>
-      <node concept="1nO3mo" id="3Ivd_nw4CqG" role="1nTnH_">
-        <property role="TrG5h" value="KeepFly" />
-        <node concept="1nKZm6" id="3Ivd_nw4CqQ" role="1nfDy6">
-          <property role="1ne$jl" value="5eYfGK4$UtP/none" />
+      <node concept="1nO3mo" id="65ufIfNM9uv" role="1nTnH_">
+        <property role="TrG5h" value="normalMode" />
+        <node concept="1nKZm6" id="65ufIfNM9uK" role="1nfDy6">
+          <property role="1ne$jl" value="5eYfGK4$UtP/doNothing" />
         </node>
       </node>
     </node>

@@ -14,6 +14,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 
 public abstract class WrapperFile {
   public static void importsOperation(final TextGenContext ctx) {
@@ -107,21 +108,35 @@ public abstract class WrapperFile {
   }
   public static void distanceSensorExpressionOperation(SNode distanceSensorExpression, final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
-    tgs.append(SPropertyOperations.getEnum(distanceSensorExpression, PROPS.left$EP9q).getName());
+    tgs.append("(");
+    tgs.append("((Drone)thisJoinPoint.getArgs()[0]).");
+    WrapperFile.callToMethedOperation(SPropertyOperations.getEnum(distanceSensorExpression, PROPS.left$EP9q).getName(), "", ctx);
     WrapperFile.mappingOperationForSignOperation(SPropertyOperations.getEnum(distanceSensorExpression, PROPS.operation$6pQJ), ctx);
     tgs.append(String.valueOf(SPropertyOperations.getInteger(SLinkOperations.getTarget(distanceSensorExpression, LINKS.distance$98Dw), PROPS.value$QRR0)));
+    tgs.append(")");
+    tgs.newLine();
+
   }
   public static void disjuctionNormalExpressionOperation(SNode disjuctionNormalExpression, final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
-    tgs.append("test");
 
     tgs.appendNode(SLinkOperations.getTarget(disjuctionNormalExpression, LINKS.left$BwFB));
     WrapperFile.mappingOperationForSignOperation(SPropertyOperations.getEnum(disjuctionNormalExpression, PROPS.operation$BCG5), ctx);
     tgs.appendNode(SLinkOperations.getTarget(disjuctionNormalExpression, LINKS.right$BwED));
   }
+  public static void windSensorExpressionOperation(SNode windSensorExpression, final TextGenContext ctx) {
+    final TextGenSupport tgs = new TextGenSupport(ctx);
+
+    tgs.append("(");
+    tgs.append("((Drone)thisJoinPoint.getArgs()[0]).");
+    WrapperFile.callToMethedOperation(SPropertyOperations.getEnum(windSensorExpression, PROPS.right$BL8F).getName(), "", ctx);
+    tgs.append(")");
+    tgs.newLine();
+
+
+  }
   public static void conjuctionNormalExpressionOperation(SNode conjuctionLogicalExpression, final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
-    tgs.append("test");
     tgs.appendNode(SLinkOperations.getTarget(conjuctionLogicalExpression, LINKS.left$BwFB));
     WrapperFile.mappingOperationForSignOperation(SPropertyOperations.getEnum(conjuctionLogicalExpression, PROPS.operation$BCG5), ctx);
     tgs.appendNode(SLinkOperations.getTarget(conjuctionLogicalExpression, LINKS.right$BwED));
@@ -140,11 +155,50 @@ public abstract class WrapperFile {
     tgs.newLine();
     tgs.append("(");
     tgs.newLine();
+
     tgs.appendNode(SLinkOperations.getTarget(given, LINKS.logicalExpression$1QZ_));
+
     tgs.append(")");
     tgs.newLine();
 
 
+  }
+  public static void adviseScriptOperation(SNode adviseScript, final TextGenContext ctx) {
+    final TextGenSupport tgs = new TextGenSupport(ctx);
+    tgs.appendNode(SLinkOperations.getTarget(adviseScript, LINKS.body$BmMw));
+  }
+  public static void commandOperation(SNode command, final TextGenContext ctx) {
+    final TextGenSupport tgs = new TextGenSupport(ctx);
+    if (SPropertyOperations.getEnum(command, PROPS.commandValue$WUqk).getName() == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045b44aeL, "WrapperDSL.structure.CommandEnum"), 0x53be3ecc0493a775L, "doNothing").getName()) {
+      tgs.append("// Do nothing");
+    } else {
+      tgs.append("((Drone)thisJoinPoint.getArgs()[0]).");
+      WrapperFile.callToMethedOperation(SPropertyOperations.getEnum(command, PROPS.commandValue$WUqk).getName(), "", ctx);
+    }
+  }
+  public static void ifOperation(SNode ifNode, final TextGenContext ctx) {
+    final TextGenSupport tgs = new TextGenSupport(ctx);
+    tgs.append("if");
+    tgs.append("(");
+    tgs.appendNode(SLinkOperations.getTarget(ifNode, LINKS.condition$j$J2));
+    tgs.append(")");
+    tgs.append("{");
+    tgs.newLine();
+    tgs.appendNode(SLinkOperations.getTarget(ifNode, LINKS.body$j$K0));
+    tgs.newLine();
+    tgs.append("}");
+  }
+  public static void whileOperation(SNode whileNode, final TextGenContext ctx) {
+    final TextGenSupport tgs = new TextGenSupport(ctx);
+    tgs.append("while");
+    tgs.append("(");
+    tgs.appendNode(SLinkOperations.getTarget(whileNode, LINKS.condition$jseW));
+    tgs.append(")");
+    tgs.append("{");
+    tgs.newLine();
+    tgs.appendNode(SLinkOperations.getTarget(whileNode, LINKS.body$jsq5));
+    tgs.newLine();
+    tgs.append("}");
   }
   public static void wrapperScriptOperation(SNode wrapperScript, final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
@@ -157,10 +211,21 @@ public abstract class WrapperFile {
     tgs.newLine();
     for (SNode pointCut : ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(wrapperScript, LINKS.when$Bwg0), LINKS.pointCuts$EZUY))) {
       WrapperFile.conditionsPointCutOperation(pointCut, SLinkOperations.getTarget(wrapperScript, LINKS.given$Bwf2), ctx);
+      tgs.append("{");
       tgs.newLine();
 
-    }
+      for (SNode adviseScript : ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(wrapperScript, LINKS.then$BwrC), LINKS.adviseScript$1YwA))) {
+        if (adviseScript == SLinkOperations.getTarget(pointCut, LINKS.adviseScript$$HaX)) {
+          WrapperFile.adviseScriptOperation(adviseScript, ctx);
+          tgs.newLine();
+          tgs.append("}");
+          tgs.newLine();
+        }
+      }
 
+
+    }
+    tgs.newLine();
     tgs.append("}");
   }
 
@@ -171,7 +236,9 @@ public abstract class WrapperFile {
     /*package*/ static final SProperty right$BLaw = MetaAdapterFactory.getProperty(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8ce0L, 0x53be3ecc045a8ce1L, "right");
     /*package*/ static final SProperty value$QRR0 = MetaAdapterFactory.getProperty(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc0462d3fbL, 0x53be3ecc0462d3fcL, "value");
     /*package*/ static final SProperty operation$BCG5 = MetaAdapterFactory.getProperty(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bd7L, 0x53be3ecc045a8c62L, "operation");
+    /*package*/ static final SProperty right$BL8F = MetaAdapterFactory.getProperty(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8cddL, 0x53be3ecc045a8cdeL, "right");
     /*package*/ static final SProperty typePointCut$$H91 = MetaAdapterFactory.getProperty(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc046e0b59L, 0x53be3ecc046e0b64L, "typePointCut");
+    /*package*/ static final SProperty commandValue$WUqk = MetaAdapterFactory.getProperty(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc047dcb4aL, 0x53be3ecc04847a19L, "commandValue");
     /*package*/ static final SProperty name$tAp1 = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
   }
 
@@ -180,8 +247,16 @@ public abstract class WrapperFile {
     /*package*/ static final SContainmentLink left$BwFB = MetaAdapterFactory.getContainmentLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bd7L, 0x53be3ecc045a8bdcL, "left");
     /*package*/ static final SContainmentLink right$BwED = MetaAdapterFactory.getContainmentLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bd7L, 0x53be3ecc045a8bdaL, "right");
     /*package*/ static final SContainmentLink logicalExpression$1QZ_ = MetaAdapterFactory.getContainmentLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bcaL, 0x53be3ecc045b453aL, "logicalExpression");
+    /*package*/ static final SContainmentLink body$BmMw = MetaAdapterFactory.getContainmentLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc046e0b54L, 0x53be3ecc0480a64aL, "body");
+    /*package*/ static final SContainmentLink condition$j$J2 = MetaAdapterFactory.getContainmentLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045b45abL, 0x53be3ecc045b4670L, "condition");
+    /*package*/ static final SContainmentLink body$j$K0 = MetaAdapterFactory.getContainmentLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045b45abL, 0x53be3ecc045b4672L, "body");
+    /*package*/ static final SContainmentLink condition$jseW = MetaAdapterFactory.getContainmentLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045b45acL, 0x53be3ecc045b45d2L, "condition");
+    /*package*/ static final SContainmentLink body$jsq5 = MetaAdapterFactory.getContainmentLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045b45acL, 0x53be3ecc045b45d4L, "body");
     /*package*/ static final SContainmentLink when$Bwg0 = MetaAdapterFactory.getContainmentLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bc3L, 0x53be3ecc045a8bcfL, "when");
     /*package*/ static final SContainmentLink pointCuts$EZUY = MetaAdapterFactory.getContainmentLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bcbL, 0x53be3ecc046e0bf5L, "pointCuts");
     /*package*/ static final SContainmentLink given$Bwf2 = MetaAdapterFactory.getContainmentLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bc3L, 0x53be3ecc045a8bcdL, "given");
+    /*package*/ static final SReferenceLink adviseScript$$HaX = MetaAdapterFactory.getReferenceLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc046e0b59L, 0x53be3ecc046e0b68L, "adviseScript");
+    /*package*/ static final SContainmentLink then$BwrC = MetaAdapterFactory.getContainmentLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bc3L, 0x53be3ecc045a8bd2L, "then");
+    /*package*/ static final SContainmentLink adviseScript$1YwA = MetaAdapterFactory.getContainmentLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bccL, 0x53be3ecc045b45a9L, "adviseScript");
   }
 }

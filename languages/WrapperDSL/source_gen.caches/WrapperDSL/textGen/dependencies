@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="WrapperDSL.textGen.AdviseScript_TextGen">
+    <classNode dependClassName="WrapperDSL.textGen.WrapperFile" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.text.impl.TextGenSupport" />
+    <classNode dependClassName="jetbrains.mps.text.rt.TextGenContext" />
+    <classNode extendsClassName="jetbrains.mps.text.rt.TextGenDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.textGen.Command_TextGen">
+    <classNode dependClassName="WrapperDSL.textGen.WrapperFile" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.text.impl.TextGenSupport" />
+    <classNode dependClassName="jetbrains.mps.text.rt.TextGenContext" />
+    <classNode extendsClassName="jetbrains.mps.text.rt.TextGenDescriptorBase" />
+  </dependency>
   <dependency className="WrapperDSL.textGen.ConjuctionLogicalExpression_TextGen">
     <classNode dependClassName="WrapperDSL.textGen.WrapperFile" />
     <classNode dependClassName="java.lang.Override" />
@@ -21,6 +35,13 @@
     <classNode dependClassName="jetbrains.mps.text.rt.TextGenContext" />
     <classNode extendsClassName="jetbrains.mps.text.rt.TextGenDescriptorBase" />
   </dependency>
+  <dependency className="WrapperDSL.textGen.If_TextGen">
+    <classNode dependClassName="WrapperDSL.textGen.WrapperFile" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.text.impl.TextGenSupport" />
+    <classNode dependClassName="jetbrains.mps.text.rt.TextGenContext" />
+    <classNode extendsClassName="jetbrains.mps.text.rt.TextGenDescriptorBase" />
+  </dependency>
   <dependency className="WrapperDSL.textGen.RegionSensorExpression_TextGen">
     <classNode dependClassName="WrapperDSL.textGen.WrapperFile" />
     <classNode dependClassName="java.lang.Override" />
@@ -30,10 +51,15 @@
   </dependency>
   <dependency className="WrapperDSL.textGen.TextGenAspectDescriptor">
     <classNode dependClassName="WrapperDSL.structure.LanguageConceptSwitch" />
+    <classNode dependClassName="WrapperDSL.textGen.AdviseScript_TextGen" />
+    <classNode dependClassName="WrapperDSL.textGen.Command_TextGen" />
     <classNode dependClassName="WrapperDSL.textGen.ConjuctionLogicalExpression_TextGen" />
     <classNode dependClassName="WrapperDSL.textGen.DisjuctionNormalExpression_TextGen" />
     <classNode dependClassName="WrapperDSL.textGen.DistanceSensorExpression_TextGen" />
+    <classNode dependClassName="WrapperDSL.textGen.If_TextGen" />
     <classNode dependClassName="WrapperDSL.textGen.RegionSensorExpression_TextGen" />
+    <classNode dependClassName="WrapperDSL.textGen.While_TextGen" />
+    <classNode dependClassName="WrapperDSL.textGen.WindSensorExpression_TextGen" />
     <classNode dependClassName="WrapperDSL.textGen.WrapperScript_TextGen" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -46,6 +72,20 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.text.rt.TextGenAspectBase" />
+  </dependency>
+  <dependency className="WrapperDSL.textGen.While_TextGen">
+    <classNode dependClassName="WrapperDSL.textGen.WrapperFile" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.text.impl.TextGenSupport" />
+    <classNode dependClassName="jetbrains.mps.text.rt.TextGenContext" />
+    <classNode extendsClassName="jetbrains.mps.text.rt.TextGenDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.textGen.WindSensorExpression_TextGen">
+    <classNode dependClassName="WrapperDSL.textGen.WrapperFile" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.text.impl.TextGenSupport" />
+    <classNode dependClassName="jetbrains.mps.text.rt.TextGenContext" />
+    <classNode extendsClassName="jetbrains.mps.text.rt.TextGenDescriptorBase" />
   </dependency>
   <dependency className="WrapperDSL.textGen.WrapperFile">
     <classNode dependClassName="java.lang.String" />
@@ -60,6 +100,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SEnumerationLiteral" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SProperty" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SReferenceLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="WrapperDSL.textGen.WrapperScript_TextGen">
