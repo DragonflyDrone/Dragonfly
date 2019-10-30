@@ -23,8 +23,14 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
   @Override
   public TextGenDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
     switch (myIndex.index(concept)) {
+      case LanguageConceptSwitch.ConjuctionLogicalExpression:
+        return new ConjuctionLogicalExpression_TextGen();
       case LanguageConceptSwitch.DisjuctionNormalExpression:
         return new DisjuctionNormalExpression_TextGen();
+      case LanguageConceptSwitch.DistanceSensorExpression:
+        return new DistanceSensorExpression_TextGen();
+      case LanguageConceptSwitch.RegionSensorExpression:
+        return new RegionSensorExpression_TextGen();
       case LanguageConceptSwitch.WrapperScript:
         return new WrapperScript_TextGen();
     }

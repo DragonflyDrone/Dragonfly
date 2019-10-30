@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="WrapperDSL.textGen.ConjuctionLogicalExpression_TextGen">
+    <classNode dependClassName="WrapperDSL.textGen.WrapperFile" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.text.impl.TextGenSupport" />
+    <classNode dependClassName="jetbrains.mps.text.rt.TextGenContext" />
+    <classNode extendsClassName="jetbrains.mps.text.rt.TextGenDescriptorBase" />
+  </dependency>
   <dependency className="WrapperDSL.textGen.DisjuctionNormalExpression_TextGen">
+    <classNode dependClassName="WrapperDSL.textGen.WrapperFile" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.text.impl.TextGenSupport" />
+    <classNode dependClassName="jetbrains.mps.text.rt.TextGenContext" />
+    <classNode extendsClassName="jetbrains.mps.text.rt.TextGenDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.textGen.DistanceSensorExpression_TextGen">
+    <classNode dependClassName="WrapperDSL.textGen.WrapperFile" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.text.impl.TextGenSupport" />
+    <classNode dependClassName="jetbrains.mps.text.rt.TextGenContext" />
+    <classNode extendsClassName="jetbrains.mps.text.rt.TextGenDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.textGen.RegionSensorExpression_TextGen">
     <classNode dependClassName="WrapperDSL.textGen.WrapperFile" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.text.impl.TextGenSupport" />
@@ -9,7 +30,10 @@
   </dependency>
   <dependency className="WrapperDSL.textGen.TextGenAspectDescriptor">
     <classNode dependClassName="WrapperDSL.structure.LanguageConceptSwitch" />
+    <classNode dependClassName="WrapperDSL.textGen.ConjuctionLogicalExpression_TextGen" />
     <classNode dependClassName="WrapperDSL.textGen.DisjuctionNormalExpression_TextGen" />
+    <classNode dependClassName="WrapperDSL.textGen.DistanceSensorExpression_TextGen" />
+    <classNode dependClassName="WrapperDSL.textGen.RegionSensorExpression_TextGen" />
     <classNode dependClassName="WrapperDSL.textGen.WrapperScript_TextGen" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

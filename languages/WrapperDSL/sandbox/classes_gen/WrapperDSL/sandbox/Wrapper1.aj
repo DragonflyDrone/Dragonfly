@@ -16,7 +16,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public aspect Wrapper1{
-pointcut Economy Mode():call(* model.entity.drone.DroneBusinessObject.Economy Mode(*))
-pointcut Safe Land():call(* model.entity.drone.DroneBusinessObject.Safe Land(*))
-pointcut Safe Land():call(* model.entity.drone.DroneBusinessObject.Safe Land(*))
+pointcut applyEconomyMode():call(* model.entity.drone.DroneBusinessObject.applyEconomyMode(*))
+pointcut safeLand():call(* model.entity.drone.DroneBusinessObject.safeLand(*))
 }

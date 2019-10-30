@@ -78,31 +78,53 @@ public abstract class WrapperFile {
   }
   public static void mappingOperationForSignOperation(SEnumerationLiteral operationEnum, final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
-    switch (SEnumOperations.getMemberName0(operationEnum).toString()) {
-      case SEnumOperations.getMemberName0(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bdfL, "WrapperDSL.structure.OperationEnum"), 0x53be3ecc045a8c3dL, "is")).toString():
-        tgs.append("==");
-      case SEnumOperations.getMemberName0(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bdfL, "WrapperDSL.structure.OperationEnum"), 0x53be3ecc045a8c43L, "not_equal_to")).toString():
-        tgs.append("!=");
-      case SEnumOperations.getMemberName0(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bdfL, "WrapperDSL.structure.OperationEnum"), 0x53be3ecc045a8c46L, "less_than")).toString():
-        tgs.append("<");
-      case SEnumOperations.getMemberName0(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bdfL, "WrapperDSL.structure.OperationEnum"), 0x53be3ecc045a8c4aL, "greater_than")).toString():
-        tgs.append(">");
-      case SEnumOperations.getMemberName0(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bdfL, "WrapperDSL.structure.OperationEnum"), 0x53be3ecc045a8c55L, "less_than_or_equal_to")).toString():
-        tgs.append("<=");
-      case SEnumOperations.getMemberName0(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bdfL, "WrapperDSL.structure.OperationEnum"), 0x53be3ecc045a8c4fL, "greater_than_or_equal_to")).toString():
-        tgs.append(">=");
-      case SEnumOperations.getMemberName0(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bdfL, "WrapperDSL.structure.OperationEnum"), 0x53be3ecc045d42a9L, "and")).toString():
-        tgs.append("&&");
-      case SEnumOperations.getMemberName0(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bdfL, "WrapperDSL.structure.OperationEnum"), 0x53be3ecc045d42b1L, "or")).toString():
-        tgs.append("||");
+    if (SEnumOperations.getMemberName0(operationEnum) == SEnumOperations.getMemberName0(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bdfL, "WrapperDSL.structure.OperationEnum"), 0x53be3ecc045a8c3dL, "is"))) {
+      tgs.append("==");
+
+    } else if (SEnumOperations.getMemberName0(operationEnum) == SEnumOperations.getMemberName0(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bdfL, "WrapperDSL.structure.OperationEnum"), 0x53be3ecc045a8c43L, "not_equal_to"))) {
+      tgs.append("!=");
+    } else if (SEnumOperations.getMemberName0(operationEnum) == SEnumOperations.getMemberName0(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bdfL, "WrapperDSL.structure.OperationEnum"), 0x53be3ecc045a8c46L, "less_than"))) {
+      tgs.append("<");
+    } else if (SEnumOperations.getMemberName0(operationEnum) == SEnumOperations.getMemberName0(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bdfL, "WrapperDSL.structure.OperationEnum"), 0x53be3ecc045a8c4aL, "greater_than"))) {
+      tgs.append(">");
+    } else if (SEnumOperations.getMemberName0(operationEnum) == SEnumOperations.getMemberName0(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bdfL, "WrapperDSL.structure.OperationEnum"), 0x53be3ecc045a8c55L, "less_than_or_equal_to"))) {
+      tgs.append("<=");
+    } else if (SEnumOperations.getMemberName0(operationEnum) == SEnumOperations.getMemberName0(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bdfL, "WrapperDSL.structure.OperationEnum"), 0x53be3ecc045a8c4fL, "greater_than_or_equal_to"))) {
+      tgs.append(">=");
+    } else if (SEnumOperations.getMemberName0(operationEnum) == SEnumOperations.getMemberName0(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bdfL, "WrapperDSL.structure.OperationEnum"), 0x53be3ecc045d42a9L, "and"))) {
+      tgs.append("&&");
+    } else if (SEnumOperations.getMemberName0(operationEnum) == SEnumOperations.getMemberName0(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bdfL, "WrapperDSL.structure.OperationEnum"), 0x53be3ecc045d42b1L, "or"))) {
+      tgs.append("||");
     }
+
+
+  }
+  public static void regionSensorExpressionOperation(SNode regionSensorExpression, final TextGenContext ctx) {
+    final TextGenSupport tgs = new TextGenSupport(ctx);
+    tgs.append(SPropertyOperations.getEnum(regionSensorExpression, PROPS.left$EP9q).getName());
+    WrapperFile.mappingOperationForSignOperation(SPropertyOperations.getEnum(regionSensorExpression, PROPS.operation$6pQJ), ctx);
+    tgs.append(SPropertyOperations.getEnum(regionSensorExpression, PROPS.right$BLaw).getName());
+  }
+  public static void distanceSensorExpressionOperation(SNode distanceSensorExpression, final TextGenContext ctx) {
+    final TextGenSupport tgs = new TextGenSupport(ctx);
+    tgs.append(SPropertyOperations.getEnum(distanceSensorExpression, PROPS.left$EP9q).getName());
+    WrapperFile.mappingOperationForSignOperation(SPropertyOperations.getEnum(distanceSensorExpression, PROPS.operation$6pQJ), ctx);
+    tgs.append(String.valueOf(SPropertyOperations.getInteger(SLinkOperations.getTarget(distanceSensorExpression, LINKS.distance$98Dw), PROPS.value$QRR0)));
   }
   public static void disjuctionNormalExpressionOperation(SNode disjuctionNormalExpression, final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
+    tgs.append("test");
 
     tgs.appendNode(SLinkOperations.getTarget(disjuctionNormalExpression, LINKS.left$BwFB));
     WrapperFile.mappingOperationForSignOperation(SPropertyOperations.getEnum(disjuctionNormalExpression, PROPS.operation$BCG5), ctx);
     tgs.appendNode(SLinkOperations.getTarget(disjuctionNormalExpression, LINKS.right$BwED));
+  }
+  public static void conjuctionNormalExpressionOperation(SNode conjuctionLogicalExpression, final TextGenContext ctx) {
+    final TextGenSupport tgs = new TextGenSupport(ctx);
+    tgs.append("test");
+    tgs.appendNode(SLinkOperations.getTarget(conjuctionLogicalExpression, LINKS.left$BwFB));
+    WrapperFile.mappingOperationForSignOperation(SPropertyOperations.getEnum(conjuctionLogicalExpression, PROPS.operation$BCG5), ctx);
+    tgs.appendNode(SLinkOperations.getTarget(conjuctionLogicalExpression, LINKS.right$BwED));
   }
   public static void conditionsPointCutOperation(SNode pointCut, SNode given, final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
@@ -113,6 +135,7 @@ public abstract class WrapperFile {
     WrapperFile.callToMethedOperation(SEnumOperations.getMemberName0(SPropertyOperations.getEnum(pointCut, PROPS.call$26oK)), "", ctx);
     tgs.newLine();
     tgs.append("&&");
+    tgs.append(" ");
     tgs.append("if");
     tgs.newLine();
     tgs.append("(");
@@ -131,8 +154,11 @@ public abstract class WrapperFile {
     tgs.append("{");
     tgs.newLine();
     WrapperFile.pointcutsOperation(SLinkOperations.getChildren(SLinkOperations.getTarget(wrapperScript, LINKS.when$Bwg0), LINKS.pointCuts$EZUY), ctx);
+    tgs.newLine();
     for (SNode pointCut : ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(wrapperScript, LINKS.when$Bwg0), LINKS.pointCuts$EZUY))) {
       WrapperFile.conditionsPointCutOperation(pointCut, SLinkOperations.getTarget(wrapperScript, LINKS.given$Bwf2), ctx);
+      tgs.newLine();
+
     }
 
     tgs.append("}");
@@ -140,12 +166,17 @@ public abstract class WrapperFile {
 
   private static final class PROPS {
     /*package*/ static final SProperty call$26oK = MetaAdapterFactory.getProperty(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc046e0b59L, 0x53be3ecc047cf223L, "call");
+    /*package*/ static final SProperty left$EP9q = MetaAdapterFactory.getProperty(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8c9dL, 0x53be3ecc0468105bL, "left");
+    /*package*/ static final SProperty operation$6pQJ = MetaAdapterFactory.getProperty(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8c9dL, 0x53be3ecc0462d409L, "operation");
+    /*package*/ static final SProperty right$BLaw = MetaAdapterFactory.getProperty(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8ce0L, 0x53be3ecc045a8ce1L, "right");
+    /*package*/ static final SProperty value$QRR0 = MetaAdapterFactory.getProperty(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc0462d3fbL, 0x53be3ecc0462d3fcL, "value");
     /*package*/ static final SProperty operation$BCG5 = MetaAdapterFactory.getProperty(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bd7L, 0x53be3ecc045a8c62L, "operation");
     /*package*/ static final SProperty typePointCut$$H91 = MetaAdapterFactory.getProperty(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc046e0b59L, 0x53be3ecc046e0b64L, "typePointCut");
     /*package*/ static final SProperty name$tAp1 = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
   }
 
   private static final class LINKS {
+    /*package*/ static final SContainmentLink distance$98Dw = MetaAdapterFactory.getContainmentLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc048c5944L, 0x53be3ecc048c5945L, "distance");
     /*package*/ static final SContainmentLink left$BwFB = MetaAdapterFactory.getContainmentLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bd7L, 0x53be3ecc045a8bdcL, "left");
     /*package*/ static final SContainmentLink right$BwED = MetaAdapterFactory.getContainmentLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bd7L, 0x53be3ecc045a8bdaL, "right");
     /*package*/ static final SContainmentLink logicalExpression$1QZ_ = MetaAdapterFactory.getContainmentLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bcaL, 0x53be3ecc045b453aL, "logicalExpression");

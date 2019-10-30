@@ -18,4 +18,15 @@ import java.util.List;
 public aspect Wrapper1{
 pointcut applyEconomyMode():call(* model.entity.drone.DroneBusinessObject.applyEconomyMode(*))
 pointcut safeLand():call(* model.entity.drone.DroneBusinessObject.safeLand(*))
+
+Around():applyEconomyMode()
+&& if
+(
+testgetDistanceDestiny>60&&region==isOnWater)
+
+Before():safeLand()
+&& if
+(
+testgetDistanceDestiny>60&&region==isOnWater)
+
 }
