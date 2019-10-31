@@ -33,9 +33,11 @@ public class EnumerationDescriptor_CommandEnum extends EnumerationDescriptorBase
   private final EnumerationDescriptor.MemberDescriptor myMember_turnNorth_0 = new EnumerationDescriptor.MemberDescriptor("turnNorth", "Turn North", 0x53be3ecc045b4525L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690384165");
   private final EnumerationDescriptor.MemberDescriptor myMember_applyEconomyMode_0 = new EnumerationDescriptor.MemberDescriptor("applyEconomyMode", "Economy Mode", 0x53be3ecc048f15aeL, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596693779886");
   private final EnumerationDescriptor.MemberDescriptor myMember_doNothing_0 = new EnumerationDescriptor.MemberDescriptor("doNothing", "Do Nothing", 0x53be3ecc0493a775L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596694079349");
+  private final EnumerationDescriptor.MemberDescriptor myMember_returnToHome_0 = new EnumerationDescriptor.MemberDescriptor("returnToHome", "Return to Home", 0x1ddd50fab11d4599L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/2151965234596496793");
+  private final EnumerationDescriptor.MemberDescriptor myMember_goDestinyAutomatic_0 = new EnumerationDescriptor.MemberDescriptor("goDestinyAutomatic", "Automatically go to destination", 0x1ddd50fab11d45adL, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/2151965234596496813");
 
-  private final EnumerationLiteralsIndex myIndex = EnumerationLiteralsIndex.build(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045b44aeL, 0x53be3ecc045b44afL, 0x53be3ecc045b44b0L, 0x53be3ecc045b44b3L, 0x53be3ecc045b44b7L, 0x53be3ecc045b44bcL, 0x53be3ecc045b44c2L, 0x53be3ecc045b44c9L, 0x53be3ecc045b44d1L, 0x53be3ecc045b44daL, 0x53be3ecc045b44e4L, 0x53be3ecc045b44efL, 0x33ec957814b8f1a6L, 0x53be3ecc045b44fbL, 0x53be3ecc045b4508L, 0x53be3ecc045b4516L, 0x53be3ecc045b4525L, 0x53be3ecc048f15aeL, 0x53be3ecc0493a775L);
-  private final List<EnumerationDescriptor.MemberDescriptor> myMembers = new EnumerationDescriptorBase.MembersList(myIndex, myMember_land_0, myMember_safeLand_0, myMember_shutDown_0, myMember_start_0, myMember_stepLest_0, myMember_stepNearestToDestiny_0, myMember_stepNearestToOrigem_0, myMember_stepNearestToWater_0, myMember_stepNearestToLand_0, myMember_stepNearestToPosition_0, myMember_takeOff_boolean_0, myMember_landed_boolean_0, myMember_turnLeft_0, myMember_turnWest_0, myMember_turnSouth_0, myMember_turnNorth_0, myMember_applyEconomyMode_0, myMember_doNothing_0);
+  private final EnumerationLiteralsIndex myIndex = EnumerationLiteralsIndex.build(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045b44aeL, 0x53be3ecc045b44afL, 0x53be3ecc045b44b0L, 0x53be3ecc045b44b3L, 0x53be3ecc045b44b7L, 0x53be3ecc045b44bcL, 0x53be3ecc045b44c2L, 0x53be3ecc045b44c9L, 0x53be3ecc045b44d1L, 0x53be3ecc045b44daL, 0x53be3ecc045b44e4L, 0x53be3ecc045b44efL, 0x33ec957814b8f1a6L, 0x53be3ecc045b44fbL, 0x53be3ecc045b4508L, 0x53be3ecc045b4516L, 0x53be3ecc045b4525L, 0x53be3ecc048f15aeL, 0x53be3ecc0493a775L, 0x1ddd50fab11d4599L, 0x1ddd50fab11d45adL);
+  private final List<EnumerationDescriptor.MemberDescriptor> myMembers = new EnumerationDescriptorBase.MembersList(myIndex, myMember_land_0, myMember_safeLand_0, myMember_shutDown_0, myMember_start_0, myMember_stepLest_0, myMember_stepNearestToDestiny_0, myMember_stepNearestToOrigem_0, myMember_stepNearestToWater_0, myMember_stepNearestToLand_0, myMember_stepNearestToPosition_0, myMember_takeOff_boolean_0, myMember_landed_boolean_0, myMember_turnLeft_0, myMember_turnWest_0, myMember_turnSouth_0, myMember_turnNorth_0, myMember_applyEconomyMode_0, myMember_doNothing_0, myMember_returnToHome_0, myMember_goDestinyAutomatic_0);
 
   @Nullable
   @Override
@@ -92,6 +94,10 @@ public class EnumerationDescriptor_CommandEnum extends EnumerationDescriptorBase
         return myMember_applyEconomyMode_0;
       case "doNothing":
         return myMember_doNothing_0;
+      case "returnToHome":
+        return myMember_returnToHome_0;
+      case "goDestinyAutomatic":
+        return myMember_goDestinyAutomatic_0;
     }
     return null;
   }

@@ -33,6 +33,13 @@
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
       </concept>
+      <concept id="1070534934090" name="jetbrains.mps.baseLanguage.structure.CastExpression" flags="nn" index="10QFUN">
+        <child id="1070534934091" name="type" index="10QFUM" />
+        <child id="1070534934092" name="expression" index="10QFUP" />
+      </concept>
+      <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
+        <child id="1068431790190" name="initializer" index="33vP2m" />
+      </concept>
       <concept id="1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" flags="nn" index="37vLTw">
         <reference id="1068581517664" name="variableDeclaration" index="3cqZAo" />
       </concept>
@@ -59,10 +66,17 @@
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
+      <concept id="1068581242864" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" flags="nn" index="3cpWs8">
+        <child id="1068581242865" name="localVariableDeclaration" index="3cpWs9" />
+      </concept>
+      <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
       <concept id="1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" flags="in" index="3cqZAl" />
       <concept id="1206060495898" name="jetbrains.mps.baseLanguage.structure.ElsifClause" flags="ng" index="3eNFk2">
         <child id="1206060619838" name="condition" index="3eO9$A" />
         <child id="1206060644605" name="statementList" index="3eOfB_" />
+      </concept>
+      <concept id="1079359253375" name="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" flags="nn" index="1eOMI4">
+        <child id="1079359253376" name="expression" index="1eOMHV" />
       </concept>
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
@@ -106,6 +120,9 @@
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="1966870290083281362" name="jetbrains.mps.lang.smodel.structure.EnumMember_NameOperation" flags="ng" index="24Tkf9" />
+      <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
+        <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
+      </concept>
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
         <reference id="1145383142433" name="elementConcept" index="2I9WkF" />
       </concept>
@@ -113,6 +130,9 @@
         <reference id="1966870290088668516" name="memberDeclaration" index="2ViDtZ" />
       </concept>
       <concept id="1240170042401" name="jetbrains.mps.lang.smodel.structure.SEnumerationMemberType" flags="in" index="2ZThk1" />
+      <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
+        <child id="1177027386292" name="conceptArgument" index="cj9EA" />
+      </concept>
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
       </concept>
@@ -643,6 +663,85 @@
         <node concept="2ZThk1" id="3fG_nwkJ8Ni" role="1tU5fm" />
       </node>
     </node>
+    <node concept="1bwezc" id="1RtkfEL9Thb" role="1bwxVq">
+      <property role="TrG5h" value="batterySensorExpressionOperation" />
+      <node concept="3cqZAl" id="1RtkfEL9Thc" role="3clF45" />
+      <node concept="3clFbS" id="1RtkfEL9Thd" role="3clF47">
+        <node concept="lc7rE" id="1RtkfEL9TtF" role="3cqZAp">
+          <node concept="la8eA" id="1RtkfEL9TtG" role="lcghm">
+            <property role="lacIc" value="(" />
+          </node>
+        </node>
+        <node concept="lc7rE" id="1RtkfEL9TtH" role="3cqZAp">
+          <node concept="la8eA" id="1RtkfEL9TtI" role="lcghm">
+            <property role="lacIc" value="((Drone)thisJoinPoint.getArgs()[0])." />
+          </node>
+        </node>
+        <node concept="lc7rE" id="1RtkfEL9TtJ" role="3cqZAp">
+          <node concept="1bDJIP" id="1RtkfEL9TtK" role="lcghm">
+            <ref role="1rvKf6" node="3Ivd_nwaPX_" resolve="callToMethedOperation" />
+            <node concept="2OqwBi" id="1RtkfEL9TtL" role="1ryhcI">
+              <node concept="2OqwBi" id="1RtkfEL9TtM" role="2Oq$k0">
+                <node concept="37vLTw" id="1RtkfEL9TyG" role="2Oq$k0">
+                  <ref role="3cqZAo" node="1RtkfEL9Tt9" resolve="batterySensorExpression" />
+                </node>
+                <node concept="3TrcHB" id="1RtkfEL9TSC" role="2OqNvi">
+                  <ref role="3TsBF5" to="lpas:5eYfGK4q11r" resolve="left" />
+                </node>
+              </node>
+              <node concept="liA8E" id="1RtkfEL9TtP" role="2OqNvi">
+                <ref role="37wK5l" to="c17a:~SEnumerationLiteral.getName()" resolve="getName" />
+              </node>
+            </node>
+            <node concept="Xl_RD" id="1RtkfEL9TtQ" role="1ryhcI">
+              <property role="Xl_RC" value="" />
+            </node>
+          </node>
+          <node concept="1bDJIP" id="1RtkfEL9TYC" role="lcghm">
+            <ref role="1rvKf6" node="3fG_nwkJ8fO" resolve="mappingOperationForSignOperation" />
+            <node concept="2OqwBi" id="1RtkfEL9U8V" role="1ryhcI">
+              <node concept="37vLTw" id="1RtkfEL9U00" role="2Oq$k0">
+                <ref role="3cqZAo" node="1RtkfEL9Tt9" resolve="batterySensorExpression" />
+              </node>
+              <node concept="3TrcHB" id="1RtkfEL9Ua9" role="2OqNvi">
+                <ref role="3TsBF5" to="lpas:5eYfGK4oHg9" resolve="operation" />
+              </node>
+            </node>
+          </node>
+          <node concept="l9hG8" id="1RtkfEL9Uj9" role="lcghm">
+            <node concept="2YIFZM" id="1RtkfEL9UDn" role="lb14g">
+              <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+              <ref role="37wK5l" to="wyt6:~String.valueOf(int)" resolve="valueOf" />
+              <node concept="2OqwBi" id="1RtkfELagri" role="37wK5m">
+                <node concept="2OqwBi" id="1RtkfEL9US_" role="2Oq$k0">
+                  <node concept="37vLTw" id="1RtkfEL9UIA" role="2Oq$k0">
+                    <ref role="3cqZAo" node="1RtkfEL9Tt9" resolve="batterySensorExpression" />
+                  </node>
+                  <node concept="3TrEf2" id="1RtkfEL9UV3" role="2OqNvi">
+                    <ref role="3Tt5mk" to="lpas:5eYfGK4qp91" resolve="right" />
+                  </node>
+                </node>
+                <node concept="3TrcHB" id="1RtkfELagHR" role="2OqNvi">
+                  <ref role="3TsBF5" to="lpas:5eYfGK4oHfW" resolve="value" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="lc7rE" id="1RtkfEL9TtR" role="3cqZAp">
+          <node concept="la8eA" id="1RtkfEL9TtS" role="lcghm">
+            <property role="lacIc" value=")" />
+          </node>
+          <node concept="l8MVK" id="1RtkfEL9TtT" role="lcghm" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="1RtkfEL9Tt9" role="3clF46">
+        <property role="TrG5h" value="batterySensorExpression" />
+        <node concept="3Tqbb2" id="1RtkfEL9Tt8" role="1tU5fm">
+          <ref role="ehGHo" to="lpas:5eYfGK4qp90" resolve="BatterySensorExpression" />
+        </node>
+      </node>
+    </node>
     <node concept="1bwezc" id="3IZH$xcuNvt" role="1bwxVq">
       <property role="TrG5h" value="regionSensorExpressionOperation" />
       <node concept="3cqZAl" id="3IZH$xcuNvu" role="3clF45" />
@@ -735,21 +834,89 @@
               </node>
             </node>
           </node>
-          <node concept="l9hG8" id="3IZH$xcvKrr" role="lcghm">
-            <node concept="2YIFZM" id="3IZH$xcwvsr" role="lb14g">
-              <ref role="37wK5l" to="wyt6:~String.valueOf(int)" resolve="valueOf" />
-              <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
-              <node concept="2OqwBi" id="3IZH$xcwvZg" role="37wK5m">
-                <node concept="2OqwBi" id="3IZH$xcwvOz" role="2Oq$k0">
-                  <node concept="37vLTw" id="3IZH$xcwvEO" role="2Oq$k0">
-                    <ref role="3cqZAo" node="3IZH$xcvJl3" resolve="distanceSensorExpression" />
-                  </node>
-                  <node concept="3TrEf2" id="3IZH$xcwvQI" role="2OqNvi">
-                    <ref role="3Tt5mk" to="lpas:5eYfGK4z5_5" resolve="distance" />
-                  </node>
+        </node>
+        <node concept="3clFbH" id="1RtkfELcEM9" role="3cqZAp" />
+        <node concept="3clFbJ" id="1RtkfELcEOd" role="3cqZAp">
+          <node concept="3clFbS" id="1RtkfELcEOf" role="3clFbx">
+            <node concept="lc7rE" id="1RtkfELcGu5" role="3cqZAp">
+              <node concept="la8eA" id="1RtkfELcGu6" role="lcghm">
+                <property role="lacIc" value="((Drone)thisJoinPoint.getArgs()[0])." />
+              </node>
+            </node>
+            <node concept="3cpWs8" id="1RtkfELcGyC" role="3cqZAp">
+              <node concept="3cpWsn" id="1RtkfELcGyF" role="3cpWs9">
+                <property role="TrG5h" value="callValue" />
+                <node concept="3uibUv" id="1RtkfELcGyB" role="1tU5fm">
+                  <ref role="3uigEE" to="wyt6:~String" resolve="String" />
                 </node>
-                <node concept="3TrcHB" id="3IZH$xcww1B" role="2OqNvi">
-                  <ref role="3TsBF5" to="lpas:5eYfGK4oHfW" resolve="value" />
+                <node concept="2OqwBi" id="1RtkfELcHRw" role="33vP2m">
+                  <node concept="2OqwBi" id="1RtkfELcHEF" role="2Oq$k0">
+                    <node concept="1eOMI4" id="1RtkfELcGqs" role="2Oq$k0">
+                      <node concept="10QFUN" id="1RtkfELcG1d" role="1eOMHV">
+                        <node concept="3Tqbb2" id="1RtkfELcG3v" role="10QFUM">
+                          <ref role="ehGHo" to="lpas:1RtkfEL7CkZ" resolve="DistanceConstant" />
+                        </node>
+                        <node concept="2OqwBi" id="1RtkfELcFKo" role="10QFUP">
+                          <node concept="37vLTw" id="1RtkfELcFB1" role="2Oq$k0">
+                            <ref role="3cqZAo" node="3IZH$xcvJl3" resolve="distanceSensorExpression" />
+                          </node>
+                          <node concept="3TrEf2" id="1RtkfELcFV5" role="2OqNvi">
+                            <ref role="3Tt5mk" to="lpas:1RtkfEL7Ws$" resolve="distance" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="3TrcHB" id="1RtkfELcHGi" role="2OqNvi">
+                      <ref role="3TsBF5" to="lpas:1RtkfEL7Cl0" resolve="distance_value" />
+                    </node>
+                  </node>
+                  <node concept="24Tkf9" id="1RtkfELd8aP" role="2OqNvi" />
+                </node>
+              </node>
+            </node>
+            <node concept="lc7rE" id="1RtkfELcIIr" role="3cqZAp">
+              <node concept="1bDJIP" id="1RtkfELcIJd" role="lcghm">
+                <ref role="1rvKf6" node="3Ivd_nwaPX_" resolve="callToMethedOperation" />
+                <node concept="37vLTw" id="1RtkfELcIKj" role="1ryhcI">
+                  <ref role="3cqZAo" node="1RtkfELcGyF" resolve="callValue" />
+                </node>
+                <node concept="Xl_RD" id="1RtkfELcIKW" role="1ryhcI">
+                  <property role="Xl_RC" value="" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="1RtkfELcFmJ" role="3clFbw">
+            <node concept="2OqwBi" id="1RtkfELcEZk" role="2Oq$k0">
+              <node concept="37vLTw" id="1RtkfELcEPs" role="2Oq$k0">
+                <ref role="3cqZAo" node="3IZH$xcvJl3" resolve="distanceSensorExpression" />
+              </node>
+              <node concept="3TrEf2" id="1RtkfELcFca" role="2OqNvi">
+                <ref role="3Tt5mk" to="lpas:1RtkfEL7Ws$" resolve="distance" />
+              </node>
+            </node>
+            <node concept="1mIQ4w" id="1RtkfELcFxw" role="2OqNvi">
+              <node concept="chp4Y" id="1RtkfELcFzT" role="cj9EA">
+                <ref role="cht4Q" to="lpas:1RtkfEL7CkZ" resolve="DistanceConstant" />
+              </node>
+            </node>
+          </node>
+          <node concept="9aQIb" id="1RtkfELcILm" role="9aQIa">
+            <node concept="3clFbS" id="1RtkfELcILn" role="9aQI4">
+              <node concept="lc7rE" id="1RtkfELcIUh" role="3cqZAp">
+                <node concept="l9hG8" id="1RtkfELcIUw" role="lcghm">
+                  <node concept="2YIFZM" id="1RtkfELcJLR" role="lb14g">
+                    <ref role="37wK5l" to="wyt6:~String.valueOf(java.lang.Object)" resolve="valueOf" />
+                    <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+                    <node concept="2OqwBi" id="1RtkfELcKa7" role="37wK5m">
+                      <node concept="37vLTw" id="1RtkfELcJR2" role="2Oq$k0">
+                        <ref role="3cqZAo" node="3IZH$xcvJl3" resolve="distanceSensorExpression" />
+                      </node>
+                      <node concept="3TrEf2" id="1RtkfELcKlP" role="2OqNvi">
+                        <ref role="3Tt5mk" to="lpas:1RtkfEL7Ws$" resolve="distance" />
+                      </node>
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
@@ -1521,6 +1688,20 @@
           <node concept="1bDJIP" id="65ufIfNPCuv" role="lcghm">
             <ref role="1rvKf6" node="65ufIfNPCeD" resolve="whileOperation" />
             <node concept="117lpO" id="65ufIfNPCuO" role="1ryhcI" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="WtQ9Q" id="1RtkfEL9T9T">
+    <property role="3GE5qa" value="math.expression.sensor_expression" />
+    <ref role="WuzLi" to="lpas:5eYfGK4qp90" resolve="BatterySensorExpression" />
+    <node concept="11bSqf" id="1RtkfEL9T9U" role="11c4hB">
+      <node concept="3clFbS" id="1RtkfEL9T9V" role="2VODD2">
+        <node concept="lc7rE" id="1RtkfEL9Tae" role="3cqZAp">
+          <node concept="1bDJIP" id="1RtkfEL9TA0" role="lcghm">
+            <ref role="1rvKf6" node="1RtkfEL9Thb" resolve="batterySensorExpressionOperation" />
+            <node concept="117lpO" id="1RtkfEL9TAl" role="1ryhcI" />
           </node>
         </node>
       </node>

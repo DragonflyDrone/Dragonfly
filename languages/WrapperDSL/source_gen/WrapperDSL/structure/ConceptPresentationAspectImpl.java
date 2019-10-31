@@ -16,6 +16,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_Constant;
   private ConceptPresentation props_CoordenateSensorExpression;
   private ConceptPresentation props_DisjuctionNormalExpression;
+  private ConceptPresentation props_DistanceConstant;
   private ConceptPresentation props_DistanceSensorExpression;
   private ConceptPresentation props_Given;
   private ConceptPresentation props_If;
@@ -88,6 +89,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_DisjuctionNormalExpression = cpb.create();
         }
         return props_DisjuctionNormalExpression;
+      case LanguageConceptSwitch.DistanceConstant:
+        if (props_DistanceConstant == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("DistanceConstant");
+          props_DistanceConstant = cpb.create();
+        }
+        return props_DistanceConstant;
       case LanguageConceptSwitch.DistanceSensorExpression:
         if (props_DistanceSensorExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

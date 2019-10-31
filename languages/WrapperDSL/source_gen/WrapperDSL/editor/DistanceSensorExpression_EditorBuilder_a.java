@@ -131,7 +131,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     }
   }
   private EditorCell createRefNode_0() {
-    SingleRoleCellProvider provider = new distanceSingleRoleHandler_wicy8i_d0(myNode, LINKS.distance$98Dw, getEditorContext());
+    SingleRoleCellProvider provider = new distanceSingleRoleHandler_wicy8i_d0(myNode, LINKS.distance$XvUk, getEditorContext());
     return provider.createCell();
   }
   private static class distanceSingleRoleHandler_wicy8i_d0 extends SingleRoleCellProvider {
@@ -151,8 +151,8 @@ import org.jetbrains.mps.openapi.language.SConcept;
 
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = getUpdateSession().updateChildNodeCell(child);
-      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(getNode(), LINKS.distance$98Dw, child));
-      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(getNode(), LINKS.distance$98Dw, child));
+      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(getNode(), LINKS.distance$XvUk, child));
+      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(getNode(), LINKS.distance$XvUk, child));
       installCellInfo(child, editorCell, false);
       return editorCell;
     }
@@ -164,13 +164,13 @@ import org.jetbrains.mps.openapi.language.SConcept;
         editorCell.setSubstituteInfo((isEmpty ? new SEmptyContainmentSubstituteInfo(editorCell) : new SChildSubstituteInfo(editorCell)));
       }
       if (editorCell.getSRole() == null) {
-        editorCell.setSRole(LINKS.distance$98Dw);
+        editorCell.setSRole(LINKS.distance$XvUk);
       }
     }
     @Override
     protected EditorCell createEmptyCell() {
       getCellFactory().pushCellContext();
-      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(getNode(), LINKS.distance$98Dw));
+      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(getNode(), LINKS.distance$XvUk));
       try {
         EditorCell editorCell = super.createEmptyCell();
         editorCell.setCellId("empty_distance");
@@ -202,6 +202,6 @@ import org.jetbrains.mps.openapi.language.SConcept;
   }
 
   private static final class LINKS {
-    /*package*/ static final SContainmentLink distance$98Dw = MetaAdapterFactory.getContainmentLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc048c5944L, 0x53be3ecc048c5945L, "distance");
+    /*package*/ static final SContainmentLink distance$XvUk = MetaAdapterFactory.getContainmentLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc048c5944L, 0x1ddd50fab11fc724L, "distance");
   }
 }

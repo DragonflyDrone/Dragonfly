@@ -171,13 +171,39 @@
                 <ref role="1XH99l" to="lpas:5eYfGK4q11m" resolve="SensorType" />
               </node>
               <node concept="2ViDtV" id="5eYfGK4qLsv" role="2OqNvi">
-                <ref role="2ViDtZ" to="lpas:5eYfGK4q_BE" resolve="battery" />
+                <ref role="2ViDtZ" to="lpas:5eYfGK4q_BE" resolve="getCurrentBattery" />
               </node>
             </node>
             <node concept="2OqwBi" id="5eYfGK4q$V5" role="37vLTJ">
               <node concept="13iPFW" id="5eYfGK4q$Mq" role="2Oq$k0" />
               <node concept="3TrcHB" id="5eYfGK4q_4N" role="2OqNvi">
                 <ref role="3TsBF5" to="lpas:5eYfGK4q11r" resolve="left" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="13h7C7" id="1RtkfELbBgF">
+    <property role="3GE5qa" value="math" />
+    <ref role="13h7C2" to="lpas:1RtkfEL7CkZ" resolve="DistanceConstant" />
+    <node concept="13hLZK" id="1RtkfELbBgG" role="13h7CW">
+      <node concept="3clFbS" id="1RtkfELbBgH" role="2VODD2">
+        <node concept="3clFbF" id="1RtkfELbBgR" role="3cqZAp">
+          <node concept="37vLTI" id="1RtkfELbBMP" role="3clFbG">
+            <node concept="2OqwBi" id="1RtkfELbCpN" role="37vLTx">
+              <node concept="1XH99k" id="1RtkfELbBZe" role="2Oq$k0">
+                <ref role="1XH99l" to="lpas:5eYfGK4q11m" resolve="SensorType" />
+              </node>
+              <node concept="2ViDtV" id="1RtkfELbCEi" role="2OqNvi">
+                <ref role="2ViDtZ" to="lpas:5eYfGK4zk9C" resolve="getDistanceOrigem" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="1RtkfELbBrt" role="37vLTJ">
+              <node concept="13iPFW" id="1RtkfELbBgQ" role="2Oq$k0" />
+              <node concept="3TrcHB" id="1RtkfELbBAd" role="2OqNvi">
+                <ref role="3TsBF5" to="lpas:1RtkfEL7Cl0" resolve="distance_value" />
               </node>
             </node>
           </node>

@@ -15,27 +15,14 @@ import view.river.RiverView;
 import java.util.ArrayList;
 import java.util.List;
 
-public aspect Wrapper1{
+public aspect KeepFlying{
 pointcut safeLand():call(* model.entity.drone.DroneBusinessObject.safeLand(*))
-pointcut applyEconomyMode():call(* model.entity.drone.DroneBusinessObject.applyEconomyMode(*))
 
 Around():safeLand()
 && if
 (
-(((Drone)thisJoinPoint.getArgs()[0]).getDistanceDestiny()<=60)
-&&(((Drone)thisJoinPoint.getArgs()[0]).isStrongWind())
-)
-{
-while((((Drone)thisJoinPoint.getArgs()[0]).isOnWater())
-){
-((Drone)thisJoinPoint.getArgs()[0]).stepNearestToLand()
-}
-}
-Around():applyEconomyMode()
-&& if
-(
-(((Drone)thisJoinPoint.getArgs()[0]).getDistanceDestiny()<=60)
-&&(((Drone)thisJoinPoint.getArgs()[0]).isStrongWind())
+(((Drone)thisJoinPoint.getArgs()[0]).isStrongWind())
+&&(((Drone)thisJoinPoint.getArgs()[0]).getDistanceDestiny()<=Integer)
 )
 {
 // Do nothing

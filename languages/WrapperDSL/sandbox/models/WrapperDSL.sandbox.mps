@@ -12,8 +12,11 @@
       </concept>
     </language>
     <language id="3e1c68c4-ebe6-40bd-a27f-e74585aa2487" name="WrapperDSL">
+      <concept id="2151965234596578623" name="WrapperDSL.structure.DistanceConstant" flags="ng" index="2GKXn5">
+        <property id="2151965234596578624" name="distance_value" index="2GKXmU" />
+      </concept>
       <concept id="6034329596693600580" name="WrapperDSL.structure.DistanceSensorExpression" flags="ng" index="1ncAu8">
-        <child id="6034329596693600581" name="distance" index="1ncAu9" />
+        <child id="2151965234596661028" name="distance" index="2GKDvu" />
       </concept>
       <concept id="6034329596692646730" name="WrapperDSL.structure.Command" flags="ng" index="1nKZm6">
         <property id="6034329596693084697" name="commandValue" index="1ne$jl" />
@@ -25,6 +28,9 @@
       </concept>
       <concept id="6034329596691614548" name="WrapperDSL.structure.AdviseScript" flags="ng" index="1nO3mo">
         <child id="6034329596692833866" name="body" index="1nfDy6" />
+      </concept>
+      <concept id="6034329596691321408" name="WrapperDSL.structure.BatterySensorExpression" flags="ng" index="1nPUMc">
+        <child id="6034329596691321409" name="right" index="1nPUMd" />
       </concept>
       <concept id="6034329596690879483" name="WrapperDSL.structure.Integer" flags="ng" index="1nReOR">
         <property id="6034329596690879484" name="value" index="1nReOK" />
@@ -66,7 +72,7 @@
     </language>
   </registry>
   <node concept="1nTbkf" id="65ufIfNM9u2">
-    <property role="TrG5h" value="Wrapper1" />
+    <property role="TrG5h" value="MoveAside" />
     <node concept="1nTbk6" id="65ufIfNM9u3" role="1nTbk1">
       <node concept="1nTb9n" id="65ufIfNM9ua" role="1nTnJQ">
         <property role="1nTbaI" value="5eYfGK4nkaD/and" />
@@ -75,10 +81,10 @@
           <property role="1nReF5" value="5eYfGK4mCKX/is" />
           <property role="1nTb8i" value="5eYfGK4mCMD/isStrongWind" />
         </node>
-        <node concept="1ncAu8" id="65ufIfNM9uj" role="1nTbkg">
+        <node concept="1ncAu8" id="1RtkfEL9hlA" role="1nTbkg">
           <property role="1nPyUn" value="5eYfGK4zk9H/getDistanceDestiny" />
-          <property role="1nReF5" value="5eYfGK4mCLl/less_than_or_equal_to" />
-          <node concept="1nReOR" id="65ufIfNM9ul" role="1ncAu9">
+          <property role="1nReF5" value="5eYfGK4mCLa/greater_than" />
+          <node concept="1nReOR" id="1RtkfEL9hlG" role="2GKDvu">
             <property role="1nReOK" value="60" />
           </node>
         </node>
@@ -113,6 +119,78 @@
       <node concept="1nO3mo" id="65ufIfNM9uv" role="1nTnH_">
         <property role="TrG5h" value="normalMode" />
         <node concept="1nKZm6" id="65ufIfNM9uK" role="1nfDy6">
+          <property role="1ne$jl" value="5eYfGK4$UtP/doNothing" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1nTbkf" id="1RtkfEL7Cjy">
+    <property role="TrG5h" value="Glide" />
+    <node concept="1nTbk6" id="1RtkfEL7Cjz" role="1nTbk1">
+      <node concept="1nTb9n" id="1RtkfEL7CjE" role="1nTnJQ">
+        <property role="1nTbaI" value="5eYfGK4nkaD/and" />
+        <node concept="1nPUMc" id="1RtkfEL7CjN" role="1nTbkg">
+          <property role="1nPyUn" value="5eYfGK4q_BE/getCurrentBattery" />
+          <property role="1nReF5" value="5eYfGK4mCLa/greater_than" />
+          <node concept="1nReOR" id="1RtkfEL7CjP" role="1nPUMd">
+            <property role="1nReOK" value="10" />
+          </node>
+        </node>
+        <node concept="1ncAu8" id="1RtkfELbiBG" role="1nTbkm">
+          <property role="1nPyUn" value="5eYfGK4zk9H/getDistanceDestiny" />
+          <property role="1nReF5" value="5eYfGK4mCL6/less_than" />
+          <node concept="2GKXn5" id="1RtkfELbXx4" role="2GKDvu">
+            <property role="2GKXmU" value="5eYfGK4zk9C/getDistanceOrigem" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1nTbk7" id="1RtkfEL7Cj_" role="1nTbk3">
+      <node concept="1nO3ml" id="1RtkfEL7CjA" role="1nO3kT">
+        <property role="1nO3mC" value="5eYfGK4mOi_/around" />
+        <property role="1nKGNJ" value="1RtkfEL7kmp/returnToHome" />
+        <ref role="1nO3m$" node="1RtkfEL7CjC" resolve="glide" />
+      </node>
+    </node>
+    <node concept="1nTbk0" id="1RtkfEL7CjB" role="1nTbku">
+      <node concept="1nO3mo" id="1RtkfEL7CjC" role="1nTnH_">
+        <property role="TrG5h" value="glide" />
+        <node concept="1nKZm6" id="1RtkfEL7Ck2" role="1nfDy6">
+          <property role="1ne$jl" value="5eYfGK4$UtP/doNothing" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1nTbkf" id="1RtkfEL7Ck5">
+    <property role="TrG5h" value="KeepFlying" />
+    <node concept="1nTbk6" id="1RtkfEL7Ck6" role="1nTbk1">
+      <node concept="1nTb9n" id="1RtkfEL7Ckd" role="1nTnJQ">
+        <property role="1nTbaI" value="5eYfGK4nkaD/and" />
+        <node concept="1nTb8h" id="1RtkfEL7Ckm" role="1nTbkg">
+          <property role="1nPyUn" value="5eYfGK4q11n/wind" />
+          <property role="1nReF5" value="5eYfGK4mCKX/is" />
+          <property role="1nTb8i" value="5eYfGK4mCMD/isStrongWind" />
+        </node>
+        <node concept="1ncAu8" id="1RtkfEL9hlk" role="1nTbkm">
+          <property role="1nPyUn" value="5eYfGK4zk9H/getDistanceDestiny" />
+          <property role="1nReF5" value="5eYfGK4mCLl/less_than_or_equal_to" />
+          <node concept="1nReOR" id="1RtkfEL9hlJ" role="2GKDvu">
+            <property role="1nReOK" value="60" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1nTbk7" id="1RtkfEL7Ck8" role="1nTbk3">
+      <node concept="1nO3ml" id="1RtkfEL7Ck9" role="1nO3kT">
+        <property role="1nO3mC" value="5eYfGK4mOi_/around" />
+        <property role="1nKGNJ" value="5eYfGK4mOiK/safeLand" />
+        <ref role="1nO3m$" node="1RtkfEL7Ckb" resolve="keepFlying" />
+      </node>
+    </node>
+    <node concept="1nTbk0" id="1RtkfEL7Cka" role="1nTbku">
+      <node concept="1nO3mo" id="1RtkfEL7Ckb" role="1nTnH_">
+        <property role="TrG5h" value="keepFlying" />
+        <node concept="1nKZm6" id="1RtkfEL7Ckv" role="1nfDy6">
           <property role="1ne$jl" value="5eYfGK4$UtP/doNothing" />
         </node>
       </node>

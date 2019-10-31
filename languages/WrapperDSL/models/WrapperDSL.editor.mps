@@ -484,12 +484,19 @@
         </node>
       </node>
       <node concept="3F1sOY" id="5eYfGK4z5_A" role="3EZMnx">
-        <ref role="1NtTu8" to="lpas:5eYfGK4z5_5" resolve="distance" />
+        <ref role="1NtTu8" to="lpas:1RtkfEL7Ws$" resolve="distance" />
       </node>
       <node concept="l2Vlx" id="5eYfGK4z5_k" role="2iSdaV" />
       <node concept="3F0ifn" id="5eYfGK4zyJR" role="3EZMnx">
         <property role="3F0ifm" value=")" />
       </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="1RtkfEL7Wso">
+    <property role="3GE5qa" value="math" />
+    <ref role="1XX52x" to="lpas:1RtkfEL7CkZ" resolve="DistanceConstant" />
+    <node concept="3F0A7n" id="1RtkfELbiBQ" role="2wV5jI">
+      <ref role="1NtTu8" to="lpas:1RtkfEL7Cl0" resolve="distance_value" />
     </node>
   </node>
 </model>

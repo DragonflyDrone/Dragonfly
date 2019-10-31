@@ -25,6 +25,8 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
     switch (myIndex.index(concept)) {
       case LanguageConceptSwitch.AdviseScript:
         return new AdviseScript_TextGen();
+      case LanguageConceptSwitch.BatterySensorExpression:
+        return new BatterySensorExpression_TextGen();
       case LanguageConceptSwitch.Command:
         return new Command_TextGen();
       case LanguageConceptSwitch.ConjuctionLogicalExpression:

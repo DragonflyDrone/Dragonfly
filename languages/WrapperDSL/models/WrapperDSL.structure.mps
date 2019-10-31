@@ -433,6 +433,16 @@
       <property role="TrG5h" value="doNothing" />
       <property role="1L1pqM" value="Do Nothing" />
     </node>
+    <node concept="25R33" id="1RtkfEL7kmp" role="25R1y">
+      <property role="3tVfz5" value="2151965234596496793" />
+      <property role="TrG5h" value="returnToHome" />
+      <property role="1L1pqM" value="Return to Home" />
+    </node>
+    <node concept="25R33" id="1RtkfEL7kmH" role="25R1y">
+      <property role="3tVfz5" value="2151965234596496813" />
+      <property role="TrG5h" value="goDestinyAutomatic" />
+      <property role="1L1pqM" value="Automatically go to destination" />
+    </node>
   </node>
   <node concept="1TIwiD" id="5eYfGK4mOkW">
     <property role="EcuMT" value="6034329596690384188" />
@@ -612,12 +622,23 @@
     <property role="3GE5qa" value="math.expression.sensor_expression" />
     <property role="TrG5h" value="DistanceSensorExpression" />
     <ref role="1TJDcQ" node="5eYfGK4mCMt" resolve="SensorExpression" />
-    <node concept="1TJgyj" id="5eYfGK4z5_5" role="1TKVEi">
-      <property role="IQ2ns" value="6034329596693600581" />
+    <node concept="1TJgyj" id="1RtkfEL7Ws$" role="1TKVEi">
+      <property role="IQ2ns" value="2151965234596661028" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="distance" />
       <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="5eYfGK4oHfV" resolve="Integer" />
+      <ref role="20lvS9" node="5eYfGK4oHfS" resolve="Constant" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="1RtkfEL7CkZ">
+    <property role="EcuMT" value="2151965234596578623" />
+    <property role="3GE5qa" value="math" />
+    <property role="TrG5h" value="DistanceConstant" />
+    <ref role="1TJDcQ" node="5eYfGK4oHfS" resolve="Constant" />
+    <node concept="1TJgyi" id="1RtkfEL7Cl0" role="1TKVEl">
+      <property role="IQ2nx" value="2151965234596578624" />
+      <property role="TrG5h" value="distance_value" />
+      <ref role="AX2Wp" node="5eYfGK4q11m" resolve="SensorType" />
     </node>
   </node>
 </model>

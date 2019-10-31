@@ -23,6 +23,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptConstant = createDescriptorForConstant();
   /*package*/ final ConceptDescriptor myConceptCoordenateSensorExpression = createDescriptorForCoordenateSensorExpression();
   /*package*/ final ConceptDescriptor myConceptDisjuctionNormalExpression = createDescriptorForDisjuctionNormalExpression();
+  /*package*/ final ConceptDescriptor myConceptDistanceConstant = createDescriptorForDistanceConstant();
   /*package*/ final ConceptDescriptor myConceptDistanceSensorExpression = createDescriptorForDistanceSensorExpression();
   /*package*/ final ConceptDescriptor myConceptGiven = createDescriptorForGiven();
   /*package*/ final ConceptDescriptor myConceptIf = createDescriptorForIf();
@@ -61,7 +62,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAdviseScript, myConceptBatterySensorExpression, myConceptCommand, myConceptConjuctionLogicalExpression, myConceptConstant, myConceptCoordenateSensorExpression, myConceptDisjuctionNormalExpression, myConceptDistanceSensorExpression, myConceptGiven, myConceptIf, myConceptInteger, myConceptLogicalExpression, myConceptMathElement, myConceptMathExpression, myConceptNormalLogicalExpression, myConceptPointCut, myConceptRegionSensorExpression, myConceptSensorExpression, myConceptStatement, myConceptText, myConceptThen, myConceptWhen, myConceptWhile, myConceptWindSensorExpression, myConceptWrapperScript);
+    return Arrays.asList(myConceptAdviseScript, myConceptBatterySensorExpression, myConceptCommand, myConceptConjuctionLogicalExpression, myConceptConstant, myConceptCoordenateSensorExpression, myConceptDisjuctionNormalExpression, myConceptDistanceConstant, myConceptDistanceSensorExpression, myConceptGiven, myConceptIf, myConceptInteger, myConceptLogicalExpression, myConceptMathElement, myConceptMathExpression, myConceptNormalLogicalExpression, myConceptPointCut, myConceptRegionSensorExpression, myConceptSensorExpression, myConceptStatement, myConceptText, myConceptThen, myConceptWhen, myConceptWhile, myConceptWindSensorExpression, myConceptWrapperScript);
   }
 
   @Override
@@ -82,6 +83,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptCoordenateSensorExpression;
       case LanguageConceptSwitch.DisjuctionNormalExpression:
         return myConceptDisjuctionNormalExpression;
+      case LanguageConceptSwitch.DistanceConstant:
+        return myConceptDistanceConstant;
       case LanguageConceptSwitch.DistanceSensorExpression:
         return myConceptDistanceSensorExpression;
       case LanguageConceptSwitch.Given:
@@ -193,13 +196,22 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(2);
     return b.create();
   }
+  private static ConceptDescriptor createDescriptorForDistanceConstant() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "DistanceConstant", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x1ddd50fab11e853fL);
+    b.class_(false, false, false);
+    b.super_("WrapperDSL.structure.Constant", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc0462d3f8L);
+    b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/2151965234596578623");
+    b.version(2);
+    b.property("distance_value", 0x1ddd50fab11e8540L).type(MetaIdFactory.dataTypeId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc04681056L)).origin("2151965234596578624").done();
+    return b.create();
+  }
   private static ConceptDescriptor createDescriptorForDistanceSensorExpression() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "DistanceSensorExpression", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc048c5944L);
     b.class_(false, false, false);
     b.super_("WrapperDSL.structure.SensorExpression", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8c9dL);
     b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596693600580");
     b.version(2);
-    b.aggregate("distance", 0x53be3ecc048c5945L).target(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc0462d3fbL).optional(false).ordered(true).multiple(false).origin("6034329596693600581").done();
+    b.aggregate("distance", 0x1ddd50fab11fc724L).target(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc0462d3f8L).optional(false).ordered(true).multiple(false).origin("2151965234596661028").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForGiven() {
