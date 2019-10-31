@@ -326,10 +326,11 @@ public class DroneViewImpl extends DroneView {
             return;
         }
 
-        if (methodName.equals("setCurrentBattery")
+        if (methodName.equals("setCurrentCapacity")
                 && ((Double) oldValue).intValue() != ((Double) newValue).intValue()) {
 
-            loggerController.print("Drone[" + getDroneLabel() + "] " + "Current battery: " + drone.getCurrentBattery() + "%");
+            loggerController.print("Drone[" + getDroneLabel() + "] " +
+                    "Current capacity: " + String.format("%.2f", drone.getCurrentCapacity()) + " Ah");
 
             return;
         }

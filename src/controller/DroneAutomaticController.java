@@ -63,8 +63,7 @@ public class DroneAutomaticController extends DroneController {
                             // Platform.runLater(() -> {
                             goDestinyAutomatic(drone);
                             //  });
-                            DroneBusinessObject.updateBatteryPerSecond(drone);
-                            DroneBusinessObject.updateBatteryPerBlock(drone);
+                            DroneBusinessObject.updateBatteryCapacity(drone);
                             DroneBusinessObject.updateDistances(drone);
                             DroneBusinessObject.checkStatus(drone);
 
@@ -216,7 +215,7 @@ public class DroneAutomaticController extends DroneController {
 
                     for(Drone currentDroneInEnvirionment : getDroneMap().values()){
 
-                        DroneBusinessObject.updateBatteryPerSecond(currentDroneInEnvirionment);
+                        DroneBusinessObject.updateBatteryCapacity(currentDroneInEnvirionment);
 
                         DroneBusinessObject.checkStatus(currentDroneInEnvirionment);
                         System.out.println("PerSeconds fim" + Thread.currentThread().getName());

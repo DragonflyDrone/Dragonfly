@@ -8,13 +8,13 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="droneSettingsPanelAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="232.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="droneSettingsPanelAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="232.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/8.0.202-ea" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <TextField fx:id="voltageTextField" disable="true" layoutX="139.0" layoutY="40.0" prefHeight="26.0" prefWidth="58.0" promptText="36 V" />
       <Label fx:id="voltageLabel" disable="true" layoutX="6.0" layoutY="43.0" text="Battery Voltage (V):" />
       <TextField fx:id="capacityTextField" disable="true" layoutX="156.0" layoutY="73.0" prefHeight="26.0" prefWidth="58.0" promptText="5 Ah" />
       <Label fx:id="capacityLabel" disable="true" layoutX="6.0" layoutY="76.0" text="Battery Capacity (Ah):" />
-      <TextField fx:id="speedTextField" disable="true" layoutX="274.0" layoutY="7.0" prefHeight="26.0" prefWidth="58.0" promptText="&gt;0m/s" />
+      <TextField fx:id="speedTextField" disable="true" layoutX="274.0" layoutY="7.0" prefHeight="26.0" prefWidth="58.0" promptText="20m/s" />
       <Label fx:id="speedLabel" disable="true" layoutX="186.0" layoutY="10.0" text="Speed (m/s):" />
       <Label fx:id="currentDroneLabel" disable="true" layoutX="6.0" layoutY="10.0" text="Current Drone (ID):" />
       <TextField fx:id="currentDroneTextField" disable="true" layoutX="135.0" layoutY="7.0" prefHeight="26.0" prefWidth="36.0" text="0" />

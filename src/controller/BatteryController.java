@@ -205,11 +205,11 @@ public class BatteryController {
         return (1.5 - Normalization(minV, getMaxVD() + getMaxVw(), Vr));
     }
 
-    public double newBatteryConsumption(){
+    public double newBatteryConsumption(double economyModePercent){
         double aad = getAuw() * 170 / getVoltage();
         double totalConsumption = aad + getDevicesConsumption() + getDroneMotorConsumption() * windInfluence();
         double capacity = (getTimeFly() * totalConsumption) / getDischarge();
-        return getLastCapacity() - capacity;
+        return getLastCapacity() - capacity * economyModePercent;
     }
 
     /*public static void main (String args[]){

@@ -109,79 +109,32 @@ public class DroneBusinessObject {
 
     }
 
-    //static final Object lock = new Object();
-
-    public static void updateBatteryPerBlock(Drone drone) {
-
-        //synchronized (lock){
-
-        if (drone.isShutDown()) {
-            return;
-        }
-
-        if (drone.isEconomyMode()) {
-
-            Double oldCurrentBattery = drone.getCurrentBattery();
-            Double batteryPerBlock = drone.getBatteryPerBlock();
-
-            Double economyModeBatteryPerBlock = batteryPerBlock / 2;
-
-            Double newCurrentBattery = oldCurrentBattery - economyModeBatteryPerBlock;
-
-            drone.setCurrentBattery(newCurrentBattery);
-
-        } else if (drone.isNormalMode()) {
-            Double oldCurrentBattery = drone.getCurrentBattery();
-            Double batteryPerBlock = drone.getBatteryPerBlock();
-            Double newCurrentBattery = oldCurrentBattery - batteryPerBlock;
-
-            drone.setCurrentBattery(newCurrentBattery);
-
-        }
-
-        // }
-
-
-    }
-
-    public static void updateBatteryPerSecond(Drone drone) {
+    public static void updateBatteryCapacity(Drone drone) {
         //  synchronized (lock){
         //System.out.println("PerSecond");
         if (drone.isShutDown()) {
             return;
         }
 
+        Double speed = drone.getCurrentSpeed();
+        Double voltage = drone.getVoltage();
+        Double discharge = drone.getDischarge();
+        Double devicesConsumption = drone.getDevicesConsumption();
+        Double droneMotorConsumption = drone.getDroneMotorConsumption();
+        Double lastCapacity = drone.getCurrentCapacity();
+
+        BatteryController batteryController = new BatteryController(discharge, 2.5, voltage,
+                (double)30/speed/3600, devicesConsumption, droneMotorConsumption, 90, 20,
+                270, 20, 20, 20, lastCapacity);
+
         if (drone.isEconomyMode()) {
-
-            Double oldCurrentBattery = drone.getCurrentBattery();
-            Double batteryPerSecond = drone.getBatteryPerSecond();
-
-            Double economyModeBatteryPerSecond = batteryPerSecond / 2;
-
-            Double newCurrentBattery = oldCurrentBattery - economyModeBatteryPerSecond;
-
-            drone.setCurrentBattery(newCurrentBattery);
-
+            double resultCapacity = batteryController.newBatteryConsumption(0.7);
+            drone.setCurrentCapacity(resultCapacity); // 30 % menos gasto
+            System.out.println(drone.getCurrentCapacity());
         } else if (drone.isNormalMode()) {
-            Double oldCurrentBattery = drone.getCurrentBattery();
-            Double batteryPerSecond = drone.getBatteryPerSecond();
-            Double newCurrentBattery = oldCurrentBattery - batteryPerSecond;
-
-            // Começo do teste
-            /* Teste com uma bateria de 3.6Ah */
-            double lastCapacity = (3.6 * oldCurrentBattery) / 100;
-
-            BatteryController batteryController = new BatteryController(0.9, 2.5, 36,
-                    (double)30/20/3600, 50, 300, 90, 20,
-                    270, 20, 20, 20, lastCapacity);
-
-            double resultCapacity = (100 * batteryController.newBatteryConsumption()) / 3.6;
-            System.out.println(batteryController.newBatteryConsumption());
-            drone.setCurrentBattery(resultCapacity);
-
-            // Fim do teste
-
-            // drone.setCurrentBattery(newCurrentBattery);
+            double resultCapacity = batteryController.newBatteryConsumption(1);
+            drone.setCurrentCapacity(resultCapacity);
+            System.out.println(drone.getCurrentCapacity());
         }
 
         //      }
@@ -208,7 +161,7 @@ public class DroneBusinessObject {
 
         KeyCode flyDirectionCommand = selectedDrone.getFlyDirectionCommand();
 
-        if (selectedDrone.getCurrentBattery() > 10 && selectedDrone.getDistanceDestiny() > 0 && flyDirectionCommand != null
+        if (selectedDrone.getCurrentCapacity() > 10 && selectedDrone.getDistanceDestiny() > 0 && flyDirectionCommand != null
                 && !selectedDrone.isReturningToHome()
                 && !selectedDrone.isSafeLand()
                 && !selectedDrone.isBadConnection()
@@ -222,14 +175,11 @@ public class DroneBusinessObject {
 
         if (selectedDrone.isBadConnection()
                 && !selectedDrone.isReturningToHome()
-                && selectedDrone.getCurrentBattery()>10 // da prioridade ao sefaland
+                && selectedDrone.getCurrentCapacity()>10 // da prioridade ao sefaland
                 ) {
 
 
             returnToHome(selectedDrone);
-
-
-
 
         }
 
@@ -270,11 +220,14 @@ public class DroneBusinessObject {
 
         }
 
-        if (selectedDrone.getCurrentBattery() <= 15 && selectedDrone.isNormalMode()) {
+        Double initialCapacity = selectedDrone.getInitialCapacity();
+
+        if (selectedDrone.getCurrentCapacity() <= (initialCapacity*0.2) && selectedDrone.isNormalMode()) {
             applyEconomyMode(selectedDrone);
         }
 
-        if (selectedDrone.getCurrentBattery() <= 10 && selectedDrone.getDistanceDestiny() > 0
+        // economic Mode
+        if (selectedDrone.getCurrentCapacity() <= (initialCapacity*0.1) && selectedDrone.getDistanceDestiny() > 0
                 && !selectedDrone.isSafeLand()) {
 
             //SafeLanding
@@ -535,7 +488,7 @@ public class DroneBusinessObject {
 
 
         updateDistances(selectedDrone);
-        updateBatteryPerBlock(selectedDrone);
+        // updateBatteryPerBlock(selectedDrone);
         //updateItIsOver(selectedDrone);
 
     /*    //apply bad connection if cell is bad connection
@@ -1130,7 +1083,7 @@ public class DroneBusinessObject {
 
 
     public static void resetSettingsDrone(Drone currentDrone) {
-        currentDrone.setCurrentBattery(currentDrone.getInitialBattery());
+        currentDrone.setCurrentCapacity(currentDrone.getInitialCapacity());
         currentDrone.setCurrentPositionI(currentDrone.getInitialPosistionI());
         currentDrone.setCurrentPositionJ(currentDrone.getInitialPositionJ());
         currentDrone.setReturningToHome(false);

@@ -131,9 +131,14 @@ abstract public class EnvironmentMarshal {
 
             droneElement.setAttribute(ConstantXml.UNIQUE_ID_ATTRIBUTE, drone.getUniqueID());
             droneElement.setAttribute(ConstantXml.LABEL_ATTRIBUTE, drone.getLabel());
-            droneElement.setAttribute(ConstantXml.BATTERY_CONSUMPTION_PER_BLOCK_ATTRIBUTE, String.valueOf(drone.getBatteryPerBlock()));
-            droneElement.setAttribute(ConstantXml.BATTERY_CONSUMPTION_PER_SECONDS_ATTRIBUTE, String.valueOf(drone.getBatteryPerSecond()));
-            droneElement.setAttribute(ConstantXml.INITIAL_BATTERY_ATTRIBUTE, String.valueOf(drone.getInitialBattery()));
+
+            droneElement.setAttribute(ConstantXml.SPEED_ATTRIBUTE, String.valueOf(drone.getCurrentSpeed()));
+            droneElement.setAttribute(ConstantXml.VOLTAGE_ATTRIBUTE, String.valueOf(drone.getVoltage()));
+            droneElement.setAttribute(ConstantXml.DISCHARGE_ATTRIBUTE, String.valueOf(drone.getDischarge()));
+            droneElement.setAttribute(ConstantXml.CAPACITY_ATTRIBUTE, String.valueOf(drone.getInitialCapacity()));
+            droneElement.setAttribute(ConstantXml.DEVICES_CONSUMPTION_ATTRIBUTE, String.valueOf(drone.getDevicesConsumption()));
+            droneElement.setAttribute(ConstantXml.MOTOR_CONSUMPTION_ATTRIBUTE, String.valueOf(drone.getDroneMotorConsumption()));
+
             droneElement.setAttribute(ConstantXml.WRAPPER_ID_ATTRIBUTE, String.valueOf(drone.getWrapperId()));
 
             droneElement.setAttribute(ConstantXml.SOURCE_COLUMN_POSITION_ATTRIBUTE, String.valueOf(drone.getSourceCell().getColumnPosition()));
@@ -340,9 +345,17 @@ abstract public class EnvironmentMarshal {
             String uniqueID = droneNode.getAttributes().getNamedItem(ConstantXml.UNIQUE_ID_ATTRIBUTE).getNodeValue();
             String label = droneNode.getAttributes().getNamedItem(ConstantXml.LABEL_ATTRIBUTE).getNodeValue();
 
-            double batteryConsumptionPerBlock = Double.parseDouble(droneNode.getAttributes().getNamedItem(ConstantXml.BATTERY_CONSUMPTION_PER_BLOCK_ATTRIBUTE).getNodeValue());
+            /*double batteryConsumptionPerBlock = Double.parseDouble(droneNode.getAttributes().getNamedItem(ConstantXml.BATTERY_CONSUMPTION_PER_BLOCK_ATTRIBUTE).getNodeValue());
             double batteryConsumptionPerSeconds = Double.parseDouble(droneNode.getAttributes().getNamedItem(ConstantXml.BATTERY_CONSUMPTION_PER_SECONDS_ATTRIBUTE).getNodeValue());
-            double initialBattery = Double.parseDouble(droneNode.getAttributes().getNamedItem(ConstantXml.INITIAL_BATTERY_ATTRIBUTE).getNodeValue());
+            double initialBattery = Double.parseDouble(droneNode.getAttributes().getNamedItem(ConstantXml.INITIAL_BATTERY_ATTRIBUTE).getNodeValue());*/
+
+            double speed = Double.parseDouble(droneNode.getAttributes().getNamedItem(ConstantXml.SPEED_ATTRIBUTE).getNodeValue());
+            double voltage = Double.parseDouble(droneNode.getAttributes().getNamedItem(ConstantXml.VOLTAGE_ATTRIBUTE).getNodeValue());
+            double discharge = Double.parseDouble(droneNode.getAttributes().getNamedItem(ConstantXml.DISCHARGE_ATTRIBUTE).getNodeValue());
+            double capacity = Double.parseDouble(droneNode.getAttributes().getNamedItem(ConstantXml.CAPACITY_ATTRIBUTE).getNodeValue());
+            double devices = Double.parseDouble(droneNode.getAttributes().getNamedItem(ConstantXml.DEVICES_CONSUMPTION_ATTRIBUTE).getNodeValue());
+            double droneMotor = Double.parseDouble(droneNode.getAttributes().getNamedItem(ConstantXml.MOTOR_CONSUMPTION_ATTRIBUTE).getNodeValue());
+
             int wrapperId = Integer.parseInt(droneNode.getAttributes().getNamedItem(ConstantXml.WRAPPER_ID_ATTRIBUTE).getNodeValue());
 
             int sourceColumnPosition = Integer.parseInt(droneNode.getAttributes().getNamedItem(ConstantXml.SOURCE_COLUMN_POSITION_ATTRIBUTE).getNodeValue());
@@ -370,11 +383,17 @@ abstract public class EnvironmentMarshal {
             Drone drone =  DroneController.getInstance().createDrone(uniqueID, label, sourceCellView);
             drone.setDestinyCell(destinyCell);
             DroneBusinessObject.updateDistances(drone);
-            drone.setBatteryPerBlock(batteryConsumptionPerBlock);
-            drone.setBatteryPerSecond(batteryConsumptionPerSeconds);
-            drone.setInitialBattery(initialBattery);
-            drone.setCurrentBattery(initialBattery);
+
+            drone.setCurrentSpeed(speed);
+            drone.setVoltage(voltage);
+            drone.setDischarge(discharge);
+            drone.setInitialCapacity(capacity);
+            drone.setCurrentCapacity(capacity);
+            drone.setDevicesConsumption(devices);
+            drone.setDroneMotorConsumption(droneMotor);
+
             drone.setWrapperId(wrapperId);
+
 
         }
 

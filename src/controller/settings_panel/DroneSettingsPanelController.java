@@ -15,18 +15,13 @@ import javafx.scene.text.Text;
 import model.Cell;
 import model.entity.drone.Drone;
 import model.entity.drone.DroneBusinessObject;
-import org.xml.sax.SAXException;
 import util.WrapperHelper;
 import view.CellView;
 import view.SelectableView;
 import view.drone.DroneView;
 
-import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class DroneSettingsPanelController extends SettingsPanelController<Drone> {
 
@@ -34,20 +29,19 @@ public class DroneSettingsPanelController extends SettingsPanelController<Drone>
     private Drone selectedDrone;
     private AnchorPane droneSettingsPanelAnchorPane;
     @FXML
-    private
-    TextField currentDroneTextField, speedTextField, voltageTextField, dischargeTextField, capacityTextField,
+    TextField voltageTextField, capacityTextField, speedTextField, currentDroneTextField, dischargeTextField,
             consumptionDevicesTextField, consumptionMotorTextField;
 
     @FXML
     private
-    Label initialBatteryLabel, consumptionPerBlockLabel, consumptionPerSecondLabel/*, badConectionLabel*/,
-            currentDroneLabel, sourceLabel, targetLabel, wrapperLabel;
+    /*Label initialBatteryLabel, consumptionPerBlockLabel, consumptionPerSecondLabel*//*, badConectionLabel*//*,
+            currentDroneLabel, sourceLabel, targetLabel, wrapperLabel;*/
     Label voltageLabel, capacityLabel, speedLabel, currentDroneLabel, sourceLabel, targetLabel, wrapperLabel,
-            dischargeLabel, consumptionLabel, consumptionDevicesLabel, consumptionMotorLabel;
+            dischargeLabel, consumptionDevicesLabel, consumptionMotorLabel;
 
     @FXML
     private
-    Label currentSourceCell, currentDestinyCell;
+    Label currentSourceCell, currentDestinyCell, consumptionLabel;
 
 
     @FXML
@@ -179,27 +173,35 @@ public class DroneSettingsPanelController extends SettingsPanelController<Drone>
     }
 
     @Override
-    public void disableSettingsViews() {
+    public void disableSettingsViews(){
 
-        consumptionPerBlockLabel.setDisable(true);
-        consumptionPerBlockTextView.setDisable(true);
+        voltageLabel.setDisable(true);
+        capacityLabel.setDisable(true);
+        speedLabel.setDisable(true);
+        currentDroneLabel.setDisable(true);
+        dischargeLabel.setDisable(true);
+        consumptionDevicesLabel.setDisable(true);
+        consumptionMotorLabel.setDisable(true);
 
-        consumptionPerSecondLabel.setDisable(true);
-        consumptionPerSecondTextView.setDisable(true);
+        voltageTextField.setDisable(true);
+        capacityTextField.setDisable(true);
+        speedTextField.setDisable(true);
+        currentDroneTextField.setDisable(true);
+        dischargeTextField.setDisable(true);
+        consumptionDevicesTextField.setDisable(true);
+        consumptionMotorTextField.setDisable(true);
 
-        initialBatteryLabel.setDisable(true);
-        initialBatteryTextView.setDisable(true);
+        sourceLabel.setDisable(true);
+        targetLabel.setDisable(true);
         wrapperLabel.setDisable(true);
         wrapperComboBox.setDisable(true);
-        saveButton.setDisable(true);
+
        /* sourceSettingsImageView.setDisable(true);
         sourceSettingsImageView.setOpacity(0.3);*/
 
         destinySettingsImageView.setDisable(true);
         destinySettingsImageView.setOpacity(0.3);
-        sourceLabel.setDisable(true);
-        targetLabel.setDisable(true);
-
+        saveButton.setDisable(true);
 
     }
 
@@ -207,15 +209,21 @@ public class DroneSettingsPanelController extends SettingsPanelController<Drone>
     public void enableSettingsViews() {
 
 
-        consumptionPerBlockLabel.setDisable(false);
-        consumptionPerBlockTextView.setDisable(false);
-        consumptionPerBlockTextView.requestFocus();
+        voltageLabel.setDisable(false);
+        capacityLabel.setDisable(false);
+        speedLabel.setDisable(false);
+        currentDroneLabel.setDisable(false);
+        dischargeLabel.setDisable(false);
+        consumptionDevicesLabel.setDisable(false);
+        consumptionMotorLabel.setDisable(false);
 
-        consumptionPerSecondLabel.setDisable(false);
-        consumptionPerSecondTextView.setDisable(false);
-
-        initialBatteryLabel.setDisable(false);
-        initialBatteryTextView.setDisable(false);
+        voltageTextField.setDisable(false);
+        capacityTextField.setDisable(false);
+        speedTextField.setDisable(false);
+        currentDroneTextField.setDisable(false);
+        dischargeTextField.setDisable(false);
+        consumptionDevicesTextField.setDisable(false);
+        consumptionMotorTextField.setDisable(false);
 
         sourceLabel.setDisable(false);
         targetLabel.setDisable(false);
@@ -235,12 +243,22 @@ public class DroneSettingsPanelController extends SettingsPanelController<Drone>
     @Override
     public void saveAttributesInEntity(Drone selectedDrone) {
 
-        selectedDrone.setInitialBattery(Double.parseDouble(initialBatteryTextView.getText()));
+        /*
+        * private Double voltage = 36.D;
+        private Double discharge = 0.9;
+        private Double initialCapacity = 5.D;
+        private Double consumptionDevices = 50.D;
+        private Double consumptionMotorDrone = 300.D;
+        * private Double currentSpeed = 20.D;
+        private Double currentCapacity = 5.D;*/
 
-        selectedDrone.setCurrentBattery(Double.parseDouble(initialBatteryTextView.getText()));
-
-        selectedDrone.setBatteryPerBlock(Double.parseDouble(consumptionPerBlockTextView.getText()));
-        selectedDrone.setBatteryPerSecond(Double.parseDouble(consumptionPerSecondTextView.getText()));
+        selectedDrone.setVoltage(Double.parseDouble(voltageTextField.getText()));
+        selectedDrone.setDischarge(Double.parseDouble(dischargeTextField.getText()));
+        selectedDrone.setInitialCapacity(Double.parseDouble(capacityTextField.getText()));
+        selectedDrone.setDevicesConsumption(Double.parseDouble(consumptionDevicesTextField.getText()));
+        selectedDrone.setDroneMotorConsumption(Double.parseDouble(consumptionMotorTextField.getText()));
+        selectedDrone.setCurrentSpeed(Double.parseDouble(speedTextField.getText()));
+        selectedDrone.setCurrentCapacity(Double.parseDouble(capacityTextField.getText()));
 
 //        int srcI = Integer.parseInt(currentSourceCell.getText().split(",")[0].replace("<",""));
 //        int srcJ = Integer.parseInt(currentSourceCell.getText().split(",")[1].replace(">",""));
@@ -265,9 +283,17 @@ public class DroneSettingsPanelController extends SettingsPanelController<Drone>
 
         String droneLabel = selectedDrone.getLabel();
 
-        Double batteryPerBlock = selectedDrone.getBatteryPerBlock();
+        /*Double batteryPerBlock = selectedDrone.getBatteryPerBlock();
         Double batteryPerSecond = selectedDrone.getBatteryPerSecond();
-        Double initialBattery = selectedDrone.getInitialBattery();
+        Double initialBattery = selectedDrone.getInitialBattery();*/
+
+        Double speed = selectedDrone.getCurrentSpeed();
+        Double voltage = selectedDrone.getVoltage();
+        Double discharge = selectedDrone.getDischarge();
+        Double capacity = selectedDrone.getInitialCapacity();
+        Double devices = selectedDrone.getDevicesConsumption();
+        Double motorDrone = selectedDrone.getDroneMotorConsumption();
+
         String currentSourceCellString =
                 "<" + selectedDrone.getSourceCell().getRowPosition()
                         + "," + selectedDrone.getSourceCell().getColumnPosition() + ">";
@@ -279,10 +305,20 @@ public class DroneSettingsPanelController extends SettingsPanelController<Drone>
         Boolean isAutomatic = selectedDrone.isAutomatic();
 
         currentDroneTextField.setText(droneLabel);
-        consumptionPerBlockTextView.setText(String.valueOf(batteryPerBlock));
+
+        /*consumptionPerBlockTextView.setText(String.valueOf(batteryPerBlock));
         consumptionPerSecondTextView.setText(String.valueOf(batteryPerSecond));
-        initialBatteryTextView.setText(String.valueOf(initialBattery));
+        initialBatteryTextView.setText(String.valueOf(initialBattery));*/
+
+        speedTextField.setText(String.valueOf(speed));
+        voltageTextField.setText(String.valueOf(voltage));
+        dischargeTextField.setText(String.valueOf(discharge));
+        capacityTextField.setText(String.valueOf(capacity));
+        consumptionDevicesTextField.setText(String.valueOf(devices));
+        consumptionMotorTextField.setText(String.valueOf(motorDrone));
+
         currentSourceCell.setText(currentSourceCellString);
+
         currentDestinyCell.setText(currentDestinyCellString);
 
         int currentWrapperId = selectedDrone.getWrapperId();
@@ -295,9 +331,15 @@ public class DroneSettingsPanelController extends SettingsPanelController<Drone>
     @Override
     public void clearSettingView() {
         currentDroneTextField.setText("");
-        consumptionPerBlockTextView.setText("");
-        consumptionPerSecondTextView.setText("");
-        initialBatteryTextView.setText("");
+
+        voltageTextField.setText("");
+        capacityTextField.setText("");
+        speedTextField.setText("");
+        currentDroneTextField.setText("");
+        dischargeTextField.setText("");
+        consumptionDevicesTextField.setText("");
+        consumptionMotorTextField.setText("");
+
         wrapperComboBox.getSelectionModel().clearSelection();
         currentSourceCell.setText("<0,0>");
         currentDestinyCell.setText("<0,0>");

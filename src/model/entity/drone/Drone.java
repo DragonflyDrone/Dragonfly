@@ -22,13 +22,19 @@ public class Drone extends Entity {
 
     private String uniqueID;
     private Integer initialPosistionI, initialPositionJ;
-    private Double initialBattery = 100.D;
-    private Double batteryPerBlock = 1.D;
-    private Double batteryPerSecond = 1.D;
+
+    private Double voltage = 36.D;
+    private Double discharge = 0.9;
+    private Double initialCapacity = 5.D;
+    private Double devicesConsumption = 50.D;
+    private Double droneMotorConsumption = 300.D;
 
     // Do changes in Runtime
     private Integer currentPositionI, currentPositionJ;
-    private Double currentBattery = 100.D;
+
+    private Double currentSpeed = 20.D;
+    private Double currentCapacity = 5.D;
+
     private Boolean isStarted = false;
 
     private Boolean isTookOff = false;
@@ -247,23 +253,6 @@ public class Drone extends Entity {
          notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
     }
 
-    public Double getInitialBattery() {
-        return initialBattery;
-    }
-
-    public void setInitialBattery(Double initialBattery) {
-        Double oldValue = this.initialBattery;
-        Double newValue = initialBattery;
-
-        if(oldValue == newValue){
-            return;
-        }
-
-        this.initialBattery = initialBattery;
-
-        notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
-    }
-
     public boolean isStrongWind() {
         return isStrongWind;
     }
@@ -305,33 +294,6 @@ public class Drone extends Entity {
     public Double getDistanceSource() {
         return distanceSource;
     }
-
-    public void setBatteryPerBlock(Double batteryPerBlock) {
-        Double oldValue = this.batteryPerBlock;
-        Double newValue = batteryPerBlock;
-
-        this.batteryPerBlock = batteryPerBlock;
-
-        if(oldValue == newValue){
-            return;
-        }
-
-        notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
-    }
-
-    public void setBatteryPerSecond(Double batteryPerSecond) {
-        Double oldValue = this.batteryPerSecond;
-        Double newValue = batteryPerSecond;
-
-        if(oldValue == newValue){
-            return;
-        }
-
-        this.batteryPerSecond = batteryPerSecond;
-
-        notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
-    }
-
 
     public void setStrongWind(boolean isStrongWind) {
         boolean oldValue = this.isStrongWind;
@@ -413,24 +375,6 @@ public class Drone extends Entity {
         this.onTopOfList.add(onTopOf);
     }
 
-    public Double getCurrentBattery() {
-        return currentBattery;
-    }
-
-     public void setCurrentBattery(Double currentBattery) {
-        double oldValue = this.currentBattery;
-        double newValue = currentBattery;
-
-         if(oldValue == newValue){
-             return;
-         }
-
-        this.currentBattery = currentBattery;
-
-        notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
-
-    }
-
     public boolean isStarted() {
         return isStarted;
     }
@@ -480,14 +424,6 @@ public class Drone extends Entity {
         this.uniqueID = uniqueID;
 
         notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
-    }
-
-    public Double getBatteryPerBlock() {
-        return batteryPerBlock;
-    }
-
-    public Double getBatteryPerSecond() {
-        return batteryPerSecond;
     }
 
     public boolean isEconomyMode() {
@@ -624,6 +560,80 @@ public class Drone extends Entity {
 
 
         this.directionCommand = directionCommand;
+
+        notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
+    }
+
+    public Double getVoltage() {
+        return voltage;
+    }
+
+    public void setVoltage(Double voltage) {
+        this.voltage = voltage;
+    }
+
+    public Double getDischarge() {
+        return discharge;
+    }
+
+    public void setDischarge(Double discharge) {
+        this.discharge = discharge;
+    }
+
+    public Double getInitialCapacity() {
+        return initialCapacity;
+    }
+
+    public void setInitialCapacity(Double initialCapacity) {
+        this.initialCapacity = initialCapacity;
+    }
+
+    public Double getDevicesConsumption() {
+        return devicesConsumption;
+    }
+
+    public void setDevicesConsumption(Double devicesConsumption) {
+        this.devicesConsumption = devicesConsumption;
+    }
+
+    public Double getDroneMotorConsumption() {
+        return droneMotorConsumption;
+    }
+
+    public void setDroneMotorConsumption(Double droneMotorConsumption) {
+        this.droneMotorConsumption = droneMotorConsumption;
+    }
+
+    public Double getCurrentSpeed() {
+        return currentSpeed;
+    }
+
+    public void setCurrentSpeed(Double currentSpeed) {
+        double oldValue = this.currentSpeed;
+        double newValue = currentSpeed;
+
+        if(oldValue == newValue){
+            return;
+        }
+
+        this.currentSpeed = currentSpeed;
+
+        notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
+    }
+
+    public Double getCurrentCapacity() {
+        return currentCapacity;
+    }
+
+    public void setCurrentCapacity(Double currentCapacity) {
+        double oldValue = this.currentCapacity;
+        double newValue = currentCapacity;
+
+        if(oldValue == newValue){
+            return;
+        }
+
+        this.currentCapacity = currentCapacity;
 
         notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
     }

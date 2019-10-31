@@ -293,7 +293,7 @@ public class DroneKeyBoardController extends DroneController {
             public void task() {
                 for(Drone currentDroneInEnvirionment : dronesInEnvironment){
 
-                    DroneBusinessObject.updateBatteryPerSecond(currentDroneInEnvirionment);
+                    DroneBusinessObject.updateBatteryCapacity(currentDroneInEnvirionment);
 
                     DroneBusinessObject.checkStatus(currentDroneInEnvirionment);
 
