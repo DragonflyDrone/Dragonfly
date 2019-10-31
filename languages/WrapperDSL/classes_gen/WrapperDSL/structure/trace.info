@@ -744,15 +744,15 @@
       <node id="6034329596690384048" at="19,0,20,0" concept="2" trace="myMember_safeLand_0" />
       <node id="6034329596690384051" at="20,0,21,0" concept="2" trace="myMember_shutDown_0" />
       <node id="6034329596690384055" at="21,0,22,0" concept="2" trace="myMember_start_0" />
-      <node id="6034329596690384060" at="22,0,23,0" concept="2" trace="myMember_stepLest_0" />
+      <node id="6034329596690384060" at="22,0,23,0" concept="2" trace="myMember_stepEast_0" />
       <node id="6034329596690384066" at="23,0,24,0" concept="2" trace="myMember_stepNearestToDestiny_0" />
       <node id="6034329596690384073" at="24,0,25,0" concept="2" trace="myMember_stepNearestToOrigem_0" />
       <node id="6034329596690384081" at="25,0,26,0" concept="2" trace="myMember_stepNearestToWater_0" />
       <node id="6034329596690384090" at="26,0,27,0" concept="2" trace="myMember_stepNearestToLand_0" />
       <node id="6034329596690384100" at="27,0,28,0" concept="2" trace="myMember_stepNearestToPosition_0" />
-      <node id="6034329596690384111" at="28,0,29,0" concept="2" trace="myMember_takeOff_boolean_0" />
-      <node id="3741529733414318502" at="29,0,30,0" concept="2" trace="myMember_landed_boolean_0" />
-      <node id="6034329596690384123" at="30,0,31,0" concept="2" trace="myMember_turnLeft_0" />
+      <node id="6034329596690384111" at="28,0,29,0" concept="2" trace="myMember_takeOff_0" />
+      <node id="3741529733414318502" at="29,0,30,0" concept="2" trace="myMember_landed_0" />
+      <node id="6034329596690384123" at="30,0,31,0" concept="2" trace="myMember_turnEast_0" />
       <node id="6034329596690384136" at="31,0,32,0" concept="2" trace="myMember_turnWest_0" />
       <node id="6034329596690384150" at="32,0,33,0" concept="2" trace="myMember_turnSouth_0" />
       <node id="6034329596690384165" at="33,0,34,0" concept="2" trace="myMember_turnNorth_0" />
@@ -775,8 +775,8 @@
       <node id="6034329596690384081" at="75,32,76,45" concept="6" />
       <node id="6034329596690384090" at="77,31,78,44" concept="6" />
       <node id="6034329596690384100" at="79,35,80,48" concept="6" />
-      <node id="6034329596690384111" at="81,29,82,42" concept="6" />
-      <node id="3741529733414318502" at="83,28,84,41" concept="6" />
+      <node id="6034329596690384111" at="81,21,82,34" concept="6" />
+      <node id="3741529733414318502" at="83,20,84,33" concept="6" />
       <node id="6034329596690384123" at="85,22,86,35" concept="6" />
       <node id="6034329596690384136" at="87,22,88,35" concept="6" />
       <node id="6034329596690384150" at="89,23,90,36" concept="6" />
@@ -811,8 +811,8 @@
       <scope id="6034329596690384081" at="75,32,76,45" />
       <scope id="6034329596690384090" at="77,31,78,44" />
       <scope id="6034329596690384100" at="79,35,80,48" />
-      <scope id="6034329596690384111" at="81,29,82,42" />
-      <scope id="3741529733414318502" at="83,28,84,41" />
+      <scope id="6034329596690384111" at="81,21,82,34" />
+      <scope id="3741529733414318502" at="83,20,84,33" />
       <scope id="6034329596690384123" at="85,22,86,35" />
       <scope id="6034329596690384136" at="87,22,88,35" />
       <scope id="6034329596690384150" at="89,23,90,36" />

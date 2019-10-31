@@ -183,7 +183,7 @@
     <node concept="1nTbk7" id="1RtkfEL7Ck8" role="1nTbk3">
       <node concept="1nO3ml" id="1RtkfEL7Ck9" role="1nO3kT">
         <property role="1nO3mC" value="5eYfGK4mOi_/around" />
-        <property role="1nKGNJ" value="5eYfGK4mOiK/safeLand" />
+        <property role="1nKGNJ" value="3fG_nwkIf6A/landed_boolean" />
         <ref role="1nO3m$" node="1RtkfEL7Ckb" resolve="keepFlying" />
       </node>
     </node>

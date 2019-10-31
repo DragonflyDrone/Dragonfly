@@ -16,13 +16,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public aspect KeepFlying{
-pointcut safeLand():call(* model.entity.drone.DroneBusinessObject.safeLand(*))
+pointcut landed():call(* model.entity.drone.DroneBusinessObject.landed(*))
 
-Around():safeLand()
+Around():landed()
 && if
 (
 (((Drone)thisJoinPoint.getArgs()[0]).isStrongWind())
-&&(((Drone)thisJoinPoint.getArgs()[0]).getDistanceDestiny()<=Integer)
+&&(((Drone)thisJoinPoint.getArgs()[0]).getDistanceDestiny()<=60)
 )
 {
 // Do nothing

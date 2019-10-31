@@ -132,7 +132,7 @@ public abstract class WrapperFile {
       String callValue = SEnumOperations.getMemberName0(SPropertyOperations.getEnum(((SNode) SLinkOperations.getTarget(distanceSensorExpression, LINKS.distance$XvUk)), PROPS.distance_value$mVe0));
       WrapperFile.callToMethedOperation(callValue, "", ctx);
     } else {
-      tgs.append(String.valueOf(SLinkOperations.getTarget(distanceSensorExpression, LINKS.distance$XvUk)));
+      tgs.append(String.valueOf(SPropertyOperations.getInteger(((SNode) SLinkOperations.getTarget(distanceSensorExpression, LINKS.distance$XvUk)), PROPS.value$QRR0)));
     }
     tgs.append(")");
     tgs.newLine();

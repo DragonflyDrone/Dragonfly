@@ -22,7 +22,7 @@ pointcut applyEconomyMode():call(* model.entity.drone.DroneBusinessObject.applyE
 Around():safeLand()
 && if
 (
-(((Drone)thisJoinPoint.getArgs()[0]).getDistanceDestiny()>Integer)
+(((Drone)thisJoinPoint.getArgs()[0]).getDistanceDestiny()>60)
 &&(((Drone)thisJoinPoint.getArgs()[0]).isStrongWind())
 )
 {
@@ -34,7 +34,7 @@ while((((Drone)thisJoinPoint.getArgs()[0]).isOnWater())
 Around():applyEconomyMode()
 && if
 (
-(((Drone)thisJoinPoint.getArgs()[0]).getDistanceDestiny()>Integer)
+(((Drone)thisJoinPoint.getArgs()[0]).getDistanceDestiny()>60)
 &&(((Drone)thisJoinPoint.getArgs()[0]).isStrongWind())
 )
 {

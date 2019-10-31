@@ -2744,7 +2744,7 @@
     </node>
     <node concept="312cEg" id="dk" role="jymVt">
       <property role="3TUv4t" value="true" />
-      <property role="TrG5h" value="myMember_stepLest_0" />
+      <property role="TrG5h" value="myMember_stepEast_0" />
       <node concept="3Tm6S6" id="fV" role="1B3o_S">
         <node concept="cd27G" id="fZ" role="lGtFl">
           <node concept="3u3nmq" id="g0" role="cd27D">
@@ -2764,7 +2764,7 @@
         <node concept="1pGfFk" id="g3" role="2ShVmc">
           <ref role="37wK5l" to="ze1i:~EnumerationDescriptor$MemberDescriptor.&lt;init&gt;(java.lang.String,java.lang.String,long,java.lang.String,java.lang.String,java.lang.String)" resolve="EnumerationDescriptor.MemberDescriptor" />
           <node concept="Xl_RD" id="g5" role="37wK5m">
-            <property role="Xl_RC" value="stepLest" />
+            <property role="Xl_RC" value="stepEast" />
             <node concept="cd27G" id="ga" role="lGtFl">
               <node concept="3u3nmq" id="gb" role="cd27D">
                 <property role="3u3nmv" value="6034329596690384046" />
@@ -2772,7 +2772,7 @@
             </node>
           </node>
           <node concept="Xl_RD" id="g6" role="37wK5m">
-            <property role="Xl_RC" value="Step to Lest" />
+            <property role="Xl_RC" value="Step to East" />
             <node concept="cd27G" id="gc" role="lGtFl">
               <node concept="3u3nmq" id="gd" role="cd27D">
                 <property role="3u3nmv" value="6034329596690384046" />
@@ -3170,7 +3170,7 @@
     </node>
     <node concept="312cEg" id="dq" role="jymVt">
       <property role="3TUv4t" value="true" />
-      <property role="TrG5h" value="myMember_takeOff_boolean_0" />
+      <property role="TrG5h" value="myMember_takeOff_0" />
       <node concept="3Tm6S6" id="in" role="1B3o_S">
         <node concept="cd27G" id="ir" role="lGtFl">
           <node concept="3u3nmq" id="is" role="cd27D">
@@ -3190,7 +3190,7 @@
         <node concept="1pGfFk" id="iv" role="2ShVmc">
           <ref role="37wK5l" to="ze1i:~EnumerationDescriptor$MemberDescriptor.&lt;init&gt;(java.lang.String,java.lang.String,long,java.lang.String,java.lang.String,java.lang.String)" resolve="EnumerationDescriptor.MemberDescriptor" />
           <node concept="Xl_RD" id="ix" role="37wK5m">
-            <property role="Xl_RC" value="takeOff_boolean" />
+            <property role="Xl_RC" value="takeOff" />
             <node concept="cd27G" id="iA" role="lGtFl">
               <node concept="3u3nmq" id="iB" role="cd27D">
                 <property role="3u3nmv" value="6034329596690384046" />
@@ -3198,7 +3198,7 @@
             </node>
           </node>
           <node concept="Xl_RD" id="iy" role="37wK5m">
-            <property role="Xl_RC" value="Takeoff" />
+            <property role="Xl_RC" value="Take Off" />
             <node concept="cd27G" id="iC" role="lGtFl">
               <node concept="3u3nmq" id="iD" role="cd27D">
                 <property role="3u3nmv" value="6034329596690384046" />
@@ -3241,7 +3241,7 @@
     </node>
     <node concept="312cEg" id="dr" role="jymVt">
       <property role="3TUv4t" value="true" />
-      <property role="TrG5h" value="myMember_landed_boolean_0" />
+      <property role="TrG5h" value="myMember_landed_0" />
       <node concept="3Tm6S6" id="iL" role="1B3o_S">
         <node concept="cd27G" id="iP" role="lGtFl">
           <node concept="3u3nmq" id="iQ" role="cd27D">
@@ -3261,7 +3261,7 @@
         <node concept="1pGfFk" id="iT" role="2ShVmc">
           <ref role="37wK5l" to="ze1i:~EnumerationDescriptor$MemberDescriptor.&lt;init&gt;(java.lang.String,java.lang.String,long,java.lang.String,java.lang.String,java.lang.String)" resolve="EnumerationDescriptor.MemberDescriptor" />
           <node concept="Xl_RD" id="iV" role="37wK5m">
-            <property role="Xl_RC" value="landed_boolean" />
+            <property role="Xl_RC" value="landed" />
             <node concept="cd27G" id="j0" role="lGtFl">
               <node concept="3u3nmq" id="j1" role="cd27D">
                 <property role="3u3nmv" value="6034329596690384046" />
@@ -3312,7 +3312,7 @@
     </node>
     <node concept="312cEg" id="ds" role="jymVt">
       <property role="3TUv4t" value="true" />
-      <property role="TrG5h" value="myMember_turnLeft_0" />
+      <property role="TrG5h" value="myMember_turnEast_0" />
       <node concept="3Tm6S6" id="jb" role="1B3o_S">
         <node concept="cd27G" id="jf" role="lGtFl">
           <node concept="3u3nmq" id="jg" role="cd27D">
@@ -3332,7 +3332,7 @@
         <node concept="1pGfFk" id="jj" role="2ShVmc">
           <ref role="37wK5l" to="ze1i:~EnumerationDescriptor$MemberDescriptor.&lt;init&gt;(java.lang.String,java.lang.String,long,java.lang.String,java.lang.String,java.lang.String)" resolve="EnumerationDescriptor.MemberDescriptor" />
           <node concept="Xl_RD" id="jl" role="37wK5m">
-            <property role="Xl_RC" value="turnLeft" />
+            <property role="Xl_RC" value="turnEast" />
             <node concept="cd27G" id="jq" role="lGtFl">
               <node concept="3u3nmq" id="jr" role="cd27D">
                 <property role="3u3nmv" value="6034329596690384046" />
@@ -3340,7 +3340,7 @@
             </node>
           </node>
           <node concept="Xl_RD" id="jm" role="37wK5m">
-            <property role="Xl_RC" value="Turn Left" />
+            <property role="Xl_RC" value="Turn East" />
             <node concept="cd27G" id="js" role="lGtFl">
               <node concept="3u3nmq" id="jt" role="cd27D">
                 <property role="3u3nmv" value="6034329596690384046" />
@@ -4187,7 +4187,7 @@
             </node>
           </node>
           <node concept="37vLTw" id="o3" role="37wK5m">
-            <ref role="3cqZAo" node="dk" resolve="myMember_stepLest_0" />
+            <ref role="3cqZAo" node="dk" resolve="myMember_stepEast_0" />
             <node concept="cd27G" id="ou" role="lGtFl">
               <node concept="3u3nmq" id="ov" role="cd27D">
                 <property role="3u3nmv" value="6034329596690384046" />
@@ -4235,7 +4235,7 @@
             </node>
           </node>
           <node concept="37vLTw" id="o9" role="37wK5m">
-            <ref role="3cqZAo" node="dq" resolve="myMember_takeOff_boolean_0" />
+            <ref role="3cqZAo" node="dq" resolve="myMember_takeOff_0" />
             <node concept="cd27G" id="oE" role="lGtFl">
               <node concept="3u3nmq" id="oF" role="cd27D">
                 <property role="3u3nmv" value="6034329596690384046" />
@@ -4243,7 +4243,7 @@
             </node>
           </node>
           <node concept="37vLTw" id="oa" role="37wK5m">
-            <ref role="3cqZAo" node="dr" resolve="myMember_landed_boolean_0" />
+            <ref role="3cqZAo" node="dr" resolve="myMember_landed_0" />
             <node concept="cd27G" id="oG" role="lGtFl">
               <node concept="3u3nmq" id="oH" role="cd27D">
                 <property role="3u3nmv" value="6034329596690384046" />
@@ -4251,7 +4251,7 @@
             </node>
           </node>
           <node concept="37vLTw" id="ob" role="37wK5m">
-            <ref role="3cqZAo" node="ds" resolve="myMember_turnLeft_0" />
+            <ref role="3cqZAo" node="ds" resolve="myMember_turnEast_0" />
             <node concept="cd27G" id="oI" role="lGtFl">
               <node concept="3u3nmq" id="oJ" role="cd27D">
                 <property role="3u3nmv" value="6034329596690384046" />
@@ -4741,7 +4741,7 @@
           </node>
           <node concept="3KbdKl" id="qE" role="3KbHQx">
             <node concept="Xl_RD" id="rP" role="3Kbmr1">
-              <property role="Xl_RC" value="stepLest" />
+              <property role="Xl_RC" value="stepEast" />
               <node concept="cd27G" id="rS" role="lGtFl">
                 <node concept="3u3nmq" id="rT" role="cd27D">
                   <property role="3u3nmv" value="6034329596690384046" />
@@ -4751,7 +4751,7 @@
             <node concept="3clFbS" id="rQ" role="3Kbo56">
               <node concept="3cpWs6" id="rU" role="3cqZAp">
                 <node concept="37vLTw" id="rW" role="3cqZAk">
-                  <ref role="3cqZAo" node="dk" resolve="myMember_stepLest_0" />
+                  <ref role="3cqZAo" node="dk" resolve="myMember_stepEast_0" />
                   <node concept="cd27G" id="rY" role="lGtFl">
                     <node concept="3u3nmq" id="rZ" role="cd27D">
                       <property role="3u3nmv" value="6034329596690384046" />
@@ -4963,7 +4963,7 @@
           </node>
           <node concept="3KbdKl" id="qK" role="3KbHQx">
             <node concept="Xl_RD" id="t9" role="3Kbmr1">
-              <property role="Xl_RC" value="takeOff_boolean" />
+              <property role="Xl_RC" value="takeOff" />
               <node concept="cd27G" id="tc" role="lGtFl">
                 <node concept="3u3nmq" id="td" role="cd27D">
                   <property role="3u3nmv" value="6034329596690384046" />
@@ -4973,7 +4973,7 @@
             <node concept="3clFbS" id="ta" role="3Kbo56">
               <node concept="3cpWs6" id="te" role="3cqZAp">
                 <node concept="37vLTw" id="tg" role="3cqZAk">
-                  <ref role="3cqZAo" node="dq" resolve="myMember_takeOff_boolean_0" />
+                  <ref role="3cqZAo" node="dq" resolve="myMember_takeOff_0" />
                   <node concept="cd27G" id="ti" role="lGtFl">
                     <node concept="3u3nmq" id="tj" role="cd27D">
                       <property role="3u3nmv" value="6034329596690384046" />
@@ -5000,7 +5000,7 @@
           </node>
           <node concept="3KbdKl" id="qL" role="3KbHQx">
             <node concept="Xl_RD" id="tn" role="3Kbmr1">
-              <property role="Xl_RC" value="landed_boolean" />
+              <property role="Xl_RC" value="landed" />
               <node concept="cd27G" id="tq" role="lGtFl">
                 <node concept="3u3nmq" id="tr" role="cd27D">
                   <property role="3u3nmv" value="6034329596690384046" />
@@ -5010,7 +5010,7 @@
             <node concept="3clFbS" id="to" role="3Kbo56">
               <node concept="3cpWs6" id="ts" role="3cqZAp">
                 <node concept="37vLTw" id="tu" role="3cqZAk">
-                  <ref role="3cqZAo" node="dr" resolve="myMember_landed_boolean_0" />
+                  <ref role="3cqZAo" node="dr" resolve="myMember_landed_0" />
                   <node concept="cd27G" id="tw" role="lGtFl">
                     <node concept="3u3nmq" id="tx" role="cd27D">
                       <property role="3u3nmv" value="6034329596690384046" />
@@ -5037,7 +5037,7 @@
           </node>
           <node concept="3KbdKl" id="qM" role="3KbHQx">
             <node concept="Xl_RD" id="t_" role="3Kbmr1">
-              <property role="Xl_RC" value="turnLeft" />
+              <property role="Xl_RC" value="turnEast" />
               <node concept="cd27G" id="tC" role="lGtFl">
                 <node concept="3u3nmq" id="tD" role="cd27D">
                   <property role="3u3nmv" value="6034329596690384046" />
@@ -5047,7 +5047,7 @@
             <node concept="3clFbS" id="tA" role="3Kbo56">
               <node concept="3cpWs6" id="tE" role="3cqZAp">
                 <node concept="37vLTw" id="tG" role="3cqZAk">
-                  <ref role="3cqZAo" node="ds" resolve="myMember_turnLeft_0" />
+                  <ref role="3cqZAo" node="ds" resolve="myMember_turnEast_0" />
                   <node concept="cd27G" id="tI" role="lGtFl">
                     <node concept="3u3nmq" id="tJ" role="cd27D">
                       <property role="3u3nmv" value="6034329596690384046" />
@@ -5781,7 +5781,7 @@
             </node>
           </node>
           <node concept="Xl_RD" id="yi" role="37wK5m">
-            <property role="Xl_RC" value="not equal to" />
+            <property role="Xl_RC" value="is not" />
             <node concept="cd27G" id="yo" role="lGtFl">
               <node concept="3u3nmq" id="yp" role="cd27D">
                 <property role="3u3nmv" value="6034329596690336735" />
@@ -5852,7 +5852,7 @@
             </node>
           </node>
           <node concept="Xl_RD" id="yG" role="37wK5m">
-            <property role="Xl_RC" value="less than" />
+            <property role="Xl_RC" value="&lt;" />
             <node concept="cd27G" id="yM" role="lGtFl">
               <node concept="3u3nmq" id="yN" role="cd27D">
                 <property role="3u3nmv" value="6034329596690336735" />
@@ -5923,7 +5923,7 @@
             </node>
           </node>
           <node concept="Xl_RD" id="z6" role="37wK5m">
-            <property role="Xl_RC" value="greater than" />
+            <property role="Xl_RC" value="&gt;" />
             <node concept="cd27G" id="zc" role="lGtFl">
               <node concept="3u3nmq" id="zd" role="cd27D">
                 <property role="3u3nmv" value="6034329596690336735" />
@@ -5994,7 +5994,7 @@
             </node>
           </node>
           <node concept="Xl_RD" id="zw" role="37wK5m">
-            <property role="Xl_RC" value="less than or equal to" />
+            <property role="Xl_RC" value="&lt;=" />
             <node concept="cd27G" id="zA" role="lGtFl">
               <node concept="3u3nmq" id="zB" role="cd27D">
                 <property role="3u3nmv" value="6034329596690336735" />
@@ -6065,7 +6065,7 @@
             </node>
           </node>
           <node concept="Xl_RD" id="zU" role="37wK5m">
-            <property role="Xl_RC" value="greater than or equal to" />
+            <property role="Xl_RC" value="&gt;=" />
             <node concept="cd27G" id="$0" role="lGtFl">
               <node concept="3u3nmq" id="$1" role="cd27D">
                 <property role="3u3nmv" value="6034329596690336735" />
@@ -12696,9 +12696,9 @@
         </node>
       </node>
       <node concept="39e2AG" id="19Y" role="39e3Y0">
-        <ref role="39e2AK" to="lpas:3fG_nwkIf6A" resolve="landed_boolean" />
+        <ref role="39e2AK" to="lpas:3fG_nwkIf6A" resolve="landed" />
         <node concept="385nmt" id="1bX" role="385vvn">
-          <property role="385vuF" value="landed_boolean" />
+          <property role="385vuF" value="landed" />
           <node concept="2$VJBW" id="1bZ" role="385v07">
             <property role="2$VJBR" value="3741529733414318502" />
             <node concept="2x4n5u" id="1c0" role="3iCydw">
@@ -12712,7 +12712,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="1bY" role="39e2AY">
-          <ref role="39e2AS" node="dr" resolve="myMember_landed_boolean_0" />
+          <ref role="39e2AS" node="dr" resolve="myMember_landed_0" />
         </node>
       </node>
       <node concept="39e2AG" id="19Z" role="39e3Y0">
@@ -12896,9 +12896,9 @@
         </node>
       </node>
       <node concept="39e2AG" id="1a8" role="39e3Y0">
-        <ref role="39e2AK" to="lpas:5eYfGK4mOiW" resolve="stepLest" />
+        <ref role="39e2AK" to="lpas:5eYfGK4mOiW" resolve="stepEast" />
         <node concept="385nmt" id="1cJ" role="385vvn">
-          <property role="385vuF" value="stepLest" />
+          <property role="385vuF" value="stepEast" />
           <node concept="2$VJBW" id="1cL" role="385v07">
             <property role="2$VJBR" value="6034329596690384060" />
             <node concept="2x4n5u" id="1cM" role="3iCydw">
@@ -12912,7 +12912,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="1cK" role="39e2AY">
-          <ref role="39e2AS" node="dk" resolve="myMember_stepLest_0" />
+          <ref role="39e2AS" node="dk" resolve="myMember_stepEast_0" />
         </node>
       </node>
       <node concept="39e2AG" id="1a9" role="39e3Y0">
@@ -13016,9 +13016,9 @@
         </node>
       </node>
       <node concept="39e2AG" id="1ae" role="39e3Y0">
-        <ref role="39e2AK" to="lpas:5eYfGK4mOjJ" resolve="takeOff_boolean" />
+        <ref role="39e2AK" to="lpas:5eYfGK4mOjJ" resolve="takeOff" />
         <node concept="385nmt" id="1dd" role="385vvn">
-          <property role="385vuF" value="takeOff_boolean" />
+          <property role="385vuF" value="takeOff" />
           <node concept="2$VJBW" id="1df" role="385v07">
             <property role="2$VJBR" value="6034329596690384111" />
             <node concept="2x4n5u" id="1dg" role="3iCydw">
@@ -13032,13 +13032,13 @@
           </node>
         </node>
         <node concept="39e2AT" id="1de" role="39e2AY">
-          <ref role="39e2AS" node="dq" resolve="myMember_takeOff_boolean_0" />
+          <ref role="39e2AS" node="dq" resolve="myMember_takeOff_0" />
         </node>
       </node>
       <node concept="39e2AG" id="1af" role="39e3Y0">
-        <ref role="39e2AK" to="lpas:5eYfGK4mOjV" resolve="turnLeft" />
+        <ref role="39e2AK" to="lpas:5eYfGK4mOjV" resolve="turnEast" />
         <node concept="385nmt" id="1di" role="385vvn">
-          <property role="385vuF" value="turnLeft" />
+          <property role="385vuF" value="turnEast" />
           <node concept="2$VJBW" id="1dk" role="385v07">
             <property role="2$VJBR" value="6034329596690384123" />
             <node concept="2x4n5u" id="1dl" role="3iCydw">
@@ -13052,7 +13052,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="1dj" role="39e2AY">
-          <ref role="39e2AS" node="ds" resolve="myMember_turnLeft_0" />
+          <ref role="39e2AS" node="ds" resolve="myMember_turnEast_0" />
         </node>
       </node>
       <node concept="39e2AG" id="1ag" role="39e3Y0">

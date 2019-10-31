@@ -906,14 +906,26 @@
               <node concept="lc7rE" id="1RtkfELcIUh" role="3cqZAp">
                 <node concept="l9hG8" id="1RtkfELcIUw" role="lcghm">
                   <node concept="2YIFZM" id="1RtkfELcJLR" role="lb14g">
-                    <ref role="37wK5l" to="wyt6:~String.valueOf(java.lang.Object)" resolve="valueOf" />
                     <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
-                    <node concept="2OqwBi" id="1RtkfELcKa7" role="37wK5m">
-                      <node concept="37vLTw" id="1RtkfELcJR2" role="2Oq$k0">
-                        <ref role="3cqZAo" node="3IZH$xcvJl3" resolve="distanceSensorExpression" />
+                    <ref role="37wK5l" to="wyt6:~String.valueOf(int)" resolve="valueOf" />
+                    <node concept="2OqwBi" id="1RtkfELekRK" role="37wK5m">
+                      <node concept="1eOMI4" id="1RtkfELeibb" role="2Oq$k0">
+                        <node concept="10QFUN" id="1RtkfELeib8" role="1eOMHV">
+                          <node concept="3Tqbb2" id="1RtkfELeieJ" role="10QFUM">
+                            <ref role="ehGHo" to="lpas:5eYfGK4oHfV" resolve="Integer" />
+                          </node>
+                          <node concept="2OqwBi" id="1RtkfELcKa7" role="10QFUP">
+                            <node concept="37vLTw" id="1RtkfELcJR2" role="2Oq$k0">
+                              <ref role="3cqZAo" node="3IZH$xcvJl3" resolve="distanceSensorExpression" />
+                            </node>
+                            <node concept="3TrEf2" id="1RtkfELcKlP" role="2OqNvi">
+                              <ref role="3Tt5mk" to="lpas:1RtkfEL7Ws$" resolve="distance" />
+                            </node>
+                          </node>
+                        </node>
                       </node>
-                      <node concept="3TrEf2" id="1RtkfELcKlP" role="2OqNvi">
-                        <ref role="3Tt5mk" to="lpas:1RtkfEL7Ws$" resolve="distance" />
+                      <node concept="3TrcHB" id="1RtkfELel2F" role="2OqNvi">
+                        <ref role="3TsBF5" to="lpas:5eYfGK4oHfW" resolve="value" />
                       </node>
                     </node>
                   </node>
