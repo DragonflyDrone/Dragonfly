@@ -122,20 +122,21 @@ public class DroneBusinessObject {
         Double devicesConsumption = drone.getDevicesConsumption();
         Double droneMotorConsumption = drone.getDroneMotorConsumption();
         Double lastCapacity = drone.getCurrentCapacity();
+        Double auw = drone.getAuw();
+        Integer lastMovimentDrone = drone.getLastAction();
 
-        BatteryController batteryController = new BatteryController(discharge, 2.5, voltage,
-                (double)30/speed/3600, devicesConsumption, droneMotorConsumption, 90, 20,
+        BatteryController batteryController = new BatteryController(discharge, auw, voltage,
+                (double)30/speed/3600, devicesConsumption, droneMotorConsumption, lastMovimentDrone, speed,
                 270, 20, 20, 20, lastCapacity);
 
         if (drone.isEconomyMode()) {
             double resultCapacity = batteryController.newBatteryConsumption(0.7);
             drone.setCurrentCapacity(resultCapacity); // 30 % menos gasto
-            System.out.println(drone.getCurrentCapacity());
         } else if (drone.isNormalMode()) {
             double resultCapacity = batteryController.newBatteryConsumption(1);
             drone.setCurrentCapacity(resultCapacity);
-            System.out.println(drone.getCurrentCapacity());
         }
+        System.out.println(drone.getCurrentCapacity());
 
         //      }
     }
@@ -329,8 +330,8 @@ public class DroneBusinessObject {
             return;
         }
 
-
         selectedDrone.setCurrentPositionI(newI);
+        selectedDrone.setLastAction(180);
     }
 
     public static void flyingUp(Drone selectedDrone) {
@@ -350,6 +351,7 @@ public class DroneBusinessObject {
         }
 
         selectedDrone.setCurrentPositionI(newI);
+        selectedDrone.setLastAction(0);
     }
 
     public static void flyingRight(Drone selectedDrone) {
@@ -369,6 +371,7 @@ public class DroneBusinessObject {
         }
 
         selectedDrone.setCurrentPositionJ(newJ);
+        selectedDrone.setLastAction(90);
 
     }
 
@@ -390,6 +393,7 @@ public class DroneBusinessObject {
         }
 
         selectedDrone.setCurrentPositionJ(newJ);
+        selectedDrone.setLastAction(270);
     }
 
 

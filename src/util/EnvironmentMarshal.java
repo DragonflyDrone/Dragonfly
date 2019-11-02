@@ -138,6 +138,7 @@ abstract public class EnvironmentMarshal {
             droneElement.setAttribute(ConstantXml.CAPACITY_ATTRIBUTE, String.valueOf(drone.getInitialCapacity()));
             droneElement.setAttribute(ConstantXml.DEVICES_CONSUMPTION_ATTRIBUTE, String.valueOf(drone.getDevicesConsumption()));
             droneElement.setAttribute(ConstantXml.MOTOR_CONSUMPTION_ATTRIBUTE, String.valueOf(drone.getDroneMotorConsumption()));
+            droneElement.setAttribute(ConstantXml.AUW_ATTRIBUTE, String.valueOf(drone.getAuw()));
 
             droneElement.setAttribute(ConstantXml.WRAPPER_ID_ATTRIBUTE, String.valueOf(drone.getWrapperId()));
 
@@ -355,6 +356,7 @@ abstract public class EnvironmentMarshal {
             double capacity = Double.parseDouble(droneNode.getAttributes().getNamedItem(ConstantXml.CAPACITY_ATTRIBUTE).getNodeValue());
             double devices = Double.parseDouble(droneNode.getAttributes().getNamedItem(ConstantXml.DEVICES_CONSUMPTION_ATTRIBUTE).getNodeValue());
             double droneMotor = Double.parseDouble(droneNode.getAttributes().getNamedItem(ConstantXml.MOTOR_CONSUMPTION_ATTRIBUTE).getNodeValue());
+            double auw = Double.parseDouble(droneNode.getAttributes().getNamedItem(ConstantXml.AUW_ATTRIBUTE).getNodeValue());
 
             int wrapperId = Integer.parseInt(droneNode.getAttributes().getNamedItem(ConstantXml.WRAPPER_ID_ATTRIBUTE).getNodeValue());
 
@@ -391,6 +393,7 @@ abstract public class EnvironmentMarshal {
             drone.setCurrentCapacity(capacity);
             drone.setDevicesConsumption(devices);
             drone.setDroneMotorConsumption(droneMotor);
+            drone.setAuw(auw);
 
             drone.setWrapperId(wrapperId);
 

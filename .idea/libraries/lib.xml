@@ -3,8 +3,8 @@
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/aspectj-1.9.2/lib/aspectjtools.jar!/" />
       <root url="jar://$PROJECT_DIR$/aspectj-1.9.2/lib/org.aspectj.matcher.jar!/" />
-      <root url="jar://$PROJECT_DIR$/aspectj-1.9.2/lib/aspectjweaver.jar!/" />
       <root url="jar://$PROJECT_DIR$/aspectj-1.9.2/lib/aspectjrt.jar!/" />
+      <root url="jar://$PROJECT_DIR$/aspectj-1.9.2/lib/aspectjweaver.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

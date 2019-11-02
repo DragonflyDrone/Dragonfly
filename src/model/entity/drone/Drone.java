@@ -24,13 +24,17 @@ public class Drone extends Entity {
     private Integer initialPosistionI, initialPositionJ;
 
     private Double voltage = 36.D;
-    private Double discharge = 0.9;
+    private Double discharge = 0.9D;
     private Double initialCapacity = 5.D;
     private Double devicesConsumption = 50.D;
     private Double droneMotorConsumption = 300.D;
 
+    private Double auw = 2.5D;
+
     // Do changes in Runtime
     private Integer currentPositionI, currentPositionJ;
+
+    private Integer lastAction = 0;
 
     private Double currentSpeed = 20.D;
     private Double currentCapacity = 5.D;
@@ -636,6 +640,22 @@ public class Drone extends Entity {
         this.currentCapacity = currentCapacity;
 
         notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
+    }
+
+    public Double getAuw() {
+        return auw;
+    }
+
+    public void setAuw(Double auw) {
+        this.auw = auw;
+    }
+
+    public Integer getLastAction() {
+        return lastAction;
+    }
+
+    public void setLastAction(Integer lastAction) {
+        this.lastAction = lastAction;
     }
 
     public boolean isSelected(){

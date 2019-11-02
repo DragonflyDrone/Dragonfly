@@ -19,6 +19,7 @@ public class ConstantXml {
     public static final String CAPACITY_ATTRIBUTE = "capacity";
     public static final String DEVICES_CONSUMPTION_ATTRIBUTE = "devicesConsumption";
     public static final String MOTOR_CONSUMPTION_ATTRIBUTE = "motorConsumption";
+    public static final String AUW_ATTRIBUTE = "auw";
     public static final String WRAPPER_ID_ATTRIBUTE = "wrapperId";
 
 

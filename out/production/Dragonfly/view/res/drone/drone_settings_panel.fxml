@@ -10,14 +10,14 @@
 
 <AnchorPane fx:id="droneSettingsPanelAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="232.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/8.0.202-ea" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <TextField fx:id="voltageTextField" disable="true" layoutX="139.0" layoutY="40.0" prefHeight="26.0" prefWidth="58.0" promptText="36 V" />
+      <TextField fx:id="voltageTextField" disable="true" layoutX="139.0" layoutY="40.0" prefHeight="26.0" prefWidth="50.0" promptText="36 V" />
       <Label fx:id="voltageLabel" disable="true" layoutX="6.0" layoutY="43.0" text="Battery Voltage (V):" />
-      <TextField fx:id="capacityTextField" disable="true" layoutX="156.0" layoutY="73.0" prefHeight="26.0" prefWidth="58.0" promptText="5 Ah" />
+      <TextField fx:id="capacityTextField" disable="true" layoutX="156.0" layoutY="73.0" prefHeight="26.0" prefWidth="50.0" promptText="5 Ah" />
       <Label fx:id="capacityLabel" disable="true" layoutX="6.0" layoutY="76.0" text="Battery Capacity (Ah):" />
-      <TextField fx:id="speedTextField" disable="true" layoutX="274.0" layoutY="7.0" prefHeight="26.0" prefWidth="58.0" promptText="20m/s" />
-      <Label fx:id="speedLabel" disable="true" layoutX="186.0" layoutY="10.0" text="Speed (m/s):" />
+      <TextField fx:id="speedTextField" disable="true" layoutX="281.0" layoutY="7.0" prefHeight="26.0" prefWidth="50.0" promptText="20m/s" />
+      <Label fx:id="speedLabel" disable="true" layoutX="193.0" layoutY="10.0" text="Speed (m/s):" />
       <Label fx:id="currentDroneLabel" disable="true" layoutX="6.0" layoutY="10.0" text="Current Drone (ID):" />
-      <TextField fx:id="currentDroneTextField" disable="true" layoutX="135.0" layoutY="7.0" prefHeight="26.0" prefWidth="36.0" text="0" />
+      <TextField fx:id="currentDroneTextField" disable="true" layoutX="135.0" layoutY="7.0" prefHeight="26.0" prefWidth="30.0" text="0" />
       <Button fx:id="saveButton" disable="true" layoutX="142.0" layoutY="204.0" mnemonicParsing="false" text="Save" />
       <Label fx:id="sourceLabel" disable="true" layoutX="43.0" layoutY="184.0" text="Source:" />
       <Label fx:id="targetLabel" disable="true" layoutX="163.0" layoutY="184.0" text="Target:" />
@@ -40,12 +40,14 @@
             <Image url="@../information.png" />
          </image>
       </ImageView>
-      <TextField fx:id="dischargeTextField" disable="true" layoutX="274.0" layoutY="40.0" prefHeight="26.0" prefWidth="58.0" promptText="0.9" />
-      <Label fx:id="dischargeLabel" disable="true" layoutX="200.0" layoutY="43.0" text="Discharge:" />
+      <TextField fx:id="dischargeTextField" disable="true" layoutX="281.0" layoutY="40.0" prefHeight="26.0" prefWidth="50.0" promptText="0.9" />
+      <Label fx:id="dischargeLabel" disable="true" layoutX="207.0" layoutY="43.0" text="Discharge:" />
       <Label fx:id="consumptionLabel" disable="true" layoutX="120.0" layoutY="103.0" text="Consumption:" />
       <Label fx:id="consumptionDevicesLabel" disable="true" layoutX="6.0" layoutY="125.0" text="Devices:" />
       <Label fx:id="consumptionMotorLabel" disable="true" layoutX="184.0" layoutY="124.0" text="Drone Motor:" />
       <TextField fx:id="consumptionDevicesTextField" disable="true" layoutX="68.0" layoutY="121.0" prefHeight="26.0" prefWidth="58.0" promptText="50 A" />
       <TextField fx:id="consumptionMotorTextField" disable="true" layoutX="274.0" layoutY="121.0" prefHeight="26.0" prefWidth="58.0" promptText="300 A" />
+      <TextField fx:id="auwTextField" disable="true" layoutX="281.0" layoutY="74.0" prefHeight="26.0" prefWidth="50.0" promptText="2.5Kg" />
+      <Label fx:id="auwLabel" disable="true" layoutX="213.0" layoutY="77.0" text="Auw (Kg):" />
    </children>
 </AnchorPane>
