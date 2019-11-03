@@ -2,94 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="624dd530-8c12-4d27-94d2-2cf549b7b91c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/controller/AntennaController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/controller/AntennaController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/controller/AntennaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/controller/AntennaController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/controller/BatteryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/controller/BatteryController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/controller/BoatAutomaticController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/controller/BoatAutomaticController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/controller/BoatAutomaticController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/controller/BoatAutomaticController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/controller/CellController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/controller/CellController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/controller/DroneAutomaticController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/controller/DroneAutomaticController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/controller/DroneAutomaticController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/controller/DroneAutomaticController$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/controller/DroneAutomaticController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/controller/DroneAutomaticController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/controller/DroneController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/controller/DroneController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/controller/DroneKeyBoardController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/controller/DroneKeyBoardController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/controller/DroneKeyBoardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/controller/DroneKeyBoardController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/controller/EnvironmentController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/controller/EnvironmentController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/controller/EnvironmentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/controller/EnvironmentController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/controller/HospitalController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/controller/HospitalController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/controller/HouseController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/controller/HouseController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/controller/LoggerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/controller/LoggerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/controller/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/controller/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/controller/MenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/controller/MenuController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/controller/RiverController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/controller/RiverController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/controller/TreeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/controller/TreeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/controller/settings_panel/BoatSettingsPanelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/controller/settings_panel/BoatSettingsPanelController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/controller/settings_panel/DroneSettingsPanelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/controller/settings_panel/DroneSettingsPanelController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/controller/settings_panel/SettingsPanelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/controller/settings_panel/SettingsPanelController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/model/Cell$Listener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/model/Cell$Listener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/model/Cell.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/model/Cell.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/model/Environment.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/model/Environment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/model/entity/Antenna$Listener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/model/entity/Antenna$Listener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/model/entity/Antenna.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/model/entity/Antenna.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/model/entity/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/model/entity/Entity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/model/entity/Hospital$Listener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/model/entity/Hospital$Listener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/model/entity/Hospital.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/model/entity/Hospital.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/model/entity/House$Listener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/model/entity/House$Listener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/model/entity/House.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/model/entity/House.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/model/entity/River$Listener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/model/entity/River$Listener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/model/entity/River.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/model/entity/River.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/model/entity/Tree$Listener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/model/entity/Tree$Listener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/model/entity/Tree.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/model/entity/Tree.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/model/entity/boat/Boat$Listener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/model/entity/boat/Boat$Listener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/model/entity/boat/Boat.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/model/entity/boat/Boat.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/model/entity/boat/BoatBusinessObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/model/entity/boat/BoatBusinessObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/model/entity/drone/Drone$Listener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/model/entity/drone/Drone$Listener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/model/entity/drone/Drone.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/model/entity/drone/Drone.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/model/entity/drone/DroneBusinessObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/model/entity/drone/DroneBusinessObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/util/AStarAlgorithm$Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/util/AStarAlgorithm$Node.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/util/AStarAlgorithm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/util/AStarAlgorithm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/util/ConstantXml.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/util/ConstantXml.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/util/DroneAnalyzerLog.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/util/DroneAnalyzerLog.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/util/EnvironmentMarshal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/util/EnvironmentMarshal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/util/SelectHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/util/SelectHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/util/StopWatch$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/util/StopWatch$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/util/StopWatch.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/util/StopWatch.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/util/StopWatchCopy$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/util/StopWatchCopy$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/util/StopWatchCopy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/util/StopWatchCopy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/util/UniqueIDGenenator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/util/UniqueIDGenenator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/util/WrapperHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/util/WrapperHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/util/exceptions/ClickOutsideRegionException.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/util/exceptions/ClickOutsideRegionException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/util/exceptions/MinimumHospitalQuantityException.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/util/exceptions/MinimumHospitalQuantityException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/view/CellView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/view/CellView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/view/EnvironmentView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/view/EnvironmentView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/view/SelectableView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/view/SelectableView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/view/antenna/AntennaView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/view/antenna/AntennaView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/view/antenna/AntennaViewImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/view/antenna/AntennaViewImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/view/boat/BoatView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/view/boat/BoatView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/view/drone/DroneView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/view/drone/DroneView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/view/drone/DroneViewImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/view/drone/DroneViewImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/view/hospital/HospitalView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/view/hospital/HospitalView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/view/hospital/HospitalViewImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/view/hospital/HospitalViewImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/view/house/HouseView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/view/house/HouseView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/view/res/drone/drone_settings_panel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/view/res/drone/drone_settings_panel.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/view/river/RiverView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/view/river/RiverView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/view/river/RiverViewImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/view/river/RiverViewImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/view/tree/TreeView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/view/tree/TreeView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/settings_panel/DroneSettingsPanelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/settings_panel/DroneSettingsPanelController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/entity/drone/Drone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/entity/drone/Drone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/entity/drone/DroneBusinessObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/entity/drone/DroneBusinessObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/util/ConstantXml.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/ConstantXml.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/util/EnvironmentMarshal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/EnvironmentMarshal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/res/drone/drone_settings_panel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/res/drone/drone_settings_panel.fxml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -111,7 +37,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Wind">
     <configuration name="MainController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="controller.MainController" />
       <module name="Dragonfly" />
@@ -125,8 +51,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Wind" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="model.entity.Wind" />
+      <module name="Dragonfly" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="model.entity.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Wind" />
         <item itemvalue="Application.MainController" />
       </list>
     </recent_temporary>
@@ -142,6 +82,8 @@
       <option name="presentableId" value="Default" />
       <updated>1572644905574</updated>
       <workItem from="1572644911448" duration="7284000" />
+      <workItem from="1572729716100" duration="3197000" />
+      <workItem from="1572794074394" duration="5797000" />
     </task>
     <servers />
   </component>
@@ -153,10 +95,17 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Dragonfly$Wind.ic" NAME="Wind Coverage Results" MODIFIED="1572797279233" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>model.entity.*</FILTER>
+    </SUITE>
   </component>
 </project>
