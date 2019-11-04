@@ -187,6 +187,7 @@ public class EnvironmentController {
         CellController.getInstance().consumeRunEnviroment();
         HouseController.getInstance().consumeRunEnviroment();
         TreeController.getInstance().consumeRunEnviroment();
+        WindController.getInstance().consumeRunEnviroment();
     }
 
     public void consumeReset() {

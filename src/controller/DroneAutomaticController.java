@@ -76,7 +76,10 @@ public class DroneAutomaticController extends DroneController {
 
                 @Override
                 public boolean conditionStop() {
-                    return allTheDronesAreShutDown()|| mustStopAutomaticExecution;
+                    if (allTheDronesAreShutDown() || mustStopAutomaticExecution){
+                        WindController.getInstance().setMustStopAutomaticExecution(true);
+                    }
+                    return allTheDronesAreShutDown() || mustStopAutomaticExecution;
                 }
 
             };

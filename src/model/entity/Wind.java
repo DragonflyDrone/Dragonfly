@@ -4,27 +4,27 @@ import java.util.Random;
 
 public class Wind {
 
-    private static final Double NORTH = 0.D;
-    private static final Double EAST = 90.D;
-    private static final Double SOUTH = 180.D;
-    private static final Double WEST = 270.D;
+    private static final Integer NORTH = 0;
+    private static final Integer EAST = 90;
+    private static final Integer SOUTH = 180;
+    private static final Integer WEST = 270;
 
-    private Double currentDirection = 0.D;
+    private Integer currentDirection = 0;
     private Double probNorth = 80.D;
     private Double probEast = 10.0D;
     private Double probSouth = 0.D;
     private Double probWest = 10.0D;
 
-    private Double currentSpeed = 0.D;
+    private Double currentSpeed = 10.D;
     private Double maxSpeed = 20.D;
-    private Double probIncreaseSpeed = 60.D;
-    private Double probDecreaseSpeed = 40.D;
+    private Double probIncreaseSpeed = 55.D;
+    private Double probDecreaseSpeed = 45.D;
 
-    public Double getCurrentDirection() {
+    public Integer getCurrentDirection() {
         return currentDirection;
     }
 
-    public void setCurrentDirection(Double currentDirection) {
+    public void setCurrentDirection(Integer currentDirection) {
         this.currentDirection = currentDirection;
     }
 
@@ -142,9 +142,9 @@ public class Wind {
         this.mdpSpeedWind();
     }
 
-    public static void main(String[] a){
+    /*public static void main(String[] a){
         Wind w = new Wind();
         w.updateWindAttributes();
-    }
+    }*/
 
 }

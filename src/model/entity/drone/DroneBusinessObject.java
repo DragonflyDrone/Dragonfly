@@ -4,6 +4,7 @@ import controller.*;
 import javafx.application.Platform;
 import javafx.scene.input.KeyCode;
 import model.Cell;
+import model.entity.Wind;
 import util.StopWatch;
 import view.CellView;
 import view.SelectableView;
@@ -124,10 +125,12 @@ public class DroneBusinessObject {
         Double lastCapacity = drone.getCurrentCapacity();
         Double auw = drone.getAuw();
         Integer lastMovimentDrone = drone.getLastAction();
+        Double windSpeed = WindController.getInstance().getWindConsume().getCurrentSpeed();
+        Integer windAng = WindController.getInstance().getWindConsume().getCurrentDirection();
 
         BatteryController batteryController = new BatteryController(discharge, auw, voltage,
                 (double)30/speed/3600, devicesConsumption, droneMotorConsumption, lastMovimentDrone, speed,
-                270, 20, 20, 20, lastCapacity);
+                windAng, windSpeed, 20, 20, lastCapacity);
 
         if (drone.isEconomyMode()) {
             double resultCapacity = batteryController.newBatteryConsumption(0.7);

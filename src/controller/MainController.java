@@ -133,6 +133,8 @@ public class MainController extends Application {
         ToggleGroup toggleGroup4 = new ToggleGroup();
         startToggleButton.setToggleGroup(toggleGroup4);
         restartToggleButton.setToggleGroup(toggleGroup4);
+        
+        windForceCombBox.setDisable(true);
 
         List<String> forceWindTypes = new ArrayList<>();
         forceWindTypes.add("Strong");

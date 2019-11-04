@@ -1,8 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="624dd530-8c12-4d27-94d2-2cf549b7b91c" name="Default Changelist" comment="">
+    <list default="true" id="309ad3fc-9249-4fc0-baa2-924ec04261bb" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/controller/DroneAutomaticController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/controller/DroneAutomaticController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/controller/DroneAutomaticController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/controller/DroneAutomaticController$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/controller/DroneAutomaticController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/controller/DroneAutomaticController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/controller/EnvironmentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/controller/EnvironmentController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/controller/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/controller/MainController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/model/entity/Wind.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/model/entity/Wind.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/model/entity/drone/DroneBusinessObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/model/entity/drone/DroneBusinessObject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/view/drone/DroneViewImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/view/drone/DroneViewImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/DroneAutomaticController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/DroneAutomaticController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/EnvironmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/EnvironmentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/entity/Wind.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/entity/Wind.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/entity/drone/DroneBusinessObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/entity/drone/DroneBusinessObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/drone/DroneViewImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/drone/DroneViewImpl.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,10 +35,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1T24Yk1BgUHNQY9yh4twC1xAtpQ" />
+  <component name="ProjectId" id="1T9bPOUMPGCHeuMgYt85nsghNp9" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -37,7 +56,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Wind">
+  <component name="RunManager">
     <configuration name="MainController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="controller.MainController" />
       <module name="Dragonfly" />
@@ -51,22 +70,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Wind" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="model.entity.Wind" />
-      <module name="Dragonfly" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="model.entity.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Wind" />
         <item itemvalue="Application.MainController" />
       </list>
     </recent_temporary>
@@ -76,14 +81,12 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="624dd530-8c12-4d27-94d2-2cf549b7b91c" name="Default Changelist" comment="" />
-      <created>1572644905574</created>
+      <changelist id="309ad3fc-9249-4fc0-baa2-924ec04261bb" name="Default Changelist" comment="" />
+      <created>1572875233992</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1572644905574</updated>
-      <workItem from="1572644911448" duration="7284000" />
-      <workItem from="1572729716100" duration="3197000" />
-      <workItem from="1572794074394" duration="5797000" />
+      <updated>1572875233992</updated>
+      <workItem from="1572875238410" duration="4909000" />
     </task>
     <servers />
   </component>
@@ -95,17 +98,10 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Dragonfly$Wind.ic" NAME="Wind Coverage Results" MODIFIED="1572797279233" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>model.entity.*</FILTER>
-    </SUITE>
   </component>
 </project>

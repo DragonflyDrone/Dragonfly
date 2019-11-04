@@ -3,6 +3,7 @@ package view.drone;
 
 import controller.CellController;
 import controller.LoggerController;
+import controller.WindController;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -331,7 +332,7 @@ public class DroneViewImpl extends DroneView {
 
             loggerController.print("Drone[" + getDroneLabel() + "] " +
                     "Current capacity: " + String.format("%.2f", drone.getCurrentCapacity()) + " Ah");
-
+            loggerController.print("Wind Speed: " + WindController.getInstance().getWindConsume().getCurrentSpeed());
             return;
         }
 
