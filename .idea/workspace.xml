@@ -2,22 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="309ad3fc-9249-4fc0-baa2-924ec04261bb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/controller/DroneAutomaticController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/controller/DroneAutomaticController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/controller/DroneAutomaticController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/controller/DroneAutomaticController$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/controller/DroneAutomaticController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/controller/DroneAutomaticController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/controller/EnvironmentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/controller/EnvironmentController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/controller/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/controller/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/model/entity/Wind.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/model/entity/Wind.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/model/entity/drone/DroneBusinessObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/model/entity/drone/DroneBusinessObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/view/drone/DroneViewImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/view/drone/DroneViewImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/DroneAutomaticController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/DroneAutomaticController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/DroneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/DroneController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/EnvironmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/EnvironmentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/entity/Wind.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/entity/Wind.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/entity/drone/DroneBusinessObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/entity/drone/DroneBusinessObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/drone/DroneViewImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/drone/DroneViewImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Environment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Environment.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -87,6 +79,7 @@
       <option name="presentableId" value="Default" />
       <updated>1572875233992</updated>
       <workItem from="1572875238410" duration="4909000" />
+      <workItem from="1572968064425" duration="5806000" />
     </task>
     <servers />
   </component>
@@ -98,7 +91,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

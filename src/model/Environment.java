@@ -4,8 +4,6 @@ public class Environment {
     int countRow, countColunm;
     public static int COUNT_ROW = 0, COUNT_COLUNM = 0;
 
-    Boolean isStrongWind = false;
-
     public Environment(int countRow, int countColunm) {
         this.countRow = countRow;
         this.countColunm = countColunm;
@@ -23,12 +21,4 @@ public class Environment {
         return countColunm;
     }
 
-
-    public Boolean getStrongWind() {
-        return isStrongWind;
-    }
-
-    public void setStrongWind(Boolean strongWind) {
-        isStrongWind = strongWind;
-    }
 }

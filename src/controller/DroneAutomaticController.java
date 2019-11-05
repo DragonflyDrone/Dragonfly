@@ -204,54 +204,6 @@ public class DroneAutomaticController extends DroneController {
         }
     }
 
-
-
-
-    //não estou usando mais, depois apagar
-    @Override
-    public void startUpdateBatteryPerSeconds() {
-
-        stopWatchBattery = new StopWatch(0,1000) {
-            @Override
-            public void task() {
-                    System.out.println("PerSeconds inicio" + Thread.currentThread().getName());
-
-                    for(Drone currentDroneInEnvirionment : getDroneMap().values()){
-
-                        DroneBusinessObject.updateBatteryCapacity(currentDroneInEnvirionment);
-
-                        DroneBusinessObject.checkStatus(currentDroneInEnvirionment);
-                        System.out.println("PerSeconds fim" + Thread.currentThread().getName());
-                    }
-            }
-
-            @Override
-            public boolean conditionStop() {
-                return allTheDronesAreShutDown() || mustStopBatteryDecrementer;
-            }
-        };
-    /*    Runnable runnable = () -> {
-            System.out.println("PerSeconds inicio" + Thread.currentThread().getName());
-            if(allTheDronesAreShutDown()){
-                stopWatchBattery.stop();
-            }
-
-            for(Drone currentDroneInEnvirionment : dronesInEnvironment){
-
-                DroneBusinessObject.updateBatteryPerSecond(currentDroneInEnvirionment);
-
-                DroneBusinessObject.checkStatus(currentDroneInEnvirionment);
-                System.out.println("PerSeconds fim" + Thread.currentThread().getName());
-            }
-        };
-
-
-        stopWatchBattery = new StopWatch(0,1000, runnable);
-
-        stopWatchBattery.start();*/
-
-    }
-
     @Override
     public Drone createDrone(String uniqueID, String droneLabel,
                              CellView currentCellView) {

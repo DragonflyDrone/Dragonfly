@@ -114,6 +114,10 @@ public class EnvironmentController {
         }
     }
 
+    public void consumeWind(String windDirection) {
+        // WindController.getInstance().consumeRunEnviroment();
+    }
+
     public void consumeStrongWind() {
 
         stopRandomStrongWind();

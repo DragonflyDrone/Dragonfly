@@ -60,8 +60,6 @@ public abstract class DroneController {
 
     abstract public void consumeReset();
 
-    abstract public void startUpdateBatteryPerSeconds();
-
 
     public abstract Drone createDrone(String uniqueID, String droneLabel,CellView currentCellView);
 

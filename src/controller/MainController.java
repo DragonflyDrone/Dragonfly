@@ -133,33 +133,22 @@ public class MainController extends Application {
         ToggleGroup toggleGroup4 = new ToggleGroup();
         startToggleButton.setToggleGroup(toggleGroup4);
         restartToggleButton.setToggleGroup(toggleGroup4);
-        
-        windForceCombBox.setDisable(true);
 
-        List<String> forceWindTypes = new ArrayList<>();
-        forceWindTypes.add("Strong");
-        forceWindTypes.add("Slow");
-        forceWindTypes.add("Random");
+        List<String> forceWindDirections = new ArrayList<>();
+        forceWindDirections.add("North");
+        forceWindDirections.add("East");
+        forceWindDirections.add("South");
+        forceWindDirections.add("West");
 
         ObservableList<String> nameOptions =
-                FXCollections.observableArrayList(forceWindTypes);
+                FXCollections.observableArrayList(forceWindDirections);
         windForceCombBox.setItems(nameOptions);
 
-        windForceCombBox.getSelectionModel().select(1);
+        windForceCombBox.getSelectionModel().select(0);
 
         windForceCombBox.valueProperty().addListener((observable, oldValue, newValue) -> {
-            if(oldValue.equals(newValue)){return;}
-
-            if(newValue.equals("Strong")){
-                environmentController.consumeStrongWind();
-            }else if(newValue.equals("Slow")){
-                environmentController.consumeNormalWind();
-            }else if(newValue.equals("Random")){
-                environmentController.consumeRandomWind();
-            }
+            environmentController.consumeWind(String.valueOf(newValue));
         });
-
-
 
        /* trueStrongWindRadioButton.setOnMouseClicked(event -> environmentController.consumeStrongWind());
 
