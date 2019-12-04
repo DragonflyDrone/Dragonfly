@@ -36,7 +36,7 @@
     </file>
   </root>
   <root nodeRef="r:98ce4f8d-75ef-41b6-8025-6561aecf815f(WrapperDSL.textGen)/3741529733414534349">
-    <file name="DisjuctionNormalExpression_TextGen.java">
+    <file name="DisjunctionNormalExpression_TextGen.java">
       <node id="3741529733414534349" at="11,54,12,55" concept="6" />
       <node id="3741529733414548414" at="12,55,13,80" concept="2" />
       <node id="3741529733414534349" at="10,0,15,0" concept="5" trace="generateText#(Ljetbrains/mps/text/rt/TextGenContext;)V" />
@@ -46,11 +46,11 @@
       <scope id="3741529733414534349" at="10,0,15,0">
         <var name="ctx" id="3741529733414534349" />
       </scope>
-      <unit id="3741529733414534349" at="9,0,16,0" name="WrapperDSL.textGen.DisjuctionNormalExpression_TextGen" />
+      <unit id="3741529733414534349" at="9,0,16,0" name="WrapperDSL.textGen.DisjunctionNormalExpression_TextGen" />
     </file>
     <file name="TextGenAspectDescriptor.java">
-      <node id="3741529733414534349" at="34,60,35,56" concept="7" />
-      <scope id="3741529733414534349" at="34,60,35,56" />
+      <node id="3741529733414534349" at="34,61,35,57" concept="7" />
+      <scope id="3741529733414534349" at="34,61,35,57" />
     </file>
   </root>
   <root nodeRef="r:98ce4f8d-75ef-41b6-8025-6561aecf815f(WrapperDSL.textGen)/4296212311995704519">
@@ -161,8 +161,8 @@
       <node id="2151965234597173102" at="107,20,108,55" concept="2" />
       <node id="2151965234597173104" at="108,55,109,128" concept="2" />
       <node id="2151965234597175208" at="109,128,110,130" concept="2" />
-      <node id="2151965234597176521" at="110,130,111,151" concept="2" />
-      <node id="2151965234597173112" at="111,151,112,20" concept="2" />
+      <node id="2151965234597176521" at="110,130,111,106" concept="2" />
+      <node id="2151965234597173112" at="111,106,112,20" concept="2" />
       <node id="2151965234597173113" at="112,20,113,18" concept="2" />
       <node id="4305360190426527709" at="115,110,116,55" concept="6" />
       <node id="7016114418260328304" at="116,55,117,20" concept="2" />
@@ -177,8 +177,8 @@
       <node id="4305360190426775846" at="127,129,128,131" concept="2" />
       <node id="2151965234597899401" at="128,131,129,0" concept="8" />
       <node id="2151965234597906310" at="130,143,131,57" concept="2" />
-      <node id="2151965234597906600" at="131,57,132,196" concept="6" />
-      <node id="2151965234597915597" at="132,196,133,60" concept="2" />
+      <node id="2151965234597906600" at="131,57,132,187" concept="6" />
+      <node id="2151965234597915597" at="132,187,133,60" concept="2" />
       <node id="2151965234597916320" at="134,12,135,167" concept="2" />
       <node id="7016114418258506481" at="136,5,137,20" concept="2" />
       <node id="7016114418258751344" at="137,20,138,18" concept="2" />
@@ -270,15 +270,15 @@
       <node id="4296212311995704544" at="254,0,255,0" concept="9" trace="call$26oK" />
       <node id="4296212311995704544" at="255,0,256,0" concept="9" trace="left$EP9q" />
       <node id="4296212311995704544" at="256,0,257,0" concept="9" trace="operation$6pQJ" />
-      <node id="4296212311995704544" at="257,0,258,0" concept="9" trace="value$QRR0" />
+      <node id="4296212311995704544" at="257,0,258,0" concept="9" trace="right$cGk6" />
       <node id="4296212311995704544" at="258,0,259,0" concept="9" trace="right$BLaw" />
-      <node id="4296212311995704544" at="259,0,260,0" concept="9" trace="distance_value$mVe0" />
-      <node id="4296212311995704544" at="260,0,261,0" concept="9" trace="operation$BCG5" />
-      <node id="4296212311995704544" at="261,0,262,0" concept="9" trace="right$BL8F" />
-      <node id="4296212311995704544" at="262,0,263,0" concept="9" trace="typePointCut$$H91" />
-      <node id="4296212311995704544" at="263,0,264,0" concept="9" trace="commandValue$WUqk" />
-      <node id="4296212311995704544" at="264,0,265,0" concept="9" trace="name$tAp1" />
-      <node id="4296212311995704544" at="268,0,269,0" concept="9" trace="right$m5i0" />
+      <node id="4296212311995704544" at="259,0,260,0" concept="9" trace="value$mVe0" />
+      <node id="4296212311995704544" at="260,0,261,0" concept="9" trace="value$QRR0" />
+      <node id="4296212311995704544" at="261,0,262,0" concept="9" trace="operation$BCG5" />
+      <node id="4296212311995704544" at="262,0,263,0" concept="9" trace="right$BL8F" />
+      <node id="4296212311995704544" at="263,0,264,0" concept="9" trace="typePointCut$$H91" />
+      <node id="4296212311995704544" at="264,0,265,0" concept="9" trace="commandValue$WUqk" />
+      <node id="4296212311995704544" at="265,0,266,0" concept="9" trace="name$tAp1" />
       <node id="4296212311995704544" at="269,0,270,0" concept="9" trace="distance$XvUk" />
       <node id="4296212311995704544" at="270,0,271,0" concept="9" trace="left$BwFB" />
       <node id="4296212311995704544" at="271,0,272,0" concept="9" trace="right$BwED" />
@@ -469,13 +469,13 @@
         <var name="ctx" id="4296212311995704545" />
       </scope>
       <unit id="4296212311995704544" at="286,0,289,0" name="WrapperDSL.textGen.WrapperFile$CONCEPTS" />
-      <unit id="4296212311995704544" at="253,0,266,0" name="WrapperDSL.textGen.WrapperFile$PROPS" />
-      <unit id="4296212311995704544" at="267,0,285,0" name="WrapperDSL.textGen.WrapperFile$LINKS" />
+      <unit id="4296212311995704544" at="253,0,267,0" name="WrapperDSL.textGen.WrapperFile$PROPS" />
+      <unit id="4296212311995704544" at="268,0,285,0" name="WrapperDSL.textGen.WrapperFile$LINKS" />
       <unit id="4296212311995704544" at="21,0,290,0" name="WrapperDSL.textGen.WrapperFile" />
     </file>
   </root>
   <root nodeRef="r:98ce4f8d-75ef-41b6-8025-6561aecf815f(WrapperDSL.textGen)/4305360190425882572">
-    <file name="ConjuctionLogicalExpression_TextGen.java">
+    <file name="ConjunctionLogicalExpression_TextGen.java">
       <node id="4305360190425882572" at="11,54,12,55" concept="6" />
       <node id="4305360190426596203" at="12,55,13,80" concept="2" />
       <node id="4305360190425882572" at="10,0,15,0" concept="5" trace="generateText#(Ljetbrains/mps/text/rt/TextGenContext;)V" />
@@ -485,11 +485,11 @@
       <scope id="4305360190425882572" at="10,0,15,0">
         <var name="ctx" id="4305360190425882572" />
       </scope>
-      <unit id="4305360190425882572" at="9,0,16,0" name="WrapperDSL.textGen.ConjuctionLogicalExpression_TextGen" />
+      <unit id="4305360190425882572" at="9,0,16,0" name="WrapperDSL.textGen.ConjunctionLogicalExpression_TextGen" />
     </file>
     <file name="TextGenAspectDescriptor.java">
-      <node id="4305360190425882572" at="32,61,33,57" concept="7" />
-      <scope id="4305360190425882572" at="32,61,33,57" />
+      <node id="4305360190425882572" at="32,62,33,58" concept="7" />
+      <scope id="4305360190425882572" at="32,62,33,58" />
     </file>
   </root>
   <root nodeRef="r:98ce4f8d-75ef-41b6-8025-6561aecf815f(WrapperDSL.textGen)/4305360190426524643">

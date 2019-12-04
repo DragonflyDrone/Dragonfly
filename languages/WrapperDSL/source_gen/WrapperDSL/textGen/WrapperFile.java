@@ -11,8 +11,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.language.SEnumerationLiteral;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
@@ -108,7 +108,7 @@ public abstract class WrapperFile {
     tgs.append("((Drone)thisJoinPoint.getArgs()[0]).");
     WrapperFile.callToMethedOperation(SPropertyOperations.getEnum(batterySensorExpression, PROPS.left$EP9q).getName(), "", ctx);
     WrapperFile.mappingOperationForSignOperation(SPropertyOperations.getEnum(batterySensorExpression, PROPS.operation$6pQJ), ctx);
-    tgs.append(String.valueOf(SPropertyOperations.getInteger(SLinkOperations.getTarget(batterySensorExpression, LINKS.right$m5i0), PROPS.value$QRR0)));
+    tgs.append(String.valueOf(SPropertyOperations.getInteger(batterySensorExpression, PROPS.right$cGk6)));
     tgs.append(")");
     tgs.newLine();
   }
@@ -129,7 +129,7 @@ public abstract class WrapperFile {
 
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(distanceSensorExpression, LINKS.distance$XvUk), CONCEPTS.DistanceConstant$n$)) {
       tgs.append("((Drone)thisJoinPoint.getArgs()[0]).");
-      String callValue = SEnumOperations.getMemberName0(SPropertyOperations.getEnum(((SNode) SLinkOperations.getTarget(distanceSensorExpression, LINKS.distance$XvUk)), PROPS.distance_value$mVe0));
+      String callValue = SEnumOperations.getMemberName0(SPropertyOperations.getEnum(((SNode) SLinkOperations.getTarget(distanceSensorExpression, LINKS.distance$XvUk)), PROPS.value$mVe0));
       WrapperFile.callToMethedOperation(callValue, "", ctx);
     } else {
       tgs.append(String.valueOf(SPropertyOperations.getInteger(((SNode) SLinkOperations.getTarget(distanceSensorExpression, LINKS.distance$XvUk)), PROPS.value$QRR0)));
@@ -254,9 +254,10 @@ public abstract class WrapperFile {
     /*package*/ static final SProperty call$26oK = MetaAdapterFactory.getProperty(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc046e0b59L, 0x53be3ecc047cf223L, "call");
     /*package*/ static final SProperty left$EP9q = MetaAdapterFactory.getProperty(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8c9dL, 0x53be3ecc0468105bL, "left");
     /*package*/ static final SProperty operation$6pQJ = MetaAdapterFactory.getProperty(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8c9dL, 0x53be3ecc0462d409L, "operation");
-    /*package*/ static final SProperty value$QRR0 = MetaAdapterFactory.getProperty(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc0462d3fbL, 0x53be3ecc0462d3fcL, "value");
+    /*package*/ static final SProperty right$cGk6 = MetaAdapterFactory.getProperty(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc04699240L, 0x4d2e037c97466d1L, "right");
     /*package*/ static final SProperty right$BLaw = MetaAdapterFactory.getProperty(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8ce0L, 0x53be3ecc045a8ce1L, "right");
-    /*package*/ static final SProperty distance_value$mVe0 = MetaAdapterFactory.getProperty(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x1ddd50fab11e853fL, 0x1ddd50fab11e8540L, "distance_value");
+    /*package*/ static final SProperty value$mVe0 = MetaAdapterFactory.getProperty(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x1ddd50fab11e853fL, 0x1ddd50fab11e8540L, "value");
+    /*package*/ static final SProperty value$QRR0 = MetaAdapterFactory.getProperty(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc0462d3fbL, 0x53be3ecc0462d3fcL, "value");
     /*package*/ static final SProperty operation$BCG5 = MetaAdapterFactory.getProperty(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bd7L, 0x53be3ecc045a8c62L, "operation");
     /*package*/ static final SProperty right$BL8F = MetaAdapterFactory.getProperty(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8cddL, 0x53be3ecc045a8cdeL, "right");
     /*package*/ static final SProperty typePointCut$$H91 = MetaAdapterFactory.getProperty(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc046e0b59L, 0x53be3ecc046e0b64L, "typePointCut");
@@ -265,7 +266,6 @@ public abstract class WrapperFile {
   }
 
   private static final class LINKS {
-    /*package*/ static final SContainmentLink right$m5i0 = MetaAdapterFactory.getContainmentLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc04699240L, 0x53be3ecc04699241L, "right");
     /*package*/ static final SContainmentLink distance$XvUk = MetaAdapterFactory.getContainmentLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc048c5944L, 0x1ddd50fab11fc724L, "distance");
     /*package*/ static final SContainmentLink left$BwFB = MetaAdapterFactory.getContainmentLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bd7L, 0x53be3ecc045a8bdcL, "left");
     /*package*/ static final SContainmentLink right$BwED = MetaAdapterFactory.getContainmentLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bd7L, 0x53be3ecc045a8bdaL, "right");

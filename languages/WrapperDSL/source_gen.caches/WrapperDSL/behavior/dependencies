@@ -20,8 +20,8 @@
   </dependency>
   <dependency className="WrapperDSL.behavior.BehaviorAspectDescriptor">
     <classNode dependClassName="WrapperDSL.behavior.BatterySensorExpression__BehaviorDescriptor" />
-    <classNode dependClassName="WrapperDSL.behavior.ConjuctionLogicalExpression__BehaviorDescriptor" />
-    <classNode dependClassName="WrapperDSL.behavior.DisjuctionNormalExpression__BehaviorDescriptor" />
+    <classNode dependClassName="WrapperDSL.behavior.ConjunctionLogicalExpression__BehaviorDescriptor" />
+    <classNode dependClassName="WrapperDSL.behavior.DisjunctionNormalExpression__BehaviorDescriptor" />
     <classNode dependClassName="WrapperDSL.behavior.DistanceConstant__BehaviorDescriptor" />
     <classNode dependClassName="WrapperDSL.behavior.RegionSensorExpression__BehaviorDescriptor" />
     <classNode dependClassName="WrapperDSL.behavior.WindSensorExpression__BehaviorDescriptor" />
@@ -34,7 +34,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor" />
   </dependency>
-  <dependency className="WrapperDSL.behavior.ConjuctionLogicalExpression__BehaviorDescriptor">
+  <dependency className="WrapperDSL.behavior.ConjunctionLogicalExpression__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
@@ -52,7 +52,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="WrapperDSL.behavior.DisjuctionNormalExpression__BehaviorDescriptor">
+  <dependency className="WrapperDSL.behavior.DisjunctionNormalExpression__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />

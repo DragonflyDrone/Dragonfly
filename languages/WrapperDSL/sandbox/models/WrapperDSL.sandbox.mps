@@ -13,7 +13,7 @@
     </language>
     <language id="3e1c68c4-ebe6-40bd-a27f-e74585aa2487" name="WrapperDSL">
       <concept id="2151965234596578623" name="WrapperDSL.structure.DistanceConstant" flags="ng" index="2GKXn5">
-        <property id="2151965234596578624" name="distance_value" index="2GKXmU" />
+        <property id="2151965234596578624" name="value" index="2GKXmU" />
       </concept>
       <concept id="6034329596693600580" name="WrapperDSL.structure.DistanceSensorExpression" flags="ng" index="1ncAu8">
         <child id="2151965234596661028" name="distance" index="2GKDvu" />
@@ -30,7 +30,7 @@
         <child id="6034329596692833866" name="body" index="1nfDy6" />
       </concept>
       <concept id="6034329596691321408" name="WrapperDSL.structure.BatterySensorExpression" flags="ng" index="1nPUMc">
-        <child id="6034329596691321409" name="right" index="1nPUMd" />
+        <property id="347586651468621521" name="right" index="3dDCrA" />
       </concept>
       <concept id="6034329596690879483" name="WrapperDSL.structure.Integer" flags="ng" index="1nReOR">
         <property id="6034329596690879484" name="value" index="1nReOK" />
@@ -45,7 +45,8 @@
         <property id="6034329596691222619" name="left" index="1nPyUn" />
         <property id="6034329596690879497" name="operation" index="1nReF5" />
       </concept>
-      <concept id="6034329596690336923" name="WrapperDSL.structure.ConjuctionLogicalExpression" flags="ng" index="1nTb9n" />
+      <concept id="6034329596690336923" name="WrapperDSL.structure.ConjunctionLogicalExpression" flags="ng" index="1nTb9n" />
+      <concept id="6034329596690336868" name="WrapperDSL.structure.NormalLogicalExpression" flags="ng" index="1nTbaC" />
       <concept id="6034329596690336716" name="WrapperDSL.structure.Then" flags="ng" index="1nTbk0">
         <child id="6034329596690384297" name="adviseScript" index="1nTnH_" />
       </concept>
@@ -60,6 +61,7 @@
         <child id="6034329596690336719" name="when" index="1nTbk3" />
         <child id="6034329596690336722" name="then" index="1nTbku" />
       </concept>
+      <concept id="6034329596690336726" name="WrapperDSL.structure.MathElement" flags="ng" index="1nTbkq" />
       <concept id="6034329596690336727" name="WrapperDSL.structure.MathExpression" flags="ng" index="1nTbkr">
         <property id="6034329596690336866" name="operation" index="1nTbaI" />
         <child id="6034329596690336732" name="left" index="1nTbkg" />
@@ -69,6 +71,7 @@
         <child id="6034329596690384340" name="body" index="1nTnGo" />
         <child id="6034329596690384338" name="condition" index="1nTnGu" />
       </concept>
+      <concept id="6034329596690384188" name="WrapperDSL.structure.Statement" flags="ng" index="1nTnJK" />
     </language>
   </registry>
   <node concept="1nTbkf" id="65ufIfNM9u2">
@@ -129,17 +132,15 @@
     <node concept="1nTbk6" id="1RtkfEL7Cjz" role="1nTbk1">
       <node concept="1nTb9n" id="1RtkfEL7CjE" role="1nTnJQ">
         <property role="1nTbaI" value="5eYfGK4nkaD/and" />
-        <node concept="1nPUMc" id="1RtkfEL7CjN" role="1nTbkg">
+        <node concept="1nPUMc" id="jiS3v9uxQd" role="1nTbkg">
           <property role="1nPyUn" value="5eYfGK4q_BE/getCurrentBattery" />
-          <property role="1nReF5" value="5eYfGK4mCLa/greater_than" />
-          <node concept="1nReOR" id="1RtkfEL7CjP" role="1nPUMd">
-            <property role="1nReOK" value="10" />
-          </node>
+          <property role="1nReF5" value="5eYfGK4mCLf/greater_than_or_equal_to" />
+          <property role="3dDCrA" value="60" />
         </node>
-        <node concept="1ncAu8" id="1RtkfELbiBG" role="1nTbkm">
+        <node concept="1ncAu8" id="jiS3v9vfPC" role="1nTbkm">
           <property role="1nPyUn" value="5eYfGK4zk9H/getDistanceDestiny" />
-          <property role="1nReF5" value="5eYfGK4mCL6/less_than" />
-          <node concept="2GKXn5" id="1RtkfELbXx4" role="2GKDvu">
+          <property role="1nReF5" value="5eYfGK4mCLl/less_than_or_equal_to" />
+          <node concept="2GKXn5" id="jiS3v9vWFF" role="2GKDvu">
             <property role="2GKXmU" value="5eYfGK4zk9C/getDistanceOrigem" />
           </node>
         </node>
@@ -193,6 +194,66 @@
         <node concept="1nKZm6" id="1RtkfEL7Ckv" role="1nfDy6">
           <property role="1ne$jl" value="5eYfGK4$UtP/doNothing" />
         </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1nTbkf" id="41vZsqpNS7z">
+    <property role="TrG5h" value="NotApplyEconomicMode" />
+    <node concept="1nTbk6" id="41vZsqpNS7$" role="1nTbk1">
+      <node concept="1nTb9n" id="41vZsqpNS7F" role="1nTnJQ">
+        <property role="1nTbaI" value="5eYfGK4nkaD/and" />
+        <node concept="1nTb8G" id="41vZsqpNS8e" role="1nTbkm">
+          <property role="1nPyUn" value="5eYfGK4q11o/region" />
+          <property role="1nReF5" value="5eYfGK4mCKX/is" />
+          <property role="1nTb8H" value="5eYfGK4mCMy/isOnWater" />
+        </node>
+        <node concept="1nTb9n" id="41vZsqpNS7O" role="1nTbkg">
+          <property role="1nTbaI" value="5eYfGK4nkaD/and" />
+          <node concept="1ncAu8" id="41vZsqpNS80" role="1nTbkm">
+            <property role="1nPyUn" value="5eYfGK4zk9H/getDistanceDestiny" />
+            <property role="1nReF5" value="5eYfGK4mCL6/less_than" />
+            <node concept="1nReOR" id="41vZsqpNS8b" role="2GKDvu">
+              <property role="1nReOK" value="60" />
+            </node>
+          </node>
+          <node concept="1nTb8h" id="41vZsqpNS7X" role="1nTbkg">
+            <property role="1nPyUn" value="5eYfGK4q11n/wind" />
+            <property role="1nReF5" value="5eYfGK4mCKX/is" />
+            <property role="1nTb8i" value="5eYfGK4mCMD/isStrongWind" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1nTbk7" id="41vZsqpNS7A" role="1nTbk3">
+      <node concept="1nO3ml" id="41vZsqpNS7B" role="1nO3kT">
+        <property role="1nO3mC" value="5eYfGK4mOi_/around" />
+        <property role="1nKGNJ" value="5eYfGK4zLmI/applyEconomyMode" />
+        <ref role="1nO3m$" node="41vZsqpNS7D" resolve="notApplyEconomicMode" />
+      </node>
+    </node>
+    <node concept="1nTbk0" id="41vZsqpNS7C" role="1nTbku">
+      <node concept="1nO3mo" id="41vZsqpNS7D" role="1nTnH_">
+        <property role="TrG5h" value="notApplyEconomicMode" />
+        <node concept="1nKZm6" id="41vZsqpNS8h" role="1nfDy6">
+          <property role="1ne$jl" value="5eYfGK4$UtP/doNothing" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1nTbkf" id="4gMWMHD6num">
+    <property role="TrG5h" value="Teste" />
+    <node concept="1nTbk6" id="4gMWMHD6nun" role="1nTbk1">
+      <node concept="1nTbaC" id="1L3rMip0mFE" role="1nTnJQ">
+        <node concept="1nTbkq" id="1L3rMip0mFG" role="1nTbkm" />
+        <node concept="1nTbkq" id="1L3rMip0mFI" role="1nTbkg" />
+      </node>
+    </node>
+    <node concept="1nTbk7" id="4gMWMHD6nup" role="1nTbk3">
+      <node concept="1nO3ml" id="4gMWMHD6nuq" role="1nO3kT" />
+    </node>
+    <node concept="1nTbk0" id="4gMWMHD6nur" role="1nTbku">
+      <node concept="1nO3mo" id="4gMWMHD6nus" role="1nTnH_">
+        <node concept="1nTnJK" id="4gMWMHD6nut" role="1nfDy6" />
       </node>
     </node>
   </node>

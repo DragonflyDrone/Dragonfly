@@ -12,10 +12,10 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_AdviseScript;
   private ConceptPresentation props_BatterySensorExpression;
   private ConceptPresentation props_Command;
-  private ConceptPresentation props_ConjuctionLogicalExpression;
+  private ConceptPresentation props_ConjunctionLogicalExpression;
   private ConceptPresentation props_Constant;
   private ConceptPresentation props_CoordenateSensorExpression;
-  private ConceptPresentation props_DisjuctionNormalExpression;
+  private ConceptPresentation props_DisjunctionNormalExpression;
   private ConceptPresentation props_DistanceConstant;
   private ConceptPresentation props_DistanceSensorExpression;
   private ConceptPresentation props_Given;
@@ -62,13 +62,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Command = cpb.create();
         }
         return props_Command;
-      case LanguageConceptSwitch.ConjuctionLogicalExpression:
-        if (props_ConjuctionLogicalExpression == null) {
+      case LanguageConceptSwitch.ConjunctionLogicalExpression:
+        if (props_ConjunctionLogicalExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("ConjuctionLogicalExpression");
-          props_ConjuctionLogicalExpression = cpb.create();
+          cpb.rawPresentation("ConjunctionLogicalExpression");
+          props_ConjunctionLogicalExpression = cpb.create();
         }
-        return props_ConjuctionLogicalExpression;
+        return props_ConjunctionLogicalExpression;
       case LanguageConceptSwitch.Constant:
         if (props_Constant == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -82,13 +82,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_CoordenateSensorExpression = cpb.create();
         }
         return props_CoordenateSensorExpression;
-      case LanguageConceptSwitch.DisjuctionNormalExpression:
-        if (props_DisjuctionNormalExpression == null) {
+      case LanguageConceptSwitch.DisjunctionNormalExpression:
+        if (props_DisjunctionNormalExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("DisjuctionNormalExpression");
-          props_DisjuctionNormalExpression = cpb.create();
+          cpb.rawPresentation("DisjunctionNormalExpression");
+          props_DisjunctionNormalExpression = cpb.create();
         }
-        return props_DisjuctionNormalExpression;
+        return props_DisjunctionNormalExpression;
       case LanguageConceptSwitch.DistanceConstant:
         if (props_DistanceConstant == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

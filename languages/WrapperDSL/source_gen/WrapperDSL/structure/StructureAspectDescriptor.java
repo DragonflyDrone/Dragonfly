@@ -12,17 +12,17 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.runtime.DataTypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptAdviseScript = createDescriptorForAdviseScript();
   /*package*/ final ConceptDescriptor myConceptBatterySensorExpression = createDescriptorForBatterySensorExpression();
   /*package*/ final ConceptDescriptor myConceptCommand = createDescriptorForCommand();
-  /*package*/ final ConceptDescriptor myConceptConjuctionLogicalExpression = createDescriptorForConjuctionLogicalExpression();
+  /*package*/ final ConceptDescriptor myConceptConjunctionLogicalExpression = createDescriptorForConjunctionLogicalExpression();
   /*package*/ final ConceptDescriptor myConceptConstant = createDescriptorForConstant();
   /*package*/ final ConceptDescriptor myConceptCoordenateSensorExpression = createDescriptorForCoordenateSensorExpression();
-  /*package*/ final ConceptDescriptor myConceptDisjuctionNormalExpression = createDescriptorForDisjuctionNormalExpression();
+  /*package*/ final ConceptDescriptor myConceptDisjunctionNormalExpression = createDescriptorForDisjunctionNormalExpression();
   /*package*/ final ConceptDescriptor myConceptDistanceConstant = createDescriptorForDistanceConstant();
   /*package*/ final ConceptDescriptor myConceptDistanceSensorExpression = createDescriptorForDistanceSensorExpression();
   /*package*/ final ConceptDescriptor myConceptGiven = createDescriptorForGiven();
@@ -45,7 +45,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final EnumerationDescriptor myEnumerationCommandEnum = new EnumerationDescriptor_CommandEnum();
   /*package*/ final EnumerationDescriptor myEnumerationOperationEnum = new EnumerationDescriptor_OperationEnum();
   /*package*/ final EnumerationDescriptor myEnumerationRegionStateEnum = new EnumerationDescriptor_RegionStateEnum();
-  /*package*/ final EnumerationDescriptor myEnumerationSensorType = new EnumerationDescriptor_SensorType();
+  /*package*/ final EnumerationDescriptor myEnumerationSensorTypeEnum = new EnumerationDescriptor_SensorTypeEnum();
   /*package*/ final EnumerationDescriptor myEnumerationTypePointCutEnum = new EnumerationDescriptor_TypePointCutEnum();
   /*package*/ final EnumerationDescriptor myEnumerationWindStateEnum = new EnumerationDescriptor_WindStateEnum();
   private final LanguageConceptSwitch myIndexSwitch;
@@ -62,7 +62,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAdviseScript, myConceptBatterySensorExpression, myConceptCommand, myConceptConjuctionLogicalExpression, myConceptConstant, myConceptCoordenateSensorExpression, myConceptDisjuctionNormalExpression, myConceptDistanceConstant, myConceptDistanceSensorExpression, myConceptGiven, myConceptIf, myConceptInteger, myConceptLogicalExpression, myConceptMathElement, myConceptMathExpression, myConceptNormalLogicalExpression, myConceptPointCut, myConceptRegionSensorExpression, myConceptSensorExpression, myConceptStatement, myConceptText, myConceptThen, myConceptWhen, myConceptWhile, myConceptWindSensorExpression, myConceptWrapperScript);
+    return Arrays.asList(myConceptAdviseScript, myConceptBatterySensorExpression, myConceptCommand, myConceptConjunctionLogicalExpression, myConceptConstant, myConceptCoordenateSensorExpression, myConceptDisjunctionNormalExpression, myConceptDistanceConstant, myConceptDistanceSensorExpression, myConceptGiven, myConceptIf, myConceptInteger, myConceptLogicalExpression, myConceptMathElement, myConceptMathExpression, myConceptNormalLogicalExpression, myConceptPointCut, myConceptRegionSensorExpression, myConceptSensorExpression, myConceptStatement, myConceptText, myConceptThen, myConceptWhen, myConceptWhile, myConceptWindSensorExpression, myConceptWrapperScript);
   }
 
   @Override
@@ -75,14 +75,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptBatterySensorExpression;
       case LanguageConceptSwitch.Command:
         return myConceptCommand;
-      case LanguageConceptSwitch.ConjuctionLogicalExpression:
-        return myConceptConjuctionLogicalExpression;
+      case LanguageConceptSwitch.ConjunctionLogicalExpression:
+        return myConceptConjunctionLogicalExpression;
       case LanguageConceptSwitch.Constant:
         return myConceptConstant;
       case LanguageConceptSwitch.CoordenateSensorExpression:
         return myConceptCoordenateSensorExpression;
-      case LanguageConceptSwitch.DisjuctionNormalExpression:
-        return myConceptDisjuctionNormalExpression;
+      case LanguageConceptSwitch.DisjunctionNormalExpression:
+        return myConceptDisjunctionNormalExpression;
       case LanguageConceptSwitch.DistanceConstant:
         return myConceptDistanceConstant;
       case LanguageConceptSwitch.DistanceSensorExpression:
@@ -128,7 +128,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<DataTypeDescriptor> getDataTypeDescriptors() {
-    return Arrays.asList(myEnumerationCommandEnum, myEnumerationOperationEnum, myEnumerationRegionStateEnum, myEnumerationSensorType, myEnumerationTypePointCutEnum, myEnumerationWindStateEnum);
+    return Arrays.asList(myEnumerationCommandEnum, myEnumerationOperationEnum, myEnumerationRegionStateEnum, myEnumerationSensorTypeEnum, myEnumerationTypePointCutEnum, myEnumerationWindStateEnum);
   }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
@@ -150,7 +150,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("WrapperDSL.structure.SensorExpression", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8c9dL);
     b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596691321408");
     b.version(2);
-    b.aggregate("right", 0x53be3ecc04699241L).target(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc0462d3fbL).optional(false).ordered(true).multiple(false).origin("6034329596691321409").done();
+    b.property("right", 0x4d2e037c97466d1L).type(PrimitiveTypeId.INTEGER).origin("347586651468621521").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForCommand() {
@@ -162,8 +162,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.property("commandValue", 0x53be3ecc04847a19L).type(MetaIdFactory.dataTypeId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045b44aeL)).origin("6034329596693084697").done();
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForConjuctionLogicalExpression() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "ConjuctionLogicalExpression", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8c9bL);
+  private static ConceptDescriptor createDescriptorForConjunctionLogicalExpression() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "ConjunctionLogicalExpression", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8c9bL);
     b.class_(false, false, false);
     b.super_("WrapperDSL.structure.MathExpression", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bd7L);
     b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690336923");
@@ -188,8 +188,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.property("latitude", 0x53be3ecc045a8ce6L).type(PrimitiveTypeId.INTEGER).origin("6034329596690336998").done();
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForDisjuctionNormalExpression() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "DisjuctionNormalExpression", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8c9cL);
+  private static ConceptDescriptor createDescriptorForDisjunctionNormalExpression() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "DisjunctionNormalExpression", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8c9cL);
     b.class_(false, false, false);
     b.super_("WrapperDSL.structure.MathExpression", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bd7L);
     b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690336924");
@@ -202,7 +202,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("WrapperDSL.structure.Constant", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc0462d3f8L);
     b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/2151965234596578623");
     b.version(2);
-    b.property("distance_value", 0x1ddd50fab11e8540L).type(MetaIdFactory.dataTypeId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc04681056L)).origin("2151965234596578624").done();
+    b.property("value", 0x1ddd50fab11e8540L).type(MetaIdFactory.dataTypeId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc04681056L)).origin("2151965234596578624").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForDistanceSensorExpression() {

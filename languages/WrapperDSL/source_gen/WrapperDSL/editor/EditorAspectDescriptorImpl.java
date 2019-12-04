@@ -25,9 +25,9 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       case 2:
         return Collections.<ConceptEditor>singletonList(new Command_Editor());
       case 3:
-        return Collections.<ConceptEditor>singletonList(new ConjuctionLogicalExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new ConjunctionLogicalExpression_Editor());
       case 4:
-        return Collections.<ConceptEditor>singletonList(new DisjuctionNormalExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new DisjunctionNormalExpression_Editor());
       case 5:
         return Collections.<ConceptEditor>singletonList(new DistanceConstant_Editor());
       case 6:

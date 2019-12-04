@@ -712,17 +712,12 @@
             <node concept="2YIFZM" id="1RtkfEL9UDn" role="lb14g">
               <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
               <ref role="37wK5l" to="wyt6:~String.valueOf(int)" resolve="valueOf" />
-              <node concept="2OqwBi" id="1RtkfELagri" role="37wK5m">
-                <node concept="2OqwBi" id="1RtkfEL9US_" role="2Oq$k0">
-                  <node concept="37vLTw" id="1RtkfEL9UIA" role="2Oq$k0">
-                    <ref role="3cqZAo" node="1RtkfEL9Tt9" resolve="batterySensorExpression" />
-                  </node>
-                  <node concept="3TrEf2" id="1RtkfEL9UV3" role="2OqNvi">
-                    <ref role="3Tt5mk" to="lpas:5eYfGK4qp91" resolve="right" />
-                  </node>
+              <node concept="2OqwBi" id="1RtkfEL9US_" role="37wK5m">
+                <node concept="37vLTw" id="1RtkfEL9UIA" role="2Oq$k0">
+                  <ref role="3cqZAo" node="1RtkfEL9Tt9" resolve="batterySensorExpression" />
                 </node>
-                <node concept="3TrcHB" id="1RtkfELagHR" role="2OqNvi">
-                  <ref role="3TsBF5" to="lpas:5eYfGK4oHfW" resolve="value" />
+                <node concept="3TrcHB" id="jiS3v9u8Pt" role="2OqNvi">
+                  <ref role="3TsBF5" to="lpas:jiS3v9t6rh" resolve="right" />
                 </node>
               </node>
             </node>
@@ -867,7 +862,7 @@
                       </node>
                     </node>
                     <node concept="3TrcHB" id="1RtkfELcHGi" role="2OqNvi">
-                      <ref role="3TsBF5" to="lpas:1RtkfEL7Cl0" resolve="distance_value" />
+                      <ref role="3TsBF5" to="lpas:1RtkfEL7Cl0" resolve="value" />
                     </node>
                   </node>
                   <node concept="24Tkf9" id="1RtkfELd8aP" role="2OqNvi" />
@@ -991,7 +986,7 @@
       <node concept="37vLTG" id="3fG_nwkJ74f" role="3clF46">
         <property role="TrG5h" value="disjuctionNormalExpression" />
         <node concept="3Tqbb2" id="3fG_nwkJ74e" role="1tU5fm">
-          <ref role="ehGHo" to="lpas:5eYfGK4mCMs" resolve="DisjuctionNormalExpression" />
+          <ref role="ehGHo" to="lpas:5eYfGK4mCMs" resolve="DisjunctionNormalExpression" />
         </node>
       </node>
     </node>
@@ -1088,7 +1083,7 @@
       <node concept="37vLTG" id="3IZH$xcsm71" role="3clF46">
         <property role="TrG5h" value="conjuctionLogicalExpression" />
         <node concept="3Tqbb2" id="3IZH$xcsm70" role="1tU5fm">
-          <ref role="ehGHo" to="lpas:5eYfGK4mCMr" resolve="ConjuctionLogicalExpression" />
+          <ref role="ehGHo" to="lpas:5eYfGK4mCMr" resolve="ConjunctionLogicalExpression" />
         </node>
       </node>
     </node>
@@ -1581,7 +1576,7 @@
   </node>
   <node concept="WtQ9Q" id="3fG_nwkJ3Nd">
     <property role="3GE5qa" value="math.expression" />
-    <ref role="WuzLi" to="lpas:5eYfGK4mCMs" resolve="DisjuctionNormalExpression" />
+    <ref role="WuzLi" to="lpas:5eYfGK4mCMs" resolve="DisjunctionNormalExpression" />
     <node concept="11bSqf" id="3fG_nwkJ3Ne" role="11c4hB">
       <node concept="3clFbS" id="3fG_nwkJ3Nf" role="2VODD2">
         <node concept="lc7rE" id="3fG_nwkJ4OY" role="3cqZAp">
@@ -1595,7 +1590,7 @@
   </node>
   <node concept="WtQ9Q" id="3IZH$xcslZc">
     <property role="3GE5qa" value="math.expression" />
-    <ref role="WuzLi" to="lpas:5eYfGK4mCMr" resolve="ConjuctionLogicalExpression" />
+    <ref role="WuzLi" to="lpas:5eYfGK4mCMr" resolve="ConjunctionLogicalExpression" />
     <node concept="11bSqf" id="3IZH$xcslZd" role="11c4hB">
       <node concept="3clFbS" id="3IZH$xcslZe" role="2VODD2">
         <node concept="lc7rE" id="3IZH$xcv4dl" role="3cqZAp">

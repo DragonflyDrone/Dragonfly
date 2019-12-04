@@ -12,10 +12,10 @@ public final class LanguageConceptSwitch {
   public static final int AdviseScript = 0;
   public static final int BatterySensorExpression = 1;
   public static final int Command = 2;
-  public static final int ConjuctionLogicalExpression = 3;
+  public static final int ConjunctionLogicalExpression = 3;
   public static final int Constant = 4;
   public static final int CoordenateSensorExpression = 5;
-  public static final int DisjuctionNormalExpression = 6;
+  public static final int DisjunctionNormalExpression = 6;
   public static final int DistanceConstant = 7;
   public static final int DistanceSensorExpression = 8;
   public static final int Given = 9;
@@ -41,10 +41,10 @@ public final class LanguageConceptSwitch {
     builder.put(0x53be3ecc046e0b54L, AdviseScript);
     builder.put(0x53be3ecc04699240L, BatterySensorExpression);
     builder.put(0x53be3ecc047dcb4aL, Command);
-    builder.put(0x53be3ecc045a8c9bL, ConjuctionLogicalExpression);
+    builder.put(0x53be3ecc045a8c9bL, ConjunctionLogicalExpression);
     builder.put(0x53be3ecc0462d3f8L, Constant);
     builder.put(0x53be3ecc045a8ce3L, CoordenateSensorExpression);
-    builder.put(0x53be3ecc045a8c9cL, DisjuctionNormalExpression);
+    builder.put(0x53be3ecc045a8c9cL, DisjunctionNormalExpression);
     builder.put(0x1ddd50fab11e853fL, DistanceConstant);
     builder.put(0x53be3ecc048c5944L, DistanceSensorExpression);
     builder.put(0x53be3ecc045a8bcaL, Given);

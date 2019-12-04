@@ -29,10 +29,10 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
         return new BatterySensorExpression_TextGen();
       case LanguageConceptSwitch.Command:
         return new Command_TextGen();
-      case LanguageConceptSwitch.ConjuctionLogicalExpression:
-        return new ConjuctionLogicalExpression_TextGen();
-      case LanguageConceptSwitch.DisjuctionNormalExpression:
-        return new DisjuctionNormalExpression_TextGen();
+      case LanguageConceptSwitch.ConjunctionLogicalExpression:
+        return new ConjunctionLogicalExpression_TextGen();
+      case LanguageConceptSwitch.DisjunctionNormalExpression:
+        return new DisjunctionNormalExpression_TextGen();
       case LanguageConceptSwitch.DistanceSensorExpression:
         return new DistanceSensorExpression_TextGen();
       case LanguageConceptSwitch.If:

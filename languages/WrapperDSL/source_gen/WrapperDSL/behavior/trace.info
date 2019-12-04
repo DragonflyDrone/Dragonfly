@@ -19,7 +19,7 @@
     <file name="DistanceConstant__BehaviorDescriptor.java">
       <node id="2151965234597622827" at="21,0,22,0" concept="6" trace="CONCEPT" />
       <node id="2151965234597622827" at="24,0,25,0" concept="6" trace="BH_METHODS" />
-      <node id="2151965234597622839" at="26,63,27,278" concept="1" />
+      <node id="2151965234597622839" at="26,63,27,273" concept="1" />
       <node id="2151965234597622827" at="35,114,36,21" concept="1" />
       <node id="2151965234597622827" at="40,114,41,49" concept="4" />
       <node id="2151965234597622827" at="42,26,43,56" concept="9" />
@@ -29,7 +29,7 @@
       <node id="2151965234597622827" at="58,14,59,58" concept="9" />
       <node id="2151965234597622827" at="65,48,66,22" concept="5" />
       <node id="2151965234597622827" at="71,40,72,19" concept="5" />
-      <node id="2151965234597622827" at="76,0,77,0" concept="6" trace="distance_value$mVe0" />
+      <node id="2151965234597622827" at="76,0,77,0" concept="6" trace="value$mVe0" />
       <node id="2151965234597622827" at="31,0,33,0" concept="0" trace="DistanceConstant__BehaviorDescriptor#()V" />
       <node id="2151965234597622827" at="26,0,29,0" concept="7" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="2151965234597622827" at="41,49,44,5" concept="2" />
@@ -42,7 +42,7 @@
       <node id="2151965234597622827" at="39,0,50,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <node id="2151965234597622827" at="51,0,62,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="2151965234597622827" at="31,54,31,54" />
-      <scope id="2151965234597622827" at="26,63,27,278" />
+      <scope id="2151965234597622827" at="26,63,27,273" />
       <scope id="2151965234597622827" at="35,114,36,21" />
       <scope id="2151965234597622827" at="42,26,43,56" />
       <scope id="2151965234597622827" at="46,14,47,58" />
@@ -85,7 +85,7 @@
     <file name="WindSensorExpression__BehaviorDescriptor.java">
       <node id="6034329596691222635" at="21,0,22,0" concept="6" trace="CONCEPT" />
       <node id="6034329596691222635" at="24,0,25,0" concept="6" trace="BH_METHODS" />
-      <node id="6034329596691222647" at="26,63,27,255" concept="1" />
+      <node id="6034329596691222647" at="26,63,27,259" concept="1" />
       <node id="6034329596691222635" at="35,114,36,21" concept="1" />
       <node id="6034329596691222635" at="40,114,41,49" concept="4" />
       <node id="6034329596691222635" at="42,26,43,56" concept="9" />
@@ -108,7 +108,7 @@
       <node id="6034329596691222635" at="39,0,50,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <node id="6034329596691222635" at="51,0,62,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="6034329596691222635" at="31,58,31,58" />
-      <scope id="6034329596691222635" at="26,63,27,255" />
+      <scope id="6034329596691222635" at="26,63,27,259" />
       <scope id="6034329596691222635" at="35,114,36,21" />
       <scope id="6034329596691222635" at="42,26,43,56" />
       <scope id="6034329596691222635" at="46,14,47,58" />
@@ -151,7 +151,7 @@
     <file name="RegionSensorExpression__BehaviorDescriptor.java">
       <node id="6034329596691227854" at="21,0,22,0" concept="6" trace="CONCEPT" />
       <node id="6034329596691227854" at="24,0,25,0" concept="6" trace="BH_METHODS" />
-      <node id="6034329596691227865" at="26,63,27,257" concept="1" />
+      <node id="6034329596691227865" at="26,63,27,261" concept="1" />
       <node id="6034329596691227854" at="35,114,36,21" concept="1" />
       <node id="6034329596691227854" at="40,114,41,49" concept="4" />
       <node id="6034329596691227854" at="42,26,43,56" concept="9" />
@@ -174,7 +174,7 @@
       <node id="6034329596691227854" at="39,0,50,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <node id="6034329596691227854" at="51,0,62,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="6034329596691227854" at="31,60,31,60" />
-      <scope id="6034329596691227854" at="26,63,27,257" />
+      <scope id="6034329596691227854" at="26,63,27,261" />
       <scope id="6034329596691227854" at="35,114,36,21" />
       <scope id="6034329596691227854" at="42,26,43,56" />
       <scope id="6034329596691227854" at="46,14,47,58" />
@@ -214,7 +214,7 @@
     </file>
   </root>
   <root nodeRef="r:35775fc0-14e8-4f8f-a8b6-1a8b3f5722a6(WrapperDSL.behavior)/6034329596691272301">
-    <file name="ConjuctionLogicalExpression__BehaviorDescriptor.java">
+    <file name="ConjunctionLogicalExpression__BehaviorDescriptor.java">
       <node id="6034329596691272301" at="21,0,22,0" concept="6" trace="CONCEPT" />
       <node id="6034329596691272301" at="24,0,25,0" concept="6" trace="BH_METHODS" />
       <node id="6034329596691272313" at="26,63,27,262" concept="1" />
@@ -228,7 +228,7 @@
       <node id="6034329596691272301" at="65,48,66,22" concept="5" />
       <node id="6034329596691272301" at="71,40,72,19" concept="5" />
       <node id="6034329596691272301" at="76,0,77,0" concept="6" trace="operation$BCG5" />
-      <node id="6034329596691272301" at="31,0,33,0" concept="0" trace="ConjuctionLogicalExpression__BehaviorDescriptor#()V" />
+      <node id="6034329596691272301" at="31,0,33,0" concept="0" trace="ConjunctionLogicalExpression__BehaviorDescriptor#()V" />
       <node id="6034329596691272301" at="26,0,29,0" concept="7" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="6034329596691272301" at="41,49,44,5" concept="2" />
       <node id="6034329596691272301" at="53,49,56,5" concept="2" />
@@ -239,7 +239,7 @@
       <node id="6034329596691272301" at="69,0,74,0" concept="3" trace="getConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="6034329596691272301" at="39,0,50,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <node id="6034329596691272301" at="51,0,62,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
-      <scope id="6034329596691272301" at="31,65,31,65" />
+      <scope id="6034329596691272301" at="31,66,31,66" />
       <scope id="6034329596691272301" at="26,63,27,262" />
       <scope id="6034329596691272301" at="35,114,36,21" />
       <scope id="6034329596691272301" at="42,26,43,56" />
@@ -275,12 +275,12 @@
         <var name="method" id="6034329596691272301" />
         <var name="parameters" id="6034329596691272301" />
       </scope>
-      <unit id="6034329596691272301" at="75,0,78,0" name="WrapperDSL.behavior.ConjuctionLogicalExpression__BehaviorDescriptor$PROPS" />
-      <unit id="6034329596691272301" at="20,0,79,0" name="WrapperDSL.behavior.ConjuctionLogicalExpression__BehaviorDescriptor" />
+      <unit id="6034329596691272301" at="75,0,78,0" name="WrapperDSL.behavior.ConjunctionLogicalExpression__BehaviorDescriptor$PROPS" />
+      <unit id="6034329596691272301" at="20,0,79,0" name="WrapperDSL.behavior.ConjunctionLogicalExpression__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:35775fc0-14e8-4f8f-a8b6-1a8b3f5722a6(WrapperDSL.behavior)/6034329596691276688">
-    <file name="DisjuctionNormalExpression__BehaviorDescriptor.java">
+    <file name="DisjunctionNormalExpression__BehaviorDescriptor.java">
       <node id="6034329596691276688" at="21,0,22,0" concept="6" trace="CONCEPT" />
       <node id="6034329596691276688" at="24,0,25,0" concept="6" trace="BH_METHODS" />
       <node id="6034329596691276699" at="26,63,27,261" concept="1" />
@@ -294,7 +294,7 @@
       <node id="6034329596691276688" at="65,48,66,22" concept="5" />
       <node id="6034329596691276688" at="71,40,72,19" concept="5" />
       <node id="6034329596691276688" at="76,0,77,0" concept="6" trace="operation$BCG5" />
-      <node id="6034329596691276688" at="31,0,33,0" concept="0" trace="DisjuctionNormalExpression__BehaviorDescriptor#()V" />
+      <node id="6034329596691276688" at="31,0,33,0" concept="0" trace="DisjunctionNormalExpression__BehaviorDescriptor#()V" />
       <node id="6034329596691276688" at="26,0,29,0" concept="7" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="6034329596691276688" at="41,49,44,5" concept="2" />
       <node id="6034329596691276688" at="53,49,56,5" concept="2" />
@@ -305,7 +305,7 @@
       <node id="6034329596691276688" at="69,0,74,0" concept="3" trace="getConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="6034329596691276688" at="39,0,50,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <node id="6034329596691276688" at="51,0,62,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
-      <scope id="6034329596691276688" at="31,64,31,64" />
+      <scope id="6034329596691276688" at="31,65,31,65" />
       <scope id="6034329596691276688" at="26,63,27,261" />
       <scope id="6034329596691276688" at="35,114,36,21" />
       <scope id="6034329596691276688" at="42,26,43,56" />
@@ -341,15 +341,15 @@
         <var name="method" id="6034329596691276688" />
         <var name="parameters" id="6034329596691276688" />
       </scope>
-      <unit id="6034329596691276688" at="75,0,78,0" name="WrapperDSL.behavior.DisjuctionNormalExpression__BehaviorDescriptor$PROPS" />
-      <unit id="6034329596691276688" at="20,0,79,0" name="WrapperDSL.behavior.DisjuctionNormalExpression__BehaviorDescriptor" />
+      <unit id="6034329596691276688" at="75,0,78,0" name="WrapperDSL.behavior.DisjunctionNormalExpression__BehaviorDescriptor$PROPS" />
+      <unit id="6034329596691276688" at="20,0,79,0" name="WrapperDSL.behavior.DisjunctionNormalExpression__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:35775fc0-14e8-4f8f-a8b6-1a8b3f5722a6(WrapperDSL.behavior)/6034329596691369103">
     <file name="BatterySensorExpression__BehaviorDescriptor.java">
       <node id="6034329596691369103" at="21,0,22,0" concept="6" trace="CONCEPT" />
       <node id="6034329596691369103" at="24,0,25,0" concept="6" trace="BH_METHODS" />
-      <node id="6034329596691369115" at="26,63,27,268" concept="1" />
+      <node id="6034329596691369115" at="26,63,27,272" concept="1" />
       <node id="6034329596691369103" at="35,114,36,21" concept="1" />
       <node id="6034329596691369103" at="40,114,41,49" concept="4" />
       <node id="6034329596691369103" at="42,26,43,56" concept="9" />
@@ -372,7 +372,7 @@
       <node id="6034329596691369103" at="39,0,50,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <node id="6034329596691369103" at="51,0,62,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="6034329596691369103" at="31,61,31,61" />
-      <scope id="6034329596691369103" at="26,63,27,268" />
+      <scope id="6034329596691369103" at="26,63,27,272" />
       <scope id="6034329596691369103" at="35,114,36,21" />
       <scope id="6034329596691369103" at="42,26,43,56" />
       <scope id="6034329596691369103" at="46,14,47,58" />

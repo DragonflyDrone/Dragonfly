@@ -24,7 +24,7 @@ public final class DistanceConstant__BehaviorDescriptor extends BaseBHDescriptor
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList();
 
   private static void ___init___(@NotNull SNode __thisNode__) {
-    SPropertyOperations.assignEnum(__thisNode__, PROPS.distance_value$mVe0, SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc04681056L, "WrapperDSL.structure.SensorType"), 0x53be3ecc048d4268L, "getDistanceOrigem"));
+    SPropertyOperations.assignEnum(__thisNode__, PROPS.value$mVe0, SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc04681056L, "WrapperDSL.structure.SensorTypeEnum"), 0x53be3ecc048d4268L, "getDistanceOrigem"));
   }
 
 
@@ -73,6 +73,6 @@ public final class DistanceConstant__BehaviorDescriptor extends BaseBHDescriptor
   }
 
   private static final class PROPS {
-    /*package*/ static final SProperty distance_value$mVe0 = MetaAdapterFactory.getProperty(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x1ddd50fab11e853fL, 0x1ddd50fab11e8540L, "distance_value");
+    /*package*/ static final SProperty value$mVe0 = MetaAdapterFactory.getProperty(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x1ddd50fab11e853fL, 0x1ddd50fab11e8540L, "value");
   }
 }

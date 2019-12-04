@@ -64,7 +64,7 @@
           <node concept="37vLTI" id="5eYfGK4q1wJ" role="3clFbG">
             <node concept="2OqwBi" id="5eYfGK4q203" role="37vLTx">
               <node concept="1XH99k" id="5eYfGK4q1yG" role="2Oq$k0">
-                <ref role="1XH99l" to="lpas:5eYfGK4q11m" resolve="SensorType" />
+                <ref role="1XH99l" to="lpas:5eYfGK4q11m" resolve="SensorTypeEnum" />
               </node>
               <node concept="2ViDtV" id="5eYfGK4q2eu" role="2OqNvi">
                 <ref role="2ViDtZ" to="lpas:5eYfGK4q11n" resolve="wind" />
@@ -90,7 +90,7 @@
           <node concept="37vLTI" id="5eYfGK4q2jq" role="3clFbG">
             <node concept="2OqwBi" id="5eYfGK4q2jr" role="37vLTx">
               <node concept="1XH99k" id="5eYfGK4q2js" role="2Oq$k0">
-                <ref role="1XH99l" to="lpas:5eYfGK4q11m" resolve="SensorType" />
+                <ref role="1XH99l" to="lpas:5eYfGK4q11m" resolve="SensorTypeEnum" />
               </node>
               <node concept="2ViDtV" id="5eYfGK4q2BN" role="2OqNvi">
                 <ref role="2ViDtZ" to="lpas:5eYfGK4q11o" resolve="region" />
@@ -109,7 +109,7 @@
   </node>
   <node concept="13h7C7" id="5eYfGK4qd9H">
     <property role="3GE5qa" value="math.expression" />
-    <ref role="13h7C2" to="lpas:5eYfGK4mCMr" resolve="ConjuctionLogicalExpression" />
+    <ref role="13h7C2" to="lpas:5eYfGK4mCMr" resolve="ConjunctionLogicalExpression" />
     <node concept="13hLZK" id="5eYfGK4qd9I" role="13h7CW">
       <node concept="3clFbS" id="5eYfGK4qd9J" role="2VODD2">
         <node concept="3clFbF" id="5eYfGK4qd9T" role="3cqZAp">
@@ -135,7 +135,7 @@
   </node>
   <node concept="13h7C7" id="5eYfGK4qeeg">
     <property role="3GE5qa" value="math.expression" />
-    <ref role="13h7C2" to="lpas:5eYfGK4mCMs" resolve="DisjuctionNormalExpression" />
+    <ref role="13h7C2" to="lpas:5eYfGK4mCMs" resolve="DisjunctionNormalExpression" />
     <node concept="13hLZK" id="5eYfGK4qeeh" role="13h7CW">
       <node concept="3clFbS" id="5eYfGK4qeei" role="2VODD2">
         <node concept="3clFbF" id="5eYfGK4qeer" role="3cqZAp">
@@ -168,7 +168,7 @@
           <node concept="37vLTI" id="5eYfGK4q_hs" role="3clFbG">
             <node concept="2OqwBi" id="5eYfGK4q__l" role="37vLTx">
               <node concept="1XH99k" id="5eYfGK4q_jp" role="2Oq$k0">
-                <ref role="1XH99l" to="lpas:5eYfGK4q11m" resolve="SensorType" />
+                <ref role="1XH99l" to="lpas:5eYfGK4q11m" resolve="SensorTypeEnum" />
               </node>
               <node concept="2ViDtV" id="5eYfGK4qLsv" role="2OqNvi">
                 <ref role="2ViDtZ" to="lpas:5eYfGK4q_BE" resolve="getCurrentBattery" />
@@ -194,7 +194,7 @@
           <node concept="37vLTI" id="1RtkfELbBMP" role="3clFbG">
             <node concept="2OqwBi" id="1RtkfELbCpN" role="37vLTx">
               <node concept="1XH99k" id="1RtkfELbBZe" role="2Oq$k0">
-                <ref role="1XH99l" to="lpas:5eYfGK4q11m" resolve="SensorType" />
+                <ref role="1XH99l" to="lpas:5eYfGK4q11m" resolve="SensorTypeEnum" />
               </node>
               <node concept="2ViDtV" id="1RtkfELbCEi" role="2OqNvi">
                 <ref role="2ViDtZ" to="lpas:5eYfGK4zk9C" resolve="getDistanceOrigem" />
@@ -203,7 +203,7 @@
             <node concept="2OqwBi" id="1RtkfELbBrt" role="37vLTJ">
               <node concept="13iPFW" id="1RtkfELbBgQ" role="2Oq$k0" />
               <node concept="3TrcHB" id="1RtkfELbBAd" role="2OqNvi">
-                <ref role="3TsBF5" to="lpas:1RtkfEL7Cl0" resolve="distance_value" />
+                <ref role="3TsBF5" to="lpas:1RtkfEL7Cl0" resolve="value" />
               </node>
             </node>
           </node>

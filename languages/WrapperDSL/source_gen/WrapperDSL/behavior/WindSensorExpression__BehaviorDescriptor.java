@@ -24,7 +24,7 @@ public final class WindSensorExpression__BehaviorDescriptor extends BaseBHDescri
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList();
 
   private static void ___init___(@NotNull SNode __thisNode__) {
-    SPropertyOperations.assignEnum(__thisNode__, PROPS.left$EP9q, SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc04681056L, "WrapperDSL.structure.SensorType"), 0x53be3ecc04681057L, "wind"));
+    SPropertyOperations.assignEnum(__thisNode__, PROPS.left$EP9q, SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc04681056L, "WrapperDSL.structure.SensorTypeEnum"), 0x53be3ecc04681057L, "wind"));
   }
 
 

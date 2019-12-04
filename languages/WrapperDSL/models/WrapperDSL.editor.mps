@@ -205,7 +205,7 @@
   </node>
   <node concept="24kQdi" id="5eYfGK4nkbk">
     <property role="3GE5qa" value="math.expression" />
-    <ref role="1XX52x" to="lpas:5eYfGK4mCMr" resolve="ConjuctionLogicalExpression" />
+    <ref role="1XX52x" to="lpas:5eYfGK4mCMr" resolve="ConjunctionLogicalExpression" />
     <node concept="3EZMnI" id="5eYfGK4nkbm" role="2wV5jI">
       <node concept="3F0ifn" id="5eYfGK4nkbt" role="3EZMnx">
         <property role="3F0ifm" value="(" />
@@ -230,7 +230,7 @@
   </node>
   <node concept="24kQdi" id="5eYfGK4nGSl">
     <property role="3GE5qa" value="math.expression" />
-    <ref role="1XX52x" to="lpas:5eYfGK4mCMs" resolve="DisjuctionNormalExpression" />
+    <ref role="1XX52x" to="lpas:5eYfGK4mCMs" resolve="DisjunctionNormalExpression" />
     <node concept="3EZMnI" id="5eYfGK4nGSn" role="2wV5jI">
       <node concept="3F0ifn" id="5eYfGK4nGSu" role="3EZMnx">
         <property role="3F0ifm" value="(" />
@@ -381,8 +381,8 @@
           <property role="Vb096" value="fLwANPu/blue" />
         </node>
       </node>
-      <node concept="3F1sOY" id="5eYfGK4qp9G" role="3EZMnx">
-        <ref role="1NtTu8" to="lpas:5eYfGK4qp91" resolve="right" />
+      <node concept="3F0A7n" id="jiS3v9tC8H" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:jiS3v9t6rh" resolve="right" />
       </node>
       <node concept="3F0ifn" id="5eYfGK4qp9Q" role="3EZMnx">
         <property role="3F0ifm" value="%" />
@@ -496,7 +496,7 @@
     <property role="3GE5qa" value="math" />
     <ref role="1XX52x" to="lpas:1RtkfEL7CkZ" resolve="DistanceConstant" />
     <node concept="3F0A7n" id="1RtkfELbiBQ" role="2wV5jI">
-      <ref role="1NtTu8" to="lpas:1RtkfEL7Cl0" resolve="distance_value" />
+      <ref role="1NtTu8" to="lpas:1RtkfEL7Cl0" resolve="value" />
     </node>
   </node>
 </model>

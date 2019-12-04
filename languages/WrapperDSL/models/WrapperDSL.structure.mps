@@ -211,13 +211,13 @@
   <node concept="1TIwiD" id="5eYfGK4mCMr">
     <property role="EcuMT" value="6034329596690336923" />
     <property role="3GE5qa" value="math.expression" />
-    <property role="TrG5h" value="ConjuctionLogicalExpression" />
+    <property role="TrG5h" value="ConjunctionLogicalExpression" />
     <ref role="1TJDcQ" node="5eYfGK4mCJn" resolve="MathExpression" />
   </node>
   <node concept="1TIwiD" id="5eYfGK4mCMs">
     <property role="EcuMT" value="6034329596690336924" />
     <property role="3GE5qa" value="math.expression" />
-    <property role="TrG5h" value="DisjuctionNormalExpression" />
+    <property role="TrG5h" value="DisjunctionNormalExpression" />
     <ref role="1TJDcQ" node="5eYfGK4mCJn" resolve="MathExpression" />
   </node>
   <node concept="1TIwiD" id="5eYfGK4mCMt">
@@ -234,7 +234,7 @@
     <node concept="1TJgyi" id="5eYfGK4q11r" role="1TKVEl">
       <property role="IQ2nx" value="6034329596691222619" />
       <property role="TrG5h" value="left" />
-      <ref role="AX2Wp" node="5eYfGK4q11m" resolve="SensorType" />
+      <ref role="AX2Wp" node="5eYfGK4q11m" resolve="SensorTypeEnum" />
     </node>
   </node>
   <node concept="25R3W" id="5eYfGK4mCMw">
@@ -521,7 +521,7 @@
   <node concept="25R3W" id="5eYfGK4q11m">
     <property role="3F6X1D" value="6034329596691222614" />
     <property role="3GE5qa" value="math.expression.sensor_expression" />
-    <property role="TrG5h" value="SensorType" />
+    <property role="TrG5h" value="SensorTypeEnum" />
     <node concept="25R33" id="5eYfGK4q11n" role="25R1y">
       <property role="3tVfz5" value="6034329596691222615" />
       <property role="1L1pqM" value="Wind" />
@@ -553,12 +553,10 @@
     <property role="3GE5qa" value="math.expression.sensor_expression" />
     <property role="TrG5h" value="BatterySensorExpression" />
     <ref role="1TJDcQ" node="5eYfGK4mCMt" resolve="SensorExpression" />
-    <node concept="1TJgyj" id="5eYfGK4qp91" role="1TKVEi">
-      <property role="IQ2ns" value="6034329596691321409" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="right" />
-      <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="5eYfGK4oHfV" resolve="Integer" />
+    <node concept="1TJgyi" id="jiS3v9t6rh" role="1TKVEl">
+      <property role="IQ2nx" value="347586651468621521" />
+      <property role="TrG5h" value="right" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
   </node>
   <node concept="1TIwiD" id="5eYfGK4qXkq">
@@ -637,8 +635,8 @@
     <ref role="1TJDcQ" node="5eYfGK4oHfS" resolve="Constant" />
     <node concept="1TJgyi" id="1RtkfEL7Cl0" role="1TKVEl">
       <property role="IQ2nx" value="2151965234596578624" />
-      <property role="TrG5h" value="distance_value" />
-      <ref role="AX2Wp" node="5eYfGK4q11m" resolve="SensorType" />
+      <property role="TrG5h" value="value" />
+      <ref role="AX2Wp" node="5eYfGK4q11m" resolve="SensorTypeEnum" />
     </node>
   </node>
 </model>

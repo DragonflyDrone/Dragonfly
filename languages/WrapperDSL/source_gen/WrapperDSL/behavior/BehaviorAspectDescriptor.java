@@ -13,8 +13,8 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
   private final BHDescriptor myDistanceConstant__BehaviorDescriptor = new DistanceConstant__BehaviorDescriptor();
-  private final BHDescriptor myConjuctionLogicalExpression__BehaviorDescriptor = new ConjuctionLogicalExpression__BehaviorDescriptor();
-  private final BHDescriptor myDisjuctionNormalExpression__BehaviorDescriptor = new DisjuctionNormalExpression__BehaviorDescriptor();
+  private final BHDescriptor myConjunctionLogicalExpression__BehaviorDescriptor = new ConjunctionLogicalExpression__BehaviorDescriptor();
+  private final BHDescriptor myDisjunctionNormalExpression__BehaviorDescriptor = new DisjunctionNormalExpression__BehaviorDescriptor();
   private final BHDescriptor myWindSensorExpression__BehaviorDescriptor = new WindSensorExpression__BehaviorDescriptor();
   private final BHDescriptor myRegionSensorExpression__BehaviorDescriptor = new RegionSensorExpression__BehaviorDescriptor();
   private final BHDescriptor myBatterySensorExpression__BehaviorDescriptor = new BatterySensorExpression__BehaviorDescriptor();
@@ -29,9 +29,9 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       case 0:
         return myBatterySensorExpression__BehaviorDescriptor;
       case 1:
-        return myConjuctionLogicalExpression__BehaviorDescriptor;
+        return myConjunctionLogicalExpression__BehaviorDescriptor;
       case 2:
-        return myDisjuctionNormalExpression__BehaviorDescriptor;
+        return myDisjunctionNormalExpression__BehaviorDescriptor;
       case 3:
         return myDistanceConstant__BehaviorDescriptor;
       case 4:
