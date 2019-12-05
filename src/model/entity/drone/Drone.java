@@ -25,6 +25,7 @@ public class Drone extends Entity {
     private Double initialBattery = 100.D;
     private Double batteryPerBlock = 1.D;
     private Double batteryPerSecond = 1.D;
+    private Double height = 0.0;
 
     // Do changes in Runtime
     private Integer currentPositionI, currentPositionJ;
@@ -260,6 +261,23 @@ public class Drone extends Entity {
         }
 
         this.initialBattery = initialBattery;
+
+        notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
+    }
+
+    public Double getHeight() {
+        return height;
+    }
+
+    public void setHeight(Double height) {
+        Double oldValue = this.height;
+        Double newValue = height;
+
+        if(oldValue == newValue){
+            return;
+        }
+
+        this.height = height;
 
         notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
     }
