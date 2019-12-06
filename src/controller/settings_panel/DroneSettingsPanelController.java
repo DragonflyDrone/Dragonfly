@@ -40,7 +40,7 @@ public class DroneSettingsPanelController extends SettingsPanelController<Drone>
     @FXML
     private
     Label initialBatteryLabel, consumptionPerBlockLabel, consumptionPerSecondLabel/*, badConectionLabel*/,
-            currentDroneLabel, sourceLabel, targetLabel, wrapperLabel;
+            currentDroneLabel, sourceLabel, targetLabel, wrapperLabel, heightLabel;
 
     @FXML
     private

@@ -2,11 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2755e5dd-5191-4a0a-919f-76894586e12f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/entity/drone/Drone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/entity/drone/Drone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/res/drone/drone_settings_panel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/res/drone/drone_settings_panel.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/controller/settings_panel/DroneSettingsPanelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/controller/settings_panel/DroneSettingsPanelController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/model/entity/drone/DroneBusinessObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/model/entity/drone/DroneBusinessObject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/util/ConstantXml.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/util/ConstantXml.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/util/EnvironmentMarshal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/util/EnvironmentMarshal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/settings_panel/DroneSettingsPanelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/settings_panel/DroneSettingsPanelController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/entity/drone/DroneBusinessObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/entity/drone/DroneBusinessObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/ConstantXml.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/ConstantXml.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/EnvironmentMarshal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/EnvironmentMarshal.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -79,7 +83,8 @@
       <workItem from="1575049512313" duration="205000" />
       <workItem from="1575389683879" duration="1421000" />
       <workItem from="1575476010309" duration="1925000" />
-      <workItem from="1575564185024" duration="1040000" />
+      <workItem from="1575564185024" duration="6278000" />
+      <workItem from="1575640093654" duration="1464000" />
     </task>
     <servers />
   </component>
