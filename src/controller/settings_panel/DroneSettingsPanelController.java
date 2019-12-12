@@ -35,7 +35,7 @@ public class DroneSettingsPanelController extends SettingsPanelController<Drone>
     private AnchorPane droneSettingsPanelAnchorPane;
     @FXML
     private
-    TextField initialBatteryTextView, consumptionPerBlockTextView, consumptionPerSecondTextView, currentDroneTextField;
+    TextField initialBatteryTextView, consumptionPerBlockTextView, consumptionPerSecondTextView, currentDroneTextField, heightTextView;
 
     @FXML
     private
@@ -186,6 +186,10 @@ public class DroneSettingsPanelController extends SettingsPanelController<Drone>
 
         initialBatteryLabel.setDisable(true);
         initialBatteryTextView.setDisable(true);
+
+        heightLabel.setDisable(true);
+        heightTextView.setDisable(true);
+
         wrapperLabel.setDisable(true);
         wrapperComboBox.setDisable(true);
         saveButton.setDisable(true);
@@ -196,6 +200,8 @@ public class DroneSettingsPanelController extends SettingsPanelController<Drone>
         destinySettingsImageView.setOpacity(0.3);
         sourceLabel.setDisable(true);
         targetLabel.setDisable(true);
+
+
 
 
     }
@@ -225,6 +231,9 @@ public class DroneSettingsPanelController extends SettingsPanelController<Drone>
         destinySettingsImageView.setDisable(false);
         destinySettingsImageView.setOpacity(1);
         saveButton.setDisable(false);
+
+        heightLabel.setDisable(false);
+        heightTextView.setDisable(false);
 
 
     }

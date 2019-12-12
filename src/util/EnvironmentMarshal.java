@@ -375,9 +375,10 @@ abstract public class EnvironmentMarshal {
             drone.setBatteryPerBlock(batteryConsumptionPerBlock);
             drone.setBatteryPerSecond(batteryConsumptionPerSeconds);
             drone.setInitialBattery(initialBattery);
+            drone.setHeight(height);
             drone.setCurrentBattery(initialBattery);
             drone.setWrapperId(wrapperId);
-            drone.setHeight(height);
+
 
         }
 

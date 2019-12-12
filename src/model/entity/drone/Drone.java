@@ -25,7 +25,7 @@ public class Drone extends Entity {
     private Double initialBattery = 100.D;
     private Double batteryPerBlock = 1.D;
     private Double batteryPerSecond = 1.D;
-    private Double height = 0.0;
+    private Double height = 0.D;
 
     // Do changes in Runtime
     private Integer currentPositionI, currentPositionJ;
