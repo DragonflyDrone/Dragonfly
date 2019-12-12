@@ -248,6 +248,8 @@ public class DroneSettingsPanelController extends SettingsPanelController<Drone>
         selectedDrone.setBatteryPerBlock(Double.parseDouble(consumptionPerBlockTextView.getText()));
         selectedDrone.setBatteryPerSecond(Double.parseDouble(consumptionPerSecondTextView.getText()));
 
+        selectedDrone.setHeight(Double.parseDouble(heightTextView.getText()));
+
 //        int srcI = Integer.parseInt(currentSourceCell.getText().split(",")[0].replace("<",""));
 //        int srcJ = Integer.parseInt(currentSourceCell.getText().split(",")[1].replace(">",""));
 
@@ -274,6 +276,7 @@ public class DroneSettingsPanelController extends SettingsPanelController<Drone>
         Double batteryPerBlock = selectedDrone.getBatteryPerBlock();
         Double batteryPerSecond = selectedDrone.getBatteryPerSecond();
         Double initialBattery = selectedDrone.getInitialBattery();
+        Double height = selectedDrone.getHeight();
         String currentSourceCellString =
                 "<" + selectedDrone.getSourceCell().getRowPosition()
                         + "," + selectedDrone.getSourceCell().getColumnPosition() + ">";
@@ -290,6 +293,7 @@ public class DroneSettingsPanelController extends SettingsPanelController<Drone>
         initialBatteryTextView.setText(String.valueOf(initialBattery));
         currentSourceCell.setText(currentSourceCellString);
         currentDestinyCell.setText(currentDestinyCellString);
+        heightTextView.setText(String.valueOf(height));
 
         int currentWrapperId = selectedDrone.getWrapperId();
 

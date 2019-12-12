@@ -4,12 +4,7 @@
     <list default="true" id="2755e5dd-5191-4a0a-919f-76894586e12f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/controller/settings_panel/DroneSettingsPanelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/controller/settings_panel/DroneSettingsPanelController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/util/EnvironmentMarshal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/util/EnvironmentMarshal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Dragonfly/view/res/drone/drone_settings_panel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Dragonfly/view/res/drone/drone_settings_panel.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/settings_panel/DroneSettingsPanelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/settings_panel/DroneSettingsPanelController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/entity/drone/Drone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/entity/drone/Drone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/util/EnvironmentMarshal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/EnvironmentMarshal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/res/drone/drone_settings_panel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/res/drone/drone_settings_panel.fxml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -85,7 +80,7 @@
       <workItem from="1575564185024" duration="6278000" />
       <workItem from="1575640093654" duration="3501000" />
       <workItem from="1575898691590" duration="1627000" />
-      <workItem from="1576156627290" duration="1304000" />
+      <workItem from="1576156627290" duration="2210000" />
     </task>
     <servers />
   </component>
