@@ -6,6 +6,7 @@ import java.util.List;
 public class Antenna extends Entity{
     private final String uniqueID;
     private final String label;
+    private double height = 0.D;
     Integer rowPosition =0, columnPosition = 0;
     public static Integer COUNT_ANTENNA = 1;
     private Boolean badConnection =false;
@@ -30,6 +31,23 @@ public class Antenna extends Entity{
 
     public static void restartCount() {
         COUNT_ANTENNA = 1;
+    }
+
+    public Double getHeight() {
+        return height;
+    }
+
+    public void setHeight(Double height) {
+        Double oldValue = this.height;
+        Double newValue = height;
+
+        if(oldValue == newValue){
+            return;
+        }
+
+        this.height = height;
+
+        notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
     }
 
     public int getRowPosition() {

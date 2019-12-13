@@ -6,6 +6,7 @@ import java.util.List;
 public class House {
     public static int COUNT_HOUSE = 1;
     private final String uniqueID;
+    private double height = 0.D;
     int rowPosition, columnPosition;
     private Boolean selected = false;
     private List<Listener> listeners = new ArrayList<>();
@@ -29,6 +30,23 @@ public class House {
 
     public static void restartCount() {
         COUNT_HOUSE = 1;
+    }
+
+    public Double getHeight() {
+        return height;
+    }
+
+    public void setHeight(Double height) {
+        Double oldValue = this.height;
+        Double newValue = height;
+
+        if(oldValue == newValue){
+            return;
+        }
+
+        this.height = height;
+
+        notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
     }
 
     public int getRowPosition() {
