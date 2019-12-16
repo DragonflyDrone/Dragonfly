@@ -18,7 +18,7 @@ public class Tree {
         this.label = label;
         COUNT_TREE++;
     }
-
+    // nova branch
     public String getLabel() {
         return label;
     }
