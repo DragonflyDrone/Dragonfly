@@ -40,7 +40,7 @@ public class House {
         Double oldValue = this.height;
         Double newValue = height;
 
-        if(oldValue == newValue){
+        if(oldValue == newValue){a
             return;
         }
 
