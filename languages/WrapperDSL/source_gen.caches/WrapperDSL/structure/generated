@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="-bkx77ueu0stmbwq9q9mhlkaej58j8wq">
-  <files names="ConceptPresentationAspectImpl.java:EnumerationDescriptor_CommandEnum.java:EnumerationDescriptor_ConditionalOperatorEnum.java:EnumerationDescriptor_LogicalOperatorEnum.java:EnumerationDescriptor_TypePointCutEnum.java:LanguageConceptSwitch.java:StructureAspectDescriptor.java" />
+<product version="3" modelHash="4nvq0ob52ujwiqmm0ofwyhjh7yywtvu">
+  <files names="ConceptPresentationAspectImpl.java:EnumerationDescriptor_CategoricalDistanceEnum.java:EnumerationDescriptor_CategoricalWindEnum.java:EnumerationDescriptor_CommandEnum.java:EnumerationDescriptor_ConditionalOperatorEnum.java:EnumerationDescriptor_InaquelityConditionalOperator.java:EnumerationDescriptor_IqualityOperatorEnum.java:EnumerationDescriptor_LogicalOperatorEnum.java:EnumerationDescriptor_TypePointCutEnum.java:LanguageConceptSwitch.java:StructureAspectDescriptor.java" />
 </product>
 

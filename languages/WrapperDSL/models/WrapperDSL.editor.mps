@@ -134,8 +134,14 @@
       </node>
       <node concept="3XFhqQ" id="3Ivd_nw5ePd" role="3EZMnx" />
       <node concept="3XFhqQ" id="3Ivd_nw5tuz" role="3EZMnx" />
-      <node concept="3F1sOY" id="3Ivd_nw4Cs0" role="3EZMnx">
+      <node concept="3F0ifn" id="7_KOYEjeZ76" role="3EZMnx">
+        <property role="3F0ifm" value="(" />
+      </node>
+      <node concept="3F1sOY" id="7_KOYEjeZ7B" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:5eYfGK4mOkU" resolve="expression" />
+      </node>
+      <node concept="3F0ifn" id="7_KOYEjeZ8c" role="3EZMnx">
+        <property role="3F0ifm" value=")" />
       </node>
     </node>
   </node>
@@ -326,8 +332,8 @@
       <node concept="3F1sOY" id="7_KOYEjcz$F" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:7_KOYEjcw$K" resolve="left" />
       </node>
-      <node concept="3F0A7n" id="7_KOYEjcz$P" role="3EZMnx">
-        <ref role="1NtTu8" to="lpas:7_KOYEjbOn_" resolve="operator" />
+      <node concept="3F0A7n" id="7_KOYEjdi51" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:7_KOYEjdalD" resolve="operator" />
       </node>
       <node concept="3F1sOY" id="7_KOYEjcz_j" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:7_KOYEjcw$M" resolve="right" />
@@ -359,6 +365,103 @@
         <ref role="1NtTu8" to="lpas:5eYfGK4oHfW" resolve="value" />
       </node>
       <node concept="l2Vlx" id="7_KOYEjcGFH" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="7_KOYEjdalW">
+    <property role="3GE5qa" value="math.expression.conditional_expression.wind" />
+    <ref role="1XX52x" to="lpas:5eYfGK4mCNt" resolve="CategoricalWindConditionalExpression" />
+    <node concept="3EZMnI" id="7_KOYEjdam1" role="2wV5jI">
+      <node concept="3F0ifn" id="7_KOYEjdam3" role="3EZMnx">
+        <property role="3F0ifm" value="(" />
+      </node>
+      <node concept="3F1sOY" id="7_KOYEjdamj" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:7_KOYEjdalH" resolve="left" />
+      </node>
+      <node concept="3F0A7n" id="7_KOYEjdamt" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:7_KOYEjdalM" resolve="operator" />
+      </node>
+      <node concept="3F0A7n" id="7_KOYEjdtiJ" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:7_KOYEjdtin" resolve="right" />
+      </node>
+      <node concept="3F0ifn" id="7_KOYEjdamb" role="3EZMnx">
+        <property role="3F0ifm" value=")" />
+      </node>
+      <node concept="l2Vlx" id="7_KOYEjdam4" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="7_KOYEjdC$H">
+    <property role="3GE5qa" value="math.expression.conditional_expression.wind" />
+    <ref role="1XX52x" to="lpas:7_KOYEjdC$p" resolve="ScalarWindConditionalExpression" />
+    <node concept="3EZMnI" id="7_KOYEjdC$J" role="2wV5jI">
+      <node concept="3F0ifn" id="7_KOYEjdC$T" role="3EZMnx">
+        <property role="3F0ifm" value="(" />
+      </node>
+      <node concept="3F1sOY" id="7_KOYEjdC_f" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:7_KOYEjdC$q" resolve="left" />
+      </node>
+      <node concept="3F0A7n" id="7_KOYEjdC_w" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:7_KOYEjdC$y" resolve="operator" />
+      </node>
+      <node concept="3F1sOY" id="7_KOYEjdC_P" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:7_KOYEjdC$t" resolve="right" />
+      </node>
+      <node concept="3F0ifn" id="7_KOYEjdCAe" role="3EZMnx">
+        <property role="3F0ifm" value="km/h" />
+      </node>
+      <node concept="3F0ifn" id="7_KOYEjdC_2" role="3EZMnx">
+        <property role="3F0ifm" value=")" />
+      </node>
+      <node concept="l2Vlx" id="7_KOYEjdC$M" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="7_KOYEjfYKo">
+    <property role="3GE5qa" value="math.expression.conditional_expression.distance" />
+    <ref role="1XX52x" to="lpas:7_KOYEjfYJX" resolve="CategoricalDistanceConditionalExpression" />
+    <node concept="3EZMnI" id="7_KOYEjfYKq" role="2wV5jI">
+      <node concept="3F0ifn" id="7_KOYEjfYKx" role="3EZMnx">
+        <property role="3F0ifm" value="( distance from" />
+      </node>
+      <node concept="3F0A7n" id="7_KOYEjfYKP" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:7_KOYEjfYKc" resolve="left" />
+      </node>
+      <node concept="3F0A7n" id="7_KOYEjfYKZ" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:7_KOYEjfYK0" resolve="operator" />
+      </node>
+      <node concept="3F0ifn" id="7_KOYEjhCs0" role="3EZMnx">
+        <property role="3F0ifm" value="distance from" />
+      </node>
+      <node concept="3F0A7n" id="7_KOYEjfYLb" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:7_KOYEjfYK9" resolve="right" />
+      </node>
+      <node concept="3F0ifn" id="7_KOYEjfYKB" role="3EZMnx">
+        <property role="3F0ifm" value=")" />
+      </node>
+      <node concept="l2Vlx" id="7_KOYEjfYKt" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="7_KOYEjgt29">
+    <property role="3GE5qa" value="math.expression.conditional_expression.distance" />
+    <ref role="1XX52x" to="lpas:5eYfGK4z5_4" resolve="ScalarDistanceConditionalExpression" />
+    <node concept="3EZMnI" id="7_KOYEjgt2f" role="2wV5jI">
+      <node concept="3F0ifn" id="7_KOYEjgt2m" role="3EZMnx">
+        <property role="3F0ifm" value="( distance from " />
+      </node>
+      <node concept="3F0A7n" id="7_KOYEjgt2C" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:7_KOYEjgt1T" resolve="left" />
+      </node>
+      <node concept="3F0A7n" id="7_KOYEjgt2M" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:7_KOYEjgt1R" resolve="operator" />
+      </node>
+      <node concept="3F1sOY" id="7_KOYEjgt2Y" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:7_KOYEjgt1Z" resolve="right" />
+      </node>
+      <node concept="3F0ifn" id="7_KOYEjhagX" role="3EZMnx">
+        <property role="3F0ifm" value="km" />
+      </node>
+      <node concept="3F0ifn" id="7_KOYEjgt2w" role="3EZMnx">
+        <property role="3F0ifm" value=")" />
+      </node>
+      <node concept="l2Vlx" id="7_KOYEjgt2i" role="2iSdaV" />
     </node>
   </node>
 </model>

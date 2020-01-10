@@ -11,28 +11,29 @@ import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private ConceptPresentation props_AdviseScript;
   private ConceptPresentation props_BatteryConditionalExpression;
+  private ConceptPresentation props_CategoricalDistanceConditionalExpression;
+  private ConceptPresentation props_CategoricalWindConditionalExpression;
   private ConceptPresentation props_Command;
   private ConceptPresentation props_ConditionalExpression;
   private ConceptPresentation props_ConjunctionLogicalExpression;
   private ConceptPresentation props_CoordenateConditionalExpression;
   private ConceptPresentation props_DisjunctionLogicalExpression;
-  private ConceptPresentation props_DistanceConditionalExpression;
   private ConceptPresentation props_ExceptionalScenario;
   private ConceptPresentation props_Expression;
-  private ConceptPresentation props_ExpressionA;
   private ConceptPresentation props_Given;
   private ConceptPresentation props_If;
   private ConceptPresentation props_LogicalExpression;
   private ConceptPresentation props_MathElement;
   private ConceptPresentation props_PointCut;
   private ConceptPresentation props_RegionConditionalExpression;
+  private ConceptPresentation props_ScalarDistanceConditionalExpression;
+  private ConceptPresentation props_ScalarWindConditionalExpression;
   private ConceptPresentation props_Statement;
   private ConceptPresentation props_Text;
   private ConceptPresentation props_Then;
   private ConceptPresentation props_Value;
   private ConceptPresentation props_When;
   private ConceptPresentation props_While;
-  private ConceptPresentation props_WindConditionalExpression;
 
   @Override
   @Nullable
@@ -53,6 +54,20 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_BatteryConditionalExpression = cpb.create();
         }
         return props_BatteryConditionalExpression;
+      case LanguageConceptSwitch.CategoricalDistanceConditionalExpression:
+        if (props_CategoricalDistanceConditionalExpression == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("CategoricalDistanceConditionalExpression");
+          props_CategoricalDistanceConditionalExpression = cpb.create();
+        }
+        return props_CategoricalDistanceConditionalExpression;
+      case LanguageConceptSwitch.CategoricalWindConditionalExpression:
+        if (props_CategoricalWindConditionalExpression == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("CategoricalWindConditionalExpression");
+          props_CategoricalWindConditionalExpression = cpb.create();
+        }
+        return props_CategoricalWindConditionalExpression;
       case LanguageConceptSwitch.Command:
         if (props_Command == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -87,13 +102,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_DisjunctionLogicalExpression = cpb.create();
         }
         return props_DisjunctionLogicalExpression;
-      case LanguageConceptSwitch.DistanceConditionalExpression:
-        if (props_DistanceConditionalExpression == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("DistanceConditionalExpression");
-          props_DistanceConditionalExpression = cpb.create();
-        }
-        return props_DistanceConditionalExpression;
       case LanguageConceptSwitch.ExceptionalScenario:
         if (props_ExceptionalScenario == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -107,12 +115,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Expression = cpb.create();
         }
         return props_Expression;
-      case LanguageConceptSwitch.ExpressionA:
-        if (props_ExpressionA == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          props_ExpressionA = cpb.create();
-        }
-        return props_ExpressionA;
       case LanguageConceptSwitch.Given:
         if (props_Given == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -154,6 +156,20 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_RegionConditionalExpression = cpb.create();
         }
         return props_RegionConditionalExpression;
+      case LanguageConceptSwitch.ScalarDistanceConditionalExpression:
+        if (props_ScalarDistanceConditionalExpression == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ScalarDistanceConditionalExpression");
+          props_ScalarDistanceConditionalExpression = cpb.create();
+        }
+        return props_ScalarDistanceConditionalExpression;
+      case LanguageConceptSwitch.ScalarWindConditionalExpression:
+        if (props_ScalarWindConditionalExpression == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ScalarWindConditionalExpression");
+          props_ScalarWindConditionalExpression = cpb.create();
+        }
+        return props_ScalarWindConditionalExpression;
       case LanguageConceptSwitch.Statement:
         if (props_Statement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -195,13 +211,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_While = cpb.create();
         }
         return props_While;
-      case LanguageConceptSwitch.WindConditionalExpression:
-        if (props_WindConditionalExpression == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("WindConditionalExpression");
-          props_WindConditionalExpression = cpb.create();
-        }
-        return props_WindConditionalExpression;
     }
     return null;
   }

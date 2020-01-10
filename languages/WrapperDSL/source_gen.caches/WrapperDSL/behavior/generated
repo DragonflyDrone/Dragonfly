@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="gevlw1saqi0jk4u4xkl07zm2oy8a7i">
-  <files names="BatteryConditionalExpression__BehaviorDescriptor.java:BehaviorAspectDescriptor.java" />
+<product version="3" modelHash="-44hk554s2pszk6teharsdnr7r28kco7">
+  <files names="BatteryConditionalExpression__BehaviorDescriptor.java:BehaviorAspectDescriptor.java:CategoricalWindConditionalExpression__BehaviorDescriptor.java:ScalarWindConditionalExpression__BehaviorDescriptor.java" />
 </product>
 
