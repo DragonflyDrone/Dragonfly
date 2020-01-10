@@ -12,12 +12,7 @@ import jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myDistanceConstant__BehaviorDescriptor = new DistanceConstant__BehaviorDescriptor();
-  private final BHDescriptor myConjunctionLogicalExpression__BehaviorDescriptor = new ConjunctionLogicalExpression__BehaviorDescriptor();
-  private final BHDescriptor myDisjunctionNormalExpression__BehaviorDescriptor = new DisjunctionNormalExpression__BehaviorDescriptor();
-  private final BHDescriptor myWindSensorExpression__BehaviorDescriptor = new WindSensorExpression__BehaviorDescriptor();
-  private final BHDescriptor myRegionSensorExpression__BehaviorDescriptor = new RegionSensorExpression__BehaviorDescriptor();
-  private final BHDescriptor myBatterySensorExpression__BehaviorDescriptor = new BatterySensorExpression__BehaviorDescriptor();
+  private final BHDescriptor myBatteryConditionalExpression__BehaviorDescriptor = new BatteryConditionalExpression__BehaviorDescriptor();
 
   public BehaviorAspectDescriptor() {
   }
@@ -27,20 +22,10 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     SAbstractConcept cncpt = concept;
     switch (conceptIndex.index(cncpt)) {
       case 0:
-        return myBatterySensorExpression__BehaviorDescriptor;
-      case 1:
-        return myConjunctionLogicalExpression__BehaviorDescriptor;
-      case 2:
-        return myDisjunctionNormalExpression__BehaviorDescriptor;
-      case 3:
-        return myDistanceConstant__BehaviorDescriptor;
-      case 4:
-        return myRegionSensorExpression__BehaviorDescriptor;
-      case 5:
-        return myWindSensorExpression__BehaviorDescriptor;
+        return myBatteryConditionalExpression__BehaviorDescriptor;
       default:
     }
     return null;
   }
-  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc04699240L), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8c9bL), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8c9cL), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x1ddd50fab11e853fL), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8ce0L), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8cddL)).seal();
+  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc04699240L)).seal();
 }
