@@ -51,6 +51,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.BatteryConditionalExpression:
         if (props_BatteryConditionalExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("(battery [is|not is|>|<|>=|<=] n%)");
           cpb.rawPresentation("BatteryConditionalExpression");
           props_BatteryConditionalExpression = cpb.create();
         }
@@ -58,6 +59,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.CategoricalDistanceConditionalExpression:
         if (props_CategoricalDistanceConditionalExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("distance from [origin|destination] [is|not is|>|<|>=|<=] distance from [origin|destination]");
           cpb.rawPresentation("CategoricalDistanceConditionalExpression");
           props_CategoricalDistanceConditionalExpression = cpb.create();
         }
@@ -65,6 +67,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.CategoricalWindConditionalExpression:
         if (props_CategoricalWindConditionalExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("(wind [is|not is] [light|normal|strong])");
           cpb.rawPresentation("CategoricalWindConditionalExpression");
           props_CategoricalWindConditionalExpression = cpb.create();
         }
@@ -133,6 +136,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.LogicalExpression:
         if (props_LogicalExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("(expresson A [and|or] expression B)");
           cpb.rawPresentation("LogicalExpression");
           props_LogicalExpression = cpb.create();
         }
@@ -146,6 +150,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.OriginAndDestinationDistanceConditionalExpression:
         if (props_OriginAndDestinationDistanceConditionalExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("[origin|destination] distance [is|not is|>|<|>=|<=] n km");
           cpb.rawPresentation("OriginAndDestinationDistanceConditionalExpression");
           props_OriginAndDestinationDistanceConditionalExpression = cpb.create();
         }
@@ -160,6 +165,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.RegionConditionalExpression:
         if (props_RegionConditionalExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("Drone [is|not is] over [water|land|origin|destination] region");
           cpb.rawPresentation("RegionConditionalExpression");
           props_RegionConditionalExpression = cpb.create();
         }
@@ -167,6 +173,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.ScalarDistanceConditionalExpression:
         if (props_ScalarDistanceConditionalExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("distance from [origin|destination][is|not is|>|<|>=|<=] n km");
           cpb.rawPresentation("ScalarDistanceConditionalExpression");
           props_ScalarDistanceConditionalExpression = cpb.create();
         }
@@ -174,6 +181,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.ScalarWindConditionalExpression:
         if (props_ScalarWindConditionalExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("(wind [is|not is|>|<|>=|<=] n km)");
           cpb.rawPresentation("ScalarWindConditionalExpression");
           props_ScalarWindConditionalExpression = cpb.create();
         }

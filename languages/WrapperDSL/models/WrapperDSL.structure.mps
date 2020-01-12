@@ -22,6 +22,7 @@
       </concept>
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="6714410169261853888" name="conceptId" index="EcuMT" />
+        <property id="4628067390765907488" name="conceptShortDescription" index="R4oN_" />
         <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
@@ -191,6 +192,7 @@
     <property role="EcuMT" value="6034329596690336989" />
     <property role="3GE5qa" value="math.expression.conditional_expression.wind" />
     <property role="TrG5h" value="CategoricalWindConditionalExpression" />
+    <property role="R4oN_" value="(wind [is|not is] [light|normal|strong])" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="7_KOYEjbOoa" role="PzmwI">
       <ref role="PrY4T" node="7_KOYEjbOnV" resolve="ConditionalExpression" />
@@ -217,6 +219,7 @@
     <property role="EcuMT" value="6034329596690336992" />
     <property role="3GE5qa" value="math.expression.conditional_expression.region" />
     <property role="TrG5h" value="RegionConditionalExpression" />
+    <property role="R4oN_" value="Drone [is|not is] over [water|land|origin|destination] region" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="7_KOYEjbOoc" role="PzmwI">
       <ref role="PrY4T" node="7_KOYEjbOnV" resolve="ConditionalExpression" />
@@ -443,6 +446,7 @@
     <property role="EcuMT" value="6034329596691321408" />
     <property role="3GE5qa" value="math.expression.conditional_expression" />
     <property role="TrG5h" value="BatteryConditionalExpression" />
+    <property role="R4oN_" value="(battery [is|not is|&gt;|&lt;|&gt;=|&lt;=] n%)" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="7_KOYEjbOo8" role="PzmwI">
       <ref role="PrY4T" node="7_KOYEjbOnV" resolve="ConditionalExpression" />
@@ -520,6 +524,7 @@
     <property role="EcuMT" value="6034329596693600580" />
     <property role="3GE5qa" value="math.expression.conditional_expression.distance" />
     <property role="TrG5h" value="ScalarDistanceConditionalExpression" />
+    <property role="R4oN_" value="distance from [origin|destination][is|not is|&gt;|&lt;|&gt;=|&lt;=] n km" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="7_KOYEjgt1R" role="1TKVEl">
       <property role="IQ2nx" value="8750727080427245687" />
@@ -594,6 +599,7 @@
     <property role="TrG5h" value="LogicalExpression" />
     <property role="3GE5qa" value="math.expression" />
     <property role="EcuMT" value="8750727080425723899" />
+    <property role="R4oN_" value="(expresson A [and|or] expression B)" />
     <node concept="1TJgyj" id="7_KOYEjcoP_" role="1TKVEi">
       <property role="IQ2ns" value="8750727080426179941" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
@@ -681,6 +687,7 @@
     <property role="EcuMT" value="8750727080426506521" />
     <property role="3GE5qa" value="math.expression.conditional_expression.wind" />
     <property role="TrG5h" value="ScalarWindConditionalExpression" />
+    <property role="R4oN_" value="(wind [is|not is|&gt;|&lt;|&gt;=|&lt;=] n km)" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="7_KOYEjdC$q" role="1TKVEi">
       <property role="IQ2ns" value="8750727080426506522" />
@@ -709,6 +716,7 @@
     <property role="EcuMT" value="8750727080427121661" />
     <property role="3GE5qa" value="math.expression.conditional_expression.distance" />
     <property role="TrG5h" value="CategoricalDistanceConditionalExpression" />
+    <property role="R4oN_" value="distance from [origin|destination] [is|not is|&gt;|&lt;|&gt;=|&lt;=] distance from [origin|destination]" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="7_KOYEjfYJY" role="PzmwI">
       <ref role="PrY4T" node="7_KOYEjbOnV" resolve="ConditionalExpression" />
@@ -773,6 +781,7 @@
     <property role="EcuMT" value="8237239994876226883" />
     <property role="3GE5qa" value="math.expression.conditional_expression.distance" />
     <property role="TrG5h" value="OriginAndDestinationDistanceConditionalExpression" />
+    <property role="R4oN_" value="[origin|destination] distance [is|not is|&gt;|&lt;|&gt;=|&lt;=] n km" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="79gzy7KfeP4" role="PzmwI">
       <ref role="PrY4T" node="7_KOYEjbOnV" resolve="ConditionalExpression" />
