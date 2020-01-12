@@ -54,9 +54,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     editorCell.addEditorCell(createIndentCell_0());
     editorCell.addEditorCell(createIndentCell_1());
     editorCell.addEditorCell(createIndentCell_2());
-    editorCell.addEditorCell(createConstant_1());
     editorCell.addEditorCell(createRefNode_0());
-    editorCell.addEditorCell(createConstant_2());
     return editorCell;
   }
   private EditorCell createConstant_0() {
@@ -83,21 +81,15 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     EditorCell_Indent editorCell = new EditorCell_Indent(getEditorContext(), myNode);
     return editorCell;
   }
-  private EditorCell createConstant_1() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "(");
-    editorCell.setCellId("Constant_1qplqv_e0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
   private EditorCell createRefNode_0() {
-    SingleRoleCellProvider provider = new expressionSingleRoleHandler_1qplqv_f0(myNode, LINKS.expression$1QZ_, getEditorContext());
+    SingleRoleCellProvider provider = new expressionSingleRoleHandler_1qplqv_e0(myNode, LINKS.expression$1QZ_, getEditorContext());
     return provider.createCell();
   }
-  private static class expressionSingleRoleHandler_1qplqv_f0 extends SingleRoleCellProvider {
+  private static class expressionSingleRoleHandler_1qplqv_e0 extends SingleRoleCellProvider {
     @NotNull
     private SNode myNode;
 
-    public expressionSingleRoleHandler_1qplqv_f0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+    public expressionSingleRoleHandler_1qplqv_e0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(containmentLink, context);
       myNode = ownerNode;
     }
@@ -143,12 +135,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     protected String getNoTargetText() {
       return "<no expression>";
     }
-  }
-  private EditorCell createConstant_2() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ")");
-    editorCell.setCellId("Constant_1qplqv_g0");
-    editorCell.setDefaultText("");
-    return editorCell;
   }
 
   private static final class LINKS {

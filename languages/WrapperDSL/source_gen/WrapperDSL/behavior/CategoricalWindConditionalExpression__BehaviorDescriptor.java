@@ -27,7 +27,7 @@ public final class CategoricalWindConditionalExpression__BehaviorDescriptor exte
 
   private static void ___init___(@NotNull SNode __thisNode__) {
     SNode text = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc0462d3feL, "WrapperDSL.structure.Text"));
-    SPropertyOperations.assign(text, PROPS.value$QRSw, "Battery");
+    SPropertyOperations.assign(text, PROPS.value$QRSw, "Wind");
     SLinkOperations.setTarget(__thisNode__, LINKS.left$6DBy, text);
   }
 

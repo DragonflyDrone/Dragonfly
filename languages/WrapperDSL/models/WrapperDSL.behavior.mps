@@ -205,7 +205,7 @@
         <node concept="3clFbF" id="7_KOYEjdCWn" role="3cqZAp">
           <node concept="37vLTI" id="7_KOYEjdCWo" role="3clFbG">
             <node concept="Xl_RD" id="7_KOYEjdCWp" role="37vLTx">
-              <property role="Xl_RC" value="Battery" />
+              <property role="Xl_RC" value="Wind" />
             </node>
             <node concept="2OqwBi" id="7_KOYEjdCWq" role="37vLTJ">
               <node concept="37vLTw" id="7_KOYEjdCWr" role="2Oq$k0">
@@ -227,6 +227,57 @@
             </node>
             <node concept="37vLTw" id="7_KOYEjdCWy" role="37vLTx">
               <ref role="3cqZAo" node="7_KOYEjdCWi" resolve="text" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="13h7C7" id="79gzy7KeIpI">
+    <property role="3GE5qa" value="math.expression.conditional_expression.region" />
+    <ref role="13h7C2" to="lpas:5eYfGK4mCNw" resolve="RegionConditionalExpression" />
+    <node concept="13hLZK" id="79gzy7KeIpJ" role="13h7CW">
+      <node concept="3clFbS" id="79gzy7KeIpK" role="2VODD2">
+        <node concept="3cpWs8" id="79gzy7KeIpT" role="3cqZAp">
+          <node concept="3cpWsn" id="79gzy7KeIpU" role="3cpWs9">
+            <property role="TrG5h" value="text" />
+            <node concept="3Tqbb2" id="79gzy7KeIpV" role="1tU5fm">
+              <ref role="ehGHo" to="lpas:5eYfGK4oHfY" resolve="Text" />
+            </node>
+            <node concept="2ShNRf" id="79gzy7KeIpW" role="33vP2m">
+              <node concept="3zrR0B" id="79gzy7KeIpX" role="2ShVmc">
+                <node concept="3Tqbb2" id="79gzy7KeIpY" role="3zrR0E">
+                  <ref role="ehGHo" to="lpas:5eYfGK4oHfY" resolve="Text" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="79gzy7KeIpZ" role="3cqZAp">
+          <node concept="37vLTI" id="79gzy7KeIq0" role="3clFbG">
+            <node concept="Xl_RD" id="79gzy7KeIq1" role="37vLTx">
+              <property role="Xl_RC" value="Drone" />
+            </node>
+            <node concept="2OqwBi" id="79gzy7KeIq2" role="37vLTJ">
+              <node concept="37vLTw" id="79gzy7KeIq3" role="2Oq$k0">
+                <ref role="3cqZAo" node="79gzy7KeIpU" resolve="text" />
+              </node>
+              <node concept="3TrcHB" id="79gzy7KeIq4" role="2OqNvi">
+                <ref role="3TsBF5" to="lpas:5eYfGK4oHfZ" resolve="value" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="79gzy7KeIq5" role="3cqZAp">
+          <node concept="37vLTI" id="79gzy7KeIq6" role="3clFbG">
+            <node concept="2OqwBi" id="79gzy7KeIq7" role="37vLTJ">
+              <node concept="13iPFW" id="79gzy7KeIq8" role="2Oq$k0" />
+              <node concept="3TrEf2" id="79gzy7KeIq9" role="2OqNvi">
+                <ref role="3Tt5mk" to="lpas:79gzy7KeIj2" resolve="left" />
+              </node>
+            </node>
+            <node concept="37vLTw" id="79gzy7KeIqa" role="37vLTx">
+              <ref role="3cqZAo" node="79gzy7KeIpU" resolve="text" />
             </node>
           </node>
         </node>

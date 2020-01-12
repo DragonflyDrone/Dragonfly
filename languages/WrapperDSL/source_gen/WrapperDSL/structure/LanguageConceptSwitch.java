@@ -24,16 +24,17 @@ public final class LanguageConceptSwitch {
   public static final int If = 12;
   public static final int LogicalExpression = 13;
   public static final int MathElement = 14;
-  public static final int PointCut = 15;
-  public static final int RegionConditionalExpression = 16;
-  public static final int ScalarDistanceConditionalExpression = 17;
-  public static final int ScalarWindConditionalExpression = 18;
-  public static final int Statement = 19;
-  public static final int Text = 20;
-  public static final int Then = 21;
-  public static final int Value = 22;
-  public static final int When = 23;
-  public static final int While = 24;
+  public static final int OriginAndDestinationDistanceConditionalExpression = 15;
+  public static final int PointCut = 16;
+  public static final int RegionConditionalExpression = 17;
+  public static final int ScalarDistanceConditionalExpression = 18;
+  public static final int ScalarWindConditionalExpression = 19;
+  public static final int Statement = 20;
+  public static final int Text = 21;
+  public static final int Then = 22;
+  public static final int Value = 23;
+  public static final int When = 24;
+  public static final int While = 25;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L);
@@ -52,6 +53,7 @@ public final class LanguageConceptSwitch {
     builder.put(0x53be3ecc045b45abL, If);
     builder.put(0x7970d3ea932a97fbL, LogicalExpression);
     builder.put(0x53be3ecc045a8bd6L, MathElement);
+    builder.put(0x72508e21f03ced43L, OriginAndDestinationDistanceConditionalExpression);
     builder.put(0x53be3ecc046e0b59L, PointCut);
     builder.put(0x53be3ecc045a8ce0L, RegionConditionalExpression);
     builder.put(0x53be3ecc048c5944L, ScalarDistanceConditionalExpression);

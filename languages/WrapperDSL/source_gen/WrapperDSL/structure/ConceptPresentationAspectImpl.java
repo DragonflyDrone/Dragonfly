@@ -24,6 +24,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_If;
   private ConceptPresentation props_LogicalExpression;
   private ConceptPresentation props_MathElement;
+  private ConceptPresentation props_OriginAndDestinationDistanceConditionalExpression;
   private ConceptPresentation props_PointCut;
   private ConceptPresentation props_RegionConditionalExpression;
   private ConceptPresentation props_ScalarDistanceConditionalExpression;
@@ -142,6 +143,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_MathElement = cpb.create();
         }
         return props_MathElement;
+      case LanguageConceptSwitch.OriginAndDestinationDistanceConditionalExpression:
+        if (props_OriginAndDestinationDistanceConditionalExpression == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("OriginAndDestinationDistanceConditionalExpression");
+          props_OriginAndDestinationDistanceConditionalExpression = cpb.create();
+        }
+        return props_OriginAndDestinationDistanceConditionalExpression;
       case LanguageConceptSwitch.PointCut:
         if (props_PointCut == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

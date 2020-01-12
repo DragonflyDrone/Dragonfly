@@ -134,14 +134,8 @@
       </node>
       <node concept="3XFhqQ" id="3Ivd_nw5ePd" role="3EZMnx" />
       <node concept="3XFhqQ" id="3Ivd_nw5tuz" role="3EZMnx" />
-      <node concept="3F0ifn" id="7_KOYEjeZ76" role="3EZMnx">
-        <property role="3F0ifm" value="(" />
-      </node>
       <node concept="3F1sOY" id="7_KOYEjeZ7B" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:5eYfGK4mOkU" resolve="expression" />
-      </node>
-      <node concept="3F0ifn" id="7_KOYEjeZ8c" role="3EZMnx">
-        <property role="3F0ifm" value=")" />
       </node>
     </node>
   </node>
@@ -258,17 +252,14 @@
     <ref role="1XX52x" to="lpas:5eYfGK4rwHp" resolve="PointCut" />
     <node concept="3EZMnI" id="5eYfGK4t1z4" role="2wV5jI">
       <node concept="l2Vlx" id="5eYfGK4t1z5" role="2iSdaV" />
-      <node concept="3F0A7n" id="5eYfGK4t1z8" role="3EZMnx">
-        <ref role="1NtTu8" to="lpas:5eYfGK4rwH$" resolve="typePointCut" />
-        <node concept="VechU" id="3Ivd_nw6Lzw" role="3F10Kt">
-          <property role="Vb096" value="fLJRk5_/gray" />
-        </node>
-      </node>
       <node concept="3F0A7n" id="5eYfGK4vf8L" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:5eYfGK4vf8z" resolve="call" />
       </node>
       <node concept="3F0ifn" id="3Ivd_nw8BkV" role="3EZMnx">
-        <property role="3F0ifm" value="call execute" />
+        <property role="3F0ifm" value="command is called, execute" />
+      </node>
+      <node concept="3F0A7n" id="79gzy7Khppf" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:79gzy7KdDUM" resolve="typeOfPointCut" />
       </node>
       <node concept="1iCGBv" id="5eYfGK4tBd2" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:5eYfGK4rwHC" resolve="adviseScript" />
@@ -462,6 +453,59 @@
         <property role="3F0ifm" value=")" />
       </node>
       <node concept="l2Vlx" id="7_KOYEjgt2i" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="79gzy7KeIiM">
+    <property role="3GE5qa" value="math.expression.conditional_expression.region" />
+    <ref role="1XX52x" to="lpas:5eYfGK4mCNw" resolve="RegionConditionalExpression" />
+    <node concept="3EZMnI" id="79gzy7KeIiO" role="2wV5jI">
+      <node concept="3F0ifn" id="79gzy7KeID8" role="3EZMnx">
+        <property role="3F0ifm" value="(" />
+      </node>
+      <node concept="3F1sOY" id="79gzy7KeIDq" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:79gzy7KeIj2" resolve="left" />
+      </node>
+      <node concept="3F0A7n" id="79gzy7KeIDA" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:79gzy7KeIj4" resolve="operator" />
+      </node>
+      <node concept="3F0ifn" id="79gzy7KeIJb" role="3EZMnx">
+        <property role="3F0ifm" value="over" />
+      </node>
+      <node concept="3F0A7n" id="79gzy7KeIiV" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:79gzy7KeIiC" resolve="right" />
+      </node>
+      <node concept="3F0ifn" id="79gzy7KeIDg" role="3EZMnx">
+        <property role="3F0ifm" value="region)" />
+      </node>
+      <node concept="l2Vlx" id="79gzy7KeIiR" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="79gzy7KfePl">
+    <property role="3GE5qa" value="math.expression.conditional_expression.distance" />
+    <ref role="1XX52x" to="lpas:79gzy7KfeP3" resolve="OriginAndDestinationDistanceConditionalExpression" />
+    <node concept="3EZMnI" id="79gzy7KfePn" role="2wV5jI">
+      <node concept="3F0ifn" id="79gzy7KfePu" role="3EZMnx">
+        <property role="3F0ifm" value="(" />
+      </node>
+      <node concept="3F0A7n" id="79gzy7KfePO" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:79gzy7KfeP6" resolve="left" />
+      </node>
+      <node concept="3F0ifn" id="79gzy7KfeQo" role="3EZMnx">
+        <property role="3F0ifm" value="distance" />
+      </node>
+      <node concept="3F0A7n" id="79gzy7KfePY" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:79gzy7KfeP8" resolve="operator" />
+      </node>
+      <node concept="3F1sOY" id="79gzy7KfeQa" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:79gzy7KfePb" resolve="right" />
+      </node>
+      <node concept="3F0ifn" id="79gzy7KfeQC" role="3EZMnx">
+        <property role="3F0ifm" value="km" />
+      </node>
+      <node concept="3F0ifn" id="79gzy7KfePG" role="3EZMnx">
+        <property role="3F0ifm" value=")" />
+      </node>
+      <node concept="l2Vlx" id="79gzy7KfePq" role="2iSdaV" />
     </node>
   </node>
 </model>

@@ -215,11 +215,28 @@
   </node>
   <node concept="1TIwiD" id="5eYfGK4mCNw">
     <property role="EcuMT" value="6034329596690336992" />
-    <property role="3GE5qa" value="math.expression.conditional_expression" />
+    <property role="3GE5qa" value="math.expression.conditional_expression.region" />
     <property role="TrG5h" value="RegionConditionalExpression" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="7_KOYEjbOoc" role="PzmwI">
       <ref role="PrY4T" node="7_KOYEjbOnV" resolve="ConditionalExpression" />
+    </node>
+    <node concept="1TJgyi" id="79gzy7KeIiC" role="1TKVEl">
+      <property role="IQ2nx" value="8237239994876093608" />
+      <property role="TrG5h" value="right" />
+      <ref role="AX2Wp" node="79gzy7KeIiz" resolve="RegionEnum" />
+    </node>
+    <node concept="1TJgyi" id="79gzy7KeIj4" role="1TKVEl">
+      <property role="IQ2nx" value="8237239994876093636" />
+      <property role="TrG5h" value="operator" />
+      <ref role="AX2Wp" node="7_KOYEjd0pt" resolve="IqualityOperatorEnum" />
+    </node>
+    <node concept="1TJgyj" id="79gzy7KeIj2" role="1TKVEi">
+      <property role="IQ2ns" value="8237239994876093634" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="left" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="5eYfGK4oHfY" resolve="Text" />
     </node>
   </node>
   <node concept="1TIwiD" id="5eYfGK4mCNz">
@@ -471,15 +488,15 @@
     <property role="TrG5h" value="PointCut" />
     <property role="3GE5qa" value="pointcut" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyi" id="5eYfGK4rwH$" role="1TKVEl">
-      <property role="IQ2nx" value="6034329596691614564" />
-      <property role="TrG5h" value="typePointCut" />
-      <ref role="AX2Wp" node="5eYfGK4mOiz" resolve="TypePointCutEnum" />
-    </node>
     <node concept="1TJgyi" id="5eYfGK4vf8z" role="1TKVEl">
       <property role="IQ2nx" value="6034329596692591139" />
       <property role="TrG5h" value="call" />
       <ref role="AX2Wp" node="5eYfGK4mOiI" resolve="CommandEnum" />
+    </node>
+    <node concept="1TJgyi" id="79gzy7KdDUM" role="1TKVEl">
+      <property role="IQ2nx" value="8237239994875813554" />
+      <property role="TrG5h" value="typeOfPointCut" />
+      <ref role="AX2Wp" node="5eYfGK4mOiz" resolve="TypePointCutEnum" />
     </node>
     <node concept="1TJgyj" id="5eYfGK4rwHC" role="1TKVEi">
       <property role="IQ2ns" value="6034329596691614568" />
@@ -725,6 +742,57 @@
       <property role="3tVfz5" value="8750727080427121669" />
       <property role="TrG5h" value="destination" />
       <property role="1L1pqM" value="destination" />
+    </node>
+  </node>
+  <node concept="25R3W" id="79gzy7KeIiz">
+    <property role="3F6X1D" value="8237239994876093603" />
+    <property role="3GE5qa" value="math.expression.conditional_expression.region" />
+    <property role="TrG5h" value="RegionEnum" />
+    <node concept="25R33" id="79gzy7KeIi$" role="25R1y">
+      <property role="3tVfz5" value="8237239994876093604" />
+      <property role="TrG5h" value="land" />
+      <property role="1L1pqM" value="land" />
+    </node>
+    <node concept="25R33" id="79gzy7KeIi_" role="25R1y">
+      <property role="3tVfz5" value="8237239994876093605" />
+      <property role="TrG5h" value="water" />
+      <property role="1L1pqM" value="water" />
+    </node>
+    <node concept="25R33" id="79gzy7KeYOS" role="25R1y">
+      <property role="3tVfz5" value="8237239994876161336" />
+      <property role="TrG5h" value="destination" />
+      <property role="1L1pqM" value="destination" />
+    </node>
+    <node concept="25R33" id="79gzy7KeYOW" role="25R1y">
+      <property role="3tVfz5" value="8237239994876161340" />
+      <property role="TrG5h" value="origin" />
+      <property role="1L1pqM" value="origin" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="79gzy7KfeP3">
+    <property role="EcuMT" value="8237239994876226883" />
+    <property role="3GE5qa" value="math.expression.conditional_expression.distance" />
+    <property role="TrG5h" value="OriginAndDestinationDistanceConditionalExpression" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="79gzy7KfeP4" role="PzmwI">
+      <ref role="PrY4T" node="7_KOYEjbOnV" resolve="ConditionalExpression" />
+    </node>
+    <node concept="1TJgyi" id="79gzy7KfeP6" role="1TKVEl">
+      <property role="IQ2nx" value="8237239994876226886" />
+      <property role="TrG5h" value="left" />
+      <ref role="AX2Wp" node="7_KOYEjfYK4" resolve="CategoricalDistanceEnum" />
+    </node>
+    <node concept="1TJgyi" id="79gzy7KfeP8" role="1TKVEl">
+      <property role="IQ2nx" value="8237239994876226888" />
+      <property role="TrG5h" value="operator" />
+      <ref role="AX2Wp" node="7_KOYEjbOnF" resolve="ConditionalOperatorEnum" />
+    </node>
+    <node concept="1TJgyj" id="79gzy7KfePb" role="1TKVEi">
+      <property role="IQ2ns" value="8237239994876226891" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="right" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="5eYfGK4oHfV" resolve="Value" />
     </node>
   </node>
 </model>

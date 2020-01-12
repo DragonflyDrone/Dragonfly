@@ -12,7 +12,79 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1164991038168:jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,38,0" name="WrapperDSL.behavior.BehaviorAspectDescriptor" />
+      <unit at="14,0,41,0" name="WrapperDSL.behavior.BehaviorAspectDescriptor" />
+    </file>
+  </root>
+  <root nodeRef="r:35775fc0-14e8-4f8f-a8b6-1a8b3f5722a6(WrapperDSL.behavior)/8237239994876094062">
+    <file name="RegionConditionalExpression__BehaviorDescriptor.java">
+      <node id="8237239994876094062" at="23,0,24,0" concept="6" trace="CONCEPT" />
+      <node id="8237239994876094062" at="26,0,27,0" concept="6" trace="BH_METHODS" />
+      <node id="8237239994876094073" at="28,63,29,173" concept="4" />
+      <node id="8237239994876094079" at="29,173,30,64" concept="1" />
+      <node id="8237239994876094085" at="30,64,31,67" concept="1" />
+      <node id="8237239994876094062" at="39,114,40,21" concept="1" />
+      <node id="8237239994876094062" at="44,114,45,49" concept="4" />
+      <node id="8237239994876094062" at="46,26,47,56" concept="9" />
+      <node id="8237239994876094062" at="50,14,51,58" concept="9" />
+      <node id="8237239994876094062" at="56,128,57,49" concept="4" />
+      <node id="8237239994876094062" at="58,26,59,56" concept="9" />
+      <node id="8237239994876094062" at="62,14,63,58" concept="9" />
+      <node id="8237239994876094062" at="69,48,70,22" concept="5" />
+      <node id="8237239994876094062" at="75,40,76,19" concept="5" />
+      <node id="8237239994876094062" at="80,0,81,0" concept="6" trace="value$QRSw" />
+      <node id="8237239994876094062" at="84,0,85,0" concept="6" trace="left$shsH" />
+      <node id="8237239994876094062" at="35,0,37,0" concept="0" trace="RegionConditionalExpression__BehaviorDescriptor#()V" />
+      <node id="8237239994876094062" at="45,49,48,5" concept="2" />
+      <node id="8237239994876094062" at="57,49,60,5" concept="2" />
+      <node id="8237239994876094062" at="38,0,42,0" concept="3" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
+      <node id="8237239994876094062" at="48,5,52,5" concept="8" />
+      <node id="8237239994876094062" at="60,5,64,5" concept="8" />
+      <node id="8237239994876094062" at="28,0,33,0" concept="7" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="8237239994876094062" at="67,0,72,0" concept="3" trace="getDeclaredMethods#()Ljava/util/List;" />
+      <node id="8237239994876094062" at="73,0,78,0" concept="3" trace="getConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="8237239994876094062" at="43,0,54,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
+      <node id="8237239994876094062" at="55,0,66,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
+      <scope id="8237239994876094062" at="35,65,35,65" />
+      <scope id="8237239994876094062" at="39,114,40,21" />
+      <scope id="8237239994876094062" at="46,26,47,56" />
+      <scope id="8237239994876094062" at="50,14,51,58" />
+      <scope id="8237239994876094062" at="58,26,59,56" />
+      <scope id="8237239994876094062" at="62,14,63,58" />
+      <scope id="8237239994876094062" at="69,48,70,22" />
+      <scope id="8237239994876094062" at="75,40,76,19" />
+      <scope id="8237239994876094062" at="35,0,37,0" />
+      <scope id="8237239994876094062" at="28,63,31,67">
+        <var name="text" id="8237239994876094074" />
+      </scope>
+      <scope id="8237239994876094062" at="38,0,42,0">
+        <var name="constructor" id="8237239994876094062" />
+        <var name="node" id="8237239994876094062" />
+        <var name="parameters" id="8237239994876094062" />
+      </scope>
+      <scope id="8237239994876094062" at="28,0,33,0">
+        <var name="__thisNode__" id="8237239994876094062" />
+      </scope>
+      <scope id="8237239994876094062" at="67,0,72,0" />
+      <scope id="8237239994876094062" at="73,0,78,0" />
+      <scope id="8237239994876094062" at="44,114,52,5">
+        <var name="methodIndex" id="8237239994876094062" />
+      </scope>
+      <scope id="8237239994876094062" at="56,128,64,5">
+        <var name="methodIndex" id="8237239994876094062" />
+      </scope>
+      <scope id="8237239994876094062" at="43,0,54,0">
+        <var name="method" id="8237239994876094062" />
+        <var name="node" id="8237239994876094062" />
+        <var name="parameters" id="8237239994876094062" />
+      </scope>
+      <scope id="8237239994876094062" at="55,0,66,0">
+        <var name="concept" id="8237239994876094062" />
+        <var name="method" id="8237239994876094062" />
+        <var name="parameters" id="8237239994876094062" />
+      </scope>
+      <unit id="8237239994876094062" at="79,0,82,0" name="WrapperDSL.behavior.RegionConditionalExpression__BehaviorDescriptor$PROPS" />
+      <unit id="8237239994876094062" at="83,0,86,0" name="WrapperDSL.behavior.RegionConditionalExpression__BehaviorDescriptor$LINKS" />
+      <unit id="8237239994876094062" at="22,0,87,0" name="WrapperDSL.behavior.RegionConditionalExpression__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:35775fc0-14e8-4f8f-a8b6-1a8b3f5722a6(WrapperDSL.behavior)/8750727080426211637">
@@ -164,8 +236,8 @@
       <node id="8750727080426508038" at="23,0,24,0" concept="6" trace="CONCEPT" />
       <node id="8750727080426508038" at="26,0,27,0" concept="6" trace="BH_METHODS" />
       <node id="8750727080426508049" at="28,63,29,173" concept="4" />
-      <node id="8750727080426508055" at="29,173,30,66" concept="1" />
-      <node id="8750727080426508061" at="30,66,31,67" concept="1" />
+      <node id="8750727080426508055" at="29,173,30,63" concept="1" />
+      <node id="8750727080426508061" at="30,63,31,67" concept="1" />
       <node id="8750727080426508038" at="39,114,40,21" concept="1" />
       <node id="8750727080426508038" at="44,114,45,49" concept="4" />
       <node id="8750727080426508038" at="46,26,47,56" concept="9" />
