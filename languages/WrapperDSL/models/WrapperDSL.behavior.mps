@@ -81,7 +81,7 @@
     </language>
   </registry>
   <node concept="13h7C7" id="7_KOYEjcw$P">
-    <property role="3GE5qa" value="math.expression.conditional_expression" />
+    <property role="3GE5qa" value="math.expression.conditional_expression.internal_state" />
     <ref role="13h7C2" to="lpas:5eYfGK4qp90" resolve="BatteryConditionalExpression" />
     <node concept="13hLZK" id="7_KOYEjcw$Q" role="13h7CW">
       <node concept="3clFbS" id="7_KOYEjcw$R" role="2VODD2">

@@ -116,7 +116,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     }
   }
   private EditorCell createConstant_1() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "distance from");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "distance to");
     editorCell.setCellId("Constant_q5z10x_d0");
     editorCell.setDefaultText("");
     return editorCell;

@@ -314,7 +314,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="7_KOYEjcz$k">
-    <property role="3GE5qa" value="math.expression.conditional_expression" />
+    <property role="3GE5qa" value="math.expression.conditional_expression.internal_state" />
     <ref role="1XX52x" to="lpas:5eYfGK4qp90" resolve="BatteryConditionalExpression" />
     <node concept="3EZMnI" id="7_KOYEjcz$p" role="2wV5jI">
       <node concept="3F0ifn" id="7_KOYEjcz$r" role="3EZMnx">
@@ -419,7 +419,7 @@
         <ref role="1NtTu8" to="lpas:7_KOYEjfYK0" resolve="operator" />
       </node>
       <node concept="3F0ifn" id="7_KOYEjhCs0" role="3EZMnx">
-        <property role="3F0ifm" value="distance from" />
+        <property role="3F0ifm" value="distance to" />
       </node>
       <node concept="3F0A7n" id="7_KOYEjfYLb" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:7_KOYEjfYK9" resolve="right" />
@@ -497,7 +497,7 @@
         <ref role="1NtTu8" to="lpas:79gzy7KfeP8" resolve="operator" />
       </node>
       <node concept="3F1sOY" id="79gzy7KfeQa" role="3EZMnx">
-        <ref role="1NtTu8" to="lpas:79gzy7KfePb" resolve="right" />
+        <ref role="1NtTu8" to="lpas:79gzy7KfePb" resolve="right1" />
       </node>
       <node concept="3F0ifn" id="79gzy7KfeQC" role="3EZMnx">
         <property role="3F0ifm" value="km" />
@@ -506,6 +506,186 @@
         <property role="3F0ifm" value=")" />
       </node>
       <node concept="l2Vlx" id="79gzy7KfePq" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="fKEgehUC_r">
+    <property role="3GE5qa" value="math.expression.conditional_expression.internal_state" />
+    <ref role="1XX52x" to="lpas:fKEgehUC$S" resolve="SpeedConditionalExpression" />
+    <node concept="3EZMnI" id="fKEgehUC_t" role="2wV5jI">
+      <node concept="l2Vlx" id="fKEgehUC_w" role="2iSdaV" />
+      <node concept="3F0ifn" id="fKEgehUCBX" role="3EZMnx">
+        <property role="3F0ifm" value="(" />
+      </node>
+      <node concept="3F0ifn" id="fKEgehUCC2" role="3EZMnx">
+        <property role="3F0ifm" value="speed" />
+      </node>
+      <node concept="3F0A7n" id="fKEgehUCCz" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:fKEgehUC_L" resolve="operator" />
+      </node>
+      <node concept="3F1sOY" id="fKEgehUCCN" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:fKEgehUC_J" resolve="right" />
+      </node>
+      <node concept="3F0ifn" id="fKEgehUCCZ" role="3EZMnx">
+        <property role="3F0ifm" value="m/s )" />
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="11jlgVoCRRI">
+    <property role="3GE5qa" value="math.expression.conditional_expression.internal_state" />
+    <ref role="1XX52x" to="lpas:fKEgehVqvR" resolve="CompassConditionalExpression" />
+    <node concept="3EZMnI" id="11jlgVoCRRK" role="2wV5jI">
+      <node concept="3F0ifn" id="11jlgVoCRRR" role="3EZMnx">
+        <property role="3F0ifm" value="(" />
+      </node>
+      <node concept="l2Vlx" id="11jlgVoCRRN" role="2iSdaV" />
+      <node concept="3F0ifn" id="11jlgVoCRRX" role="3EZMnx">
+        <property role="3F0ifm" value="direction of drone" />
+      </node>
+      <node concept="3F0A7n" id="11jlgVoCRS5" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:fKEgehVqvU" resolve="operators" />
+      </node>
+      <node concept="3F0A7n" id="11jlgVoCRSf" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:11jlgVoCRRz" resolve="right" />
+      </node>
+      <node concept="3F0ifn" id="11jlgVoDMpR" role="3EZMnx">
+        <property role="3F0ifm" value=")" />
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="11jlgVoF3D4">
+    <property role="3GE5qa" value="math.expression.conditional_expression.internal_state" />
+    <ref role="1XX52x" to="lpas:11jlgVoF3CR" resolve="AltitudeConditionalExpression" />
+    <node concept="3EZMnI" id="11jlgVoF3D6" role="2wV5jI">
+      <node concept="3F0ifn" id="11jlgVoF3Dd" role="3EZMnx">
+        <property role="3F0ifm" value="(" />
+      </node>
+      <node concept="l2Vlx" id="11jlgVoF3D9" role="2iSdaV" />
+      <node concept="3F0ifn" id="11jlgVoF3Dj" role="3EZMnx">
+        <property role="3F0ifm" value="altitude" />
+      </node>
+      <node concept="3F0A7n" id="11jlgVoF3Dw" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:11jlgVoF3CS" resolve="operators" />
+      </node>
+      <node concept="3F1sOY" id="11jlgVoF3DK" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:11jlgVoF3CU" resolve="right" />
+      </node>
+      <node concept="3F0ifn" id="11jlgVoF3DW" role="3EZMnx">
+        <property role="3F0ifm" value="Km" />
+      </node>
+      <node concept="3F0ifn" id="11jlgVoG14F" role="3EZMnx">
+        <property role="3F0ifm" value=")" />
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="11jlgVoGE2U">
+    <property role="3GE5qa" value="math.expression.conditional_expression.internal_state" />
+    <ref role="1XX52x" to="lpas:11jlgVoGE2z" resolve="MotorsPowerConditionalExtension" />
+    <node concept="3EZMnI" id="11jlgVoGE2W" role="2wV5jI">
+      <node concept="3F0ifn" id="11jlgVoGE33" role="3EZMnx">
+        <property role="3F0ifm" value="( motor's power" />
+      </node>
+      <node concept="l2Vlx" id="11jlgVoGE2Z" role="2iSdaV" />
+      <node concept="3F0A7n" id="11jlgVoGE3d" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:11jlgVoGE2H" resolve="operators" />
+      </node>
+      <node concept="3F0A7n" id="11jlgVoGE3l" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:11jlgVoGE2J" resolve="right" />
+      </node>
+      <node concept="3F0ifn" id="11jlgVoGZJO" role="3EZMnx">
+        <property role="3F0ifm" value=")" />
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="11jlgVoGZKe">
+    <property role="3GE5qa" value="math.expression.conditional_expression.internal_state" />
+    <ref role="1XX52x" to="lpas:11jlgVoGZJU" resolve="LandingGearConditionalExtension" />
+    <node concept="3EZMnI" id="11jlgVoGZKg" role="2wV5jI">
+      <node concept="3F0ifn" id="11jlgVoGZKn" role="3EZMnx">
+        <property role="3F0ifm" value="( landing gear" />
+      </node>
+      <node concept="l2Vlx" id="11jlgVoGZKj" role="2iSdaV" />
+      <node concept="3F0A7n" id="11jlgVoGZKx" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:11jlgVoGZJW" resolve="operators" />
+      </node>
+      <node concept="3F0A7n" id="11jlgVoGZKD" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:11jlgVoGZJX" resolve="right" />
+      </node>
+      <node concept="3F0ifn" id="11jlgVoGZKN" role="3EZMnx">
+        <property role="3F0ifm" value=")" />
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="11jlgVoGZL5">
+    <property role="3GE5qa" value="math.expression.conditional_expression.internal_state" />
+    <ref role="1XX52x" to="lpas:11jlgVoGZKT" resolve="WifiConditionalExtension" />
+    <node concept="3EZMnI" id="11jlgVoGZL7" role="2wV5jI">
+      <node concept="3F0ifn" id="11jlgVoGZLe" role="3EZMnx">
+        <property role="3F0ifm" value="( wifi" />
+      </node>
+      <node concept="l2Vlx" id="11jlgVoGZLa" role="2iSdaV" />
+      <node concept="3F0A7n" id="11jlgVoGZLs" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:11jlgVoGZKV" resolve="operators" />
+      </node>
+      <node concept="3F0A7n" id="11jlgVoGZL$" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:11jlgVoGZKW" resolve="right" />
+      </node>
+      <node concept="3F0ifn" id="11jlgVoGZLI" role="3EZMnx">
+        <property role="3F0ifm" value=")" />
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="11jlgVoGZM0">
+    <property role="3GE5qa" value="math.expression.conditional_expression.internal_state" />
+    <ref role="1XX52x" to="lpas:11jlgVoGZLO" resolve="PayloadConditionalExtension" />
+    <node concept="3EZMnI" id="11jlgVoGZM2" role="2wV5jI">
+      <node concept="3F0ifn" id="11jlgVoGZM9" role="3EZMnx">
+        <property role="3F0ifm" value="( It" />
+      </node>
+      <node concept="l2Vlx" id="11jlgVoGZM5" role="2iSdaV" />
+      <node concept="3F0A7n" id="11jlgVoGZMj" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:11jlgVoGZLQ" resolve="operators" />
+      </node>
+      <node concept="3F0ifn" id="11jlgVoGZME" role="3EZMnx">
+        <property role="3F0ifm" value="carrying payload )" />
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="11jlgVoHLov">
+    <property role="3GE5qa" value="math.expression.conditional_expression.internal_state" />
+    <ref role="1XX52x" to="lpas:11jlgVoHLoj" resolve="CameraPowerConditionalExtension" />
+    <node concept="3EZMnI" id="11jlgVoHLox" role="2wV5jI">
+      <node concept="3F0ifn" id="11jlgVoHLoC" role="3EZMnx">
+        <property role="3F0ifm" value="( camera's power" />
+      </node>
+      <node concept="l2Vlx" id="11jlgVoHLo$" role="2iSdaV" />
+      <node concept="3F0A7n" id="11jlgVoHLoI" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:11jlgVoHLol" resolve="operators" />
+      </node>
+      <node concept="3F0A7n" id="11jlgVoHLoQ" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:11jlgVoHLom" resolve="right" />
+      </node>
+      <node concept="3F0ifn" id="11jlgVoHLp0" role="3EZMnx">
+        <property role="3F0ifm" value=")" />
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="11jlgVoHLpi">
+    <property role="3GE5qa" value="math.expression.conditional_expression.internal_state" />
+    <ref role="1XX52x" to="lpas:11jlgVoHLp6" resolve="GimbalConditionalExtension" />
+    <node concept="3EZMnI" id="11jlgVoHLpk" role="2wV5jI">
+      <node concept="3F0ifn" id="11jlgVoHLpr" role="3EZMnx">
+        <property role="3F0ifm" value="(gimbal" />
+      </node>
+      <node concept="l2Vlx" id="11jlgVoHLpn" role="2iSdaV" />
+      <node concept="3F0A7n" id="11jlgVoHLpx" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:11jlgVoHLp8" resolve="operators" />
+      </node>
+      <node concept="3F0A7n" id="11jlgVoHLpD" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:11jlgVoHLp9" resolve="right" />
+      </node>
+      <node concept="3F0ifn" id="11jlgVoHLpN" role="3EZMnx">
+        <property role="3F0ifm" value=")" />
+      </node>
     </node>
   </node>
 </model>
