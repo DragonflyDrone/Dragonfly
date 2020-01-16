@@ -34,16 +34,17 @@ public final class LanguageConceptSwitch {
   public static final int PayloadConditionalExtension = 22;
   public static final int PointCut = 23;
   public static final int RegionConditionalExpression = 24;
-  public static final int ScalarDistanceConditionalExpression = 25;
-  public static final int ScalarWindConditionalExpression = 26;
-  public static final int SpeedConditionalExpression = 27;
-  public static final int Statement = 28;
-  public static final int Text = 29;
-  public static final int Then = 30;
-  public static final int Value = 31;
-  public static final int When = 32;
-  public static final int While = 33;
-  public static final int WifiConditionalExtension = 34;
+  public static final int RotationSpeedConditionalExpression = 25;
+  public static final int ScalarDistanceConditionalExpression = 26;
+  public static final int ScalarWindConditionalExpression = 27;
+  public static final int SpeedConditionalExpression = 28;
+  public static final int Statement = 29;
+  public static final int Text = 30;
+  public static final int Then = 31;
+  public static final int Value = 32;
+  public static final int When = 33;
+  public static final int While = 34;
+  public static final int WifiConditionalExtension = 35;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L);
@@ -72,6 +73,7 @@ public final class LanguageConceptSwitch {
     builder.put(0x1053550ed8b3fc74L, PayloadConditionalExtension);
     builder.put(0x53be3ecc046e0b59L, PointCut);
     builder.put(0x53be3ecc045a8ce0L, RegionConditionalExpression);
+    builder.put(0x1e50d2b0bcf0f56aL, RotationSpeedConditionalExpression);
     builder.put(0x53be3ecc048c5944L, ScalarDistanceConditionalExpression);
     builder.put(0x7970d3ea93368919L, ScalarWindConditionalExpression);
     builder.put(0x3f0a90391ea8938L, SpeedConditionalExpression);

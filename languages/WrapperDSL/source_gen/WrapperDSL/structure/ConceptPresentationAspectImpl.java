@@ -34,6 +34,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_PayloadConditionalExtension;
   private ConceptPresentation props_PointCut;
   private ConceptPresentation props_RegionConditionalExpression;
+  private ConceptPresentation props_RotationSpeedConditionalExpression;
   private ConceptPresentation props_ScalarDistanceConditionalExpression;
   private ConceptPresentation props_ScalarWindConditionalExpression;
   private ConceptPresentation props_SpeedConditionalExpression;
@@ -235,6 +236,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_RegionConditionalExpression = cpb.create();
         }
         return props_RegionConditionalExpression;
+      case LanguageConceptSwitch.RotationSpeedConditionalExpression:
+        if (props_RotationSpeedConditionalExpression == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("( rotation speed [is|is not|>|<|>=|<=] (x,y,z) °/s )");
+          cpb.rawPresentation("RotationSpeedConditionalExpression");
+          props_RotationSpeedConditionalExpression = cpb.create();
+        }
+        return props_RotationSpeedConditionalExpression;
       case LanguageConceptSwitch.ScalarDistanceConditionalExpression:
         if (props_ScalarDistanceConditionalExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
