@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private ConceptPresentation props_AdviseScript;
   private ConceptPresentation props_AltitudeConditionalExpression;
+  private ConceptPresentation props_AngularAccelerationConditionalExpression;
   private ConceptPresentation props_BatteryConditionalExpression;
   private ConceptPresentation props_CameraPowerConditionalExtension;
   private ConceptPresentation props_CategoricalDistanceConditionalExpression;
@@ -27,6 +28,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_Given;
   private ConceptPresentation props_If;
   private ConceptPresentation props_LandingGearConditionalExtension;
+  private ConceptPresentation props_LinearAccelerationConditionalExtension;
   private ConceptPresentation props_LogicalExpression;
   private ConceptPresentation props_MathElement;
   private ConceptPresentation props_MotorsPowerConditionalExtension;
@@ -34,7 +36,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_PayloadConditionalExtension;
   private ConceptPresentation props_PointCut;
   private ConceptPresentation props_RegionConditionalExpression;
-  private ConceptPresentation props_RotationSpeedConditionalExpression;
   private ConceptPresentation props_ScalarDistanceConditionalExpression;
   private ConceptPresentation props_ScalarWindConditionalExpression;
   private ConceptPresentation props_SpeedConditionalExpression;
@@ -66,6 +67,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_AltitudeConditionalExpression = cpb.create();
         }
         return props_AltitudeConditionalExpression;
+      case LanguageConceptSwitch.AngularAccelerationConditionalExpression:
+        if (props_AngularAccelerationConditionalExpression == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("( angular acceleration in [x|y|z] [is|is not|>|<|>=|<=] n °/s )");
+          cpb.rawPresentation("AngularAccelerationConditionalExpression");
+          props_AngularAccelerationConditionalExpression = cpb.create();
+        }
+        return props_AngularAccelerationConditionalExpression;
       case LanguageConceptSwitch.BatteryConditionalExpression:
         if (props_BatteryConditionalExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -183,6 +192,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_LandingGearConditionalExtension = cpb.create();
         }
         return props_LandingGearConditionalExtension;
+      case LanguageConceptSwitch.LinearAccelerationConditionalExtension:
+        if (props_LinearAccelerationConditionalExtension == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("( linear acceleration in [x|y|z] [is|is not|>|<|>=|<=] n m/s² )");
+          cpb.rawPresentation("LinearAccelerationConditionalExtension");
+          props_LinearAccelerationConditionalExtension = cpb.create();
+        }
+        return props_LinearAccelerationConditionalExtension;
       case LanguageConceptSwitch.LogicalExpression:
         if (props_LogicalExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -236,14 +253,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_RegionConditionalExpression = cpb.create();
         }
         return props_RegionConditionalExpression;
-      case LanguageConceptSwitch.RotationSpeedConditionalExpression:
-        if (props_RotationSpeedConditionalExpression == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.shortDesc("( rotation speed [is|is not|>|<|>=|<=] (x,y,z) °/s )");
-          cpb.rawPresentation("RotationSpeedConditionalExpression");
-          props_RotationSpeedConditionalExpression = cpb.create();
-        }
-        return props_RotationSpeedConditionalExpression;
       case LanguageConceptSwitch.ScalarDistanceConditionalExpression:
         if (props_ScalarDistanceConditionalExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

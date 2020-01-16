@@ -11,6 +11,16 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase" />
   </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_AxisEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
   <dependency className="WrapperDSL.structure.EnumerationDescriptor_CategoricalDistanceEnum">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -128,6 +138,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
   </dependency>
   <dependency className="WrapperDSL.structure.StructureAspectDescriptor">
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_AxisEnum" />
     <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_CategoricalDistanceEnum" />
     <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_CategoricalWindEnum" />
     <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_CommandEnum" />

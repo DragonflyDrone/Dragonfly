@@ -7,8 +7,8 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class RotationSpeedConditionalExpression_Editor extends DefaultNodeEditor {
+public class AngularAccelerationConditionalExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return new RotationSpeedConditionalExpression_EditorBuilder_a(editorContext, node).createCell();
+    return new AngularAccelerationConditionalExpression_EditorBuilder_a(editorContext, node).createCell();
   }
 }

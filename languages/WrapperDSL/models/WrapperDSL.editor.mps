@@ -690,38 +690,45 @@
   </node>
   <node concept="24kQdi" id="1TgOF2WWfm2">
     <property role="3GE5qa" value="math.expression.conditional_expression.internal_state" />
-    <ref role="1XX52x" to="lpas:1TgOF2WWflE" resolve="RotationSpeedConditionalExpression" />
+    <ref role="1XX52x" to="lpas:1TgOF2WWflE" resolve="AngularAccelerationConditionalExpression" />
     <node concept="3EZMnI" id="1TgOF2WWfm4" role="2wV5jI">
-      <node concept="3F0ifn" id="1TgOF2WWfmb" role="3EZMnx">
-        <property role="3F0ifm" value="(" />
-      </node>
       <node concept="l2Vlx" id="1TgOF2WWfm7" role="2iSdaV" />
       <node concept="3F0ifn" id="1TgOF2WWfmh" role="3EZMnx">
-        <property role="3F0ifm" value="rotation speed" />
+        <property role="3F0ifm" value="( angular acceleration in" />
+      </node>
+      <node concept="3F0A7n" id="304WrIr4qdf" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:304WrIr4qce" resolve="left" />
       </node>
       <node concept="3F0A7n" id="1TgOF2WWfmu" role="3EZMnx">
-        <ref role="1NtTu8" to="lpas:1TgOF2WWflH" resolve="operators" />
-      </node>
-      <node concept="3F0ifn" id="1TgOF2WWfmC" role="3EZMnx">
-        <property role="3F0ifm" value="(" />
+        <ref role="1NtTu8" to="lpas:1TgOF2WWflH" resolve="operator" />
       </node>
       <node concept="3F1sOY" id="1TgOF2WWfmV" role="3EZMnx">
-        <ref role="1NtTu8" to="lpas:1TgOF2WWflL" resolve="rightX" />
-      </node>
-      <node concept="3F0ifn" id="1TgOF2WWfn9" role="3EZMnx">
-        <property role="3F0ifm" value="," />
-      </node>
-      <node concept="3F1sOY" id="1TgOF2WWfny" role="3EZMnx">
-        <ref role="1NtTu8" to="lpas:1TgOF2WWflN" resolve="rightY" />
-      </node>
-      <node concept="3F0ifn" id="1TgOF2WWfnO" role="3EZMnx">
-        <property role="3F0ifm" value="," />
-      </node>
-      <node concept="3F1sOY" id="1TgOF2WWfoj" role="3EZMnx">
-        <ref role="1NtTu8" to="lpas:1TgOF2WWflQ" resolve="rightZ" />
+        <ref role="1NtTu8" to="lpas:1TgOF2WWflL" resolve="right" />
       </node>
       <node concept="3F0ifn" id="1TgOF2WWfoD" role="3EZMnx">
-        <property role="3F0ifm" value=") º/s )" />
+        <property role="3F0ifm" value="º/s )" />
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="304WrIr5h9q">
+    <property role="3GE5qa" value="math.expression.conditional_expression.internal_state" />
+    <ref role="1XX52x" to="lpas:304WrIr5h8W" resolve="LinearAccelerationConditionalExtension" />
+    <node concept="3EZMnI" id="304WrIr5h9s" role="2wV5jI">
+      <node concept="3F0ifn" id="304WrIr5h9z" role="3EZMnx">
+        <property role="3F0ifm" value="( linear acceleration in" />
+      </node>
+      <node concept="l2Vlx" id="304WrIr5h9v" role="2iSdaV" />
+      <node concept="3F0A7n" id="304WrIr5h9D" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:304WrIr5h9b" resolve="left" />
+      </node>
+      <node concept="3F0A7n" id="304WrIr5h9W" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:304WrIr5h9d" resolve="operator" />
+      </node>
+      <node concept="3F1sOY" id="304WrIr5ha6" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:304WrIr5h9g" resolve="right" />
+      </node>
+      <node concept="3F0ifn" id="304WrIr5hai" role="3EZMnx">
+        <property role="3F0ifm" value="m/s² )" />
       </node>
     </node>
   </node>

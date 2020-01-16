@@ -1046,35 +1046,73 @@
   <node concept="1TIwiD" id="1TgOF2WWflE">
     <property role="EcuMT" value="2184477475800675690" />
     <property role="3GE5qa" value="math.expression.conditional_expression.internal_state" />
-    <property role="TrG5h" value="RotationSpeedConditionalExpression" />
-    <property role="R4oN_" value="( rotation speed [is|is not|&gt;|&lt;|&gt;=|&lt;=] (x,y,z) °/s )" />
+    <property role="TrG5h" value="AngularAccelerationConditionalExpression" />
+    <property role="R4oN_" value="( angular acceleration in [x|y|z] [is|is not|&gt;|&lt;|&gt;=|&lt;=] n °/s )" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="304WrIr4qce" role="1TKVEl">
+      <property role="IQ2nx" value="3460156201790186254" />
+      <property role="TrG5h" value="left" />
+      <ref role="AX2Wp" node="304WrIr4qch" resolve="AxisEnum" />
+    </node>
     <node concept="PrWs8" id="1TgOF2WWflF" role="PzmwI">
       <ref role="PrY4T" node="7_KOYEjbOnV" resolve="ConditionalExpression" />
     </node>
     <node concept="1TJgyi" id="1TgOF2WWflH" role="1TKVEl">
       <property role="IQ2nx" value="2184477475800675693" />
-      <property role="TrG5h" value="operators" />
+      <property role="TrG5h" value="operator" />
       <ref role="AX2Wp" node="7_KOYEjbOnF" resolve="ConditionalOperatorEnum" />
     </node>
     <node concept="1TJgyj" id="1TgOF2WWflL" role="1TKVEi">
       <property role="IQ2ns" value="2184477475800675697" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="rightX" />
+      <property role="20kJfa" value="right" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="5eYfGK4oHfV" resolve="Value" />
     </node>
-    <node concept="1TJgyj" id="1TgOF2WWflN" role="1TKVEi">
-      <property role="IQ2ns" value="2184477475800675699" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="rightY" />
-      <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="5eYfGK4oHfV" resolve="Value" />
+  </node>
+  <node concept="25R3W" id="304WrIr4qch">
+    <property role="3F6X1D" value="3460156201790186257" />
+    <property role="3GE5qa" value="math" />
+    <property role="TrG5h" value="AxisEnum" />
+    <node concept="25R33" id="304WrIr4qci" role="25R1y">
+      <property role="3tVfz5" value="3460156201790186258" />
+      <property role="TrG5h" value="AxisX" />
+      <property role="1L1pqM" value="x" />
     </node>
-    <node concept="1TJgyj" id="1TgOF2WWflQ" role="1TKVEi">
-      <property role="IQ2ns" value="2184477475800675702" />
+    <node concept="25R33" id="304WrIr4qcj" role="25R1y">
+      <property role="3tVfz5" value="3460156201790186259" />
+      <property role="TrG5h" value="AxisY" />
+      <property role="1L1pqM" value="y" />
+    </node>
+    <node concept="25R33" id="304WrIr4qcm" role="25R1y">
+      <property role="3tVfz5" value="3460156201790186262" />
+      <property role="TrG5h" value="AxisZ" />
+      <property role="1L1pqM" value="z" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="304WrIr5h8W">
+    <property role="EcuMT" value="3460156201790411324" />
+    <property role="3GE5qa" value="math.expression.conditional_expression.internal_state" />
+    <property role="TrG5h" value="LinearAccelerationConditionalExtension" />
+    <property role="R4oN_" value="( linear acceleration in [x|y|z] [is|is not|&gt;|&lt;|&gt;=|&lt;=] n m/s² )" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="304WrIr5h8X" role="PzmwI">
+      <ref role="PrY4T" node="7_KOYEjbOnV" resolve="ConditionalExpression" />
+    </node>
+    <node concept="1TJgyi" id="304WrIr5h9b" role="1TKVEl">
+      <property role="IQ2nx" value="3460156201790411339" />
+      <property role="TrG5h" value="left" />
+      <ref role="AX2Wp" node="304WrIr4qch" resolve="AxisEnum" />
+    </node>
+    <node concept="1TJgyi" id="304WrIr5h9d" role="1TKVEl">
+      <property role="IQ2nx" value="3460156201790411341" />
+      <property role="TrG5h" value="operator" />
+      <ref role="AX2Wp" node="7_KOYEjbOnF" resolve="ConditionalOperatorEnum" />
+    </node>
+    <node concept="1TJgyj" id="304WrIr5h9g" role="1TKVEi">
+      <property role="IQ2ns" value="3460156201790411344" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="rightZ" />
+      <property role="20kJfa" value="right" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="5eYfGK4oHfV" resolve="Value" />
     </node>
