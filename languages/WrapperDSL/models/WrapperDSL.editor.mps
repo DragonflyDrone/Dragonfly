@@ -8,6 +8,7 @@
   <imports>
     <import index="lpas" ref="r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
+    <import index="tpco" ref="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" implicit="true" />
   </imports>
   <registry>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
@@ -21,6 +22,9 @@
       <concept id="1237385578942" name="jetbrains.mps.lang.editor.structure.IndentLayoutOnNewLineStyleClassItem" flags="ln" index="pVoyu" />
       <concept id="1080736578640" name="jetbrains.mps.lang.editor.structure.BaseEditorComponent" flags="ig" index="2wURMF">
         <child id="1080736633877" name="cellModel" index="2wV5jI" />
+      </concept>
+      <concept id="1078939183254" name="jetbrains.mps.lang.editor.structure.CellModel_Component" flags="sg" stub="3162947552742194261" index="PMmxH">
+        <reference id="1078939183255" name="editorComponent" index="PMmxG" />
       </concept>
       <concept id="1186403694788" name="jetbrains.mps.lang.editor.structure.ColorStyleClassItem" flags="ln" index="VaVBg">
         <property id="1186403713874" name="color" index="Vb096" />
@@ -252,8 +256,8 @@
     <ref role="1XX52x" to="lpas:5eYfGK4rwHp" resolve="PointCut" />
     <node concept="3EZMnI" id="5eYfGK4t1z4" role="2wV5jI">
       <node concept="l2Vlx" id="5eYfGK4t1z5" role="2iSdaV" />
-      <node concept="3F0A7n" id="5eYfGK4vf8L" role="3EZMnx">
-        <ref role="1NtTu8" to="lpas:5eYfGK4vf8z" resolve="call" />
+      <node concept="3F1sOY" id="6UvQjm9lvPh" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:6UvQjm9lvOE" resolve="call" />
       </node>
       <node concept="3F0ifn" id="3Ivd_nw8BkV" role="3EZMnx">
         <property role="3F0ifm" value="command is called, execute" />
@@ -729,6 +733,308 @@
       </node>
       <node concept="3F0ifn" id="304WrIr5hai" role="3EZMnx">
         <property role="3F0ifm" value="m/s² )" />
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="6UvQjm9m3Y1">
+    <property role="3GE5qa" value="command" />
+    <ref role="1XX52x" to="lpas:6UvQjm9m3XF" resolve="SetHomeLocation" />
+    <node concept="3EZMnI" id="6UvQjm9m3Y3" role="2wV5jI">
+      <node concept="PMmxH" id="6UvQjm9m3Ya" role="3EZMnx">
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+      </node>
+      <node concept="3F0ifn" id="6UvQjm9m3Yf" role="3EZMnx">
+        <property role="3F0ifm" value="(" />
+      </node>
+      <node concept="3F1sOY" id="6UvQjm9m3Yn" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:6UvQjm9m3XI" resolve="lat" />
+      </node>
+      <node concept="3F0ifn" id="6UvQjm9m3Yx" role="3EZMnx">
+        <property role="3F0ifm" value="," />
+      </node>
+      <node concept="3F1sOY" id="6UvQjm9m3YH" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:6UvQjm9m3XN" resolve="long" />
+      </node>
+      <node concept="3F0ifn" id="6UvQjm9m3YV" role="3EZMnx">
+        <property role="3F0ifm" value=")" />
+      </node>
+      <node concept="l2Vlx" id="6UvQjm9m3Y6" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="6UvQjm9mmgk">
+    <property role="3GE5qa" value="command" />
+    <ref role="1XX52x" to="lpas:6UvQjm9mmgb" resolve="TurnOnMotors" />
+    <node concept="3EZMnI" id="6UvQjm9mmgm" role="2wV5jI">
+      <node concept="PMmxH" id="6UvQjm9mmgw" role="3EZMnx">
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+      </node>
+      <node concept="l2Vlx" id="6UvQjm9mmgp" role="2iSdaV" />
+      <node concept="3F0ifn" id="6UvQjm9mmg_" role="3EZMnx">
+        <property role="3F0ifm" value="()" />
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="6UvQjm9mmgM">
+    <property role="3GE5qa" value="command" />
+    <ref role="1XX52x" to="lpas:6UvQjm9mmgD" resolve="TurnOffMotors" />
+    <node concept="3EZMnI" id="6UvQjm9mmgO" role="2wV5jI">
+      <node concept="PMmxH" id="6UvQjm9mmgY" role="3EZMnx">
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+      </node>
+      <node concept="l2Vlx" id="6UvQjm9mmgR" role="2iSdaV" />
+      <node concept="3F0ifn" id="6UvQjm9mmh3" role="3EZMnx">
+        <property role="3F0ifm" value="()" />
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="6UvQjm9mmhg">
+    <property role="3GE5qa" value="command" />
+    <ref role="1XX52x" to="lpas:6UvQjm9mmh7" resolve="StartTakeOff" />
+    <node concept="3EZMnI" id="6UvQjm9mmhi" role="2wV5jI">
+      <node concept="PMmxH" id="6UvQjm9mmhp" role="3EZMnx">
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+      </node>
+      <node concept="3F0ifn" id="6UvQjm9mmhu" role="3EZMnx">
+        <property role="3F0ifm" value="()" />
+      </node>
+      <node concept="l2Vlx" id="6UvQjm9mmhl" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="6UvQjm9mmhF">
+    <property role="3GE5qa" value="command" />
+    <ref role="1XX52x" to="lpas:6UvQjm9mmhy" resolve="StartPrecisionTakeOff" />
+    <node concept="3EZMnI" id="6UvQjm9mmhH" role="2wV5jI">
+      <node concept="PMmxH" id="6UvQjm9mmhO" role="3EZMnx">
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+      </node>
+      <node concept="l2Vlx" id="6UvQjm9mmhK" role="2iSdaV" />
+      <node concept="3F0ifn" id="6UvQjm9mmhT" role="3EZMnx">
+        <property role="3F0ifm" value="()" />
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="6UvQjm9mmi6">
+    <property role="3GE5qa" value="command" />
+    <ref role="1XX52x" to="lpas:6UvQjm9mmhX" resolve="CancelTakeOff" />
+    <node concept="3EZMnI" id="6UvQjm9mmi8" role="2wV5jI">
+      <node concept="PMmxH" id="6UvQjm9mmif" role="3EZMnx">
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+      </node>
+      <node concept="l2Vlx" id="6UvQjm9mmib" role="2iSdaV" />
+      <node concept="3F0ifn" id="6UvQjm9mmik" role="3EZMnx">
+        <property role="3F0ifm" value="()" />
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="6UvQjm9mmix">
+    <property role="3GE5qa" value="command" />
+    <ref role="1XX52x" to="lpas:6UvQjm9mmio" resolve="StartLanding" />
+    <node concept="3EZMnI" id="6UvQjm9mmiz" role="2wV5jI">
+      <node concept="PMmxH" id="6UvQjm9mmiE" role="3EZMnx">
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+      </node>
+      <node concept="l2Vlx" id="6UvQjm9mmiA" role="2iSdaV" />
+      <node concept="3F0ifn" id="6UvQjm9mmiJ" role="3EZMnx">
+        <property role="3F0ifm" value="()" />
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="6UvQjm9mDjt">
+    <property role="3GE5qa" value="command" />
+    <ref role="1XX52x" to="lpas:6UvQjm9mDjk" resolve="CancelLanding" />
+    <node concept="3EZMnI" id="6UvQjm9mDjv" role="2wV5jI">
+      <node concept="PMmxH" id="6UvQjm9mDjA" role="3EZMnx">
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+      </node>
+      <node concept="l2Vlx" id="6UvQjm9mDjy" role="2iSdaV" />
+      <node concept="3F0ifn" id="6UvQjm9mDjF" role="3EZMnx">
+        <property role="3F0ifm" value="()" />
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="6UvQjm9mDjS">
+    <property role="3GE5qa" value="command" />
+    <ref role="1XX52x" to="lpas:6UvQjm9mDjJ" resolve="ConfirmLanding" />
+    <node concept="3EZMnI" id="6UvQjm9mDjU" role="2wV5jI">
+      <node concept="PMmxH" id="6UvQjm9mDk1" role="3EZMnx">
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+      </node>
+      <node concept="l2Vlx" id="6UvQjm9mDjX" role="2iSdaV" />
+      <node concept="3F0ifn" id="6UvQjm9mDk6" role="3EZMnx">
+        <property role="3F0ifm" value="()" />
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="6UvQjm9mDkj">
+    <property role="3GE5qa" value="command" />
+    <ref role="1XX52x" to="lpas:6UvQjm9mDka" resolve="StartGoHome" />
+    <node concept="3EZMnI" id="6UvQjm9mDkl" role="2wV5jI">
+      <node concept="PMmxH" id="6UvQjm9mDks" role="3EZMnx">
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+      </node>
+      <node concept="l2Vlx" id="6UvQjm9mDko" role="2iSdaV" />
+      <node concept="3F0ifn" id="6UvQjm9mDkx" role="3EZMnx">
+        <property role="3F0ifm" value="()" />
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="6UvQjm9mDkI">
+    <property role="3GE5qa" value="command" />
+    <ref role="1XX52x" to="lpas:6UvQjm9mDk_" resolve="CancelGoHome" />
+    <node concept="3EZMnI" id="6UvQjm9mDkK" role="2wV5jI">
+      <node concept="PMmxH" id="6UvQjm9mDkR" role="3EZMnx">
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+      </node>
+      <node concept="l2Vlx" id="6UvQjm9mDkN" role="2iSdaV" />
+      <node concept="3F0ifn" id="6UvQjm9mDkW" role="3EZMnx">
+        <property role="3F0ifm" value="()" />
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="6UvQjm9mDl9">
+    <property role="3GE5qa" value="command" />
+    <ref role="1XX52x" to="lpas:6UvQjm9mDl0" resolve="SetHomeLocationUsingAircraftCurrentLocation" />
+    <node concept="3EZMnI" id="6UvQjm9mDlb" role="2wV5jI">
+      <node concept="PMmxH" id="6UvQjm9mDli" role="3EZMnx">
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+      </node>
+      <node concept="l2Vlx" id="6UvQjm9mDle" role="2iSdaV" />
+      <node concept="3F0ifn" id="6UvQjm9mDln" role="3EZMnx">
+        <property role="3F0ifm" value="()" />
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="6UvQjm9mDl$">
+    <property role="3GE5qa" value="command" />
+    <ref role="1XX52x" to="lpas:6UvQjm9mDlr" resolve="SetGoHomeHeightInMeters" />
+    <node concept="3EZMnI" id="6UvQjm9mDlA" role="2wV5jI">
+      <node concept="PMmxH" id="6UvQjm9mDlH" role="3EZMnx">
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+      </node>
+      <node concept="l2Vlx" id="6UvQjm9mDlD" role="2iSdaV" />
+      <node concept="3F0ifn" id="6UvQjm9mDlO" role="3EZMnx">
+        <property role="3F0ifm" value="(" />
+      </node>
+      <node concept="3F1sOY" id="6UvQjm9mDlW" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:6UvQjm9mDlJ" resolve="height" />
+      </node>
+      <node concept="3F0ifn" id="6UvQjm9mDm6" role="3EZMnx">
+        <property role="3F0ifm" value=")" />
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="6UvQjm9mWFo">
+    <property role="3GE5qa" value="command" />
+    <ref role="1XX52x" to="lpas:6UvQjm9mWFf" resolve="SetLowBatteryWarningThreshold" />
+    <node concept="3EZMnI" id="6UvQjm9mWFq" role="2wV5jI">
+      <node concept="PMmxH" id="6UvQjm9mWFx" role="3EZMnx">
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+      </node>
+      <node concept="l2Vlx" id="6UvQjm9mWFt" role="2iSdaV" />
+      <node concept="3F0ifn" id="6UvQjm9mWFA" role="3EZMnx">
+        <property role="3F0ifm" value="(" />
+      </node>
+      <node concept="3F1sOY" id="6UvQjm9mWFK" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:6UvQjm9mWFI" resolve="percent" />
+      </node>
+      <node concept="3F0ifn" id="6UvQjm9mWFU" role="3EZMnx">
+        <property role="3F0ifm" value=")" />
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="6UvQjm9mWGb">
+    <property role="3GE5qa" value="command" />
+    <ref role="1XX52x" to="lpas:6UvQjm9mWG0" resolve="SetSeriousLowBatteryWarningThreshold" />
+    <node concept="3EZMnI" id="6UvQjm9mWGd" role="2wV5jI">
+      <node concept="PMmxH" id="6UvQjm9mWGv" role="3EZMnx">
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+      </node>
+      <node concept="l2Vlx" id="6UvQjm9mWGg" role="2iSdaV" />
+      <node concept="3F0ifn" id="6UvQjm9mWG$" role="3EZMnx">
+        <property role="3F0ifm" value="(" />
+      </node>
+      <node concept="3F1sOY" id="6UvQjm9mWGG" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:6UvQjm9mWG1" resolve="percent" />
+      </node>
+      <node concept="3F0ifn" id="6UvQjm9mWGQ" role="3EZMnx">
+        <property role="3F0ifm" value=")" />
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="6UvQjm9mWHe">
+    <property role="3GE5qa" value="command" />
+    <ref role="1XX52x" to="lpas:6UvQjm9mWGW" resolve="SetSmartReturnToHomeEnabled" />
+    <node concept="3EZMnI" id="6UvQjm9mWHg" role="2wV5jI">
+      <node concept="PMmxH" id="6UvQjm9mWHn" role="3EZMnx">
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+      </node>
+      <node concept="l2Vlx" id="6UvQjm9mWHj" role="2iSdaV" />
+      <node concept="3F0ifn" id="6UvQjm9mWHs" role="3EZMnx">
+        <property role="3F0ifm" value="(" />
+      </node>
+      <node concept="3F0A7n" id="6UvQjm9mWH$" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:6UvQjm9mWGZ" resolve="enable" />
+      </node>
+      <node concept="3F0ifn" id="6UvQjm9mWHI" role="3EZMnx">
+        <property role="3F0ifm" value=")" />
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="6UvQjm9mWHX">
+    <property role="3GE5qa" value="command" />
+    <ref role="1XX52x" to="lpas:6UvQjm9mWHO" resolve="StartMission" />
+    <node concept="3EZMnI" id="6UvQjm9mWHZ" role="2wV5jI">
+      <node concept="PMmxH" id="6UvQjm9mWI9" role="3EZMnx">
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+      </node>
+      <node concept="3F0ifn" id="6UvQjm9mWIc" role="3EZMnx">
+        <property role="3F0ifm" value="()" />
+      </node>
+      <node concept="l2Vlx" id="6UvQjm9mWI2" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="6UvQjm9mWIv">
+    <property role="3GE5qa" value="command" />
+    <ref role="1XX52x" to="lpas:6UvQjm9mWIm" resolve="PauseMission" />
+    <node concept="3EZMnI" id="6UvQjm9mWIx" role="2wV5jI">
+      <node concept="PMmxH" id="6UvQjm9mWIC" role="3EZMnx">
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+      </node>
+      <node concept="l2Vlx" id="6UvQjm9mWI$" role="2iSdaV" />
+      <node concept="3F0ifn" id="6UvQjm9mWIH" role="3EZMnx">
+        <property role="3F0ifm" value="()" />
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="6UvQjm9mWIU">
+    <property role="3GE5qa" value="command" />
+    <ref role="1XX52x" to="lpas:6UvQjm9mWIL" resolve="ResumeMission" />
+    <node concept="3EZMnI" id="6UvQjm9mWIW" role="2wV5jI">
+      <node concept="PMmxH" id="6UvQjm9mWJ3" role="3EZMnx">
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+      </node>
+      <node concept="l2Vlx" id="6UvQjm9mWIZ" role="2iSdaV" />
+      <node concept="3F0ifn" id="6UvQjm9mWJ8" role="3EZMnx">
+        <property role="3F0ifm" value="()" />
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="6UvQjm9mWJL">
+    <property role="3GE5qa" value="command" />
+    <ref role="1XX52x" to="lpas:6UvQjm9mWJC" resolve="SetAutoFlightSpeed" />
+    <node concept="3EZMnI" id="6UvQjm9mWJQ" role="2wV5jI">
+      <node concept="PMmxH" id="6UvQjm9mWJX" role="3EZMnx">
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+      </node>
+      <node concept="l2Vlx" id="6UvQjm9mWJT" role="2iSdaV" />
+      <node concept="3F0ifn" id="6UvQjm9mWK2" role="3EZMnx">
+        <property role="3F0ifm" value="(" />
+      </node>
+      <node concept="3F1sOY" id="6UvQjm9mWKc" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:6UvQjm9mWK6" resolve="speed" />
+      </node>
+      <node concept="3F0ifn" id="6UvQjm9mWKm" role="3EZMnx">
+        <property role="3F0ifm" value=")" />
       </node>
     </node>
   </node>

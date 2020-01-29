@@ -21,11 +21,15 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptAngularAccelerationConditionalExpression = createDescriptorForAngularAccelerationConditionalExpression();
   /*package*/ final ConceptDescriptor myConceptBatteryConditionalExpression = createDescriptorForBatteryConditionalExpression();
   /*package*/ final ConceptDescriptor myConceptCameraPowerConditionalExtension = createDescriptorForCameraPowerConditionalExtension();
+  /*package*/ final ConceptDescriptor myConceptCancelGoHome = createDescriptorForCancelGoHome();
+  /*package*/ final ConceptDescriptor myConceptCancelLanding = createDescriptorForCancelLanding();
+  /*package*/ final ConceptDescriptor myConceptCancelTakeOff = createDescriptorForCancelTakeOff();
   /*package*/ final ConceptDescriptor myConceptCategoricalDistanceConditionalExpression = createDescriptorForCategoricalDistanceConditionalExpression();
   /*package*/ final ConceptDescriptor myConceptCategoricalWindConditionalExpression = createDescriptorForCategoricalWindConditionalExpression();
   /*package*/ final ConceptDescriptor myConceptCommand = createDescriptorForCommand();
   /*package*/ final ConceptDescriptor myConceptCompassConditionalExpression = createDescriptorForCompassConditionalExpression();
   /*package*/ final ConceptDescriptor myConceptConditionalExpression = createDescriptorForConditionalExpression();
+  /*package*/ final ConceptDescriptor myConceptConfirmLanding = createDescriptorForConfirmLanding();
   /*package*/ final ConceptDescriptor myConceptConjunctionLogicalExpression = createDescriptorForConjunctionLogicalExpression();
   /*package*/ final ConceptDescriptor myConceptCoordenateConditionalExpression = createDescriptorForCoordenateConditionalExpression();
   /*package*/ final ConceptDescriptor myConceptDisjunctionLogicalExpression = createDescriptorForDisjunctionLogicalExpression();
@@ -40,15 +44,32 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptMathElement = createDescriptorForMathElement();
   /*package*/ final ConceptDescriptor myConceptMotorsPowerConditionalExtension = createDescriptorForMotorsPowerConditionalExtension();
   /*package*/ final ConceptDescriptor myConceptOriginAndDestinationDistanceConditionalExpression = createDescriptorForOriginAndDestinationDistanceConditionalExpression();
+  /*package*/ final ConceptDescriptor myConceptPauseMission = createDescriptorForPauseMission();
   /*package*/ final ConceptDescriptor myConceptPayloadConditionalExtension = createDescriptorForPayloadConditionalExtension();
   /*package*/ final ConceptDescriptor myConceptPointCut = createDescriptorForPointCut();
   /*package*/ final ConceptDescriptor myConceptRegionConditionalExpression = createDescriptorForRegionConditionalExpression();
+  /*package*/ final ConceptDescriptor myConceptResumeMission = createDescriptorForResumeMission();
   /*package*/ final ConceptDescriptor myConceptScalarDistanceConditionalExpression = createDescriptorForScalarDistanceConditionalExpression();
   /*package*/ final ConceptDescriptor myConceptScalarWindConditionalExpression = createDescriptorForScalarWindConditionalExpression();
+  /*package*/ final ConceptDescriptor myConceptSetAutoFlightSpeed = createDescriptorForSetAutoFlightSpeed();
+  /*package*/ final ConceptDescriptor myConceptSetGoHomeHeightInMeters = createDescriptorForSetGoHomeHeightInMeters();
+  /*package*/ final ConceptDescriptor myConceptSetHomeLocation = createDescriptorForSetHomeLocation();
+  /*package*/ final ConceptDescriptor myConceptSetHomeLocationUsingAircraftCurrentLocation = createDescriptorForSetHomeLocationUsingAircraftCurrentLocation();
+  /*package*/ final ConceptDescriptor myConceptSetLowBatteryWarningThreshold = createDescriptorForSetLowBatteryWarningThreshold();
+  /*package*/ final ConceptDescriptor myConceptSetSeriousLowBatteryWarningThreshold = createDescriptorForSetSeriousLowBatteryWarningThreshold();
+  /*package*/ final ConceptDescriptor myConceptSetSmartReturnToHomeEnabled = createDescriptorForSetSmartReturnToHomeEnabled();
   /*package*/ final ConceptDescriptor myConceptSpeedConditionalExpression = createDescriptorForSpeedConditionalExpression();
+  /*package*/ final ConceptDescriptor myConceptStartGoHome = createDescriptorForStartGoHome();
+  /*package*/ final ConceptDescriptor myConceptStartLanding = createDescriptorForStartLanding();
+  /*package*/ final ConceptDescriptor myConceptStartMission = createDescriptorForStartMission();
+  /*package*/ final ConceptDescriptor myConceptStartPrecisionTakeOff = createDescriptorForStartPrecisionTakeOff();
+  /*package*/ final ConceptDescriptor myConceptStartTakeOff = createDescriptorForStartTakeOff();
   /*package*/ final ConceptDescriptor myConceptStatement = createDescriptorForStatement();
   /*package*/ final ConceptDescriptor myConceptText = createDescriptorForText();
   /*package*/ final ConceptDescriptor myConceptThen = createDescriptorForThen();
+  /*package*/ final ConceptDescriptor myConceptTurnOffMotors = createDescriptorForTurnOffMotors();
+  /*package*/ final ConceptDescriptor myConceptTurnOnMotors = createDescriptorForTurnOnMotors();
+  /*package*/ final ConceptDescriptor myConceptUAVCommand = createDescriptorForUAVCommand();
   /*package*/ final ConceptDescriptor myConceptValue = createDescriptorForValue();
   /*package*/ final ConceptDescriptor myConceptWhen = createDescriptorForWhen();
   /*package*/ final ConceptDescriptor myConceptWhile = createDescriptorForWhile();
@@ -79,7 +100,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAdviseScript, myConceptAltitudeConditionalExpression, myConceptAngularAccelerationConditionalExpression, myConceptBatteryConditionalExpression, myConceptCameraPowerConditionalExtension, myConceptCategoricalDistanceConditionalExpression, myConceptCategoricalWindConditionalExpression, myConceptCommand, myConceptCompassConditionalExpression, myConceptConditionalExpression, myConceptConjunctionLogicalExpression, myConceptCoordenateConditionalExpression, myConceptDisjunctionLogicalExpression, myConceptExceptionalScenario, myConceptExpression, myConceptGimbalConditionalExtension, myConceptGiven, myConceptIf, myConceptLandingGearConditionalExtension, myConceptLinearAccelerationConditionalExtension, myConceptLogicalExpression, myConceptMathElement, myConceptMotorsPowerConditionalExtension, myConceptOriginAndDestinationDistanceConditionalExpression, myConceptPayloadConditionalExtension, myConceptPointCut, myConceptRegionConditionalExpression, myConceptScalarDistanceConditionalExpression, myConceptScalarWindConditionalExpression, myConceptSpeedConditionalExpression, myConceptStatement, myConceptText, myConceptThen, myConceptValue, myConceptWhen, myConceptWhile, myConceptWifiConditionalExtension);
+    return Arrays.asList(myConceptAdviseScript, myConceptAltitudeConditionalExpression, myConceptAngularAccelerationConditionalExpression, myConceptBatteryConditionalExpression, myConceptCameraPowerConditionalExtension, myConceptCancelGoHome, myConceptCancelLanding, myConceptCancelTakeOff, myConceptCategoricalDistanceConditionalExpression, myConceptCategoricalWindConditionalExpression, myConceptCommand, myConceptCompassConditionalExpression, myConceptConditionalExpression, myConceptConfirmLanding, myConceptConjunctionLogicalExpression, myConceptCoordenateConditionalExpression, myConceptDisjunctionLogicalExpression, myConceptExceptionalScenario, myConceptExpression, myConceptGimbalConditionalExtension, myConceptGiven, myConceptIf, myConceptLandingGearConditionalExtension, myConceptLinearAccelerationConditionalExtension, myConceptLogicalExpression, myConceptMathElement, myConceptMotorsPowerConditionalExtension, myConceptOriginAndDestinationDistanceConditionalExpression, myConceptPauseMission, myConceptPayloadConditionalExtension, myConceptPointCut, myConceptRegionConditionalExpression, myConceptResumeMission, myConceptScalarDistanceConditionalExpression, myConceptScalarWindConditionalExpression, myConceptSetAutoFlightSpeed, myConceptSetGoHomeHeightInMeters, myConceptSetHomeLocation, myConceptSetHomeLocationUsingAircraftCurrentLocation, myConceptSetLowBatteryWarningThreshold, myConceptSetSeriousLowBatteryWarningThreshold, myConceptSetSmartReturnToHomeEnabled, myConceptSpeedConditionalExpression, myConceptStartGoHome, myConceptStartLanding, myConceptStartMission, myConceptStartPrecisionTakeOff, myConceptStartTakeOff, myConceptStatement, myConceptText, myConceptThen, myConceptTurnOffMotors, myConceptTurnOnMotors, myConceptUAVCommand, myConceptValue, myConceptWhen, myConceptWhile, myConceptWifiConditionalExtension);
   }
 
   @Override
@@ -96,6 +117,12 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptBatteryConditionalExpression;
       case LanguageConceptSwitch.CameraPowerConditionalExtension:
         return myConceptCameraPowerConditionalExtension;
+      case LanguageConceptSwitch.CancelGoHome:
+        return myConceptCancelGoHome;
+      case LanguageConceptSwitch.CancelLanding:
+        return myConceptCancelLanding;
+      case LanguageConceptSwitch.CancelTakeOff:
+        return myConceptCancelTakeOff;
       case LanguageConceptSwitch.CategoricalDistanceConditionalExpression:
         return myConceptCategoricalDistanceConditionalExpression;
       case LanguageConceptSwitch.CategoricalWindConditionalExpression:
@@ -106,6 +133,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptCompassConditionalExpression;
       case LanguageConceptSwitch.ConditionalExpression:
         return myConceptConditionalExpression;
+      case LanguageConceptSwitch.ConfirmLanding:
+        return myConceptConfirmLanding;
       case LanguageConceptSwitch.ConjunctionLogicalExpression:
         return myConceptConjunctionLogicalExpression;
       case LanguageConceptSwitch.CoordenateConditionalExpression:
@@ -134,24 +163,58 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptMotorsPowerConditionalExtension;
       case LanguageConceptSwitch.OriginAndDestinationDistanceConditionalExpression:
         return myConceptOriginAndDestinationDistanceConditionalExpression;
+      case LanguageConceptSwitch.PauseMission:
+        return myConceptPauseMission;
       case LanguageConceptSwitch.PayloadConditionalExtension:
         return myConceptPayloadConditionalExtension;
       case LanguageConceptSwitch.PointCut:
         return myConceptPointCut;
       case LanguageConceptSwitch.RegionConditionalExpression:
         return myConceptRegionConditionalExpression;
+      case LanguageConceptSwitch.ResumeMission:
+        return myConceptResumeMission;
       case LanguageConceptSwitch.ScalarDistanceConditionalExpression:
         return myConceptScalarDistanceConditionalExpression;
       case LanguageConceptSwitch.ScalarWindConditionalExpression:
         return myConceptScalarWindConditionalExpression;
+      case LanguageConceptSwitch.SetAutoFlightSpeed:
+        return myConceptSetAutoFlightSpeed;
+      case LanguageConceptSwitch.SetGoHomeHeightInMeters:
+        return myConceptSetGoHomeHeightInMeters;
+      case LanguageConceptSwitch.SetHomeLocation:
+        return myConceptSetHomeLocation;
+      case LanguageConceptSwitch.SetHomeLocationUsingAircraftCurrentLocation:
+        return myConceptSetHomeLocationUsingAircraftCurrentLocation;
+      case LanguageConceptSwitch.SetLowBatteryWarningThreshold:
+        return myConceptSetLowBatteryWarningThreshold;
+      case LanguageConceptSwitch.SetSeriousLowBatteryWarningThreshold:
+        return myConceptSetSeriousLowBatteryWarningThreshold;
+      case LanguageConceptSwitch.SetSmartReturnToHomeEnabled:
+        return myConceptSetSmartReturnToHomeEnabled;
       case LanguageConceptSwitch.SpeedConditionalExpression:
         return myConceptSpeedConditionalExpression;
+      case LanguageConceptSwitch.StartGoHome:
+        return myConceptStartGoHome;
+      case LanguageConceptSwitch.StartLanding:
+        return myConceptStartLanding;
+      case LanguageConceptSwitch.StartMission:
+        return myConceptStartMission;
+      case LanguageConceptSwitch.StartPrecisionTakeOff:
+        return myConceptStartPrecisionTakeOff;
+      case LanguageConceptSwitch.StartTakeOff:
+        return myConceptStartTakeOff;
       case LanguageConceptSwitch.Statement:
         return myConceptStatement;
       case LanguageConceptSwitch.Text:
         return myConceptText;
       case LanguageConceptSwitch.Then:
         return myConceptThen;
+      case LanguageConceptSwitch.TurnOffMotors:
+        return myConceptTurnOffMotors;
+      case LanguageConceptSwitch.TurnOnMotors:
+        return myConceptTurnOnMotors;
+      case LanguageConceptSwitch.UAVCommand:
+        return myConceptUAVCommand;
       case LanguageConceptSwitch.Value:
         return myConceptValue;
       case LanguageConceptSwitch.When:
@@ -225,6 +288,33 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.property("right", 0x1053550ed8b71616L).type(MetaIdFactory.dataTypeId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x1053550ed8b2a0a8L)).origin("1176377449927611926").done();
     return b.create();
   }
+  private static ConceptDescriptor createDescriptorForCancelGoHome() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "CancelGoHome", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd935895a9525L);
+    b.class_(false, false, false);
+    b.super_("WrapperDSL.structure.UAVCommand", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd9358955fd28L);
+    b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/7971328689429976357");
+    b.version(2);
+    b.alias("cancelGoHome");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForCancelLanding() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "CancelLanding", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd935895a94d4L);
+    b.class_(false, false, false);
+    b.super_("WrapperDSL.structure.UAVCommand", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd9358955fd28L);
+    b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/7971328689429976276");
+    b.version(2);
+    b.alias("cancelLanding");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForCancelTakeOff() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "CancelTakeOff", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd9358959647dL);
+    b.class_(false, false, false);
+    b.super_("WrapperDSL.structure.UAVCommand", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd9358955fd28L);
+    b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/7971328689429898365");
+    b.version(2);
+    b.alias("cancelTakeOff");
+    return b.create();
+  }
   private static ConceptDescriptor createDescriptorForCategoricalDistanceConditionalExpression() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "CategoricalDistanceConditionalExpression", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x7970d3ea933febfdL);
     b.class_(false, false, false);
@@ -272,6 +362,15 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x7970d3ea932ed73dL);
     b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/8750727080426030587");
     b.version(2);
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForConfirmLanding() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "ConfirmLanding", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd935895a94efL);
+    b.class_(false, false, false);
+    b.super_("WrapperDSL.structure.UAVCommand", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd9358955fd28L);
+    b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/7971328689429976303");
+    b.version(2);
+    b.alias("confirmLanding");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForConjunctionLogicalExpression() {
@@ -406,6 +505,15 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.aggregate("right1", 0x72508e21f03ced4bL).target(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc0462d3fbL).optional(false).ordered(true).multiple(false).origin("8237239994876226891").done();
     return b.create();
   }
+  private static ConceptDescriptor createDescriptorForPauseMission() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "PauseMission", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd935895bcb96L);
+    b.class_(false, false, false);
+    b.super_("WrapperDSL.structure.UAVCommand", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd9358955fd28L);
+    b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/7971328689430055830");
+    b.version(2);
+    b.alias("pauseMission");
+    return b.create();
+  }
   private static ConceptDescriptor createDescriptorForPayloadConditionalExtension() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "PayloadConditionalExtension", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x1053550ed8b3fc74L);
     b.class_(false, false, false);
@@ -420,9 +528,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596691614553");
     b.version(2);
-    b.property("call", 0x53be3ecc047cf223L).type(MetaIdFactory.dataTypeId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045b44aeL)).origin("6034329596692591139").done();
     b.property("typeOfPointCut", 0x72508e21f0369eb2L).type(MetaIdFactory.dataTypeId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045b44a3L)).origin("8237239994875813554").done();
     b.associate("adviseScript", 0x53be3ecc046e0b68L).target(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc046e0b54L).optional(false).origin("6034329596691614568").done();
+    b.aggregate("call", 0x6e9fd9358955fd2aL).target(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd9358955fd28L).optional(false).ordered(true).multiple(false).origin("7971328689429675306").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForRegionConditionalExpression() {
@@ -434,6 +542,15 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.property("right", 0x72508e21f03ae4a8L).type(MetaIdFactory.dataTypeId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x72508e21f03ae4a3L)).origin("8237239994876093608").done();
     b.property("operator", 0x72508e21f03ae4c4L).type(MetaIdFactory.dataTypeId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x7970d3ea9334065dL)).origin("8237239994876093636").done();
     b.aggregate("left", 0x72508e21f03ae4c2L).target(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc0462d3feL).optional(false).ordered(true).multiple(false).origin("8237239994876093634").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForResumeMission() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "ResumeMission", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd935895bcbb1L);
+    b.class_(false, false, false);
+    b.super_("WrapperDSL.structure.UAVCommand", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd9358955fd28L);
+    b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/7971328689430055857");
+    b.version(2);
+    b.alias("resumeMission");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForScalarDistanceConditionalExpression() {
@@ -458,6 +575,76 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.aggregate("right", 0x7970d3ea9336891dL).target(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc0462d3fbL).optional(false).ordered(true).multiple(false).origin("8750727080426506525").done();
     return b.create();
   }
+  private static ConceptDescriptor createDescriptorForSetAutoFlightSpeed() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "SetAutoFlightSpeed", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd935895bcbe8L);
+    b.class_(false, false, false);
+    b.super_("WrapperDSL.structure.UAVCommand", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd9358955fd28L);
+    b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/7971328689430055912");
+    b.version(2);
+    b.aggregate("speed", 0x6e9fd935895bcc06L).target(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc0462d3fbL).optional(false).ordered(true).multiple(false).origin("7971328689430055942").done();
+    b.alias("setAutoFlightSpeed");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForSetGoHomeHeightInMeters() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "SetGoHomeHeightInMeters", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd935895a955bL);
+    b.class_(false, false, false);
+    b.super_("WrapperDSL.structure.UAVCommand", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd9358955fd28L);
+    b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/7971328689429976411");
+    b.version(2);
+    b.aggregate("height", 0x6e9fd935895a956fL).target(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc0462d3fbL).optional(false).ordered(true).multiple(false).origin("7971328689429976431").done();
+    b.alias("SetGoHomeHeightInMeters");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForSetHomeLocation() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "SetHomeLocation", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd93589583f6bL);
+    b.class_(false, false, false);
+    b.super_("WrapperDSL.structure.UAVCommand", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd9358955fd28L);
+    b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/7971328689429823339");
+    b.version(2);
+    b.aggregate("long", 0x6e9fd93589583f73L).target(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc0462d3fbL).optional(false).ordered(true).multiple(false).origin("7971328689429823347").done();
+    b.aggregate("lat", 0x6e9fd93589583f6eL).target(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc0462d3fbL).optional(false).ordered(true).multiple(false).origin("7971328689429823342").done();
+    b.alias("setHomeLocation");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForSetHomeLocationUsingAircraftCurrentLocation() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "SetHomeLocationUsingAircraftCurrentLocation", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd935895a9540L);
+    b.class_(false, false, false);
+    b.super_("WrapperDSL.structure.UAVCommand", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd9358955fd28L);
+    b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/7971328689429976384");
+    b.version(2);
+    b.alias("setHomeLocationUsingAircraftCurrentLocation");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForSetLowBatteryWarningThreshold() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "SetLowBatteryWarningThreshold", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd935895bcacfL);
+    b.class_(false, false, false);
+    b.super_("WrapperDSL.structure.UAVCommand", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd9358955fd28L);
+    b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/7971328689430055631");
+    b.version(2);
+    b.aggregate("percent", 0x6e9fd935895bcaeeL).target(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc0462d3fbL).optional(false).ordered(true).multiple(false).origin("7971328689430055662").done();
+    b.alias("setLowBatteryWarningThreshold");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForSetSeriousLowBatteryWarningThreshold() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "SetSeriousLowBatteryWarningThreshold", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd935895bcb00L);
+    b.class_(false, false, false);
+    b.super_("WrapperDSL.structure.UAVCommand", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd9358955fd28L);
+    b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/7971328689430055680");
+    b.version(2);
+    b.aggregate("percent", 0x6e9fd935895bcb01L).target(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc0462d3fbL).optional(false).ordered(true).multiple(false).origin("7971328689430055681").done();
+    b.alias("setSeriousLowBatteryWarningThreshold");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForSetSmartReturnToHomeEnabled() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "SetSmartReturnToHomeEnabled", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd935895bcb3cL);
+    b.class_(false, false, false);
+    b.super_("WrapperDSL.structure.UAVCommand", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd9358955fd28L);
+    b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/7971328689430055740");
+    b.version(2);
+    b.property("enable", 0x6e9fd935895bcb3fL).type(PrimitiveTypeId.BOOLEAN).origin("7971328689430055743").done();
+    b.alias("setSmartReturnToHomeEnabled");
+    return b.create();
+  }
   private static ConceptDescriptor createDescriptorForSpeedConditionalExpression() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "SpeedConditionalExpression", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x3f0a90391ea8938L);
     b.class_(false, false, false);
@@ -466,6 +653,51 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(2);
     b.property("operator", 0x3f0a90391ea8971L).type(MetaIdFactory.dataTypeId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x7970d3ea932f45ebL)).origin("283912609322404209").done();
     b.aggregate("right", 0x3f0a90391ea896fL).target(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc0462d3fbL).optional(false).ordered(true).multiple(false).origin("283912609322404207").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForStartGoHome() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "StartGoHome", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd935895a950aL);
+    b.class_(false, false, false);
+    b.super_("WrapperDSL.structure.UAVCommand", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd9358955fd28L);
+    b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/7971328689429976330");
+    b.version(2);
+    b.alias("startGoHome");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForStartLanding() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "StartLanding", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd93589596498L);
+    b.class_(false, false, false);
+    b.super_("WrapperDSL.structure.UAVCommand", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd9358955fd28L);
+    b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/7971328689429898392");
+    b.version(2);
+    b.alias("startLanding");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForStartMission() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "StartMission", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd935895bcb74L);
+    b.class_(false, false, false);
+    b.super_("WrapperDSL.structure.UAVCommand", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd9358955fd28L);
+    b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/7971328689430055796");
+    b.version(2);
+    b.alias("startMission");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForStartPrecisionTakeOff() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "StartPrecisionTakeOff", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd93589596462L);
+    b.class_(false, false, false);
+    b.super_("WrapperDSL.structure.UAVCommand", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd9358955fd28L);
+    b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/7971328689429898338");
+    b.version(2);
+    b.alias("startPrecisionTakeOff");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForStartTakeOff() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "StartTakeOff", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd93589596447L);
+    b.class_(false, false, false);
+    b.super_("WrapperDSL.structure.UAVCommand", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd9358955fd28L);
+    b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/7971328689429898311");
+    b.version(2);
+    b.alias("startTakeOff");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForStatement() {
@@ -490,6 +722,31 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690336716");
     b.version(2);
     b.aggregate("adviseScript", 0x53be3ecc045b45a9L).target(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc046e0b54L).optional(false).ordered(true).multiple(true).origin("6034329596690384297").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTurnOffMotors() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "TurnOffMotors", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd93589596429L);
+    b.class_(false, false, false);
+    b.super_("WrapperDSL.structure.UAVCommand", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd9358955fd28L);
+    b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/7971328689429898281");
+    b.version(2);
+    b.alias("turnOffMotors");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTurnOnMotors() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "TurnOnMotors", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd9358959640bL);
+    b.class_(false, false, false);
+    b.super_("WrapperDSL.structure.UAVCommand", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd9358955fd28L);
+    b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/7971328689429898251");
+    b.version(2);
+    b.alias("turnOnMotors");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForUAVCommand() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "UAVCommand", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd9358955fd28L);
+    b.class_(false, true, false);
+    b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/7971328689429675304");
+    b.version(2);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForValue() {

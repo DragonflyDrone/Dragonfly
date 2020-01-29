@@ -14,11 +14,15 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_AngularAccelerationConditionalExpression;
   private ConceptPresentation props_BatteryConditionalExpression;
   private ConceptPresentation props_CameraPowerConditionalExtension;
+  private ConceptPresentation props_CancelGoHome;
+  private ConceptPresentation props_CancelLanding;
+  private ConceptPresentation props_CancelTakeOff;
   private ConceptPresentation props_CategoricalDistanceConditionalExpression;
   private ConceptPresentation props_CategoricalWindConditionalExpression;
   private ConceptPresentation props_Command;
   private ConceptPresentation props_CompassConditionalExpression;
   private ConceptPresentation props_ConditionalExpression;
+  private ConceptPresentation props_ConfirmLanding;
   private ConceptPresentation props_ConjunctionLogicalExpression;
   private ConceptPresentation props_CoordenateConditionalExpression;
   private ConceptPresentation props_DisjunctionLogicalExpression;
@@ -33,15 +37,32 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_MathElement;
   private ConceptPresentation props_MotorsPowerConditionalExtension;
   private ConceptPresentation props_OriginAndDestinationDistanceConditionalExpression;
+  private ConceptPresentation props_PauseMission;
   private ConceptPresentation props_PayloadConditionalExtension;
   private ConceptPresentation props_PointCut;
   private ConceptPresentation props_RegionConditionalExpression;
+  private ConceptPresentation props_ResumeMission;
   private ConceptPresentation props_ScalarDistanceConditionalExpression;
   private ConceptPresentation props_ScalarWindConditionalExpression;
+  private ConceptPresentation props_SetAutoFlightSpeed;
+  private ConceptPresentation props_SetGoHomeHeightInMeters;
+  private ConceptPresentation props_SetHomeLocation;
+  private ConceptPresentation props_SetHomeLocationUsingAircraftCurrentLocation;
+  private ConceptPresentation props_SetLowBatteryWarningThreshold;
+  private ConceptPresentation props_SetSeriousLowBatteryWarningThreshold;
+  private ConceptPresentation props_SetSmartReturnToHomeEnabled;
   private ConceptPresentation props_SpeedConditionalExpression;
+  private ConceptPresentation props_StartGoHome;
+  private ConceptPresentation props_StartLanding;
+  private ConceptPresentation props_StartMission;
+  private ConceptPresentation props_StartPrecisionTakeOff;
+  private ConceptPresentation props_StartTakeOff;
   private ConceptPresentation props_Statement;
   private ConceptPresentation props_Text;
   private ConceptPresentation props_Then;
+  private ConceptPresentation props_TurnOffMotors;
+  private ConceptPresentation props_TurnOnMotors;
+  private ConceptPresentation props_UAVCommand;
   private ConceptPresentation props_Value;
   private ConceptPresentation props_When;
   private ConceptPresentation props_While;
@@ -91,6 +112,27 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_CameraPowerConditionalExtension = cpb.create();
         }
         return props_CameraPowerConditionalExtension;
+      case LanguageConceptSwitch.CancelGoHome:
+        if (props_CancelGoHome == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("cancelGoHome");
+          props_CancelGoHome = cpb.create();
+        }
+        return props_CancelGoHome;
+      case LanguageConceptSwitch.CancelLanding:
+        if (props_CancelLanding == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("cancelLanding");
+          props_CancelLanding = cpb.create();
+        }
+        return props_CancelLanding;
+      case LanguageConceptSwitch.CancelTakeOff:
+        if (props_CancelTakeOff == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("cancelTakeOff");
+          props_CancelTakeOff = cpb.create();
+        }
+        return props_CancelTakeOff;
       case LanguageConceptSwitch.CategoricalDistanceConditionalExpression:
         if (props_CategoricalDistanceConditionalExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -128,6 +170,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_ConditionalExpression = cpb.create();
         }
         return props_ConditionalExpression;
+      case LanguageConceptSwitch.ConfirmLanding:
+        if (props_ConfirmLanding == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("confirmLanding");
+          props_ConfirmLanding = cpb.create();
+        }
+        return props_ConfirmLanding;
       case LanguageConceptSwitch.ConjunctionLogicalExpression:
         if (props_ConjunctionLogicalExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -230,6 +279,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_OriginAndDestinationDistanceConditionalExpression = cpb.create();
         }
         return props_OriginAndDestinationDistanceConditionalExpression;
+      case LanguageConceptSwitch.PauseMission:
+        if (props_PauseMission == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("pauseMission");
+          props_PauseMission = cpb.create();
+        }
+        return props_PauseMission;
       case LanguageConceptSwitch.PayloadConditionalExtension:
         if (props_PayloadConditionalExtension == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -253,6 +309,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_RegionConditionalExpression = cpb.create();
         }
         return props_RegionConditionalExpression;
+      case LanguageConceptSwitch.ResumeMission:
+        if (props_ResumeMission == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("resumeMission");
+          props_ResumeMission = cpb.create();
+        }
+        return props_ResumeMission;
       case LanguageConceptSwitch.ScalarDistanceConditionalExpression:
         if (props_ScalarDistanceConditionalExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -269,6 +332,55 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_ScalarWindConditionalExpression = cpb.create();
         }
         return props_ScalarWindConditionalExpression;
+      case LanguageConceptSwitch.SetAutoFlightSpeed:
+        if (props_SetAutoFlightSpeed == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("setAutoFlightSpeed");
+          props_SetAutoFlightSpeed = cpb.create();
+        }
+        return props_SetAutoFlightSpeed;
+      case LanguageConceptSwitch.SetGoHomeHeightInMeters:
+        if (props_SetGoHomeHeightInMeters == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("SetGoHomeHeightInMeters");
+          props_SetGoHomeHeightInMeters = cpb.create();
+        }
+        return props_SetGoHomeHeightInMeters;
+      case LanguageConceptSwitch.SetHomeLocation:
+        if (props_SetHomeLocation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("setHomeLocation");
+          props_SetHomeLocation = cpb.create();
+        }
+        return props_SetHomeLocation;
+      case LanguageConceptSwitch.SetHomeLocationUsingAircraftCurrentLocation:
+        if (props_SetHomeLocationUsingAircraftCurrentLocation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("setHomeLocationUsingAircraftCurrentLocation");
+          props_SetHomeLocationUsingAircraftCurrentLocation = cpb.create();
+        }
+        return props_SetHomeLocationUsingAircraftCurrentLocation;
+      case LanguageConceptSwitch.SetLowBatteryWarningThreshold:
+        if (props_SetLowBatteryWarningThreshold == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("setLowBatteryWarningThreshold");
+          props_SetLowBatteryWarningThreshold = cpb.create();
+        }
+        return props_SetLowBatteryWarningThreshold;
+      case LanguageConceptSwitch.SetSeriousLowBatteryWarningThreshold:
+        if (props_SetSeriousLowBatteryWarningThreshold == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("setSeriousLowBatteryWarningThreshold");
+          props_SetSeriousLowBatteryWarningThreshold = cpb.create();
+        }
+        return props_SetSeriousLowBatteryWarningThreshold;
+      case LanguageConceptSwitch.SetSmartReturnToHomeEnabled:
+        if (props_SetSmartReturnToHomeEnabled == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("setSmartReturnToHomeEnabled");
+          props_SetSmartReturnToHomeEnabled = cpb.create();
+        }
+        return props_SetSmartReturnToHomeEnabled;
       case LanguageConceptSwitch.SpeedConditionalExpression:
         if (props_SpeedConditionalExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -277,6 +389,41 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_SpeedConditionalExpression = cpb.create();
         }
         return props_SpeedConditionalExpression;
+      case LanguageConceptSwitch.StartGoHome:
+        if (props_StartGoHome == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("startGoHome");
+          props_StartGoHome = cpb.create();
+        }
+        return props_StartGoHome;
+      case LanguageConceptSwitch.StartLanding:
+        if (props_StartLanding == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("startLanding");
+          props_StartLanding = cpb.create();
+        }
+        return props_StartLanding;
+      case LanguageConceptSwitch.StartMission:
+        if (props_StartMission == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("startMission");
+          props_StartMission = cpb.create();
+        }
+        return props_StartMission;
+      case LanguageConceptSwitch.StartPrecisionTakeOff:
+        if (props_StartPrecisionTakeOff == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("startPrecisionTakeOff");
+          props_StartPrecisionTakeOff = cpb.create();
+        }
+        return props_StartPrecisionTakeOff;
+      case LanguageConceptSwitch.StartTakeOff:
+        if (props_StartTakeOff == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("startTakeOff");
+          props_StartTakeOff = cpb.create();
+        }
+        return props_StartTakeOff;
       case LanguageConceptSwitch.Statement:
         if (props_Statement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -297,6 +444,26 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Then = cpb.create();
         }
         return props_Then;
+      case LanguageConceptSwitch.TurnOffMotors:
+        if (props_TurnOffMotors == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("turnOffMotors");
+          props_TurnOffMotors = cpb.create();
+        }
+        return props_TurnOffMotors;
+      case LanguageConceptSwitch.TurnOnMotors:
+        if (props_TurnOnMotors == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("turnOnMotors");
+          props_TurnOnMotors = cpb.create();
+        }
+        return props_TurnOnMotors;
+      case LanguageConceptSwitch.UAVCommand:
+        if (props_UAVCommand == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_UAVCommand = cpb.create();
+        }
+        return props_UAVCommand;
       case LanguageConceptSwitch.Value:
         if (props_Value == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
