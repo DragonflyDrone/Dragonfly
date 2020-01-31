@@ -9,7 +9,8 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private ConceptPresentation props_AdviseScript;
+  private ConceptPresentation props_AdaptationBehavior;
+  private ConceptPresentation props_AdaptationScript;
   private ConceptPresentation props_AltitudeConditionalExpression;
   private ConceptPresentation props_AngularAccelerationConditionalExpression;
   private ConceptPresentation props_BatteryConditionalExpression;
@@ -20,6 +21,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_CategoricalDistanceConditionalExpression;
   private ConceptPresentation props_CategoricalWindConditionalExpression;
   private ConceptPresentation props_Command;
+  private ConceptPresentation props_CommandCall;
   private ConceptPresentation props_CompassConditionalExpression;
   private ConceptPresentation props_ConditionalExpression;
   private ConceptPresentation props_ConfirmLanding;
@@ -39,7 +41,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_OriginAndDestinationDistanceConditionalExpression;
   private ConceptPresentation props_PauseMission;
   private ConceptPresentation props_PayloadConditionalExtension;
-  private ConceptPresentation props_PointCut;
   private ConceptPresentation props_RegionConditionalExpression;
   private ConceptPresentation props_ResumeMission;
   private ConceptPresentation props_ScalarDistanceConditionalExpression;
@@ -62,7 +63,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_Then;
   private ConceptPresentation props_TurnOffMotors;
   private ConceptPresentation props_TurnOnMotors;
-  private ConceptPresentation props_UAVCommand;
   private ConceptPresentation props_Value;
   private ConceptPresentation props_When;
   private ConceptPresentation props_While;
@@ -73,13 +73,20 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case LanguageConceptSwitch.AdviseScript:
-        if (props_AdviseScript == null) {
+      case LanguageConceptSwitch.AdaptationBehavior:
+        if (props_AdaptationBehavior == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x4cdb8f81da5c7de7L, 0x4cdb8f81da5c7df2L, "adaptationScriptName", "", "");
+          props_AdaptationBehavior = cpb.create();
+        }
+        return props_AdaptationBehavior;
+      case LanguageConceptSwitch.AdaptationScript:
+        if (props_AdaptationScript == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
-          props_AdviseScript = cpb.create();
+          props_AdaptationScript = cpb.create();
         }
-        return props_AdviseScript;
+        return props_AdaptationScript;
       case LanguageConceptSwitch.AltitudeConditionalExpression:
         if (props_AltitudeConditionalExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -156,6 +163,12 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Command = cpb.create();
         }
         return props_Command;
+      case LanguageConceptSwitch.CommandCall:
+        if (props_CommandCall == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_CommandCall = cpb.create();
+        }
+        return props_CommandCall;
       case LanguageConceptSwitch.CompassConditionalExpression:
         if (props_CompassConditionalExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -294,13 +307,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_PayloadConditionalExtension = cpb.create();
         }
         return props_PayloadConditionalExtension;
-      case LanguageConceptSwitch.PointCut:
-        if (props_PointCut == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.presentationByReference(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc046e0b59L, 0x53be3ecc046e0b68L, "adviseScript", "", "");
-          props_PointCut = cpb.create();
-        }
-        return props_PointCut;
       case LanguageConceptSwitch.RegionConditionalExpression:
         if (props_RegionConditionalExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -458,12 +464,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_TurnOnMotors = cpb.create();
         }
         return props_TurnOnMotors;
-      case LanguageConceptSwitch.UAVCommand:
-        if (props_UAVCommand == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          props_UAVCommand = cpb.create();
-        }
-        return props_UAVCommand;
       case LanguageConceptSwitch.Value:
         if (props_Value == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

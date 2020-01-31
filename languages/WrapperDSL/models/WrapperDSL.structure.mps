@@ -108,12 +108,12 @@
     <property role="TrG5h" value="When" />
     <property role="3GE5qa" value="BDD" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="5eYfGK4rwJP" role="1TKVEi">
-      <property role="IQ2ns" value="6034329596691614709" />
+    <node concept="1TJgyj" id="4NrzS7qn7QW" role="1TKVEi">
+      <property role="IQ2ns" value="5538177954659204540" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="pointCuts" />
-      <property role="20lbJX" value="fLJekj6/_1__n" />
-      <ref role="20lvS9" node="5eYfGK4rwHp" resolve="PointCut" />
+      <property role="20kJfa" value="command" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="6UvQjm9lvOC" resolve="CommandCall" />
     </node>
   </node>
   <node concept="1TIwiD" id="5eYfGK4mCJc">
@@ -124,9 +124,9 @@
     <node concept="1TJgyj" id="5eYfGK4mOmD" role="1TKVEi">
       <property role="IQ2ns" value="6034329596690384297" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="adviseScript" />
-      <property role="20lbJX" value="fLJekj6/_1__n" />
-      <ref role="20lvS9" node="5eYfGK4rwHk" resolve="AdviseScript" />
+      <property role="20kJfa" value="adaptiveBehavior" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="4NrzS7qn7RB" resolve="AdaptationBehavior" />
     </node>
   </node>
   <node concept="1TIwiD" id="5eYfGK4mCJm">
@@ -254,8 +254,8 @@
   </node>
   <node concept="25R3W" id="5eYfGK4mOiz">
     <property role="3F6X1D" value="6034329596690384035" />
-    <property role="3GE5qa" value="pointcut" />
-    <property role="TrG5h" value="TypePointCutEnum" />
+    <property role="3GE5qa" value="adaptation" />
+    <property role="TrG5h" value="TypeOfAdaptationEnum" />
     <node concept="25R33" id="5eYfGK4mOi_" role="25R1y">
       <property role="3tVfz5" value="6034329596690384037" />
       <property role="TrG5h" value="around" />
@@ -474,8 +474,8 @@
   </node>
   <node concept="1TIwiD" id="5eYfGK4rwHk">
     <property role="EcuMT" value="6034329596691614548" />
-    <property role="3GE5qa" value="advise_script" />
-    <property role="TrG5h" value="AdviseScript" />
+    <property role="3GE5qa" value="adaptation" />
+    <property role="TrG5h" value="AdaptationScript" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="5eYfGK4rwHy" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
@@ -486,30 +486,6 @@
       <property role="20kJfa" value="body" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="5eYfGK4mOkW" resolve="Statement" />
-    </node>
-  </node>
-  <node concept="1TIwiD" id="5eYfGK4rwHp">
-    <property role="EcuMT" value="6034329596691614553" />
-    <property role="TrG5h" value="PointCut" />
-    <property role="3GE5qa" value="pointcut" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyi" id="79gzy7KdDUM" role="1TKVEl">
-      <property role="IQ2nx" value="8237239994875813554" />
-      <property role="TrG5h" value="typeOfPointCut" />
-      <ref role="AX2Wp" node="5eYfGK4mOiz" resolve="TypePointCutEnum" />
-    </node>
-    <node concept="1TJgyj" id="5eYfGK4rwHC" role="1TKVEi">
-      <property role="IQ2ns" value="6034329596691614568" />
-      <property role="20kJfa" value="adviseScript" />
-      <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="5eYfGK4rwHk" resolve="AdviseScript" />
-    </node>
-    <node concept="1TJgyj" id="6UvQjm9lvOE" role="1TKVEi">
-      <property role="IQ2ns" value="7971328689429675306" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="call" />
-      <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="6UvQjm9lvOC" resolve="UAVCommand" />
     </node>
   </node>
   <node concept="1TIwiD" id="5eYfGK4vsHa">
@@ -1124,7 +1100,7 @@
     <property role="EcuMT" value="7971328689429675304" />
     <property role="3GE5qa" value="command" />
     <property role="R5$K7" value="true" />
-    <property role="TrG5h" value="UAVCommand" />
+    <property role="TrG5h" value="CommandCall" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="6UvQjm9m3XF">
@@ -1132,7 +1108,7 @@
     <property role="3GE5qa" value="command" />
     <property role="TrG5h" value="SetHomeLocation" />
     <property role="34LRSv" value="setHomeLocation" />
-    <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="UAVCommand" />
+    <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="CommandCall" />
     <node concept="1TJgyj" id="6UvQjm9m3XN" role="1TKVEi">
       <property role="IQ2ns" value="7971328689429823347" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
@@ -1153,84 +1129,84 @@
     <property role="3GE5qa" value="command" />
     <property role="TrG5h" value="TurnOnMotors" />
     <property role="34LRSv" value="turnOnMotors" />
-    <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="UAVCommand" />
+    <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="CommandCall" />
   </node>
   <node concept="1TIwiD" id="6UvQjm9mmgD">
     <property role="EcuMT" value="7971328689429898281" />
     <property role="3GE5qa" value="command" />
     <property role="TrG5h" value="TurnOffMotors" />
     <property role="34LRSv" value="turnOffMotors" />
-    <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="UAVCommand" />
+    <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="CommandCall" />
   </node>
   <node concept="1TIwiD" id="6UvQjm9mmh7">
     <property role="EcuMT" value="7971328689429898311" />
     <property role="3GE5qa" value="command" />
     <property role="TrG5h" value="StartTakeOff" />
     <property role="34LRSv" value="startTakeOff" />
-    <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="UAVCommand" />
+    <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="CommandCall" />
   </node>
   <node concept="1TIwiD" id="6UvQjm9mmhy">
     <property role="EcuMT" value="7971328689429898338" />
     <property role="3GE5qa" value="command" />
     <property role="TrG5h" value="StartPrecisionTakeOff" />
     <property role="34LRSv" value="startPrecisionTakeOff" />
-    <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="UAVCommand" />
+    <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="CommandCall" />
   </node>
   <node concept="1TIwiD" id="6UvQjm9mmhX">
     <property role="EcuMT" value="7971328689429898365" />
     <property role="3GE5qa" value="command" />
     <property role="TrG5h" value="CancelTakeOff" />
     <property role="34LRSv" value="cancelTakeOff" />
-    <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="UAVCommand" />
+    <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="CommandCall" />
   </node>
   <node concept="1TIwiD" id="6UvQjm9mmio">
     <property role="EcuMT" value="7971328689429898392" />
     <property role="3GE5qa" value="command" />
     <property role="TrG5h" value="StartLanding" />
     <property role="34LRSv" value="startLanding" />
-    <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="UAVCommand" />
+    <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="CommandCall" />
   </node>
   <node concept="1TIwiD" id="6UvQjm9mDjk">
     <property role="EcuMT" value="7971328689429976276" />
     <property role="3GE5qa" value="command" />
     <property role="TrG5h" value="CancelLanding" />
     <property role="34LRSv" value="cancelLanding" />
-    <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="UAVCommand" />
+    <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="CommandCall" />
   </node>
   <node concept="1TIwiD" id="6UvQjm9mDjJ">
     <property role="EcuMT" value="7971328689429976303" />
     <property role="3GE5qa" value="command" />
     <property role="TrG5h" value="ConfirmLanding" />
     <property role="34LRSv" value="confirmLanding" />
-    <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="UAVCommand" />
+    <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="CommandCall" />
   </node>
   <node concept="1TIwiD" id="6UvQjm9mDka">
     <property role="EcuMT" value="7971328689429976330" />
     <property role="3GE5qa" value="command" />
     <property role="TrG5h" value="StartGoHome" />
     <property role="34LRSv" value="startGoHome" />
-    <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="UAVCommand" />
+    <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="CommandCall" />
   </node>
   <node concept="1TIwiD" id="6UvQjm9mDk_">
     <property role="EcuMT" value="7971328689429976357" />
     <property role="3GE5qa" value="command" />
     <property role="TrG5h" value="CancelGoHome" />
     <property role="34LRSv" value="cancelGoHome" />
-    <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="UAVCommand" />
+    <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="CommandCall" />
   </node>
   <node concept="1TIwiD" id="6UvQjm9mDl0">
     <property role="EcuMT" value="7971328689429976384" />
     <property role="3GE5qa" value="command" />
     <property role="TrG5h" value="SetHomeLocationUsingAircraftCurrentLocation" />
     <property role="34LRSv" value="setHomeLocationUsingAircraftCurrentLocation" />
-    <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="UAVCommand" />
+    <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="CommandCall" />
   </node>
   <node concept="1TIwiD" id="6UvQjm9mDlr">
     <property role="EcuMT" value="7971328689429976411" />
     <property role="3GE5qa" value="command" />
     <property role="TrG5h" value="SetGoHomeHeightInMeters" />
     <property role="34LRSv" value="SetGoHomeHeightInMeters" />
-    <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="UAVCommand" />
+    <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="CommandCall" />
     <node concept="1TJgyj" id="6UvQjm9mDlJ" role="1TKVEi">
       <property role="IQ2ns" value="7971328689429976431" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
@@ -1244,7 +1220,7 @@
     <property role="3GE5qa" value="command" />
     <property role="TrG5h" value="SetLowBatteryWarningThreshold" />
     <property role="34LRSv" value="setLowBatteryWarningThreshold" />
-    <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="UAVCommand" />
+    <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="CommandCall" />
     <node concept="1TJgyj" id="6UvQjm9mWFI" role="1TKVEi">
       <property role="IQ2ns" value="7971328689430055662" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
@@ -1258,7 +1234,7 @@
     <property role="3GE5qa" value="command" />
     <property role="TrG5h" value="SetSeriousLowBatteryWarningThreshold" />
     <property role="34LRSv" value="setSeriousLowBatteryWarningThreshold" />
-    <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="UAVCommand" />
+    <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="CommandCall" />
     <node concept="1TJgyj" id="6UvQjm9mWG1" role="1TKVEi">
       <property role="IQ2ns" value="7971328689430055681" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
@@ -1272,7 +1248,7 @@
     <property role="3GE5qa" value="command" />
     <property role="TrG5h" value="SetSmartReturnToHomeEnabled" />
     <property role="34LRSv" value="setSmartReturnToHomeEnabled" />
-    <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="UAVCommand" />
+    <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="CommandCall" />
     <node concept="1TJgyi" id="6UvQjm9mWGZ" role="1TKVEl">
       <property role="IQ2nx" value="7971328689430055743" />
       <property role="TrG5h" value="enable" />
@@ -1284,34 +1260,58 @@
     <property role="3GE5qa" value="command" />
     <property role="TrG5h" value="StartMission" />
     <property role="34LRSv" value="startMission" />
-    <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="UAVCommand" />
+    <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="CommandCall" />
   </node>
   <node concept="1TIwiD" id="6UvQjm9mWIm">
     <property role="EcuMT" value="7971328689430055830" />
     <property role="3GE5qa" value="command" />
     <property role="TrG5h" value="PauseMission" />
     <property role="34LRSv" value="pauseMission" />
-    <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="UAVCommand" />
+    <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="CommandCall" />
   </node>
   <node concept="1TIwiD" id="6UvQjm9mWIL">
     <property role="EcuMT" value="7971328689430055857" />
     <property role="3GE5qa" value="command" />
     <property role="TrG5h" value="ResumeMission" />
     <property role="34LRSv" value="resumeMission" />
-    <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="UAVCommand" />
+    <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="CommandCall" />
   </node>
   <node concept="1TIwiD" id="6UvQjm9mWJC">
     <property role="EcuMT" value="7971328689430055912" />
     <property role="3GE5qa" value="command" />
     <property role="TrG5h" value="SetAutoFlightSpeed" />
     <property role="34LRSv" value="setAutoFlightSpeed" />
-    <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="UAVCommand" />
+    <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="CommandCall" />
     <node concept="1TJgyj" id="6UvQjm9mWK6" role="1TKVEi">
       <property role="IQ2ns" value="7971328689430055942" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="speed" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="5eYfGK4oHfV" resolve="Value" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="4NrzS7qn7RB">
+    <property role="TrG5h" value="AdaptationBehavior" />
+    <property role="EcuMT" value="5538177954659204583" />
+    <property role="3GE5qa" value="adaptation" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="4NrzS7qn7RG" role="1TKVEl">
+      <property role="IQ2nx" value="5538177954659204588" />
+      <property role="TrG5h" value="typeOfAdaptation" />
+      <ref role="AX2Wp" node="5eYfGK4mOiz" resolve="TypeOfAdaptationEnum" />
+    </node>
+    <node concept="1TJgyj" id="4NrzS7qn7RM" role="1TKVEi">
+      <property role="IQ2ns" value="5538177954659204594" />
+      <property role="20kJfa" value="adaptationScriptName" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="5eYfGK4rwHk" resolve="AdaptationScript" />
+    </node>
+    <node concept="1TJgyj" id="4NrzS7qn7Ts" role="1TKVEi">
+      <property role="IQ2ns" value="5538177954659204700" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="adaptationScript" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="5eYfGK4rwHk" resolve="AdaptationScript" />
     </node>
   </node>
 </model>

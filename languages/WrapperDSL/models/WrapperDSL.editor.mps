@@ -13,9 +13,6 @@
   <registry>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
       <concept id="1071666914219" name="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" flags="ig" index="24kQdi" />
-      <concept id="1140524381322" name="jetbrains.mps.lang.editor.structure.CellModel_ListWithRole" flags="ng" index="2czfm3">
-        <child id="1140524464360" name="cellLayout" index="2czzBx" />
-      </concept>
       <concept id="1106270549637" name="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" flags="nn" index="2iRfu4" />
       <concept id="1106270571710" name="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" flags="nn" index="2iRkQZ" />
       <concept id="1237303669825" name="jetbrains.mps.lang.editor.structure.CellLayout_Indent" flags="nn" index="l2Vlx" />
@@ -54,7 +51,6 @@
         <child id="1219418656006" name="styleItem" index="3F10Kt" />
       </concept>
       <concept id="1073389882823" name="jetbrains.mps.lang.editor.structure.CellModel_RefNode" flags="sg" stub="730538219795960754" index="3F1sOY" />
-      <concept id="1073390211982" name="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" flags="sg" stub="2794558372793454595" index="3F2HdR" />
       <concept id="1198256887712" name="jetbrains.mps.lang.editor.structure.CellModel_Indent" flags="ng" index="3XFhqQ" />
       <concept id="1166049232041" name="jetbrains.mps.lang.editor.structure.AbstractComponent" flags="ng" index="1XWOmA">
         <reference id="1166049300910" name="conceptDeclaration" index="1XX52x" />
@@ -192,13 +188,8 @@
           <property role="Vb096" value="g1_eI4o/darkBlue" />
         </node>
       </node>
-      <node concept="3EZMnI" id="5eYfGK4_Api" role="3EZMnx">
-        <node concept="VPM3Z" id="5eYfGK4_Apk" role="3F10Kt" />
-        <node concept="3F2HdR" id="5eYfGK4_Apt" role="3EZMnx">
-          <ref role="1NtTu8" to="lpas:5eYfGK4mOmD" resolve="adviseScript" />
-          <node concept="2iRkQZ" id="5eYfGK4_Apv" role="2czzBx" />
-        </node>
-        <node concept="2iRkQZ" id="5eYfGK4_Apn" role="2iSdaV" />
+      <node concept="3F1sOY" id="4NrzS7qn7SD" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:5eYfGK4mOmD" resolve="adaptiveBehavior" />
       </node>
       <node concept="l2Vlx" id="5eYfGK4nNPi" role="2iSdaV" />
     </node>
@@ -213,70 +204,32 @@
           <property role="Vb096" value="g1_eI4o/darkBlue" />
         </node>
       </node>
-      <node concept="3EZMnI" id="5eYfGK4$eAc" role="3EZMnx">
-        <node concept="2iRkQZ" id="5eYfGK4$eAd" role="2iSdaV" />
-        <node concept="3F2HdR" id="5eYfGK4$eAl" role="3EZMnx">
-          <ref role="1NtTu8" to="lpas:5eYfGK4rwJP" resolve="pointCuts" />
-          <node concept="2iRkQZ" id="5eYfGK4$eAm" role="2czzBx" />
-        </node>
+      <node concept="3F1sOY" id="4NrzS7qn7R8" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:4NrzS7qn7QW" resolve="command" />
       </node>
       <node concept="l2Vlx" id="5eYfGK4rwKd" role="2iSdaV" />
+      <node concept="3F0ifn" id="4NrzS7qn7Rw" role="3EZMnx">
+        <property role="3F0ifm" value="command is called" />
+      </node>
     </node>
   </node>
   <node concept="24kQdi" id="5eYfGK4rwHO">
-    <property role="3GE5qa" value="advise_script" />
-    <ref role="1XX52x" to="lpas:5eYfGK4rwHk" resolve="AdviseScript" />
-    <node concept="3EZMnI" id="5eYfGK4_nJF" role="2wV5jI">
-      <node concept="2iRkQZ" id="5eYfGK4_nJG" role="2iSdaV" />
-      <node concept="3EZMnI" id="5eYfGK4_nJP" role="3EZMnx">
-        <node concept="l2Vlx" id="5eYfGK4_nJQ" role="2iSdaV" />
-        <node concept="VPM3Z" id="5eYfGK4_nJR" role="3F10Kt" />
-        <node concept="3F0A7n" id="5eYfGK4_nJV" role="3EZMnx">
-          <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-          <node concept="VechU" id="3Ivd_nw7eY3" role="3F10Kt">
-            <property role="Vb096" value="g1_qRwE/darkGreen" />
-          </node>
-        </node>
-        <node concept="3F0ifn" id="5eYfGK4_nK0" role="3EZMnx">
-          <property role="3F0ifm" value=":" />
-        </node>
-        <node concept="3XFhqQ" id="3Ivd_nwafza" role="3EZMnx">
-          <node concept="pVoyu" id="3Ivd_nwafzt" role="3F10Kt">
-            <property role="VOm3f" value="true" />
-          </node>
-        </node>
-        <node concept="3F1sOY" id="3Ivd_nwafzm" role="3EZMnx">
-          <ref role="1NtTu8" to="lpas:5eYfGK4wapa" resolve="body" />
+    <property role="3GE5qa" value="adaptation" />
+    <ref role="1XX52x" to="lpas:5eYfGK4rwHk" resolve="AdaptationScript" />
+    <node concept="3EZMnI" id="4NrzS7qoG_R" role="2wV5jI">
+      <node concept="3F0A7n" id="4NrzS7qoGA1" role="3EZMnx">
+        <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+      </node>
+      <node concept="3F0ifn" id="4NrzS7qoGA7" role="3EZMnx">
+        <property role="3F0ifm" value=":" />
+        <node concept="pVoyu" id="4NrzS7qoGAG" role="3F10Kt">
+          <property role="VOm3f" value="true" />
         </node>
       </node>
-    </node>
-  </node>
-  <node concept="24kQdi" id="5eYfGK4uBIj">
-    <property role="3GE5qa" value="pointcut" />
-    <ref role="1XX52x" to="lpas:5eYfGK4rwHp" resolve="PointCut" />
-    <node concept="3EZMnI" id="5eYfGK4t1z4" role="2wV5jI">
-      <node concept="l2Vlx" id="5eYfGK4t1z5" role="2iSdaV" />
-      <node concept="3F1sOY" id="6UvQjm9lvPh" role="3EZMnx">
-        <ref role="1NtTu8" to="lpas:6UvQjm9lvOE" resolve="call" />
+      <node concept="3F1sOY" id="4NrzS7qoGAN" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:5eYfGK4wapa" resolve="body" />
       </node>
-      <node concept="3F0ifn" id="3Ivd_nw8BkV" role="3EZMnx">
-        <property role="3F0ifm" value="command is called, execute" />
-      </node>
-      <node concept="3F0A7n" id="79gzy7Khppf" role="3EZMnx">
-        <ref role="1NtTu8" to="lpas:79gzy7KdDUM" resolve="typeOfPointCut" />
-      </node>
-      <node concept="1iCGBv" id="5eYfGK4tBd2" role="3EZMnx">
-        <ref role="1NtTu8" to="lpas:5eYfGK4rwHC" resolve="adviseScript" />
-        <node concept="1sVBvm" id="5eYfGK4tBd4" role="1sWHZn">
-          <node concept="3F0A7n" id="5eYfGK4tBdd" role="2wV5jI">
-            <property role="1Intyy" value="true" />
-            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-            <node concept="VechU" id="3Ivd_nw7tFG" role="3F10Kt">
-              <property role="Vb096" value="fLwANPr/green" />
-            </node>
-          </node>
-        </node>
-      </node>
+      <node concept="l2Vlx" id="4NrzS7qoG_U" role="2iSdaV" />
     </node>
   </node>
   <node concept="24kQdi" id="5eYfGK4ysQM">
@@ -1036,6 +989,39 @@
       <node concept="3F0ifn" id="6UvQjm9mWKm" role="3EZMnx">
         <property role="3F0ifm" value=")" />
       </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="4NrzS7qn7SQ">
+    <property role="3GE5qa" value="adaptation" />
+    <ref role="1XX52x" to="lpas:4NrzS7qn7RB" resolve="AdaptationBehavior" />
+    <node concept="3EZMnI" id="4NrzS7qn7Tv" role="2wV5jI">
+      <node concept="3EZMnI" id="4NrzS7qn7SS" role="3EZMnx">
+        <node concept="3F0ifn" id="4NrzS7qn7T2" role="3EZMnx">
+          <property role="3F0ifm" value="execute " />
+        </node>
+        <node concept="3F0A7n" id="4NrzS7qn7T6" role="3EZMnx">
+          <ref role="1NtTu8" to="lpas:4NrzS7qn7RG" resolve="typeOfAdaptation" />
+        </node>
+        <node concept="1iCGBv" id="4NrzS7qn7Te" role="3EZMnx">
+          <ref role="1NtTu8" to="lpas:4NrzS7qn7RM" resolve="adaptationScriptName" />
+          <node concept="1sVBvm" id="4NrzS7qn7Tg" role="1sWHZn">
+            <node concept="3F0A7n" id="4NrzS7qn7Tp" role="2wV5jI">
+              <property role="1Intyy" value="true" />
+              <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+        </node>
+        <node concept="l2Vlx" id="4NrzS7qn7SV" role="2iSdaV" />
+      </node>
+      <node concept="3F0ifn" id="4NrzS7qn7TE" role="3EZMnx" />
+      <node concept="3EZMnI" id="4NrzS7qn7TX" role="3EZMnx">
+        <node concept="VPM3Z" id="4NrzS7qn7TZ" role="3F10Kt" />
+        <node concept="3F1sOY" id="4NrzS7qn7Ug" role="3EZMnx">
+          <ref role="1NtTu8" to="lpas:4NrzS7qn7Ts" resolve="adaptationScript" />
+        </node>
+        <node concept="l2Vlx" id="4NrzS7qn7U2" role="2iSdaV" />
+      </node>
+      <node concept="2iRkQZ" id="4NrzS7qn7Tw" role="2iSdaV" />
     </node>
   </node>
 </model>
