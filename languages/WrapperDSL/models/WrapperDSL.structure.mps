@@ -1314,5 +1314,12 @@
       <ref role="20lvS9" node="5eYfGK4rwHk" resolve="AdaptationScript" />
     </node>
   </node>
+  <node concept="1TIwiD" id="4XSQxjp6wk$">
+    <property role="EcuMT" value="5726566709278147876" />
+    <property role="3GE5qa" value="command" />
+    <property role="TrG5h" value="SafeLand" />
+    <property role="34LRSv" value="safe land" />
+    <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="CommandCall" />
+  </node>
 </model>
 

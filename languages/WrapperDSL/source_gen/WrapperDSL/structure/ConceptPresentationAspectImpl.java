@@ -43,6 +43,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_PayloadConditionalExtension;
   private ConceptPresentation props_RegionConditionalExpression;
   private ConceptPresentation props_ResumeMission;
+  private ConceptPresentation props_SafeLand;
   private ConceptPresentation props_ScalarDistanceConditionalExpression;
   private ConceptPresentation props_ScalarWindConditionalExpression;
   private ConceptPresentation props_SetAutoFlightSpeed;
@@ -322,6 +323,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_ResumeMission = cpb.create();
         }
         return props_ResumeMission;
+      case LanguageConceptSwitch.SafeLand:
+        if (props_SafeLand == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("safe land");
+          props_SafeLand = cpb.create();
+        }
+        return props_SafeLand;
       case LanguageConceptSwitch.ScalarDistanceConditionalExpression:
         if (props_ScalarDistanceConditionalExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

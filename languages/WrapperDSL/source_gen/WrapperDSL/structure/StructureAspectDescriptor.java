@@ -50,6 +50,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptPayloadConditionalExtension = createDescriptorForPayloadConditionalExtension();
   /*package*/ final ConceptDescriptor myConceptRegionConditionalExpression = createDescriptorForRegionConditionalExpression();
   /*package*/ final ConceptDescriptor myConceptResumeMission = createDescriptorForResumeMission();
+  /*package*/ final ConceptDescriptor myConceptSafeLand = createDescriptorForSafeLand();
   /*package*/ final ConceptDescriptor myConceptScalarDistanceConditionalExpression = createDescriptorForScalarDistanceConditionalExpression();
   /*package*/ final ConceptDescriptor myConceptScalarWindConditionalExpression = createDescriptorForScalarWindConditionalExpression();
   /*package*/ final ConceptDescriptor myConceptSetAutoFlightSpeed = createDescriptorForSetAutoFlightSpeed();
@@ -100,7 +101,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAdaptationBehavior, myConceptAdaptationScript, myConceptAltitudeConditionalExpression, myConceptAngularAccelerationConditionalExpression, myConceptBatteryConditionalExpression, myConceptCameraPowerConditionalExtension, myConceptCancelGoHome, myConceptCancelLanding, myConceptCancelTakeOff, myConceptCategoricalDistanceConditionalExpression, myConceptCategoricalWindConditionalExpression, myConceptCommand, myConceptCommandCall, myConceptCompassConditionalExpression, myConceptConditionalExpression, myConceptConfirmLanding, myConceptConjunctionLogicalExpression, myConceptCoordenateConditionalExpression, myConceptDisjunctionLogicalExpression, myConceptExceptionalScenario, myConceptExpression, myConceptGimbalConditionalExtension, myConceptGiven, myConceptIf, myConceptLandingGearConditionalExtension, myConceptLinearAccelerationConditionalExtension, myConceptLogicalExpression, myConceptMathElement, myConceptMotorsPowerConditionalExtension, myConceptOriginAndDestinationDistanceConditionalExpression, myConceptPauseMission, myConceptPayloadConditionalExtension, myConceptRegionConditionalExpression, myConceptResumeMission, myConceptScalarDistanceConditionalExpression, myConceptScalarWindConditionalExpression, myConceptSetAutoFlightSpeed, myConceptSetGoHomeHeightInMeters, myConceptSetHomeLocation, myConceptSetHomeLocationUsingAircraftCurrentLocation, myConceptSetLowBatteryWarningThreshold, myConceptSetSeriousLowBatteryWarningThreshold, myConceptSetSmartReturnToHomeEnabled, myConceptSpeedConditionalExpression, myConceptStartGoHome, myConceptStartLanding, myConceptStartMission, myConceptStartPrecisionTakeOff, myConceptStartTakeOff, myConceptStatement, myConceptText, myConceptThen, myConceptTurnOffMotors, myConceptTurnOnMotors, myConceptValue, myConceptWhen, myConceptWhile, myConceptWifiConditionalExtension);
+    return Arrays.asList(myConceptAdaptationBehavior, myConceptAdaptationScript, myConceptAltitudeConditionalExpression, myConceptAngularAccelerationConditionalExpression, myConceptBatteryConditionalExpression, myConceptCameraPowerConditionalExtension, myConceptCancelGoHome, myConceptCancelLanding, myConceptCancelTakeOff, myConceptCategoricalDistanceConditionalExpression, myConceptCategoricalWindConditionalExpression, myConceptCommand, myConceptCommandCall, myConceptCompassConditionalExpression, myConceptConditionalExpression, myConceptConfirmLanding, myConceptConjunctionLogicalExpression, myConceptCoordenateConditionalExpression, myConceptDisjunctionLogicalExpression, myConceptExceptionalScenario, myConceptExpression, myConceptGimbalConditionalExtension, myConceptGiven, myConceptIf, myConceptLandingGearConditionalExtension, myConceptLinearAccelerationConditionalExtension, myConceptLogicalExpression, myConceptMathElement, myConceptMotorsPowerConditionalExtension, myConceptOriginAndDestinationDistanceConditionalExpression, myConceptPauseMission, myConceptPayloadConditionalExtension, myConceptRegionConditionalExpression, myConceptResumeMission, myConceptSafeLand, myConceptScalarDistanceConditionalExpression, myConceptScalarWindConditionalExpression, myConceptSetAutoFlightSpeed, myConceptSetGoHomeHeightInMeters, myConceptSetHomeLocation, myConceptSetHomeLocationUsingAircraftCurrentLocation, myConceptSetLowBatteryWarningThreshold, myConceptSetSeriousLowBatteryWarningThreshold, myConceptSetSmartReturnToHomeEnabled, myConceptSpeedConditionalExpression, myConceptStartGoHome, myConceptStartLanding, myConceptStartMission, myConceptStartPrecisionTakeOff, myConceptStartTakeOff, myConceptStatement, myConceptText, myConceptThen, myConceptTurnOffMotors, myConceptTurnOnMotors, myConceptValue, myConceptWhen, myConceptWhile, myConceptWifiConditionalExtension);
   }
 
   @Override
@@ -175,6 +176,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptRegionConditionalExpression;
       case LanguageConceptSwitch.ResumeMission:
         return myConceptResumeMission;
+      case LanguageConceptSwitch.SafeLand:
+        return myConceptSafeLand;
       case LanguageConceptSwitch.ScalarDistanceConditionalExpression:
         return myConceptScalarDistanceConditionalExpression;
       case LanguageConceptSwitch.ScalarWindConditionalExpression:
@@ -558,6 +561,15 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/7971328689430055857");
     b.version(2);
     b.alias("resumeMission");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForSafeLand() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "SafeLand", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x4f78da14d91a0524L);
+    b.class_(false, false, false);
+    b.super_("WrapperDSL.structure.CommandCall", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd9358955fd28L);
+    b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/5726566709278147876");
+    b.version(2);
+    b.alias("safe land");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForScalarDistanceConditionalExpression() {
