@@ -12,38 +12,14 @@
       </concept>
     </language>
     <language id="3e1c68c4-ebe6-40bd-a27f-e74585aa2487" name="WrapperDSL">
-      <concept id="5726566709278147876" name="WrapperDSL.structure.SafeLand" flags="ng" index="2moHWK" />
       <concept id="5538177954659204583" name="WrapperDSL.structure.AdaptationBehavior" flags="ng" index="2mxZ9A">
-        <property id="5538177954659204588" name="typeOfAdaptation" index="2mxZ9H" />
-        <reference id="5538177954659204594" name="adaptationScriptName" index="2mxZ9N" />
         <child id="5538177954659204700" name="adaptationScript" index="2mxZ7t" />
       </concept>
-      <concept id="6034329596693600580" name="WrapperDSL.structure.ScalarDistanceConditionalExpression" flags="ng" index="1ncAu8">
-        <property id="8750727080427245689" name="left" index="3Ecgej" />
-        <property id="8750727080427245687" name="operator" index="3Ecget" />
-        <child id="8750727080427245695" name="right" index="3Ecgel" />
-      </concept>
-      <concept id="6034329596692646730" name="WrapperDSL.structure.Command" flags="ng" index="1nKZm6">
-        <property id="6034329596693084697" name="commandValue" index="1ne$jl" />
+      <concept id="1176377449927408756" name="WrapperDSL.structure.PayloadConditionalExtension" flags="ng" index="38Sa_U">
+        <property id="1176377449927408758" name="operators" index="38Sa_S" />
       </concept>
       <concept id="6034329596691614548" name="WrapperDSL.structure.AdaptationScript" flags="ng" index="1nO3mo">
         <child id="6034329596692833866" name="body" index="1nfDy6" />
-      </concept>
-      <concept id="6034329596690879486" name="WrapperDSL.structure.Text" flags="ng" index="1nReOM">
-        <property id="6034329596690879487" name="value" index="1nReON" />
-      </concept>
-      <concept id="6034329596690879483" name="WrapperDSL.structure.Value" flags="ng" index="1nReOR">
-        <property id="6034329596690879484" name="value" index="1nReOK" />
-      </concept>
-      <concept id="6034329596690336989" name="WrapperDSL.structure.CategoricalWindConditionalExpression" flags="ng" index="1nTb8h">
-        <property id="8750727080426382706" name="operator" index="3Eh7qo" />
-        <property id="8750727080426460311" name="right" index="3EhgtX" />
-        <child id="8750727080426382701" name="left" index="3Eh7q7" />
-      </concept>
-      <concept id="6034329596690336992" name="WrapperDSL.structure.RegionConditionalExpression" flags="ng" index="1nTb8G">
-        <property id="8237239994876093608" name="right" index="22qAE9" />
-        <property id="8237239994876093636" name="operator" index="22qAF_" />
-        <child id="8237239994876093634" name="left" index="22qAFz" />
       </concept>
       <concept id="6034329596690336716" name="WrapperDSL.structure.Then" flags="ng" index="1nTbk0">
         <child id="6034329596690384297" name="adaptiveBehavior" index="1nTnH_" />
@@ -59,69 +35,37 @@
         <child id="6034329596690336719" name="when" index="1nTbk3" />
         <child id="6034329596690336722" name="then" index="1nTbku" />
       </concept>
-      <concept id="6034329596690384300" name="WrapperDSL.structure.While" flags="ng" index="1nTnHw">
-        <child id="6034329596690384340" name="body" index="1nTnGo" />
-        <child id="6034329596690384338" name="condition" index="1nTnGu" />
-      </concept>
+      <concept id="6034329596690384188" name="WrapperDSL.structure.Statement" flags="ng" index="1nTnJK" />
+      <concept id="7971328689429675304" name="WrapperDSL.structure.CommandCall" flags="ng" index="3BMygt" />
       <concept id="8750727080425723899" name="WrapperDSL.structure.LogicalExpression" flags="ng" index="3Em$gh">
         <property id="8750727080426030585" name="operator" index="3EnToj" />
         <child id="8750727080426179942" name="right" index="3EglUc" />
         <child id="8750727080426179941" name="left" index="3EglUf" />
       </concept>
+      <concept id="8750727080426002237" name="WrapperDSL.structure.Expression" flags="ng" index="3Enwjn" />
     </language>
   </registry>
-  <node concept="1nTbkf" id="4NrzS7qoGRD">
-    <property role="TrG5h" value="Move aside" />
-    <node concept="1nTbk6" id="4NrzS7qoGRE" role="1nTbk1">
-      <node concept="3Em$gh" id="4XSQxjp6wjF" role="1nTnJQ">
+  <node concept="1nTbkf" id="7z9cZP2BAtC">
+    <property role="TrG5h" value="move aside" />
+    <node concept="1nTbk6" id="7z9cZP2BAtD" role="1nTbk1">
+      <node concept="3Em$gh" id="7z9cZP2BAtL" role="1nTnJQ">
         <property role="3EnToj" value="5eYfGK4nkaD/and" />
-        <node concept="1nTb8G" id="4XSQxjp6wjT" role="3EglUf">
-          <property role="22qAF_" value="7_KOYEjd0pz/is" />
-          <property role="22qAE9" value="79gzy7KeIi_/water" />
-          <node concept="1nReOM" id="4XSQxjp6wjU" role="22qAFz">
-            <property role="1nReON" value="Drone" />
-          </node>
+        <node concept="38Sa_U" id="7z9cZP2BAtS" role="3EglUf">
+          <property role="38Sa_S" value="7_KOYEjd0pz/is" />
         </node>
-        <node concept="3Em$gh" id="4XSQxjp6wjM" role="3EglUc">
-          <property role="3EnToj" value="5eYfGK4nkaL/or" />
-          <node concept="1ncAu8" id="4XSQxjp6wkn" role="3EglUc">
-            <property role="3Ecgej" value="7_KOYEjfYK5/destination" />
-            <property role="3Ecget" value="5eYfGK4mCLa/greater_than" />
-            <node concept="1nReOR" id="4XSQxjp6wkp" role="3Ecgel">
-              <property role="1nReOK" value="2" />
-            </node>
-          </node>
-          <node concept="1nTb8h" id="4XSQxjp6wki" role="3EglUf">
-            <property role="3Eh7qo" value="7_KOYEjd0p$/not_equal_to" />
-            <property role="3EhgtX" value="7_KOYEjdthV/strong" />
-            <node concept="1nReOM" id="4XSQxjp6wkj" role="3Eh7q7">
-              <property role="1nReON" value="Wind" />
-            </node>
-          </node>
+        <node concept="3Em$gh" id="7z9cZP2DdrE" role="3EglUc">
+          <node concept="3Enwjn" id="7z9cZP2DdrH" role="3EglUc" />
+          <node concept="3Enwjn" id="7z9cZP2DdrW" role="3EglUf" />
         </node>
       </node>
     </node>
-    <node concept="1nTbk7" id="4NrzS7qoGRG" role="1nTbk3">
-      <node concept="2moHWK" id="4XSQxjp7HE4" role="2mxZ8X" />
+    <node concept="1nTbk7" id="7z9cZP2BAtF" role="1nTbk3">
+      <node concept="3BMygt" id="7z9cZP2BAtG" role="2mxZ8X" />
     </node>
-    <node concept="1nTbk0" id="4NrzS7qoGRI" role="1nTbku">
-      <node concept="2mxZ9A" id="4NrzS7qoGRJ" role="1nTnH_">
-        <property role="2mxZ9H" value="5eYfGK4mOi$/before" />
-        <ref role="2mxZ9N" node="4NrzS7qoGRK" resolve="Fly off of water region" />
-        <node concept="1nO3mo" id="4NrzS7qoGRK" role="2mxZ7t">
-          <property role="TrG5h" value="Fly off of water region" />
-          <node concept="1nTnHw" id="4XSQxjp7HEb" role="1nfDy6">
-            <node concept="1nTb8G" id="4XSQxjp7HEg" role="1nTnGu">
-              <property role="22qAF_" value="7_KOYEjd0pz/is" />
-              <property role="22qAE9" value="79gzy7KeIi_/water" />
-              <node concept="1nReOM" id="4XSQxjp7HEh" role="22qAFz">
-                <property role="1nReON" value="Drone" />
-              </node>
-            </node>
-            <node concept="1nKZm6" id="4XSQxjp7HEl" role="1nTnGo">
-              <property role="1ne$jl" value="5eYfGK4mOjq/stepNearestToLand" />
-            </node>
-          </node>
+    <node concept="1nTbk0" id="7z9cZP2BAtH" role="1nTbku">
+      <node concept="2mxZ9A" id="7z9cZP2BAtI" role="1nTnH_">
+        <node concept="1nO3mo" id="7z9cZP2BAtJ" role="2mxZ7t">
+          <node concept="1nTnJK" id="7z9cZP2BAtK" role="1nfDy6" />
         </node>
       </node>
     </node>

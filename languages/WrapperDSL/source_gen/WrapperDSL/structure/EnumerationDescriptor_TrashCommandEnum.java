@@ -9,10 +9,10 @@ import java.util.List;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
 
-public class EnumerationDescriptor_CommandEnum extends EnumerationDescriptorBase {
+public class EnumerationDescriptor_TrashCommandEnum extends EnumerationDescriptorBase {
 
-  public EnumerationDescriptor_CommandEnum() {
-    super(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045b44aeL, "CommandEnum", "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690384046");
+  public EnumerationDescriptor_TrashCommandEnum() {
+    super(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045b44aeL, "TrashCommandEnum", "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690384046");
   }
 
   private final EnumerationDescriptor.MemberDescriptor myMember_land_0 = new EnumerationDescriptor.MemberDescriptor("land", "Land", 0x53be3ecc045b44afL, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/6034329596690384047");

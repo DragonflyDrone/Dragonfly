@@ -25,22 +25,22 @@ public final class LanguageConceptSwitch {
   public static final int CompassConditionalExpression = 13;
   public static final int ConditionalExpression = 14;
   public static final int ConfirmLanding = 15;
-  public static final int ConjunctionLogicalExpression = 16;
-  public static final int CoordenateConditionalExpression = 17;
-  public static final int DisjunctionLogicalExpression = 18;
-  public static final int ExceptionalScenario = 19;
-  public static final int Expression = 20;
-  public static final int GimbalConditionalExtension = 21;
-  public static final int Given = 22;
-  public static final int If = 23;
-  public static final int LandingGearConditionalExtension = 24;
-  public static final int LinearAccelerationConditionalExtension = 25;
-  public static final int LogicalExpression = 26;
-  public static final int MathElement = 27;
-  public static final int MotorsPowerConditionalExtension = 28;
-  public static final int OriginAndDestinationDistanceConditionalExpression = 29;
-  public static final int PauseMission = 30;
-  public static final int PayloadConditionalExtension = 31;
+  public static final int CoordenateConditionalExpression = 16;
+  public static final int ExceptionalScenario = 17;
+  public static final int Expression = 18;
+  public static final int GimbalConditionalExtension = 19;
+  public static final int Given = 20;
+  public static final int If = 21;
+  public static final int IsRunning = 22;
+  public static final int LandingGearConditionalExtension = 23;
+  public static final int LinearAccelerationConditionalExtension = 24;
+  public static final int LogicalExpression = 25;
+  public static final int MathElement = 26;
+  public static final int MotorsPowerConditionalExtension = 27;
+  public static final int OriginAndDestinationDistanceConditionalExpression = 28;
+  public static final int PauseMission = 29;
+  public static final int PayloadConditionalExtension = 30;
+  public static final int PerformingCommandExpression = 31;
   public static final int RegionConditionalExpression = 32;
   public static final int ResumeMission = 33;
   public static final int SafeLand = 34;
@@ -62,12 +62,14 @@ public final class LanguageConceptSwitch {
   public static final int Statement = 50;
   public static final int Text = 51;
   public static final int Then = 52;
-  public static final int TurnOffMotors = 53;
-  public static final int TurnOnMotors = 54;
-  public static final int Value = 55;
-  public static final int When = 56;
-  public static final int While = 57;
-  public static final int WifiConditionalExtension = 58;
+  public static final int TrashConjunctionLogicalExpression = 53;
+  public static final int TurnOffMotors = 54;
+  public static final int TurnOnMotors = 55;
+  public static final int Value = 56;
+  public static final int When = 57;
+  public static final int While = 58;
+  public static final int WifiConditionalExtension = 59;
+  public static final int trashDisjunctionLogicalExpression = 60;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L);
@@ -87,14 +89,13 @@ public final class LanguageConceptSwitch {
     builder.put(0x3f0a90391eda7f7L, CompassConditionalExpression);
     builder.put(0x7970d3ea932a97ffL, ConditionalExpression);
     builder.put(0x6e9fd935895a94efL, ConfirmLanding);
-    builder.put(0x53be3ecc045a8c9bL, ConjunctionLogicalExpression);
     builder.put(0x53be3ecc045a8ce3L, CoordenateConditionalExpression);
-    builder.put(0x53be3ecc045a8c9cL, DisjunctionLogicalExpression);
     builder.put(0x53be3ecc045a8bc3L, ExceptionalScenario);
     builder.put(0x7970d3ea932ed73dL, Expression);
     builder.put(0x1053550ed8b71646L, GimbalConditionalExtension);
     builder.put(0x53be3ecc045a8bcaL, Given);
     builder.put(0x53be3ecc045b45abL, If);
+    builder.put(0x78c933fd42a0f8a8L, IsRunning);
     builder.put(0x1053550ed8b3fbfaL, LandingGearConditionalExtension);
     builder.put(0x3004f1bb9b15123cL, LinearAccelerationConditionalExtension);
     builder.put(0x7970d3ea932a97fbL, LogicalExpression);
@@ -103,6 +104,7 @@ public final class LanguageConceptSwitch {
     builder.put(0x72508e21f03ced43L, OriginAndDestinationDistanceConditionalExpression);
     builder.put(0x6e9fd935895bcb96L, PauseMission);
     builder.put(0x1053550ed8b3fc74L, PayloadConditionalExtension);
+    builder.put(0x78c933fd429ad1d9L, PerformingCommandExpression);
     builder.put(0x53be3ecc045a8ce0L, RegionConditionalExpression);
     builder.put(0x6e9fd935895bcbb1L, ResumeMission);
     builder.put(0x4f78da14d91a0524L, SafeLand);
@@ -124,12 +126,14 @@ public final class LanguageConceptSwitch {
     builder.put(0x53be3ecc045b453cL, Statement);
     builder.put(0x53be3ecc0462d3feL, Text);
     builder.put(0x53be3ecc045a8bccL, Then);
+    builder.put(0x53be3ecc045a8c9bL, TrashConjunctionLogicalExpression);
     builder.put(0x6e9fd93589596429L, TurnOffMotors);
     builder.put(0x6e9fd9358959640bL, TurnOnMotors);
     builder.put(0x53be3ecc0462d3fbL, Value);
     builder.put(0x53be3ecc045a8bcbL, When);
     builder.put(0x53be3ecc045b45acL, While);
     builder.put(0x1053550ed8b3fc39L, WifiConditionalExtension);
+    builder.put(0x53be3ecc045a8c9cL, trashDisjunctionLogicalExpression);
     myIndex = builder.seal();
   }
 

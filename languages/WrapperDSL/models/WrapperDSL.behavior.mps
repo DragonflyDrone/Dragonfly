@@ -80,57 +80,6 @@
       </concept>
     </language>
   </registry>
-  <node concept="13h7C7" id="7_KOYEjcw$P">
-    <property role="3GE5qa" value="math.expression.conditional_expression.internal_state" />
-    <ref role="13h7C2" to="lpas:5eYfGK4qp90" resolve="BatteryConditionalExpression" />
-    <node concept="13hLZK" id="7_KOYEjcw$Q" role="13h7CW">
-      <node concept="3clFbS" id="7_KOYEjcw$R" role="2VODD2">
-        <node concept="3cpWs8" id="7_KOYEjcxel" role="3cqZAp">
-          <node concept="3cpWsn" id="7_KOYEjcxeo" role="3cpWs9">
-            <property role="TrG5h" value="text" />
-            <node concept="3Tqbb2" id="7_KOYEjcxej" role="1tU5fm">
-              <ref role="ehGHo" to="lpas:5eYfGK4oHfY" resolve="Text" />
-            </node>
-            <node concept="2ShNRf" id="7_KOYEjcxhU" role="33vP2m">
-              <node concept="3zrR0B" id="7_KOYEjcypD" role="2ShVmc">
-                <node concept="3Tqbb2" id="7_KOYEjcypF" role="3zrR0E">
-                  <ref role="ehGHo" to="lpas:5eYfGK4oHfY" resolve="Text" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="7_KOYEjcysZ" role="3cqZAp">
-          <node concept="37vLTI" id="7_KOYEjcziI" role="3clFbG">
-            <node concept="Xl_RD" id="7_KOYEjczpr" role="37vLTx">
-              <property role="Xl_RC" value="Battery" />
-            </node>
-            <node concept="2OqwBi" id="7_KOYEjcy_w" role="37vLTJ">
-              <node concept="37vLTw" id="7_KOYEjcysX" role="2Oq$k0">
-                <ref role="3cqZAo" node="7_KOYEjcxeo" resolve="text" />
-              </node>
-              <node concept="3TrcHB" id="7_KOYEjcyHM" role="2OqNvi">
-                <ref role="3TsBF5" to="lpas:5eYfGK4oHfZ" resolve="value" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="7_KOYEjcw_1" role="3cqZAp">
-          <node concept="37vLTI" id="7_KOYEjcx7r" role="3clFbG">
-            <node concept="2OqwBi" id="7_KOYEjcwJB" role="37vLTJ">
-              <node concept="13iPFW" id="7_KOYEjcw_0" role="2Oq$k0" />
-              <node concept="3TrEf2" id="7_KOYEjcwTl" role="2OqNvi">
-                <ref role="3Tt5mk" to="lpas:7_KOYEjcw$K" resolve="left" />
-              </node>
-            </node>
-            <node concept="37vLTw" id="7_KOYEjcQxa" role="37vLTx">
-              <ref role="3cqZAo" node="7_KOYEjcxeo" resolve="text" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
   <node concept="13h7C7" id="7_KOYEjdCAs">
     <property role="3GE5qa" value="math.expression.conditional_expression.wind" />
     <ref role="13h7C2" to="lpas:7_KOYEjdC$p" resolve="ScalarWindConditionalExpression" />
@@ -182,51 +131,51 @@
       </node>
     </node>
   </node>
-  <node concept="13h7C7" id="7_KOYEjdCW6">
-    <property role="3GE5qa" value="math.expression.conditional_expression.wind" />
-    <ref role="13h7C2" to="lpas:5eYfGK4mCNt" resolve="CategoricalWindConditionalExpression" />
-    <node concept="13hLZK" id="7_KOYEjdCW7" role="13h7CW">
-      <node concept="3clFbS" id="7_KOYEjdCW8" role="2VODD2">
-        <node concept="3cpWs8" id="7_KOYEjdCWh" role="3cqZAp">
-          <node concept="3cpWsn" id="7_KOYEjdCWi" role="3cpWs9">
+  <node concept="13h7C7" id="7_KOYEjcw$P">
+    <property role="3GE5qa" value="math.expression.conditional_expression.internal_state" />
+    <ref role="13h7C2" to="lpas:5eYfGK4qp90" resolve="BatteryConditionalExpression" />
+    <node concept="13hLZK" id="7_KOYEjcw$Q" role="13h7CW">
+      <node concept="3clFbS" id="7_KOYEjcw$R" role="2VODD2">
+        <node concept="3cpWs8" id="7_KOYEjcxel" role="3cqZAp">
+          <node concept="3cpWsn" id="7_KOYEjcxeo" role="3cpWs9">
             <property role="TrG5h" value="text" />
-            <node concept="3Tqbb2" id="7_KOYEjdCWj" role="1tU5fm">
+            <node concept="3Tqbb2" id="7_KOYEjcxej" role="1tU5fm">
               <ref role="ehGHo" to="lpas:5eYfGK4oHfY" resolve="Text" />
             </node>
-            <node concept="2ShNRf" id="7_KOYEjdCWk" role="33vP2m">
-              <node concept="3zrR0B" id="7_KOYEjdCWl" role="2ShVmc">
-                <node concept="3Tqbb2" id="7_KOYEjdCWm" role="3zrR0E">
+            <node concept="2ShNRf" id="7_KOYEjcxhU" role="33vP2m">
+              <node concept="3zrR0B" id="7_KOYEjcypD" role="2ShVmc">
+                <node concept="3Tqbb2" id="7_KOYEjcypF" role="3zrR0E">
                   <ref role="ehGHo" to="lpas:5eYfGK4oHfY" resolve="Text" />
                 </node>
               </node>
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="7_KOYEjdCWn" role="3cqZAp">
-          <node concept="37vLTI" id="7_KOYEjdCWo" role="3clFbG">
-            <node concept="Xl_RD" id="7_KOYEjdCWp" role="37vLTx">
-              <property role="Xl_RC" value="Wind" />
+        <node concept="3clFbF" id="7_KOYEjcysZ" role="3cqZAp">
+          <node concept="37vLTI" id="7_KOYEjcziI" role="3clFbG">
+            <node concept="Xl_RD" id="7_KOYEjczpr" role="37vLTx">
+              <property role="Xl_RC" value="Battery" />
             </node>
-            <node concept="2OqwBi" id="7_KOYEjdCWq" role="37vLTJ">
-              <node concept="37vLTw" id="7_KOYEjdCWr" role="2Oq$k0">
-                <ref role="3cqZAo" node="7_KOYEjdCWi" resolve="text" />
+            <node concept="2OqwBi" id="7_KOYEjcy_w" role="37vLTJ">
+              <node concept="37vLTw" id="7_KOYEjcysX" role="2Oq$k0">
+                <ref role="3cqZAo" node="7_KOYEjcxeo" resolve="text" />
               </node>
-              <node concept="3TrcHB" id="7_KOYEjdCWs" role="2OqNvi">
+              <node concept="3TrcHB" id="7_KOYEjcyHM" role="2OqNvi">
                 <ref role="3TsBF5" to="lpas:5eYfGK4oHfZ" resolve="value" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="7_KOYEjdCWt" role="3cqZAp">
-          <node concept="37vLTI" id="7_KOYEjdCWu" role="3clFbG">
-            <node concept="2OqwBi" id="7_KOYEjdCWv" role="37vLTJ">
-              <node concept="13iPFW" id="7_KOYEjdCWw" role="2Oq$k0" />
-              <node concept="3TrEf2" id="7_KOYEjdCWx" role="2OqNvi">
-                <ref role="3Tt5mk" to="lpas:7_KOYEjdalH" resolve="left" />
+        <node concept="3clFbF" id="7_KOYEjcw_1" role="3cqZAp">
+          <node concept="37vLTI" id="7_KOYEjcx7r" role="3clFbG">
+            <node concept="2OqwBi" id="7_KOYEjcwJB" role="37vLTJ">
+              <node concept="13iPFW" id="7_KOYEjcw_0" role="2Oq$k0" />
+              <node concept="3TrEf2" id="7_KOYEjcwTl" role="2OqNvi">
+                <ref role="3Tt5mk" to="lpas:7_KOYEjcw$K" resolve="left" />
               </node>
             </node>
-            <node concept="37vLTw" id="7_KOYEjdCWy" role="37vLTx">
-              <ref role="3cqZAo" node="7_KOYEjdCWi" resolve="text" />
+            <node concept="37vLTw" id="7_KOYEjcQxa" role="37vLTx">
+              <ref role="3cqZAo" node="7_KOYEjcxeo" resolve="text" />
             </node>
           </node>
         </node>
@@ -278,6 +227,57 @@
             </node>
             <node concept="37vLTw" id="79gzy7KeIqa" role="37vLTx">
               <ref role="3cqZAo" node="79gzy7KeIpU" resolve="text" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="13h7C7" id="7_KOYEjdCW6">
+    <property role="3GE5qa" value="math.expression.conditional_expression.wind" />
+    <ref role="13h7C2" to="lpas:5eYfGK4mCNt" resolve="CategoricalWindConditionalExpression" />
+    <node concept="13hLZK" id="7_KOYEjdCW7" role="13h7CW">
+      <node concept="3clFbS" id="7_KOYEjdCW8" role="2VODD2">
+        <node concept="3cpWs8" id="7_KOYEjdCWh" role="3cqZAp">
+          <node concept="3cpWsn" id="7_KOYEjdCWi" role="3cpWs9">
+            <property role="TrG5h" value="text" />
+            <node concept="3Tqbb2" id="7_KOYEjdCWj" role="1tU5fm">
+              <ref role="ehGHo" to="lpas:5eYfGK4oHfY" resolve="Text" />
+            </node>
+            <node concept="2ShNRf" id="7_KOYEjdCWk" role="33vP2m">
+              <node concept="3zrR0B" id="7_KOYEjdCWl" role="2ShVmc">
+                <node concept="3Tqbb2" id="7_KOYEjdCWm" role="3zrR0E">
+                  <ref role="ehGHo" to="lpas:5eYfGK4oHfY" resolve="Text" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="7_KOYEjdCWn" role="3cqZAp">
+          <node concept="37vLTI" id="7_KOYEjdCWo" role="3clFbG">
+            <node concept="Xl_RD" id="7_KOYEjdCWp" role="37vLTx">
+              <property role="Xl_RC" value="Wind" />
+            </node>
+            <node concept="2OqwBi" id="7_KOYEjdCWq" role="37vLTJ">
+              <node concept="37vLTw" id="7_KOYEjdCWr" role="2Oq$k0">
+                <ref role="3cqZAo" node="7_KOYEjdCWi" resolve="text" />
+              </node>
+              <node concept="3TrcHB" id="7_KOYEjdCWs" role="2OqNvi">
+                <ref role="3TsBF5" to="lpas:5eYfGK4oHfZ" resolve="value" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="7_KOYEjdCWt" role="3cqZAp">
+          <node concept="37vLTI" id="7_KOYEjdCWu" role="3clFbG">
+            <node concept="2OqwBi" id="7_KOYEjdCWv" role="37vLTJ">
+              <node concept="13iPFW" id="7_KOYEjdCWw" role="2Oq$k0" />
+              <node concept="3TrEf2" id="7_KOYEjdCWx" role="2OqNvi">
+                <ref role="3Tt5mk" to="lpas:7_KOYEjdalH" resolve="left" />
+              </node>
+            </node>
+            <node concept="37vLTw" id="7_KOYEjdCWy" role="37vLTx">
+              <ref role="3cqZAo" node="7_KOYEjdCWi" resolve="text" />
             </node>
           </node>
         </node>

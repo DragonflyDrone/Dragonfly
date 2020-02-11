@@ -25,14 +25,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_CompassConditionalExpression;
   private ConceptPresentation props_ConditionalExpression;
   private ConceptPresentation props_ConfirmLanding;
-  private ConceptPresentation props_ConjunctionLogicalExpression;
   private ConceptPresentation props_CoordenateConditionalExpression;
-  private ConceptPresentation props_DisjunctionLogicalExpression;
   private ConceptPresentation props_ExceptionalScenario;
   private ConceptPresentation props_Expression;
   private ConceptPresentation props_GimbalConditionalExtension;
   private ConceptPresentation props_Given;
   private ConceptPresentation props_If;
+  private ConceptPresentation props_IsRunning;
   private ConceptPresentation props_LandingGearConditionalExtension;
   private ConceptPresentation props_LinearAccelerationConditionalExtension;
   private ConceptPresentation props_LogicalExpression;
@@ -41,6 +40,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_OriginAndDestinationDistanceConditionalExpression;
   private ConceptPresentation props_PauseMission;
   private ConceptPresentation props_PayloadConditionalExtension;
+  private ConceptPresentation props_PerformingCommandExpression;
   private ConceptPresentation props_RegionConditionalExpression;
   private ConceptPresentation props_ResumeMission;
   private ConceptPresentation props_SafeLand;
@@ -62,12 +62,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_Statement;
   private ConceptPresentation props_Text;
   private ConceptPresentation props_Then;
+  private ConceptPresentation props_TrashConjunctionLogicalExpression;
   private ConceptPresentation props_TurnOffMotors;
   private ConceptPresentation props_TurnOnMotors;
   private ConceptPresentation props_Value;
   private ConceptPresentation props_When;
   private ConceptPresentation props_While;
   private ConceptPresentation props_WifiConditionalExtension;
+  private ConceptPresentation props_trashDisjunctionLogicalExpression;
 
   @Override
   @Nullable
@@ -191,13 +193,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_ConfirmLanding = cpb.create();
         }
         return props_ConfirmLanding;
-      case LanguageConceptSwitch.ConjunctionLogicalExpression:
-        if (props_ConjunctionLogicalExpression == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("ConjunctionLogicalExpression");
-          props_ConjunctionLogicalExpression = cpb.create();
-        }
-        return props_ConjunctionLogicalExpression;
       case LanguageConceptSwitch.CoordenateConditionalExpression:
         if (props_CoordenateConditionalExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -205,13 +200,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_CoordenateConditionalExpression = cpb.create();
         }
         return props_CoordenateConditionalExpression;
-      case LanguageConceptSwitch.DisjunctionLogicalExpression:
-        if (props_DisjunctionLogicalExpression == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("DisjunctionLogicalExpression");
-          props_DisjunctionLogicalExpression = cpb.create();
-        }
-        return props_DisjunctionLogicalExpression;
       case LanguageConceptSwitch.ExceptionalScenario:
         if (props_ExceptionalScenario == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -247,6 +235,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_If = cpb.create();
         }
         return props_If;
+      case LanguageConceptSwitch.IsRunning:
+        if (props_IsRunning == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("IsRunning");
+          props_IsRunning = cpb.create();
+        }
+        return props_IsRunning;
       case LanguageConceptSwitch.LandingGearConditionalExtension:
         if (props_LandingGearConditionalExtension == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -308,6 +303,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_PayloadConditionalExtension = cpb.create();
         }
         return props_PayloadConditionalExtension;
+      case LanguageConceptSwitch.PerformingCommandExpression:
+        if (props_PerformingCommandExpression == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("PerformingCommandExpression");
+          props_PerformingCommandExpression = cpb.create();
+        }
+        return props_PerformingCommandExpression;
       case LanguageConceptSwitch.RegionConditionalExpression:
         if (props_RegionConditionalExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -458,6 +460,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Then = cpb.create();
         }
         return props_Then;
+      case LanguageConceptSwitch.TrashConjunctionLogicalExpression:
+        if (props_TrashConjunctionLogicalExpression == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TrashConjunctionLogicalExpression");
+          props_TrashConjunctionLogicalExpression = cpb.create();
+        }
+        return props_TrashConjunctionLogicalExpression;
       case LanguageConceptSwitch.TurnOffMotors:
         if (props_TurnOffMotors == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -501,6 +510,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_WifiConditionalExtension = cpb.create();
         }
         return props_WifiConditionalExtension;
+      case LanguageConceptSwitch.trashDisjunctionLogicalExpression:
+        if (props_trashDisjunctionLogicalExpression == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("trashDisjunctionLogicalExpression");
+          props_trashDisjunctionLogicalExpression = cpb.create();
+        }
+        return props_trashDisjunctionLogicalExpression;
     }
     return null;
   }
