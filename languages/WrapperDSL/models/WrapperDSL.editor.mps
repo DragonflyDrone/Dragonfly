@@ -990,5 +990,69 @@
       <node concept="l2Vlx" id="1bns0lwX484" role="2iSdaV" />
     </node>
   </node>
+  <node concept="24kQdi" id="IyLDsSshHf">
+    <property role="3GE5qa" value="command" />
+    <ref role="1XX52x" to="lpas:IyLDsSshGU" resolve="DegreesRotate" />
+    <node concept="3EZMnI" id="IyLDsSshHh" role="2wV5jI">
+      <node concept="3F0ifn" id="IyLDsSshHo" role="3EZMnx">
+        <property role="3F0ifm" value="Rotate" />
+      </node>
+      <node concept="3F0A7n" id="IyLDsSshHu" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:IyLDsSshGV" resolve="value" />
+      </node>
+      <node concept="3F0ifn" id="IyLDsSshHA" role="3EZMnx">
+        <property role="3F0ifm" value="degrees" />
+      </node>
+      <node concept="l2Vlx" id="IyLDsSshHk" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="IyLDsSshI4">
+    <property role="3GE5qa" value="command" />
+    <ref role="1XX52x" to="lpas:IyLDsSshHF" resolve="CardinalPointsRotate" />
+    <node concept="3EZMnI" id="IyLDsSshI6" role="2wV5jI">
+      <node concept="3F0ifn" id="IyLDsSshId" role="3EZMnx">
+        <property role="3F0ifm" value="Rotate to" />
+      </node>
+      <node concept="3F0A7n" id="IyLDsSshIj" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:IyLDsSshHU" resolve="cardialPoint" />
+      </node>
+      <node concept="l2Vlx" id="IyLDsSshI9" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="IyLDsSshJb">
+    <property role="3GE5qa" value="command" />
+    <ref role="1XX52x" to="lpas:IyLDsSshIX" resolve="FlyToCoordinates" />
+    <node concept="3EZMnI" id="IyLDsSshJd" role="2wV5jI">
+      <node concept="3F0ifn" id="IyLDsSshJk" role="3EZMnx">
+        <property role="3F0ifm" value="Fly to latitude:" />
+      </node>
+      <node concept="3F0A7n" id="IyLDsSshJq" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:IyLDsSshIY" resolve="lat" />
+      </node>
+      <node concept="3F0ifn" id="IyLDsSshJy" role="3EZMnx">
+        <property role="3F0ifm" value="longitude" />
+      </node>
+      <node concept="3F0A7n" id="IyLDsSshJG" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:IyLDsSshJ0" resolve="long" />
+      </node>
+      <node concept="l2Vlx" id="IyLDsSshJg" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="IyLDsSshKh">
+    <property role="3GE5qa" value="command" />
+    <ref role="1XX52x" to="lpas:IyLDsSshJM" resolve="FlyToRegion" />
+    <node concept="3EZMnI" id="IyLDsSshKj" role="2wV5jI">
+      <node concept="3F0ifn" id="IyLDsSshKq" role="3EZMnx">
+        <property role="3F0ifm" value="Fly to" />
+      </node>
+      <node concept="3F0A7n" id="IyLDsSshKw" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:IyLDsSshK7" resolve="region" />
+      </node>
+      <node concept="3F0ifn" id="IyLDsSshKC" role="3EZMnx">
+        <property role="3F0ifm" value="region" />
+      </node>
+      <node concept="l2Vlx" id="IyLDsSshKm" role="2iSdaV" />
+    </node>
+  </node>
 </model>
 

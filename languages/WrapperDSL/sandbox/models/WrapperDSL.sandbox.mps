@@ -15,9 +15,6 @@
       <concept id="5538177954659204583" name="WrapperDSL.structure.AdaptationBehavior" flags="ng" index="2mxZ9A">
         <child id="5538177954659204700" name="adaptationScript" index="2mxZ7t" />
       </concept>
-      <concept id="1176377449927408756" name="WrapperDSL.structure.PayloadConditionalExtension" flags="ng" index="38Sa_U">
-        <property id="1176377449927408758" name="operators" index="38Sa_S" />
-      </concept>
       <concept id="6034329596691614548" name="WrapperDSL.structure.AdaptationScript" flags="ng" index="1nO3mo">
         <child id="6034329596692833866" name="body" index="1nfDy6" />
       </concept>
@@ -37,27 +34,13 @@
       </concept>
       <concept id="6034329596690384188" name="WrapperDSL.structure.Statement" flags="ng" index="1nTnJK" />
       <concept id="7971328689429675304" name="WrapperDSL.structure.CommandCall" flags="ng" index="3BMygt" />
-      <concept id="8750727080425723899" name="WrapperDSL.structure.LogicalExpression" flags="ng" index="3Em$gh">
-        <property id="8750727080426030585" name="operator" index="3EnToj" />
-        <child id="8750727080426179942" name="right" index="3EglUc" />
-        <child id="8750727080426179941" name="left" index="3EglUf" />
-      </concept>
       <concept id="8750727080426002237" name="WrapperDSL.structure.Expression" flags="ng" index="3Enwjn" />
     </language>
   </registry>
   <node concept="1nTbkf" id="7z9cZP2BAtC">
     <property role="TrG5h" value="move aside" />
     <node concept="1nTbk6" id="7z9cZP2BAtD" role="1nTbk1">
-      <node concept="3Em$gh" id="7z9cZP2BAtL" role="1nTnJQ">
-        <property role="3EnToj" value="5eYfGK4nkaD/and" />
-        <node concept="38Sa_U" id="7z9cZP2BAtS" role="3EglUf">
-          <property role="38Sa_S" value="7_KOYEjd0pz/is" />
-        </node>
-        <node concept="3Em$gh" id="7z9cZP2DdrE" role="3EglUc">
-          <node concept="3Enwjn" id="7z9cZP2DdrH" role="3EglUc" />
-          <node concept="3Enwjn" id="7z9cZP2DdrW" role="3EglUf" />
-        </node>
-      </node>
+      <node concept="3Enwjn" id="IyLDsSshKH" role="1nTnJQ" />
     </node>
     <node concept="1nTbk7" id="7z9cZP2BAtF" role="1nTbk3">
       <node concept="3BMygt" id="7z9cZP2BAtG" role="2mxZ8X" />

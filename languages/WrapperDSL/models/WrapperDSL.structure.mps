@@ -14,7 +14,7 @@
         <property id="1421157252384165432" name="memberId" index="3tVfz5" />
         <property id="672037151186491528" name="presentation" index="1L1pqM" />
       </concept>
-      <concept id="3348158742936976479" name="jetbrains.mps.lang.structure.structure.EnumerationDeclartaion" flags="ng" index="25R3W">
+      <concept id="3348158742936976479" name="jetbrains.mps.lang.structure.structure.EnumerationDeclaration" flags="ng" index="25R3W">
         <child id="3348158742936976577" name="members" index="25R1y" />
       </concept>
       <concept id="1082978164218" name="jetbrains.mps.lang.structure.structure.DataTypeDeclaration" flags="ng" index="AxPO6">
@@ -162,70 +162,6 @@
       <property role="3tVfz5" value="6034329596690384040" />
       <property role="TrG5h" value="after" />
       <property role="1L1pqM" value="After" />
-    </node>
-  </node>
-  <node concept="25R3W" id="5eYfGK4mOiI">
-    <property role="3F6X1D" value="6034329596690384046" />
-    <property role="TrG5h" value="TrashCommandEnum" />
-    <node concept="25R33" id="5eYfGK4mOiW" role="25R1y">
-      <property role="3tVfz5" value="6034329596690384060" />
-      <property role="TrG5h" value="stepEast" />
-      <property role="1L1pqM" value="Step to East" />
-    </node>
-    <node concept="25R33" id="5eYfGK4mOj2" role="25R1y">
-      <property role="3tVfz5" value="6034329596690384066" />
-      <property role="TrG5h" value="stepNearestToDestiny" />
-      <property role="1L1pqM" value="Step Nearest To Destination" />
-    </node>
-    <node concept="25R33" id="5eYfGK4mOj9" role="25R1y">
-      <property role="3tVfz5" value="6034329596690384073" />
-      <property role="TrG5h" value="stepNearestToOrigem" />
-      <property role="1L1pqM" value="Step Nearest To Origem" />
-    </node>
-    <node concept="25R33" id="5eYfGK4mOjh" role="25R1y">
-      <property role="3tVfz5" value="6034329596690384081" />
-      <property role="TrG5h" value="stepNearestToWater" />
-      <property role="1L1pqM" value="Step Nearest To Water" />
-    </node>
-    <node concept="25R33" id="5eYfGK4mOjq" role="25R1y">
-      <property role="3tVfz5" value="6034329596690384090" />
-      <property role="TrG5h" value="stepNearestToLand" />
-      <property role="1L1pqM" value="Step Nearest To Land" />
-    </node>
-    <node concept="25R33" id="5eYfGK4mOj$" role="25R1y">
-      <property role="3tVfz5" value="6034329596690384100" />
-      <property role="TrG5h" value="stepNearestToPosition" />
-      <property role="1L1pqM" value="Step Nearest To Coordenates" />
-    </node>
-    <node concept="25R33" id="5eYfGK4mOjV" role="25R1y">
-      <property role="3tVfz5" value="6034329596690384123" />
-      <property role="TrG5h" value="turnEast" />
-      <property role="1L1pqM" value="Turn East" />
-    </node>
-    <node concept="25R33" id="5eYfGK4mOk8" role="25R1y">
-      <property role="3tVfz5" value="6034329596690384136" />
-      <property role="TrG5h" value="turnWest" />
-      <property role="1L1pqM" value="Turn West" />
-    </node>
-    <node concept="25R33" id="5eYfGK4mOkm" role="25R1y">
-      <property role="3tVfz5" value="6034329596690384150" />
-      <property role="TrG5h" value="turnSouth" />
-      <property role="1L1pqM" value="Turn South" />
-    </node>
-    <node concept="25R33" id="5eYfGK4mOk_" role="25R1y">
-      <property role="3tVfz5" value="6034329596690384165" />
-      <property role="TrG5h" value="turnNorth" />
-      <property role="1L1pqM" value="Turn North" />
-    </node>
-    <node concept="25R33" id="5eYfGK4$UtP" role="25R1y">
-      <property role="3tVfz5" value="6034329596694079349" />
-      <property role="TrG5h" value="doNothing" />
-      <property role="1L1pqM" value="Do Nothing" />
-    </node>
-    <node concept="25R33" id="1RtkfEL7kmH" role="25R1y">
-      <property role="3tVfz5" value="2151965234596496813" />
-      <property role="TrG5h" value="goDestinyAutomatic" />
-      <property role="1L1pqM" value="Automatically go to destination" />
     </node>
   </node>
   <node concept="1TIwiD" id="5eYfGK4mOkW">
@@ -1296,6 +1232,80 @@
       <property role="3tVfz5" value="1357676981079261731" />
       <property role="TrG5h" value="Pause" />
       <property role="1L1pqM" value="pause" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="IyLDsSshGU">
+    <property role="EcuMT" value="838450833433631546" />
+    <property role="3GE5qa" value="command" />
+    <property role="TrG5h" value="DegreesRotate" />
+    <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="CommandCall" />
+    <node concept="1TJgyi" id="IyLDsSshGV" role="1TKVEl">
+      <property role="IQ2nx" value="838450833433631547" />
+      <property role="TrG5h" value="value" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="IyLDsSshHF">
+    <property role="EcuMT" value="838450833433631595" />
+    <property role="3GE5qa" value="command" />
+    <property role="TrG5h" value="CardinalPointsRotate" />
+    <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="CommandCall" />
+    <node concept="1TJgyi" id="IyLDsSshHU" role="1TKVEl">
+      <property role="IQ2nx" value="838450833433631610" />
+      <property role="TrG5h" value="cardialPoint" />
+      <ref role="AX2Wp" node="IyLDsSshHG" resolve="CardinalPointsEnum" />
+    </node>
+  </node>
+  <node concept="25R3W" id="IyLDsSshHG">
+    <property role="3F6X1D" value="838450833433631596" />
+    <property role="3GE5qa" value="command" />
+    <property role="TrG5h" value="CardinalPointsEnum" />
+    <node concept="25R33" id="IyLDsSshHH" role="25R1y">
+      <property role="3tVfz5" value="838450833433631597" />
+      <property role="TrG5h" value="East" />
+      <property role="1L1pqM" value="east" />
+    </node>
+    <node concept="25R33" id="IyLDsSshHI" role="25R1y">
+      <property role="3tVfz5" value="838450833433631598" />
+      <property role="TrG5h" value="West" />
+      <property role="1L1pqM" value="west" />
+    </node>
+    <node concept="25R33" id="IyLDsSshHL" role="25R1y">
+      <property role="3tVfz5" value="838450833433631601" />
+      <property role="TrG5h" value="South" />
+      <property role="1L1pqM" value="south" />
+    </node>
+    <node concept="25R33" id="IyLDsSshHP" role="25R1y">
+      <property role="3tVfz5" value="838450833433631605" />
+      <property role="TrG5h" value="North" />
+      <property role="1L1pqM" value="north" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="IyLDsSshIX">
+    <property role="EcuMT" value="838450833433631677" />
+    <property role="3GE5qa" value="command" />
+    <property role="TrG5h" value="FlyToCoordinates" />
+    <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="CommandCall" />
+    <node concept="1TJgyi" id="IyLDsSshIY" role="1TKVEl">
+      <property role="IQ2nx" value="838450833433631678" />
+      <property role="TrG5h" value="lat" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="IyLDsSshJ0" role="1TKVEl">
+      <property role="IQ2nx" value="838450833433631680" />
+      <property role="TrG5h" value="long" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="IyLDsSshJM">
+    <property role="EcuMT" value="838450833433631730" />
+    <property role="3GE5qa" value="command" />
+    <property role="TrG5h" value="FlyToRegion" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="IyLDsSshK7" role="1TKVEl">
+      <property role="IQ2nx" value="838450833433631751" />
+      <property role="TrG5h" value="region" />
+      <ref role="AX2Wp" node="79gzy7KeIiz" resolve="RegionEnum" />
     </node>
   </node>
 </model>
