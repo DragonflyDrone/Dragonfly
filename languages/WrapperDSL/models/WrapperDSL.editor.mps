@@ -13,6 +13,9 @@
   <registry>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
       <concept id="1071666914219" name="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" flags="ig" index="24kQdi" />
+      <concept id="1140524381322" name="jetbrains.mps.lang.editor.structure.CellModel_ListWithRole" flags="ng" index="2czfm3">
+        <child id="1140524464360" name="cellLayout" index="2czzBx" />
+      </concept>
       <concept id="1106270549637" name="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" flags="nn" index="2iRfu4" />
       <concept id="1106270571710" name="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" flags="nn" index="2iRkQZ" />
       <concept id="1237303669825" name="jetbrains.mps.lang.editor.structure.CellLayout_Indent" flags="nn" index="l2Vlx" />
@@ -35,7 +38,6 @@
       <concept id="1186414536763" name="jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem" flags="ln" index="VOi$J">
         <property id="1186414551515" name="flag" index="VOm3f" />
       </concept>
-      <concept id="1186414928363" name="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" flags="ln" index="VPM3Z" />
       <concept id="1088013125922" name="jetbrains.mps.lang.editor.structure.CellModel_RefCell" flags="sg" stub="730538219795941030" index="1iCGBv">
         <child id="1088186146602" name="editorComponent" index="1sWHZn" />
       </concept>
@@ -59,6 +61,7 @@
         <child id="1219418656006" name="styleItem" index="3F10Kt" />
       </concept>
       <concept id="1073389882823" name="jetbrains.mps.lang.editor.structure.CellModel_RefNode" flags="sg" stub="730538219795960754" index="3F1sOY" />
+      <concept id="1073390211982" name="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" flags="sg" stub="2794558372793454595" index="3F2HdR" />
       <concept id="1198256887712" name="jetbrains.mps.lang.editor.structure.CellModel_Indent" flags="ng" index="3XFhqQ" />
       <concept id="1166049232041" name="jetbrains.mps.lang.editor.structure.AbstractComponent" flags="ng" index="1XWOmA">
         <reference id="1166049300910" name="conceptDeclaration" index="1XX52x" />
@@ -153,6 +156,7 @@
         <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
       </node>
       <node concept="3EZMnI" id="5eYfGK4ncyA" role="3EZMnx">
+        <node concept="3XFhqQ" id="IyLDsSvIpT" role="3EZMnx" />
         <node concept="2iRfu4" id="5eYfGK4ncyB" role="2iSdaV" />
         <node concept="3F1sOY" id="5eYfGK4n5x2" role="3EZMnx">
           <ref role="1NtTu8" to="lpas:5eYfGK4mCJd" resolve="given" />
@@ -162,6 +166,7 @@
         </node>
       </node>
       <node concept="3EZMnI" id="5eYfGK4ncyK" role="3EZMnx">
+        <node concept="3XFhqQ" id="IyLDsSvIqb" role="3EZMnx" />
         <node concept="2iRfu4" id="5eYfGK4ncyL" role="2iSdaV" />
         <node concept="3F1sOY" id="5eYfGK4n5vB" role="3EZMnx">
           <ref role="1NtTu8" to="lpas:5eYfGK4mCJf" resolve="when" />
@@ -172,6 +177,7 @@
       </node>
       <node concept="3EZMnI" id="5eYfGK4ncyW" role="3EZMnx">
         <node concept="2iRfu4" id="5eYfGK4ncyX" role="2iSdaV" />
+        <node concept="3XFhqQ" id="IyLDsSvIq7" role="3EZMnx" />
         <node concept="3F1sOY" id="5eYfGK4n5v0" role="3EZMnx">
           <ref role="1NtTu8" to="lpas:5eYfGK4mCJi" resolve="then" />
         </node>
@@ -208,18 +214,12 @@
           <property role="Vb096" value="g1_eI4o/darkBlue" />
         </node>
       </node>
-      <node concept="3F1sOY" id="4NrzS7qn7R8" role="3EZMnx">
-        <ref role="1NtTu8" to="lpas:4NrzS7qn7QW" resolve="command" />
-        <node concept="VechU" id="3K_bonfkv7Q" role="3F10Kt">
-          <property role="Vb096" value="g1_qVrt/darkMagenta" />
-        </node>
-        <node concept="Vb9p2" id="4XSQxjpaU6w" role="3F10Kt">
-          <property role="Vbekb" value="g1_kEg4/ITALIC" />
-        </node>
+      <node concept="3F1sOY" id="IyLDsS$5wS" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:4NrzS7qn7QW" resolve="event" />
       </node>
       <node concept="l2Vlx" id="5eYfGK4rwKd" role="2iSdaV" />
       <node concept="3F0ifn" id="4NrzS7qn7Rw" role="3EZMnx">
-        <property role="3F0ifm" value="command is called" />
+        <property role="3F0ifm" value="event occurs" />
       </node>
     </node>
   </node>
@@ -243,8 +243,12 @@
         </node>
       </node>
       <node concept="3XFhqQ" id="4XSQxjp8HgH" role="3EZMnx" />
-      <node concept="3F1sOY" id="4NrzS7qoGAN" role="3EZMnx">
-        <ref role="1NtTu8" to="lpas:5eYfGK4wapa" resolve="body" />
+      <node concept="3EZMnI" id="IyLDsSvnvA" role="3EZMnx">
+        <node concept="2iRkQZ" id="IyLDsSvnvB" role="2iSdaV" />
+        <node concept="3F2HdR" id="IyLDsSvnvM" role="3EZMnx">
+          <ref role="1NtTu8" to="lpas:5eYfGK4wapa" resolve="body" />
+          <node concept="2iRkQZ" id="IyLDsSvnvO" role="2czzBx" />
+        </node>
       </node>
       <node concept="l2Vlx" id="4NrzS7qoG_U" role="2iSdaV" />
     </node>
@@ -508,12 +512,8 @@
         <node concept="l2Vlx" id="4NrzS7qn7SV" role="2iSdaV" />
       </node>
       <node concept="3F0ifn" id="4NrzS7qn7TE" role="3EZMnx" />
-      <node concept="3EZMnI" id="4NrzS7qn7TX" role="3EZMnx">
-        <node concept="VPM3Z" id="4NrzS7qn7TZ" role="3F10Kt" />
-        <node concept="3F1sOY" id="4NrzS7qn7Ug" role="3EZMnx">
-          <ref role="1NtTu8" to="lpas:4NrzS7qn7Ts" resolve="adaptationScript" />
-        </node>
-        <node concept="l2Vlx" id="4NrzS7qn7U2" role="2iSdaV" />
+      <node concept="3F1sOY" id="IyLDsSxa4N" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:4NrzS7qn7Ts" resolve="adaptationScript" />
       </node>
       <node concept="2iRkQZ" id="4NrzS7qn7Tw" role="2iSdaV" />
     </node>
@@ -1024,7 +1024,7 @@
     <ref role="1XX52x" to="lpas:IyLDsSshIX" resolve="FlyToCoordinates" />
     <node concept="3EZMnI" id="IyLDsSshJd" role="2wV5jI">
       <node concept="3F0ifn" id="IyLDsSshJk" role="3EZMnx">
-        <property role="3F0ifm" value="Fly to latitude:" />
+        <property role="3F0ifm" value="Flies towards latitude:" />
       </node>
       <node concept="3F0A7n" id="IyLDsSshJq" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:IyLDsSshIY" resolve="lat" />
@@ -1043,7 +1043,7 @@
     <ref role="1XX52x" to="lpas:IyLDsSshJM" resolve="FlyToRegion" />
     <node concept="3EZMnI" id="IyLDsSshKj" role="2wV5jI">
       <node concept="3F0ifn" id="IyLDsSshKq" role="3EZMnx">
-        <property role="3F0ifm" value="Fly to" />
+        <property role="3F0ifm" value="Flies towards" />
       </node>
       <node concept="3F0A7n" id="IyLDsSshKw" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:IyLDsSshK7" resolve="region" />
@@ -1052,6 +1052,31 @@
         <property role="3F0ifm" value="region" />
       </node>
       <node concept="l2Vlx" id="IyLDsSshKm" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="IyLDsSyeM5">
+    <property role="3GE5qa" value="math.expression.conditional_expression.internal_state" />
+    <ref role="1XX52x" to="lpas:5eYfGK4mCNz" resolve="CoordenateConditionalExpression" />
+    <node concept="3EZMnI" id="IyLDsSyeM7" role="2wV5jI">
+      <node concept="3F0ifn" id="IyLDsSyeMi" role="3EZMnx">
+        <property role="3F0ifm" value="Drone' localization" />
+      </node>
+      <node concept="3F0A7n" id="IyLDsSyeMs" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:IyLDsSyeMe" resolve="operator" />
+      </node>
+      <node concept="3F0ifn" id="IyLDsSyeM$" role="3EZMnx">
+        <property role="3F0ifm" value="latitude:" />
+      </node>
+      <node concept="3F0A7n" id="IyLDsSyeMI" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:IyLDsSyeLS" resolve="lat" />
+      </node>
+      <node concept="3F0ifn" id="IyLDsSyeMU" role="3EZMnx">
+        <property role="3F0ifm" value="longitude" />
+      </node>
+      <node concept="3F0A7n" id="IyLDsSyeN8" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:IyLDsSyeLU" resolve="log" />
+      </node>
+      <node concept="l2Vlx" id="IyLDsSyeMa" role="2iSdaV" />
     </node>
   </node>
 </model>

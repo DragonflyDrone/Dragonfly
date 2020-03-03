@@ -78,7 +78,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     setCellContext(editorCell);
     editorCell.addEditorCell(createCollection_1());
     editorCell.addEditorCell(createConstant_1());
-    editorCell.addEditorCell(createCollection_2());
+    editorCell.addEditorCell(createRefNode_0());
     return editorCell;
   }
   private EditorCell createCollection_1() {
@@ -224,24 +224,15 @@ import org.jetbrains.mps.openapi.language.SConcept;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createCollection_2() {
-    EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
-    editorCell.setCellId("Collection_q3o2sz_c0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createRefNode_0());
-    return editorCell;
-  }
   private EditorCell createRefNode_0() {
-    SingleRoleCellProvider provider = new adaptationScriptSingleRoleHandler_q3o2sz_a2a(myNode, LINKS.adaptationScript$Y1Gq, getEditorContext());
+    SingleRoleCellProvider provider = new adaptationScriptSingleRoleHandler_q3o2sz_c0(myNode, LINKS.adaptationScript$Y1Gq, getEditorContext());
     return provider.createCell();
   }
-  private static class adaptationScriptSingleRoleHandler_q3o2sz_a2a extends SingleRoleCellProvider {
+  private static class adaptationScriptSingleRoleHandler_q3o2sz_c0 extends SingleRoleCellProvider {
     @NotNull
     private SNode myNode;
 
-    public adaptationScriptSingleRoleHandler_q3o2sz_a2a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+    public adaptationScriptSingleRoleHandler_q3o2sz_c0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(containmentLink, context);
       myNode = ownerNode;
     }

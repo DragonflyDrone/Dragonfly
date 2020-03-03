@@ -22,7 +22,6 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart;
 import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SEmptyContainmentSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
-import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
@@ -65,14 +64,14 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     return editorCell;
   }
   private EditorCell createRefNode_0() {
-    SingleRoleCellProvider provider = new commandSingleRoleHandler_32ttl5_b0(myNode, LINKS.command$_7rR, getEditorContext());
+    SingleRoleCellProvider provider = new eventSingleRoleHandler_32ttl5_b0(myNode, LINKS.event$_7rR, getEditorContext());
     return provider.createCell();
   }
-  private static class commandSingleRoleHandler_32ttl5_b0 extends SingleRoleCellProvider {
+  private static class eventSingleRoleHandler_32ttl5_b0 extends SingleRoleCellProvider {
     @NotNull
     private SNode myNode;
 
-    public commandSingleRoleHandler_32ttl5_b0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+    public eventSingleRoleHandler_32ttl5_b0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(containmentLink, context);
       myNode = ownerNode;
     }
@@ -85,8 +84,8 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = getUpdateSession().updateChildNodeCell(child);
-      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(getNode(), LINKS.command$_7rR, child));
-      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(getNode(), LINKS.command$_7rR, child));
+      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(getNode(), LINKS.event$_7rR, child));
+      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(getNode(), LINKS.event$_7rR, child));
       installCellInfo(child, editorCell, false);
       return editorCell;
     }
@@ -98,20 +97,16 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
         editorCell.setSubstituteInfo((isEmpty ? new SEmptyContainmentSubstituteInfo(editorCell) : new SChildSubstituteInfo(editorCell)));
       }
       if (editorCell.getSRole() == null) {
-        editorCell.setSRole(LINKS.command$_7rR);
+        editorCell.setSRole(LINKS.event$_7rR);
       }
-      Style style = new StyleImpl();
-      style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
-      style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
-      editorCell.getStyle().putAll(style);
     }
     @Override
     protected EditorCell createEmptyCell() {
       getCellFactory().pushCellContext();
-      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(getNode(), LINKS.command$_7rR));
+      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(getNode(), LINKS.event$_7rR));
       try {
         EditorCell editorCell = super.createEmptyCell();
-        editorCell.setCellId("empty_command");
+        editorCell.setCellId("empty_event");
         installCellInfo(null, editorCell, true);
         setCellContext(editorCell);
         return editorCell;
@@ -120,17 +115,17 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
       }
     }
     protected String getNoTargetText() {
-      return "<no command>";
+      return "<no event>";
     }
   }
   private EditorCell createConstant_1() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "command is called");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "event occurs");
     editorCell.setCellId("Constant_32ttl5_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private static final class LINKS {
-    /*package*/ static final SContainmentLink command$_7rR = MetaAdapterFactory.getContainmentLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bcbL, 0x4cdb8f81da5c7dbcL, "command");
+    /*package*/ static final SContainmentLink event$_7rR = MetaAdapterFactory.getContainmentLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bcbL, 0x4cdb8f81da5c7dbcL, "event");
   }
 }

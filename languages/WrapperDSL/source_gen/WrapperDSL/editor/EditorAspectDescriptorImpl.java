@@ -31,75 +31,75 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       case 5:
         return Collections.<ConceptEditor>singletonList(new CameraPowerConditionalExtension_Editor());
       case 6:
-        return Collections.<ConceptEditor>singletonList(new CancelGoHome_Editor());
+        return Collections.<ConceptEditor>singletonList(new CardinalPointsRotate_Editor());
       case 7:
-        return Collections.<ConceptEditor>singletonList(new CancelLanding_Editor());
-      case 8:
-        return Collections.<ConceptEditor>singletonList(new CancelTakeOff_Editor());
-      case 9:
         return Collections.<ConceptEditor>singletonList(new CategoricalDistanceConditionalExpression_Editor());
-      case 10:
+      case 8:
         return Collections.<ConceptEditor>singletonList(new CategoricalWindConditionalExpression_Editor());
-      case 11:
+      case 9:
         return Collections.<ConceptEditor>singletonList(new CompassConditionalExpression_Editor());
+      case 10:
+        return Collections.<ConceptEditor>singletonList(new CoordenateConditionalExpression_Editor());
+      case 11:
+        return Collections.<ConceptEditor>singletonList(new DegreesRotate_Editor());
       case 12:
-        return Collections.<ConceptEditor>singletonList(new ConfirmLanding_Editor());
+        return Collections.<ConceptEditor>singletonList(new EconomyMode_Editor());
       case 13:
         return Collections.<ConceptEditor>singletonList(new ExceptionalScenario_Editor());
       case 14:
-        return Collections.<ConceptEditor>singletonList(new GimbalConditionalExtension_Editor());
+        return Collections.<ConceptEditor>singletonList(new FlyToCoordinates_Editor());
       case 15:
-        return Collections.<ConceptEditor>singletonList(new Given_Editor());
+        return Collections.<ConceptEditor>singletonList(new FlyToRegion_Editor());
       case 16:
-        return Collections.<ConceptEditor>singletonList(new If_Editor());
+        return Collections.<ConceptEditor>singletonList(new GimbalConditionalExtension_Editor());
       case 17:
-        return Collections.<ConceptEditor>singletonList(new LandingGearConditionalExtension_Editor());
+        return Collections.<ConceptEditor>singletonList(new Given_Editor());
       case 18:
-        return Collections.<ConceptEditor>singletonList(new LinearAccelerationConditionalExtension_Editor());
+        return Collections.<ConceptEditor>singletonList(new If_Editor());
       case 19:
-        return Collections.<ConceptEditor>singletonList(new LogicalExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new Landing_Editor());
       case 20:
-        return Collections.<ConceptEditor>singletonList(new MotorsPowerConditionalExtension_Editor());
+        return Collections.<ConceptEditor>singletonList(new LandingGearConditionalExtension_Editor());
       case 21:
-        return Collections.<ConceptEditor>singletonList(new OriginAndDestinationDistanceConditionalExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new LinearAccelerationConditionalExtension_Editor());
       case 22:
-        return Collections.<ConceptEditor>singletonList(new PauseMission_Editor());
+        return Collections.<ConceptEditor>singletonList(new LogicalExpression_Editor());
       case 23:
-        return Collections.<ConceptEditor>singletonList(new PayloadConditionalExtension_Editor());
+        return Collections.<ConceptEditor>singletonList(new Mission_Editor());
       case 24:
-        return Collections.<ConceptEditor>singletonList(new PerformingCommandExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new MotorsPowerConditionalExtension_Editor());
       case 25:
-        return Collections.<ConceptEditor>singletonList(new RegionConditionalExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new OriginAndDestinationDistanceConditionalExpression_Editor());
       case 26:
-        return Collections.<ConceptEditor>singletonList(new ResumeMission_Editor());
+        return Collections.<ConceptEditor>singletonList(new PayloadConditionalExtension_Editor());
       case 27:
-        return Collections.<ConceptEditor>singletonList(new SafeLand_Editor());
+        return Collections.<ConceptEditor>singletonList(new PerformingCommandExpression_Editor());
       case 28:
-        return Collections.<ConceptEditor>singletonList(new ScalarDistanceConditionalExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new RegionConditionalExpression_Editor());
       case 29:
-        return Collections.<ConceptEditor>singletonList(new ScalarWindConditionalExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new ReturnToHome_Editor());
       case 30:
-        return Collections.<ConceptEditor>singletonList(new SetAutoFlightSpeed_Editor());
+        return Collections.<ConceptEditor>singletonList(new SafeLand_Editor());
       case 31:
-        return Collections.<ConceptEditor>singletonList(new SetGoHomeHeightInMeters_Editor());
+        return Collections.<ConceptEditor>singletonList(new ScalarDistanceConditionalExpression_Editor());
       case 32:
-        return Collections.<ConceptEditor>singletonList(new SetHomeLocation_Editor());
+        return Collections.<ConceptEditor>singletonList(new ScalarWindConditionalExpression_Editor());
       case 33:
-        return Collections.<ConceptEditor>singletonList(new SetHomeLocationUsingAircraftCurrentLocation_Editor());
+        return Collections.<ConceptEditor>singletonList(new SetAutoFlightSpeed_Editor());
       case 34:
-        return Collections.<ConceptEditor>singletonList(new SetLowBatteryWarningThreshold_Editor());
+        return Collections.<ConceptEditor>singletonList(new SetGoHomeHeightInMeters_Editor());
       case 35:
-        return Collections.<ConceptEditor>singletonList(new SetSeriousLowBatteryWarningThreshold_Editor());
+        return Collections.<ConceptEditor>singletonList(new SetHomeLocation_Editor());
       case 36:
-        return Collections.<ConceptEditor>singletonList(new SetSmartReturnToHomeEnabled_Editor());
+        return Collections.<ConceptEditor>singletonList(new SetHomeLocationUsingAircraftCurrentLocation_Editor());
       case 37:
-        return Collections.<ConceptEditor>singletonList(new SpeedConditionalExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new SetLowBatteryWarningThreshold_Editor());
       case 38:
-        return Collections.<ConceptEditor>singletonList(new StartLanding_Editor());
+        return Collections.<ConceptEditor>singletonList(new SetSeriousLowBatteryWarningThreshold_Editor());
       case 39:
-        return Collections.<ConceptEditor>singletonList(new StartMission_Editor());
+        return Collections.<ConceptEditor>singletonList(new SetSmartReturnToHomeEnabled_Editor());
       case 40:
-        return Collections.<ConceptEditor>singletonList(new StartReturnToHome_Editor());
+        return Collections.<ConceptEditor>singletonList(new SpeedConditionalExpression_Editor());
       case 41:
         return Collections.<ConceptEditor>singletonList(new TakeOff_Editor());
       case 42:
@@ -107,16 +107,14 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       case 43:
         return Collections.<ConceptEditor>singletonList(new Then_Editor());
       case 44:
-        return Collections.<ConceptEditor>singletonList(new TurnEconomyMode_Editor());
-      case 45:
         return Collections.<ConceptEditor>singletonList(new TurnMotors_Editor());
-      case 46:
+      case 45:
         return Collections.<ConceptEditor>singletonList(new Value_Editor());
-      case 47:
+      case 46:
         return Collections.<ConceptEditor>singletonList(new When_Editor());
-      case 48:
+      case 47:
         return Collections.<ConceptEditor>singletonList(new While_Editor());
-      case 49:
+      case 48:
         return Collections.<ConceptEditor>singletonList(new WifiConditionalExtension_Editor());
       default:
     }
@@ -136,6 +134,6 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
     return Collections.<SubstituteMenu>emptyList();
   }
 
-  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x4cdb8f81da5c7de7L), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc046e0b54L), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x1053550ed8ac3a37L), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x1e50d2b0bcf0f56aL), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc04699240L), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x1053550ed8b71613L), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd935895a9525L), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd935895a94d4L), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd9358959647dL), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x7970d3ea933febfdL), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8cddL), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x3f0a90391eda7f7L), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd935895a94efL), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bc3L), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x1053550ed8b71646L), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bcaL), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045b45abL), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x1053550ed8b3fbfaL), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x3004f1bb9b15123cL), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x7970d3ea932a97fbL), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x1053550ed8b2a0a3L), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x72508e21f03ced43L), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd935895bcb96L), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x1053550ed8b3fc74L), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x78c933fd429ad1d9L), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8ce0L), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd935895bcbb1L), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x4f78da14d91a0524L), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc048c5944L), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x7970d3ea93368919L), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd935895bcbe8L), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd935895a955bL), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd93589583f6bL), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd935895a9540L), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd935895bcacfL), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd935895bcb00L), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd935895bcb3cL), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x3f0a90391ea8938L), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd93589596498L), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd935895bcb74L), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd935895a950aL), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd93589596447L), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc0462d3feL), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bccL), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x12d7700560f0203eL), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd9358959640bL), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc0462d3fbL), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bcbL), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045b45acL), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x1053550ed8b3fc39L)).seal();
+  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x4cdb8f81da5c7de7L), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc046e0b54L), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x1053550ed8ac3a37L), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x1e50d2b0bcf0f56aL), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc04699240L), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x1053550ed8b71613L), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0xba2c69738711b6bL), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x7970d3ea933febfdL), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8cddL), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x3f0a90391eda7f7L), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8ce3L), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0xba2c69738711b3aL), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x12d7700560f0203eL), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bc3L), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0xba2c69738711bbdL), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0xba2c69738711bf2L), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x1053550ed8b71646L), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bcaL), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045b45abL), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd93589596498L), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x1053550ed8b3fbfaL), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x3004f1bb9b15123cL), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x7970d3ea932a97fbL), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd935895bcb74L), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x1053550ed8b2a0a3L), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x72508e21f03ced43L), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x1053550ed8b3fc74L), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x78c933fd429ad1d9L), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8ce0L), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd935895a950aL), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x4f78da14d91a0524L), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc048c5944L), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x7970d3ea93368919L), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd935895bcbe8L), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd935895a955bL), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd93589583f6bL), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd935895a9540L), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd935895bcacfL), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd935895bcb00L), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd935895bcb3cL), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x3f0a90391ea8938L), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd93589596447L), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc0462d3feL), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bccL), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd9358959640bL), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc0462d3fbL), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bcbL), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045b45acL), MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x1053550ed8b3fc39L)).seal();
   private static final ConceptSwitchIndex conceptIndex1 = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x4cdb8f81da5c7de7L)).seal();
 }

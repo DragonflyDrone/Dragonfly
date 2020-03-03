@@ -30,6 +30,7 @@ import jetbrains.mps.lang.core.behavior.PropertyAttribute__BehaviorDescriptor;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.openapi.editor.update.AttributeKind;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
@@ -112,18 +113,23 @@ import org.jetbrains.mps.openapi.language.SConcept;
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(createIndentCell_0());
     editorCell.addEditorCell(createRefNode_0());
     return editorCell;
   }
+  private EditorCell createIndentCell_0() {
+    EditorCell_Indent editorCell = new EditorCell_Indent(getEditorContext(), myNode);
+    return editorCell;
+  }
   private EditorCell createRefNode_0() {
-    SingleRoleCellProvider provider = new givenSingleRoleHandler_68cg41_a2a(myNode, LINKS.given$Bwf2, getEditorContext());
+    SingleRoleCellProvider provider = new givenSingleRoleHandler_68cg41_b2a(myNode, LINKS.given$Bwf2, getEditorContext());
     return provider.createCell();
   }
-  private static class givenSingleRoleHandler_68cg41_a2a extends SingleRoleCellProvider {
+  private static class givenSingleRoleHandler_68cg41_b2a extends SingleRoleCellProvider {
     @NotNull
     private SNode myNode;
 
-    public givenSingleRoleHandler_68cg41_a2a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+    public givenSingleRoleHandler_68cg41_b2a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(containmentLink, context);
       myNode = ownerNode;
     }
@@ -176,18 +182,23 @@ import org.jetbrains.mps.openapi.language.SConcept;
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(createIndentCell_1());
     editorCell.addEditorCell(createRefNode_1());
     return editorCell;
   }
+  private EditorCell createIndentCell_1() {
+    EditorCell_Indent editorCell = new EditorCell_Indent(getEditorContext(), myNode);
+    return editorCell;
+  }
   private EditorCell createRefNode_1() {
-    SingleRoleCellProvider provider = new whenSingleRoleHandler_68cg41_a3a(myNode, LINKS.when$Bwg0, getEditorContext());
+    SingleRoleCellProvider provider = new whenSingleRoleHandler_68cg41_b3a(myNode, LINKS.when$Bwg0, getEditorContext());
     return provider.createCell();
   }
-  private static class whenSingleRoleHandler_68cg41_a3a extends SingleRoleCellProvider {
+  private static class whenSingleRoleHandler_68cg41_b3a extends SingleRoleCellProvider {
     @NotNull
     private SNode myNode;
 
-    public whenSingleRoleHandler_68cg41_a3a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+    public whenSingleRoleHandler_68cg41_b3a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(containmentLink, context);
       myNode = ownerNode;
     }
@@ -240,18 +251,23 @@ import org.jetbrains.mps.openapi.language.SConcept;
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(createIndentCell_2());
     editorCell.addEditorCell(createRefNode_2());
     return editorCell;
   }
+  private EditorCell createIndentCell_2() {
+    EditorCell_Indent editorCell = new EditorCell_Indent(getEditorContext(), myNode);
+    return editorCell;
+  }
   private EditorCell createRefNode_2() {
-    SingleRoleCellProvider provider = new thenSingleRoleHandler_68cg41_a4a(myNode, LINKS.then$BwrC, getEditorContext());
+    SingleRoleCellProvider provider = new thenSingleRoleHandler_68cg41_b4a(myNode, LINKS.then$BwrC, getEditorContext());
     return provider.createCell();
   }
-  private static class thenSingleRoleHandler_68cg41_a4a extends SingleRoleCellProvider {
+  private static class thenSingleRoleHandler_68cg41_b4a extends SingleRoleCellProvider {
     @NotNull
     private SNode myNode;
 
-    public thenSingleRoleHandler_68cg41_a4a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+    public thenSingleRoleHandler_68cg41_b4a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(containmentLink, context);
       myNode = ownerNode;
     }
