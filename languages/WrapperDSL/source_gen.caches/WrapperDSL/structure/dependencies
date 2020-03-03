@@ -71,6 +71,16 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
   </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_InternalStateEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
   <dependency className="WrapperDSL.structure.EnumerationDescriptor_IqualityOperatorEnum">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -144,6 +154,7 @@
     <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_ConditionalOperatorEnum" />
     <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_DirectionsEnum" />
     <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_InaquelityConditionalOperator" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_InternalStateEnum" />
     <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_IqualityOperatorEnum" />
     <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_LogicalOperatorEnum" />
     <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_OnOffConditionalEnum" />

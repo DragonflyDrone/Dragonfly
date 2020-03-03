@@ -7,8 +7,8 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class StartPrecisionTakeOff_Editor extends DefaultNodeEditor {
+public class TurnMotors_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return new StartPrecisionTakeOff_EditorBuilder_a(editorContext, node).createCell();
+    return new TurnMotors_EditorBuilder_a(editorContext, node).createCell();
   }
 }

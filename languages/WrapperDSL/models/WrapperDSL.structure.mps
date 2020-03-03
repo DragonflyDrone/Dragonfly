@@ -167,26 +167,6 @@
   <node concept="25R3W" id="5eYfGK4mOiI">
     <property role="3F6X1D" value="6034329596690384046" />
     <property role="TrG5h" value="TrashCommandEnum" />
-    <node concept="25R33" id="5eYfGK4mOiJ" role="25R1y">
-      <property role="3tVfz5" value="6034329596690384047" />
-      <property role="TrG5h" value="land" />
-      <property role="1L1pqM" value="Land" />
-    </node>
-    <node concept="25R33" id="5eYfGK4mOiK" role="25R1y">
-      <property role="3tVfz5" value="6034329596690384048" />
-      <property role="TrG5h" value="safeLand" />
-      <property role="1L1pqM" value="Safe Land" />
-    </node>
-    <node concept="25R33" id="5eYfGK4mOiN" role="25R1y">
-      <property role="3tVfz5" value="6034329596690384051" />
-      <property role="TrG5h" value="shutDown" />
-      <property role="1L1pqM" value="ShutDown" />
-    </node>
-    <node concept="25R33" id="5eYfGK4mOiR" role="25R1y">
-      <property role="3tVfz5" value="6034329596690384055" />
-      <property role="TrG5h" value="start" />
-      <property role="1L1pqM" value="Start" />
-    </node>
     <node concept="25R33" id="5eYfGK4mOiW" role="25R1y">
       <property role="3tVfz5" value="6034329596690384060" />
       <property role="TrG5h" value="stepEast" />
@@ -217,16 +197,6 @@
       <property role="TrG5h" value="stepNearestToPosition" />
       <property role="1L1pqM" value="Step Nearest To Coordenates" />
     </node>
-    <node concept="25R33" id="5eYfGK4mOjJ" role="25R1y">
-      <property role="3tVfz5" value="6034329596690384111" />
-      <property role="1L1pqM" value="Take Off" />
-      <property role="TrG5h" value="takeOff" />
-    </node>
-    <node concept="25R33" id="3fG_nwkIf6A" role="25R1y">
-      <property role="3tVfz5" value="3741529733414318502" />
-      <property role="TrG5h" value="landed" />
-      <property role="1L1pqM" value="Landed" />
-    </node>
     <node concept="25R33" id="5eYfGK4mOjV" role="25R1y">
       <property role="3tVfz5" value="6034329596690384123" />
       <property role="TrG5h" value="turnEast" />
@@ -247,20 +217,10 @@
       <property role="TrG5h" value="turnNorth" />
       <property role="1L1pqM" value="Turn North" />
     </node>
-    <node concept="25R33" id="5eYfGK4zLmI" role="25R1y">
-      <property role="3tVfz5" value="6034329596693779886" />
-      <property role="TrG5h" value="applyEconomyMode" />
-      <property role="1L1pqM" value="Economy Mode" />
-    </node>
     <node concept="25R33" id="5eYfGK4$UtP" role="25R1y">
       <property role="3tVfz5" value="6034329596694079349" />
       <property role="TrG5h" value="doNothing" />
       <property role="1L1pqM" value="Do Nothing" />
-    </node>
-    <node concept="25R33" id="1RtkfEL7kmp" role="25R1y">
-      <property role="3tVfz5" value="2151965234596496793" />
-      <property role="TrG5h" value="returnToHome" />
-      <property role="1L1pqM" value="Return to Home" />
     </node>
     <node concept="25R33" id="1RtkfEL7kmH" role="25R1y">
       <property role="3tVfz5" value="2151965234596496813" />
@@ -537,72 +497,50 @@
   <node concept="1TIwiD" id="6UvQjm9mmgb">
     <property role="EcuMT" value="7971328689429898251" />
     <property role="3GE5qa" value="command" />
-    <property role="TrG5h" value="TurnOnMotors" />
+    <property role="TrG5h" value="TurnMotors" />
     <property role="34LRSv" value="turnOnMotors" />
     <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="CommandCall" />
-  </node>
-  <node concept="1TIwiD" id="6UvQjm9mmgD">
-    <property role="EcuMT" value="7971328689429898281" />
-    <property role="3GE5qa" value="command" />
-    <property role="TrG5h" value="TurnOffMotors" />
-    <property role="34LRSv" value="turnOffMotors" />
-    <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="CommandCall" />
+    <node concept="1TJgyi" id="1bns0lwW23G" role="1TKVEl">
+      <property role="IQ2nx" value="1357676981078991084" />
+      <property role="TrG5h" value="value" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
   </node>
   <node concept="1TIwiD" id="6UvQjm9mmh7">
     <property role="EcuMT" value="7971328689429898311" />
     <property role="3GE5qa" value="command" />
-    <property role="TrG5h" value="StartTakeOff" />
-    <property role="34LRSv" value="startTakeOff" />
+    <property role="TrG5h" value="TakeOff" />
+    <property role="34LRSv" value="TakeOff" />
     <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="CommandCall" />
-  </node>
-  <node concept="1TIwiD" id="6UvQjm9mmhy">
-    <property role="EcuMT" value="7971328689429898338" />
-    <property role="3GE5qa" value="command" />
-    <property role="TrG5h" value="StartPrecisionTakeOff" />
-    <property role="34LRSv" value="startPrecisionTakeOff" />
-    <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="CommandCall" />
-  </node>
-  <node concept="1TIwiD" id="6UvQjm9mmhX">
-    <property role="EcuMT" value="7971328689429898365" />
-    <property role="3GE5qa" value="command" />
-    <property role="TrG5h" value="CancelTakeOff" />
-    <property role="34LRSv" value="cancelTakeOff" />
-    <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="CommandCall" />
+    <node concept="1TJgyi" id="1bns0lwW244" role="1TKVEl">
+      <property role="IQ2nx" value="1357676981078991108" />
+      <property role="TrG5h" value="value" />
+      <ref role="AX2Wp" node="1bns0lwX47k" resolve="StartResumePouseCancelEnum" />
+    </node>
   </node>
   <node concept="1TIwiD" id="6UvQjm9mmio">
     <property role="EcuMT" value="7971328689429898392" />
     <property role="3GE5qa" value="command" />
-    <property role="TrG5h" value="StartLanding" />
-    <property role="34LRSv" value="startLanding" />
+    <property role="TrG5h" value="Landing" />
+    <property role="34LRSv" value="Landing" />
     <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="CommandCall" />
-  </node>
-  <node concept="1TIwiD" id="6UvQjm9mDjk">
-    <property role="EcuMT" value="7971328689429976276" />
-    <property role="3GE5qa" value="command" />
-    <property role="TrG5h" value="CancelLanding" />
-    <property role="34LRSv" value="cancelLanding" />
-    <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="CommandCall" />
-  </node>
-  <node concept="1TIwiD" id="6UvQjm9mDjJ">
-    <property role="EcuMT" value="7971328689429976303" />
-    <property role="3GE5qa" value="command" />
-    <property role="TrG5h" value="ConfirmLanding" />
-    <property role="34LRSv" value="confirmLanding" />
-    <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="CommandCall" />
+    <node concept="1TJgyi" id="1bns0lwX47t" role="1TKVEl">
+      <property role="IQ2nx" value="1357676981079261661" />
+      <property role="TrG5h" value="value" />
+      <ref role="AX2Wp" node="1bns0lwX47k" resolve="StartResumePouseCancelEnum" />
+    </node>
   </node>
   <node concept="1TIwiD" id="6UvQjm9mDka">
     <property role="EcuMT" value="7971328689429976330" />
     <property role="3GE5qa" value="command" />
-    <property role="TrG5h" value="StartGoHome" />
-    <property role="34LRSv" value="startGoHome" />
+    <property role="TrG5h" value="ReturnToHome" />
+    <property role="34LRSv" value="ReturnToHome" />
     <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="CommandCall" />
-  </node>
-  <node concept="1TIwiD" id="6UvQjm9mDk_">
-    <property role="EcuMT" value="7971328689429976357" />
-    <property role="3GE5qa" value="command" />
-    <property role="TrG5h" value="CancelGoHome" />
-    <property role="34LRSv" value="cancelGoHome" />
-    <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="CommandCall" />
+    <node concept="1TJgyi" id="1bns0lwX48C" role="1TKVEl">
+      <property role="IQ2nx" value="1357676981079261736" />
+      <property role="TrG5h" value="value" />
+      <ref role="AX2Wp" node="1bns0lwX47k" resolve="StartResumePouseCancelEnum" />
+    </node>
   </node>
   <node concept="1TIwiD" id="6UvQjm9mDl0">
     <property role="EcuMT" value="7971328689429976384" />
@@ -668,23 +606,14 @@
   <node concept="1TIwiD" id="6UvQjm9mWHO">
     <property role="EcuMT" value="7971328689430055796" />
     <property role="3GE5qa" value="command" />
-    <property role="TrG5h" value="StartMission" />
-    <property role="34LRSv" value="startMission" />
+    <property role="TrG5h" value="Mission" />
+    <property role="34LRSv" value="mission" />
     <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="CommandCall" />
-  </node>
-  <node concept="1TIwiD" id="6UvQjm9mWIm">
-    <property role="EcuMT" value="7971328689430055830" />
-    <property role="3GE5qa" value="command" />
-    <property role="TrG5h" value="PauseMission" />
-    <property role="34LRSv" value="pauseMission" />
-    <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="CommandCall" />
-  </node>
-  <node concept="1TIwiD" id="6UvQjm9mWIL">
-    <property role="EcuMT" value="7971328689430055857" />
-    <property role="3GE5qa" value="command" />
-    <property role="TrG5h" value="ResumeMission" />
-    <property role="34LRSv" value="resumeMission" />
-    <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="CommandCall" />
+    <node concept="1TJgyi" id="1bns0lwX48i" role="1TKVEl">
+      <property role="IQ2nx" value="1357676981079261714" />
+      <property role="TrG5h" value="value" />
+      <ref role="AX2Wp" node="1bns0lwX47k" resolve="StartResumePouseCancelEnum" />
+    </node>
   </node>
   <node concept="1TIwiD" id="6UvQjm9mWJC">
     <property role="EcuMT" value="7971328689430055912" />
@@ -730,6 +659,11 @@
     <property role="TrG5h" value="SafeLand" />
     <property role="34LRSv" value="safe land" />
     <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="CommandCall" />
+    <node concept="1TJgyi" id="1bns0lwX47G" role="1TKVEl">
+      <property role="IQ2nx" value="1357676981079261676" />
+      <property role="TrG5h" value="value" />
+      <ref role="AX2Wp" node="1bns0lwX47k" resolve="StartResumePouseCancelEnum" />
+    </node>
   </node>
   <node concept="1TIwiD" id="7z9cZP2AH7p">
     <property role="EcuMT" value="8703544917707379161" />
@@ -1325,6 +1259,43 @@
     <node concept="25R33" id="7z9cZP2DdtF" role="25R1y">
       <property role="3tVfz5" value="8703544917708035947" />
       <property role="TrG5h" value="NOT_SUPPORTED" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="1bns0lwW20Y">
+    <property role="EcuMT" value="1357676981078990910" />
+    <property role="3GE5qa" value="command" />
+    <property role="TrG5h" value="EconomyMode" />
+    <property role="34LRSv" value="setEconomicMode" />
+    <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="CommandCall" />
+    <node concept="1TJgyi" id="1bns0lwW20Z" role="1TKVEl">
+      <property role="IQ2nx" value="1357676981078990911" />
+      <property role="TrG5h" value="value" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
+  </node>
+  <node concept="25R3W" id="1bns0lwX47k">
+    <property role="3F6X1D" value="1357676981079261652" />
+    <property role="3GE5qa" value="command" />
+    <property role="TrG5h" value="StartResumePouseCancelEnum" />
+    <node concept="25R33" id="1bns0lwX47l" role="25R1y">
+      <property role="3tVfz5" value="1357676981079261653" />
+      <property role="TrG5h" value="Start" />
+      <property role="1L1pqM" value="start" />
+    </node>
+    <node concept="25R33" id="1bns0lwX47m" role="25R1y">
+      <property role="3tVfz5" value="1357676981079261654" />
+      <property role="TrG5h" value="Resume" />
+      <property role="1L1pqM" value="resume" />
+    </node>
+    <node concept="25R33" id="1bns0lwX47p" role="25R1y">
+      <property role="3tVfz5" value="1357676981079261657" />
+      <property role="TrG5h" value="Cancel" />
+      <property role="1L1pqM" value="cancel" />
+    </node>
+    <node concept="25R33" id="1bns0lwX48z" role="25R1y">
+      <property role="3tVfz5" value="1357676981079261731" />
+      <property role="TrG5h" value="Pause" />
+      <property role="1L1pqM" value="pause" />
     </node>
   </node>
 </model>

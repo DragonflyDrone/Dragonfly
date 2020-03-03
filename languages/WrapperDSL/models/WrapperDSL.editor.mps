@@ -296,33 +296,23 @@
   </node>
   <node concept="24kQdi" id="6UvQjm9mmgk">
     <property role="3GE5qa" value="command" />
-    <ref role="1XX52x" to="lpas:6UvQjm9mmgb" resolve="TurnOnMotors" />
-    <node concept="3EZMnI" id="6UvQjm9mmgm" role="2wV5jI">
-      <node concept="PMmxH" id="6UvQjm9mmgw" role="3EZMnx">
-        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+    <ref role="1XX52x" to="lpas:6UvQjm9mmgb" resolve="TurnMotors" />
+    <node concept="3EZMnI" id="1bns0lwW23I" role="2wV5jI">
+      <node concept="l2Vlx" id="1bns0lwW23J" role="2iSdaV" />
+      <node concept="3F0ifn" id="1bns0lwW23M" role="3EZMnx">
+        <property role="3F0ifm" value="Turn" />
       </node>
-      <node concept="l2Vlx" id="6UvQjm9mmgp" role="2iSdaV" />
-      <node concept="3F0ifn" id="6UvQjm9mmg_" role="3EZMnx">
-        <property role="3F0ifm" value="()" />
+      <node concept="3F0A7n" id="1bns0lwW23R" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:1bns0lwW23G" resolve="value" />
       </node>
-    </node>
-  </node>
-  <node concept="24kQdi" id="6UvQjm9mmgM">
-    <property role="3GE5qa" value="command" />
-    <ref role="1XX52x" to="lpas:6UvQjm9mmgD" resolve="TurnOffMotors" />
-    <node concept="3EZMnI" id="6UvQjm9mmgO" role="2wV5jI">
-      <node concept="PMmxH" id="6UvQjm9mmgY" role="3EZMnx">
-        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
-      </node>
-      <node concept="l2Vlx" id="6UvQjm9mmgR" role="2iSdaV" />
-      <node concept="3F0ifn" id="6UvQjm9mmh3" role="3EZMnx">
-        <property role="3F0ifm" value="()" />
+      <node concept="3F0ifn" id="1bns0lwW23Z" role="3EZMnx">
+        <property role="3F0ifm" value="motor" />
       </node>
     </node>
   </node>
   <node concept="24kQdi" id="6UvQjm9mmhg">
     <property role="3GE5qa" value="command" />
-    <ref role="1XX52x" to="lpas:6UvQjm9mmh7" resolve="StartTakeOff" />
+    <ref role="1XX52x" to="lpas:6UvQjm9mmh7" resolve="TakeOff" />
     <node concept="3EZMnI" id="6UvQjm9mmhi" role="2wV5jI">
       <node concept="PMmxH" id="6UvQjm9mmhp" role="3EZMnx">
         <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
@@ -333,93 +323,28 @@
       <node concept="l2Vlx" id="6UvQjm9mmhl" role="2iSdaV" />
     </node>
   </node>
-  <node concept="24kQdi" id="6UvQjm9mmhF">
-    <property role="3GE5qa" value="command" />
-    <ref role="1XX52x" to="lpas:6UvQjm9mmhy" resolve="StartPrecisionTakeOff" />
-    <node concept="3EZMnI" id="6UvQjm9mmhH" role="2wV5jI">
-      <node concept="PMmxH" id="6UvQjm9mmhO" role="3EZMnx">
-        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
-      </node>
-      <node concept="l2Vlx" id="6UvQjm9mmhK" role="2iSdaV" />
-      <node concept="3F0ifn" id="6UvQjm9mmhT" role="3EZMnx">
-        <property role="3F0ifm" value="()" />
-      </node>
-    </node>
-  </node>
-  <node concept="24kQdi" id="6UvQjm9mmi6">
-    <property role="3GE5qa" value="command" />
-    <ref role="1XX52x" to="lpas:6UvQjm9mmhX" resolve="CancelTakeOff" />
-    <node concept="3EZMnI" id="6UvQjm9mmi8" role="2wV5jI">
-      <node concept="PMmxH" id="6UvQjm9mmif" role="3EZMnx">
-        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
-      </node>
-      <node concept="l2Vlx" id="6UvQjm9mmib" role="2iSdaV" />
-      <node concept="3F0ifn" id="6UvQjm9mmik" role="3EZMnx">
-        <property role="3F0ifm" value="()" />
-      </node>
-    </node>
-  </node>
   <node concept="24kQdi" id="6UvQjm9mmix">
     <property role="3GE5qa" value="command" />
-    <ref role="1XX52x" to="lpas:6UvQjm9mmio" resolve="StartLanding" />
-    <node concept="3EZMnI" id="6UvQjm9mmiz" role="2wV5jI">
-      <node concept="PMmxH" id="6UvQjm9mmiE" role="3EZMnx">
-        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+    <ref role="1XX52x" to="lpas:6UvQjm9mmio" resolve="Landing" />
+    <node concept="3EZMnI" id="1bns0lwX47v" role="2wV5jI">
+      <node concept="l2Vlx" id="1bns0lwX47w" role="2iSdaV" />
+      <node concept="3F0A7n" id="1bns0lwX47z" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:1bns0lwX47t" resolve="value" />
       </node>
-      <node concept="l2Vlx" id="6UvQjm9mmiA" role="2iSdaV" />
-      <node concept="3F0ifn" id="6UvQjm9mmiJ" role="3EZMnx">
-        <property role="3F0ifm" value="()" />
-      </node>
-    </node>
-  </node>
-  <node concept="24kQdi" id="6UvQjm9mDjt">
-    <property role="3GE5qa" value="command" />
-    <ref role="1XX52x" to="lpas:6UvQjm9mDjk" resolve="CancelLanding" />
-    <node concept="3EZMnI" id="6UvQjm9mDjv" role="2wV5jI">
-      <node concept="PMmxH" id="6UvQjm9mDjA" role="3EZMnx">
-        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
-      </node>
-      <node concept="l2Vlx" id="6UvQjm9mDjy" role="2iSdaV" />
-      <node concept="3F0ifn" id="6UvQjm9mDjF" role="3EZMnx">
-        <property role="3F0ifm" value="()" />
-      </node>
-    </node>
-  </node>
-  <node concept="24kQdi" id="6UvQjm9mDjS">
-    <property role="3GE5qa" value="command" />
-    <ref role="1XX52x" to="lpas:6UvQjm9mDjJ" resolve="ConfirmLanding" />
-    <node concept="3EZMnI" id="6UvQjm9mDjU" role="2wV5jI">
-      <node concept="PMmxH" id="6UvQjm9mDk1" role="3EZMnx">
-        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
-      </node>
-      <node concept="l2Vlx" id="6UvQjm9mDjX" role="2iSdaV" />
-      <node concept="3F0ifn" id="6UvQjm9mDk6" role="3EZMnx">
-        <property role="3F0ifm" value="()" />
+      <node concept="3F0ifn" id="1bns0lwX47C" role="3EZMnx">
+        <property role="3F0ifm" value="landing" />
       </node>
     </node>
   </node>
   <node concept="24kQdi" id="6UvQjm9mDkj">
     <property role="3GE5qa" value="command" />
-    <ref role="1XX52x" to="lpas:6UvQjm9mDka" resolve="StartGoHome" />
+    <ref role="1XX52x" to="lpas:6UvQjm9mDka" resolve="ReturnToHome" />
     <node concept="3EZMnI" id="6UvQjm9mDkl" role="2wV5jI">
       <node concept="PMmxH" id="6UvQjm9mDks" role="3EZMnx">
         <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
       </node>
       <node concept="l2Vlx" id="6UvQjm9mDko" role="2iSdaV" />
       <node concept="3F0ifn" id="6UvQjm9mDkx" role="3EZMnx">
-        <property role="3F0ifm" value="()" />
-      </node>
-    </node>
-  </node>
-  <node concept="24kQdi" id="6UvQjm9mDkI">
-    <property role="3GE5qa" value="command" />
-    <ref role="1XX52x" to="lpas:6UvQjm9mDk_" resolve="CancelGoHome" />
-    <node concept="3EZMnI" id="6UvQjm9mDkK" role="2wV5jI">
-      <node concept="PMmxH" id="6UvQjm9mDkR" role="3EZMnx">
-        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
-      </node>
-      <node concept="l2Vlx" id="6UvQjm9mDkN" role="2iSdaV" />
-      <node concept="3F0ifn" id="6UvQjm9mDkW" role="3EZMnx">
         <property role="3F0ifm" value="()" />
       </node>
     </node>
@@ -515,40 +440,14 @@
   </node>
   <node concept="24kQdi" id="6UvQjm9mWHX">
     <property role="3GE5qa" value="command" />
-    <ref role="1XX52x" to="lpas:6UvQjm9mWHO" resolve="StartMission" />
-    <node concept="3EZMnI" id="6UvQjm9mWHZ" role="2wV5jI">
-      <node concept="PMmxH" id="6UvQjm9mWI9" role="3EZMnx">
-        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+    <ref role="1XX52x" to="lpas:6UvQjm9mWHO" resolve="Mission" />
+    <node concept="3EZMnI" id="1bns0lwX48m" role="2wV5jI">
+      <node concept="l2Vlx" id="1bns0lwX48n" role="2iSdaV" />
+      <node concept="3F0A7n" id="1bns0lwX48q" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:1bns0lwX48i" resolve="value" />
       </node>
-      <node concept="3F0ifn" id="6UvQjm9mWIc" role="3EZMnx">
-        <property role="3F0ifm" value="()" />
-      </node>
-      <node concept="l2Vlx" id="6UvQjm9mWI2" role="2iSdaV" />
-    </node>
-  </node>
-  <node concept="24kQdi" id="6UvQjm9mWIv">
-    <property role="3GE5qa" value="command" />
-    <ref role="1XX52x" to="lpas:6UvQjm9mWIm" resolve="PauseMission" />
-    <node concept="3EZMnI" id="6UvQjm9mWIx" role="2wV5jI">
-      <node concept="PMmxH" id="6UvQjm9mWIC" role="3EZMnx">
-        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
-      </node>
-      <node concept="l2Vlx" id="6UvQjm9mWI$" role="2iSdaV" />
-      <node concept="3F0ifn" id="6UvQjm9mWIH" role="3EZMnx">
-        <property role="3F0ifm" value="()" />
-      </node>
-    </node>
-  </node>
-  <node concept="24kQdi" id="6UvQjm9mWIU">
-    <property role="3GE5qa" value="command" />
-    <ref role="1XX52x" to="lpas:6UvQjm9mWIL" resolve="ResumeMission" />
-    <node concept="3EZMnI" id="6UvQjm9mWIW" role="2wV5jI">
-      <node concept="PMmxH" id="6UvQjm9mWJ3" role="3EZMnx">
-        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
-      </node>
-      <node concept="l2Vlx" id="6UvQjm9mWIZ" role="2iSdaV" />
-      <node concept="3F0ifn" id="6UvQjm9mWJ8" role="3EZMnx">
-        <property role="3F0ifm" value="()" />
+      <node concept="3F0ifn" id="1bns0lwX48v" role="3EZMnx">
+        <property role="3F0ifm" value="mission" />
       </node>
     </node>
   </node>
@@ -617,16 +516,6 @@
         <node concept="l2Vlx" id="4NrzS7qn7U2" role="2iSdaV" />
       </node>
       <node concept="2iRkQZ" id="4NrzS7qn7Tw" role="2iSdaV" />
-    </node>
-  </node>
-  <node concept="24kQdi" id="4XSQxjp6wkH">
-    <property role="3GE5qa" value="command" />
-    <ref role="1XX52x" to="lpas:4XSQxjp6wk$" resolve="SafeLand" />
-    <node concept="3EZMnI" id="4XSQxjp6wkJ" role="2wV5jI">
-      <node concept="PMmxH" id="4XSQxjp6wkQ" role="3EZMnx">
-        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
-      </node>
-      <node concept="l2Vlx" id="4XSQxjp6wkM" role="2iSdaV" />
     </node>
   </node>
   <node concept="24kQdi" id="7z9cZP2AH7$">
@@ -1073,6 +962,32 @@
         <property role="3F0ifm" value=")" />
       </node>
       <node concept="l2Vlx" id="7_KOYEjdam4" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="1bns0lwW21h">
+    <property role="3GE5qa" value="command" />
+    <ref role="1XX52x" to="lpas:1bns0lwW20Y" resolve="EconomyMode" />
+    <node concept="3EZMnI" id="1bns0lwW21j" role="2wV5jI">
+      <node concept="3F0ifn" id="1bns0lwW21u" role="3EZMnx">
+        <property role="3F0ifm" value="set economy mode" />
+      </node>
+      <node concept="3F0A7n" id="1bns0lwW21$" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:1bns0lwW20Z" resolve="value" />
+      </node>
+      <node concept="l2Vlx" id="1bns0lwW21m" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="1bns0lwX47Z">
+    <property role="3GE5qa" value="command" />
+    <ref role="1XX52x" to="lpas:4XSQxjp6wk$" resolve="SafeLand" />
+    <node concept="3EZMnI" id="1bns0lwX481" role="2wV5jI">
+      <node concept="3F0A7n" id="1bns0lwX488" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:1bns0lwX47G" resolve="value" />
+      </node>
+      <node concept="3F0ifn" id="1bns0lwX48e" role="3EZMnx">
+        <property role="3F0ifm" value="safe land" />
+      </node>
+      <node concept="l2Vlx" id="1bns0lwX484" role="2iSdaV" />
     </node>
   </node>
 </model>

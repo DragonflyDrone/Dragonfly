@@ -2,6 +2,7 @@
 <dependenciesRoot>
   <dependency className="WrapperDSL.Language">
     <classNode dependClassName="WrapperDSL.behavior.BehaviorAspectDescriptor" />
+    <classNode dependClassName="WrapperDSL.constraints.ConstraintsAspectDescriptor" />
     <classNode dependClassName="WrapperDSL.editor.EditorAspectDescriptorImpl" />
     <classNode dependClassName="WrapperDSL.structure.ConceptPresentationAspectImpl" />
     <classNode dependClassName="WrapperDSL.structure.StructureAspectDescriptor" />
@@ -13,6 +14,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SLanguageId" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptPresentationAspect" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ILanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.StructureAspectDescriptor" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SLanguage" />
