@@ -947,10 +947,7 @@
     <ref role="1XX52x" to="lpas:5eYfGK4mCNt" resolve="CategoricalWindConditionalExpression" />
     <node concept="3EZMnI" id="7_KOYEjdam1" role="2wV5jI">
       <node concept="3F0ifn" id="7_KOYEjdam3" role="3EZMnx">
-        <property role="3F0ifm" value="(" />
-      </node>
-      <node concept="3F1sOY" id="7_KOYEjdamj" role="3EZMnx">
-        <ref role="1NtTu8" to="lpas:7_KOYEjdalH" resolve="left" />
+        <property role="3F0ifm" value="(Wind" />
       </node>
       <node concept="3F0A7n" id="7_KOYEjdamt" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:7_KOYEjdalM" resolve="operator" />

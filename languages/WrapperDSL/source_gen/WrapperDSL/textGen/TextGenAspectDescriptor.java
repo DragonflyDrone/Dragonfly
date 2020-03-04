@@ -8,6 +8,15 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.text.rt.TextGenDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.text.rt.TextGenModelOutline;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.text.TextUnit;
+import jetbrains.mps.text.impl.BufferLayoutBuilder;
+import jetbrains.mps.text.impl.RegularTextUnit;
+import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.mps.openapi.language.SProperty;
 
 public class TextGenAspectDescriptor extends TextGenAspectBase {
   private final LanguageConceptSwitch myIndex = new LanguageConceptSwitch();
@@ -19,8 +28,68 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
   @Override
   public TextGenDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
     switch (myIndex.index(concept)) {
+      case LanguageConceptSwitch.AdaptationScript:
+        return new AdaptationScript_TextGen();
+      case LanguageConceptSwitch.CategoricalWindConditionalExpression:
+        return new CategoricalWindConditionalExpression_TextGen();
+      case LanguageConceptSwitch.ExceptionalScenario:
+        return new ExceptionalScenario_TextGen();
+      case LanguageConceptSwitch.FlyToRegion:
+        return new FlyToRegion_TextGen();
+      case LanguageConceptSwitch.Given:
+        return new Given_TextGen();
+      case LanguageConceptSwitch.LogicalExpression:
+        return new LogicalExpression_TextGen();
+      case LanguageConceptSwitch.OriginAndDestinationDistanceConditionalExpression:
+        return new OriginAndDestinationDistanceConditionalExpression_TextGen();
+      case LanguageConceptSwitch.RegionConditionalExpression:
+        return new RegionConditionalExpression_TextGen();
+      case LanguageConceptSwitch.ScalarDistanceConditionalExpression:
+        return new ScalarDistanceConditionalExpression_TextGen();
+      case LanguageConceptSwitch.While:
+        return new While_TextGen();
     }
     return null;
   }
 
+  @Override
+  public void breakdownToUnits(@NotNull TextGenModelOutline outline) {
+    for (SNode root : outline.getModel().getRootNodes()) {
+      if (root.getConcept().equals(CONCEPTS.ExceptionalScenario$v)) {
+        String fname = getFileName_ExceptionalScenario(root);
+        String ext = getFileExtension_ExceptionalScenario(root);
+        outline.registerTextUnit(createTextUnit0((ext == null ? fname : (fname + '.' + ext)), root));
+        continue;
+      }
+    }
+  }
+  private static String getFileName_ExceptionalScenario(SNode node) {
+    return SPropertyOperations.getString(node, PROPS.name$tAp1);
+  }
+  private static String getFileExtension_ExceptionalScenario(SNode node) {
+    return "aj";
+  }
+  private static TextUnit createTextUnit0(String filename, SNode node) {
+    BufferLayoutBuilder lb = new BufferLayoutBuilder();
+    lb.add("IMPORTS");
+    lb.add("HEADER");
+    lb.add("BODY");
+    lb.add("BODY", "pointcut");
+    lb.add("BODY", "conditionalAdvice");
+    lb.add("BODY", "advice");
+    lb.add("BODY", "methodAdvice");
+    lb.add("BODY", "end");
+    lb.activate("IMPORTS");
+    RegularTextUnit rv = new RegularTextUnit(node, filename, null);
+    rv.setBufferLayout(lb.create());
+    return rv;
+  }
+
+  private static final class CONCEPTS {
+    /*package*/ static final SConcept ExceptionalScenario$v = MetaAdapterFactory.getConcept(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bc3L, "WrapperDSL.structure.ExceptionalScenario");
+  }
+
+  private static final class PROPS {
+    /*package*/ static final SProperty name$tAp1 = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
+  }
 }

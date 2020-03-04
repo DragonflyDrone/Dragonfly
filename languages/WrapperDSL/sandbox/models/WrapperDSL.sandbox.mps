@@ -12,11 +12,6 @@
       </concept>
     </language>
     <language id="3e1c68c4-ebe6-40bd-a27f-e74585aa2487" name="WrapperDSL">
-      <concept id="8237239994876226883" name="WrapperDSL.structure.OriginAndDestinationDistanceConditionalExpression" flags="ng" index="22r6dy">
-        <property id="8237239994876226886" name="left" index="22r6dB" />
-        <property id="8237239994876226888" name="operator" index="22r6dD" />
-        <child id="8237239994876226891" name="right1" index="22r6dE" />
-      </concept>
       <concept id="5726566709278147876" name="WrapperDSL.structure.SafeLand" flags="ng" index="2moHWK">
         <property id="1357676981079261676" name="value" index="1M8N7D" />
       </concept>
@@ -27,6 +22,11 @@
       </concept>
       <concept id="838450833433631730" name="WrapperDSL.structure.FlyToRegion" flags="ng" index="NOXP_">
         <property id="838450833433631751" name="region" index="NOXEg" />
+      </concept>
+      <concept id="6034329596693600580" name="WrapperDSL.structure.ScalarDistanceConditionalExpression" flags="ng" index="1ncAu8">
+        <property id="8750727080427245689" name="left" index="3Ecgej" />
+        <property id="8750727080427245687" name="operator" index="3Ecget" />
+        <child id="8750727080427245695" name="right" index="3Ecgel" />
       </concept>
       <concept id="6034329596691614548" name="WrapperDSL.structure.AdaptationScript" flags="ng" index="1nO3mo">
         <child id="6034329596692833866" name="body" index="1nfDy6" />
@@ -40,7 +40,6 @@
       <concept id="6034329596690336989" name="WrapperDSL.structure.CategoricalWindConditionalExpression" flags="ng" index="1nTb8h">
         <property id="8750727080426382706" name="operator" index="3Eh7qo" />
         <property id="8750727080426460311" name="right" index="3EhgtX" />
-        <child id="8750727080426382701" name="left" index="3Eh7q7" />
       </concept>
       <concept id="6034329596690336992" name="WrapperDSL.structure.RegionConditionalExpression" flags="ng" index="1nTb8G">
         <property id="8237239994876093608" name="right" index="22qAE9" />
@@ -75,28 +74,25 @@
   <node concept="1nTbkf" id="IyLDsSzHKw">
     <property role="TrG5h" value="moveAside" />
     <node concept="1nTbk6" id="IyLDsSzHKx" role="1nTbk1">
-      <node concept="3Em$gh" id="IyLDsS$tfb" role="1nTnJQ">
+      <node concept="3Em$gh" id="IyLDsSLaks" role="1nTnJQ">
         <property role="3EnToj" value="5eYfGK4nkaD/and" />
-        <node concept="1nTb8G" id="IyLDsS$tfi" role="3EglUf">
+        <node concept="1nTb8G" id="IyLDsSLakz" role="3EglUf">
           <property role="22qAF_" value="7_KOYEjd0pz/is" />
-          <property role="22qAE9" value="79gzy7KeIi_/water" />
-          <node concept="1nReOM" id="IyLDsS$tfj" role="22qAFz">
+          <property role="22qAE9" value="79gzy7KeIi$/land" />
+          <node concept="1nReOM" id="IyLDsSLak$" role="22qAFz">
             <property role="1nReON" value="Drone" />
           </node>
         </node>
-        <node concept="3Em$gh" id="IyLDsS$tfu" role="3EglUc">
-          <property role="3EnToj" value="5eYfGK4nkaL/or" />
-          <node concept="1nTb8h" id="IyLDsS$tf_" role="3EglUf">
+        <node concept="3Em$gh" id="IyLDsSPjux" role="3EglUc">
+          <property role="3EnToj" value="5eYfGK4nkaD/and" />
+          <node concept="1nTb8h" id="IyLDsSPjuC" role="3EglUf">
             <property role="3Eh7qo" value="7_KOYEjd0p$/not_equal_to" />
             <property role="3EhgtX" value="7_KOYEjdthV/strong" />
-            <node concept="1nReOM" id="IyLDsS$tfA" role="3Eh7q7">
-              <property role="1nReON" value="Wind" />
-            </node>
           </node>
-          <node concept="22r6dy" id="IyLDsS$tfJ" role="3EglUc">
-            <property role="22r6dB" value="7_KOYEjfYK5/destination" />
-            <property role="22r6dD" value="5eYfGK4mCLa/greater_than" />
-            <node concept="1nReOR" id="IyLDsS$tfL" role="22r6dE">
+          <node concept="1ncAu8" id="IyLDsSPjuF" role="3EglUc">
+            <property role="3Ecgej" value="7_KOYEjfYK5/destination" />
+            <property role="3Ecget" value="5eYfGK4mCLl/less_than_or_equal_to" />
+            <node concept="1nReOR" id="IyLDsSPjuH" role="3Ecgel">
               <property role="1nReOK" value="2" />
             </node>
           </node>

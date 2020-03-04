@@ -990,11 +990,6 @@
       <property role="TrG5h" value="normal" />
       <property role="1L1pqM" value="normal" />
     </node>
-    <node concept="25R33" id="7_KOYEjdti1" role="25R1y">
-      <property role="3tVfz5" value="8750727080426460289" />
-      <property role="TrG5h" value="light" />
-      <property role="1L1pqM" value="light" />
-    </node>
   </node>
   <node concept="1TIwiD" id="7_KOYEjcoPy">
     <property role="TrG5h" value="LogicalExpression" />
@@ -1152,13 +1147,6 @@
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="7_KOYEjbOoa" role="PzmwI">
       <ref role="PrY4T" node="7_KOYEjbOnV" resolve="ConditionalExpression" />
-    </node>
-    <node concept="1TJgyj" id="7_KOYEjdalH" role="1TKVEi">
-      <property role="IQ2ns" value="8750727080426382701" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="left" />
-      <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="5eYfGK4oHfY" resolve="Text" />
     </node>
     <node concept="1TJgyi" id="7_KOYEjdalM" role="1TKVEl">
       <property role="IQ2nx" value="8750727080426382706" />

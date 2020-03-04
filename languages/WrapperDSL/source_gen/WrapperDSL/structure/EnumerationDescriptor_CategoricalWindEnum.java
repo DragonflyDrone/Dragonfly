@@ -17,10 +17,9 @@ public class EnumerationDescriptor_CategoricalWindEnum extends EnumerationDescri
 
   private final EnumerationDescriptor.MemberDescriptor myMember_strong_0 = new EnumerationDescriptor.MemberDescriptor("strong", "strong", 0x7970d3ea9335d47bL, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/8750727080426460283");
   private final EnumerationDescriptor.MemberDescriptor myMember_normal_0 = new EnumerationDescriptor.MemberDescriptor("normal", "normal", 0x7970d3ea9335d47cL, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/8750727080426460284");
-  private final EnumerationDescriptor.MemberDescriptor myMember_light_0 = new EnumerationDescriptor.MemberDescriptor("light", "light", 0x7970d3ea9335d481L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/8750727080426460289");
 
-  private final EnumerationLiteralsIndex myIndex = EnumerationLiteralsIndex.build(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x7970d3ea9335d47aL, 0x7970d3ea9335d47bL, 0x7970d3ea9335d47cL, 0x7970d3ea9335d481L);
-  private final List<EnumerationDescriptor.MemberDescriptor> myMembers = new EnumerationDescriptorBase.MembersList(myIndex, myMember_strong_0, myMember_normal_0, myMember_light_0);
+  private final EnumerationLiteralsIndex myIndex = EnumerationLiteralsIndex.build(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x7970d3ea9335d47aL, 0x7970d3ea9335d47bL, 0x7970d3ea9335d47cL);
+  private final List<EnumerationDescriptor.MemberDescriptor> myMembers = new EnumerationDescriptorBase.MembersList(myIndex, myMember_strong_0, myMember_normal_0);
 
   @Nullable
   @Override
@@ -45,8 +44,6 @@ public class EnumerationDescriptor_CategoricalWindEnum extends EnumerationDescri
         return myMember_strong_0;
       case "normal":
         return myMember_normal_0;
-      case "light":
-        return myMember_light_0;
     }
     return null;
   }
