@@ -536,7 +536,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(2);
     b.property("right", 0x72508e21f03ae4a8L).type(MetaIdFactory.dataTypeId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x72508e21f03ae4a3L)).origin("8237239994876093608").done();
     b.property("operator", 0x72508e21f03ae4c4L).type(MetaIdFactory.dataTypeId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x7970d3ea9334065dL)).origin("8237239994876093636").done();
-    b.aggregate("left", 0x72508e21f03ae4c2L).target(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc0462d3feL).optional(false).ordered(true).multiple(false).origin("8237239994876093634").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForReturnToHome() {

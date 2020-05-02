@@ -280,20 +280,17 @@
       <node concept="PMmxH" id="6UvQjm9m3Ya" role="3EZMnx">
         <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
       </node>
-      <node concept="3F0ifn" id="6UvQjm9m3Yf" role="3EZMnx">
-        <property role="3F0ifm" value="(" />
+      <node concept="3F0ifn" id="1OPBmmoltgT" role="3EZMnx">
+        <property role="3F0ifm" value="latude:" />
       </node>
       <node concept="3F1sOY" id="6UvQjm9m3Yn" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:6UvQjm9m3XI" resolve="lat" />
       </node>
       <node concept="3F0ifn" id="6UvQjm9m3Yx" role="3EZMnx">
-        <property role="3F0ifm" value="," />
+        <property role="3F0ifm" value="longitude:" />
       </node>
       <node concept="3F1sOY" id="6UvQjm9m3YH" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:6UvQjm9m3XN" resolve="long" />
-      </node>
-      <node concept="3F0ifn" id="6UvQjm9m3YV" role="3EZMnx">
-        <property role="3F0ifm" value=")" />
       </node>
       <node concept="l2Vlx" id="6UvQjm9m3Y6" role="2iSdaV" />
     </node>
@@ -321,8 +318,8 @@
       <node concept="PMmxH" id="6UvQjm9mmhp" role="3EZMnx">
         <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
       </node>
-      <node concept="3F0ifn" id="6UvQjm9mmhu" role="3EZMnx">
-        <property role="3F0ifm" value="()" />
+      <node concept="3F0A7n" id="1OPBmmolthy" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:1bns0lwW244" resolve="value" />
       </node>
       <node concept="l2Vlx" id="6UvQjm9mmhl" role="2iSdaV" />
     </node>
@@ -343,14 +340,14 @@
   <node concept="24kQdi" id="6UvQjm9mDkj">
     <property role="3GE5qa" value="command" />
     <ref role="1XX52x" to="lpas:6UvQjm9mDka" resolve="ReturnToHome" />
-    <node concept="3EZMnI" id="6UvQjm9mDkl" role="2wV5jI">
-      <node concept="PMmxH" id="6UvQjm9mDks" role="3EZMnx">
-        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+    <node concept="3EZMnI" id="1OPBmmoltgg" role="2wV5jI">
+      <node concept="3F0A7n" id="1OPBmmoltgq" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:1bns0lwX48C" resolve="value" />
       </node>
-      <node concept="l2Vlx" id="6UvQjm9mDko" role="2iSdaV" />
-      <node concept="3F0ifn" id="6UvQjm9mDkx" role="3EZMnx">
-        <property role="3F0ifm" value="()" />
+      <node concept="3F0ifn" id="1OPBmmoltgw" role="3EZMnx">
+        <property role="3F0ifm" value="Return to home" />
       </node>
+      <node concept="l2Vlx" id="1OPBmmoltgj" role="2iSdaV" />
     </node>
   </node>
   <node concept="24kQdi" id="6UvQjm9mDl9">
@@ -361,8 +358,8 @@
         <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
       </node>
       <node concept="l2Vlx" id="6UvQjm9mDle" role="2iSdaV" />
-      <node concept="3F0ifn" id="6UvQjm9mDln" role="3EZMnx">
-        <property role="3F0ifm" value="()" />
+      <node concept="3F0A7n" id="1OPBmmolth6" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:1OPBmmolth4" resolve="value" />
       </node>
     </node>
   </node>
@@ -374,14 +371,11 @@
         <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
       </node>
       <node concept="l2Vlx" id="6UvQjm9mDlD" role="2iSdaV" />
-      <node concept="3F0ifn" id="6UvQjm9mDlO" role="3EZMnx">
-        <property role="3F0ifm" value="(" />
-      </node>
       <node concept="3F1sOY" id="6UvQjm9mDlW" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:6UvQjm9mDlJ" resolve="height" />
       </node>
       <node concept="3F0ifn" id="6UvQjm9mDm6" role="3EZMnx">
-        <property role="3F0ifm" value=")" />
+        <property role="3F0ifm" value="meters" />
       </node>
     </node>
   </node>
@@ -393,14 +387,8 @@
         <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
       </node>
       <node concept="l2Vlx" id="6UvQjm9mWFt" role="2iSdaV" />
-      <node concept="3F0ifn" id="6UvQjm9mWFA" role="3EZMnx">
-        <property role="3F0ifm" value="(" />
-      </node>
       <node concept="3F1sOY" id="6UvQjm9mWFK" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:6UvQjm9mWFI" resolve="percent" />
-      </node>
-      <node concept="3F0ifn" id="6UvQjm9mWFU" role="3EZMnx">
-        <property role="3F0ifm" value=")" />
       </node>
     </node>
   </node>
@@ -412,14 +400,8 @@
         <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
       </node>
       <node concept="l2Vlx" id="6UvQjm9mWGg" role="2iSdaV" />
-      <node concept="3F0ifn" id="6UvQjm9mWG$" role="3EZMnx">
-        <property role="3F0ifm" value="(" />
-      </node>
       <node concept="3F1sOY" id="6UvQjm9mWGG" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:6UvQjm9mWG1" resolve="percent" />
-      </node>
-      <node concept="3F0ifn" id="6UvQjm9mWGQ" role="3EZMnx">
-        <property role="3F0ifm" value=")" />
       </node>
     </node>
   </node>
@@ -431,14 +413,8 @@
         <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
       </node>
       <node concept="l2Vlx" id="6UvQjm9mWHj" role="2iSdaV" />
-      <node concept="3F0ifn" id="6UvQjm9mWHs" role="3EZMnx">
-        <property role="3F0ifm" value="(" />
-      </node>
       <node concept="3F0A7n" id="6UvQjm9mWH$" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:6UvQjm9mWGZ" resolve="enable" />
-      </node>
-      <node concept="3F0ifn" id="6UvQjm9mWHI" role="3EZMnx">
-        <property role="3F0ifm" value=")" />
       </node>
     </node>
   </node>
@@ -463,14 +439,11 @@
         <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
       </node>
       <node concept="l2Vlx" id="6UvQjm9mWJT" role="2iSdaV" />
-      <node concept="3F0ifn" id="6UvQjm9mWK2" role="3EZMnx">
-        <property role="3F0ifm" value="(" />
-      </node>
       <node concept="3F1sOY" id="6UvQjm9mWKc" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:6UvQjm9mWK6" resolve="speed" />
       </node>
       <node concept="3F0ifn" id="6UvQjm9mWKm" role="3EZMnx">
-        <property role="3F0ifm" value=")" />
+        <property role="3F0ifm" value="m/s" />
       </node>
     </node>
   </node>
@@ -520,7 +493,7 @@
   </node>
   <node concept="24kQdi" id="7z9cZP2AH7$">
     <property role="3GE5qa" value="math.expression.conditional_expression" />
-    <ref role="1XX52x" to="lpas:7z9cZP2AH7p" resolve="PerformingCommandExpression" />
+    <ref role="1XX52x" to="lpas:7z9cZP2AH7p" resolve="PerformingCommandConditionalExpression" />
     <node concept="3EZMnI" id="7z9cZP2AH7A" role="2wV5jI">
       <node concept="3F0ifn" id="7z9cZP2AH7H" role="3EZMnx">
         <property role="3F0ifm" value="(" />
@@ -545,7 +518,7 @@
   </node>
   <node concept="24kQdi" id="304WrIr5h9q">
     <property role="3GE5qa" value="math.expression.conditional_expression.internal_state" />
-    <ref role="1XX52x" to="lpas:304WrIr5h8W" resolve="LinearAccelerationConditionalExtension" />
+    <ref role="1XX52x" to="lpas:304WrIr5h8W" resolve="LinearAccelerationConditionalExpression" />
     <node concept="3EZMnI" id="304WrIr5h9s" role="2wV5jI">
       <node concept="3F0ifn" id="304WrIr5h9z" role="3EZMnx">
         <property role="3F0ifm" value="( linear acceleration in" />
@@ -589,7 +562,7 @@
   </node>
   <node concept="24kQdi" id="11jlgVoHLpi">
     <property role="3GE5qa" value="math.expression.conditional_expression.internal_state" />
-    <ref role="1XX52x" to="lpas:11jlgVoHLp6" resolve="GimbalConditionalExtension" />
+    <ref role="1XX52x" to="lpas:11jlgVoHLp6" resolve="GimbalConditionalExpression" />
     <node concept="3EZMnI" id="11jlgVoHLpk" role="2wV5jI">
       <node concept="3F0ifn" id="11jlgVoHLpr" role="3EZMnx">
         <property role="3F0ifm" value="(gimbal" />
@@ -608,7 +581,7 @@
   </node>
   <node concept="24kQdi" id="11jlgVoHLov">
     <property role="3GE5qa" value="math.expression.conditional_expression.internal_state" />
-    <ref role="1XX52x" to="lpas:11jlgVoHLoj" resolve="CameraPowerConditionalExtension" />
+    <ref role="1XX52x" to="lpas:11jlgVoHLoj" resolve="CameraPowerConditionalExpression" />
     <node concept="3EZMnI" id="11jlgVoHLox" role="2wV5jI">
       <node concept="3F0ifn" id="11jlgVoHLoC" role="3EZMnx">
         <property role="3F0ifm" value="( camera's power" />
@@ -627,7 +600,7 @@
   </node>
   <node concept="24kQdi" id="11jlgVoGZM0">
     <property role="3GE5qa" value="math.expression.conditional_expression.internal_state" />
-    <ref role="1XX52x" to="lpas:11jlgVoGZLO" resolve="PayloadConditionalExtension" />
+    <ref role="1XX52x" to="lpas:11jlgVoGZLO" resolve="PayloadConditionalExpression" />
     <node concept="3EZMnI" id="11jlgVoGZM2" role="2wV5jI">
       <node concept="3F0ifn" id="11jlgVoGZM9" role="3EZMnx">
         <property role="3F0ifm" value="( It" />
@@ -643,7 +616,7 @@
   </node>
   <node concept="24kQdi" id="11jlgVoGZL5">
     <property role="3GE5qa" value="math.expression.conditional_expression.internal_state" />
-    <ref role="1XX52x" to="lpas:11jlgVoGZKT" resolve="WifiConditionalExtension" />
+    <ref role="1XX52x" to="lpas:11jlgVoGZKT" resolve="WifiConditionalExpression" />
     <node concept="3EZMnI" id="11jlgVoGZL7" role="2wV5jI">
       <node concept="3F0ifn" id="11jlgVoGZLe" role="3EZMnx">
         <property role="3F0ifm" value="( wifi" />
@@ -662,7 +635,7 @@
   </node>
   <node concept="24kQdi" id="11jlgVoGZKe">
     <property role="3GE5qa" value="math.expression.conditional_expression.internal_state" />
-    <ref role="1XX52x" to="lpas:11jlgVoGZJU" resolve="LandingGearConditionalExtension" />
+    <ref role="1XX52x" to="lpas:11jlgVoGZJU" resolve="LandingGearConditionalExpression" />
     <node concept="3EZMnI" id="11jlgVoGZKg" role="2wV5jI">
       <node concept="3F0ifn" id="11jlgVoGZKn" role="3EZMnx">
         <property role="3F0ifm" value="( landing gear" />
@@ -681,7 +654,7 @@
   </node>
   <node concept="24kQdi" id="11jlgVoGE2U">
     <property role="3GE5qa" value="math.expression.conditional_expression.internal_state" />
-    <ref role="1XX52x" to="lpas:11jlgVoGE2z" resolve="MotorsPowerConditionalExtension" />
+    <ref role="1XX52x" to="lpas:11jlgVoGE2z" resolve="MotorsPowerConditionalExpression" />
     <node concept="3EZMnI" id="11jlgVoGE2W" role="2wV5jI">
       <node concept="3F0ifn" id="11jlgVoGE33" role="3EZMnx">
         <property role="3F0ifm" value="( motor's power" />
@@ -922,10 +895,7 @@
     <ref role="1XX52x" to="lpas:5eYfGK4mCNw" resolve="RegionConditionalExpression" />
     <node concept="3EZMnI" id="79gzy7KeIiO" role="2wV5jI">
       <node concept="3F0ifn" id="79gzy7KeID8" role="3EZMnx">
-        <property role="3F0ifm" value="(" />
-      </node>
-      <node concept="3F1sOY" id="79gzy7KeIDq" role="3EZMnx">
-        <ref role="1NtTu8" to="lpas:79gzy7KeIj2" resolve="left" />
+        <property role="3F0ifm" value="(Drone" />
       </node>
       <node concept="3F0A7n" id="79gzy7KeIDA" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:79gzy7KeIj4" resolve="operator" />
@@ -1027,7 +997,7 @@
         <ref role="1NtTu8" to="lpas:IyLDsSshIY" resolve="lat" />
       </node>
       <node concept="3F0ifn" id="IyLDsSshJy" role="3EZMnx">
-        <property role="3F0ifm" value="longitude" />
+        <property role="3F0ifm" value="longitude:" />
       </node>
       <node concept="3F0A7n" id="IyLDsSshJG" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:IyLDsSshJ0" resolve="long" />

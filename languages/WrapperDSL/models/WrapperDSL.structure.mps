@@ -413,7 +413,7 @@
     <property role="EcuMT" value="7971328689429823339" />
     <property role="3GE5qa" value="command" />
     <property role="TrG5h" value="SetHomeLocation" />
-    <property role="34LRSv" value="setHomeLocation" />
+    <property role="34LRSv" value="set Home Location" />
     <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="CommandCall" />
     <node concept="1TJgyj" id="6UvQjm9m3XN" role="1TKVEi">
       <property role="IQ2ns" value="7971328689429823347" />
@@ -451,7 +451,7 @@
     <node concept="1TJgyi" id="1bns0lwW244" role="1TKVEl">
       <property role="IQ2nx" value="1357676981078991108" />
       <property role="TrG5h" value="value" />
-      <ref role="AX2Wp" node="1bns0lwX47k" resolve="StartResumePouseCancelEnum" />
+      <ref role="AX2Wp" node="1bns0lwX47k" resolve="CommandStateEnum" />
     </node>
   </node>
   <node concept="1TIwiD" id="6UvQjm9mmio">
@@ -463,7 +463,7 @@
     <node concept="1TJgyi" id="1bns0lwX47t" role="1TKVEl">
       <property role="IQ2nx" value="1357676981079261661" />
       <property role="TrG5h" value="value" />
-      <ref role="AX2Wp" node="1bns0lwX47k" resolve="StartResumePouseCancelEnum" />
+      <ref role="AX2Wp" node="1bns0lwX47k" resolve="CommandStateEnum" />
     </node>
   </node>
   <node concept="1TIwiD" id="6UvQjm9mDka">
@@ -475,7 +475,7 @@
     <node concept="1TJgyi" id="1bns0lwX48C" role="1TKVEl">
       <property role="IQ2nx" value="1357676981079261736" />
       <property role="TrG5h" value="value" />
-      <ref role="AX2Wp" node="1bns0lwX47k" resolve="StartResumePouseCancelEnum" />
+      <ref role="AX2Wp" node="1bns0lwX47k" resolve="CommandStateEnum" />
     </node>
   </node>
   <node concept="1TIwiD" id="6UvQjm9mDl0">
@@ -484,12 +484,17 @@
     <property role="TrG5h" value="SetHomeLocationUsingAircraftCurrentLocation" />
     <property role="34LRSv" value="setHomeLocationUsingAircraftCurrentLocation" />
     <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="CommandCall" />
+    <node concept="1TJgyi" id="1OPBmmolth4" role="1TKVEl">
+      <property role="IQ2nx" value="2104761460538594372" />
+      <property role="TrG5h" value="value" />
+      <ref role="AX2Wp" node="11jlgVoGE2C" resolve="OnOffConditionalEnum" />
+    </node>
   </node>
   <node concept="1TIwiD" id="6UvQjm9mDlr">
     <property role="EcuMT" value="7971328689429976411" />
     <property role="3GE5qa" value="command" />
     <property role="TrG5h" value="SetGoHomeHeightInMeters" />
-    <property role="34LRSv" value="SetGoHomeHeightInMeters" />
+    <property role="34LRSv" value="Set Go Home Height In Meters" />
     <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="CommandCall" />
     <node concept="1TJgyj" id="6UvQjm9mDlJ" role="1TKVEi">
       <property role="IQ2ns" value="7971328689429976431" />
@@ -503,7 +508,7 @@
     <property role="EcuMT" value="7971328689430055631" />
     <property role="3GE5qa" value="command" />
     <property role="TrG5h" value="SetLowBatteryWarningThreshold" />
-    <property role="34LRSv" value="setLowBatteryWarningThreshold" />
+    <property role="34LRSv" value="set Low Battery Warning Threshold" />
     <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="CommandCall" />
     <node concept="1TJgyj" id="6UvQjm9mWFI" role="1TKVEi">
       <property role="IQ2ns" value="7971328689430055662" />
@@ -517,7 +522,7 @@
     <property role="EcuMT" value="7971328689430055680" />
     <property role="3GE5qa" value="command" />
     <property role="TrG5h" value="SetSeriousLowBatteryWarningThreshold" />
-    <property role="34LRSv" value="setSeriousLowBatteryWarningThreshold" />
+    <property role="34LRSv" value="set Serious Low Battery Warning Threshold" />
     <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="CommandCall" />
     <node concept="1TJgyj" id="6UvQjm9mWG1" role="1TKVEi">
       <property role="IQ2ns" value="7971328689430055681" />
@@ -531,12 +536,12 @@
     <property role="EcuMT" value="7971328689430055740" />
     <property role="3GE5qa" value="command" />
     <property role="TrG5h" value="SetSmartReturnToHomeEnabled" />
-    <property role="34LRSv" value="setSmartReturnToHomeEnabled" />
+    <property role="34LRSv" value="set Smart Return To Home Enabled" />
     <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="CommandCall" />
     <node concept="1TJgyi" id="6UvQjm9mWGZ" role="1TKVEl">
       <property role="IQ2nx" value="7971328689430055743" />
       <property role="TrG5h" value="enable" />
-      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+      <ref role="AX2Wp" node="11jlgVoGE2C" resolve="OnOffConditionalEnum" />
     </node>
   </node>
   <node concept="1TIwiD" id="6UvQjm9mWHO">
@@ -548,14 +553,14 @@
     <node concept="1TJgyi" id="1bns0lwX48i" role="1TKVEl">
       <property role="IQ2nx" value="1357676981079261714" />
       <property role="TrG5h" value="value" />
-      <ref role="AX2Wp" node="1bns0lwX47k" resolve="StartResumePouseCancelEnum" />
+      <ref role="AX2Wp" node="1bns0lwX47k" resolve="CommandStateEnum" />
     </node>
   </node>
   <node concept="1TIwiD" id="6UvQjm9mWJC">
     <property role="EcuMT" value="7971328689430055912" />
     <property role="3GE5qa" value="command" />
     <property role="TrG5h" value="SetAutoFlightSpeed" />
-    <property role="34LRSv" value="setAutoFlightSpeed" />
+    <property role="34LRSv" value="set Auto Flight Speed" />
     <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="CommandCall" />
     <node concept="1TJgyj" id="6UvQjm9mWK6" role="1TKVEi">
       <property role="IQ2ns" value="7971328689430055942" />
@@ -598,13 +603,13 @@
     <node concept="1TJgyi" id="1bns0lwX47G" role="1TKVEl">
       <property role="IQ2nx" value="1357676981079261676" />
       <property role="TrG5h" value="value" />
-      <ref role="AX2Wp" node="1bns0lwX47k" resolve="StartResumePouseCancelEnum" />
+      <ref role="AX2Wp" node="1bns0lwX47k" resolve="CommandStateEnum" />
     </node>
   </node>
   <node concept="1TIwiD" id="7z9cZP2AH7p">
     <property role="EcuMT" value="8703544917707379161" />
     <property role="3GE5qa" value="math.expression.conditional_expression" />
-    <property role="TrG5h" value="PerformingCommandExpression" />
+    <property role="TrG5h" value="PerformingCommandConditionalExpression" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="7z9cZP2AH7q" role="1TKVEi">
       <property role="IQ2ns" value="8703544917707379162" />
@@ -625,8 +630,8 @@
   <node concept="1TIwiD" id="304WrIr5h8W">
     <property role="EcuMT" value="3460156201790411324" />
     <property role="3GE5qa" value="math.expression.conditional_expression.internal_state" />
-    <property role="TrG5h" value="LinearAccelerationConditionalExtension" />
-    <property role="R4oN_" value="( linear acceleration in [x|y|z] [is|is not|&gt;|&lt;|&gt;=|&lt;=] n m/s² )" />
+    <property role="TrG5h" value="LinearAccelerationConditionalExpression" />
+    <property role="R4oN_" value="( Linear acceleration in [x|y|z] [is|is not|&gt;|&lt;|&gt;=|&lt;=] n m/s² )" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="304WrIr5h8X" role="PzmwI">
       <ref role="PrY4T" node="7_KOYEjbOnV" resolve="ConditionalExpression" />
@@ -679,8 +684,8 @@
   <node concept="1TIwiD" id="11jlgVoHLp6">
     <property role="EcuMT" value="1176377449927611974" />
     <property role="3GE5qa" value="math.expression.conditional_expression.internal_state" />
-    <property role="TrG5h" value="GimbalConditionalExtension" />
-    <property role="R4oN_" value="( gimbal [is|is not] [on|off] )" />
+    <property role="TrG5h" value="GimbalConditionalExpression" />
+    <property role="R4oN_" value="( Gimbal [is|is not] [on|off] )" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="11jlgVoHLp7" role="PzmwI">
       <ref role="PrY4T" node="7_KOYEjbOnV" resolve="ConditionalExpression" />
@@ -699,7 +704,7 @@
   <node concept="1TIwiD" id="11jlgVoHLoj">
     <property role="EcuMT" value="1176377449927611923" />
     <property role="3GE5qa" value="math.expression.conditional_expression.internal_state" />
-    <property role="TrG5h" value="CameraPowerConditionalExtension" />
+    <property role="TrG5h" value="CameraPowerConditionalExpression" />
     <property role="R4oN_" value="( camera's power [is|is not] [on|off] )" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="11jlgVoHLok" role="PzmwI">
@@ -719,7 +724,7 @@
   <node concept="1TIwiD" id="11jlgVoGZLO">
     <property role="EcuMT" value="1176377449927408756" />
     <property role="3GE5qa" value="math.expression.conditional_expression.internal_state" />
-    <property role="TrG5h" value="PayloadConditionalExtension" />
+    <property role="TrG5h" value="PayloadConditionalExpression" />
     <property role="R4oN_" value="( It [is|is not] carrying a payload )" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="11jlgVoGZLP" role="PzmwI">
@@ -734,8 +739,8 @@
   <node concept="1TIwiD" id="11jlgVoGZKT">
     <property role="EcuMT" value="1176377449927408697" />
     <property role="3GE5qa" value="math.expression.conditional_expression.internal_state" />
-    <property role="TrG5h" value="WifiConditionalExtension" />
-    <property role="R4oN_" value="( wifi [is|is not] [on|off] )" />
+    <property role="TrG5h" value="WifiConditionalExpression" />
+    <property role="R4oN_" value="( Wifi [is|is not] [on|off] )" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="11jlgVoGZKU" role="PzmwI">
       <ref role="PrY4T" node="7_KOYEjbOnV" resolve="ConditionalExpression" />
@@ -754,8 +759,8 @@
   <node concept="1TIwiD" id="11jlgVoGZJU">
     <property role="EcuMT" value="1176377449927408634" />
     <property role="3GE5qa" value="math.expression.conditional_expression.internal_state" />
-    <property role="TrG5h" value="LandingGearConditionalExtension" />
-    <property role="R4oN_" value="( landing gear [is|is not] [on|off] )" />
+    <property role="TrG5h" value="LandingGearConditionalExpression" />
+    <property role="R4oN_" value="( Landing gear [is|is not] [on|off] )" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="11jlgVoGZJV" role="PzmwI">
       <ref role="PrY4T" node="7_KOYEjbOnV" resolve="ConditionalExpression" />
@@ -774,8 +779,8 @@
   <node concept="1TIwiD" id="11jlgVoGE2z">
     <property role="EcuMT" value="1176377449927319715" />
     <property role="3GE5qa" value="math.expression.conditional_expression.internal_state" />
-    <property role="TrG5h" value="MotorsPowerConditionalExtension" />
-    <property role="R4oN_" value="( motor's power [is|is not] [on|off] )" />
+    <property role="TrG5h" value="MotorsPowerConditionalExpression" />
+    <property role="R4oN_" value="( Motor's power [is|is not] [on|off] )" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="11jlgVoGE2$" role="PzmwI">
       <ref role="PrY4T" node="7_KOYEjbOnV" resolve="ConditionalExpression" />
@@ -837,7 +842,7 @@
     <property role="EcuMT" value="283912609322404152" />
     <property role="3GE5qa" value="math.expression.conditional_expression.internal_state" />
     <property role="TrG5h" value="SpeedConditionalExpression" />
-    <property role="R4oN_" value="(speed [is|isn't|&lt;|&gt;|&gt;=|&lt;=] n m/s)" />
+    <property role="R4oN_" value="(Speed [is|isn't|&lt;|&gt;|&gt;=|&lt;=] n m/s)" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="fKEgehUC$T" role="PzmwI">
       <ref role="PrY4T" node="7_KOYEjbOnV" resolve="ConditionalExpression" />
@@ -1036,7 +1041,7 @@
     <property role="EcuMT" value="6034329596693600580" />
     <property role="3GE5qa" value="math.expression.conditional_expression.distance" />
     <property role="TrG5h" value="ScalarDistanceConditionalExpression" />
-    <property role="R4oN_" value="(distance from [origin|destination][is|not is|&gt;|&lt;|&gt;=|&lt;=] n km)" />
+    <property role="R4oN_" value="(Distance from [origin|destination][is|not is|&gt;|&lt;|&gt;=|&lt;=] n km)" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="7_KOYEjgt1R" role="1TKVEl">
       <property role="IQ2nx" value="8750727080427245687" />
@@ -1092,6 +1097,7 @@
     <property role="EcuMT" value="6034329596690336995" />
     <property role="3GE5qa" value="math.expression.conditional_expression.internal_state" />
     <property role="TrG5h" value="CoordenateConditionalExpression" />
+    <property role="R4oN_" value="(Drone` localization  [is|is not] latitude: n longitude : n)" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="7_KOYEjdPsH" role="PzmwI">
       <ref role="PrY4T" node="7_KOYEjbOnV" resolve="ConditionalExpression" />
@@ -1130,13 +1136,6 @@
       <property role="IQ2nx" value="8237239994876093636" />
       <property role="TrG5h" value="operator" />
       <ref role="AX2Wp" node="7_KOYEjd0pt" resolve="IqualityOperatorEnum" />
-    </node>
-    <node concept="1TJgyj" id="79gzy7KeIj2" role="1TKVEi">
-      <property role="IQ2ns" value="8237239994876093634" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="left" />
-      <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="5eYfGK4oHfY" resolve="Text" />
     </node>
   </node>
   <node concept="1TIwiD" id="5eYfGK4mCNt">
@@ -1209,13 +1208,13 @@
     <node concept="1TJgyi" id="1bns0lwW20Z" role="1TKVEl">
       <property role="IQ2nx" value="1357676981078990911" />
       <property role="TrG5h" value="value" />
-      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+      <ref role="AX2Wp" node="11jlgVoGE2C" resolve="OnOffConditionalEnum" />
     </node>
   </node>
   <node concept="25R3W" id="1bns0lwX47k">
     <property role="3F6X1D" value="1357676981079261652" />
     <property role="3GE5qa" value="command" />
-    <property role="TrG5h" value="StartResumePouseCancelEnum" />
+    <property role="TrG5h" value="CommandStateEnum" />
     <node concept="25R33" id="1bns0lwX47l" role="25R1y">
       <property role="3tVfz5" value="1357676981079261653" />
       <property role="TrG5h" value="Start" />
