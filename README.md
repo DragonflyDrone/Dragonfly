@@ -23,7 +23,7 @@ This repository contains the following items:
 To run the code you need a version of **Java 8 in which JavaFX is packaged** (or add this dependency manually). It is also necessary to add AspectJ as a dependency.
 To facilitate configuration, the following link contains the version of the dependencies used, and a video example of how to run DragonFly from the code in the Intellij IDE.
 
-Link: ADD
+Link: https://drive.google.com/drive/folders/1Zs2ftZSutymb8AwVx3AYNbWYDZWmdn8o?usp=sharing
 
 ## Requirements to run
 The executable artifact is available in both a single JAR format and Docker images to run on Windows 10 or Ubuntu machines. Note that the artifact may run on other Windows and Linux versions, but it was not extensively tested in all operating systems.
