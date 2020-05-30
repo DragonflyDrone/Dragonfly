@@ -16,8 +16,7 @@ This repository contains the following items:
 - **README.md** - This text as Markdown.
 - **LICENSE.md** - BSD 2-Clause License.
 - **index.html** - This text as HTML.
-- **src/** - Source directory containing the SEAMS demo application code.
-- **aspectj-1.9.2/** - Directory for the AspectJ resources used in the aspect implementation.
+- **DragonFly-Project/src/** - Source directory containing the SEAMS demo application code.
 - **ExecuteApplication/** - Directory including Docker image and .JAR files for executing in Ubuntu and Windows, each one having its proper instructions to run.
 
 ## Platform requirements
