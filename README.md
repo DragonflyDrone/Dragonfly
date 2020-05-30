@@ -20,8 +20,9 @@ This repository contains the following items:
 - **ExecuteApplication/** - Directory including Docker image and .JAR files for executing in Ubuntu and Windows, each one having its proper instructions to run.
 
 ## Development requirements
-To run the code you need a version of Java 8 in which JavaFX is packaged (or add this dependency manually). It is also necessary to add AspectJ as a dependency.
+To run the code you need a version of **Java 8 in which JavaFX is packaged** (or add this dependency manually). It is also necessary to add AspectJ as a dependency.
 To facilitate configuration, the following link contains the version of the dependencies used, and a video example of how to run DragonFly from the code in the Intellij IDE.
+
 Link: ADD
 
 ## Requirements to run
@@ -79,4 +80,4 @@ By clicking on the "Restart" button, the user restarts the execution, i.e., the 
 This artifact is licensed under the BSD 2-Clause License; the artifact may not be used except in compliance with the License. Conditions to redistribute and use this artifact in source and binary forms, with or without modification, are detailed in LICENSE.md file.
 
 ## Contact
-If you have any problem to use the artifact, please do not hesitate to contact us by sending an email to dragonfly.seams2019@gmail.com.
+If you have any problem to use the artifact, please do not hesitate to contact us by sending an email to dragonfly.seams2019@gmail.com, pauloh.maia@uece.br, lucas.vieira@aluno.uece.br or maths.c28@gmail.com.
