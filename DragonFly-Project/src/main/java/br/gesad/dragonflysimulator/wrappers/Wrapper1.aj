@@ -14,19 +14,25 @@ public aspect Wrapper1 {
     pointcut safeLanding(): call (* br.gesad.dragonfly.model.entity.drone.DroneBusinessObject.safeLanding(*));
     pointcut applyEconomyMode(): call (* br.gesad.dragonfly.model.entity.drone.DroneBusinessObject.applyEconomyMode(*));
 
+//    //estou testando isso aqui só para automático, pode ser que no manual eu tenho que lidar com mais threads
+//    before(): safeLanding()
+//    && if
+//    (
+//    (((Drone)thisJoinPoint.getArgs()[0]).getWrapperId() == 1)
+//    &&
+//    (((Drone)thisJoinPoint.getArgs()[0]).getDistanceDestiny() > 60)
+//    &&
+//    (((Drone)thisJoinPoint.getArgs()[0]).isOnWater())
+//    ){
+//        moveASide(thisJoinPoint);
+//    }
+
+
     //estou testando isso aqui só para automático, pode ser que no manual eu tenho que lidar com mais threads
-    before(): safeLanding()
-    && if
-    (
-    (((Drone)thisJoinPoint.getArgs()[0]).getWrapperId() == 1)
-    &&
-    (((Drone)thisJoinPoint.getArgs()[0]).getDistanceDestiny() > 60)
-    &&
-    (((Drone)thisJoinPoint.getArgs()[0]).isOnWater())
-    ){
+    before(): safeLanding(){
+
         moveASide(thisJoinPoint);
     }
-
 
    boolean around(): safeLanding()
    && if
