@@ -8,15 +8,15 @@ public abstract class SettingsPanelController <T> {
     @FXML
     abstract void initialize();
 
-    abstract void disableSettingsViews();
+    public abstract void disableSettingsViews();
 
-    abstract void enableSettingsViews();
+    public abstract void enableSettingsViews();
 
-    abstract void saveAttributesInEntity(T t);
+    public abstract void saveAttributesInEntity(T t);
 
-    abstract void updateSettingsViewsFromEntity(T t);
+    public abstract void updateSettingsViewsFromEntity(T t);
 
-    abstract void clearSettingView();
+    public abstract void clearSettingView();
 
     public abstract void notifyMouseClick(SelectableView selectableView);
 

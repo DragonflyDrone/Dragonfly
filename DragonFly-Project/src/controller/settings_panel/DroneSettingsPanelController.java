@@ -104,7 +104,6 @@ public class DroneSettingsPanelController extends SettingsPanelController<Drone>
     }
 
     public void show(){
-
         hide();
         defaultPanelSettingsAnchorPane.getChildren().add(droneSettingsPanelAnchorPane);
         enableSettingsViews();

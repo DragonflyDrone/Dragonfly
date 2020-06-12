@@ -2,6 +2,7 @@ package controller;
 
 import controller.settings_panel.BoatSettingsPanelController;
 import controller.settings_panel.DroneSettingsPanelController;
+import controller.settings_panel.SettingsPanelController;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -186,10 +187,13 @@ public class MainController extends Application {
             if(automaticExecutionCheckBox.isSelected()){
                 DroneController.init(DroneAutomaticController.class.getSimpleName());
             }else {
-                DroneController.init(DroneKeyBoardController .class.getSimpleName());
+                DroneController.init(DroneKeyBoardController.class.getSimpleName());
             }
 
             disableEnvironmentSettingViews();
+
+            DroneSettingsPanelController.getInstance().disableSettingsViews();
+            BoatSettingsPanelController.getInstance().disableSettingsViews();
 
             environmentController.consumeRunEnviroment();
 
@@ -438,6 +442,7 @@ public class MainController extends Application {
 
 
     private void disableEnvironmentSettingViews() {
+
         riverToggleButton.setDisable(true);
         hospitalToggleButton.setDisable(true);
         houseToggleButton.setDisable(true);
@@ -504,6 +509,11 @@ public class MainController extends Application {
 
             DroneSettingsPanelController.getInstance().notifyMouseClick(currentSelectableView);
             BoatSettingsPanelController.getInstance().notifyMouseClick(currentSelectableView);
+
+            if(running){
+                DroneSettingsPanelController.getInstance().disableSettingsViews();
+                BoatSettingsPanelController.getInstance().disableSettingsViews();
+            }
 
             if(!isEmpty(defaultPanelSettingsAnchorPane))
                 canCreateElements = false;

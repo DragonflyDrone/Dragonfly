@@ -147,7 +147,7 @@ public class BoatSettingsPanelController extends SettingsPanelController<Boat> {
     }
 
     @Override
-    void disableSettingsViews() {
+    public void disableSettingsViews() {
         saveButton.setDisable(true);
 //        sourceSettingsImageView.setDisable(true);
 //        sourceSettingsImageView.setOpacity(0.3);
@@ -161,7 +161,7 @@ public class BoatSettingsPanelController extends SettingsPanelController<Boat> {
     }
 
     @Override
-    void enableSettingsViews() {
+    public void enableSettingsViews() {
         sourceLabel.setDisable(false);
         targetLabel.setDisable(false);
 
@@ -177,7 +177,7 @@ public class BoatSettingsPanelController extends SettingsPanelController<Boat> {
     }
 
     @Override
-    void saveAttributesInEntity(Boat boat) {
+    public void saveAttributesInEntity(Boat boat) {
 //        int srcI = Integer.parseInt(currentSourceCell.getText().split(",")[0].replace("<",""));
 //        int srcJ = Integer.parseInt(currentSourceCell.getText().split(",")[1].replace(">",""));
 
@@ -197,7 +197,7 @@ public class BoatSettingsPanelController extends SettingsPanelController<Boat> {
     }
 
     @Override
-    void updateSettingsViewsFromEntity(Boat boat) {
+    public void updateSettingsViewsFromEntity(Boat boat) {
 
         String boatLabel = boat.getLabel();
 
@@ -234,7 +234,7 @@ public class BoatSettingsPanelController extends SettingsPanelController<Boat> {
     }
 
     @Override
-    void clearSettingView() {
+    public void clearSettingView() {
         currentBoatTextField.setText("");
         currentSourceCell.setText("<0,0>");
         currentDestinyCell.setText("<0,0>");
