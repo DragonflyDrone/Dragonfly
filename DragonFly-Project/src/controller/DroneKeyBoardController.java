@@ -41,8 +41,12 @@ public class DroneKeyBoardController extends DroneController {
 */
 
     private boolean isValidKeyCode(KeyCode keyCode) {
-        if(keyCode == KeyCode.A || keyCode == KeyCode.W || keyCode == KeyCode.S || keyCode == KeyCode.D
-                || keyCode == KeyCode.R || keyCode.getName().contains("Space") ){
+
+        if(
+                keyCode == KeyCode.R || keyCode.getName().contains("Space") ||
+                keyCode == KeyCode.A || keyCode == KeyCode.W || keyCode == KeyCode.S || keyCode == KeyCode.D ||
+                keyCode == KeyCode.UP || keyCode == KeyCode.DOWN || keyCode == KeyCode.RIGHT || keyCode == KeyCode.LEFT
+        ){
 
             return true;
         }
@@ -51,6 +55,10 @@ public class DroneKeyBoardController extends DroneController {
 
 
     private void executeCommandsFromKeyBoard(Drone selectedDrone, KeyCode currentCommand) {
+            if(!selectedDrone.isActivateKeyBoard()){
+                return;
+            }
+
             if(currentCommand == KeyCode.R){
 
                 if(selectedDrone.isShutDown()){
@@ -102,7 +110,7 @@ public class DroneKeyBoardController extends DroneController {
 
 
     private boolean isDirectionKeys(KeyCode keyCode) {
-        return keyCode == KeyCode.A || keyCode == KeyCode.W || keyCode == KeyCode.S || keyCode == KeyCode.D;
+        return keyCode == KeyCode.UP || keyCode == KeyCode.DOWN || keyCode == KeyCode.LEFT || keyCode == KeyCode.RIGHT;
     }
 
 
@@ -281,6 +289,8 @@ public class DroneKeyBoardController extends DroneController {
         KeyCode currentCommand = keyCode;
 
         executeCommandsFromKeyBoard(selectedDrone, currentCommand);
+
+//        ((DroneView) selectedEntityView).requestFocus();
     }
 
     @Override

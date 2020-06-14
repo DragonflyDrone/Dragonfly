@@ -66,6 +66,8 @@ public class Drone extends Entity {
     private int wrapperId = 0;
     private String label = "";
 
+    private boolean activateKeyBoard = true;
+
 
     public Drone(String uniqueID, String label, Cell sourceCell) {
         this.uniqueID = uniqueID;
@@ -650,6 +652,13 @@ public class Drone extends Entity {
     }
 
 
+    public boolean isActivateKeyBoard() {
+        return activateKeyBoard;
+    }
+
+    public void setActivateKeyBoard(boolean activateKeyBoard) {
+        this.activateKeyBoard = activateKeyBoard;
+    }
 
 
     public interface Listener{

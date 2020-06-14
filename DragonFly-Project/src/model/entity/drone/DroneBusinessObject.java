@@ -479,13 +479,13 @@ public class DroneBusinessObject {
 
             // right moviments
             if (value > 0.8) {
-                if (flyDirectionCommand == KeyCode.D) {
+                if (flyDirectionCommand == KeyCode.RIGHT) {
                     flyingRight(selectedDrone);
-                } else if (flyDirectionCommand == KeyCode.A) {
+                } else if (flyDirectionCommand == KeyCode.LEFT) {
                     flyingLeft(selectedDrone);
-                } else if (flyDirectionCommand == KeyCode.W) {
+                } else if (flyDirectionCommand == KeyCode.UP) {
                     flyingUp(selectedDrone);
-                } else if (flyDirectionCommand == KeyCode.S) {
+                } else if (flyDirectionCommand == KeyCode.DOWN) {
                     flyingDown(selectedDrone);
                 }
             } else {
@@ -508,13 +508,13 @@ public class DroneBusinessObject {
 
         } else {
             // normal moviment
-            if (flyDirectionCommand == KeyCode.D) {
+            if (flyDirectionCommand == KeyCode.RIGHT) {
                 flyingRight(selectedDrone);
-            } else if (flyDirectionCommand == KeyCode.A) {
+            } else if (flyDirectionCommand == KeyCode.LEFT) {
                 flyingLeft(selectedDrone);
-            } else if (flyDirectionCommand == KeyCode.W) {
+            } else if (flyDirectionCommand == KeyCode.UP) {
                 flyingUp(selectedDrone);
-            } else if (flyDirectionCommand == KeyCode.S) {
+            } else if (flyDirectionCommand == KeyCode.DOWN) {
                 flyingDown(selectedDrone);
             }
         }

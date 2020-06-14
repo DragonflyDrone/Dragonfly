@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<EnvironmentElements>
+<riverElements>
+<riverElement UniqueID="963428a5-c29a-464f-941f-6154d75cf999" sourceColumnPosition="9" sourceRowPosition="6"/>
+<riverElement UniqueID="22943e47-f4fd-49f8-9c49-7ce250c15934" sourceColumnPosition="11" sourceRowPosition="6"/>
+<riverElement UniqueID="ce1feb07-d8b4-4227-b3ac-6c65b48b4710" sourceColumnPosition="12" sourceRowPosition="6"/>
+<riverElement UniqueID="ae2c67c7-950f-4f3f-9edf-39ab7d58c6d6" sourceColumnPosition="10" sourceRowPosition="6"/>
+<riverElement UniqueID="6b6d036c-c80c-4a38-b738-444318eab720" sourceColumnPosition="13" sourceRowPosition="6"/>
+<riverElement UniqueID="a0d56cbe-8682-4458-a81f-654a49a24832" sourceColumnPosition="14" sourceRowPosition="6"/>
+<riverElement UniqueID="4e1e8eb9-c8c4-4766-92e4-f59340829d63" sourceColumnPosition="17" sourceRowPosition="6"/>
+<riverElement UniqueID="111bc272-81df-43f1-afab-97ee46186c13" sourceColumnPosition="6" sourceRowPosition="6"/>
+<riverElement UniqueID="ed5d809c-adc3-4815-9c20-e3772e1a77fd" sourceColumnPosition="7" sourceRowPosition="6"/>
+<riverElement UniqueID="c0240cd0-9ad2-49b8-b434-c72787c6e1da" sourceColumnPosition="15" sourceRowPosition="6"/>
+<riverElement UniqueID="ae67b264-18f3-40a3-b8e4-6947b331dbc6" sourceColumnPosition="16" sourceRowPosition="6"/>
+<riverElement UniqueID="48d18c2b-62a9-4030-9a73-a6965f0b58e9" sourceColumnPosition="8" sourceRowPosition="6"/>
+</riverElements>
+<hospitalElements>
+<hospitalElement UniqueID="071f8214-6a31-442d-82d3-3ee4dd5e3e24" label="2" sourceColumnPosition="18" sourceRowPosition="6"/>
+<hospitalElement UniqueID="8d4a4633-d888-4f58-b66d-232a4b140bae" label="1" sourceColumnPosition="5" sourceRowPosition="6"/>
+</hospitalElements>
+<houseElements/>
+<treeElements/>
+<antennaElements/>
+<droneElements>
+<droneElement UniqueID="afc5c3d7-7e49-4c81-9ca6-612043caadaa" baterryConsumptionPerBlock="1.0" destinyColumnPosition="18" destinyRowPosition="6" initialBaterry="30.0" label="1" sourceColumnPosition="5" sourceRowPosition="6" wrapperId="1"/>
+</droneElements>
+<boatElements/>
+</EnvironmentElements>
