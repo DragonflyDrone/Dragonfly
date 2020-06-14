@@ -13,7 +13,6 @@ import model.Cell;
 import model.entity.boat.Boat;
 import model.entity.boat.BoatBusinessObject;
 import util.WrapperHelper;
-import view.CellView;
 import view.SelectableView;
 import view.boat.BoatView;
 import view.river.RiverView;

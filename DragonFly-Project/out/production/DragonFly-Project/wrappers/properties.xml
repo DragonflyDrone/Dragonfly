@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<WrapperElements>
+
+    <!--Drone Wrappers-->
+    <WrapperElement name-file-aj="DefaultBehaviorWithOutEconomyMode"
+                    id="0"
+                    name-shown-panel="None"
+                    color=""
+                    description="default behavior(-)economyMode"
+                    class-name-settings-controller="DroneSettingsPanelController"/>
+
+    <WrapperElement name-file-aj="Wrapper1"
+                    id="1" name-shown-panel="Wrapper1"
+                    color="#FFFF00"
+                    description="Keep(+)Move(-)economyMode"
+                    class-name-settings-controller ="DroneSettingsPanelController"/>
+
+    <WrapperElement name-file-aj="Wrapper2"
+                    id="2" name-shown-panel="Wrapper2"
+                    color="#FF0000"
+                    description="Keep(+)Move(+)glide(-)economyMode"
+                    class-name-settings-controller ="DroneSettingsPanelController"/>
+
+    <WrapperElement name-file-aj="Wrapper3"
+                    id="3" name-shown-panel="Wrapper3"
+                    color="#008000"
+                    description="Keep(+)Move(+)glide(+)SoS(-)economyMode"
+                    class-name-settings-controller ="DroneSettingsPanelController"/>
+
+    <WrapperElement name-file-aj="NoneDroneWithoutBadConnection"
+                    id="4" name-shown-panel="None_not.bc"
+                    color="#000000"
+                    description="default behavior(-)comp.antena(-)economyMode"
+                    class-name-settings-controller ="DroneSettingsPanelController"/>
+
+    <!--Boat Wrappers-->
+    <WrapperElement name-file-aj="NoneBoatWrapper"
+                    id="5"
+                    name-shown-panel="None"
+                    color=""
+                    description="default behavior boat"
+                    class-name-settings-controller="BoatSettingsPanelController"/>
+
+    <WrapperElement name-file-aj="Wrapper4"
+                    id="6" name-shown-panel="Wrapper1"
+                    color="#000000"
+                    description="Para de entregar o produto para ajudar o Drone"
+                    class-name-settings-controller ="BoatSettingsPanelController"/>
+
+    <WrapperElement name-file-aj="BoatExclusiveWrapper"
+                    id="7" name-shown-panel="Boat Exclusive"
+                    color="#000000"
+                    description="Boat apenas para servir o drone"
+                    class-name-settings-controller ="BoatSettingsPanelController"/>
+
+
+
+</WrapperElements>

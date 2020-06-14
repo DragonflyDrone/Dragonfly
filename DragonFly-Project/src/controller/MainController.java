@@ -456,7 +456,7 @@ public class MainController extends Application {
     }
 
     private void enableEnvironmentSettingViews() {
-        settingsAnchorPane.requestFocus();
+        //settingsAnchorPane.requestFocus();
         riverToggleButton.setDisable(false);
         hospitalToggleButton.setDisable(false);
         houseToggleButton.setDisable(false);

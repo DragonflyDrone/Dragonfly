@@ -15,18 +15,13 @@ import javafx.scene.text.Text;
 import model.Cell;
 import model.entity.drone.Drone;
 import model.entity.drone.DroneBusinessObject;
-import org.xml.sax.SAXException;
 import util.WrapperHelper;
 import view.CellView;
 import view.SelectableView;
 import view.drone.DroneView;
 
-import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class DroneSettingsPanelController extends SettingsPanelController<Drone> {
 
@@ -331,6 +326,7 @@ public class DroneSettingsPanelController extends SettingsPanelController<Drone>
 
                 enableSettingsViews();
                 updateSettingsViewsFromEntity(drone);
+                ((DroneView) selectableView).requestFocus();
 
             }else {
                 hide();
