@@ -6,6 +6,10 @@ import controller.CellController;
 import javafx.scene.input.KeyCode;
 import model.Cell;
 import model.entity.Entity;
+import model.entity.drone.sensors.CameraStateEnum;
+import model.entity.drone.sensors.GPSStateEnum;
+import model.entity.drone.sensors.GambialStateEnum;
+import model.entity.drone.sensors.SmokeStateEnum;
 import view.SelectableView;
 import view.river.RiverView;
 
@@ -69,6 +73,18 @@ public class Drone extends Entity {
     private boolean activateKeyBoard = true;
 
 
+    private CameraStateEnum cameraState = CameraStateEnum.OFF;
+    private double cameraFailureProbability = 0.D;
+
+    private GambialStateEnum gambialState = GambialStateEnum.OFF;
+    private double gambialFailureProbability = 0.D;
+
+    private GPSStateEnum gpsState = GPSStateEnum.ON;
+    private double gpsFailureProbability = 0.D;
+
+    private SmokeStateEnum smokeState = SmokeStateEnum.OFF;
+    private double smokeFailureProbability = 0.D;
+
     public Drone(String uniqueID, String label, Cell sourceCell) {
         this.uniqueID = uniqueID;
         this.currentPositionI = sourceCell.getRowPosition();
@@ -99,23 +115,104 @@ public class Drone extends Entity {
         return !isBadConnection();
     }
 
-
-/*
-    public void setAspect(boolean isAspect) {
-
-        boolean oldValue = this.getWrapperId;
-        boolean newValue = isAspect;
+    public CameraStateEnum getCameraState() {
+        return cameraState;
+    }
+    public void setCameraState(CameraStateEnum cameraState) {
+        CameraStateEnum oldValue = this.cameraState;
+        CameraStateEnum newValue = cameraState;
 
         if(oldValue == newValue){
             return;
         }
 
-        this.getWrapperId = isAspect;
+        this.cameraState = cameraState;
 
         notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
-
     }
-*/
+
+    public GambialStateEnum getGambialState() {
+        return gambialState;
+    }
+
+    public void setGambialState(GambialStateEnum gambialState) {
+        GambialStateEnum oldValue = this.gambialState;
+        GambialStateEnum newValue = gambialState;
+
+        if(oldValue == newValue){
+            return;
+        }
+
+        this.gambialState = gambialState;
+
+        notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
+    }
+
+    public GPSStateEnum getGpsState() {
+        return gpsState;
+    }
+
+    public void setGpsState(GPSStateEnum gpsState) {
+        GPSStateEnum oldValue = this.gpsState;
+        GPSStateEnum newValue = gpsState;
+
+        if(oldValue == newValue){
+            return;
+        }
+
+        this.gpsState = gpsState;
+
+        notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
+    }
+
+    public SmokeStateEnum getSmokeState() {
+        return smokeState;
+    }
+
+    public void setSmokeState(SmokeStateEnum smokeState) {
+        SmokeStateEnum oldValue = this.smokeState;
+        SmokeStateEnum newValue = smokeState;
+
+        if(oldValue == newValue){
+            return;
+        }
+
+        this.smokeState = smokeState;
+
+        notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
+    }
+
+    public double getCameraFailureProbability() {
+        return cameraFailureProbability;
+    }
+
+    public void setCameraFailureProbability(double cameraFailureProbability) {
+        this.cameraFailureProbability = cameraFailureProbability;
+    }
+
+    public double getGambialFailureProbability() {
+        return gambialFailureProbability;
+    }
+
+    public void setGambialFailureProbability(double gambialFailureProbability) {
+        this.gambialFailureProbability = gambialFailureProbability;
+    }
+
+    public double getGpsFailureProbability() {
+        return gpsFailureProbability;
+    }
+
+    public void setGpsFailureProbability(double gpsFailureProbability) {
+        this.gpsFailureProbability = gpsFailureProbability;
+    }
+
+    public double getSmokeFailureProbability() {
+        return smokeFailureProbability;
+    }
+
+    public void setSmokeFailureProbability(double smokeFailureProbability) {
+        this.smokeFailureProbability = smokeFailureProbability;
+    }
 
     public Boolean getLanding() {
         return landing;

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<TabPane focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="229.0" prefWidth="335.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+  <tabs>
+    <Tab text="Initial Settings">
+      <content>
+        <AnchorPane fx:id="droneSettingsPanelAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+          <children>
+            <TextField fx:id="initialBatteryTextView" disable="true" layoutX="274.0" layoutY="92.0" prefHeight="26.0" prefWidth="58.0" promptText="100%" />
+            <Label fx:id="initialBatteryLabel" disable="true" layoutX="157.0" layoutY="96.0" text="Initial Battery:" />
+            <TextField fx:id="consumptionPerBlockTextView" disable="true" layoutX="274.0" layoutY="34.0" prefHeight="26.0" prefWidth="58.0" promptText="100%" />
+            <Label fx:id="consumptionPerBlockLabel" disable="true" layoutX="57.0" layoutY="39.0" text="Battery consumption per block:" />
+            <TextField fx:id="consumptionPerSecondTextView" disable="true" layoutX="274.0" layoutY="63.0" prefHeight="26.0" prefWidth="58.0" promptText="&gt;=60%" />
+            <Label fx:id="consumptionPerSecondLabel" disable="true" layoutX="47.0" layoutY="68.0" text="Battery consumption per seconds:" />
+            <Label fx:id="currentDroneLabel" disable="true" layoutX="134.0" layoutY="11.0" text="Current Drone (ID):" />
+            <TextField fx:id="currentDroneTextField" disable="true" layoutX="274.0" layoutY="5.0" prefHeight="26.0" prefWidth="58.0" text="0" />
+            <Button fx:id="initialSaveButton" disable="true" layoutX="281.0" layoutY="168.0" mnemonicParsing="false" text="Save" />
+            <Label fx:id="sourceLabel" disable="true" layoutX="83.0" layoutY="149.0" text="Source:" />
+            <Label fx:id="targetLabel" disable="true" layoutX="203.0" layoutY="150.0" text="Target:" />
+            <ComboBox fx:id="wrapperComboBox" disable="true" layoutX="159.0" layoutY="120.0" prefWidth="150.0" promptText="None" />
+            <Label fx:id="wrapperLabel" disable="true" layoutX="98.0" layoutY="124.0" text="Wrapper:" />
+            <Label fx:id="currentSourceCell" disable="true" layoutX="142.0" layoutY="151.0" text="&lt;0,0&gt;" />
+            <Label fx:id="currentDestinyCell" disable="true" layoutX="259.0" layoutY="149.0" text="&lt;0,0&gt;" />
+            <!--<ImageView fx:id="sourceSettingsImageView" disable="true" layoutX="176.0" layoutY="177.0" opacity="0.3">-->
+            <!--<image>-->
+            <!--<Image url="@../settings.png" />-->
+            <!--</image>-->
+            <!--</ImageView>-->
+            <ImageView fx:id="destinySettingsImageView" disable="true" layoutX="312.0" layoutY="149.0" opacity="0.3">
+              <image>
+                <Image url="@../settings.png" />
+              </image>
+            </ImageView>
+            <ImageView fx:id="wrapperInformationImageView" layoutX="312.0" layoutY="126.0">
+              <image>
+                <Image url="@../information.png" />
+              </image>
+            </ImageView>
+          </children>
+        </AnchorPane>
+      </content>
+    </Tab>
+    <Tab text="Runtime Settings">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <CheckBox fx:id="gambialCheckBox" layoutX="5.0" layoutY="35.0" mnemonicParsing="false" selected="true" text="Gambil" />
+                  <CheckBox fx:id="gpsCheckBox" layoutX="5.0" layoutY="61.0" mnemonicParsing="false" selected="true" text="GPS" />
+                  <CheckBox fx:id="smokeCheckBox" layoutX="5.0" layoutY="90.0" mnemonicParsing="false" selected="true" text="Smoke" />
+                  <CheckBox fx:id="cameraCheckBox" layoutX="5.0" layoutY="5.0" mnemonicParsing="false" selected="true" text="Camera" />
+                  <TextField fx:id="cameraTextField" layoutX="89.0" layoutY="2.0" prefHeight="25.0" prefWidth="45.0" text="0" />
+                  <TextField fx:id="gambialTextField" layoutX="89.0" layoutY="31.0" prefWidth="45.0" text="0" />
+                  <TextField fx:id="gpsTextField" layoutX="89.0" layoutY="58.0" prefWidth="45.0" text="0" />
+                  <TextField fx:id="smokeTextField" layoutX="89.0" layoutY="86.0" prefWidth="45.0" text="0" />
+                  <Button fx:id="runtimeSaveButton" layoutX="280.0" layoutY="166.0" mnemonicParsing="false" text="Save" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+  </tabs>
+</TabPane>

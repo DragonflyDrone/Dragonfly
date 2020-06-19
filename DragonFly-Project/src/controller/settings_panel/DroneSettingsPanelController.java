@@ -4,17 +4,23 @@ import controller.CellController;
 import controller.DroneController;
 import controller.EnvironmentController;
 import controller.MainController;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import model.Cell;
 import model.entity.drone.Drone;
 import model.entity.drone.DroneBusinessObject;
+import model.entity.drone.sensors.CameraStateEnum;
+import model.entity.drone.sensors.GPSStateEnum;
+import model.entity.drone.sensors.GambialStateEnum;
+import model.entity.drone.sensors.SmokeStateEnum;
 import util.WrapperHelper;
 import view.CellView;
 import view.SelectableView;
@@ -27,10 +33,14 @@ public class DroneSettingsPanelController extends SettingsPanelController<Drone>
 
 
     private Drone selectedDrone;
-    private AnchorPane droneSettingsPanelAnchorPane;
+    //private AnchorPane droneSettingsPanelAnchorPane;
+    private TabPane initialDroneSettingsTabPane;
+    private TabPane runtimeDroneSettingsTabPane;
+
     @FXML
     private
-    TextField initialBatteryTextView, consumptionPerBlockTextView, consumptionPerSecondTextView, currentDroneTextField;
+    TextField initialBatteryTextView, consumptionPerBlockTextView, consumptionPerSecondTextView, currentDroneTextField,
+            cameraTextField, gambialTextField, gpsTextField, smokeTextField;
 
     @FXML
     private
@@ -48,43 +58,58 @@ public class DroneSettingsPanelController extends SettingsPanelController<Drone>
 
     @FXML
     private
-    Button saveButton;
+    Button initialSaveButton, runtimeSaveButton;
 
     @FXML
     private ComboBox wrapperComboBox;
 
+    @FXML
+    private CheckBox gambialCheckBox,gpsCheckBox,smokeCheckBox,cameraCheckBox;
+
+
+
     private static DroneSettingsPanelController instance = null;
-    private AnchorPane defaultPanelSettingsAnchorPane;
+    //private AnchorPane defaultPanelSettingsAnchorPane;
+    private Pane defaultPanelSettingsPane;
     private boolean clickedDestinySettings;
     private boolean clickedSourceSettings;
     private boolean waitForClickInCell = false;
     private boolean saved = false;
 
 
-    public static void init(AnchorPane defaultPanelSettingsAnchorPane) {
+    public static void init(Pane defaultPanelSettingsPane) {
 
-        if (!defaultPanelSettingsAnchorPane.getChildren().isEmpty()) {
-            defaultPanelSettingsAnchorPane.getChildren().clear();
+        if (!defaultPanelSettingsPane.getChildren().isEmpty()) {
+            defaultPanelSettingsPane.getChildren().clear();
         }
 
 
         if (instance == null) {
-            instance = new DroneSettingsPanelController(defaultPanelSettingsAnchorPane);
+            instance = new DroneSettingsPanelController(defaultPanelSettingsPane);
         }
 
 
     }
 
-    private DroneSettingsPanelController(AnchorPane defaultPanelSettingsAnchorPane) {
+    private DroneSettingsPanelController(Pane defaultPanelSettingsPane) {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/view/res/drone/drone_settings_panel.fxml"));
+        //loader.setLocation(getClass().getResource("/view/res/drone/drone_settings_panel.fxml"));
+        loader.setLocation(getClass().getResource("/view/res/drone/drone_settings_tab_pane.fxml"));
         loader.setController(this);
+//        try {
+//            droneSettingsPanelAnchorPane = loader.load();
+//            this.defaultPanelSettingsAnchorPane = defaultPanelSettingsAnchorPane;
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+
         try {
-            droneSettingsPanelAnchorPane = loader.load();
-            this.defaultPanelSettingsAnchorPane = defaultPanelSettingsAnchorPane;
+            initialDroneSettingsTabPane = loader.load();
+            this.defaultPanelSettingsPane = defaultPanelSettingsPane;
         } catch (IOException e) {
             e.printStackTrace();
         }
+
 
         WrapperHelper wrapperHelper = WrapperHelper.getInstance();
         List<String> wrapperNameList = wrapperHelper.getNameShownPanelListFrom(this.getClass().getSimpleName());
@@ -96,11 +121,20 @@ public class DroneSettingsPanelController extends SettingsPanelController<Drone>
         wrapperComboBox.setItems(nameOptions);
 
 
+        cameraCheckBox.selectedProperty().addListener((observable, oldValue, newValue) -> cameraTextField.setDisable(!newValue));
+
+        gambialCheckBox.selectedProperty().addListener((observable, oldValue, newValue) -> gambialTextField.setDisable(!newValue));
+
+        gpsCheckBox.selectedProperty().addListener((observable, oldValue, newValue) -> gpsTextField.setDisable(!newValue));
+
+        smokeCheckBox.selectedProperty().addListener((observable, oldValue, newValue) -> smokeTextField.setDisable(!newValue));
+
+
     }
 
     public void show(){
         hide();
-        defaultPanelSettingsAnchorPane.getChildren().add(droneSettingsPanelAnchorPane);
+        defaultPanelSettingsPane.getChildren().add(this.initialDroneSettingsTabPane);
         enableSettingsViews();
 
         SelectableView selectableView = EnvironmentController.getInstance().getSelectedEntityView();
@@ -119,7 +153,7 @@ public class DroneSettingsPanelController extends SettingsPanelController<Drone>
     @Override
     public void initialize() {
 
-        saveButton.setOnAction(event -> {
+        initialSaveButton.setOnAction(event -> {
 
             saveAttributesInEntity(selectedDrone);
 
@@ -130,6 +164,10 @@ public class DroneSettingsPanelController extends SettingsPanelController<Drone>
             saved =true;
 
 
+        });
+
+        runtimeSaveButton.setOnAction(event -> {
+            saveSensorsActuatorAttributesInEntity(selectedDrone);
         });
 
 /*        sourceSettingsImageView.setOnMouseClicked(event -> {
@@ -169,6 +207,8 @@ public class DroneSettingsPanelController extends SettingsPanelController<Drone>
 
     }
 
+
+
     @Override
     public void disableSettingsViews() {
 
@@ -182,7 +222,7 @@ public class DroneSettingsPanelController extends SettingsPanelController<Drone>
         initialBatteryTextView.setDisable(true);
         wrapperLabel.setDisable(true);
         wrapperComboBox.setDisable(true);
-        saveButton.setDisable(true);
+        initialSaveButton.setDisable(true);
        /* sourceSettingsImageView.setDisable(true);
         sourceSettingsImageView.setOpacity(0.3);*/
 
@@ -218,7 +258,7 @@ public class DroneSettingsPanelController extends SettingsPanelController<Drone>
 
         destinySettingsImageView.setDisable(false);
         destinySettingsImageView.setOpacity(1);
-        saveButton.setDisable(false);
+        initialSaveButton.setDisable(false);
 
 
     }
@@ -251,6 +291,30 @@ public class DroneSettingsPanelController extends SettingsPanelController<Drone>
         enableSettingsViews();
     }
 
+
+    private void saveSensorsActuatorAttributesInEntity(Drone selectedDrone) {
+        boolean cameraIsSelected = cameraCheckBox.isSelected();
+        boolean gambialIsSelected = gambialCheckBox.isSelected();
+        boolean gpsIsSelected = gpsCheckBox.isSelected();
+        boolean smokeIsSelected = smokeCheckBox.isSelected();
+
+        double cameraFailureProb = Double.parseDouble(cameraTextField.getText());
+        double gambialFailureProb = Double.parseDouble(gambialTextField.getText());
+        double gpsFailureProb = Double.parseDouble(gpsTextField.getText());
+        double smokeFailureProb = Double.parseDouble(smokeTextField.getText());
+
+        selectedDrone.setCameraState(cameraIsSelected ? CameraStateEnum.ON: CameraStateEnum.OFF);
+        selectedDrone.setCameraFailureProbability(cameraFailureProb);
+        selectedDrone.setGambialState(gambialIsSelected ? GambialStateEnum.ON: GambialStateEnum.OFF);
+        selectedDrone.setGambialFailureProbability(gambialFailureProb);
+        selectedDrone.setGpsState(gpsIsSelected ? GPSStateEnum.ON: GPSStateEnum.OFF);
+        selectedDrone.setGpsFailureProbability(gpsFailureProb);
+        selectedDrone.setSmokeState(smokeIsSelected ? SmokeStateEnum.ON: SmokeStateEnum.OFF);
+        selectedDrone.setSmokeFailureProbability(smokeFailureProb);
+
+
+    }
+
     @Override
     public void updateSettingsViewsFromEntity(Drone selectedDrone) {
 
@@ -281,6 +345,21 @@ public class DroneSettingsPanelController extends SettingsPanelController<Drone>
         wrapperComboBox.getSelectionModel().select(currentWrapperId);
 
 
+        updateSensorActuadorSettings(selectedDrone);
+
+
+    }
+
+    private void updateSensorActuadorSettings(Drone selectedDrone) {
+        cameraCheckBox.setSelected(selectedDrone.getCameraState() != CameraStateEnum.OFF);
+        gambialCheckBox.setSelected(selectedDrone.getGambialState() != GambialStateEnum.OFF);
+        gpsCheckBox.setSelected(selectedDrone.getGpsState() != GPSStateEnum.OFF);
+        smokeCheckBox.setSelected(selectedDrone.getSmokeState() != SmokeStateEnum.OFF);
+
+        cameraTextField.setText(String.valueOf(selectedDrone.getCameraFailureProbability()));
+        gambialTextField.setText(String.valueOf(selectedDrone.getGambialFailureProbability()));
+        gpsTextField.setText(String.valueOf(selectedDrone.getGpsFailureProbability()));
+        smokeTextField.setText(String.valueOf(selectedDrone.getSmokeFailureProbability()));
     }
 
     @Override
@@ -348,8 +427,8 @@ public class DroneSettingsPanelController extends SettingsPanelController<Drone>
 
     public void hide() {
 
-        if(defaultPanelSettingsAnchorPane.getChildren().contains(droneSettingsPanelAnchorPane)){
-            defaultPanelSettingsAnchorPane.getChildren().remove(droneSettingsPanelAnchorPane);
+        if(defaultPanelSettingsPane.getChildren().contains(initialDroneSettingsTabPane)){
+            defaultPanelSettingsPane.getChildren().remove(initialDroneSettingsTabPane);
         }
 
 
