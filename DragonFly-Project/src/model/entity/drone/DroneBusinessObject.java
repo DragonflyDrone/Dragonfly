@@ -1,9 +1,12 @@
 package model.entity.drone;
 
 import controller.*;
-import javafx.application.Platform;
 import javafx.scene.input.KeyCode;
 import model.Cell;
+import model.entity.drone.sensors.CameraStateEnum;
+import model.entity.drone.sensors.GPSStateEnum;
+import model.entity.drone.sensors.GambialStateEnum;
+import model.entity.drone.sensors.SmokeStateEnum;
 import util.StopWatch;
 import view.CellView;
 import view.SelectableView;
@@ -138,6 +141,8 @@ public class DroneBusinessObject {
             drone.setCurrentBattery(newCurrentBattery);
 
         }
+
+        //applyFailureProbabilityInSensorAndActuator(drone);
 
         // }
 
@@ -1195,6 +1200,87 @@ public class DroneBusinessObject {
 
     public static void updateFlyDirectionCommand(KeyCode flyDirectionCommand, Drone selectedDrone) {
         selectedDrone.setFlyDirectionCommand(flyDirectionCommand);
+    }
+    public static void updateGambialDirectionCommand(KeyCode gambialDirectionCommand, Drone selectedDrone) {
+        GambialStateEnum gambialState = null;
+        switch (gambialDirectionCommand){
+            case W:
+                gambialState = GambialStateEnum.NORTH;
+                break;
+            case A:
+                gambialState = GambialStateEnum.WEST;
+                break;
+            case S:
+                gambialState = GambialStateEnum.SOUTH;
+                break;
+            case D:
+                gambialState = GambialStateEnum.EAST;
+                break;
+        }
+        selectedDrone.setGambialState(gambialState);
+    }
+
+    public static void applyFailureProbabilityInSensorAndActuator(Drone currentDrone) {
+//        boolean gambialIsAtFault = false;
+//        boolean cameraIsAtFault = false;
+//        boolean gpsIsAtFault = false;
+//        boolean smokeIsAtFault = false;
+
+
+//        if(currentDrone.getGambialState()!= GambialStateEnum.OFF){
+//            gambialIsAtFault = prob(currentDrone.getGambialFailureProbability());
+//        }
+//
+//        if(currentDrone.getCameraState() != CameraStateEnum.OFF){
+//            cameraIsAtFault = prob(currentDrone.getCameraFailureProbability());
+//        }
+//
+//        if(currentDrone.getGpsState() != GPSStateEnum.OFF){
+//            gpsIsAtFault = prob(currentDrone.getGpsFailureProbability());
+//        }
+//
+//        if(currentDrone.getSmokeState() != SmokeStateEnum.OFF){
+//            smokeIsAtFault = prob(currentDrone.getSmokeFailureProbability());
+//        }
+
+        System.out.println(currentDrone.getCameraState());
+        boolean gambialIsAtFault = prob(currentDrone.getGambialFailureProbability());
+        boolean cameraIsAtFault = prob(currentDrone.getCameraFailureProbability());
+        boolean gpsIsAtFault = prob(currentDrone.getGpsFailureProbability());
+        boolean smokeIsAtFault = prob(currentDrone.getSmokeFailureProbability());
+
+        if (gambialIsAtFault
+                && currentDrone.getGambialState() != GambialStateEnum.FAILURE) {
+            currentDrone.setGambialState(GambialStateEnum.FAILURE);
+        }else if (!gambialIsAtFault
+                && currentDrone.getGambialState() == GambialStateEnum.FAILURE){
+            currentDrone.setGambialState(GambialStateEnum.ON);
+        }
+        if (cameraIsAtFault
+                && currentDrone.getCameraState() != CameraStateEnum.FAILURE) {
+            currentDrone.setCameraState(CameraStateEnum.FAILURE);
+        }else if(!cameraIsAtFault
+                && currentDrone.getCameraState() == CameraStateEnum.FAILURE){
+            currentDrone.setCameraState(CameraStateEnum.ON);
+        }
+        if (gpsIsAtFault
+                && currentDrone.getGpsState()!=GPSStateEnum.FAILURE) {
+            currentDrone.setGpsState(GPSStateEnum.FAILURE);
+        }else if (!gpsIsAtFault
+                && currentDrone.getGpsState()==GPSStateEnum.FAILURE){
+            currentDrone.setGpsState(GPSStateEnum.ON);
+        }
+        if (smokeIsAtFault
+                && currentDrone.getSmokeState() != SmokeStateEnum.FAILURE) {
+            currentDrone.setSmokeState(SmokeStateEnum.FAILURE);
+        }else if (!smokeIsAtFault
+                && currentDrone.getSmokeState() == SmokeStateEnum.FAILURE){
+            currentDrone.setSmokeState(SmokeStateEnum.ON);
+        }
+    }
+
+    public static boolean prob(double probabilityTrue){
+        return Math.random()*100 >= 100 - probabilityTrue;
     }
 }
 

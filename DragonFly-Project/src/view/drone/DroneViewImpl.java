@@ -12,13 +12,12 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.TextAlignment;
 import model.entity.drone.Drone;
 import model.entity.drone.DroneBusinessObject;
+import model.entity.drone.sensors.CameraStateEnum;
+import model.entity.drone.sensors.GambialStateEnum;
 import util.SelectHelper;
 import util.WrapperHelper;
 import view.CellView;
 import view.EnvironmentView;
-
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 
 public class DroneViewImpl extends DroneView {
@@ -33,6 +32,7 @@ public class DroneViewImpl extends DroneView {
 
 
     ImageView imageViewBadConnection = new ImageView(new Image("/view/res/lostConnection.png"));
+    ImageView cameraImageView = new ImageView(new Image("/view/res/camera.png"));
     ImageView imageViewDrone = new ImageView(new Image("/view/res/notSelectedDrone.png"));
 
     ImageView imageViewLostDrone = new ImageView(new Image("/view/res/lostDrone.png"));
@@ -51,6 +51,7 @@ public class DroneViewImpl extends DroneView {
 
         imageViewBadConnection.setVisible(false);
         imageViewLostDrone.setVisible(false);
+        cameraImageView.setVisible(false);
 
 
         environmentView = currentCellView.getEnvironmentView();
@@ -69,11 +70,50 @@ public class DroneViewImpl extends DroneView {
         label.setTextFill(Color.RED);
         label.setTextAlignment(TextAlignment.CENTER);
 
-
-        getChildren().addAll(imageViewDrone, label, imageViewBadConnection,imageViewLostDrone);
+        gambialRightDirection();
+        getChildren().addAll(imageViewDrone, label, cameraImageView, imageViewBadConnection, imageViewLostDrone);
 
         currentCellView.getChildren().add(this);
 
+
+    }
+
+    private void gambialResetDictection() {
+        cameraImageView.setY(0.0);
+        cameraImageView.setX(0.0);
+        cameraImageView.setRotate(0);
+
+    }
+
+    private void gambialRightDirection() {
+        gambialResetDictection();
+        cameraImageView.setY(8.5);
+        cameraImageView.setX(25);
+        cameraImageView.setRotate(-90);
+
+    }
+
+    private void gambialLeftDirection() {
+        gambialResetDictection();
+        cameraImageView.setY(8.5);
+        cameraImageView.setX(-10);
+        cameraImageView.setRotate(90);
+
+    }
+
+    private void gambialUpDirection() {
+        gambialResetDictection();
+        cameraImageView.setY(-10);
+        cameraImageView.setX(8.5);
+        cameraImageView.setRotate(- 180);
+
+    }
+
+    private void gambialDownDirection() {
+        gambialResetDictection();
+        cameraImageView.setY(25);
+        cameraImageView.setX(8.5);
+        cameraImageView.setRotate(0);
 
     }
 
@@ -385,6 +425,41 @@ public class DroneViewImpl extends DroneView {
             return;
         }
 
+        if(methodName.equals("setCameraState")){
+            loggerController.print("Drone[" + getDroneLabel() + "] " + "Camera State: " + drone.getCameraState());
+            if(newValue == CameraStateEnum.ON){
+                showCamera();
+            }else{
+                hideCamera();
+            }
+            return;
+        }
+
+
+        if(methodName.equals("setGambialState")){
+            loggerController.print("Drone[" + getDroneLabel() + "] " + "Gambial State: " + drone.getGambialState());
+
+            //Directions
+            if(newValue != GambialStateEnum.ON
+                    && newValue != GambialStateEnum.OFF
+                    && newValue != GambialStateEnum.FAILURE){
+
+                    moveGambial((GambialStateEnum) newValue);
+                    return;
+
+             // on off failure
+            }else {
+                //
+            }
+
+
+        }
+
+
+
+
+
+
         if (methodName.equals("setWrapperId")
                 && (int) oldValue != (int) newValue) {
 
@@ -411,6 +486,35 @@ public class DroneViewImpl extends DroneView {
 
 
         // });
+    }
+
+    private void moveGambial(GambialStateEnum direction) {
+        switch (direction){
+            case EAST:
+                gambialRightDirection();
+                break;
+
+            case WEST:
+                gambialLeftDirection();
+                break;
+
+            case SOUTH:
+                gambialDownDirection();
+                break;
+
+            case NORTH:
+                gambialUpDirection();
+                break;
+        }
+
+    }
+
+    private void hideCamera() {
+        cameraImageView.setVisible(false);
+    }
+
+    private void showCamera() {
+        cameraImageView.setVisible(true);
     }
 
 

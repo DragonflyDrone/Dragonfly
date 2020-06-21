@@ -8,7 +8,7 @@
   <tabs>
     <Tab text="Initial Settings">
       <content>
-        <AnchorPane fx:id="droneSettingsPanelAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+        <AnchorPane fx:id="droneSettingsPanelAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" focusTraversable="false">
           <children>
             <TextField fx:id="initialBatteryTextView" disable="true" layoutX="274.0" layoutY="92.0" prefHeight="26.0" prefWidth="58.0" promptText="100%" />
             <Label fx:id="initialBatteryLabel" disable="true" layoutX="157.0" layoutY="96.0" text="Initial Battery:" />
@@ -44,19 +44,19 @@
         </AnchorPane>
       </content>
     </Tab>
-    <Tab text="Runtime Settings">
+    <Tab text="Runtime Settings" >
       <content>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" focusTraversable="false">
                <children>
-                  <CheckBox fx:id="gambialCheckBox" layoutX="5.0" layoutY="35.0" mnemonicParsing="false" selected="true" text="Gambil" />
-                  <CheckBox fx:id="gpsCheckBox" layoutX="5.0" layoutY="61.0" mnemonicParsing="false" selected="true" text="GPS" />
-                  <CheckBox fx:id="smokeCheckBox" layoutX="5.0" layoutY="90.0" mnemonicParsing="false" selected="true" text="Smoke" />
-                  <CheckBox fx:id="cameraCheckBox" layoutX="5.0" layoutY="5.0" mnemonicParsing="false" selected="true" text="Camera" />
-                  <TextField fx:id="cameraTextField" layoutX="89.0" layoutY="2.0" prefHeight="25.0" prefWidth="45.0" text="0" />
-                  <TextField fx:id="gambialTextField" layoutX="89.0" layoutY="31.0" prefWidth="45.0" text="0" />
-                  <TextField fx:id="gpsTextField" layoutX="89.0" layoutY="58.0" prefWidth="45.0" text="0" />
-                  <TextField fx:id="smokeTextField" layoutX="89.0" layoutY="86.0" prefWidth="45.0" text="0" />
-                  <Button fx:id="runtimeSaveButton" layoutX="280.0" layoutY="166.0" mnemonicParsing="false" text="Save" />
+                  <CheckBox fx:id="gambialCheckBox" layoutX="5.0" layoutY="35.0" mnemonicParsing="false" selected="true" text="Gambil" focusTraversable="false" />
+                  <CheckBox fx:id="gpsCheckBox" layoutX="5.0" layoutY="61.0" mnemonicParsing="false" selected="true" text="GPS" focusTraversable="false" />
+                  <CheckBox fx:id="smokeCheckBox" layoutX="5.0" layoutY="90.0" mnemonicParsing="false" selected="true" text="Smoke" focusTraversable="false" />
+                  <CheckBox fx:id="cameraCheckBox" layoutX="5.0" layoutY="5.0" mnemonicParsing="false" selected="true" text="Camera" focusTraversable="false" />
+                  <TextField fx:id="cameraTextField" layoutX="89.0" layoutY="2.0" prefHeight="25.0" prefWidth="45.0" text="0" focusTraversable="false" />
+                  <TextField fx:id="gambialTextField" layoutX="89.0" layoutY="31.0" prefWidth="45.0" text="0" focusTraversable="false" />
+                  <TextField fx:id="gpsTextField" layoutX="89.0" layoutY="58.0" prefWidth="45.0" text="0" focusTraversable="false" />
+                  <TextField fx:id="smokeTextField" layoutX="89.0" layoutY="86.0" prefWidth="45.0" text="0" focusTraversable="false" />
+                  <Button fx:id="runtimeSaveButton" layoutX="280.0" layoutY="166.0" mnemonicParsing="false" text="Save" focusTraversable="false" />
                </children></AnchorPane>
       </content>
     </Tab>

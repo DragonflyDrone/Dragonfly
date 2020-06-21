@@ -6,6 +6,7 @@ import model.Cell;
 import model.entity.Hospital;
 import model.entity.drone.Drone;
 import model.entity.drone.DroneBusinessObject;
+import model.entity.drone.sensors.GambialStateEnum;
 import util.StopWatch;
 import view.CellView;
 import view.SelectableView;
@@ -55,7 +56,7 @@ public class DroneKeyBoardController extends DroneController {
 
 
     private void executeCommandsFromKeyBoard(Drone selectedDrone, KeyCode currentCommand) {
-            if(!selectedDrone.isActivateKeyBoard()){
+        if(!selectedDrone.isActivateKeyBoard()){
                 return;
             }
 
@@ -106,6 +107,26 @@ public class DroneKeyBoardController extends DroneController {
 
             }
         }
+
+        if (isGambialDirectionKeys(currentCommand)){
+
+            if(selectedDrone.isStarted()
+                    && selectedDrone.getGambialState() != GambialStateEnum.FAILURE
+                    && selectedDrone.getGambialState() != GambialStateEnum.OFF){
+
+                KeyCode gambialDirectionCommand = currentCommand;
+
+                DroneBusinessObject.updateGambialDirectionCommand(gambialDirectionCommand, selectedDrone);
+
+                DroneBusinessObject.checkStatus(selectedDrone);
+            }
+
+
+        }
+    }
+
+    private boolean isGambialDirectionKeys(KeyCode keyCode) {
+        return keyCode == KeyCode.W || keyCode == KeyCode.A || keyCode == KeyCode.S || keyCode == KeyCode.D;
     }
 
 
@@ -303,6 +324,7 @@ public class DroneKeyBoardController extends DroneController {
             public void task() {
                 for(Drone currentDroneInEnvirionment : dronesInEnvironment){
 
+                    DroneBusinessObject.applyFailureProbabilityInSensorAndActuator(currentDroneInEnvirionment);
                     DroneBusinessObject.updateBatteryPerSecond(currentDroneInEnvirionment);
 
                     DroneBusinessObject.checkStatus(currentDroneInEnvirionment);
