@@ -14,6 +14,7 @@ public class ConstantXml {
     public static final String BATERRY_CONSUMPTION_PER_SECONDS_ATTRIBUTE = "baterryConsumptionPerBlock";
     public static final String INITIAL_BATERRY_ATTRIBUTE = "initialBaterry";
     public static final String WRAPPER_ID_ATTRIBUTE = "wrapperId";
+    public static final String HEIGHT_ATTRIBUTE = "height";
 
 
 

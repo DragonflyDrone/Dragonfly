@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<EnvironmentElements>
+    <riverElements>
+        <riverElement UniqueID="fa107373-e4b1-4740-8856-530654352524" sourceColumnPosition="4" sourceRowPosition="7"/>
+        <riverElement UniqueID="0293c786-a1ad-4da0-ac57-16bffc23d2c5" sourceColumnPosition="10" sourceRowPosition="7"/>
+        <riverElement UniqueID="a753961d-bdbf-4797-ade0-087e55bb003f" sourceColumnPosition="6" sourceRowPosition="7"/>
+        <riverElement UniqueID="485b3318-3426-4f00-9c45-ce4f1abb51d9" sourceColumnPosition="11" sourceRowPosition="7"/>
+        <riverElement UniqueID="254dce96-56be-460b-a87f-92008640207b" sourceColumnPosition="8" sourceRowPosition="7"/>
+        <riverElement UniqueID="4a64f814-6d98-4867-85d0-14af4833cb89" sourceColumnPosition="13" sourceRowPosition="7"/>
+        <riverElement UniqueID="24288e76-442c-481e-b721-12f147e215e6" sourceColumnPosition="12" sourceRowPosition="7"/>
+        <riverElement UniqueID="bdc55027-0330-4c2c-9118-1fb1e94a7d12" sourceColumnPosition="5" sourceRowPosition="7"/>
+        <riverElement UniqueID="7b884430-8979-4191-be77-c6fc2f3a2ee4" sourceColumnPosition="9" sourceRowPosition="7"/>
+        <riverElement UniqueID="8b947bfa-d9b9-4c0f-ad92-ecb6814ac1c8" sourceColumnPosition="7" sourceRowPosition="7"/>
+    </riverElements>
+    <hospitalElements/>
+    <houseElements/>
+    <treeElements/>
+    <antennaElements/>
+    <droneElements>
+        <droneElement UniqueID="398215a5-6882-4610-99fe-73395e59412a" baterryConsumptionPerBlock="1.0" destinyColumnPosition="14" destinyRowPosition="7" initialBaterry="100.0" label="1" sourceColumnPosition="3" sourceRowPosition="7" wrapperId="1"/>
+    </droneElements>
+    <boatElements/>
+</EnvironmentElements>

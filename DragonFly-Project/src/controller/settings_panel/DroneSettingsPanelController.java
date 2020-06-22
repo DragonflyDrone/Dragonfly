@@ -35,12 +35,12 @@ public class DroneSettingsPanelController extends SettingsPanelController<Drone>
     private AnchorPane droneSettingsPanelAnchorPane;
     @FXML
     private
-    TextField initialBatteryTextView, consumptionPerBlockTextView, consumptionPerSecondTextView, currentDroneTextField;
+    TextField initialBatteryTextView, consumptionPerBlockTextView, consumptionPerSecondTextView, currentDroneTextField, heightTextView;
 
     @FXML
     private
     Label initialBatteryLabel, consumptionPerBlockLabel, consumptionPerSecondLabel/*, badConectionLabel*/,
-            currentDroneLabel, sourceLabel, targetLabel, wrapperLabel;
+            currentDroneLabel, sourceLabel, targetLabel, wrapperLabel, heightLabel;
 
     @FXML
     private
@@ -186,6 +186,10 @@ public class DroneSettingsPanelController extends SettingsPanelController<Drone>
 
         initialBatteryLabel.setDisable(true);
         initialBatteryTextView.setDisable(true);
+
+        heightLabel.setDisable(true);
+        heightTextView.setDisable(true);
+
         wrapperLabel.setDisable(true);
         wrapperComboBox.setDisable(true);
         saveButton.setDisable(true);
@@ -214,6 +218,9 @@ public class DroneSettingsPanelController extends SettingsPanelController<Drone>
         initialBatteryLabel.setDisable(false);
         initialBatteryTextView.setDisable(false);
 
+        heightLabel.setDisable(false);
+        heightTextView.setDisable(false);
+
         sourceLabel.setDisable(false);
         targetLabel.setDisable(false);
         wrapperLabel.setDisable(false);
@@ -238,6 +245,8 @@ public class DroneSettingsPanelController extends SettingsPanelController<Drone>
 
         selectedDrone.setBatteryPerBlock(Double.parseDouble(consumptionPerBlockTextView.getText()));
         selectedDrone.setBatteryPerSecond(Double.parseDouble(consumptionPerSecondTextView.getText()));
+
+        selectedDrone.setHeight(Double.parseDouble(heightTextView.getText()));
 
 //        int srcI = Integer.parseInt(currentSourceCell.getText().split(",")[0].replace("<",""));
 //        int srcJ = Integer.parseInt(currentSourceCell.getText().split(",")[1].replace(">",""));
@@ -265,6 +274,7 @@ public class DroneSettingsPanelController extends SettingsPanelController<Drone>
         Double batteryPerBlock = selectedDrone.getBatteryPerBlock();
         Double batteryPerSecond = selectedDrone.getBatteryPerSecond();
         Double initialBattery = selectedDrone.getInitialBattery();
+        Double height = selectedDrone.getHeight();
         String currentSourceCellString =
                 "<" + selectedDrone.getSourceCell().getRowPosition()
                         + "," + selectedDrone.getSourceCell().getColumnPosition() + ">";
@@ -281,6 +291,7 @@ public class DroneSettingsPanelController extends SettingsPanelController<Drone>
         initialBatteryTextView.setText(String.valueOf(initialBattery));
         currentSourceCell.setText(currentSourceCellString);
         currentDestinyCell.setText(currentDestinyCellString);
+        heightTextView.setText(String.valueOf(height));
 
         int currentWrapperId = selectedDrone.getWrapperId();
 

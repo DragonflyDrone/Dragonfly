@@ -1120,6 +1120,7 @@ public class DroneBusinessObject {
         currentDrone.setCurrentPositionI(currentDrone.getInitialPosistionI());
         currentDrone.setCurrentPositionJ(currentDrone.getInitialPositionJ());
         currentDrone.setReturningToHome(false);
+        currentDrone.setHeight(0.0);
         currentDrone.setBadConnection(false);
         currentDrone.setEconomyMode(false);
         currentDrone.setGoingAutomaticToDestiny(false);
