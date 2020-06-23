@@ -19,9 +19,10 @@ public class EnumerationDescriptor_CardinalPointsEnum extends EnumerationDescrip
   private final EnumerationDescriptor.MemberDescriptor myMember_West_0 = new EnumerationDescriptor.MemberDescriptor("West", "west", 0xba2c69738711b6eL, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/838450833433631598");
   private final EnumerationDescriptor.MemberDescriptor myMember_South_0 = new EnumerationDescriptor.MemberDescriptor("South", "south", 0xba2c69738711b71L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/838450833433631601");
   private final EnumerationDescriptor.MemberDescriptor myMember_North_0 = new EnumerationDescriptor.MemberDescriptor("North", "north", 0xba2c69738711b75L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/838450833433631605");
+  private final EnumerationDescriptor.MemberDescriptor myMember_Any_0 = new EnumerationDescriptor.MemberDescriptor("Any", "any", 0x3069a9862038fd60L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/3488505779906477408");
 
-  private final EnumerationLiteralsIndex myIndex = EnumerationLiteralsIndex.build(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0xba2c69738711b6cL, 0xba2c69738711b6dL, 0xba2c69738711b6eL, 0xba2c69738711b71L, 0xba2c69738711b75L);
-  private final List<EnumerationDescriptor.MemberDescriptor> myMembers = new EnumerationDescriptorBase.MembersList(myIndex, myMember_East_0, myMember_West_0, myMember_South_0, myMember_North_0);
+  private final EnumerationLiteralsIndex myIndex = EnumerationLiteralsIndex.build(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0xba2c69738711b6cL, 0xba2c69738711b6dL, 0xba2c69738711b6eL, 0xba2c69738711b71L, 0xba2c69738711b75L, 0x3069a9862038fd60L);
+  private final List<EnumerationDescriptor.MemberDescriptor> myMembers = new EnumerationDescriptorBase.MembersList(myIndex, myMember_East_0, myMember_West_0, myMember_South_0, myMember_North_0, myMember_Any_0);
 
   @Nullable
   @Override
@@ -50,6 +51,8 @@ public class EnumerationDescriptor_CardinalPointsEnum extends EnumerationDescrip
         return myMember_South_0;
       case "North":
         return myMember_North_0;
+      case "Any":
+        return myMember_Any_0;
     }
     return null;
   }

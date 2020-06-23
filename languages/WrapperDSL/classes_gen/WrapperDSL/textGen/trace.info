@@ -398,16 +398,15 @@
       <node id="838450833440817855" at="27,0,28,0" concept="8" />
       <node id="838450833440201654" at="29,289,30,77" concept="2" />
       <node id="838450833440201756" at="30,77,31,27" concept="2" />
-      <node id="838450833440205110" at="31,27,32,151" concept="2" />
+      <node id="838450833440205110" at="31,27,32,101" concept="2" />
       <node id="838450833440206774" at="33,5,34,0" concept="8" />
       <node id="838450833440207192" at="35,284,36,76" concept="2" />
       <node id="838450833440207193" at="36,76,37,27" concept="2" />
-      <node id="838450833440207199" at="37,27,38,151" concept="2" />
+      <node id="838450833440207199" at="37,27,38,101" concept="2" />
       <node id="838450833440207162" at="39,5,40,0" concept="8" />
       <node id="838450833440192879" at="44,0,45,0" concept="9" trace="operator$44n0" />
-      <node id="838450833440192879" at="45,0,46,0" concept="9" trace="value$QRR0" />
-      <node id="838450833440192879" at="46,0,47,0" concept="9" trace="left$44nY" />
-      <node id="838450833440192879" at="50,0,51,0" concept="9" trace="right$44_3" />
+      <node id="838450833440192879" at="45,0,46,0" concept="9" trace="left$44nY" />
+      <node id="838450833440192879" at="49,0,50,0" concept="9" trace="right$44_3" />
       <node id="838450833440831359" at="24,10,26,5" concept="0" />
       <node id="838450833440193013" at="28,0,33,5" concept="4" />
       <node id="838450833440207189" at="34,0,39,5" concept="4" />
@@ -416,8 +415,8 @@
       <scope id="838450833440806699" at="20,284,21,22" />
       <scope id="838450833440818897" at="22,301,23,22" />
       <scope id="838450833440831360" at="24,12,25,107" />
-      <scope id="838450833440193015" at="29,289,32,151" />
-      <scope id="838450833440207190" at="35,284,38,151" />
+      <scope id="838450833440193015" at="29,289,32,101" />
+      <scope id="838450833440207190" at="35,284,38,101" />
       <scope id="838450833440192879" at="17,54,40,0">
         <var name="operator" id="838450833440823630" />
         <var name="tgs" id="838450833440192879" />
@@ -425,9 +424,9 @@
       <scope id="838450833440192879" at="16,0,42,0">
         <var name="ctx" id="838450833440192879" />
       </scope>
-      <unit id="838450833440192879" at="49,0,52,0" name="WrapperDSL.textGen.ScalarDistanceConditionalExpression_TextGen$LINKS" />
-      <unit id="838450833440192879" at="43,0,48,0" name="WrapperDSL.textGen.ScalarDistanceConditionalExpression_TextGen$PROPS" />
-      <unit id="838450833440192879" at="15,0,53,0" name="WrapperDSL.textGen.ScalarDistanceConditionalExpression_TextGen" />
+      <unit id="838450833440192879" at="48,0,51,0" name="WrapperDSL.textGen.ScalarDistanceConditionalExpression_TextGen$LINKS" />
+      <unit id="838450833440192879" at="43,0,47,0" name="WrapperDSL.textGen.ScalarDistanceConditionalExpression_TextGen$PROPS" />
+      <unit id="838450833440192879" at="15,0,52,0" name="WrapperDSL.textGen.ScalarDistanceConditionalExpression_TextGen" />
     </file>
     <file name="TextGenAspectDescriptor.java">
       <node id="838450833440192879" at="47,69,48,65" concept="7" />
@@ -464,11 +463,10 @@
       <node id="838450833442606587" at="15,55,16,25" concept="2" />
       <node id="838450833442606674" at="16,25,17,91" concept="2" />
       <node id="838450833442608170" at="17,91,18,23" concept="2" />
-      <node id="838450833442609256" at="18,23,19,86" concept="2" />
-      <node id="838450833442610619" at="19,86,20,21" concept="2" />
+      <node id="838450833442609256" at="18,23,19,42" concept="2" />
+      <node id="838450833442610619" at="19,42,20,21" concept="2" />
       <node id="838450833442611304" at="20,21,21,20" concept="2" />
       <node id="838450833442606544" at="25,0,26,0" concept="9" trace="condition$jseW" />
-      <node id="838450833442606544" at="26,0,27,0" concept="9" trace="body$jsq5" />
       <node id="838450833442606544" at="13,0,23,0" concept="5" trace="generateText#(Ljetbrains/mps/text/rt/TextGenContext;)V" />
       <scope id="838450833442606544" at="14,54,21,20">
         <var name="tgs" id="838450833442606544" />
@@ -476,8 +474,8 @@
       <scope id="838450833442606544" at="13,0,23,0">
         <var name="ctx" id="838450833442606544" />
       </scope>
-      <unit id="838450833442606544" at="24,0,28,0" name="WrapperDSL.textGen.While_TextGen$LINKS" />
-      <unit id="838450833442606544" at="12,0,29,0" name="WrapperDSL.textGen.While_TextGen" />
+      <unit id="838450833442606544" at="24,0,27,0" name="WrapperDSL.textGen.While_TextGen$LINKS" />
+      <unit id="838450833442606544" at="12,0,28,0" name="WrapperDSL.textGen.While_TextGen" />
     </file>
   </root>
   <root nodeRef="r:98ce4f8d-75ef-41b6-8025-6561aecf815f(WrapperDSL.textGen)/838450833442611340">

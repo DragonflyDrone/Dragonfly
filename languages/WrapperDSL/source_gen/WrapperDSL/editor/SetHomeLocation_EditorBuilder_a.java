@@ -49,7 +49,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     editorCell.addEditorCell(createRefNode_0());
     editorCell.addEditorCell(createConstant_1());
     editorCell.addEditorCell(createRefNode_1());
-    editorCell.addEditorCell(createConstant_2());
     return editorCell;
   }
   private EditorCell createComponent_0() {
@@ -57,7 +56,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     return editorCell;
   }
   private EditorCell createConstant_0() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "(");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "latude:");
     editorCell.setCellId("Constant_ewjlgr_b0");
     editorCell.setDefaultText("");
     return editorCell;
@@ -118,7 +117,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     }
   }
   private EditorCell createConstant_1() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ",");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "longitude:");
     editorCell.setCellId("Constant_ewjlgr_d0");
     editorCell.setDefaultText("");
     return editorCell;
@@ -177,12 +176,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     protected String getNoTargetText() {
       return "<no long>";
     }
-  }
-  private EditorCell createConstant_2() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ")");
-    editorCell.setCellId("Constant_ewjlgr_f0");
-    editorCell.setDefaultText("");
-    return editorCell;
   }
 
   private static final class LINKS {

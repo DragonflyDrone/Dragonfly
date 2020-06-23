@@ -1,0 +1,1 @@
+Errors while generating text outcome (Failed), please check log file for exceptions

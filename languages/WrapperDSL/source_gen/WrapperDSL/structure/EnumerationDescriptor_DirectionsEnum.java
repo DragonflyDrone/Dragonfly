@@ -23,9 +23,10 @@ public class EnumerationDescriptor_DirectionsEnum extends EnumerationDescriptorB
   private final EnumerationDescriptor.MemberDescriptor myMember_SE_0 = new EnumerationDescriptor.MemberDescriptor("SE", "south east", 0x1053550ed8a37dc9L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/1176377449926327753");
   private final EnumerationDescriptor.MemberDescriptor myMember_NW_0 = new EnumerationDescriptor.MemberDescriptor("NW", "north west", 0x1053550ed8a37dd0L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/1176377449926327760");
   private final EnumerationDescriptor.MemberDescriptor myMember_SW_0 = new EnumerationDescriptor.MemberDescriptor("SW", "south west", 0x1053550ed8a37dd8L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/1176377449926327768");
+  private final EnumerationDescriptor.MemberDescriptor myMember_any_0 = new EnumerationDescriptor.MemberDescriptor("any", "any", 0x3069a986203f3ae9L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/3488505779906886377");
 
-  private final EnumerationLiteralsIndex myIndex = EnumerationLiteralsIndex.build(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x1053550ed8a37db5L, 0x1053550ed8a37db6L, 0x1053550ed8a37db7L, 0x1053550ed8a37dbaL, 0x1053550ed8a37dbeL, 0x1053550ed8a37dc3L, 0x1053550ed8a37dc9L, 0x1053550ed8a37dd0L, 0x1053550ed8a37dd8L);
-  private final List<EnumerationDescriptor.MemberDescriptor> myMembers = new EnumerationDescriptorBase.MembersList(myIndex, myMember_N_0, myMember_S_0, myMember_E_0, myMember_W_0, myMember_NE_0, myMember_SE_0, myMember_NW_0, myMember_SW_0);
+  private final EnumerationLiteralsIndex myIndex = EnumerationLiteralsIndex.build(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x1053550ed8a37db5L, 0x1053550ed8a37db6L, 0x1053550ed8a37db7L, 0x1053550ed8a37dbaL, 0x1053550ed8a37dbeL, 0x1053550ed8a37dc3L, 0x1053550ed8a37dc9L, 0x1053550ed8a37dd0L, 0x1053550ed8a37dd8L, 0x3069a986203f3ae9L);
+  private final List<EnumerationDescriptor.MemberDescriptor> myMembers = new EnumerationDescriptorBase.MembersList(myIndex, myMember_N_0, myMember_S_0, myMember_E_0, myMember_W_0, myMember_NE_0, myMember_SE_0, myMember_NW_0, myMember_SW_0, myMember_any_0);
 
   @Nullable
   @Override
@@ -62,6 +63,8 @@ public class EnumerationDescriptor_DirectionsEnum extends EnumerationDescriptorB
         return myMember_NW_0;
       case "SW":
         return myMember_SW_0;
+      case "any":
+        return myMember_any_0;
     }
     return null;
   }

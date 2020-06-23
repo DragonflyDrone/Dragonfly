@@ -16,13 +16,12 @@ public class While_TextGen extends TextGenDescriptorBase {
     tgs.append("while(");
     tgs.appendNode(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.condition$jseW));
     tgs.append("){\n");
-    tgs.appendNode(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.body$jsq5));
+    tgs.appendNode(ctx.getPrimaryInput());
     tgs.append("\n");
     tgs.append("}");
   }
 
   private static final class LINKS {
     /*package*/ static final SContainmentLink condition$jseW = MetaAdapterFactory.getContainmentLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045b45acL, 0x53be3ecc045b45d2L, "condition");
-    /*package*/ static final SContainmentLink body$jsq5 = MetaAdapterFactory.getContainmentLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045b45acL, 0x53be3ecc045b45d4L, "body");
   }
 }

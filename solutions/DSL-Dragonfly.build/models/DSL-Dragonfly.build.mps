@@ -460,7 +460,7 @@
           <ref role="3_I8Xa" to="ffeo:1x6h9EwqP32" resolve="mps-make" />
         </node>
         <node concept="m$_wl" id="4M$NrCdKAu2" role="39821P">
-          <ref role="m_rDy" node="4M$NrCdKAth" resolve="DSL-Dragonfly" />
+          <ref role="m_rDy" node="4M$NrCdKAth" resolve="DSL_Dragonfly" />
           <node concept="pUk6x" id="4M$NrCdKAu3" role="pUk7w" />
         </node>
         <node concept="3_J27D" id="4M$NrCdKAu4" role="Nbhlr">
@@ -502,7 +502,7 @@
       </node>
     </node>
     <node concept="m$_wf" id="4M$NrCdKAth" role="3989C9">
-      <property role="m$_wk" value="DSL-Dragonfly" />
+      <property role="m$_wk" value="DSL_Dragonfly" />
       <node concept="3_J27D" id="4M$NrCdKAti" role="m$_yQ">
         <node concept="3Mxwew" id="4M$NrCdKAtj" role="3MwsjC">
           <property role="3MwjfP" value="DSL-Dragonfly" />
