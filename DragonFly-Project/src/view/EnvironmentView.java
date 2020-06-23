@@ -7,6 +7,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.*;
 import model.Cell;
+import util.DirectionEnum;
 
 import java.util.List;
 
@@ -16,13 +17,17 @@ public class EnvironmentView {
     private GridPane gridpane = new GridPane();
     private AnchorPane envivonmentAnchorPane;
     private KeyCode keySelected;
-    private ImageView windImagemView = new ImageView(new Image("/view/res/wind.png"));
+    private ImageView windForceImagemView = new ImageView(new Image("/view/res/wind.png"));
+    private ImageView windDirectionImagemView = new ImageView(new Image("/view/res/row.png"));
     private  CellController cellController = CellController.getInstance();
 
     public EnvironmentView(Cell cell, AnchorPane envivonmentAnchorPane) {
         new EnvironmentView(cell, envivonmentAnchorPane);
         cellController.init(this);
         gridpane.setFocusTraversable(true);
+        windForceImagemView.setVisible(false);
+        windDirectionImagemView.setVisible(true);
+        envivonmentAnchorPane.getChildren().addAll(windForceImagemView,windDirectionImagemView);
 
     }
 
@@ -52,7 +57,12 @@ public class EnvironmentView {
 
         gridpane.setGridLinesVisible(true);
         this.envivonmentAnchorPane = environmentAnchorPane;
-        environmentAnchorPane.getChildren().addAll(gridpane);
+
+        windForceImagemView.setVisible(false);
+        windForceImagemView.setY(-5);
+        windDirectionImagemView.setVisible(true);
+        windDirectionImagemView.setY(10);
+        environmentAnchorPane.getChildren().addAll(gridpane,windForceImagemView,windDirectionImagemView);
 
 
     }
@@ -91,15 +101,38 @@ public class EnvironmentView {
     }
 */
     public void applyStrongWind() {
-        if(!envivonmentAnchorPane.getChildren().contains(windImagemView)){
-            envivonmentAnchorPane.getChildren().add(windImagemView);
-        }
+//        if(!envivonmentAnchorPane.getChildren().contains(windForceImagemView)){
+//            envivonmentAnchorPane.getChildren().add(windForceImagemView);
+//        }
+        windForceImagemView.setVisible(true);
 
     }
 
     public void removeStrongWind() {
-        if(envivonmentAnchorPane.getChildren().contains(windImagemView)){
-            envivonmentAnchorPane.getChildren().remove(windImagemView);
+//        if(envivonmentAnchorPane.getChildren().contains(windForceImagemView)){
+//            envivonmentAnchorPane.getChildren().remove(windForceImagemView);
+//        }
+        windForceImagemView.setVisible(false);
+    }
+
+    public void updateWindDirection(DirectionEnum windDirection) {
+        //windDirectionImagemView.setVisible(true);
+        switch (windDirection){
+            case NORTH:
+                windDirectionImagemView.setRotate(0.0);
+                windDirectionImagemView.setRotate(-90);
+                break;
+            case WEST:
+                windDirectionImagemView.setRotate(180);
+                break;
+            case SOUTH:
+                windDirectionImagemView.setRotate(0.0);
+                windDirectionImagemView.setRotate(90);
+                break;
+            case EAST:
+                windDirectionImagemView.setRotate(0.0);
+                windDirectionImagemView.setRotate(0.0);
+                break;
         }
     }
 }

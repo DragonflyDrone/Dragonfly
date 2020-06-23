@@ -7,6 +7,7 @@ import model.entity.Hospital;
 import model.entity.drone.Drone;
 import model.entity.drone.DroneBusinessObject;
 import model.entity.drone.sensors.GambialStateEnum;
+import util.DirectionEnum;
 import util.StopWatch;
 import view.CellView;
 import view.SelectableView;
@@ -383,4 +384,5 @@ public class DroneKeyBoardController extends DroneController {
     public void consumeSaveAttributesDrone(DroneView droneView) {
 
     }
+
 }

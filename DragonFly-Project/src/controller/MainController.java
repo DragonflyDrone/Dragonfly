@@ -16,6 +16,7 @@ import javafx.stage.Stage;
 import model.entity.*;
 import model.entity.boat.Boat;
 import model.entity.drone.Drone;
+import util.DirectionEnum;
 import view.CellView;
 import view.SelectableView;
 import view.antenna.AntennaView;
@@ -24,6 +25,7 @@ import view.drone.DroneView;
 import view.hospital.HospitalView;
 import view.house.HouseView;
 import view.river.RiverView;
+import view.sosPoint.SoSPointView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,7 +49,8 @@ public class MainController extends Application {
 
     @FXML
     private
-    ToggleButton riverToggleButton, hospitalToggleButton, droneToggleButton, antennaToggleButton, boatToggleButton, houseToggleButton, treeToggleButton;
+    ToggleButton riverToggleButton, hospitalToggleButton, droneToggleButton,
+            antennaToggleButton, boatToggleButton, houseToggleButton, treeToggleButton, sosToggleButton;
 
     @FXML
     AnchorPane defaultPanelSettingsAnchorPane;
@@ -67,7 +70,7 @@ public class MainController extends Application {
 
     @FXML
     private
-    ComboBox windForceCombBox;
+    ComboBox windForceCombBox, windDirectionCombBox;
 
 
     private boolean running = false;
@@ -126,6 +129,7 @@ public class MainController extends Application {
         riverToggleButton.setToggleGroup(toggleGroup1);
         hospitalToggleButton.setToggleGroup(toggleGroup1);
         houseToggleButton.setToggleGroup(toggleGroup1);
+        sosToggleButton.setToggleGroup(toggleGroup1);
         treeToggleButton.setToggleGroup(toggleGroup1);
         droneToggleButton.setToggleGroup(toggleGroup1);
         antennaToggleButton.setToggleGroup(toggleGroup1);
@@ -157,6 +161,39 @@ public class MainController extends Application {
                 environmentController.consumeRandomWind();
             }
         });
+
+        List<String> directionWindTypes = new ArrayList<>();
+        directionWindTypes.add("North");
+        directionWindTypes.add("South");
+        directionWindTypes.add("East");
+        directionWindTypes.add("West");
+
+         nameOptions =
+                FXCollections.observableArrayList(directionWindTypes);
+
+        windDirectionCombBox.setItems(nameOptions);
+        windDirectionCombBox.getSelectionModel().select(2);
+
+        windDirectionCombBox.valueProperty().addListener((observable, oldValue, newValue) -> {
+            if(oldValue.equals(newValue)){return;}
+
+            DirectionEnum directionEnum = null;
+
+            if(newValue.equals("North")){
+                directionEnum = DirectionEnum.NORTH;
+            }else if(newValue.equals("South")){
+                directionEnum = DirectionEnum.SOUTH;
+            }else if(newValue.equals("East")){
+                directionEnum = DirectionEnum.EAST;
+            }else if (newValue.equals("West")){
+                directionEnum = DirectionEnum.WEST;
+            }
+
+            environmentController.consumeChangeDirectionWind(directionEnum);
+
+        });
+
+
 
 
 
@@ -204,6 +241,7 @@ public class MainController extends Application {
             riverToggleButton.setSelected(false);
             hospitalToggleButton.setSelected(false);
             houseToggleButton.setSelected(false);
+            sosToggleButton.setSelected(false);
             treeToggleButton.setSelected(false);
             antennaToggleButton.setSelected(false);
             droneToggleButton.setSelected(false);
@@ -254,6 +292,7 @@ public class MainController extends Application {
                 antennaToggleButton.setSelected(false);
                 hospitalToggleButton.setSelected(false);
                 houseToggleButton.setSelected(false);
+                sosToggleButton.setSelected(false);
                 treeToggleButton.setSelected(false);
                 boatToggleButton.setSelected(false);
                 automaticExecutionCheckBox.setSelected(false);
@@ -304,6 +343,10 @@ public class MainController extends Application {
                     Tree tree = TreeController.getInstance().getTreeFrom(selectableView.getUniqueID());
                     TreeController.getInstance().deleteTree(tree);
 
+                }
+                else if (selectableView instanceof SoSPointView){
+                    SoSPoint soSPoint = SoSPointController.getInstance().getSoSPointFrom(selectableView.getUniqueID());
+                    SoSPointController.getInstance().deleteSoSPoint(soSPoint);
                 }
             }
 
@@ -383,7 +426,7 @@ public class MainController extends Application {
     private boolean mustCreateEntitiesView() {
         return riverToggleButton.isSelected() || hospitalToggleButton.isSelected() || antennaToggleButton.isSelected()
                 || droneToggleButton.isSelected() || boatToggleButton.isSelected() || houseToggleButton.isSelected()
-                || treeToggleButton.isSelected();
+                || treeToggleButton.isSelected() || sosToggleButton.isSelected();
     }
 
     private void createEntitiesView(CellView selectedCellView) {
@@ -427,6 +470,9 @@ public class MainController extends Application {
         }
         else if(treeToggleButton.isSelected()){
             environmentController.createTree(selectedCellView);
+        }else if (sosToggleButton.isSelected()){
+            environmentController.createSoS(selectedCellView);
+
         }
 
             }catch (Exception e){

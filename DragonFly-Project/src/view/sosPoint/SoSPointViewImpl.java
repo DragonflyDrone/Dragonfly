@@ -1,49 +1,47 @@
-package view.tree;
+package view.sosPoint;
 
-import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.text.TextAlignment;
-import model.entity.Tree;
+import model.entity.SoSPoint;
 import util.SelectHelper;
 import view.CellView;
-import view.SelectableView;
 
-public class TreeView extends Group implements SelectableView, Tree.Listener {
-    private ImageView fireImageView;
-    private  String uniqueID;
-    private String treeLabel;
-    private CellView currentCellView;
+public class SoSPointViewImpl extends SoSPointView implements SoSPoint.Listener {
+
+    private final CellView currentCellView;
+    private String sosPointLabel;
     private SelectHelper selectHelper = new SelectHelper(SelectHelper.DEFAULT_COLOR);
 
-    public TreeView(String uniqueID, String treelLabel, CellView cellViewSelected) {
-        this.treeLabel = treelLabel;
+    public SoSPointViewImpl(String uniqueID, String sosPointLabel, CellView cellViewSelected) {
+        this.sosPointLabel = sosPointLabel;
         this.uniqueID = uniqueID;
         this.currentCellView = cellViewSelected;
 
         Label label = new Label();
-        label.setText(treelLabel);
-        label.setTextFill(Color.RED);
+        label.setText(sosPointLabel);
+        label.setTextFill(Color.BLACK);
         label.setTextAlignment(TextAlignment.CENTER);
 
-        ImageView treeImageView = new ImageView();
-        Image image = new Image("/view/res/tree.png");
-        treeImageView.setImage(image);
-        fireImageView = new ImageView(new Image("/view/res/fire.png"));
-        fireImageView.setVisible(false);
+        ImageView imageView = new ImageView();
+        Image image = new Image("/view/res/safepoint.png");
+        imageView.setImage(image);
+        imageView.setX(3);
+        imageView.setY(3);
 
-
-        this.getChildren().addAll(treeImageView,fireImageView, label);
+        this.getChildren().addAll(imageView, label);
 
         cellViewSelected.getChildren().add(this);
+
+
     }
 
     @Override
-    public void onChange(Tree tree, String methodName, Object oldValue, Object newValue) {
-        if(uniqueID != tree.getUniqueID()){
+    public void onChange(SoSPoint soSPoint, String methodName, Object oldValue, Object newValue) {
+        if(uniqueID != soSPoint.getUniqueID()){
             return;
         }
 
@@ -58,17 +56,7 @@ public class TreeView extends Group implements SelectableView, Tree.Listener {
             removeStyleSelected();
             return;
         }
-
-        if(methodName.equals("setFire")){
-            if(!(Boolean) oldValue && (Boolean) newValue){
-                fireImageView.setVisible(true);
-            }else if((Boolean) oldValue && !(Boolean) newValue) {
-                fireImageView.setVisible(false);
-            }
-        }
-
-        }
-
+    }
 
     @Override
     public Node getNode() {
@@ -100,8 +88,7 @@ public class TreeView extends Group implements SelectableView, Tree.Listener {
 
     }
 
-    public String getTreeLabel() {
-        return treeLabel;
+    public String getSosPointLabel() {
+        return sosPointLabel;
     }
-
 }

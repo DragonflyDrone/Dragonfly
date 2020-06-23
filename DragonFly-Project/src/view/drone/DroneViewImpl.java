@@ -360,9 +360,6 @@ public class DroneViewImpl extends DroneView {
             // updateItIsOver(drone);
             DroneBusinessObject.updateItIsOver(drone);
 
-
-
-
             return;
         }
 
@@ -453,6 +450,24 @@ public class DroneViewImpl extends DroneView {
             }
 
 
+        }
+
+        if(methodName.equals("setWindDirection")){
+            if(newValue == oldValue){return;}
+            loggerController.print("Drone[" + getDroneLabel() + "] " + "wind direction: " + drone.getWindDirection());
+            return;
+        }
+
+        if(methodName.equals("setStrongWind")){
+
+            if(newValue == oldValue){return;}
+
+            if((boolean)newValue){
+                loggerController.print("Drone[" + getDroneLabel() + "] " + "Strong Wind");
+            }else {
+                loggerController.print("Drone[" + getDroneLabel() + "] " + "Light Wind");
+            }
+            return;
         }
 
 

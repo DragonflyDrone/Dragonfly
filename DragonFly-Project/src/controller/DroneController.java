@@ -4,6 +4,7 @@ import javafx.scene.input.KeyEvent;
 import model.Cell;
 import model.entity.Hospital;
 import model.entity.drone.Drone;
+import util.DirectionEnum;
 import view.CellView;
 import view.SelectableView;
 import view.antenna.AntennaView;
@@ -109,5 +110,11 @@ public abstract class DroneController {
 
     public void consumeSaveAttributesDrone(DroneView droneView) {
 
+    }
+
+    public void consumeChangeDirectionWind(DirectionEnum windDirection) {
+        for (Drone drone: droneMap.values()){
+            drone.setWindDirection(windDirection);
+        }
     }
 }

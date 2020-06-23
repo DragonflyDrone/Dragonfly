@@ -4,10 +4,12 @@ import javafx.application.Platform;
 import javafx.scene.Node;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
+import model.entity.SoSPoint;
 import model.entity.*;
 import model.Environment;
 import model.entity.boat.Boat;
 import model.entity.drone.Drone;
+import util.DirectionEnum;
 import util.exceptions.ClickOutsideRegionException;
 import util.UniqueIDGenenator;
 import view.CellView;
@@ -170,6 +172,7 @@ public class EnvironmentController {
 
         DroneController.getInstance().consumeCleanEnvironment();
         HospitalController.getInstance().consumeCleanEnvironment();
+        SoSPointController.getInstance().consumeClearEnvironment();
         AntennaController.getInstance().consumeClearEnvironment();
         BoatAutomaticController.getInstance().consumeCleanEnvironment();
         RiverController.getInstance().consumeClearEnvirironment();
@@ -312,6 +315,31 @@ public class EnvironmentController {
 
         return  river;
     }
+
+
+    public SoSPoint createSoS(CellView selectedCellView) throws ClickOutsideRegionException{
+        String uniqueID = UniqueIDGenenator.generate();
+        return createSoS(uniqueID, selectedCellView);
+    }
+
+    public SoSPoint createSoS(String uniqueID, CellView selectedCellView) throws ClickOutsideRegionException{
+        clearSelectionOnAllSelectableView();
+
+        SoSPointController soSPointController = SoSPointController.getInstance();
+
+        String sosPointLabel = String.valueOf(SoSPoint.COUNT_SOS_POINT);
+
+        if (selectedCellView == null) {
+            throw new ClickOutsideRegionException();
+        }
+
+        SoSPoint soSPoint = soSPointController.createSoSPoint(uniqueID,sosPointLabel,selectedCellView);
+
+        this.selectedEntityView = CellController.getInstance().getSelectedEntityView(selectedCellView);
+
+        return soSPoint;
+    }
+
 
     public Antenna createAntenna(CellView selectedCellView) throws ClickOutsideRegionException {
         String uniqueID = UniqueIDGenenator.generate();
@@ -456,6 +484,7 @@ public class EnvironmentController {
         BoatAutomaticController.getInstance().cleanSelections();
         HouseController.getInstance().cleanSelections();
         TreeController.getInstance().cleanSelections();
+        SoSPointController.getInstance().cleanSelections();
     }
 
     public CellView getCloserLand(Drone drone){
@@ -534,6 +563,12 @@ public class EnvironmentController {
     public void setSelectedEntityView(SelectableView selectedEntityView) {
         this.selectedEntityView = selectedEntityView;
     }
+
+    public void consumeChangeDirectionWind(DirectionEnum windDirection) {
+        environmentView.updateWindDirection(windDirection);
+        DroneController.getInstance().consumeChangeDirectionWind(windDirection);
+    }
+
 }
 
 

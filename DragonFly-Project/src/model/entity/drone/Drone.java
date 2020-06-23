@@ -10,6 +10,7 @@ import model.entity.drone.sensors.CameraStateEnum;
 import model.entity.drone.sensors.GPSStateEnum;
 import model.entity.drone.sensors.GambialStateEnum;
 import model.entity.drone.sensors.SmokeStateEnum;
+import util.DirectionEnum;
 import view.SelectableView;
 import view.river.RiverView;
 
@@ -84,6 +85,7 @@ public class Drone extends Entity {
 
     private SmokeStateEnum smokeState = SmokeStateEnum.OFF;
     private double smokeFailureProbability = 0.D;
+    private DirectionEnum windDirection = DirectionEnum.EAST;
 
     public Drone(String uniqueID, String label, Cell sourceCell) {
         this.uniqueID = uniqueID;
@@ -755,6 +757,23 @@ public class Drone extends Entity {
 
     public void setActivateKeyBoard(boolean activateKeyBoard) {
         this.activateKeyBoard = activateKeyBoard;
+    }
+
+    public void setWindDirection(DirectionEnum windDirection) {
+        DirectionEnum oldValue = this.windDirection;
+        DirectionEnum newValue = windDirection;
+
+        if(oldValue == newValue){
+            return;
+        }
+
+        this.windDirection = windDirection;
+
+        notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
+    }
+
+    public DirectionEnum getWindDirection(){
+        return windDirection;
     }
 
 

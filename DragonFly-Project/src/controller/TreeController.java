@@ -1,21 +1,26 @@
 package controller;
 
+import javafx.application.Platform;
 import javafx.scene.input.KeyEvent;
 import model.entity.Tree;
+import util.ProbabilityHelper;
+import util.StopWatch;
 import view.CellView;
 import view.SelectableView;
 import view.tree.TreeView;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 public class TreeController {
     private Map<String, TreeView> treeViewMap = new HashMap<>();
     private Map<String, Tree>  treeMap = new HashMap<>();
     private static TreeController instance;
+    private StopWatch fireStopWatch;
+    private boolean treeMustStop = false;
 
     private TreeController() {
-
     }
 
     public static TreeController getInstance(){
@@ -58,7 +63,11 @@ public class TreeController {
     }
 
     public void consumeReset() {
+        treeMustStop = true;
 
+        for(Tree tree : treeMap.values()){
+            tree.setFire(false);
+        }
     }
 
     public void consumeClickEvent(SelectableView selectedEntityView ) {
@@ -77,7 +86,33 @@ public class TreeController {
 
 
     public void consumeRunEnviroment() {
+        treeMustStop = false;
 
+        if(treeMap.size()>0){
+            startTree();
+        }
+
+    }
+
+    private void startTree() {
+        fireStopWatch = new StopWatch(0, 3000) {
+            @Override
+            public void task() {
+                AtomicBoolean isFire = new AtomicBoolean(false);
+                Platform.runLater(() -> {
+                    for (Tree tree: treeMap.values()){
+                         isFire.set(ProbabilityHelper.prob(50));
+                         tree.setFire(isFire.get());
+                         System.out.println(isFire.get());
+                    }
+                });
+            }
+
+            @Override
+            public boolean conditionStop() {
+                return treeMustStop;
+            }
+        };
     }
 
     public Map<String, TreeView> getTreeViewMap() {

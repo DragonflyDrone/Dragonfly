@@ -7,6 +7,7 @@ import model.entity.drone.sensors.CameraStateEnum;
 import model.entity.drone.sensors.GPSStateEnum;
 import model.entity.drone.sensors.GambialStateEnum;
 import model.entity.drone.sensors.SmokeStateEnum;
+import util.ProbabilityHelper;
 import util.StopWatch;
 import view.CellView;
 import view.SelectableView;
@@ -1244,10 +1245,10 @@ public class DroneBusinessObject {
 //        }
 
         System.out.println(currentDrone.getCameraState());
-        boolean gambialIsAtFault = prob(currentDrone.getGambialFailureProbability());
-        boolean cameraIsAtFault = prob(currentDrone.getCameraFailureProbability());
-        boolean gpsIsAtFault = prob(currentDrone.getGpsFailureProbability());
-        boolean smokeIsAtFault = prob(currentDrone.getSmokeFailureProbability());
+        boolean gambialIsAtFault = ProbabilityHelper.prob(currentDrone.getGambialFailureProbability());
+        boolean cameraIsAtFault = ProbabilityHelper.prob(currentDrone.getCameraFailureProbability());
+        boolean gpsIsAtFault = ProbabilityHelper.prob(currentDrone.getGpsFailureProbability());
+        boolean smokeIsAtFault = ProbabilityHelper.prob(currentDrone.getSmokeFailureProbability());
 
         if (gambialIsAtFault
                 && currentDrone.getGambialState() != GambialStateEnum.FAILURE) {
@@ -1279,8 +1280,6 @@ public class DroneBusinessObject {
         }
     }
 
-    public static boolean prob(double probabilityTrue){
-        return Math.random()*100 >= 100 - probabilityTrue;
-    }
+
 }
 
