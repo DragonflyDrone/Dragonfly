@@ -499,6 +499,7 @@ public class MainController extends Application {
         cleanButton.setDisable(true);
         automaticExecutionCheckBox.setDisable(true);
         treeToggleButton.setDisable(true);
+        sosToggleButton.setDisable(true);
     }
 
     private void enableEnvironmentSettingViews() {
@@ -513,6 +514,7 @@ public class MainController extends Application {
         cleanButton.setDisable(false);
         automaticExecutionCheckBox.setDisable(false);
         treeToggleButton.setDisable(false);
+        sosToggleButton.setDisable(false);
     }
 
 

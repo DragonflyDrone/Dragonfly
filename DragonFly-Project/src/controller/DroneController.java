@@ -1,13 +1,11 @@
 package controller;
 
 import javafx.scene.input.KeyEvent;
-import model.Cell;
-import model.entity.Hospital;
 import model.entity.drone.Drone;
+import model.entity.drone.DroneBusinessObject;
 import util.DirectionEnum;
 import view.CellView;
 import view.SelectableView;
-import view.antenna.AntennaView;
 import view.drone.DroneView;
 import java.util.HashMap;
 import java.util.Map;
@@ -117,4 +115,62 @@ public abstract class DroneController {
             drone.setWindDirection(windDirection);
         }
     }
+
+
+//    public void automaticFlytoPosition(Drone drone , int i, int j){
+//        if(drone.isSafeLand()){
+//            return;
+//        }
+//
+//        if(drone.isShutDown()){
+//            return;
+//        }
+//
+//        int oldI = drone.getCurrentPositionI();
+//        int oldJ = drone.getCurrentPositionJ();
+//        double newDistanceDestiny = 999999;
+////        String mustGO = null;
+//        DirectionEnum currentDirection = null;
+//        CellView hopitalCellView = null;
+//
+//        CellView droneCellView = DroneController.getInstance().getDroneViewFrom(drone.getUniqueID()).getCurrentCellView();
+//
+//        CellView targetCellView = CellController.getInstance().getCellViewFrom(i,j);
+//
+//        double tempDistance = DroneBusinessObject.distanceDroneWentRight(droneCellView, targetCellView);
+//
+//        if (tempDistance < newDistanceDestiny) {
+//            newDistanceDestiny = tempDistance;
+////            mustGO = "->";
+//            currentDirection = DirectionEnum.EAST;
+//        }
+//
+//        tempDistance = DroneBusinessObject.distanceDroneWentLeft(droneCellView, targetCellView);
+//
+//        if (tempDistance < newDistanceDestiny) {
+//            newDistanceDestiny = tempDistance;
+////            mustGO = "<-";
+//            currentDirection = DirectionEnum.WEST;
+//        }
+//
+//
+//        tempDistance = DroneBusinessObject.distanceDroneWentUp(droneCellView, targetCellView);
+//
+//        if (tempDistance < newDistanceDestiny) {
+//            newDistanceDestiny = tempDistance;
+////            mustGO = "/\\";
+//            currentDirection = DirectionEnum.NORTH;
+//
+//        }
+//
+//        tempDistance = DroneBusinessObject.distanceDroneWentDown(droneCellView, targetCellView);
+//
+//        if (tempDistance < newDistanceDestiny) {
+//            newDistanceDestiny = tempDistance;
+////            mustGO = "\\/";
+//            currentDirection = DirectionEnum.SOUTH;
+//
+//        }
+//        DroneBusinessObject.flyToDirection(drone, currentDirection);
+//    }
 }

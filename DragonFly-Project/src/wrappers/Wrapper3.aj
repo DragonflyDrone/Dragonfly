@@ -1,15 +1,11 @@
 package wrappers;
 
 import controller.*;
-import javafx.application.Platform;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import model.entity.boat.Boat;
-import model.entity.boat.BoatBusinessObject;
 import model.entity.drone.Drone;
 import model.entity.drone.DroneBusinessObject;
 import org.aspectj.lang.JoinPoint;
-import util.StopWatch;
+import util.DirectionEnum;
 import view.CellView;
 import view.boat.BoatView;
 import view.drone.DroneView;
@@ -221,9 +217,9 @@ public aspect Wrapper3 {
         LoggerController.getInstance().print("Drone["+drone.getLabel()+"] "+"Move Aside");
 
         while (drone.isOnWater()) {
-            String goDirection = DroneBusinessObject.closeDirection(droneView.getCurrentCellView(), closerLandCellView);
+            DirectionEnum goDirection = DroneBusinessObject.closeDirection(droneView.getCurrentCellView(), closerLandCellView);
             // drone.setEconomyMode(false);
-            DroneBusinessObject.goTo(drone, goDirection);
+            DroneBusinessObject.flyToDirection(drone, goDirection);
         }
 
     }

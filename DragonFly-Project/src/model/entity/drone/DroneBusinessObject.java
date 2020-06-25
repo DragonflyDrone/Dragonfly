@@ -3,16 +3,20 @@ package model.entity.drone;
 import controller.*;
 import javafx.scene.input.KeyCode;
 import model.Cell;
+import model.entity.Tree;
 import model.entity.drone.sensors.CameraStateEnum;
 import model.entity.drone.sensors.GPSStateEnum;
 import model.entity.drone.sensors.GambialStateEnum;
 import model.entity.drone.sensors.SmokeStateEnum;
+import util.DirectionEnum;
 import util.ProbabilityHelper;
 import util.StopWatch;
 import view.CellView;
 import view.SelectableView;
 import view.drone.DroneView;
 import view.drone.DroneViewImpl;
+import view.river.RiverView;
+import view.tree.TreeView;
 
 import java.util.List;
 import java.util.Random;
@@ -200,13 +204,25 @@ public class DroneBusinessObject {
 
         KeyCode flyDirectionCommand = selectedDrone.getFlyDirectionCommand();
 
-        if (selectedDrone.getCurrentBattery() > 10 && selectedDrone.getDistanceDestiny() > 0 && flyDirectionCommand != null
+//        if (selectedDrone.getCurrentBattery() > 10 && selectedDrone.getDistanceDestiny() > 0 && flyDirectionCommand != null
+        if (selectedDrone.getDistanceDestiny() > 0 && flyDirectionCommand != null
                 && !selectedDrone.isReturningToHome()
                 && !selectedDrone.isSafeLand()
                 && !selectedDrone.isBadConnection()
                 && !selectedDrone.isSafeLand()) {
 
-            flying(selectedDrone, flyDirectionCommand);
+
+            if (flyDirectionCommand == KeyCode.RIGHT) {
+               flyToDirection(selectedDrone, DirectionEnum.EAST);
+            } else if (flyDirectionCommand == KeyCode.LEFT) {
+                flyToDirection(selectedDrone, DirectionEnum.WEST);
+            } else if (flyDirectionCommand == KeyCode.UP) {
+                flyToDirection(selectedDrone, DirectionEnum.NORTH);
+            } else if (flyDirectionCommand == KeyCode.DOWN) {
+                flyToDirection(selectedDrone, DirectionEnum.SOUTH);
+            }
+
+//            flying(selectedDrone, flyDirectionCommand);
 
             selectedDrone.setFlyDirectionCommand(null);
 
@@ -473,73 +489,73 @@ public class DroneBusinessObject {
         selectedDrone.setCurrentBattery(newValueBattery);
     }*/
 
-    public static void flying(Drone selectedDrone, KeyCode flyDirectionCommand) {
-        System.out.println("flying");
-        //System.out.println("Drone["+drone.getUniqueID()+"] "+"Flying");
-        // loggerController.print("Drone["+drone.getUniqueID()+"] "+"Flying");
-
-        // irregular moviments
-        if (selectedDrone.isEconomyMode()) {
-            Random random = new Random();
-            double value = random.nextDouble();
-
-            // right moviments
-            if (value > 0.8) {
-                if (flyDirectionCommand == KeyCode.RIGHT) {
-                    flyingRight(selectedDrone);
-                } else if (flyDirectionCommand == KeyCode.LEFT) {
-                    flyingLeft(selectedDrone);
-                } else if (flyDirectionCommand == KeyCode.UP) {
-                    flyingUp(selectedDrone);
-                } else if (flyDirectionCommand == KeyCode.DOWN) {
-                    flyingDown(selectedDrone);
-                }
-            } else {
-                //wrong moviments
-
-                int randomNum = 0 + (int) (Math.random() * 4);
-                //System.out.println("Random number " + randomNum);
-
-                if (randomNum == 0) {
-                    flyingLeft(selectedDrone);
-                } else if (randomNum == 1) {
-                    flyingLeft(selectedDrone);
-                } else if (randomNum == 2) {
-
-                } else if (randomNum == 3) {
-
-                }
-            }
-
-
-        } else {
-            // normal moviment
-            if (flyDirectionCommand == KeyCode.RIGHT) {
-                flyingRight(selectedDrone);
-            } else if (flyDirectionCommand == KeyCode.LEFT) {
-                flyingLeft(selectedDrone);
-            } else if (flyDirectionCommand == KeyCode.UP) {
-                flyingUp(selectedDrone);
-            } else if (flyDirectionCommand == KeyCode.DOWN) {
-                flyingDown(selectedDrone);
-            }
-        }
-
-
-        updateDistances(selectedDrone);
-        updateBatteryPerBlock(selectedDrone);
-        //updateItIsOver(selectedDrone);
-
-    /*    //apply bad connection if cell is bad connection
-        CellView cellView = EnvironmentController.getInstance().getCurrentCellView();
-
-        if(CellController.getInstance().getCellFrom(cellView).getBadConnection()){
-            setBadConnection(selectedDrone);
-        }else {
-            setNormalConnection(selectedDrone);
-        }*/
-
-    }
+//    public static void flying(Drone selectedDrone, KeyCode flyDirectionCommand) {
+//        System.out.println("flying");
+//        //System.out.println("Drone["+drone.getUniqueID()+"] "+"Flying");
+//        // loggerController.print("Drone["+drone.getUniqueID()+"] "+"Flying");
+//
+//        // irregular moviments
+//        if (selectedDrone.isEconomyMode()) {
+//            Random random = new Random();
+//            double value = random.nextDouble();
+//
+//            // right moviments
+//            if (value > 0.8) {
+//                if (flyDirectionCommand == KeyCode.RIGHT) {
+//                    flyingRight(selectedDrone);
+//                } else if (flyDirectionCommand == KeyCode.LEFT) {
+//                    flyingLeft(selectedDrone);
+//                } else if (flyDirectionCommand == KeyCode.UP) {
+//                    flyingUp(selectedDrone);
+//                } else if (flyDirectionCommand == KeyCode.DOWN) {
+//                    flyingDown(selectedDrone);
+//                }
+//            } else {
+//                //wrong moviments
+//
+//                int randomNum = 0 + (int) (Math.random() * 4);
+//                //System.out.println("Random number " + randomNum);
+//
+//                if (randomNum == 0) {
+//                    flyingLeft(selectedDrone);
+//                } else if (randomNum == 1) {
+//                    flyingLeft(selectedDrone);
+//                } else if (randomNum == 2) {
+//
+//                } else if (randomNum == 3) {
+//
+//                }
+//            }
+//
+//
+//        } else {
+//            // normal moviment
+//            if (flyDirectionCommand == KeyCode.RIGHT) {
+//                flyingRight(selectedDrone);
+//            } else if (flyDirectionCommand == KeyCode.LEFT) {
+//                flyingLeft(selectedDrone);
+//            } else if (flyDirectionCommand == KeyCode.UP) {
+//                flyingUp(selectedDrone);
+//            } else if (flyDirectionCommand == KeyCode.DOWN) {
+//                flyingDown(selectedDrone);
+//            }
+//        }
+//
+//
+//        updateDistances(selectedDrone);
+//        updateBatteryPerBlock(selectedDrone);
+//        //updateItIsOver(selectedDrone);
+//
+//    /*    //apply bad connection if cell is bad connection
+//        CellView cellView = EnvironmentController.getInstance().getCurrentCellView();
+//
+//        if(CellController.getInstance().getCellFrom(cellView).getBadConnection()){
+//            setBadConnection(selectedDrone);
+//        }else {
+//            setNormalConnection(selectedDrone);
+//        }*/
+//
+//    }
 
     public static void updateItIsOver(Drone drone) {
         /* System.out.println("updateItIsOver");*/
@@ -548,6 +564,30 @@ public class DroneBusinessObject {
         List<SelectableView> selectableViewList = CellController.getInstance().getOverSelectableView(droneView);
 
         drone.setOnTopOfList(selectableViewList);
+
+        DroneBusinessObject.getInstance().fireNotDetect(drone);
+
+        if(drone.getSmokeState()!= SmokeStateEnum.FAILURE && drone.getSmokeState()!= SmokeStateEnum.OFF){
+            for(Object object :selectableViewList){
+                if(object instanceof TreeView){
+                    TreeView treeView = (TreeView) object;
+                    Tree tree = TreeController.getInstance().getTreeFrom(treeView.getUniqueID());
+                    if(tree.getFire()){
+                        DroneBusinessObject.getInstance().fireDetect(drone);
+                    }
+                }
+            }
+        }
+
+
+    }
+
+    private void fireDetect(Drone drone) {
+        drone.setSmokeState(SmokeStateEnum.DETECTED);
+    }
+
+    private void fireNotDetect(Drone drone) {
+        drone.setSmokeState(SmokeStateEnum.NOT_DETECTED);
     }
 
     /*public void goDestinyAutomatic() {
@@ -648,13 +688,13 @@ public class DroneBusinessObject {
 
 
     public static void returnToHome(Drone drone) {
+        drone.setReturningToHome(true);
 
         if(drone.isManual()){
-            /*This functionality is implemented within the DroneAutomaticController so when is automatic drone this methed dont need executed here*/
-            return;
+            ((DroneKeyBoardController)DroneKeyBoardController.getInstance()).returnToHome(drone);
         }
 
-        drone.setReturningToHome(true);
+
         //System.out.println("Return to Home inicio" + Thread.currentThread().getName());
 
 
@@ -729,6 +769,72 @@ public class DroneBusinessObject {
 //        returnToHomeStopWatch = new StopWatch(0,1000, runnable);
 //        returnToHomeStopWatch.start();
 
+
+    }
+
+    public static void goDestinyAutomatic(Drone drone) {
+        //essas tres condições são necessárias por causa do problema das threads
+
+        if(drone.isSafeLand()){
+            return;
+        }
+
+        if(drone.isShutDown()){
+            return;
+        }
+
+        int oldI = drone.getCurrentPositionI();
+        int oldJ = drone.getCurrentPositionJ();
+        double newDistanceDestiny = 999999;
+        DirectionEnum mustGO = null;
+        CellView hopitalCellView = null;
+
+        CellView droneCellView = DroneController.getInstance().getDroneViewFrom(drone.getUniqueID()).getCurrentCellView();
+        if(drone.isReturningToHome()){
+            //go to source hospital (return to home)
+            hopitalCellView = CellController.getInstance().getCellViewFrom(drone.getSourceCell());
+
+        }else {
+            //go to destiny hospital (to go destiny)
+            hopitalCellView = CellController.getInstance().getCellViewFrom(drone.getDestinyCell());
+        }
+
+
+        double tempDistance = DroneBusinessObject.distanceDroneWentRight(droneCellView, hopitalCellView);
+
+        if (tempDistance < newDistanceDestiny) {
+            newDistanceDestiny = tempDistance;
+            mustGO = DirectionEnum.EAST;
+        }
+
+        tempDistance = DroneBusinessObject.distanceDroneWentLeft(droneCellView, hopitalCellView);
+
+        if (tempDistance < newDistanceDestiny) {
+            newDistanceDestiny = tempDistance;
+            mustGO = DirectionEnum.WEST;
+        }
+
+
+        tempDistance = DroneBusinessObject.distanceDroneWentUp(droneCellView, hopitalCellView);
+
+        if (tempDistance < newDistanceDestiny) {
+            newDistanceDestiny = tempDistance;
+            mustGO = DirectionEnum.NORTH;
+
+        }
+
+        tempDistance = DroneBusinessObject.distanceDroneWentDown(droneCellView, hopitalCellView);
+
+        if (tempDistance < newDistanceDestiny) {
+            newDistanceDestiny = tempDistance;
+            mustGO = DirectionEnum.SOUTH;
+
+        }
+
+        DroneBusinessObject.flyToDirection(drone, mustGO);
+
+
+//        DroneBusinessObject.getInstance().checkStatus(drone);
 
     }
 
@@ -848,22 +954,22 @@ public class DroneBusinessObject {
 //
 //    }
 
-    public static String closeDirection(CellView srcCellView, CellView dstCellView) {
+    public static DirectionEnum closeDirection(CellView srcCellView, CellView dstCellView) {
         double newDistanceSource = 999999;
-        String mustGO = null;
+        DirectionEnum mustGO = null;
 
         double tempDistance = distanceDroneWentRight(srcCellView, dstCellView);
 
         if (tempDistance < newDistanceSource) {
             newDistanceSource = tempDistance;
-            mustGO = "->";
+            mustGO = DirectionEnum.EAST;
         }
 
         tempDistance = distanceDroneWentLeft(srcCellView, dstCellView);
 
         if (tempDistance < newDistanceSource) {
             newDistanceSource = tempDistance;
-            mustGO = "<-";
+            mustGO = DirectionEnum.WEST;
         }
 
 
@@ -871,7 +977,7 @@ public class DroneBusinessObject {
 
         if (tempDistance < newDistanceSource) {
             newDistanceSource = tempDistance;
-            mustGO = "/\\";
+            mustGO = DirectionEnum.NORTH;
 
         }
 
@@ -879,7 +985,7 @@ public class DroneBusinessObject {
 
         if (tempDistance < newDistanceSource) {
             newDistanceSource = tempDistance;
-            mustGO = "\\/";
+            mustGO = DirectionEnum.SOUTH;
 
         }
 
@@ -969,7 +1075,7 @@ public class DroneBusinessObject {
 
     }*/
 
-    public static void goTo(Drone drone, String mustGO) {
+    public static void flyToDirection(Drone drone, DirectionEnum mustGO) {
         //irregular moviments
         if (drone.isEconomyMode()) {
             Random random = new Random();
@@ -978,19 +1084,19 @@ public class DroneBusinessObject {
             // right moviments
             if (value > 0.8) {
                 switch (mustGO) {
-                    case "->":
+                    case EAST:
                         flyingRight(drone);
                         break;
 
-                    case "<-":
+                    case WEST:
                         flyingLeft(drone);
                         break;
 
-                    case "/\\":
+                    case NORTH:
                         flyingUp(drone);
                         break;
 
-                    case "\\/":
+                    case SOUTH:
                         flyingDown(drone);
                         break;
                 }
@@ -1023,19 +1129,19 @@ public class DroneBusinessObject {
             // normal moviments
         } else {
             switch (mustGO) {
-                case "->":
+                case EAST:
                     flyingRight(drone);
                     break;
 
-                case "<-":
+                case WEST:
                     flyingLeft(drone);
                     break;
 
-                case "/\\":
+                case NORTH:
                     flyingUp(drone);
                     break;
 
-                case "\\/":
+                case SOUTH:
                     flyingDown(drone);
                     break;
             }

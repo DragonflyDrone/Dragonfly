@@ -13,6 +13,7 @@ import javafx.scene.text.TextAlignment;
 import model.entity.drone.Drone;
 import model.entity.drone.DroneBusinessObject;
 import model.entity.drone.sensors.CameraStateEnum;
+import model.entity.drone.sensors.CollisionStateEnum;
 import model.entity.drone.sensors.GambialStateEnum;
 import util.SelectHelper;
 import util.WrapperHelper;
@@ -467,6 +468,24 @@ public class DroneViewImpl extends DroneView {
             }else {
                 loggerController.print("Drone[" + getDroneLabel() + "] " + "Light Wind");
             }
+            return;
+        }
+
+        if(methodName.equals("setCollisionState")){
+
+            if(newValue == oldValue){return;}
+
+            loggerController.print("Drone[" + getDroneLabel() + "] " + "Collision State: " + drone.getCollisionState());
+
+            return;
+        }
+
+        if(methodName.equals("setSmokeState")){
+
+            if(newValue == oldValue){return;}
+
+            loggerController.print("Drone[" + getDroneLabel() + "] " + "Smoke State: " + drone.getSmokeState());
+
             return;
         }
 

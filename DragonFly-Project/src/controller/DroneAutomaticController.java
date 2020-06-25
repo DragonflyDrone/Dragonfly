@@ -3,19 +3,14 @@ package controller;
 import javafx.application.Platform;
 import javafx.scene.input.KeyEvent;
 import model.Cell;
-import model.entity.Hospital;
 import model.entity.drone.Drone;
 import model.entity.drone.DroneBusinessObject;
+import util.DirectionEnum;
 import util.StopWatch;
 import view.CellView;
 import view.SelectableView;
 import view.drone.DroneView;
 import view.drone.DroneViewImpl;
-import view.hospital.HospitalView;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 
 public class DroneAutomaticController extends DroneController {
 
@@ -61,7 +56,7 @@ public class DroneAutomaticController extends DroneController {
 //                        DroneBusinessObject.takeOff(drone);
 //                    }
                             // Platform.runLater(() -> {
-                            goDestinyAutomatic(drone);
+                            DroneBusinessObject.goDestinyAutomatic(drone);
                             //  });
                             DroneBusinessObject.updateBatteryPerSecond(drone);
                             DroneBusinessObject.updateBatteryPerBlock(drone);
@@ -296,71 +291,71 @@ public class DroneAutomaticController extends DroneController {
 
     }
 
-    private void goDestinyAutomatic(Drone drone) {
-        //essas tres condições são necessárias por causa do problema das threads
-
-        if(drone.isSafeLand()){
-            return;
-        }
-
-        if(drone.isShutDown()){
-            return;
-        }
-
-        int oldI = drone.getCurrentPositionI();
-        int oldJ = drone.getCurrentPositionJ();
-        double newDistanceDestiny = 999999;
-        String mustGO = null;
-        CellView hopitalCellView = null;
-
-        CellView droneCellView = DroneController.getInstance().getDroneViewFrom(drone.getUniqueID()).getCurrentCellView();
-        if(drone.isReturningToHome()){
-            //go to source hospital (return to home)
-             hopitalCellView = CellController.getInstance().getCellViewFrom(drone.getSourceCell());
-            
-        }else {
-            //go to destiny hospital (to go destiny)
-            hopitalCellView = CellController.getInstance().getCellViewFrom(drone.getDestinyCell());
-        }
-
-
-        double tempDistance = DroneBusinessObject.distanceDroneWentRight(droneCellView, hopitalCellView);
-
-        if (tempDistance < newDistanceDestiny) {
-            newDistanceDestiny = tempDistance;
-            mustGO = "->";
-        }
-
-        tempDistance = DroneBusinessObject.distanceDroneWentLeft(droneCellView, hopitalCellView);
-
-        if (tempDistance < newDistanceDestiny) {
-            newDistanceDestiny = tempDistance;
-            mustGO = "<-";
-        }
-
-
-        tempDistance = DroneBusinessObject.distanceDroneWentUp(droneCellView, hopitalCellView);
-
-        if (tempDistance < newDistanceDestiny) {
-            newDistanceDestiny = tempDistance;
-            mustGO = "/\\";
-
-        }
-
-        tempDistance = DroneBusinessObject.distanceDroneWentDown(droneCellView, hopitalCellView);
-
-        if (tempDistance < newDistanceDestiny) {
-            newDistanceDestiny = tempDistance;
-            mustGO = "\\/";
-
-        }
-
-        DroneBusinessObject.goTo(drone, mustGO);
-
-
-//        DroneBusinessObject.getInstance().checkStatus(drone);
-
-    }
+//    private void goDestinyAutomatic(Drone drone) {
+//        //essas tres condições são necessárias por causa do problema das threads
+//
+//        if(drone.isSafeLand()){
+//            return;
+//        }
+//
+//        if(drone.isShutDown()){
+//            return;
+//        }
+//
+//        int oldI = drone.getCurrentPositionI();
+//        int oldJ = drone.getCurrentPositionJ();
+//        double newDistanceDestiny = 999999;
+//        DirectionEnum mustGO = null;
+//        CellView hopitalCellView = null;
+//
+//        CellView droneCellView = DroneController.getInstance().getDroneViewFrom(drone.getUniqueID()).getCurrentCellView();
+//        if(drone.isReturningToHome()){
+//            //go to source hospital (return to home)
+//             hopitalCellView = CellController.getInstance().getCellViewFrom(drone.getSourceCell());
+//
+//        }else {
+//            //go to destiny hospital (to go destiny)
+//            hopitalCellView = CellController.getInstance().getCellViewFrom(drone.getDestinyCell());
+//        }
+//
+//
+//        double tempDistance = DroneBusinessObject.distanceDroneWentRight(droneCellView, hopitalCellView);
+//
+//        if (tempDistance < newDistanceDestiny) {
+//            newDistanceDestiny = tempDistance;
+//            mustGO = DirectionEnum.EAST;
+//        }
+//
+//        tempDistance = DroneBusinessObject.distanceDroneWentLeft(droneCellView, hopitalCellView);
+//
+//        if (tempDistance < newDistanceDestiny) {
+//            newDistanceDestiny = tempDistance;
+//            mustGO = DirectionEnum.WEST;
+//        }
+//
+//
+//        tempDistance = DroneBusinessObject.distanceDroneWentUp(droneCellView, hopitalCellView);
+//
+//        if (tempDistance < newDistanceDestiny) {
+//            newDistanceDestiny = tempDistance;
+//            mustGO = DirectionEnum.NORTH;
+//
+//        }
+//
+//        tempDistance = DroneBusinessObject.distanceDroneWentDown(droneCellView, hopitalCellView);
+//
+//        if (tempDistance < newDistanceDestiny) {
+//            newDistanceDestiny = tempDistance;
+//            mustGO = DirectionEnum.SOUTH;
+//
+//        }
+//
+//        DroneBusinessObject.flyToDirection(drone, mustGO);
+//
+//
+////        DroneBusinessObject.getInstance().checkStatus(drone);
+//
+//    }
 
 
 

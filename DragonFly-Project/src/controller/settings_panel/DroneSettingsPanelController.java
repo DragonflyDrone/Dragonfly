@@ -17,10 +17,7 @@ import javafx.scene.text.Text;
 import model.Cell;
 import model.entity.drone.Drone;
 import model.entity.drone.DroneBusinessObject;
-import model.entity.drone.sensors.CameraStateEnum;
-import model.entity.drone.sensors.GPSStateEnum;
-import model.entity.drone.sensors.GambialStateEnum;
-import model.entity.drone.sensors.SmokeStateEnum;
+import model.entity.drone.sensors.*;
 import util.WrapperHelper;
 import view.CellView;
 import view.SelectableView;
@@ -40,7 +37,7 @@ public class DroneSettingsPanelController extends SettingsPanelController<Drone>
     @FXML
     private
     TextField initialBatteryTextView, consumptionPerBlockTextView, consumptionPerSecondTextView, currentDroneTextField,
-            cameraTextField, gambialTextField, gpsTextField, smokeTextField;
+            cameraTextField, gambialTextField, gpsTextField, smokeTextField, collisionTextField;
 
     @FXML
     private
@@ -64,7 +61,7 @@ public class DroneSettingsPanelController extends SettingsPanelController<Drone>
     private ComboBox wrapperComboBox;
 
     @FXML
-    private CheckBox gambialCheckBox,gpsCheckBox,smokeCheckBox,cameraCheckBox;
+    private CheckBox gambialCheckBox,gpsCheckBox,smokeCheckBox,cameraCheckBox, collisionCheckBox;
 
 
 
@@ -128,6 +125,8 @@ public class DroneSettingsPanelController extends SettingsPanelController<Drone>
         gpsCheckBox.selectedProperty().addListener((observable, oldValue, newValue) -> gpsTextField.setDisable(!newValue));
 
         smokeCheckBox.selectedProperty().addListener((observable, oldValue, newValue) -> smokeTextField.setDisable(!newValue));
+
+        collisionCheckBox.selectedProperty().addListener((observable, oldValue, newValue) -> collisionTextField.setDisable(!newValue));
 
 
     }
@@ -297,11 +296,13 @@ public class DroneSettingsPanelController extends SettingsPanelController<Drone>
         boolean gambialIsSelected = gambialCheckBox.isSelected();
         boolean gpsIsSelected = gpsCheckBox.isSelected();
         boolean smokeIsSelected = smokeCheckBox.isSelected();
+        boolean collisionIsSelected = collisionCheckBox.isSelected();
 
         double cameraFailureProb = Double.parseDouble(cameraTextField.getText());
         double gambialFailureProb = Double.parseDouble(gambialTextField.getText());
         double gpsFailureProb = Double.parseDouble(gpsTextField.getText());
         double smokeFailureProb = Double.parseDouble(smokeTextField.getText());
+        double collisionFailureProb = Double.parseDouble(collisionTextField.getText());
 
         selectedDrone.setCameraState(cameraIsSelected ? CameraStateEnum.ON: CameraStateEnum.OFF);
         selectedDrone.setCameraFailureProbability(cameraFailureProb);
@@ -311,6 +312,8 @@ public class DroneSettingsPanelController extends SettingsPanelController<Drone>
         selectedDrone.setGpsFailureProbability(gpsFailureProb);
         selectedDrone.setSmokeState(smokeIsSelected ? SmokeStateEnum.ON: SmokeStateEnum.OFF);
         selectedDrone.setSmokeFailureProbability(smokeFailureProb);
+        selectedDrone.setCollisionState(collisionIsSelected ? CollisionStateEnum.ON: CollisionStateEnum.OFF);
+        selectedDrone.setCollisionFailureProbability(collisionFailureProb);
 
 
     }

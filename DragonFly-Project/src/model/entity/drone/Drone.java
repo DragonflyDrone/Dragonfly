@@ -6,10 +6,7 @@ import controller.CellController;
 import javafx.scene.input.KeyCode;
 import model.Cell;
 import model.entity.Entity;
-import model.entity.drone.sensors.CameraStateEnum;
-import model.entity.drone.sensors.GPSStateEnum;
-import model.entity.drone.sensors.GambialStateEnum;
-import model.entity.drone.sensors.SmokeStateEnum;
+import model.entity.drone.sensors.*;
 import util.DirectionEnum;
 import view.SelectableView;
 import view.river.RiverView;
@@ -87,6 +84,9 @@ public class Drone extends Entity {
     private double smokeFailureProbability = 0.D;
     private DirectionEnum windDirection = DirectionEnum.EAST;
 
+    private CollisionStateEnum collisionState = CollisionStateEnum.ON;
+    private double collisionFailureProbability = 0.D;
+
     public Drone(String uniqueID, String label, Cell sourceCell) {
         this.uniqueID = uniqueID;
         this.currentPositionI = sourceCell.getRowPosition();
@@ -115,6 +115,23 @@ public class Drone extends Entity {
 
     public boolean isNormalConnection(){
         return !isBadConnection();
+    }
+
+    public CollisionStateEnum getCollisionState() {
+        return collisionState;
+    }
+
+    public void setCollisionState(CollisionStateEnum collisionState) {
+        CollisionStateEnum oldValue = this.collisionState;
+        CollisionStateEnum newValue = collisionState;
+
+        if(oldValue == newValue){
+            return;
+        }
+
+        this.collisionState = collisionState;
+
+        notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
     }
 
     public CameraStateEnum getCameraState() {
@@ -172,6 +189,11 @@ public class Drone extends Entity {
     }
 
     public void setSmokeState(SmokeStateEnum smokeState) {
+        if(smokeState == SmokeStateEnum.DETECTED){
+            System.out.println("Fogo detectado!");
+        }
+
+
         SmokeStateEnum oldValue = this.smokeState;
         SmokeStateEnum newValue = smokeState;
 
@@ -774,6 +796,19 @@ public class Drone extends Entity {
 
     public DirectionEnum getWindDirection(){
         return windDirection;
+    }
+
+    public void setCollisionFailureProbability(double collisionFailureProbability) {
+        double oldValue = this.collisionFailureProbability;
+        double newValue = collisionFailureProbability;
+
+        if(oldValue == newValue){
+            return;
+        }
+
+        this.collisionFailureProbability = collisionFailureProbability;
+
+        notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
     }
 
 

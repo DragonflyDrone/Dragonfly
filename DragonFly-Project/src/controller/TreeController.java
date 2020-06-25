@@ -101,9 +101,9 @@ public class TreeController {
                 AtomicBoolean isFire = new AtomicBoolean(false);
                 Platform.runLater(() -> {
                     for (Tree tree: treeMap.values()){
-                         isFire.set(ProbabilityHelper.prob(50));
+                         isFire.set(ProbabilityHelper.prob(100));
                          tree.setFire(isFire.get());
-                         System.out.println(isFire.get());
+                         //System.out.println(isFire.get());
                     }
                 });
             }

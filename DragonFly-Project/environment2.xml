@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<EnvironmentElements>
+<riverElements/>
+<hospitalElements/>
+<houseElements/>
+<treeElements/>
+<antennaElements>
+<antennaElement UniqueID="c1072fe5-8588-4bc8-9d5b-0122a3db4cac" label="1" sourceColumnPosition="13" sourceRowPosition="5"/>
+<antennaElement UniqueID="0b185fcc-83be-46b4-9406-df947f80a1ff" label="5" sourceColumnPosition="17" sourceRowPosition="5"/>
+<antennaElement UniqueID="6932910d-44e1-4e09-9c16-b912cdbb11e0" label="2" sourceColumnPosition="14" sourceRowPosition="5"/>
+<antennaElement UniqueID="3d93ef7f-f226-4416-a3a8-d49f329cd22a" label="4" sourceColumnPosition="16" sourceRowPosition="5"/>
+<antennaElement UniqueID="ecc0e602-7ef3-4dff-bda0-d0c187b5bb47" label="3" sourceColumnPosition="15" sourceRowPosition="5"/>
+</antennaElements>
+<droneElements>
+<droneElement UniqueID="c6c0cccf-3b50-49ff-aa3c-2f56993aaedd" baterryConsumptionPerBlock="1.0" destinyColumnPosition="21" destinyRowPosition="6" initialBaterry="100.0" label="1" sourceColumnPosition="6" sourceRowPosition="6" wrapperId="0"/>
+</droneElements>
+<boatElements/>
+</EnvironmentElements>

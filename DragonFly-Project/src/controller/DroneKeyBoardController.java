@@ -1,5 +1,6 @@
 package controller;
 
+import javafx.application.Platform;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import model.Cell;
@@ -25,6 +26,7 @@ public class DroneKeyBoardController extends DroneController {
     private EnvironmentController environmentController;
     private StopWatch stopWatchBattery;
     private boolean mustStopBatteryDecrementer;
+    private static boolean mustStopAutomaticExecution;
 
 
     private DroneKeyBoardController() {}
@@ -101,8 +103,10 @@ public class DroneKeyBoardController extends DroneController {
 
                 DroneBusinessObject.updateFlyDirectionCommand(flyDirectionCommand, selectedDrone);
                // DroneBusinessObject.updateBatteryPerBlock(selectedDrone);
-
+                DroneBusinessObject.updateBatteryPerBlock(selectedDrone);
+                DroneBusinessObject.updateDistances(selectedDrone);
                 DroneBusinessObject.checkStatus(selectedDrone);
+
 
 
 
@@ -140,6 +144,7 @@ public class DroneKeyBoardController extends DroneController {
     @Override
     public void consumeRunEnviroment() {
         mustStopBatteryDecrementer = false;
+        mustStopAutomaticExecution = false;
         Drone currentDrone;
         for(Map.Entry<String, Drone> droneEntry : droneMap.entrySet()){
 
@@ -178,6 +183,7 @@ public class DroneKeyBoardController extends DroneController {
         }
 
         mustStopBatteryDecrementer = true;
+        mustStopAutomaticExecution = true;
        /* if(stopWatchBattery != null){
             stopBatteryDecrementer();
         }*/
@@ -383,6 +389,37 @@ public class DroneKeyBoardController extends DroneController {
     @Override
     public void consumeSaveAttributesDrone(DroneView droneView) {
 
+    }
+
+    public static void returnToHome(Drone drone){
+        StopWatch automaticExecutionStopWatch = new StopWatch(0, 1000) {
+            @Override
+            public void task() {
+                Platform.runLater(() -> {
+//                    if(drone.isShutDown()){
+//                        DroneBusinessObject.start(drone);
+//                        DroneBusinessObject.takeOff(drone);
+//                    }
+                    // Platform.runLater(() -> {
+                    DroneBusinessObject.goDestinyAutomatic(drone);
+                    //  });
+                    DroneBusinessObject.updateBatteryPerSecond(drone);
+                    DroneBusinessObject.updateBatteryPerBlock(drone);
+                    DroneBusinessObject.updateDistances(drone);
+                    DroneBusinessObject.checkStatus(drone);
+
+                    // DroneBusinessObject.updateItIsOver(drone);
+                });
+
+
+            }
+
+            @Override
+            public boolean conditionStop() {
+                return  mustStopAutomaticExecution;
+            }
+
+        };
     }
 
 }
