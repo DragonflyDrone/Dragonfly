@@ -373,7 +373,7 @@
   <node concept="25R3W" id="11jlgVoGE2C">
     <property role="3F6X1D" value="1176377449927319720" />
     <property role="3GE5qa" value="math" />
-    <property role="TrG5h" value="OnOffConditionalEnum" />
+    <property role="TrG5h" value="TurnConditionalEnum" />
     <node concept="25R33" id="11jlgVoGE2D" role="25R1y">
       <property role="3tVfz5" value="1176377449927319721" />
       <property role="TrG5h" value="on" />
@@ -444,11 +444,6 @@
     <property role="TrG5h" value="TurnMotors" />
     <property role="34LRSv" value="turnOnMotors" />
     <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="CommandCall" />
-    <node concept="1TJgyi" id="1bns0lwW23G" role="1TKVEl">
-      <property role="IQ2nx" value="1357676981078991084" />
-      <property role="TrG5h" value="value" />
-      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
-    </node>
     <node concept="1TJgyj" id="31DEoowfa1v" role="1TKVEi">
       <property role="IQ2ns" value="3488505779906715743" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
@@ -502,7 +497,7 @@
     <node concept="1TJgyi" id="1OPBmmolth4" role="1TKVEl">
       <property role="IQ2nx" value="2104761460538594372" />
       <property role="TrG5h" value="value" />
-      <ref role="AX2Wp" node="11jlgVoGE2C" resolve="OnOffConditionalEnum" />
+      <ref role="AX2Wp" node="11jlgVoGE2C" resolve="TurnConditionalEnum" />
     </node>
   </node>
   <node concept="1TIwiD" id="6UvQjm9mDlr">
@@ -556,7 +551,7 @@
     <node concept="1TJgyi" id="6UvQjm9mWGZ" role="1TKVEl">
       <property role="IQ2nx" value="7971328689430055743" />
       <property role="TrG5h" value="enable" />
-      <ref role="AX2Wp" node="11jlgVoGE2C" resolve="OnOffConditionalEnum" />
+      <ref role="AX2Wp" node="11jlgVoGE2C" resolve="TurnConditionalEnum" />
     </node>
   </node>
   <node concept="1TIwiD" id="6UvQjm9mWHO">
@@ -693,7 +688,7 @@
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="right" />
       <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="5eYfGK4oHfV" resolve="Value" />
+      <ref role="20lvS9" node="31DEoowefQE" resolve="IntegerNumber" />
     </node>
   </node>
   <node concept="1TIwiD" id="11jlgVoHLp6">
@@ -713,14 +708,14 @@
     <node concept="1TJgyi" id="11jlgVoHLp9" role="1TKVEl">
       <property role="IQ2nx" value="1176377449927611977" />
       <property role="TrG5h" value="right" />
-      <ref role="AX2Wp" node="11jlgVoGE2C" resolve="OnOffConditionalEnum" />
+      <ref role="AX2Wp" node="11jlgVoGE2C" resolve="TurnConditionalEnum" />
     </node>
   </node>
   <node concept="1TIwiD" id="11jlgVoHLoj">
     <property role="EcuMT" value="1176377449927611923" />
     <property role="3GE5qa" value="math.expression.conditional_expression.internal_state" />
     <property role="TrG5h" value="CameraPowerConditionalExpression" />
-    <property role="R4oN_" value="( camera's power [is|is not] [on|off] )" />
+    <property role="R4oN_" value="( camera [is|is not] [on|off] )" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="11jlgVoHLok" role="PzmwI">
       <ref role="PrY4T" node="7_KOYEjbOnV" resolve="ConditionalExpression" />
@@ -733,7 +728,7 @@
     <node concept="1TJgyi" id="11jlgVoHLom" role="1TKVEl">
       <property role="IQ2nx" value="1176377449927611926" />
       <property role="TrG5h" value="right" />
-      <ref role="AX2Wp" node="11jlgVoGE2C" resolve="OnOffConditionalEnum" />
+      <ref role="AX2Wp" node="11jlgVoGE2C" resolve="TurnConditionalEnum" />
     </node>
   </node>
   <node concept="1TIwiD" id="11jlgVoGZLO">
@@ -768,7 +763,7 @@
     <node concept="1TJgyi" id="11jlgVoGZKW" role="1TKVEl">
       <property role="IQ2nx" value="1176377449927408700" />
       <property role="TrG5h" value="right" />
-      <ref role="AX2Wp" node="11jlgVoGE2C" resolve="OnOffConditionalEnum" />
+      <ref role="AX2Wp" node="11jlgVoGE2C" resolve="TurnConditionalEnum" />
     </node>
   </node>
   <node concept="1TIwiD" id="11jlgVoGZJU">
@@ -788,7 +783,7 @@
     <node concept="1TJgyi" id="11jlgVoGZJX" role="1TKVEl">
       <property role="IQ2nx" value="1176377449927408637" />
       <property role="TrG5h" value="right" />
-      <ref role="AX2Wp" node="11jlgVoGE2C" resolve="OnOffConditionalEnum" />
+      <ref role="AX2Wp" node="11jlgVoGE2C" resolve="TurnConditionalEnum" />
     </node>
   </node>
   <node concept="1TIwiD" id="11jlgVoGE2z">
@@ -808,14 +803,14 @@
     <node concept="1TJgyi" id="11jlgVoGE2J" role="1TKVEl">
       <property role="IQ2nx" value="1176377449927319727" />
       <property role="TrG5h" value="right" />
-      <ref role="AX2Wp" node="11jlgVoGE2C" resolve="OnOffConditionalEnum" />
+      <ref role="AX2Wp" node="11jlgVoGE2C" resolve="TurnConditionalEnum" />
     </node>
   </node>
   <node concept="1TIwiD" id="11jlgVoF3CR">
     <property role="EcuMT" value="1176377449926900279" />
     <property role="3GE5qa" value="math.expression.conditional_expression.internal_state" />
     <property role="TrG5h" value="AltitudeConditionalExpression" />
-    <property role="R4oN_" value="( altitude [is|is not|&gt;|&lt;|&gt;=|&lt;=] n Km )" />
+    <property role="R4oN_" value="( altitude [is|is not|&gt;|&lt;|&gt;=|&lt;=] n m )" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="11jlgVoF3CS" role="1TKVEl">
       <property role="IQ2nx" value="1176377449926900280" />
@@ -827,7 +822,7 @@
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="right" />
       <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="5eYfGK4oHfV" resolve="Value" />
+      <ref role="20lvS9" node="31DEoowefQE" resolve="IntegerNumber" />
     </node>
     <node concept="PrWs8" id="11jlgVoGlz_" role="PzmwI">
       <ref role="PrY4T" node="7_KOYEjbOnV" resolve="ConditionalExpression" />
@@ -879,7 +874,7 @@
     <property role="EcuMT" value="8237239994876226883" />
     <property role="3GE5qa" value="math.expression.conditional_expression.distance" />
     <property role="TrG5h" value="OriginAndDestinationDistanceConditionalExpression" />
-    <property role="R4oN_" value="([origin|destination] distance [is|is not|&gt;|&lt;|&gt;=|&lt;=] n km)" />
+    <property role="R4oN_" value="([origin|destination] distance [is|is not|&gt;|&lt;|&gt;=|&lt;=] n m)" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="79gzy7KfeP4" role="PzmwI">
       <ref role="PrY4T" node="7_KOYEjbOnV" resolve="ConditionalExpression" />
@@ -899,7 +894,7 @@
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="right1" />
       <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="5eYfGK4oHfV" resolve="Value" />
+      <ref role="20lvS9" node="31DEoowefQE" resolve="IntegerNumber" />
     </node>
   </node>
   <node concept="25R3W" id="79gzy7KeIiz">
@@ -1061,7 +1056,7 @@
     <property role="EcuMT" value="6034329596693600580" />
     <property role="3GE5qa" value="math.expression.conditional_expression.distance" />
     <property role="TrG5h" value="ScalarDistanceConditionalExpression" />
-    <property role="R4oN_" value="(Distance from [origin|destination][is|not is|&gt;|&lt;|&gt;=|&lt;=] n km)" />
+    <property role="R4oN_" value="(Distance from [origin|destination][is|not is|&gt;|&lt;|&gt;=|&lt;=] n m)" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="7_KOYEjgt1R" role="1TKVEl">
       <property role="IQ2nx" value="8750727080427245687" />
@@ -1081,7 +1076,7 @@
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="right" />
       <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="5eYfGK4oHfV" resolve="Value" />
+      <ref role="20lvS9" node="31DEoowefQE" resolve="IntegerNumber" />
     </node>
   </node>
   <node concept="1TIwiD" id="5eYfGK4qp90">
@@ -1105,7 +1100,7 @@
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="right" />
       <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="5eYfGK4oHfV" resolve="Value" />
+      <ref role="20lvS9" node="31DEoowefQE" resolve="IntegerNumber" />
     </node>
     <node concept="1TJgyi" id="7_KOYEjdalD" role="1TKVEl">
       <property role="IQ2nx" value="8750727080426382697" />
@@ -1222,18 +1217,18 @@
   <node concept="1TIwiD" id="1bns0lwW20Y">
     <property role="EcuMT" value="1357676981078990910" />
     <property role="3GE5qa" value="command" />
-    <property role="TrG5h" value="EconomyMode" />
+    <property role="TrG5h" value="TurnEconomyMode" />
     <property role="34LRSv" value="setEconomicMode" />
     <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="CommandCall" />
     <node concept="1TJgyi" id="1bns0lwW20Z" role="1TKVEl">
       <property role="IQ2nx" value="1357676981078990911" />
       <property role="TrG5h" value="value" />
-      <ref role="AX2Wp" node="11jlgVoGE2C" resolve="OnOffConditionalEnum" />
+      <ref role="AX2Wp" node="1bns0lwX47k" resolve="CommandStateEnum" />
     </node>
   </node>
   <node concept="25R3W" id="1bns0lwX47k">
     <property role="3F6X1D" value="1357676981079261652" />
-    <property role="3GE5qa" value="command" />
+    <property role="3GE5qa" value="command.enum" />
     <property role="TrG5h" value="CommandStateEnum" />
     <node concept="25R33" id="1bns0lwX47l" role="25R1y">
       <property role="3tVfz5" value="1357676981079261653" />
@@ -1287,37 +1282,7 @@
     <node concept="1TJgyi" id="IyLDsSshHU" role="1TKVEl">
       <property role="IQ2nx" value="838450833433631610" />
       <property role="TrG5h" value="cardialPoint" />
-      <ref role="AX2Wp" node="IyLDsSshHG" resolve="CardinalPointsEnum" />
-    </node>
-  </node>
-  <node concept="25R3W" id="IyLDsSshHG">
-    <property role="3F6X1D" value="838450833433631596" />
-    <property role="3GE5qa" value="command" />
-    <property role="TrG5h" value="CardinalPointsEnum" />
-    <node concept="25R33" id="IyLDsSshHH" role="25R1y">
-      <property role="3tVfz5" value="838450833433631597" />
-      <property role="TrG5h" value="East" />
-      <property role="1L1pqM" value="east" />
-    </node>
-    <node concept="25R33" id="IyLDsSshHI" role="25R1y">
-      <property role="3tVfz5" value="838450833433631598" />
-      <property role="TrG5h" value="West" />
-      <property role="1L1pqM" value="west" />
-    </node>
-    <node concept="25R33" id="IyLDsSshHL" role="25R1y">
-      <property role="3tVfz5" value="838450833433631601" />
-      <property role="TrG5h" value="South" />
-      <property role="1L1pqM" value="south" />
-    </node>
-    <node concept="25R33" id="IyLDsSshHP" role="25R1y">
-      <property role="3tVfz5" value="838450833433631605" />
-      <property role="TrG5h" value="North" />
-      <property role="1L1pqM" value="north" />
-    </node>
-    <node concept="25R33" id="31DEoowefPw" role="25R1y">
-      <property role="3tVfz5" value="3488505779906477408" />
-      <property role="TrG5h" value="Any" />
-      <property role="1L1pqM" value="any" />
+      <ref role="AX2Wp" node="11jlgVoCRQP" resolve="DirectionsEnum" />
     </node>
   </node>
   <node concept="1TIwiD" id="IyLDsSshIX">
@@ -1365,7 +1330,7 @@
     <node concept="1TJgyi" id="24MtOl5WXe0" role="1TKVEl">
       <property role="IQ2nx" value="2392105491497210752" />
       <property role="TrG5h" value="right" />
-      <ref role="AX2Wp" node="11jlgVoGE2C" resolve="OnOffConditionalEnum" />
+      <ref role="AX2Wp" node="11jlgVoGE2C" resolve="TurnConditionalEnum" />
     </node>
     <node concept="PrWs8" id="24MtOl5WXdX" role="PzmwI">
       <ref role="PrY4T" node="7_KOYEjbOnV" resolve="ConditionalExpression" />
@@ -1374,12 +1339,12 @@
   <node concept="1TIwiD" id="24MtOl5XwBq">
     <property role="EcuMT" value="2392105491497355738" />
     <property role="3GE5qa" value="command" />
-    <property role="TrG5h" value="CameraCommand" />
+    <property role="TrG5h" value="TurnCamera" />
     <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="CommandCall" />
     <node concept="1TJgyi" id="24MtOl5XwBr" role="1TKVEl">
       <property role="IQ2nx" value="2392105491497355739" />
       <property role="TrG5h" value="turn" />
-      <ref role="AX2Wp" node="11jlgVoGE2C" resolve="OnOffConditionalEnum" />
+      <ref role="AX2Wp" node="11jlgVoGE2C" resolve="TurnConditionalEnum" />
     </node>
   </node>
   <node concept="1TIwiD" id="24MtOl5XwCb">
@@ -1395,7 +1360,7 @@
   </node>
   <node concept="25R3W" id="24MtOl5XwD5">
     <property role="3F6X1D" value="2392105491497355845" />
-    <property role="3GE5qa" value="command" />
+    <property role="3GE5qa" value="command.enum" />
     <property role="TrG5h" value="GambialEnum" />
     <node concept="25R33" id="24MtOl5XwD6" role="25R1y">
       <property role="3tVfz5" value="2392105491497355846" />
@@ -1454,10 +1419,10 @@
     <node concept="PrWs8" id="31DEoow88Be" role="PzmwI">
       <ref role="PrY4T" node="7_KOYEjbOnV" resolve="ConditionalExpression" />
     </node>
-    <node concept="1TJgyi" id="31DEoow88Bg" role="1TKVEl">
-      <property role="IQ2nx" value="3488505779904874960" />
+    <node concept="1TJgyi" id="4NY2oxu_xq$" role="1TKVEl">
+      <property role="IQ2nx" value="5547882272274126500" />
       <property role="TrG5h" value="value" />
-      <ref role="AX2Wp" node="IyLDsSshHG" resolve="CardinalPointsEnum" />
+      <ref role="AX2Wp" node="11jlgVoCRQP" resolve="DirectionsEnum" />
     </node>
     <node concept="1TJgyi" id="31DEoow88BK" role="1TKVEl">
       <property role="IQ2nx" value="3488505779904874992" />
@@ -1468,7 +1433,7 @@
   <node concept="1TIwiD" id="31DEoow8YcR">
     <property role="EcuMT" value="3488505779905094455" />
     <property role="3GE5qa" value="command" />
-    <property role="TrG5h" value="setManualControl" />
+    <property role="TrG5h" value="TurnAutomaticControl" />
     <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="CommandCall" />
     <node concept="1TJgyi" id="31DEoow8YcU" role="1TKVEl">
       <property role="IQ2nx" value="3488505779905094458" />
@@ -1489,7 +1454,7 @@
     <node concept="1TJgyi" id="31DEoowaEDP" role="1TKVEl">
       <property role="IQ2nx" value="3488505779905538677" />
       <property role="TrG5h" value="right" />
-      <ref role="AX2Wp" node="11jlgVoGE2C" resolve="OnOffConditionalEnum" />
+      <ref role="AX2Wp" node="11jlgVoGE2C" resolve="TurnConditionalEnum" />
     </node>
     <node concept="PrWs8" id="31DEoowaEDM" role="PzmwI">
       <ref role="PrY4T" node="7_KOYEjbOnV" resolve="ConditionalExpression" />
@@ -1526,7 +1491,7 @@
     <node concept="1TJgyi" id="31DEoowcqmp" role="1TKVEl">
       <property role="IQ2nx" value="3488505779905996185" />
       <property role="TrG5h" value="right" />
-      <ref role="AX2Wp" node="11jlgVoGE2C" resolve="OnOffConditionalEnum" />
+      <ref role="AX2Wp" node="11jlgVoGE2C" resolve="TurnConditionalEnum" />
     </node>
     <node concept="PrWs8" id="31DEoowcqmm" role="PzmwI">
       <ref role="PrY4T" node="7_KOYEjbOnV" resolve="ConditionalExpression" />

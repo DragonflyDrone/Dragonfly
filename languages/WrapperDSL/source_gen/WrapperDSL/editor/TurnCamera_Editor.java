@@ -7,8 +7,8 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class CameraCommand_Editor extends DefaultNodeEditor {
+public class TurnCamera_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return new CameraCommand_EditorBuilder_a(editorContext, node).createCell();
+    return new TurnCamera_EditorBuilder_a(editorContext, node).createCell();
   }
 }

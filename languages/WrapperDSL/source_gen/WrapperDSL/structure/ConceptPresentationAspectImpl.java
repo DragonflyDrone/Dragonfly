@@ -17,7 +17,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_AnyNumber;
   private ConceptPresentation props_BatteryConditionalExpression;
   private ConceptPresentation props_BooleanValue;
-  private ConceptPresentation props_CameraCommand;
   private ConceptPresentation props_CameraPowerConditionalExpression;
   private ConceptPresentation props_CardinalPointsRotate;
   private ConceptPresentation props_CategoricalDistanceConditionalExpression;
@@ -29,7 +28,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_CoordenateConditionalExpression;
   private ConceptPresentation props_DegreesRotate;
   private ConceptPresentation props_DetectSmokeConditionalExpression;
-  private ConceptPresentation props_EconomyMode;
   private ConceptPresentation props_Else;
   private ConceptPresentation props_ExceptionalScenario;
   private ConceptPresentation props_Expression;
@@ -71,13 +69,15 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_TakeOff;
   private ConceptPresentation props_Text;
   private ConceptPresentation props_Then;
+  private ConceptPresentation props_TurnAutomaticControl;
+  private ConceptPresentation props_TurnCamera;
+  private ConceptPresentation props_TurnEconomyMode;
   private ConceptPresentation props_TurnMotors;
   private ConceptPresentation props_Value;
   private ConceptPresentation props_When;
   private ConceptPresentation props_While;
   private ConceptPresentation props_WifiConditionalExpression;
   private ConceptPresentation props_WindDirectionConditionalExpression;
-  private ConceptPresentation props_setManualControl;
 
   @Override
   @Nullable
@@ -101,7 +101,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.AltitudeConditionalExpression:
         if (props_AltitudeConditionalExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.shortDesc("( altitude [is|is not|>|<|>=|<=] n Km )");
+          cpb.shortDesc("( altitude [is|is not|>|<|>=|<=] n m )");
           cpb.rawPresentation("AltitudeConditionalExpression");
           props_AltitudeConditionalExpression = cpb.create();
         }
@@ -142,17 +142,10 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_BooleanValue = cpb.create();
         }
         return props_BooleanValue;
-      case LanguageConceptSwitch.CameraCommand:
-        if (props_CameraCommand == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("CameraCommand");
-          props_CameraCommand = cpb.create();
-        }
-        return props_CameraCommand;
       case LanguageConceptSwitch.CameraPowerConditionalExpression:
         if (props_CameraPowerConditionalExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.shortDesc("( camera's power [is|is not] [on|off] )");
+          cpb.shortDesc("( camera [is|is not] [on|off] )");
           cpb.rawPresentation("CameraPowerConditionalExpression");
           props_CameraPowerConditionalExpression = cpb.create();
         }
@@ -229,13 +222,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_DetectSmokeConditionalExpression = cpb.create();
         }
         return props_DetectSmokeConditionalExpression;
-      case LanguageConceptSwitch.EconomyMode:
-        if (props_EconomyMode == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("setEconomicMode");
-          props_EconomyMode = cpb.create();
-        }
-        return props_EconomyMode;
       case LanguageConceptSwitch.Else:
         if (props_Else == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -390,7 +376,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.OriginAndDestinationDistanceConditionalExpression:
         if (props_OriginAndDestinationDistanceConditionalExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.shortDesc("([origin|destination] distance [is|is not|>|<|>=|<=] n km)");
+          cpb.shortDesc("([origin|destination] distance [is|is not|>|<|>=|<=] n m)");
           cpb.rawPresentation("OriginAndDestinationDistanceConditionalExpression");
           props_OriginAndDestinationDistanceConditionalExpression = cpb.create();
         }
@@ -435,7 +421,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.ScalarDistanceConditionalExpression:
         if (props_ScalarDistanceConditionalExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.shortDesc("(Distance from [origin|destination][is|not is|>|<|>=|<=] n km)");
+          cpb.shortDesc("(Distance from [origin|destination][is|not is|>|<|>=|<=] n m)");
           cpb.rawPresentation("ScalarDistanceConditionalExpression");
           props_ScalarDistanceConditionalExpression = cpb.create();
         }
@@ -532,6 +518,27 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Then = cpb.create();
         }
         return props_Then;
+      case LanguageConceptSwitch.TurnAutomaticControl:
+        if (props_TurnAutomaticControl == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TurnAutomaticControl");
+          props_TurnAutomaticControl = cpb.create();
+        }
+        return props_TurnAutomaticControl;
+      case LanguageConceptSwitch.TurnCamera:
+        if (props_TurnCamera == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TurnCamera");
+          props_TurnCamera = cpb.create();
+        }
+        return props_TurnCamera;
+      case LanguageConceptSwitch.TurnEconomyMode:
+        if (props_TurnEconomyMode == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("setEconomicMode");
+          props_TurnEconomyMode = cpb.create();
+        }
+        return props_TurnEconomyMode;
       case LanguageConceptSwitch.TurnMotors:
         if (props_TurnMotors == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -574,13 +581,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_WindDirectionConditionalExpression = cpb.create();
         }
         return props_WindDirectionConditionalExpression;
-      case LanguageConceptSwitch.setManualControl:
-        if (props_setManualControl == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("setManualControl");
-          props_setManualControl = cpb.create();
-        }
-        return props_setManualControl;
     }
     return null;
   }

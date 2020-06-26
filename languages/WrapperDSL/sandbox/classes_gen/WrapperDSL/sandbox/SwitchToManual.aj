@@ -14,7 +14,7 @@ import view.river.RiverView;
 
 import java.util.ArrayList;
 import java.util.List;
-public aspect Glide{
+public aspect SwitchToManual{
 
 around():
 &&
@@ -25,10 +25,10 @@ if
 (<!TextGen not found for 'WrapperDSL.structure.PerformingCommandConditionalExpression'!>)
 )
 {
-keepPosition(((Drone)thisJoinPoint.getArgs()[0]));
+manual(((Drone)thisJoinPoint.getArgs()[0]));
 }
-public void keepPosition(JoinPoint thisJoinPoint){
-System.out.println("Drone["+drone.getLabel()+"] "+"Glide);
-LoggerController.getInstance().print("Drone["+drone.getLabel()+"]Glide);
-}
+public void manual(JoinPoint thisJoinPoint){
+System.out.println("Drone["+drone.getLabel()+"] "+"SwitchToManual);
+LoggerController.getInstance().print("Drone["+drone.getLabel()+"]SwitchToManual);
+<!TextGen not found for 'WrapperDSL.structure.setManualControl'!>}
 }

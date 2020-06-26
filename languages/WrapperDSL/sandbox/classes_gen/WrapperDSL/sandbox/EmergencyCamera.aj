@@ -14,7 +14,7 @@ import view.river.RiverView;
 
 import java.util.ArrayList;
 import java.util.List;
-public aspect EmergencialCamera{
+public aspect EmergencyCamera{
 pointcut safeLanding(): call (* model.entity.drone.DroneBusinessObject.safeLanding(*));
 after():safeLanding()
 &&
@@ -24,7 +24,7 @@ if
 helperCamera(((Drone)thisJoinPoint.getArgs()[0]));
 }
 public void helperCamera(JoinPoint thisJoinPoint){
-System.out.println("Drone["+drone.getLabel()+"] "+"EmergencialCamera);
-LoggerController.getInstance().print("Drone["+drone.getLabel()+"]EmergencialCamera);
-<!TextGen not found for 'WrapperDSL.structure.If'!><!TextGen not found for 'WrapperDSL.structure.Else'!>}
+System.out.println("Drone["+drone.getLabel()+"] "+"EmergencyCamera);
+LoggerController.getInstance().print("Drone["+drone.getLabel()+"]EmergencyCamera);
+<!TextGen not found for 'WrapperDSL.structure.CameraCommand'!><!TextGen not found for 'WrapperDSL.structure.GambialCommand'!><!TextGen not found for 'WrapperDSL.structure.EconomyMode'!><!TextGen not found for 'WrapperDSL.structure.If'!><!TextGen not found for 'WrapperDSL.structure.Else'!>}
 }

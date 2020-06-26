@@ -2,7 +2,7 @@
 <debug-info version="2">
   <root nodeRef="r:8d66feae-4edb-4de1-b5ce-83111d904b7c(DSL-Dragonfly.build)/5522765242041526038">
     <file name="DSL-Dragonfly.xml">
-      <unit id="5522765242041526038" at="1,0,561,10" name="DSL-Dragonfly.build.DSL-Dragonfly" />
+      <unit id="5522765242041526038" at="1,0,536,10" name="DSL-Dragonfly.build.DSL-Dragonfly" />
     </file>
   </root>
   <root nodeRef="r:8d66feae-4edb-4de1-b5ce-83111d904b7c(DSL-Dragonfly.build)/5522765242041526180">
@@ -12,7 +12,7 @@
   </root>
   <root nodeRef="r:8d66feae-4edb-4de1-b5ce-83111d904b7c(DSL-Dragonfly.build)/5522765242041526430">
     <file name="Info.plist.xml">
-      <unit id="5522765242041526430" at="1,0,121,8" name="DSL-Dragonfly.build.Info$plist" />
+      <unit id="5522765242041526430" at="1,0,124,8" name="DSL-Dragonfly.build.Info$plist" />
     </file>
   </root>
 </debug-info>

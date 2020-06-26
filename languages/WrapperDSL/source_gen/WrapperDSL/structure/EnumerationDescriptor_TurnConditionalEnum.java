@@ -9,10 +9,10 @@ import java.util.List;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
 
-public class EnumerationDescriptor_OnOffConditionalEnum extends EnumerationDescriptorBase {
+public class EnumerationDescriptor_TurnConditionalEnum extends EnumerationDescriptorBase {
 
-  public EnumerationDescriptor_OnOffConditionalEnum() {
-    super(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x1053550ed8b2a0a8L, "OnOffConditionalEnum", "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/1176377449927319720");
+  public EnumerationDescriptor_TurnConditionalEnum() {
+    super(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x1053550ed8b2a0a8L, "TurnConditionalEnum", "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/1176377449927319720");
   }
 
   private final EnumerationDescriptor.MemberDescriptor myMember_on_0 = new EnumerationDescriptor.MemberDescriptor("on", "on", 0x1053550ed8b2a0a9L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/1176377449927319721");

@@ -26,5 +26,5 @@ helperCamera(((Drone)thisJoinPoint.getArgs()[0]));
 public void helperCamera(JoinPoint thisJoinPoint){
 System.out.println("Drone["+drone.getLabel()+"] "+"EmergencyCamera);
 LoggerController.getInstance().print("Drone["+drone.getLabel()+"]EmergencyCamera);
-<!TextGen not found for 'WrapperDSL.structure.CameraCommand'!><!TextGen not found for 'WrapperDSL.structure.GambialCommand'!><!TextGen not found for 'WrapperDSL.structure.EconomyMode'!><!TextGen not found for 'WrapperDSL.structure.If'!><!TextGen not found for 'WrapperDSL.structure.Else'!>}
+<!TextGen not found for 'WrapperDSL.structure.TurnCamera'!><!TextGen not found for 'WrapperDSL.structure.GambialCommand'!><!TextGen not found for 'WrapperDSL.structure.TurnEconomyMode'!><!TextGen not found for 'WrapperDSL.structure.If'!><!TextGen not found for 'WrapperDSL.structure.Else'!>}
 }

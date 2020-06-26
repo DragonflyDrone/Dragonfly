@@ -58,7 +58,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     return editorCell;
   }
   private EditorCell createConstant_0() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "( camera's power");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "( camera");
     editorCell.setCellId("Constant_s2pix3_a0");
     editorCell.setDefaultText("");
     return editorCell;

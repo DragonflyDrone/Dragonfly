@@ -77,7 +77,6 @@ import org.jetbrains.mps.openapi.language.SConcept;
     editorCell.setBig(true);
     setCellContext(editorCell);
     editorCell.addEditorCell(createCollection_1());
-    editorCell.addEditorCell(createConstant_1());
     editorCell.addEditorCell(createRefNode_0());
     return editorCell;
   }
@@ -218,21 +217,15 @@ import org.jetbrains.mps.openapi.language.SConcept;
       }
     }
   }
-  private EditorCell createConstant_1() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
-    editorCell.setCellId("Constant_q3o2sz_b0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
   private EditorCell createRefNode_0() {
-    SingleRoleCellProvider provider = new adaptationScriptSingleRoleHandler_q3o2sz_c0(myNode, LINKS.adaptationScript$Y1Gq, getEditorContext());
+    SingleRoleCellProvider provider = new adaptationScriptSingleRoleHandler_q3o2sz_b0(myNode, LINKS.adaptationScript$Y1Gq, getEditorContext());
     return provider.createCell();
   }
-  private static class adaptationScriptSingleRoleHandler_q3o2sz_c0 extends SingleRoleCellProvider {
+  private static class adaptationScriptSingleRoleHandler_q3o2sz_b0 extends SingleRoleCellProvider {
     @NotNull
     private SNode myNode;
 
-    public adaptationScriptSingleRoleHandler_q3o2sz_c0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+    public adaptationScriptSingleRoleHandler_q3o2sz_b0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(containmentLink, context);
       myNode = ownerNode;
     }

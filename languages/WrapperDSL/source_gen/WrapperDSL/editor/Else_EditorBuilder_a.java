@@ -10,21 +10,23 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
+import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
-import jetbrains.mps.openapi.editor.cells.CellActionType;
-import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SEmptyContainmentSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SConcept;
 
@@ -57,8 +59,11 @@ import org.jetbrains.mps.openapi.language.SConcept;
     return editorCell;
   }
   private EditorCell createConstant_0() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "else:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "else");
     editorCell.setCellId("Constant_vn4tjt_a0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.blue));
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -121,15 +126,31 @@ import org.jetbrains.mps.openapi.language.SConcept;
         getCellFactory().popCellContext();
       }
     }
+
+    private static final Object OBJ = new Object();
+
     public void installElementCellActions(SNode elementNode, EditorCell elementCell, boolean isEmptyCell) {
-      if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
-        elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
+      if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_COMPLETE_SET) == null) {
+        if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
+          elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_COMPLETE_SET, OBJ);
+          elementCell.setSubstituteInfo((isEmptyCell ? new SEmptyContainmentSubstituteInfo(elementCell) : new SChildSubstituteInfo(elementCell)));
+        }
+      }
+      if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_DELETE_SET) == null) {
         if (elementNode != null) {
+          elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_DELETE_SET, OBJ);
           elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode, CellAction_DeleteNode.DeleteDirection.FORWARD));
+        }
+      }
+      if (elementCell.getUserObject(ELEMENT_CELL_BACKSPACE_SET) == null) {
+        if (elementNode != null) {
+          elementCell.putUserObject(ELEMENT_CELL_BACKSPACE_SET, OBJ);
           elementCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(elementNode, CellAction_DeleteNode.DeleteDirection.BACKWARD));
         }
-        if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-          elementCell.setSubstituteInfo((isEmptyCell ? new SEmptyContainmentSubstituteInfo(elementCell) : new SChildSubstituteInfo(elementCell)));
+      }
+      if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
+        if (elementNode != null) {
+          elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, OBJ);
         }
       }
     }

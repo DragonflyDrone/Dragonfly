@@ -30,5 +30,5 @@ framework(((Drone)thisJoinPoint.getArgs()[0]));
 public void framework(JoinPoint thisJoinPoint){
 System.out.println("Drone["+drone.getLabel()+"] "+"MonitorEnvironment);
 LoggerController.getInstance().print("Drone["+drone.getLabel()+"]MonitorEnvironment);
-<!TextGen not found for 'WrapperDSL.structure.FlyDirection'!>}
+<!TextGen not found for 'WrapperDSL.structure.FlyDirection'!><!TextGen not found for 'WrapperDSL.structure.FlyDirection'!><!TextGen not found for 'WrapperDSL.structure.FlyDirection'!><!TextGen not found for 'WrapperDSL.structure.FlyDirection'!><!TextGen not found for 'WrapperDSL.structure.FlyDirection'!><!TextGen not found for 'WrapperDSL.structure.FlyDirection'!><!TextGen not found for 'WrapperDSL.structure.FlyDirection'!>}
 }

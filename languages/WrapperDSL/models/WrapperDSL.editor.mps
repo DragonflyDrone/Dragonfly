@@ -2,7 +2,7 @@
 <model ref="r:f4985144-6f22-4733-9b56-ad070ae98e98(WrapperDSL.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="13" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="14" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -81,15 +81,12 @@
     <node concept="3EZMnI" id="5eYfGK4mOnx" role="2wV5jI">
       <node concept="3F0ifn" id="5eYfGK4mPXO" role="3EZMnx">
         <property role="3F0ifm" value="while" />
-      </node>
-      <node concept="3F0ifn" id="5eYfGK4mPYw" role="3EZMnx">
-        <property role="3F0ifm" value=" " />
+        <node concept="VechU" id="4NY2oxuNwos" role="3F10Kt">
+          <property role="Vb096" value="fLwANPu/blue" />
+        </node>
       </node>
       <node concept="3F1sOY" id="5eYfGK4mOnC" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:5eYfGK4mOni" resolve="condition" />
-      </node>
-      <node concept="3F0ifn" id="5eYfGK4mOnM" role="3EZMnx">
-        <property role="3F0ifm" value=":" />
       </node>
       <node concept="3XFhqQ" id="3Ivd_nw9LHt" role="3EZMnx">
         <node concept="pVoyu" id="3Ivd_nw9LHN" role="3F10Kt">
@@ -109,15 +106,12 @@
     <node concept="3EZMnI" id="5eYfGK4mOq9" role="2wV5jI">
       <node concept="3F0ifn" id="5eYfGK4mPWC" role="3EZMnx">
         <property role="3F0ifm" value="if" />
-      </node>
-      <node concept="3F0ifn" id="5eYfGK4mPYN" role="3EZMnx">
-        <property role="3F0ifm" value=" " />
+        <node concept="VechU" id="4NY2oxuNwoq" role="3F10Kt">
+          <property role="Vb096" value="fLwANPu/blue" />
+        </node>
       </node>
       <node concept="3F1sOY" id="5eYfGK4mPWI" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:5eYfGK4mOpK" resolve="condition" />
-      </node>
-      <node concept="3F0ifn" id="24MtOl60Uvm" role="3EZMnx">
-        <property role="3F0ifm" value=":" />
       </node>
       <node concept="3XFhqQ" id="24MtOl61uIO" role="3EZMnx">
         <node concept="pVoyu" id="24MtOl61uIV" role="3F10Kt">
@@ -301,8 +295,8 @@
       <node concept="3F0ifn" id="1bns0lwW23M" role="3EZMnx">
         <property role="3F0ifm" value="Turn" />
       </node>
-      <node concept="3F0A7n" id="1bns0lwW23R" role="3EZMnx">
-        <ref role="1NtTu8" to="lpas:1bns0lwW23G" resolve="value" />
+      <node concept="3F1sOY" id="4NY2oxu_xqe" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:31DEoowfa1v" resolve="value" />
       </node>
       <node concept="3F0ifn" id="1bns0lwW23Z" role="3EZMnx">
         <property role="3F0ifm" value="motor" />
@@ -342,8 +336,8 @@
       <node concept="3F0A7n" id="1OPBmmoltgq" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:1bns0lwX48C" resolve="value" />
       </node>
-      <node concept="3F0ifn" id="1OPBmmoltgw" role="3EZMnx">
-        <property role="3F0ifm" value="Return to home" />
+      <node concept="3F0ifn" id="4NY2oxuFDca" role="3EZMnx">
+        <property role="3F0ifm" value="return to home" />
       </node>
       <node concept="l2Vlx" id="1OPBmmoltgj" role="2iSdaV" />
     </node>
@@ -482,7 +476,6 @@
         </node>
         <node concept="l2Vlx" id="4NrzS7qn7SV" role="2iSdaV" />
       </node>
-      <node concept="3F0ifn" id="4NrzS7qn7TE" role="3EZMnx" />
       <node concept="3F1sOY" id="IyLDsSxa4N" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:4NrzS7qn7Ts" resolve="adaptationScript" />
       </node>
@@ -582,7 +575,7 @@
     <ref role="1XX52x" to="lpas:11jlgVoHLoj" resolve="CameraPowerConditionalExpression" />
     <node concept="3EZMnI" id="11jlgVoHLox" role="2wV5jI">
       <node concept="3F0ifn" id="11jlgVoHLoC" role="3EZMnx">
-        <property role="3F0ifm" value="( camera's power" />
+        <property role="3F0ifm" value="( camera" />
       </node>
       <node concept="l2Vlx" id="11jlgVoHLo$" role="2iSdaV" />
       <node concept="3F0A7n" id="11jlgVoHLoI" role="3EZMnx">
@@ -687,7 +680,7 @@
         <ref role="1NtTu8" to="lpas:11jlgVoF3CU" resolve="right" />
       </node>
       <node concept="3F0ifn" id="11jlgVoF3DW" role="3EZMnx">
-        <property role="3F0ifm" value="Km" />
+        <property role="3F0ifm" value="m" />
       </node>
       <node concept="3F0ifn" id="11jlgVoG14F" role="3EZMnx">
         <property role="3F0ifm" value=")" />
@@ -758,7 +751,7 @@
         <ref role="1NtTu8" to="lpas:79gzy7KfePb" resolve="right1" />
       </node>
       <node concept="3F0ifn" id="79gzy7KfeQC" role="3EZMnx">
-        <property role="3F0ifm" value="km" />
+        <property role="3F0ifm" value="m" />
       </node>
       <node concept="3F0ifn" id="79gzy7KfePG" role="3EZMnx">
         <property role="3F0ifm" value=")" />
@@ -855,7 +848,7 @@
         <ref role="1NtTu8" to="lpas:7_KOYEjgt1Z" resolve="right" />
       </node>
       <node concept="3F0ifn" id="7_KOYEjhagX" role="3EZMnx">
-        <property role="3F0ifm" value="km" />
+        <property role="3F0ifm" value="m" />
       </node>
       <node concept="3F0ifn" id="7_KOYEjgt2w" role="3EZMnx">
         <property role="3F0ifm" value=")" />
@@ -931,7 +924,7 @@
   </node>
   <node concept="24kQdi" id="1bns0lwW21h">
     <property role="3GE5qa" value="command" />
-    <ref role="1XX52x" to="lpas:1bns0lwW20Y" resolve="EconomyMode" />
+    <ref role="1XX52x" to="lpas:1bns0lwW20Y" resolve="TurnEconomyMode" />
     <node concept="3EZMnI" id="1bns0lwW21j" role="2wV5jI">
       <node concept="3F0ifn" id="1bns0lwW21u" role="3EZMnx">
         <property role="3F0ifm" value="set economy mode" />
@@ -1065,7 +1058,7 @@
   </node>
   <node concept="24kQdi" id="24MtOl5XwB_">
     <property role="3GE5qa" value="command" />
-    <ref role="1XX52x" to="lpas:24MtOl5XwBq" resolve="CameraCommand" />
+    <ref role="1XX52x" to="lpas:24MtOl5XwBq" resolve="TurnCamera" />
     <node concept="3EZMnI" id="24MtOl5XwBL" role="2wV5jI">
       <node concept="3F0ifn" id="24MtOl5XwBS" role="3EZMnx">
         <property role="3F0ifm" value="Turn" />
@@ -1100,7 +1093,10 @@
     <ref role="1XX52x" to="lpas:24MtOl62Bf_" resolve="Else" />
     <node concept="3EZMnI" id="24MtOl62BfP" role="2wV5jI">
       <node concept="3F0ifn" id="24MtOl62BfW" role="3EZMnx">
-        <property role="3F0ifm" value="else:" />
+        <property role="3F0ifm" value="else" />
+        <node concept="VechU" id="4NY2oxuNwou" role="3F10Kt">
+          <property role="Vb096" value="fLwANPu/blue" />
+        </node>
       </node>
       <node concept="3EZMnI" id="24MtOl62Bhw" role="3EZMnx">
         <node concept="2iRkQZ" id="24MtOl62Bhx" role="2iSdaV" />
@@ -1122,26 +1118,29 @@
     <ref role="1XX52x" to="lpas:31DEoow88Bd" resolve="WindDirectionConditionalExpression" />
     <node concept="3EZMnI" id="31DEoow88BA" role="2wV5jI">
       <node concept="3F0ifn" id="31DEoow88BH" role="3EZMnx">
-        <property role="3F0ifm" value="Wind direction" />
+        <property role="3F0ifm" value="( Wind direction" />
       </node>
       <node concept="3F0A7n" id="31DEoow88BQ" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:31DEoow88BK" resolve="operator" />
       </node>
       <node concept="3F0A7n" id="31DEoow88BY" role="3EZMnx">
-        <ref role="1NtTu8" to="lpas:31DEoow88Bg" resolve="value" />
+        <ref role="1NtTu8" to="lpas:4NY2oxu_xq$" resolve="value" />
       </node>
       <node concept="l2Vlx" id="31DEoow88BD" role="2iSdaV" />
+      <node concept="3F0ifn" id="4NY2oxuDi4g" role="3EZMnx">
+        <property role="3F0ifm" value=")" />
+      </node>
     </node>
   </node>
   <node concept="24kQdi" id="31DEoow8Yde">
     <property role="3GE5qa" value="command" />
-    <ref role="1XX52x" to="lpas:31DEoow8YcR" resolve="setManualControl" />
+    <ref role="1XX52x" to="lpas:31DEoow8YcR" resolve="TurnAutomaticControl" />
     <node concept="3EZMnI" id="31DEoow8Ydg" role="2wV5jI">
       <node concept="3F0A7n" id="31DEoow8Ydt" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:31DEoow8YcU" resolve="value" />
       </node>
       <node concept="3F0ifn" id="31DEoow8Ydn" role="3EZMnx">
-        <property role="3F0ifm" value="manual control" />
+        <property role="3F0ifm" value="automatic control" />
       </node>
       <node concept="l2Vlx" id="31DEoow8Ydj" role="2iSdaV" />
     </node>
@@ -1151,7 +1150,7 @@
     <ref role="1XX52x" to="lpas:31DEoowaEDL" resolve="CollisionSensorConditionalExpression" />
     <node concept="3EZMnI" id="31DEoowaEE2" role="2wV5jI">
       <node concept="3F0ifn" id="31DEoowaEE3" role="3EZMnx">
-        <property role="3F0ifm" value="(Collision sensor " />
+        <property role="3F0ifm" value="(Collision sensor" />
       </node>
       <node concept="l2Vlx" id="31DEoowaEE4" role="2iSdaV" />
       <node concept="3F0A7n" id="31DEoowaEE5" role="3EZMnx">
@@ -1170,7 +1169,7 @@
     <ref role="1XX52x" to="lpas:31DEoowbxW1" resolve="FlyDirection" />
     <node concept="3EZMnI" id="31DEoowbxWh" role="2wV5jI">
       <node concept="3F0ifn" id="31DEoowbxWo" role="3EZMnx">
-        <property role="3F0ifm" value="Flies to " />
+        <property role="3F0ifm" value="Fly to" />
       </node>
       <node concept="3F0A7n" id="31DEoowbxWu" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:31DEoowbxW2" resolve="direc" />
@@ -1230,7 +1229,8 @@
     <ref role="1XX52x" to="lpas:31DEoowefQH" resolve="AnyNumber" />
     <node concept="3EZMnI" id="31DEoowefQS" role="2wV5jI">
       <node concept="3F0ifn" id="31DEoowefQZ" role="3EZMnx">
-        <property role="3F0ifm" value="Any" />
+        <property role="3F0ifm" value="any" />
+        <node concept="Vb9p2" id="4NY2oxuFDce" role="3F10Kt" />
       </node>
       <node concept="l2Vlx" id="31DEoowefQV" role="2iSdaV" />
     </node>

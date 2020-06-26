@@ -9,7 +9,6 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.openapi.editor.menus.transformation.SPropertyInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
@@ -24,14 +23,15 @@ import java.util.Objects;
 import jetbrains.mps.lang.core.behavior.PropertyAttribute__BehaviorDescriptor;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.openapi.editor.update.AttributeKind;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SConcept;
 
-/*package*/ class CameraCommand_EditorBuilder_a extends AbstractEditorBuilder {
+/*package*/ class TurnAutomaticControl_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
   private SNode myNode;
 
-  public CameraCommand_EditorBuilder_a(@NotNull EditorContext context, @NotNull SNode node) {
+  public TurnAutomaticControl_EditorBuilder_a(@NotNull EditorContext context, @NotNull SNode node) {
     super(context);
     myNode = node;
   }
@@ -48,28 +48,21 @@ import org.jetbrains.mps.openapi.language.SConcept;
 
   private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
-    editorCell.setCellId("Collection_pyd043_a");
+    editorCell.setCellId("Collection_fsjtwu_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createConstant_0());
     editorCell.addEditorCell(createProperty_0());
-    editorCell.addEditorCell(createConstant_1());
-    return editorCell;
-  }
-  private EditorCell createConstant_0() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Turn");
-    editorCell.setCellId("Constant_pyd043_a0");
-    editorCell.setDefaultText("");
+    editorCell.addEditorCell(createConstant_0());
     return editorCell;
   }
   private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
-      final SProperty property = PROPS.turn$Xdl0;
+      final SProperty property = PROPS.value$jzzY;
       getCellFactory().setPropertyInfo(new SPropertyInfo(myNode, property));
       EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new SPropertyAccessor(myNode, property, false, false), myNode);
-      editorCell.setDefaultText("<no turn>");
-      editorCell.setCellId("property_turn");
+      editorCell.setDefaultText("<no value>");
+      editorCell.setCellId("property_value");
       editorCell.setSubstituteInfo(new SPropertySubstituteInfo(editorCell, property));
       setCellContext(editorCell);
       Iterable<SNode> propertyAttributes = SNodeOperations.ofConcept(AttributeOperations.getAttributeList(myNode, new IAttributeDescriptor.AllAttributes()), CONCEPTS.PropertyAttribute$jT);
@@ -87,15 +80,15 @@ import org.jetbrains.mps.openapi.language.SConcept;
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createConstant_1() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "camera");
-    editorCell.setCellId("Constant_pyd043_c0");
+  private EditorCell createConstant_0() {
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "automatic control");
+    editorCell.setCellId("Constant_fsjtwu_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private static final class PROPS {
-    /*package*/ static final SProperty turn$Xdl0 = MetaAdapterFactory.getProperty(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x2132774545f609daL, 0x2132774545f609dbL, "turn");
+    /*package*/ static final SProperty value$jzzY = MetaAdapterFactory.getProperty(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x3069a9862023e337L, 0x3069a9862023e33aL, "value");
   }
 
   private static final class CONCEPTS {

@@ -54,10 +54,11 @@ import org.jetbrains.mps.openapi.language.SConcept;
     editorCell.addEditorCell(createConstant_0());
     editorCell.addEditorCell(createProperty_0());
     editorCell.addEditorCell(createProperty_1());
+    editorCell.addEditorCell(createConstant_1());
     return editorCell;
   }
   private EditorCell createConstant_0() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Wind direction");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "( Wind direction");
     editorCell.setCellId("Constant_2pl1fm_a0");
     editorCell.setDefaultText("");
     return editorCell;
@@ -90,7 +91,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
   private EditorCell createProperty_1() {
     getCellFactory().pushCellContext();
     try {
-      final SProperty property = PROPS.value$QYG9;
+      final SProperty property = PROPS.value$8RLj;
       getCellFactory().setPropertyInfo(new SPropertyInfo(myNode, property));
       EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new SPropertyAccessor(myNode, property, false, false), myNode);
       editorCell.setDefaultText("<no value>");
@@ -112,10 +113,16 @@ import org.jetbrains.mps.openapi.language.SConcept;
       getCellFactory().popCellContext();
     }
   }
+  private EditorCell createConstant_1() {
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ")");
+    editorCell.setCellId("Constant_2pl1fm_d0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
 
   private static final class PROPS {
     /*package*/ static final SProperty operator$QZqa = MetaAdapterFactory.getProperty(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x3069a986202089cdL, 0x3069a986202089f0L, "operator");
-    /*package*/ static final SProperty value$QYG9 = MetaAdapterFactory.getProperty(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x3069a986202089cdL, 0x3069a986202089d0L, "value");
+    /*package*/ static final SProperty value$8RLj = MetaAdapterFactory.getProperty(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x3069a986202089cdL, 0x4cfe09885e9616a4L, "value");
   }
 
   private static final class CONCEPTS {

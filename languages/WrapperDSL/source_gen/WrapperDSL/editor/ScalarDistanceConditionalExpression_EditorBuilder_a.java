@@ -179,7 +179,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     }
   }
   private EditorCell createConstant_1() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "km");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "m");
     editorCell.setCellId("Constant_9czlyv_e0");
     editorCell.setDefaultText("");
     return editorCell;

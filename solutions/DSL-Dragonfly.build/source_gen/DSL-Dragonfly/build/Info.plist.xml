@@ -103,6 +103,9 @@
         <key>idea.paths.selector</key>
         <string>DSL-Dragonfly1.0</string>
         
+        <key>idea.vendor.name</key>
+        <string></string>
+        
         <key>idea.executable</key>
         <string>dsl-dragonfly</string>
         

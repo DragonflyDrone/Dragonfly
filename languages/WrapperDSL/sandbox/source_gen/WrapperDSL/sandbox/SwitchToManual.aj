@@ -30,5 +30,5 @@ manual(((Drone)thisJoinPoint.getArgs()[0]));
 public void manual(JoinPoint thisJoinPoint){
 System.out.println("Drone["+drone.getLabel()+"] "+"SwitchToManual);
 LoggerController.getInstance().print("Drone["+drone.getLabel()+"]SwitchToManual);
-<!TextGen not found for 'WrapperDSL.structure.setManualControl'!>}
+<!TextGen not found for 'WrapperDSL.structure.TurnAutomaticControl'!>}
 }

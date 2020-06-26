@@ -10,6 +10,10 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.MPSFonts;
 
 /*package*/ class AnyNumber_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -39,8 +43,11 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
     return editorCell;
   }
   private EditorCell createConstant_0() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Any");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "any");
     editorCell.setCellId("Constant_lmm4iz_a0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }

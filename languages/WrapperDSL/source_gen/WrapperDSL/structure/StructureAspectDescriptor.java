@@ -24,7 +24,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptAnyNumber = createDescriptorForAnyNumber();
   /*package*/ final ConceptDescriptor myConceptBatteryConditionalExpression = createDescriptorForBatteryConditionalExpression();
   /*package*/ final ConceptDescriptor myConceptBooleanValue = createDescriptorForBooleanValue();
-  /*package*/ final ConceptDescriptor myConceptCameraCommand = createDescriptorForCameraCommand();
   /*package*/ final ConceptDescriptor myConceptCameraPowerConditionalExpression = createDescriptorForCameraPowerConditionalExpression();
   /*package*/ final ConceptDescriptor myConceptCardinalPointsRotate = createDescriptorForCardinalPointsRotate();
   /*package*/ final ConceptDescriptor myConceptCategoricalDistanceConditionalExpression = createDescriptorForCategoricalDistanceConditionalExpression();
@@ -36,7 +35,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptCoordenateConditionalExpression = createDescriptorForCoordenateConditionalExpression();
   /*package*/ final ConceptDescriptor myConceptDegreesRotate = createDescriptorForDegreesRotate();
   /*package*/ final ConceptDescriptor myConceptDetectSmokeConditionalExpression = createDescriptorForDetectSmokeConditionalExpression();
-  /*package*/ final ConceptDescriptor myConceptEconomyMode = createDescriptorForEconomyMode();
   /*package*/ final ConceptDescriptor myConceptElse = createDescriptorForElse();
   /*package*/ final ConceptDescriptor myConceptExceptionalScenario = createDescriptorForExceptionalScenario();
   /*package*/ final ConceptDescriptor myConceptExpression = createDescriptorForExpression();
@@ -78,15 +76,16 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptTakeOff = createDescriptorForTakeOff();
   /*package*/ final ConceptDescriptor myConceptText = createDescriptorForText();
   /*package*/ final ConceptDescriptor myConceptThen = createDescriptorForThen();
+  /*package*/ final ConceptDescriptor myConceptTurnAutomaticControl = createDescriptorForTurnAutomaticControl();
+  /*package*/ final ConceptDescriptor myConceptTurnCamera = createDescriptorForTurnCamera();
+  /*package*/ final ConceptDescriptor myConceptTurnEconomyMode = createDescriptorForTurnEconomyMode();
   /*package*/ final ConceptDescriptor myConceptTurnMotors = createDescriptorForTurnMotors();
   /*package*/ final ConceptDescriptor myConceptValue = createDescriptorForValue();
   /*package*/ final ConceptDescriptor myConceptWhen = createDescriptorForWhen();
   /*package*/ final ConceptDescriptor myConceptWhile = createDescriptorForWhile();
   /*package*/ final ConceptDescriptor myConceptWifiConditionalExpression = createDescriptorForWifiConditionalExpression();
   /*package*/ final ConceptDescriptor myConceptWindDirectionConditionalExpression = createDescriptorForWindDirectionConditionalExpression();
-  /*package*/ final ConceptDescriptor myConceptsetManualControl = createDescriptorForsetManualControl();
   /*package*/ final EnumerationDescriptor myEnumerationAxisEnum = new EnumerationDescriptor_AxisEnum();
-  /*package*/ final EnumerationDescriptor myEnumerationCardinalPointsEnum = new EnumerationDescriptor_CardinalPointsEnum();
   /*package*/ final EnumerationDescriptor myEnumerationCategoricalDistanceEnum = new EnumerationDescriptor_CategoricalDistanceEnum();
   /*package*/ final EnumerationDescriptor myEnumerationCategoricalWindEnum = new EnumerationDescriptor_CategoricalWindEnum();
   /*package*/ final EnumerationDescriptor myEnumerationCommandStateEnum = new EnumerationDescriptor_CommandStateEnum();
@@ -97,8 +96,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final EnumerationDescriptor myEnumerationInternalStateEnum = new EnumerationDescriptor_InternalStateEnum();
   /*package*/ final EnumerationDescriptor myEnumerationIqualityOperatorEnum = new EnumerationDescriptor_IqualityOperatorEnum();
   /*package*/ final EnumerationDescriptor myEnumerationLogicalOperatorEnum = new EnumerationDescriptor_LogicalOperatorEnum();
-  /*package*/ final EnumerationDescriptor myEnumerationOnOffConditionalEnum = new EnumerationDescriptor_OnOffConditionalEnum();
   /*package*/ final EnumerationDescriptor myEnumerationRegionEnum = new EnumerationDescriptor_RegionEnum();
+  /*package*/ final EnumerationDescriptor myEnumerationTurnConditionalEnum = new EnumerationDescriptor_TurnConditionalEnum();
   /*package*/ final EnumerationDescriptor myEnumerationTypeOfAdaptationEnum = new EnumerationDescriptor_TypeOfAdaptationEnum();
   /*package*/ final EnumerationDescriptor myEnumerationbooleanDetectionEnum = new EnumerationDescriptor_booleanDetectionEnum();
   private final LanguageConceptSwitch myIndexSwitch;
@@ -115,7 +114,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAdaptationBehavior, myConceptAdaptationScript, myConceptAltitudeConditionalExpression, myConceptAngularAccelerationConditionalExpression, myConceptAnyBoolean, myConceptAnyNumber, myConceptBatteryConditionalExpression, myConceptBooleanValue, myConceptCameraCommand, myConceptCameraPowerConditionalExpression, myConceptCardinalPointsRotate, myConceptCategoricalDistanceConditionalExpression, myConceptCategoricalWindConditionalExpression, myConceptCollisionSensorConditionalExpression, myConceptCommandCall, myConceptCompassConditionalExpression, myConceptConditionalExpression, myConceptCoordenateConditionalExpression, myConceptDegreesRotate, myConceptDetectSmokeConditionalExpression, myConceptEconomyMode, myConceptElse, myConceptExceptionalScenario, myConceptExpression, myConceptFlyDirection, myConceptFlyToCoordinates, myConceptFlyToRegion, myConceptGambialCommand, myConceptGimbalConditionalExpression, myConceptGiven, myConceptGpsConditionalExpression, myConceptIf, myConceptIntegerNumber, myConceptLanding, myConceptLandingGearConditionalExpression, myConceptLinearAccelerationConditionalExpression, myConceptLogicalExpression, myConceptMission, myConceptMotorsPowerConditionalExpression, myConceptNormalBooleanValue, myConceptNumber, myConceptOnOffSmokeConditionalExpression, myConceptOriginAndDestinationDistanceConditionalExpression, myConceptPayloadConditionalExpression, myConceptPerformingCommandConditionalExpression, myConceptRegionConditionalExpression, myConceptReturnToHome, myConceptSafeLand, myConceptScalarDistanceConditionalExpression, myConceptScalarWindConditionalExpression, myConceptSetAutoFlightSpeed, myConceptSetGoHomeHeightInMeters, myConceptSetHomeLocation, myConceptSetHomeLocationUsingAircraftCurrentLocation, myConceptSetLowBatteryWarningThreshold, myConceptSetSeriousLowBatteryWarningThreshold, myConceptSetSmartReturnToHomeEnabled, myConceptSpeedConditionalExpression, myConceptStatement, myConceptTakeOff, myConceptText, myConceptThen, myConceptTurnMotors, myConceptValue, myConceptWhen, myConceptWhile, myConceptWifiConditionalExpression, myConceptWindDirectionConditionalExpression, myConceptsetManualControl);
+    return Arrays.asList(myConceptAdaptationBehavior, myConceptAdaptationScript, myConceptAltitudeConditionalExpression, myConceptAngularAccelerationConditionalExpression, myConceptAnyBoolean, myConceptAnyNumber, myConceptBatteryConditionalExpression, myConceptBooleanValue, myConceptCameraPowerConditionalExpression, myConceptCardinalPointsRotate, myConceptCategoricalDistanceConditionalExpression, myConceptCategoricalWindConditionalExpression, myConceptCollisionSensorConditionalExpression, myConceptCommandCall, myConceptCompassConditionalExpression, myConceptConditionalExpression, myConceptCoordenateConditionalExpression, myConceptDegreesRotate, myConceptDetectSmokeConditionalExpression, myConceptElse, myConceptExceptionalScenario, myConceptExpression, myConceptFlyDirection, myConceptFlyToCoordinates, myConceptFlyToRegion, myConceptGambialCommand, myConceptGimbalConditionalExpression, myConceptGiven, myConceptGpsConditionalExpression, myConceptIf, myConceptIntegerNumber, myConceptLanding, myConceptLandingGearConditionalExpression, myConceptLinearAccelerationConditionalExpression, myConceptLogicalExpression, myConceptMission, myConceptMotorsPowerConditionalExpression, myConceptNormalBooleanValue, myConceptNumber, myConceptOnOffSmokeConditionalExpression, myConceptOriginAndDestinationDistanceConditionalExpression, myConceptPayloadConditionalExpression, myConceptPerformingCommandConditionalExpression, myConceptRegionConditionalExpression, myConceptReturnToHome, myConceptSafeLand, myConceptScalarDistanceConditionalExpression, myConceptScalarWindConditionalExpression, myConceptSetAutoFlightSpeed, myConceptSetGoHomeHeightInMeters, myConceptSetHomeLocation, myConceptSetHomeLocationUsingAircraftCurrentLocation, myConceptSetLowBatteryWarningThreshold, myConceptSetSeriousLowBatteryWarningThreshold, myConceptSetSmartReturnToHomeEnabled, myConceptSpeedConditionalExpression, myConceptStatement, myConceptTakeOff, myConceptText, myConceptThen, myConceptTurnAutomaticControl, myConceptTurnCamera, myConceptTurnEconomyMode, myConceptTurnMotors, myConceptValue, myConceptWhen, myConceptWhile, myConceptWifiConditionalExpression, myConceptWindDirectionConditionalExpression);
   }
 
   @Override
@@ -138,8 +137,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptBatteryConditionalExpression;
       case LanguageConceptSwitch.BooleanValue:
         return myConceptBooleanValue;
-      case LanguageConceptSwitch.CameraCommand:
-        return myConceptCameraCommand;
       case LanguageConceptSwitch.CameraPowerConditionalExpression:
         return myConceptCameraPowerConditionalExpression;
       case LanguageConceptSwitch.CardinalPointsRotate:
@@ -162,8 +159,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptDegreesRotate;
       case LanguageConceptSwitch.DetectSmokeConditionalExpression:
         return myConceptDetectSmokeConditionalExpression;
-      case LanguageConceptSwitch.EconomyMode:
-        return myConceptEconomyMode;
       case LanguageConceptSwitch.Else:
         return myConceptElse;
       case LanguageConceptSwitch.ExceptionalScenario:
@@ -246,6 +241,12 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptText;
       case LanguageConceptSwitch.Then:
         return myConceptThen;
+      case LanguageConceptSwitch.TurnAutomaticControl:
+        return myConceptTurnAutomaticControl;
+      case LanguageConceptSwitch.TurnCamera:
+        return myConceptTurnCamera;
+      case LanguageConceptSwitch.TurnEconomyMode:
+        return myConceptTurnEconomyMode;
       case LanguageConceptSwitch.TurnMotors:
         return myConceptTurnMotors;
       case LanguageConceptSwitch.Value:
@@ -258,8 +259,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptWifiConditionalExpression;
       case LanguageConceptSwitch.WindDirectionConditionalExpression:
         return myConceptWindDirectionConditionalExpression;
-      case LanguageConceptSwitch.setManualControl:
-        return myConceptsetManualControl;
       default:
         return null;
     }
@@ -267,7 +266,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<DataTypeDescriptor> getDataTypeDescriptors() {
-    return Arrays.asList(myEnumerationAxisEnum, myEnumerationCardinalPointsEnum, myEnumerationCategoricalDistanceEnum, myEnumerationCategoricalWindEnum, myEnumerationCommandStateEnum, myEnumerationConditionalOperatorEnum, myEnumerationDirectionsEnum, myEnumerationGambialEnum, myEnumerationInaquelityConditionalOperator, myEnumerationInternalStateEnum, myEnumerationIqualityOperatorEnum, myEnumerationLogicalOperatorEnum, myEnumerationOnOffConditionalEnum, myEnumerationRegionEnum, myEnumerationTypeOfAdaptationEnum, myEnumerationbooleanDetectionEnum);
+    return Arrays.asList(myEnumerationAxisEnum, myEnumerationCategoricalDistanceEnum, myEnumerationCategoricalWindEnum, myEnumerationCommandStateEnum, myEnumerationConditionalOperatorEnum, myEnumerationDirectionsEnum, myEnumerationGambialEnum, myEnumerationInaquelityConditionalOperator, myEnumerationInternalStateEnum, myEnumerationIqualityOperatorEnum, myEnumerationLogicalOperatorEnum, myEnumerationRegionEnum, myEnumerationTurnConditionalEnum, myEnumerationTypeOfAdaptationEnum, myEnumerationbooleanDetectionEnum);
   }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
@@ -300,7 +299,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/1176377449926900279");
     b.version(2);
     b.property("operators", 0x1053550ed8ac3a38L).type(MetaIdFactory.dataTypeId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x7970d3ea932f45ebL)).origin("1176377449926900280").done();
-    b.aggregate("right", 0x1053550ed8ac3a3aL).target(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc0462d3fbL).optional(false).ordered(true).multiple(false).origin("1176377449926900282").done();
+    b.aggregate("right", 0x1053550ed8ac3a3aL).target(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x3069a9862038fdaaL).optional(false).ordered(true).multiple(false).origin("1176377449926900282").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForAngularAccelerationConditionalExpression() {
@@ -311,7 +310,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(2);
     b.property("left", 0x3004f1bb9b11a30eL).type(MetaIdFactory.dataTypeId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x3004f1bb9b11a311L)).origin("3460156201790186254").done();
     b.property("operator", 0x1e50d2b0bcf0f56dL).type(MetaIdFactory.dataTypeId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x7970d3ea932f45ebL)).origin("2184477475800675693").done();
-    b.aggregate("right", 0x1e50d2b0bcf0f571L).target(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc0462d3fbL).optional(false).ordered(true).multiple(false).origin("2184477475800675697").done();
+    b.aggregate("right", 0x1e50d2b0bcf0f571L).target(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x3069a9862038fdaaL).optional(false).ordered(true).multiple(false).origin("2184477475800675697").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForAnyBoolean() {
@@ -338,7 +337,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(2);
     b.property("operator", 0x7970d3ea9334a569L).type(MetaIdFactory.dataTypeId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x7970d3ea932f45ebL)).origin("8750727080426382697").done();
     b.aggregate("left", 0x7970d3ea93320930L).target(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc0462d3feL).optional(false).ordered(true).multiple(false).origin("8750727080426211632").done();
-    b.aggregate("right", 0x7970d3ea93320932L).target(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc0462d3fbL).optional(false).ordered(true).multiple(false).origin("8750727080426211634").done();
+    b.aggregate("right", 0x7970d3ea93320932L).target(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x3069a9862038fdaaL).optional(false).ordered(true).multiple(false).origin("8750727080426211634").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForBooleanValue() {
@@ -347,15 +346,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("WrapperDSL.structure.Value", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc0462d3fbL);
     b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/3488505779906715745");
     b.version(2);
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForCameraCommand() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "CameraCommand", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x2132774545f609daL);
-    b.class_(false, false, false);
-    b.super_("WrapperDSL.structure.CommandCall", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd9358955fd28L);
-    b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/2392105491497355738");
-    b.version(2);
-    b.property("turn", 0x2132774545f609dbL).type(MetaIdFactory.dataTypeId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x1053550ed8b2a0a8L)).origin("2392105491497355739").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForCameraPowerConditionalExpression() {
@@ -374,7 +364,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("WrapperDSL.structure.CommandCall", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd9358955fd28L);
     b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/838450833433631595");
     b.version(2);
-    b.property("cardialPoint", 0xba2c69738711b7aL).type(MetaIdFactory.dataTypeId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0xba2c69738711b6cL)).origin("838450833433631610").done();
+    b.property("cardialPoint", 0xba2c69738711b7aL).type(MetaIdFactory.dataTypeId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x1053550ed8a37db5L)).origin("838450833433631610").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForCategoricalDistanceConditionalExpression() {
@@ -462,16 +452,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(2);
     b.property("operators", 0x3069a9862031a5b5L).type(MetaIdFactory.dataTypeId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x7970d3ea9334065dL)).origin("3488505779905996213").done();
     b.property("right", 0x3069a9862031a5b6L).type(MetaIdFactory.dataTypeId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x3069a9862031a5baL)).origin("3488505779905996214").done();
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForEconomyMode() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "EconomyMode", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x12d7700560f0203eL);
-    b.class_(false, false, false);
-    b.super_("WrapperDSL.structure.CommandCall", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd9358955fd28L);
-    b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/1357676981078990910");
-    b.version(2);
-    b.property("value", 0x12d7700560f0203fL).type(MetaIdFactory.dataTypeId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x1053550ed8b2a0a8L)).origin("1357676981078990911").done();
-    b.alias("setEconomicMode");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForElse() {
@@ -683,7 +663,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(2);
     b.property("left", 0x72508e21f03ced46L).type(MetaIdFactory.dataTypeId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x7970d3ea933fec04L)).origin("8237239994876226886").done();
     b.property("operator", 0x72508e21f03ced48L).type(MetaIdFactory.dataTypeId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x7970d3ea932f45ebL)).origin("8237239994876226888").done();
-    b.aggregate("right1", 0x72508e21f03ced4bL).target(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc0462d3fbL).optional(false).ordered(true).multiple(false).origin("8237239994876226891").done();
+    b.aggregate("right1", 0x72508e21f03ced4bL).target(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x3069a9862038fdaaL).optional(false).ordered(true).multiple(false).origin("8237239994876226891").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForPayloadConditionalExpression() {
@@ -743,7 +723,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(2);
     b.property("operator", 0x7970d3ea9341d077L).type(MetaIdFactory.dataTypeId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x7970d3ea932f45ebL)).origin("8750727080427245687").done();
     b.property("left", 0x7970d3ea9341d079L).type(MetaIdFactory.dataTypeId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x7970d3ea933fec04L)).origin("8750727080427245689").done();
-    b.aggregate("right", 0x7970d3ea9341d07fL).target(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc0462d3fbL).optional(false).ordered(true).multiple(false).origin("8750727080427245695").done();
+    b.aggregate("right", 0x7970d3ea9341d07fL).target(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x3069a9862038fdaaL).optional(false).ordered(true).multiple(false).origin("8750727080427245695").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForScalarWindConditionalExpression() {
@@ -872,13 +852,40 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.aggregate("adaptiveBehavior", 0x53be3ecc045b45a9L).target(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x4cdb8f81da5c7de7L).optional(false).ordered(true).multiple(false).origin("6034329596690384297").done();
     return b.create();
   }
+  private static ConceptDescriptor createDescriptorForTurnAutomaticControl() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "TurnAutomaticControl", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x3069a9862023e337L);
+    b.class_(false, false, false);
+    b.super_("WrapperDSL.structure.CommandCall", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd9358955fd28L);
+    b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/3488505779905094455");
+    b.version(2);
+    b.property("value", 0x3069a9862023e33aL).type(MetaIdFactory.dataTypeId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x12d7700560f441d4L)).origin("3488505779905094458").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTurnCamera() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "TurnCamera", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x2132774545f609daL);
+    b.class_(false, false, false);
+    b.super_("WrapperDSL.structure.CommandCall", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd9358955fd28L);
+    b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/2392105491497355738");
+    b.version(2);
+    b.property("turn", 0x2132774545f609dbL).type(MetaIdFactory.dataTypeId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x1053550ed8b2a0a8L)).origin("2392105491497355739").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTurnEconomyMode() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "TurnEconomyMode", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x12d7700560f0203eL);
+    b.class_(false, false, false);
+    b.super_("WrapperDSL.structure.CommandCall", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd9358955fd28L);
+    b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/1357676981078990910");
+    b.version(2);
+    b.property("value", 0x12d7700560f0203fL).type(MetaIdFactory.dataTypeId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x12d7700560f441d4L)).origin("1357676981078990911").done();
+    b.alias("setEconomicMode");
+    return b.create();
+  }
   private static ConceptDescriptor createDescriptorForTurnMotors() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "TurnMotors", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd9358959640bL);
     b.class_(false, false, false);
     b.super_("WrapperDSL.structure.CommandCall", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd9358955fd28L);
     b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/7971328689429898251");
     b.version(2);
-    b.property("value", 0x12d7700560f020ecL).type(PrimitiveTypeId.BOOLEAN).origin("1357676981078991084").done();
     b.aggregate("value", 0x3069a986203ca05fL).target(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x3069a986203ca061L).optional(false).ordered(true).multiple(false).origin("3488505779906715743").done();
     b.alias("turnOnMotors");
     return b.create();
@@ -924,17 +931,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x7970d3ea932a97ffL);
     b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/3488505779904874957");
     b.version(2);
-    b.property("value", 0x3069a986202089d0L).type(MetaIdFactory.dataTypeId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0xba2c69738711b6cL)).origin("3488505779904874960").done();
+    b.property("value", 0x4cfe09885e9616a4L).type(MetaIdFactory.dataTypeId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x1053550ed8a37db5L)).origin("5547882272274126500").done();
     b.property("operator", 0x3069a986202089f0L).type(MetaIdFactory.dataTypeId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x7970d3ea9334065dL)).origin("3488505779904874992").done();
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForsetManualControl() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "setManualControl", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x3069a9862023e337L);
-    b.class_(false, false, false);
-    b.super_("WrapperDSL.structure.CommandCall", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd9358955fd28L);
-    b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/3488505779905094455");
-    b.version(2);
-    b.property("value", 0x3069a9862023e33aL).type(MetaIdFactory.dataTypeId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x12d7700560f441d4L)).origin("3488505779905094458").done();
     return b.create();
   }
 }

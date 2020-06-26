@@ -7,8 +7,8 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class EconomyMode_Editor extends DefaultNodeEditor {
+public class TurnAutomaticControl_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return new EconomyMode_EditorBuilder_a(editorContext, node).createCell();
+    return new TurnAutomaticControl_EditorBuilder_a(editorContext, node).createCell();
   }
 }

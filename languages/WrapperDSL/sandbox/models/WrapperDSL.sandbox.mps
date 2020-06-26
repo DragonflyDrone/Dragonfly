@@ -26,13 +26,12 @@
         <child id="3488505779906715724" name="distance" index="glgBa" />
       </concept>
       <concept id="3488505779904874957" name="WrapperDSL.structure.WindDirectionConditionalExpression" flags="ng" index="gii1b">
-        <property id="3488505779904874960" name="value" index="gii1m" />
         <property id="3488505779904874992" name="operator" index="gii1Q" />
+        <property id="5547882272274126500" name="value" index="iq1WG" />
       </concept>
-      <concept id="3488505779905094455" name="WrapperDSL.structure.setManualControl" flags="ng" index="gi$EL">
+      <concept id="3488505779905094455" name="WrapperDSL.structure.TurnAutomaticControl" flags="ng" index="gi$EL">
         <property id="3488505779905094458" name="value" index="gi$EW" />
       </concept>
-      <concept id="3488505779906477485" name="WrapperDSL.structure.AnyNumber" flags="ng" index="gklgF" />
       <concept id="3488505779906477482" name="WrapperDSL.structure.IntegerNumber" flags="ng" index="gklgG">
         <property id="3488505779906477483" name="value" index="gklgH" />
       </concept>
@@ -61,9 +60,6 @@
       </concept>
       <concept id="6034329596691614548" name="WrapperDSL.structure.AdaptationScript" flags="ng" index="1nO3mo">
         <child id="6034329596692833866" name="body" index="1nfDy6" />
-      </concept>
-      <concept id="6034329596690879483" name="WrapperDSL.structure.Value" flags="ng" index="1nReOR">
-        <property id="6034329596690879484" name="value" index="1nReOK" />
       </concept>
       <concept id="6034329596690336989" name="WrapperDSL.structure.CategoricalWindConditionalExpression" flags="ng" index="1nTb8h">
         <property id="8750727080426382706" name="operator" index="3Eh7qo" />
@@ -102,7 +98,7 @@
       <concept id="2392105491497355787" name="WrapperDSL.structure.GambialCommand" flags="ng" index="1$L7Pe">
         <property id="2392105491497355788" name="value" index="1$L7P9" />
       </concept>
-      <concept id="2392105491497355738" name="WrapperDSL.structure.CameraCommand" flags="ng" index="1$L7Uv">
+      <concept id="2392105491497355738" name="WrapperDSL.structure.TurnCamera" flags="ng" index="1$L7Uv">
         <property id="2392105491497355739" name="turn" index="1$L7Uu" />
       </concept>
       <concept id="2392105491498693605" name="WrapperDSL.structure.Else" flags="ng" index="1Be0iw">
@@ -124,7 +120,7 @@
         <child id="8750727080426179942" name="right" index="3EglUc" />
         <child id="8750727080426179941" name="left" index="3EglUf" />
       </concept>
-      <concept id="1357676981078990910" name="WrapperDSL.structure.EconomyMode" flags="ng" index="1M9P0V">
+      <concept id="1357676981078990910" name="WrapperDSL.structure.TurnEconomyMode" flags="ng" index="1M9P0V">
         <property id="1357676981078990911" name="value" index="1M9P0U" />
       </concept>
     </language>
@@ -147,8 +143,8 @@
           <node concept="22r6dy" id="4VxqpBP$TZQ" role="3EglUc">
             <property role="22r6dB" value="7_KOYEjfYK5/destination" />
             <property role="22r6dD" value="5eYfGK4mCLf/greater_than_or_equal_to" />
-            <node concept="1nReOR" id="4VxqpBP$TZS" role="22r6dE">
-              <property role="1nReOK" value="2" />
+            <node concept="gklgG" id="4NY2oxuEQvY" role="22r6dE">
+              <property role="gklgH" value="60" />
             </node>
           </node>
         </node>
@@ -186,8 +182,8 @@
         <node concept="22r6dy" id="24MtOl5VO_7" role="3EglUf">
           <property role="22r6dB" value="7_KOYEjfYK5/destination" />
           <property role="22r6dD" value="5eYfGK4mCLl/less_than_or_equal_to" />
-          <node concept="1nReOR" id="24MtOl5VO_9" role="22r6dE">
-            <property role="1nReOK" value="2" />
+          <node concept="gklgG" id="4NY2oxuDi43" role="22r6dE">
+            <property role="gklgH" value="60" />
           </node>
         </node>
         <node concept="3Em$gh" id="24MtOl5VO_E" role="3EglUc">
@@ -196,9 +192,9 @@
             <property role="3Eh7qo" value="7_KOYEjd0pz/is" />
             <property role="3EhgtX" value="7_KOYEjdthV/strong" />
           </node>
-          <node concept="gii1b" id="31DEoow8YcO" role="3EglUc">
+          <node concept="gii1b" id="4NY2oxuDi48" role="3EglUc">
             <property role="gii1Q" value="7_KOYEjd0pz/is" />
-            <property role="gii1m" value="IyLDsSshHH/East" />
+            <property role="iq1WG" value="11jlgVoCRQU/E" />
           </node>
         </node>
       </node>
@@ -256,7 +252,7 @@
         <node concept="1nO3mo" id="24MtOl5WXdU" role="2mxZ7t">
           <property role="TrG5h" value="manual" />
           <node concept="gi$EL" id="31DEoowaEDu" role="1nfDy6">
-            <property role="gi$EW" value="1bns0lwX47l/Start" />
+            <property role="gi$EW" value="1bns0lwX48z/Pause" />
           </node>
         </node>
       </node>
@@ -288,7 +284,7 @@
             <property role="1$L7P9" value="24MtOl5XwD6/on" />
           </node>
           <node concept="1M9P0V" id="24MtOl64TMV" role="1nfDy6">
-            <property role="1M9P0U" value="11jlgVoGE2D/on" />
+            <property role="1M9P0U" value="1bns0lwX47l/Start" />
           </node>
           <node concept="1nTnHB" id="24MtOl60mfj" role="1nfDy6">
             <node concept="1$L7Pe" id="24MtOl622XJ" role="1nTnyY">
@@ -361,8 +357,10 @@
     </node>
     <node concept="1nTbk7" id="31DEoowcqmg" role="1nTbk3">
       <node concept="ghVq7" id="31DEoowhnoa" role="2mxZ8X">
-        <property role="ghVq4" value="31DEoowfNFD/any" />
-        <node concept="gklgF" id="31DEoowjzSO" role="glgBa" />
+        <property role="ghVq4" value="11jlgVoCRQU/E" />
+        <node concept="gklgG" id="4NY2oxuPR$Q" role="glgBa">
+          <property role="gklgH" value="30" />
+        </node>
       </node>
     </node>
     <node concept="1nTbk0" id="31DEoowcqmi" role="1nTbku">
@@ -371,9 +369,51 @@
         <ref role="2mxZ9N" node="31DEoowcqmk" resolve="framework" />
         <node concept="1nO3mo" id="31DEoowcqmk" role="2mxZ7t">
           <property role="TrG5h" value="framework" />
-          <node concept="ghVq7" id="31DEoowjzTR" role="1nfDy6">
+          <node concept="ghVq7" id="4NY2oxuP5jZ" role="1nfDy6">
+            <property role="ghVq4" value="11jlgVoCRQQ/N" />
+            <node concept="gklgG" id="4NY2oxuP5k0" role="glgBa">
+              <property role="gklgH" value="30" />
+            </node>
+          </node>
+          <node concept="ghVq7" id="4NY2oxuPR$r" role="1nfDy6">
+            <property role="ghVq4" value="11jlgVoCRQY/W" />
+            <node concept="gklgG" id="4NY2oxuPR$s" role="glgBa">
+              <property role="gklgH" value="30" />
+            </node>
+          </node>
+          <node concept="ghVq7" id="4NY2oxuP5k5" role="1nfDy6">
+            <property role="ghVq4" value="11jlgVoCRQR/S" />
+            <node concept="gklgG" id="4NY2oxuP5k6" role="glgBa">
+              <property role="gklgH" value="30" />
+            </node>
+          </node>
+          <node concept="ghVq7" id="4NY2oxuP5kd" role="1nfDy6">
+            <property role="ghVq4" value="11jlgVoCRQR/S" />
+            <node concept="gklgG" id="4NY2oxuP5ke" role="glgBa">
+              <property role="gklgH" value="30" />
+            </node>
+          </node>
+          <node concept="ghVq7" id="4NY2oxuP5kn" role="1nfDy6">
             <property role="ghVq4" value="11jlgVoCRQU/E" />
-            <node concept="gklgG" id="31DEoowkt2k" role="glgBa">
+            <node concept="gklgG" id="4NY2oxuP5ko" role="glgBa">
+              <property role="gklgH" value="30" />
+            </node>
+          </node>
+          <node concept="ghVq7" id="4NY2oxuP5kz" role="1nfDy6">
+            <property role="ghVq4" value="11jlgVoCRQU/E" />
+            <node concept="gklgG" id="4NY2oxuP5k$" role="glgBa">
+              <property role="gklgH" value="30" />
+            </node>
+          </node>
+          <node concept="ghVq7" id="4NY2oxuP5kL" role="1nfDy6">
+            <property role="ghVq4" value="11jlgVoCRQQ/N" />
+            <node concept="gklgG" id="4NY2oxuP5kM" role="glgBa">
+              <property role="gklgH" value="30" />
+            </node>
+          </node>
+          <node concept="ghVq7" id="4NY2oxuP5l1" role="1nfDy6">
+            <property role="ghVq4" value="11jlgVoCRQQ/N" />
+            <node concept="gklgG" id="4NY2oxuP5l2" role="glgBa">
               <property role="gklgH" value="30" />
             </node>
           </node>
