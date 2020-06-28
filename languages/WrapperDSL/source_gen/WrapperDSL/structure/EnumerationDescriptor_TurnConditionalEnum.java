@@ -15,12 +15,13 @@ public class EnumerationDescriptor_TurnConditionalEnum extends EnumerationDescri
     super(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x1053550ed8b2a0a8L, "TurnConditionalEnum", "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/1176377449927319720");
   }
 
-  private final EnumerationDescriptor.MemberDescriptor myMember_on_0 = new EnumerationDescriptor.MemberDescriptor("on", "on", 0x1053550ed8b2a0a9L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/1176377449927319721");
-  private final EnumerationDescriptor.MemberDescriptor myMember_off_0 = new EnumerationDescriptor.MemberDescriptor("off", "off", 0x1053550ed8b2a0aaL, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/1176377449927319722");
-  private final EnumerationDescriptor.MemberDescriptor myMember_any_0 = new EnumerationDescriptor.MemberDescriptor("any", "any", 0x3069a986203ca048L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/3488505779906715720");
+  private final EnumerationDescriptor.MemberDescriptor myMember_ON_0 = new EnumerationDescriptor.MemberDescriptor("ON", "on", 0x1053550ed8b2a0a9L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/1176377449927319721");
+  private final EnumerationDescriptor.MemberDescriptor myMember_OFF_0 = new EnumerationDescriptor.MemberDescriptor("OFF", "off", 0x1053550ed8b2a0aaL, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/1176377449927319722");
+  private final EnumerationDescriptor.MemberDescriptor myMember_ANY_0 = new EnumerationDescriptor.MemberDescriptor("ANY", "any", 0x3069a986203ca048L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/3488505779906715720");
+  private final EnumerationDescriptor.MemberDescriptor myMember_FAILURE_0 = new EnumerationDescriptor.MemberDescriptor("FAILURE", "failure", 0x1a89d4adbe177703L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/1912293359479125763");
 
-  private final EnumerationLiteralsIndex myIndex = EnumerationLiteralsIndex.build(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x1053550ed8b2a0a8L, 0x1053550ed8b2a0a9L, 0x1053550ed8b2a0aaL, 0x3069a986203ca048L);
-  private final List<EnumerationDescriptor.MemberDescriptor> myMembers = new EnumerationDescriptorBase.MembersList(myIndex, myMember_on_0, myMember_off_0, myMember_any_0);
+  private final EnumerationLiteralsIndex myIndex = EnumerationLiteralsIndex.build(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x1053550ed8b2a0a8L, 0x1053550ed8b2a0a9L, 0x1053550ed8b2a0aaL, 0x3069a986203ca048L, 0x1a89d4adbe177703L);
+  private final List<EnumerationDescriptor.MemberDescriptor> myMembers = new EnumerationDescriptorBase.MembersList(myIndex, myMember_ON_0, myMember_OFF_0, myMember_ANY_0, myMember_FAILURE_0);
 
   @Nullable
   @Override
@@ -41,12 +42,14 @@ public class EnumerationDescriptor_TurnConditionalEnum extends EnumerationDescri
       return null;
     }
     switch (memberName) {
-      case "on":
-        return myMember_on_0;
-      case "off":
-        return myMember_off_0;
-      case "any":
-        return myMember_any_0;
+      case "ON":
+        return myMember_ON_0;
+      case "OFF":
+        return myMember_OFF_0;
+      case "ANY":
+        return myMember_ANY_0;
+      case "FAILURE":
+        return myMember_FAILURE_0;
     }
     return null;
   }

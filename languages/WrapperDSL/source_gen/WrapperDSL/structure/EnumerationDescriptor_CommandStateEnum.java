@@ -15,15 +15,15 @@ public class EnumerationDescriptor_CommandStateEnum extends EnumerationDescripto
     super(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x12d7700560f441d4L, "CommandStateEnum", "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/1357676981079261652");
   }
 
-  private final EnumerationDescriptor.MemberDescriptor myMember_Start_0 = new EnumerationDescriptor.MemberDescriptor("Start", "start", 0x12d7700560f441d5L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/1357676981079261653");
-  private final EnumerationDescriptor.MemberDescriptor myMember_Resume_0 = new EnumerationDescriptor.MemberDescriptor("Resume", "resume", 0x12d7700560f441d6L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/1357676981079261654");
-  private final EnumerationDescriptor.MemberDescriptor myMember_Cancel_0 = new EnumerationDescriptor.MemberDescriptor("Cancel", "cancel", 0x12d7700560f441d9L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/1357676981079261657");
-  private final EnumerationDescriptor.MemberDescriptor myMember_Pause_0 = new EnumerationDescriptor.MemberDescriptor("Pause", "pause", 0x12d7700560f44223L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/1357676981079261731");
-  private final EnumerationDescriptor.MemberDescriptor myMember_Running_0 = new EnumerationDescriptor.MemberDescriptor("Running", "running", 0x2132774545ef497dL, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/2392105491496913277");
-  private final EnumerationDescriptor.MemberDescriptor myMember_Any_0 = new EnumerationDescriptor.MemberDescriptor("Any", "any", 0x3069a9862038fd9aL, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/3488505779906477466");
+  private final EnumerationDescriptor.MemberDescriptor myMember_START_0 = new EnumerationDescriptor.MemberDescriptor("START", "start", 0x12d7700560f441d5L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/1357676981079261653");
+  private final EnumerationDescriptor.MemberDescriptor myMember_RESUME_0 = new EnumerationDescriptor.MemberDescriptor("RESUME", "resume", 0x12d7700560f441d6L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/1357676981079261654");
+  private final EnumerationDescriptor.MemberDescriptor myMember_CANCEL_0 = new EnumerationDescriptor.MemberDescriptor("CANCEL", "cancel", 0x12d7700560f441d9L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/1357676981079261657");
+  private final EnumerationDescriptor.MemberDescriptor myMember_PAUSE_0 = new EnumerationDescriptor.MemberDescriptor("PAUSE", "pause", 0x12d7700560f44223L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/1357676981079261731");
+  private final EnumerationDescriptor.MemberDescriptor myMember_RUNNING_0 = new EnumerationDescriptor.MemberDescriptor("RUNNING", "running", 0x2132774545ef497dL, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/2392105491496913277");
+  private final EnumerationDescriptor.MemberDescriptor myMember_ANY_0 = new EnumerationDescriptor.MemberDescriptor("ANY", "any", 0x3069a9862038fd9aL, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/3488505779906477466");
 
   private final EnumerationLiteralsIndex myIndex = EnumerationLiteralsIndex.build(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x12d7700560f441d4L, 0x12d7700560f441d5L, 0x12d7700560f441d6L, 0x12d7700560f441d9L, 0x12d7700560f44223L, 0x2132774545ef497dL, 0x3069a9862038fd9aL);
-  private final List<EnumerationDescriptor.MemberDescriptor> myMembers = new EnumerationDescriptorBase.MembersList(myIndex, myMember_Start_0, myMember_Resume_0, myMember_Cancel_0, myMember_Pause_0, myMember_Running_0, myMember_Any_0);
+  private final List<EnumerationDescriptor.MemberDescriptor> myMembers = new EnumerationDescriptorBase.MembersList(myIndex, myMember_START_0, myMember_RESUME_0, myMember_CANCEL_0, myMember_PAUSE_0, myMember_RUNNING_0, myMember_ANY_0);
 
   @Nullable
   @Override
@@ -44,18 +44,18 @@ public class EnumerationDescriptor_CommandStateEnum extends EnumerationDescripto
       return null;
     }
     switch (memberName) {
-      case "Start":
-        return myMember_Start_0;
-      case "Resume":
-        return myMember_Resume_0;
-      case "Cancel":
-        return myMember_Cancel_0;
-      case "Pause":
-        return myMember_Pause_0;
-      case "Running":
-        return myMember_Running_0;
-      case "Any":
-        return myMember_Any_0;
+      case "START":
+        return myMember_START_0;
+      case "RESUME":
+        return myMember_RESUME_0;
+      case "CANCEL":
+        return myMember_CANCEL_0;
+      case "PAUSE":
+        return myMember_PAUSE_0;
+      case "RUNNING":
+        return myMember_RUNNING_0;
+      case "ANY":
+        return myMember_ANY_0;
     }
     return null;
   }

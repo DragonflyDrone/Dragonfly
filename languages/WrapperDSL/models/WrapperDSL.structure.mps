@@ -326,47 +326,47 @@
     <property role="TrG5h" value="DirectionsEnum" />
     <node concept="25R33" id="11jlgVoCRQQ" role="25R1y">
       <property role="3tVfz5" value="1176377449926327734" />
-      <property role="TrG5h" value="N" />
+      <property role="TrG5h" value="NORTH" />
       <property role="1L1pqM" value="north" />
     </node>
     <node concept="25R33" id="11jlgVoCRQR" role="25R1y">
       <property role="3tVfz5" value="1176377449926327735" />
-      <property role="TrG5h" value="S" />
+      <property role="TrG5h" value="SOUTH" />
       <property role="1L1pqM" value="south" />
     </node>
     <node concept="25R33" id="11jlgVoCRQU" role="25R1y">
       <property role="3tVfz5" value="1176377449926327738" />
-      <property role="TrG5h" value="E" />
+      <property role="TrG5h" value="EAST" />
       <property role="1L1pqM" value="east" />
     </node>
     <node concept="25R33" id="11jlgVoCRQY" role="25R1y">
       <property role="3tVfz5" value="1176377449926327742" />
-      <property role="TrG5h" value="W" />
+      <property role="TrG5h" value="WEST" />
       <property role="1L1pqM" value="west" />
     </node>
     <node concept="25R33" id="11jlgVoCRR3" role="25R1y">
       <property role="3tVfz5" value="1176377449926327747" />
-      <property role="TrG5h" value="NE" />
+      <property role="TrG5h" value="NORTH_EAST" />
       <property role="1L1pqM" value="north east" />
     </node>
     <node concept="25R33" id="11jlgVoCRR9" role="25R1y">
       <property role="3tVfz5" value="1176377449926327753" />
-      <property role="TrG5h" value="SE" />
+      <property role="TrG5h" value="SOUTH_EAST" />
       <property role="1L1pqM" value="south east" />
     </node>
     <node concept="25R33" id="11jlgVoCRRg" role="25R1y">
       <property role="3tVfz5" value="1176377449926327760" />
-      <property role="TrG5h" value="NW" />
+      <property role="TrG5h" value="NORTH_WEST" />
       <property role="1L1pqM" value="north west" />
     </node>
     <node concept="25R33" id="11jlgVoCRRo" role="25R1y">
       <property role="3tVfz5" value="1176377449926327768" />
-      <property role="TrG5h" value="SW" />
+      <property role="TrG5h" value="SOUTH_WEAST" />
       <property role="1L1pqM" value="south west" />
     </node>
     <node concept="25R33" id="31DEoowfNFD" role="25R1y">
       <property role="3tVfz5" value="3488505779906886377" />
-      <property role="TrG5h" value="any" />
+      <property role="TrG5h" value="ANY" />
       <property role="1L1pqM" value="any" />
     </node>
   </node>
@@ -376,18 +376,23 @@
     <property role="TrG5h" value="TurnConditionalEnum" />
     <node concept="25R33" id="11jlgVoGE2D" role="25R1y">
       <property role="3tVfz5" value="1176377449927319721" />
-      <property role="TrG5h" value="on" />
+      <property role="TrG5h" value="ON" />
       <property role="1L1pqM" value="on" />
     </node>
     <node concept="25R33" id="11jlgVoGE2E" role="25R1y">
       <property role="3tVfz5" value="1176377449927319722" />
-      <property role="TrG5h" value="off" />
+      <property role="TrG5h" value="OFF" />
       <property role="1L1pqM" value="off" />
     </node>
     <node concept="25R33" id="31DEoowfa18" role="25R1y">
       <property role="3tVfz5" value="3488505779906715720" />
-      <property role="TrG5h" value="any" />
+      <property role="TrG5h" value="ANY" />
       <property role="1L1pqM" value="any" />
+    </node>
+    <node concept="25R33" id="1E9PaQY5Rs3" role="25R1y">
+      <property role="3tVfz5" value="1912293359479125763" />
+      <property role="TrG5h" value="FAILURE" />
+      <property role="1L1pqM" value="failure" />
     </node>
   </node>
   <node concept="25R3W" id="304WrIr4qch">
@@ -941,6 +946,11 @@
       <property role="TrG5h" value="destination" />
       <property role="1L1pqM" value="destination" />
     </node>
+    <node concept="25R33" id="1E9PaQYqPn3" role="25R1y">
+      <property role="3tVfz5" value="1912293359484622275" />
+      <property role="TrG5h" value="any" />
+      <property role="1L1pqM" value="any" />
+    </node>
   </node>
   <node concept="1TIwiD" id="7_KOYEjfYJX">
     <property role="EcuMT" value="8750727080427121661" />
@@ -1002,13 +1012,18 @@
     <property role="TrG5h" value="CategoricalWindEnum" />
     <node concept="25R33" id="7_KOYEjdthV" role="25R1y">
       <property role="3tVfz5" value="8750727080426460283" />
-      <property role="TrG5h" value="strong" />
+      <property role="TrG5h" value="STRONG" />
       <property role="1L1pqM" value="strong" />
     </node>
     <node concept="25R33" id="7_KOYEjdthW" role="25R1y">
       <property role="3tVfz5" value="8750727080426460284" />
-      <property role="TrG5h" value="normal" />
+      <property role="TrG5h" value="NORMAL" />
       <property role="1L1pqM" value="normal" />
+    </node>
+    <node concept="25R33" id="1E9PaQY2GSt" role="25R1y">
+      <property role="3tVfz5" value="1912293359478296093" />
+      <property role="TrG5h" value="LIGHT" />
+      <property role="1L1pqM" value="light" />
     </node>
   </node>
   <node concept="1TIwiD" id="7_KOYEjcoPy">
@@ -1232,32 +1247,32 @@
     <property role="TrG5h" value="CommandStateEnum" />
     <node concept="25R33" id="1bns0lwX47l" role="25R1y">
       <property role="3tVfz5" value="1357676981079261653" />
-      <property role="TrG5h" value="Start" />
+      <property role="TrG5h" value="START" />
       <property role="1L1pqM" value="start" />
     </node>
     <node concept="25R33" id="1bns0lwX47m" role="25R1y">
       <property role="3tVfz5" value="1357676981079261654" />
-      <property role="TrG5h" value="Resume" />
+      <property role="TrG5h" value="RESUME" />
       <property role="1L1pqM" value="resume" />
     </node>
     <node concept="25R33" id="1bns0lwX47p" role="25R1y">
       <property role="3tVfz5" value="1357676981079261657" />
-      <property role="TrG5h" value="Cancel" />
+      <property role="TrG5h" value="CANCEL" />
       <property role="1L1pqM" value="cancel" />
     </node>
     <node concept="25R33" id="1bns0lwX48z" role="25R1y">
       <property role="3tVfz5" value="1357676981079261731" />
-      <property role="TrG5h" value="Pause" />
+      <property role="TrG5h" value="PAUSE" />
       <property role="1L1pqM" value="pause" />
     </node>
     <node concept="25R33" id="24MtOl5VO_X" role="25R1y">
       <property role="3tVfz5" value="2392105491496913277" />
-      <property role="TrG5h" value="Running" />
+      <property role="TrG5h" value="RUNNING" />
       <property role="1L1pqM" value="running" />
     </node>
     <node concept="25R33" id="31DEoowefQq" role="25R1y">
       <property role="3tVfz5" value="3488505779906477466" />
-      <property role="TrG5h" value="Any" />
+      <property role="TrG5h" value="ANY" />
       <property role="1L1pqM" value="any" />
     </node>
   </node>

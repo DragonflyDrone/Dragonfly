@@ -17,14 +17,24 @@ public class ExceptionalScenario_TextGen extends TextGenDescriptorBase {
   @Override
   public void generateText(final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
-    tgs.pushTextArea("IMPORTS");
-    tgs.append("package wrappers;\n\nimport controller.DroneController;\nimport controller.EnvironmentController;\nimport controller.LoggerController;\nimport javafx.application.Platform;\nimport javafx.concurrent.Task;\nimport model.entity.drone.Drone;\nimport model.entity.drone.DroneBusinessObject;\nimport org.aspectj.lang.JoinPoint;\nimport view.CellView;\nimport view.drone.DroneView;\nimport view.river.RiverView;\n\nimport java.util.ArrayList;\nimport java.util.List;\n");
-    tgs.popTextArea();
+    tgs.append("package wrappers;\n\n");
+
+    tgs.append("//IMPORTS//\n");
+    tgs.append("//JAVA IMPORTS\n");
+    tgs.append("import javafx.application.Platform;\nimport javafx.concurrent.Task;\nimport org.aspectj.lang.JoinPoint;\nimport java.util.ArrayList;\nimport java.util.List;\n");
+    tgs.append("//JAVA IMPORTS\n\n");
+
+    tgs.append("//Dragonfly API IMPORTS\n");
+    tgs.append("import controller.DroneController;\nimport controller.EnvironmentController;\nimport controller.LoggerController;\nimport model.entity.drone.Drone;\nimport model.entity.drone.DroneBusinessObject;\nimport view.CellView;\nimport view.drone.DroneView;\nimport view.river.RiverView;\nimport model.entity.drone.sensors.CameraStateEnum;\nimport model.entity.drone.sensors.CollisionStateEnum;\nimport model.entity.drone.sensors.GPSStateEnum;\nimport model.entity.drone.sensors.SmokeStateEnum;\nimport util.DirectionEnum;\nimport controller.CellController;\n");
+    tgs.append("//Dragonfly API IMPORTS\n\n");
+    tgs.append("//IMPORTS//\n\n");
+
     tgs.pushTextArea("HEADER");
     tgs.append("public aspect ");
     tgs.append(SPropertyOperations.getString(ctx.getPrimaryInput(), PROPS.name$tAp1));
     tgs.append("{\n");
     tgs.popTextArea();
+
     tgs.pushTextArea("pointcut");
     transformationOperations.whenToPointcut(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.when$Bwg0), ctx);
     tgs.append("\n");
@@ -41,7 +51,7 @@ public class ExceptionalScenario_TextGen extends TextGenDescriptorBase {
     tgs.popTextArea();
     tgs.pushTextArea("advice");
     tgs.appendNode(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.then$BwrC), LINKS.adaptiveBehavior$1YwA), LINKS.adaptationScriptName$XPix));
-    tgs.append("(((Drone)thisJoinPoint.getArgs()[0]));\n");
+    tgs.append("(thisJoinPoint);\n");
     tgs.popTextArea();
     tgs.pushTextArea("advice");
     tgs.append("}\n");
@@ -51,12 +61,20 @@ public class ExceptionalScenario_TextGen extends TextGenDescriptorBase {
     tgs.append("public void ");
     tgs.appendNode(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.then$BwrC), LINKS.adaptiveBehavior$1YwA), LINKS.adaptationScriptName$XPix));
     tgs.append("(JoinPoint thisJoinPoint)");
+    tgs.newLine();
     tgs.popTextArea();
     tgs.pushTextArea("methodAdvice");
     tgs.append("{\n");
     tgs.popTextArea();
     tgs.pushTextArea("methodAdvice");
+    tgs.append("Drone drone = (Drone) thisJoinPoint.getArgs()[0];\n");
+    tgs.popTextArea();
+    tgs.pushTextArea("methodAdvice");
+    tgs.newLine();
+    tgs.popTextArea();
+    tgs.pushTextArea("methodAdvice");
     transformationOperations.printExceptionalScenarioInLog(ctx.getPrimaryInput(), ctx);
+    tgs.newLine();
     tgs.popTextArea();
     tgs.pushTextArea("methodAdvice");
     for (SNode item : SLinkOperations.getChildren(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.then$BwrC), LINKS.adaptiveBehavior$1YwA), LINKS.adaptationScript$Y1Gq), LINKS.body$BmMw)) {

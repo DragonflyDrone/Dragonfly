@@ -17,9 +17,10 @@ public class EnumerationDescriptor_CategoricalDistanceEnum extends EnumerationDe
 
   private final EnumerationDescriptor.MemberDescriptor myMember_origin_0 = new EnumerationDescriptor.MemberDescriptor("origin", "origin", 0x7970d3ea933fec06L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/8750727080427121670");
   private final EnumerationDescriptor.MemberDescriptor myMember_destination_0 = new EnumerationDescriptor.MemberDescriptor("destination", "destination", 0x7970d3ea933fec05L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/8750727080427121669");
+  private final EnumerationDescriptor.MemberDescriptor myMember_any_0 = new EnumerationDescriptor.MemberDescriptor("any", "any", 0x1a89d4adbe6b55c3L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/1912293359484622275");
 
-  private final EnumerationLiteralsIndex myIndex = EnumerationLiteralsIndex.build(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x7970d3ea933fec04L, 0x7970d3ea933fec06L, 0x7970d3ea933fec05L);
-  private final List<EnumerationDescriptor.MemberDescriptor> myMembers = new EnumerationDescriptorBase.MembersList(myIndex, myMember_origin_0, myMember_destination_0);
+  private final EnumerationLiteralsIndex myIndex = EnumerationLiteralsIndex.build(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x7970d3ea933fec04L, 0x7970d3ea933fec06L, 0x7970d3ea933fec05L, 0x1a89d4adbe6b55c3L);
+  private final List<EnumerationDescriptor.MemberDescriptor> myMembers = new EnumerationDescriptorBase.MembersList(myIndex, myMember_origin_0, myMember_destination_0, myMember_any_0);
 
   @Nullable
   @Override
@@ -44,6 +45,8 @@ public class EnumerationDescriptor_CategoricalDistanceEnum extends EnumerationDe
         return myMember_origin_0;
       case "destination":
         return myMember_destination_0;
+      case "any":
+        return myMember_any_0;
     }
     return null;
   }

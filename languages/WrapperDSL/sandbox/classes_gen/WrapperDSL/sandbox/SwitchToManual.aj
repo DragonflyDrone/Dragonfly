@@ -20,9 +20,9 @@ around():
 &&
 if
 (
-(<!TextGen not found for 'WrapperDSL.structure.GpsConditionalExpression'!>)
+(((Drone)thisJoinPoint.getArgs()[0]).getGpsState()isGPSStateEnum.off)
 &&
-(<!TextGen not found for 'WrapperDSL.structure.PerformingCommandConditionalExpression'!>)
+(isisAutomatic())
 )
 {
 manual(((Drone)thisJoinPoint.getArgs()[0]));
@@ -30,5 +30,5 @@ manual(((Drone)thisJoinPoint.getArgs()[0]));
 public void manual(JoinPoint thisJoinPoint){
 System.out.println("Drone["+drone.getLabel()+"] "+"SwitchToManual);
 LoggerController.getInstance().print("Drone["+drone.getLabel()+"]SwitchToManual);
-<!TextGen not found for 'WrapperDSL.structure.setManualControl'!>}
+fazer a parte que torna automatico}
 }

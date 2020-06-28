@@ -14,6 +14,7 @@ public class RegionConditionalExpression_TextGen extends TextGenDescriptorBase {
   @Override
   public void generateText(final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
+
     if (SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.right$sgLA) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x72508e21f03ae4a3L, "WrapperDSL.structure.RegionEnum"), 0x72508e21f03ae4a5L, "water")) {
       if (SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.operator$shtF) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x7970d3ea9334065dL, "WrapperDSL.structure.IqualityOperatorEnum"), 0x7970d3ea93340663L, "is")) {
         tgs.append("((Drone)thisJoinPoint.getArgs()[0]).isOnWater()==true");
@@ -23,7 +24,7 @@ public class RegionConditionalExpression_TextGen extends TextGenDescriptorBase {
     }
     if (SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.right$sgLA) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x72508e21f03ae4a3L, "WrapperDSL.structure.RegionEnum"), 0x72508e21f03ae4a4L, "land")) {
       if (SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.operator$shtF) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x7970d3ea9334065dL, "WrapperDSL.structure.IqualityOperatorEnum"), 0x7970d3ea93340663L, "is")) {
-        tgs.append("((Drone)thisJoinPoint.getArgs()[0]).isOnWater()==false");
+        tgs.append("((Drone)thisJoinPoint.getArgs()[0]).isOnWater()!=true");
       } else {
         tgs.append("((Drone)thisJoinPoint.getArgs()[0]).isOnWater()==true");
       }
@@ -34,6 +35,7 @@ public class RegionConditionalExpression_TextGen extends TextGenDescriptorBase {
       } else {
         tgs.append("((Drone)thisJoinPoint.getArgs()[0]).getDistanceDestiny() != 0");
       }
+
     }
     if (SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.right$sgLA) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x72508e21f03ae4a3L, "WrapperDSL.structure.RegionEnum"), 0x72508e21f03bed3cL, "origin")) {
       if (SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.operator$shtF) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x7970d3ea9334065dL, "WrapperDSL.structure.IqualityOperatorEnum"), 0x7970d3ea93340663L, "is")) {
@@ -41,7 +43,10 @@ public class RegionConditionalExpression_TextGen extends TextGenDescriptorBase {
       } else {
         tgs.append("((Drone)thisJoinPoint.getArgs()[0]).distanceSource() != 0");
       }
+
     }
+
+
 
 
   }

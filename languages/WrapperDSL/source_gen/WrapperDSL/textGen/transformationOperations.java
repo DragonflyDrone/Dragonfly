@@ -38,10 +38,20 @@ public abstract class transformationOperations {
 
     tgs.append("System.out.println(\"Drone[\"+drone.getLabel()+\"] \"+\"");
     tgs.append(nameExceptionalScenario);
-    tgs.append(");\n");
-    tgs.append("LoggerController.getInstance().print(\"Drone[\"+drone.getLabel()+\"]");
+    tgs.append("\");\n");
+    tgs.append("LoggerController.getInstance().print(\"Drone[\"+drone.getLabel()+\"] ");
     tgs.append(nameExceptionalScenario);
-    tgs.append(");\n");
+    tgs.append("\");\n");
+  }
+  public static void transformOperator(String operator, final TextGenContext ctx) {
+    final TextGenSupport tgs = new TextGenSupport(ctx);
+    switch (operator) {
+      case "is":
+        tgs.append("==");
+        break;
+      case "not is":
+        tgs.append("!=");
+    }
   }
 
   private static final class LINKS {

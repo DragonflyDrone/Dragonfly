@@ -14,14 +14,14 @@ public class CategoricalWindConditionalExpression_TextGen extends TextGenDescrip
   @Override
   public void generateText(final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
-    if (SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.right$uisC) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x7970d3ea9335d47aL, "WrapperDSL.structure.CategoricalWindEnum"), 0x7970d3ea9335d47bL, "strong")) {
+    if (SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.right$uisC) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x7970d3ea9335d47aL, "WrapperDSL.structure.CategoricalWindEnum"), 0x7970d3ea9335d47bL, "STRONG")) {
       if (SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.operator$6DDX) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x7970d3ea9334065dL, "WrapperDSL.structure.IqualityOperatorEnum"), 0x7970d3ea93340663L, "is")) {
         tgs.append("((Drone)thisJoinPoint.getArgs()[0]).isStrongWind()==true");
       } else {
         tgs.append("((Drone)thisJoinPoint.getArgs()[0]).isStrongWind()==false");
       }
     }
-    if (SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.right$uisC) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x7970d3ea9335d47aL, "WrapperDSL.structure.CategoricalWindEnum"), 0x7970d3ea9335d47cL, "normal")) {
+    if (SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.right$uisC) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x7970d3ea9335d47aL, "WrapperDSL.structure.CategoricalWindEnum"), 0x7970d3ea9335d47cL, "NORMAL")) {
       if (SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.operator$6DDX) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x7970d3ea9334065dL, "WrapperDSL.structure.IqualityOperatorEnum"), 0x7970d3ea93340663L, "is")) {
         tgs.append("((Drone)thisJoinPoint.getArgs()[0]).isStrongWind()==false");
       } else {

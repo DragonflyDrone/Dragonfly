@@ -20,9 +20,9 @@ around():
 &&
 if
 (
-(<!TextGen not found for 'WrapperDSL.structure.PerformingCommandConditionalExpression'!>)
+(is<!TextGen not found for 'WrapperDSL.structure.ReturnToHome'!>)
 &&
-(<!TextGen not found for 'WrapperDSL.structure.CollisionSensorConditionalExpression'!>)
+(isoff)
 )
 {
 newSafeLand(((Drone)thisJoinPoint.getArgs()[0]));

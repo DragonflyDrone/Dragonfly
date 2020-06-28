@@ -20,16 +20,16 @@ public class FlyToRegion_TextGen extends TextGenDescriptorBase {
     } else if (SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.region$YVky) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x72508e21f03ae4a3L, "WrapperDSL.structure.RegionEnum"), 0x72508e21f03ae4a5L, "water")) {
       region = "Water";
     } else if (SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.region$YVky) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x72508e21f03ae4a3L, "WrapperDSL.structure.RegionEnum"), 0x72508e21f03bed38L, "destination")) {
-      region = "Destination";
+      region = "Destiny";
     } else if (SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.region$YVky) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x72508e21f03ae4a3L, "WrapperDSL.structure.RegionEnum"), 0x72508e21f03bed3cL, "origin")) {
-      region = "Origin";
+      region = "Source";
     }
     tgs.append("DroneView droneView = DroneController.getInstance().getDroneViewFrom(drone.getUniqueID());\n");
-    tgs.append("CellView closerLandCellView = EnvironmentController.getInstance().getCloser");
+    tgs.append("CellView destinationCellView = CellController.getInstance().getCellViewFrom(drone.get");
     tgs.append(region);
-    tgs.append("(drone);");
-    tgs.append(" String goDirection = DroneBusinessObject.closeDirection(droneView.getCurrentCellView(), closerLandCellView);\n");
-    tgs.append("DroneBusinessObject.goTo(drone, goDirection);");
+    tgs.append("Cell());\n");
+    tgs.append("DirectionEnum goDirection = DroneBusinessObject.closeDirection(droneView.getCurrentCellView(), destinationCellView);\n");
+    tgs.append("DroneBusinessObject.flyToDirection(drone, goDirection);\n");
   }
 
   private static final class PROPS {

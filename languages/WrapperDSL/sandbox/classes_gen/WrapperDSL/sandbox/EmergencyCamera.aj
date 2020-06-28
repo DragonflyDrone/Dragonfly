@@ -19,12 +19,12 @@ pointcut safeLanding(): call (* model.entity.drone.DroneBusinessObject.safeLandi
 after():safeLanding()
 &&
 if
-<!TextGen not found for 'WrapperDSL.structure.GpsConditionalExpression'!>
+((Drone)thisJoinPoint.getArgs()[0]).getGpsState()isGPSStateEnum.off
 {
 helperCamera(((Drone)thisJoinPoint.getArgs()[0]));
 }
 public void helperCamera(JoinPoint thisJoinPoint){
 System.out.println("Drone["+drone.getLabel()+"] "+"EmergencyCamera);
 LoggerController.getInstance().print("Drone["+drone.getLabel()+"]EmergencyCamera);
-<!TextGen not found for 'WrapperDSL.structure.CameraCommand'!><!TextGen not found for 'WrapperDSL.structure.GambialCommand'!><!TextGen not found for 'WrapperDSL.structure.EconomyMode'!><!TextGen not found for 'WrapperDSL.structure.If'!><!TextGen not found for 'WrapperDSL.structure.Else'!>}
+fazer cameraonFazer camera receberon<!TextGen not found for 'WrapperDSL.structure.TurnEconomyMode'!><!TextGen not found for 'WrapperDSL.structure.If'!><!TextGen not found for 'WrapperDSL.structure.Else'!>}
 }
