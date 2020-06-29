@@ -5,59 +5,27 @@ package WrapperDSL.textGen;
 import jetbrains.mps.text.rt.TextGenDescriptorBase;
 import jetbrains.mps.text.rt.TextGenContext;
 import jetbrains.mps.text.impl.TextGenSupport;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SProperty;
 
 public class FlyDirection_TextGen extends TextGenDescriptorBase {
   @Override
   public void generateText(final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
-    Object distance = null;
-    Object direction = null;
-    // situacao em que o comando está no jooinpont entao aceita * 
-    if (SNodeOperations.getConcept(SNodeOperations.getParent(ctx.getPrimaryInput())) instanceof SConcept) {
-      if (SNodeOperations.getConcept(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.distance$EVss)) instanceof SConcept) {
-        // NAO PODE FICAR COMO STRING 
-        distance = "*";
-      } else {
-        distance = SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.distance$EVss);
-      }
-      if (SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.direc$k0Fw) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x1053550ed8a37db5L, "WrapperDSL.structure.DirectionsEnum"), 0x3069a986203f3ae9L, "ANY")) {
-        // NAO PODE FICAR COMO STRING 
-        direction = "*";
-      } else {
-        direction = SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.direc$k0Fw);
-      }
+    SNode distanceNode = (SNode) SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.distance$EVss);
+    int distanceInt = SPropertyOperations.getInteger(distanceNode, PROPS.value$9VW0);
 
-      tgs.append("* model.entity.drone.DroneBusinessObject.flyToDirection(");
-      tgs.append(direction.toString());
-      tgs.append(");");
+    int blockCount = distanceInt / 5;
 
-
-    } else {
-      // situacao onde esse comando está no advice e nao aceita * 
-
-      distance = SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.distance$EVss);
-      direction = SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.direc$k0Fw);
-
-      int blockCount = (int) distance / 5;
-
-
-      for (int i = 0; i < blockCount; i++) {
-        tgs.append("DroneBusinessObject.getInstance().flyToDirection(drone,DirectionEnum.");
-        tgs.append((String) direction);
-        tgs.append(");");
-
-      }
-
+    for (int i = 0; i < blockCount; i++) {
+      tgs.append("DroneBusinessObject.getInstance().flyToDirection(drone,DirectionEnum.");
+      tgs.append(SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.direc$k0Fw).getName());
+      tgs.append(");\n");
     }
-
   }
 
   private static final class LINKS {
@@ -65,6 +33,7 @@ public class FlyDirection_TextGen extends TextGenDescriptorBase {
   }
 
   private static final class PROPS {
+    /*package*/ static final SProperty value$9VW0 = MetaAdapterFactory.getProperty(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x3069a9862038fdaaL, 0x3069a9862038fdabL, "value");
     /*package*/ static final SProperty direc$k0Fw = MetaAdapterFactory.getProperty(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x3069a986202e1f01L, 0x3069a986202e1f02L, "direc");
   }
 }

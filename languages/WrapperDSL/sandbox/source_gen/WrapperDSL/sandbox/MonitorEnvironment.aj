@@ -29,8 +29,8 @@ import controller.CellController;
 //IMPORTS//
 
 public aspect MonitorEnvironment{
-
-before():
+pointcut flyingToDirection(): call (* model.entity.drone.DroneBusinessObject.flyToDirection(*));
+before():flyingToDirection()
 &&
 if
 (
@@ -48,5 +48,13 @@ Drone drone = (Drone) thisJoinPoint.getArgs()[0];
 System.out.println("Drone["+drone.getLabel()+"] "+"MonitorEnvironment");
 LoggerController.getInstance().print("Drone["+drone.getLabel()+"] MonitorEnvironment");
 
-* model.entity.drone.DroneBusinessObject.flyToDirection(north);* model.entity.drone.DroneBusinessObject.flyToDirection(west);* model.entity.drone.DroneBusinessObject.flyToDirection(south);* model.entity.drone.DroneBusinessObject.flyToDirection(south);* model.entity.drone.DroneBusinessObject.flyToDirection(east);* model.entity.drone.DroneBusinessObject.flyToDirection(east);* model.entity.drone.DroneBusinessObject.flyToDirection(north);* model.entity.drone.DroneBusinessObject.flyToDirection(north);}
+DroneBusinessObject.getInstance().flyToDirection(drone,DirectionEnum.NORTH);
+DroneBusinessObject.getInstance().flyToDirection(drone,DirectionEnum.WEST);
+DroneBusinessObject.getInstance().flyToDirection(drone,DirectionEnum.SOUTH);
+DroneBusinessObject.getInstance().flyToDirection(drone,DirectionEnum.SOUTH);
+DroneBusinessObject.getInstance().flyToDirection(drone,DirectionEnum.EAST);
+DroneBusinessObject.getInstance().flyToDirection(drone,DirectionEnum.EAST);
+DroneBusinessObject.getInstance().flyToDirection(drone,DirectionEnum.NORTH);
+DroneBusinessObject.getInstance().flyToDirection(drone,DirectionEnum.NORTH);
+}
 }

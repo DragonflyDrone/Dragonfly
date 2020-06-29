@@ -54,7 +54,7 @@ LoggerController.getInstance().print("Drone["+drone.getLabel()+"] MoveAside");
 
 while(((Drone)thisJoinPoint.getArgs()[0]).isOnWater()==true){
 DroneView droneView = DroneController.getInstance().getDroneViewFrom(drone.getUniqueID());
-CellView destinationCellView = CellController.getInstance().getCellViewFrom(drone.getLandCell());
+CellView destinationCellView = EnvironmentController.getInstance().getCloserLand(drone);
 DirectionEnum goDirection = DroneBusinessObject.closeDirection(droneView.getCurrentCellView(), destinationCellView);
 DroneBusinessObject.flyToDirection(drone, goDirection);
 }

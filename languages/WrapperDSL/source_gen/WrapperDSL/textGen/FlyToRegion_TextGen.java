@@ -25,9 +25,16 @@ public class FlyToRegion_TextGen extends TextGenDescriptorBase {
       region = "Source";
     }
     tgs.append("DroneView droneView = DroneController.getInstance().getDroneViewFrom(drone.getUniqueID());\n");
-    tgs.append("CellView destinationCellView = CellController.getInstance().getCellViewFrom(drone.get");
-    tgs.append(region);
-    tgs.append("Cell());\n");
+    if (region == "Land" || region == "Water") {
+      tgs.append("CellView destinationCellView = EnvironmentController.getInstance().getCloser");
+      tgs.append(region);
+      tgs.append("(drone);\n");
+
+    } else {
+      tgs.append("CellView destinationCellView = CellController.getInstance().getCellViewFrom(drone.get");
+      tgs.append(region);
+      tgs.append("Cell());\n");
+    }
     tgs.append("DirectionEnum goDirection = DroneBusinessObject.closeDirection(droneView.getCurrentCellView(), destinationCellView);\n");
     tgs.append("DroneBusinessObject.flyToDirection(drone, goDirection);\n");
   }
