@@ -51,6 +51,10 @@ public class DroneAutomaticController extends DroneController {
 
                         for (Drone drone : droneMap.values()) {
 
+                            if (!drone.isAutomatic()){
+                                continue;
+                            }
+
 //                    if(drone.isShutDown()){
 //                        DroneBusinessObject.start(drone);
 //                        DroneBusinessObject.takeOff(drone);
@@ -72,7 +76,7 @@ public class DroneAutomaticController extends DroneController {
 
                 @Override
                 public boolean conditionStop() {
-                    return allTheDronesAreShutDown()|| mustStopAutomaticExecution;
+                    return allTheDronesAreShutDown()||mustStopAutomaticExecution || allTheDronesAreManual();
                 }
 
             };
@@ -104,6 +108,18 @@ public class DroneAutomaticController extends DroneController {
 
         automaticExecutionStopWatch = new StopWatch(0, 1000, runnable);
         automaticExecutionStopWatch.start();*/
+    }
+
+    private boolean allTheDronesAreManual() {
+
+        boolean isManual = true;
+
+        for (Drone drone : droneMap.values()) {
+            isManual = isManual && !drone.isAutomatic();
+        }
+
+        return isManual;
+
     }
 
     @Override

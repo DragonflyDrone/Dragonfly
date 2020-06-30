@@ -1,19 +1,14 @@
-package wrappers;
 
-import controller.DroneController;
-import controller.EnvironmentController;
-import controller.LoggerController;
+package wrappers;
+// imports
+import controller.*;
 import javafx.application.Platform;
-import model.entity.drone.Drone;
-import model.entity.drone.DroneBusinessObject;
-import model.entity.drone.sensors.CameraStateEnum;
-import model.entity.drone.sensors.CollisionStateEnum;
+import model.entity.drone.*;
+import model.entity.drone.sensors.*;
 import org.aspectj.lang.JoinPoint;
-import util.DirectionEnum;
-import util.StopWatch;
-import view.CellView;
-import view.drone.DroneView;
-import model.entity.drone.sensors.SmokeStateEnum;
+import util.*;
+import view.*;
+import view.drone.*;
 
 public aspect Wrapper1 {
 
@@ -21,23 +16,31 @@ public aspect Wrapper1 {
     pointcut safeLanding(): call (* model.entity.drone.DroneBusinessObject.safeLanding(*));
     pointcut applyEconomyMode(): call (* model.entity.drone.DroneBusinessObject.applyEconomyMode(*));
     pointcut fireDetect(): call (* model.entity.drone.DroneBusinessObject.fireDetect(*));
-    pointcut flyingToDirection(): call (* model.entity.drone.DroneBusinessObject.flyToDirection(*));
+    pointcut flyingToDirection(): call (* model.entity.drone.DroneBusinessObject.flyToDirection(*,*));
 
 
     after(): fireDetect()
     && if
     (
-            (((Drone)thisJoinPoint.getArgs()[0]).getWrapperId() == 1)
+            (
+                ((Drone)thisJoinPoint.getArgs()[0]).getWrapperId() == 1
+            )
             &&
-            ((((Drone)thisJoinPoint.getArgs()[0]).getCameraState() == CameraStateEnum.FAILURE)
+            (
+                (((Drone)thisJoinPoint.getArgs()[0]).getCameraState() == CameraStateEnum.FAILURE)
             ||
-            (((Drone)thisJoinPoint.getArgs()[0]).getCameraState() == CameraStateEnum.OFF))
+                (((Drone)thisJoinPoint.getArgs()[0]).getCameraState() == CameraStateEnum.OFF)
+            )
             &&
-            (executingFrameWork == false)
-    ){
-
-
+            (
+                executingFrameWork == false
+            )
+    )
+    {
         executeFramework(thisJoinPoint);
+
+
+
     }
 
     after(): flyingToDirection()
@@ -67,6 +70,7 @@ public aspect Wrapper1 {
     ){
         moveASide(thisJoinPoint);
     }
+
 
 
    boolean around(): safeLanding()

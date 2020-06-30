@@ -489,6 +489,15 @@ public class DroneViewImpl extends DroneView {
             return;
         }
 
+        if(methodName.equals("setGpsState")){
+
+            if(newValue == oldValue){return;}
+
+            loggerController.print("Drone[" + getDroneLabel() + "] " + "Gps State: " + drone.getGpsState());
+
+            return;
+        }
+
 
 
 

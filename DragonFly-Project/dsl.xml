@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<EnvironmentElements>
+<riverElements/>
+<hospitalElements/>
+<houseElements/>
+<treeElements/>
+<antennaElements/>
+<droneElements>
+<droneElement UniqueID="da5fd9fa-9acf-4f1b-89fc-829b61d2a40b" baterryConsumptionPerBlock="1.0" destinyColumnPosition="29" destinyRowPosition="7" initialBaterry="100.0" label="1" sourceColumnPosition="0" sourceRowPosition="7" wrapperId="8"/>
+</droneElements>
+<boatElements/>
+</EnvironmentElements>

@@ -15,7 +15,6 @@ import view.CellView;
 import view.SelectableView;
 import view.drone.DroneView;
 import view.drone.DroneViewImpl;
-import view.river.RiverView;
 import view.tree.TreeView;
 
 import java.util.List;
@@ -1075,7 +1074,7 @@ public class DroneBusinessObject {
 
     }*/
 
-    public static void flyToDirection(Drone drone, DirectionEnum mustGO) {
+    public static boolean flyToDirection(Drone drone, DirectionEnum mustGO) {
         //irregular moviments
         if (drone.isEconomyMode()) {
             Random random = new Random();
@@ -1148,7 +1147,8 @@ public class DroneBusinessObject {
 
         }
 
-
+        // deveria retornar falso caso n realizasse o fly
+    return true;
     }
 
     public static double distanceDroneWentUp(CellView sourceCellView, CellView destinyCellView) {

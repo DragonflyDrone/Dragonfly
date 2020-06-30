@@ -53,6 +53,12 @@
                     description="Boat apenas para servir o drone"
                     class-name-settings-controller ="BoatSettingsPanelController"/>
 
+    <WrapperElement name-file-aj="Test"
+                    id="8" name-shown-panel="DSL"
+                    color="#e80000"
+                    description="DSL"
+                    class-name-settings-controller ="DroneSettingsPanelController"/>
+
 
 
 </WrapperElements>
