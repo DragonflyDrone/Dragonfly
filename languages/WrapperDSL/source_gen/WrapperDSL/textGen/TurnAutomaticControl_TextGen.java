@@ -15,11 +15,19 @@ public class TurnAutomaticControl_TextGen extends TextGenDescriptorBase {
   public void generateText(final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
     if (SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.value$jzzY) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x12d7700560f441d4L, "WrapperDSL.structure.CommandStateEnum"), 0x12d7700560f44223L, "PAUSE") || SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.value$jzzY) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x12d7700560f441d4L, "WrapperDSL.structure.CommandStateEnum"), 0x12d7700560f441d9L, "CANCEL")) {
+      tgs.append("drone.setIsAutomatic(false);");
+      tgs.newLine();
+      tgs.append("DroneKeyBoardController.getInstance().startUpdateBatteryPerSeconds();");
+      tgs.newLine();
       tgs.append("DroneController.init(DroneKeyBoardController.class.getSimpleName());");
       tgs.newLine();
 
     }
     if (SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.value$jzzY) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x12d7700560f441d4L, "WrapperDSL.structure.CommandStateEnum"), 0x12d7700560f441d6L, "RESUME") || SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.value$jzzY) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x12d7700560f441d4L, "WrapperDSL.structure.CommandStateEnum"), 0x12d7700560f441d5L, "START")) {
+      tgs.append("drone.setIsAutomatic(true);");
+      tgs.newLine();
+      tgs.append("DroneKeyBoardController.getInstance().startUpdateBatteryPerSeconds();");
+      tgs.newLine();
       tgs.append("DroneController.init(DroneAutomaticController.class.getSimpleName());");
       tgs.newLine();
 

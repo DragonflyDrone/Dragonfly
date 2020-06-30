@@ -8,8 +8,9 @@ import jetbrains.mps.text.impl.TextGenSupport;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SProperty;
 
@@ -19,9 +20,9 @@ public abstract class transformationOperations {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(when, LINKS.event$_7rR), CONCEPTS.SafeLand$_s)) {
       tgs.append("pointcut safeLanding(): call (* model.entity.drone.DroneBusinessObject.safeLanding(*));");
     } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(when, LINKS.event$_7rR), CONCEPTS.FlyDirection$E9)) {
-      tgs.append("pointcut flyingToDirection(): call (* model.entity.drone.DroneBusinessObject.flyToDirection(*));");
+      tgs.append("pointcut flyingToDirection(): call (* model.entity.drone.DroneBusinessObject.flyToDirection(*,*));");
     } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(when, LINKS.event$_7rR), CONCEPTS.ReturnToHome$K8)) {
-      tgs.append("pointcut flyingToDirection(): call (* model.entity.drone.DroneBusinessObject.flyToDirection(*));");
+      tgs.append("pointcut flyingToDirection(): call (* model.entity.drone.DroneBusinessObject.flyToDirection(*,*));");
     }
   }
   public static void whenAndThenToContitionalPointCutCall(SNode when, SNode then, final TextGenContext ctx) {
@@ -35,9 +36,17 @@ public abstract class transformationOperations {
       call = "flyingToDirection()";
     }
 
-    tgs.append(SPropertyOperations.getEnum(SLinkOperations.getTarget(then, LINKS.adaptiveBehavior$1YwA), PROPS.typeOfAdaptation$XP5s).getName());
-    tgs.append("():");
-    tgs.append(call);
+    if (SPropertyOperations.getEnum(SLinkOperations.getTarget(then, LINKS.adaptiveBehavior$1YwA), PROPS.typeOfAdaptation$XP5s) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045b44a3L, "WrapperDSL.structure.TypeOfAdaptationEnum"), 0x53be3ecc045b44a5L, "around")) {
+      tgs.append("boolean ");
+      tgs.append(SPropertyOperations.getEnum(SLinkOperations.getTarget(then, LINKS.adaptiveBehavior$1YwA), PROPS.typeOfAdaptation$XP5s).getName());
+      tgs.append("():");
+      tgs.append(call);
+
+    } else {
+      tgs.append(SPropertyOperations.getEnum(SLinkOperations.getTarget(then, LINKS.adaptiveBehavior$1YwA), PROPS.typeOfAdaptation$XP5s).getName());
+      tgs.append("():");
+      tgs.append(call);
+    }
     tgs.append("\n&&\nif\n");
   }
   public static void printExceptionalScenarioInLog(SNode exceptionalScenario, final TextGenContext ctx) {

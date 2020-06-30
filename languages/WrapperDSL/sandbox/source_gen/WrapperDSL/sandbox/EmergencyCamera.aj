@@ -25,8 +25,7 @@ pointcut safeLanding(): call (* model.entity.drone.DroneBusinessObject.safeLandi
 after():safeLanding()
 &&
 if
-((Drone)thisJoinPoint.getArgs()[0]).getGpsState() == GPSStateEnum.OFF)
-
+(((Drone)thisJoinPoint.getArgs()[0]).getGpsState() == GPSStateEnum.OFF)
 {
 helperCamera(thisJoinPoint);
 }

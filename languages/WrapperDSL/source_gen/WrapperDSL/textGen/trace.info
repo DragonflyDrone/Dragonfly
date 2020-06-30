@@ -25,16 +25,16 @@
   <root nodeRef="r:98ce4f8d-75ef-41b6-8025-6561aecf815f(WrapperDSL.textGen)/1912293359479117765">
     <file name="GpsConditionalExpression_TextGen.java">
       <node id="1912293359479117765" at="14,54,15,55" concept="8" />
-      <node id="1912293359479117804" at="15,55,16,69" concept="3" />
-      <node id="2311987505919333050" at="16,69,17,137" concept="3" />
-      <node id="1912293359479122929" at="17,137,18,33" concept="3" />
-      <node id="1912293359479123256" at="18,33,19,110" concept="3" />
-      <node id="2311987505932046559" at="19,110,20,20" concept="3" />
-      <node id="2311987505932279744" at="20,20,21,18" concept="3" />
+      <node id="2101053769980016130" at="15,55,16,20" concept="3" />
+      <node id="1912293359479117804" at="16,20,17,69" concept="3" />
+      <node id="2311987505919333050" at="17,69,18,137" concept="3" />
+      <node id="1912293359479122929" at="18,137,19,33" concept="3" />
+      <node id="1912293359479123256" at="19,33,20,110" concept="3" />
+      <node id="2101053769980016498" at="20,110,21,20" concept="3" />
       <node id="1912293359479117765" at="25,0,26,0" concept="12" trace="operators$1kKD" />
       <node id="1912293359479117765" at="26,0,27,0" concept="12" trace="right$1kL8" />
       <node id="1912293359479117765" at="13,0,23,0" concept="7" trace="generateText#(Ljetbrains/mps/text/rt/TextGenContext;)V" />
-      <scope id="1912293359479117765" at="14,54,21,18">
+      <scope id="1912293359479117765" at="14,54,21,20">
         <var name="tgs" id="1912293359479117765" />
       </scope>
       <scope id="1912293359479117765" at="13,0,23,0">
@@ -109,25 +109,27 @@
   <root nodeRef="r:98ce4f8d-75ef-41b6-8025-6561aecf815f(WrapperDSL.textGen)/1912293359479552508">
     <file name="Mission_TextGen.java">
       <node id="1912293359479552508" at="15,54,16,55" concept="8" />
-      <node id="1912293359479560248" at="17,820,18,73" concept="3" />
-      <node id="2311987505928221360" at="18,73,19,27" concept="3" />
-      <node id="2311987505928221791" at="19,27,20,20" concept="3" />
-      <node id="2311987505928221939" at="21,555,22,73" concept="3" />
-      <node id="2311987505928221946" at="22,73,23,28" concept="3" />
-      <node id="2311987505928221947" at="23,28,24,20" concept="3" />
-      <node id="1912293359479552508" at="29,0,30,0" concept="12" trace="value$yjXY" />
-      <node id="1912293359479553784" at="16,55,25,5" concept="6" />
-      <node id="1912293359479552508" at="14,0,27,0" concept="7" trace="generateText#(Ljetbrains/mps/text/rt/TextGenContext;)V" />
-      <scope id="1912293359479553786" at="17,820,20,20" />
-      <scope id="2311987505928214581" at="21,555,24,20" />
-      <scope id="1912293359479552508" at="15,54,25,5">
+      <node id="2101053769979834544" at="17,820,18,22" concept="3" />
+      <node id="1912293359479560248" at="18,22,19,73" concept="3" />
+      <node id="2311987505928221360" at="19,73,20,26" concept="3" />
+      <node id="2101053769979834637" at="20,26,21,22" concept="3" />
+      <node id="2101053769979834730" at="22,555,23,22" concept="3" />
+      <node id="2311987505928221939" at="23,22,24,73" concept="3" />
+      <node id="2311987505928221946" at="24,73,25,27" concept="3" />
+      <node id="2101053769979834823" at="25,27,26,22" concept="3" />
+      <node id="1912293359479552508" at="31,0,32,0" concept="12" trace="value$yjXY" />
+      <node id="1912293359479553784" at="16,55,27,5" concept="6" />
+      <node id="1912293359479552508" at="14,0,29,0" concept="7" trace="generateText#(Ljetbrains/mps/text/rt/TextGenContext;)V" />
+      <scope id="1912293359479553786" at="17,820,21,22" />
+      <scope id="2311987505928214581" at="22,555,26,22" />
+      <scope id="1912293359479552508" at="15,54,27,5">
         <var name="tgs" id="1912293359479552508" />
       </scope>
-      <scope id="1912293359479552508" at="14,0,27,0">
+      <scope id="1912293359479552508" at="14,0,29,0">
         <var name="ctx" id="1912293359479552508" />
       </scope>
-      <unit id="1912293359479552508" at="28,0,31,0" name="WrapperDSL.textGen.Mission_TextGen$PROPS" />
-      <unit id="1912293359479552508" at="13,0,32,0" name="WrapperDSL.textGen.Mission_TextGen" />
+      <unit id="1912293359479552508" at="30,0,33,0" name="WrapperDSL.textGen.Mission_TextGen$PROPS" />
+      <unit id="1912293359479552508" at="13,0,34,0" name="WrapperDSL.textGen.Mission_TextGen" />
     </file>
     <file name="TextGenAspectDescriptor.java">
       <node id="1912293359479552508" at="67,41,68,37" concept="9" />
@@ -141,27 +143,35 @@
     </file>
     <file name="TurnAutomaticControl_TextGen.java">
       <node id="1912293359479726825" at="15,54,16,55" concept="8" />
-      <node id="1912293359479726864" at="17,548,18,89" concept="3" />
-      <node id="2311987505931813775" at="18,89,19,20" concept="3" />
-      <node id="2311987505931755886" at="19,20,20,0" concept="11" />
-      <node id="2311987505931755827" at="22,548,23,90" concept="3" />
-      <node id="2311987505931813814" at="23,90,24,20" concept="3" />
-      <node id="2311987505931811747" at="24,20,25,0" concept="11" />
-      <node id="2311987505931755809" at="26,5,27,0" concept="11" />
-      <node id="1912293359479726825" at="31,0,32,0" concept="12" trace="value$jzzY" />
-      <node id="2311987505931755885" at="16,55,21,5" concept="6" />
-      <node id="2311987505931811746" at="21,5,26,5" concept="6" />
-      <node id="1912293359479726825" at="14,0,29,0" concept="7" trace="generateText#(Ljetbrains/mps/text/rt/TextGenContext;)V" />
-      <scope id="2311987505931755887" at="17,548,20,0" />
-      <scope id="2311987505931811748" at="22,548,25,0" />
-      <scope id="1912293359479726825" at="15,54,27,0">
+      <node id="2101053769981302697" at="17,548,18,49" concept="3" />
+      <node id="2101053769981302786" at="18,49,19,20" concept="3" />
+      <node id="2101053769981661626" at="19,20,20,90" concept="3" />
+      <node id="2101053769981661627" at="20,90,21,20" concept="3" />
+      <node id="1912293359479726864" at="21,20,22,89" concept="3" />
+      <node id="2311987505931813775" at="22,89,23,20" concept="3" />
+      <node id="2311987505931755886" at="23,20,24,0" concept="11" />
+      <node id="2101053769981302963" at="26,548,27,48" concept="3" />
+      <node id="2101053769981303106" at="27,48,28,20" concept="3" />
+      <node id="2101053769981303213" at="28,20,29,90" concept="3" />
+      <node id="2101053769981303329" at="29,90,30,20" concept="3" />
+      <node id="2311987505931755827" at="30,20,31,90" concept="3" />
+      <node id="2311987505931813814" at="31,90,32,20" concept="3" />
+      <node id="2311987505931811747" at="32,20,33,0" concept="11" />
+      <node id="2311987505931755809" at="34,5,35,0" concept="11" />
+      <node id="1912293359479726825" at="39,0,40,0" concept="12" trace="value$jzzY" />
+      <node id="2311987505931755885" at="16,55,25,5" concept="6" />
+      <node id="2311987505931811746" at="25,5,34,5" concept="6" />
+      <node id="1912293359479726825" at="14,0,37,0" concept="7" trace="generateText#(Ljetbrains/mps/text/rt/TextGenContext;)V" />
+      <scope id="2311987505931755887" at="17,548,24,0" />
+      <scope id="2311987505931811748" at="26,548,33,0" />
+      <scope id="1912293359479726825" at="15,54,35,0">
         <var name="tgs" id="1912293359479726825" />
       </scope>
-      <scope id="1912293359479726825" at="14,0,29,0">
+      <scope id="1912293359479726825" at="14,0,37,0">
         <var name="ctx" id="1912293359479726825" />
       </scope>
-      <unit id="1912293359479726825" at="30,0,33,0" name="WrapperDSL.textGen.TurnAutomaticControl_TextGen$PROPS" />
-      <unit id="1912293359479726825" at="13,0,34,0" name="WrapperDSL.textGen.TurnAutomaticControl_TextGen" />
+      <unit id="1912293359479726825" at="38,0,41,0" name="WrapperDSL.textGen.TurnAutomaticControl_TextGen$PROPS" />
+      <unit id="1912293359479726825" at="13,0,42,0" name="WrapperDSL.textGen.TurnAutomaticControl_TextGen" />
     </file>
   </root>
   <root nodeRef="r:98ce4f8d-75ef-41b6-8025-6561aecf815f(WrapperDSL.textGen)/1912293359479893761">
@@ -573,111 +583,118 @@
   </root>
   <root nodeRef="r:98ce4f8d-75ef-41b6-8025-6561aecf815f(WrapperDSL.textGen)/838450833435873174">
     <file name="ExceptionalScenario_TextGen.java">
-      <node id="838450833435873174" at="18,54,19,55" concept="8" />
-      <node id="1912293359485171994" at="19,55,20,40" concept="3" />
-      <node id="1912293359485175829" at="20,40,21,0" concept="11" />
-      <node id="1912293359485173748" at="21,0,22,32" concept="3" />
-      <node id="1912293359485529855" at="22,32,23,35" concept="3" />
-      <node id="1912293359485538147" at="23,35,24,177" concept="3" />
-      <node id="1912293359485531224" at="24,177,25,37" concept="3" />
-      <node id="1912293359485533905" at="25,37,26,0" concept="11" />
-      <node id="1912293359485533439" at="26,0,27,44" concept="3" />
-      <node id="1912293359485535866" at="27,44,28,39" concept="3" />
-      <node id="2311987505921172278" at="28,39,29,18" concept="3" />
-      <node id="2311987505921173450" at="29,18,30,47" concept="3" />
-      <node id="2311987505921173451" at="30,47,31,18" concept="3" />
-      <node id="2311987505921175712" at="31,18,32,55" concept="3" />
-      <node id="2311987505921175713" at="32,55,33,18" concept="3" />
-      <node id="2311987505921176028" at="33,18,34,33" concept="3" />
-      <node id="2311987505921176029" at="34,33,35,18" concept="3" />
-      <node id="2311987505921178304" at="35,18,36,33" concept="3" />
-      <node id="2311987505921178305" at="36,33,37,18" concept="3" />
-      <node id="2311987505921178657" at="37,18,38,39" concept="3" />
-      <node id="2311987505921178658" at="38,39,39,18" concept="3" />
-      <node id="2311987505921177176" at="39,18,40,0" concept="11" />
-      <node id="1912293359485533442" at="40,0,41,46" concept="3" />
-      <node id="1912293359485174334" at="41,46,42,34" concept="3" />
-      <node id="1912293359485175564" at="42,34,43,0" concept="11" />
-      <node id="838450833435873174" at="43,0,44,31" concept="3" />
-      <node id="838450833436176587" at="44,31,45,33" concept="3" />
-      <node id="838450833436176734" at="45,33,46,86" concept="3" />
-      <node id="838450833436178129" at="46,86,47,22" concept="3" />
-      <node id="838450833435873174" at="47,22,48,22" concept="3" />
-      <node id="1912293359486462505" at="48,22,49,0" concept="11" />
-      <node id="838450833435873174" at="49,0,50,33" concept="3" />
-      <node id="838450833437582078" at="50,33,51,116" concept="3" />
-      <node id="838450833438572723" at="51,116,52,21" concept="3" />
-      <node id="838450833435873174" at="52,21,53,22" concept="3" />
-      <node id="838450833435873174" at="53,22,54,42" concept="3" />
-      <node id="838450833441084779" at="54,42,55,205" concept="3" />
-      <node id="838450833435873174" at="55,205,56,22" concept="3" />
-      <node id="838450833435873174" at="56,22,57,42" concept="3" />
-      <node id="838450833437568392" at="57,42,58,87" concept="3" />
-      <node id="838450833437684779" at="58,87,59,21" concept="3" />
-      <node id="838450833435873174" at="59,21,60,22" concept="3" />
-      <node id="838450833435873174" at="60,22,61,31" concept="3" />
-      <node id="838450833441884539" at="61,31,62,22" concept="3" />
-      <node id="838450833435873174" at="62,22,63,22" concept="3" />
-      <node id="838450833435873174" at="63,22,64,31" concept="3" />
-      <node id="838450833441535712" at="64,31,65,202" concept="3" />
-      <node id="838450833441539728" at="65,202,66,37" concept="3" />
-      <node id="838450833435873174" at="66,37,67,22" concept="3" />
-      <node id="838450833435873174" at="67,22,68,31" concept="3" />
-      <node id="838450833441884761" at="68,31,69,22" concept="3" />
-      <node id="838450833435873174" at="69,22,70,22" concept="3" />
-      <node id="838450833442229709" at="70,22,71,0" concept="11" />
-      <node id="838450833435873174" at="71,0,72,37" concept="3" />
-      <node id="838450833442227336" at="72,37,73,31" concept="3" />
-      <node id="838450833442227437" at="73,31,74,202" concept="3" />
-      <node id="838450833442228286" at="74,202,75,44" concept="3" />
-      <node id="1912293359489486765" at="75,44,76,18" concept="3" />
-      <node id="838450833435873174" at="76,18,77,22" concept="3" />
-      <node id="838450833435873174" at="77,22,78,37" concept="3" />
-      <node id="838450833442229238" at="78,37,79,22" concept="3" />
-      <node id="838450833435873174" at="79,22,80,22" concept="3" />
-      <node id="838450833435873174" at="80,22,81,37" concept="3" />
-      <node id="1912293359491084592" at="81,37,82,70" concept="3" />
-      <node id="838450833435873174" at="82,70,83,22" concept="3" />
-      <node id="838450833435873174" at="83,22,84,37" concept="3" />
-      <node id="1912293359488416888" at="84,37,85,18" concept="3" />
-      <node id="838450833435873174" at="85,18,86,22" concept="3" />
-      <node id="838450833435873174" at="86,22,87,37" concept="3" />
-      <node id="838450833442869270" at="87,37,88,87" concept="3" />
-      <node id="1912293359489307392" at="88,87,89,18" concept="3" />
-      <node id="838450833435873174" at="89,18,90,22" concept="3" />
+      <node id="838450833435873174" at="19,54,20,55" concept="8" />
+      <node id="1912293359485171994" at="20,55,21,40" concept="3" />
+      <node id="1912293359485175829" at="21,40,22,0" concept="11" />
+      <node id="1912293359485173748" at="22,0,23,32" concept="3" />
+      <node id="1912293359485529855" at="23,32,24,35" concept="3" />
+      <node id="1912293359485538147" at="24,35,25,177" concept="3" />
+      <node id="1912293359485531224" at="25,177,26,37" concept="3" />
+      <node id="1912293359485533905" at="26,37,27,0" concept="11" />
+      <node id="1912293359485533439" at="27,0,28,44" concept="3" />
+      <node id="1912293359485535866" at="28,44,29,39" concept="3" />
+      <node id="2311987505921172278" at="29,39,30,18" concept="3" />
+      <node id="2311987505921173450" at="30,18,31,47" concept="3" />
+      <node id="2311987505921173451" at="31,47,32,18" concept="3" />
+      <node id="2311987505921175712" at="32,18,33,55" concept="3" />
+      <node id="2311987505921175713" at="33,55,34,18" concept="3" />
+      <node id="2311987505921176028" at="34,18,35,33" concept="3" />
+      <node id="2311987505921176029" at="35,33,36,18" concept="3" />
+      <node id="2311987505921178304" at="36,18,37,33" concept="3" />
+      <node id="2311987505921178305" at="37,33,38,18" concept="3" />
+      <node id="2311987505921178657" at="38,18,39,39" concept="3" />
+      <node id="2311987505921178658" at="39,39,40,18" concept="3" />
+      <node id="2311987505921177176" at="40,18,41,0" concept="11" />
+      <node id="1912293359485533442" at="41,0,42,46" concept="3" />
+      <node id="1912293359485174334" at="42,46,43,34" concept="3" />
+      <node id="1912293359485175564" at="43,34,44,0" concept="11" />
+      <node id="838450833435873174" at="44,0,45,31" concept="3" />
+      <node id="838450833436176587" at="45,31,46,33" concept="3" />
+      <node id="838450833436176734" at="46,33,47,86" concept="3" />
+      <node id="838450833436178129" at="47,86,48,22" concept="3" />
+      <node id="838450833435873174" at="48,22,49,22" concept="3" />
+      <node id="1912293359486462505" at="49,22,50,0" concept="11" />
+      <node id="838450833435873174" at="50,0,51,33" concept="3" />
+      <node id="838450833437582078" at="51,33,52,116" concept="3" />
+      <node id="838450833438572723" at="52,116,53,21" concept="3" />
+      <node id="838450833435873174" at="53,21,54,22" concept="3" />
+      <node id="838450833435873174" at="54,22,55,42" concept="3" />
+      <node id="838450833441084779" at="55,42,56,205" concept="3" />
+      <node id="838450833435873174" at="56,205,57,22" concept="3" />
+      <node id="838450833435873174" at="57,22,58,42" concept="3" />
+      <node id="838450833437568392" at="58,42,59,87" concept="3" />
+      <node id="838450833437684779" at="59,87,60,21" concept="3" />
+      <node id="838450833435873174" at="60,21,61,22" concept="3" />
+      <node id="838450833435873174" at="61,22,62,31" concept="3" />
+      <node id="838450833441884539" at="62,31,63,22" concept="3" />
+      <node id="838450833435873174" at="63,22,64,22" concept="3" />
+      <node id="838450833435873174" at="64,22,65,31" concept="3" />
+      <node id="838450833441535712" at="65,31,66,202" concept="3" />
+      <node id="838450833441539728" at="66,202,67,37" concept="3" />
+      <node id="838450833435873174" at="67,37,68,22" concept="3" />
+      <node id="2101053769980563761" at="69,393,70,33" concept="3" />
+      <node id="2101053769980573836" at="70,33,71,34" concept="3" />
+      <node id="2101053769980573982" at="71,34,72,20" concept="3" />
+      <node id="2101053769980563761" at="72,20,73,24" concept="3" />
+      <node id="838450833435873174" at="74,5,75,31" concept="3" />
+      <node id="838450833441884761" at="75,31,76,22" concept="3" />
+      <node id="838450833435873174" at="76,22,77,22" concept="3" />
+      <node id="838450833442229709" at="77,22,78,0" concept="11" />
+      <node id="838450833435873174" at="78,0,79,37" concept="3" />
+      <node id="838450833442227336" at="79,37,80,31" concept="3" />
+      <node id="838450833442227437" at="80,31,81,202" concept="3" />
+      <node id="838450833442228286" at="81,202,82,44" concept="3" />
+      <node id="1912293359489486765" at="82,44,83,18" concept="3" />
+      <node id="838450833435873174" at="83,18,84,22" concept="3" />
+      <node id="838450833435873174" at="84,22,85,37" concept="3" />
+      <node id="838450833442229238" at="85,37,86,22" concept="3" />
+      <node id="838450833435873174" at="86,22,87,22" concept="3" />
+      <node id="838450833435873174" at="87,22,88,37" concept="3" />
+      <node id="1912293359491084592" at="88,37,89,70" concept="3" />
+      <node id="838450833435873174" at="89,70,90,22" concept="3" />
       <node id="838450833435873174" at="90,22,91,37" concept="3" />
-      <node id="838450833442595774" at="92,248,93,27" concept="3" />
-      <node id="838450833435873174" at="94,5,95,22" concept="3" />
-      <node id="838450833435873174" at="95,22,96,37" concept="3" />
-      <node id="838450833442229458" at="96,37,97,22" concept="3" />
-      <node id="838450833435873174" at="97,22,98,22" concept="3" />
-      <node id="838450833442228407" at="98,22,99,0" concept="11" />
-      <node id="838450833435873174" at="99,0,100,28" concept="3" />
-      <node id="838450833436676303" at="100,28,101,20" concept="3" />
-      <node id="838450833435873174" at="101,20,102,22" concept="3" />
-      <node id="838450833435873174" at="106,0,107,0" concept="12" trace="name$tAp1" />
-      <node id="838450833435873174" at="110,0,111,0" concept="12" trace="when$Bwg0" />
-      <node id="838450833435873174" at="111,0,112,0" concept="12" trace="then$BwrC" />
-      <node id="838450833435873174" at="112,0,113,0" concept="12" trace="given$Bwf2" />
-      <node id="838450833435873174" at="113,0,114,0" concept="12" trace="adaptiveBehavior$1YwA" />
-      <node id="838450833435873174" at="114,0,115,0" concept="12" trace="adaptationScriptName$XPix" />
-      <node id="838450833435873174" at="115,0,116,0" concept="12" trace="adaptationScript$Y1Gq" />
-      <node id="838450833435873174" at="116,0,117,0" concept="12" trace="body$BmMw" />
-      <node id="838450833442595774" at="91,37,94,5" concept="5" />
-      <node id="838450833435873174" at="17,0,104,0" concept="7" trace="generateText#(Ljetbrains/mps/text/rt/TextGenContext;)V" />
-      <scope id="838450833442595774" at="92,248,93,27" />
-      <scope id="838450833442595774" at="91,37,94,5">
+      <node id="1912293359488416888" at="91,37,92,18" concept="3" />
+      <node id="838450833435873174" at="92,18,93,22" concept="3" />
+      <node id="838450833435873174" at="93,22,94,37" concept="3" />
+      <node id="838450833442869270" at="94,37,95,87" concept="3" />
+      <node id="1912293359489307392" at="95,87,96,18" concept="3" />
+      <node id="838450833435873174" at="96,18,97,22" concept="3" />
+      <node id="838450833435873174" at="97,22,98,37" concept="3" />
+      <node id="838450833442595774" at="99,248,100,27" concept="3" />
+      <node id="838450833435873174" at="101,5,102,22" concept="3" />
+      <node id="838450833435873174" at="102,22,103,37" concept="3" />
+      <node id="838450833442229458" at="103,37,104,22" concept="3" />
+      <node id="838450833435873174" at="104,22,105,22" concept="3" />
+      <node id="838450833442228407" at="105,22,106,0" concept="11" />
+      <node id="838450833435873174" at="106,0,107,28" concept="3" />
+      <node id="838450833436676303" at="107,28,108,20" concept="3" />
+      <node id="838450833435873174" at="108,20,109,22" concept="3" />
+      <node id="838450833435873174" at="113,0,114,0" concept="12" trace="name$tAp1" />
+      <node id="838450833435873174" at="114,0,115,0" concept="12" trace="typeOfAdaptation$XP5s" />
+      <node id="838450833435873174" at="118,0,119,0" concept="12" trace="when$Bwg0" />
+      <node id="838450833435873174" at="119,0,120,0" concept="12" trace="then$BwrC" />
+      <node id="838450833435873174" at="120,0,121,0" concept="12" trace="given$Bwf2" />
+      <node id="838450833435873174" at="121,0,122,0" concept="12" trace="adaptiveBehavior$1YwA" />
+      <node id="838450833435873174" at="122,0,123,0" concept="12" trace="adaptationScriptName$XPix" />
+      <node id="838450833435873174" at="123,0,124,0" concept="12" trace="adaptationScript$Y1Gq" />
+      <node id="838450833435873174" at="124,0,125,0" concept="12" trace="body$BmMw" />
+      <node id="838450833442595774" at="98,37,101,5" concept="5" />
+      <node id="2101053769980563759" at="68,22,74,5" concept="6" />
+      <node id="838450833435873174" at="18,0,111,0" concept="7" trace="generateText#(Ljetbrains/mps/text/rt/TextGenContext;)V" />
+      <scope id="838450833442595774" at="99,248,100,27" />
+      <scope id="838450833442595774" at="98,37,101,5">
         <var name="item" id="838450833442595774" />
       </scope>
-      <scope id="838450833435873174" at="18,54,102,22">
+      <scope id="2101053769980563761" at="69,393,73,24" />
+      <scope id="838450833435873174" at="19,54,109,22">
         <var name="tgs" id="838450833435873174" />
       </scope>
-      <scope id="838450833435873174" at="17,0,104,0">
+      <scope id="838450833435873174" at="18,0,111,0">
         <var name="ctx" id="838450833435873174" />
       </scope>
-      <unit id="838450833435873174" at="105,0,108,0" name="WrapperDSL.textGen.ExceptionalScenario_TextGen$PROPS" />
-      <unit id="838450833435873174" at="109,0,118,0" name="WrapperDSL.textGen.ExceptionalScenario_TextGen$LINKS" />
-      <unit id="838450833435873174" at="16,0,119,0" name="WrapperDSL.textGen.ExceptionalScenario_TextGen" />
+      <unit id="838450833435873174" at="112,0,116,0" name="WrapperDSL.textGen.ExceptionalScenario_TextGen$PROPS" />
+      <unit id="838450833435873174" at="117,0,126,0" name="WrapperDSL.textGen.ExceptionalScenario_TextGen$LINKS" />
+      <unit id="838450833435873174" at="17,0,127,0" name="WrapperDSL.textGen.ExceptionalScenario_TextGen" />
     </file>
     <file name="TextGenAspectDescriptor.java">
       <node id="838450833435873174" at="47,53,48,49" concept="9" />
@@ -749,113 +766,122 @@
   </root>
   <root nodeRef="r:98ce4f8d-75ef-41b6-8025-6561aecf815f(WrapperDSL.textGen)/838450833437574330">
     <file name="transformationOperations.java">
-      <node id="838450833437574331" at="17,75,18,55" concept="8" />
-      <node id="838450833437578930" at="19,112,20,108" concept="3" />
-      <node id="2311987505916329527" at="21,123,22,117" concept="3" />
-      <node id="2311987505927981674" at="23,123,24,117" concept="3" />
-      <node id="838450833440953390" at="27,109,28,55" concept="8" />
-      <node id="838450833440967447" at="28,55,29,21" concept="8" />
-      <node id="838450833440968108" at="30,112,31,29" concept="3" />
-      <node id="2311987505916555681" at="32,123,33,35" concept="3" />
-      <node id="2311987505927982853" at="34,123,35,35" concept="3" />
-      <node id="838450833440966340" at="36,5,37,0" concept="11" />
-      <node id="838450833440959048" at="37,0,38,145" concept="3" />
-      <node id="838450833440962999" at="38,145,39,22" concept="3" />
-      <node id="838450833440971856" at="39,22,40,21" concept="3" />
-      <node id="838450833440972160" at="40,21,41,29" concept="3" />
-      <node id="838450833442742838" at="43,105,44,55" concept="8" />
-      <node id="838450833442743237" at="44,55,45,105" concept="8" />
-      <node id="838450833442744539" at="45,105,46,0" concept="11" />
-      <node id="838450833442743071" at="46,0,47,75" concept="3" />
-      <node id="838450833442744619" at="47,75,48,40" concept="3" />
-      <node id="838450833442745534" at="48,40,49,25" concept="3" />
-      <node id="838450833442743149" at="49,25,50,88" concept="3" />
-      <node id="838450833442745587" at="50,88,51,40" concept="3" />
-      <node id="838450833442745977" at="51,40,52,25" concept="3" />
-      <node id="1912293359486467272" at="54,83,55,55" concept="8" />
-      <node id="1912293359486467550" at="57,16,58,25" concept="3" />
-      <node id="1912293359486467624" at="58,25,59,14" concept="1" />
-      <node id="1912293359486467684" at="60,20,61,25" concept="3" />
-      <node id="838450833437574330" at="66,0,67,0" concept="12" trace="event$_7rR" />
-      <node id="838450833437574330" at="67,0,68,0" concept="12" trace="adaptiveBehavior$1YwA" />
-      <node id="838450833437574330" at="71,0,72,0" concept="12" trace="SafeLand$_s" />
-      <node id="838450833437574330" at="72,0,73,0" concept="12" trace="FlyDirection$E9" />
-      <node id="838450833437574330" at="73,0,74,0" concept="12" trace="ReturnToHome$K8" />
-      <node id="838450833437574330" at="77,0,78,0" concept="12" trace="typeOfAdaptation$XP5s" />
-      <node id="838450833437574330" at="78,0,79,0" concept="12" trace="name$tAp1" />
-      <node id="838450833437576717" at="18,55,25,5" concept="6" />
-      <node id="838450833440966909" at="29,21,36,5" concept="6" />
-      <node id="1912293359486467461" at="55,55,62,5" concept="14" />
-      <node id="838450833437574331" at="17,0,27,0" concept="13" trace="whenToPointcut#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/text/rt/TextGenContext;)V" />
-      <node id="1912293359486467272" at="54,0,64,0" concept="13" trace="transformOperator#(Ljava/lang/String;Ljetbrains/mps/text/rt/TextGenContext;)V" />
-      <node id="838450833442742838" at="43,0,54,0" concept="13" trace="printExceptionalScenarioInLog#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/text/rt/TextGenContext;)V" />
-      <node id="838450833440953390" at="27,0,43,0" concept="13" trace="whenAndThenToContitionalPointCutCall#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/text/rt/TextGenContext;)V" />
-      <scope id="838450833437576719" at="19,112,20,108" />
-      <scope id="2311987505916311048" at="21,123,22,117" />
-      <scope id="2311987505927980510" at="23,123,24,117" />
-      <scope id="838450833440966910" at="30,112,31,29" />
-      <scope id="2311987505916554279" at="32,123,33,35" />
-      <scope id="2311987505927981692" at="34,123,35,35" />
-      <scope id="1912293359486467577" at="60,20,61,25" />
-      <scope id="1912293359486467488" at="57,16,59,14" />
-      <scope id="838450833437574331" at="17,75,25,5">
+      <node id="838450833437574331" at="18,75,19,55" concept="8" />
+      <node id="838450833437578930" at="20,112,21,108" concept="3" />
+      <node id="2311987505916329527" at="22,123,23,119" concept="3" />
+      <node id="2311987505927981674" at="24,123,25,119" concept="3" />
+      <node id="838450833440953390" at="28,109,29,55" concept="8" />
+      <node id="838450833440967447" at="29,55,30,21" concept="8" />
+      <node id="838450833440968108" at="31,112,32,29" concept="3" />
+      <node id="2311987505916555681" at="33,123,34,35" concept="3" />
+      <node id="2311987505927982853" at="35,123,36,35" concept="3" />
+      <node id="838450833440966340" at="37,5,38,0" concept="11" />
+      <node id="2101053769978781592" at="39,332,40,29" concept="3" />
+      <node id="2101053769978780919" at="40,29,41,147" concept="3" />
+      <node id="2101053769978780927" at="41,147,42,24" concept="3" />
+      <node id="2101053769978780928" at="42,24,43,23" concept="3" />
+      <node id="2101053769978774790" at="43,23,44,0" concept="11" />
+      <node id="838450833440959048" at="45,12,46,147" concept="3" />
+      <node id="838450833440962999" at="46,147,47,24" concept="3" />
+      <node id="838450833440971856" at="47,24,48,23" concept="3" />
+      <node id="838450833440972160" at="49,5,50,29" concept="3" />
+      <node id="838450833442742838" at="52,105,53,55" concept="8" />
+      <node id="838450833442743237" at="53,55,54,105" concept="8" />
+      <node id="838450833442744539" at="54,105,55,0" concept="11" />
+      <node id="838450833442743071" at="55,0,56,75" concept="3" />
+      <node id="838450833442744619" at="56,75,57,40" concept="3" />
+      <node id="838450833442745534" at="57,40,58,25" concept="3" />
+      <node id="838450833442743149" at="58,25,59,88" concept="3" />
+      <node id="838450833442745587" at="59,88,60,40" concept="3" />
+      <node id="838450833442745977" at="60,40,61,25" concept="3" />
+      <node id="1912293359486467272" at="63,83,64,55" concept="8" />
+      <node id="1912293359486467550" at="66,16,67,25" concept="3" />
+      <node id="1912293359486467624" at="67,25,68,14" concept="1" />
+      <node id="1912293359486467684" at="69,20,70,25" concept="3" />
+      <node id="838450833437574330" at="75,0,76,0" concept="12" trace="event$_7rR" />
+      <node id="838450833437574330" at="76,0,77,0" concept="12" trace="adaptiveBehavior$1YwA" />
+      <node id="838450833437574330" at="80,0,81,0" concept="12" trace="SafeLand$_s" />
+      <node id="838450833437574330" at="81,0,82,0" concept="12" trace="FlyDirection$E9" />
+      <node id="838450833437574330" at="82,0,83,0" concept="12" trace="ReturnToHome$K8" />
+      <node id="838450833437574330" at="86,0,87,0" concept="12" trace="typeOfAdaptation$XP5s" />
+      <node id="838450833437574330" at="87,0,88,0" concept="12" trace="name$tAp1" />
+      <node id="2101053769978780288" at="45,10,49,5" concept="0" />
+      <node id="838450833437576717" at="19,55,26,5" concept="6" />
+      <node id="838450833440966909" at="30,21,37,5" concept="6" />
+      <node id="1912293359486467461" at="64,55,71,5" concept="14" />
+      <node id="838450833437574331" at="18,0,28,0" concept="13" trace="whenToPointcut#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/text/rt/TextGenContext;)V" />
+      <node id="1912293359486467272" at="63,0,73,0" concept="13" trace="transformOperator#(Ljava/lang/String;Ljetbrains/mps/text/rt/TextGenContext;)V" />
+      <node id="2101053769978774789" at="38,0,49,5" concept="6" />
+      <node id="838450833442742838" at="52,0,63,0" concept="13" trace="printExceptionalScenarioInLog#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/text/rt/TextGenContext;)V" />
+      <node id="838450833440953390" at="28,0,52,0" concept="13" trace="whenAndThenToContitionalPointCutCall#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/text/rt/TextGenContext;)V" />
+      <scope id="838450833437576719" at="20,112,21,108" />
+      <scope id="2311987505916311048" at="22,123,23,119" />
+      <scope id="2311987505927980510" at="24,123,25,119" />
+      <scope id="838450833440966910" at="31,112,32,29" />
+      <scope id="2311987505916554279" at="33,123,34,35" />
+      <scope id="2311987505927981692" at="35,123,36,35" />
+      <scope id="1912293359486467577" at="69,20,70,25" />
+      <scope id="1912293359486467488" at="66,16,68,14" />
+      <scope id="2101053769978780289" at="45,12,48,23" />
+      <scope id="2101053769978774791" at="39,332,44,0" />
+      <scope id="838450833437574331" at="18,75,26,5">
         <var name="tgs" id="838450833437574331" />
       </scope>
-      <scope id="1912293359486467272" at="54,83,62,5">
+      <scope id="1912293359486467272" at="63,83,71,5">
         <var name="tgs" id="1912293359486467272" />
       </scope>
-      <scope id="838450833442742838" at="43,105,52,25">
+      <scope id="838450833442742838" at="52,105,61,25">
         <var name="nameExceptionalScenario" id="838450833442743238" />
         <var name="tgs" id="838450833442742838" />
       </scope>
-      <scope id="838450833437574331" at="17,0,27,0">
+      <scope id="838450833437574331" at="18,0,28,0">
         <var name="ctx" id="838450833437574331" />
         <var name="when" id="838450833437574458" />
       </scope>
-      <scope id="1912293359486467272" at="54,0,64,0">
+      <scope id="1912293359486467272" at="63,0,73,0">
         <var name="ctx" id="1912293359486467272" />
         <var name="operator" id="1912293359486467405" />
       </scope>
-      <scope id="838450833442742838" at="43,0,54,0">
+      <scope id="838450833442742838" at="52,0,63,0">
         <var name="ctx" id="838450833442742838" />
         <var name="exceptionalScenario" id="838450833442742979" />
       </scope>
-      <scope id="838450833440953390" at="27,109,41,29">
+      <scope id="838450833440953390" at="28,109,50,29">
         <var name="call" id="838450833440967448" />
         <var name="tgs" id="838450833440953390" />
       </scope>
-      <scope id="838450833440953390" at="27,0,43,0">
+      <scope id="838450833440953390" at="28,0,52,0">
         <var name="ctx" id="838450833440953390" />
         <var name="then" id="838450833440958973" />
         <var name="when" id="838450833440958943" />
       </scope>
-      <unit id="838450833437574330" at="65,0,69,0" name="WrapperDSL.textGen.transformationOperations$LINKS" />
-      <unit id="838450833437574330" at="76,0,80,0" name="WrapperDSL.textGen.transformationOperations$PROPS" />
-      <unit id="838450833437574330" at="70,0,75,0" name="WrapperDSL.textGen.transformationOperations$CONCEPTS" />
-      <unit id="838450833437574330" at="16,0,81,0" name="WrapperDSL.textGen.transformationOperations" />
+      <unit id="838450833437574330" at="74,0,78,0" name="WrapperDSL.textGen.transformationOperations$LINKS" />
+      <unit id="838450833437574330" at="85,0,89,0" name="WrapperDSL.textGen.transformationOperations$PROPS" />
+      <unit id="838450833437574330" at="79,0,84,0" name="WrapperDSL.textGen.transformationOperations$CONCEPTS" />
+      <unit id="838450833437574330" at="17,0,90,0" name="WrapperDSL.textGen.transformationOperations" />
     </file>
   </root>
   <root nodeRef="r:98ce4f8d-75ef-41b6-8025-6561aecf815f(WrapperDSL.textGen)/838450833437885708">
     <file name="LogicalExpression_TextGen.java">
       <node id="838450833437885708" at="17,54,18,55" concept="8" />
-      <node id="838450833439107701" at="19,281,20,24" concept="3" />
-      <node id="838450833439875113" at="20,24,21,22" concept="3" />
-      <node id="838450833437885751" at="21,22,22,88" concept="3" />
-      <node id="838450833439555808" at="22,88,23,24" concept="3" />
-      <node id="838450833439554916" at="23,24,24,23" concept="3" />
-      <node id="838450833439661623" at="24,23,25,24" concept="3" />
-      <node id="838450833437888158" at="25,24,26,89" concept="3" />
-      <node id="838450833439555916" at="26,89,27,24" concept="3" />
-      <node id="838450833439107958" at="27,24,28,22" concept="3" />
-      <node id="838450833439555442" at="29,12,30,24" concept="3" />
-      <node id="838450833439875209" at="30,24,31,22" concept="3" />
-      <node id="838450833439555443" at="31,22,32,88" concept="3" />
-      <node id="838450833439661942" at="32,88,33,24" concept="3" />
-      <node id="838450833439555447" at="33,24,34,23" concept="3" />
-      <node id="838450833439662019" at="34,23,35,24" concept="3" />
-      <node id="838450833439555448" at="35,24,36,89" concept="3" />
-      <node id="838450833439875460" at="36,89,37,24" concept="3" />
-      <node id="838450833439555452" at="37,24,38,22" concept="3" />
+      <node id="838450833439107701" at="19,281,20,22" concept="3" />
+      <node id="2101053769979652106" at="20,22,21,20" concept="3" />
+      <node id="838450833437885751" at="21,20,22,88" concept="3" />
+      <node id="2101053769979652282" at="22,88,23,20" concept="3" />
+      <node id="838450833439554916" at="23,20,24,23" concept="3" />
+      <node id="2101053769979652460" at="24,23,25,20" concept="3" />
+      <node id="838450833437888158" at="25,20,26,89" concept="3" />
+      <node id="2101053769980199865" at="26,89,27,20" concept="3" />
+      <node id="838450833439107958" at="27,20,28,22" concept="3" />
+      <node id="2101053769979652551" at="29,12,30,22" concept="3" />
+      <node id="2101053769979652552" at="30,22,31,20" concept="3" />
+      <node id="2101053769979652553" at="31,20,32,88" concept="3" />
+      <node id="2101053769979652557" at="32,88,33,20" concept="3" />
+      <node id="2101053769979652558" at="33,20,34,23" concept="3" />
+      <node id="2101053769979652559" at="34,23,35,20" concept="3" />
+      <node id="2101053769979652560" at="35,20,36,89" concept="3" />
+      <node id="2101053769980200046" at="36,89,37,20" concept="3" />
+      <node id="2101053769979652564" at="37,20,38,22" concept="3" />
       <node id="838450833437885708" at="43,0,44,0" concept="12" trace="left$fLZX" />
       <node id="838450833437885708" at="44,0,45,0" concept="12" trace="right$fM0s" />
       <node id="838450833437885708" at="48,0,49,0" concept="12" trace="operator$1eMV" />

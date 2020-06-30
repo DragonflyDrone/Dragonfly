@@ -10,20 +10,12 @@ import java.util.List;
 //JAVA IMPORTS
 
 //Dragonfly API IMPORTS
-import controller.DroneController;
-import controller.EnvironmentController;
-import controller.LoggerController;
-import model.entity.drone.Drone;
-import model.entity.drone.DroneBusinessObject;
-import view.CellView;
-import view.drone.DroneView;
-import view.river.RiverView;
-import model.entity.drone.sensors.CameraStateEnum;
-import model.entity.drone.sensors.CollisionStateEnum;
-import model.entity.drone.sensors.GPSStateEnum;
-import model.entity.drone.sensors.SmokeStateEnum;
-import util.DirectionEnum;
-import controller.CellController;
+import controller.*;
+import model.entity.drone.*;
+import model.entity.drone.sensors.*;
+import util.*;
+import view.*;
+import view.drone.*;
 //Dragonfly API IMPORTS
 
 //IMPORTS//
@@ -33,7 +25,8 @@ pointcut safeLanding(): call (* model.entity.drone.DroneBusinessObject.safeLandi
 after():safeLanding()
 &&
 if
-((Drone)thisJoinPoint.getArgs()[0]).getGpsState()isGPSStateEnum.off
+((Drone)thisJoinPoint.getArgs()[0]).getGpsState() == GPSStateEnum.OFF)
+
 {
 helperCamera(thisJoinPoint);
 }
@@ -44,8 +37,13 @@ Drone drone = (Drone) thisJoinPoint.getArgs()[0];
 System.out.println("Drone["+drone.getLabel()+"] "+"EmergencyCamera");
 LoggerController.getInstance().print("Drone["+drone.getLabel()+"] EmergencyCamera");
 
-fazer cameraonFazer camera receberonstartif(origin<destination){
-Fazer camera recebereast
+drone.setCameraState(CameraStateEnum.ON);
+drone.setGambialState(GambialStateEnum.ON);
+drone.setEconomyMode(true);
+if(origin<destination){
+drone.setGambialState(GambialStateEnum.EAST);
+
 }else{
-Fazer camera receberwest}}
+drone.setGambialState(GambialStateEnum.WEST);
+}}
 }

@@ -21,18 +21,18 @@ import view.drone.*;
 //IMPORTS//
 
 public aspect MonitorEnvironment{
-pointcut flyingToDirection(): call (* model.entity.drone.DroneBusinessObject.flyToDirection(*));
+pointcut flyingToDirection(): call (* model.entity.drone.DroneBusinessObject.flyToDirection(*,*));
 before():flyingToDirection()
 &&
 if
 (
-(( ((Drone)thisJoinPoint.getArgs()[0]).getSmokeState() == SmokeStateEnum.DETECTED))
+( ((Drone)thisJoinPoint.getArgs()[0]).getSmokeState() == SmokeStateEnum.DETECTED)
 &&
-((
-(( ((Drone)thisJoinPoint.getArgs()[0]).getCameraState() == CameraStateEnum.FAILURE))
+(
+( ((Drone)thisJoinPoint.getArgs()[0]).getCameraState() == CameraStateEnum.FAILURE)
 ||
-(( ((Drone)thisJoinPoint.getArgs()[0]).getCameraState() == CameraStateEnum.OFF))
-))
+( ((Drone)thisJoinPoint.getArgs()[0]).getCameraState() == CameraStateEnum.OFF)
+)
 )
 {
 framework(thisJoinPoint);

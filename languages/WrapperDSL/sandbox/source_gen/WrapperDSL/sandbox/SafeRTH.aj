@@ -21,19 +21,20 @@ import view.drone.*;
 //IMPORTS//
 
 public aspect SafeRTH{
-pointcut flyingToDirection(): call (* model.entity.drone.DroneBusinessObject.flyToDirection(*));
-around():flyingToDirection()
+pointcut flyingToDirection(): call (* model.entity.drone.DroneBusinessObject.flyToDirection(*,*));
+boolean around():flyingToDirection()
 &&
 if
 (
-(((Drone)thisJoinPoint.getArgs()[0]).isReturningToHome() == true)
-)
+((Drone)thisJoinPoint.getArgs()[0]).isReturningToHome() == true)
+
 &&
-(((Drone)thisJoinPoint.getArgs()[0]).getCollisionState() == CollisionStateEnum.OFF)
-)
+((Drone)thisJoinPoint.getArgs()[0]).getCollisionState() == CollisionStateEnum.OFF)
+
 )
 {
 newSafeLand(thisJoinPoint);
+return false;
 }
 public void newSafeLand(JoinPoint thisJoinPoint)
 {

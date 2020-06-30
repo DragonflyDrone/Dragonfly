@@ -17,24 +17,24 @@ public class LogicalExpression_TextGen extends TextGenDescriptorBase {
   public void generateText(final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
     if (SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.operator$1eMV) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bdfL, "WrapperDSL.structure.LogicalOperatorEnum"), 0x53be3ecc045d42a9L, "and")) {
-      tgs.append("(\n");
       tgs.append("(");
+      tgs.newLine();
       tgs.appendNode(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.left$fLZX));
-      tgs.append(")\n");
+      tgs.newLine();
       tgs.append("&&");
-      tgs.append("\n(");
+      tgs.newLine();
       tgs.appendNode(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.right$fM0s));
-      tgs.append(")\n");
+      tgs.newLine();
       tgs.append(")");
     } else {
-      tgs.append("(\n");
       tgs.append("(");
+      tgs.newLine();
       tgs.appendNode(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.left$fLZX));
-      tgs.append(")\n");
+      tgs.newLine();
       tgs.append("||");
-      tgs.append("\n(");
+      tgs.newLine();
       tgs.appendNode(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.right$fM0s));
-      tgs.append(")\n");
+      tgs.newLine();
       tgs.append(")");
     }
   }

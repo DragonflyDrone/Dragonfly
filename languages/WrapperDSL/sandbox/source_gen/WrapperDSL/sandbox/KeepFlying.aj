@@ -22,20 +22,21 @@ import view.drone.*;
 
 public aspect KeepFlying{
 pointcut safeLanding(): call (* model.entity.drone.DroneBusinessObject.safeLanding(*));
-around():safeLanding()
+boolean around():safeLanding()
 &&
 if
 (
-(((Drone)thisJoinPoint.getArgs()[0]).getDistanceDestiny()<=60)
+((Drone)thisJoinPoint.getArgs()[0]).getDistanceDestiny()<=60
 &&
-((
-(((Drone)thisJoinPoint.getArgs()[0]).isStrongWind()==true)
+(
+((Drone)thisJoinPoint.getArgs()[0]).isStrongWind()==true
 &&
-(((Drone)thisJoinPoint.getArgs()[0]).getWindDirection()==DirectionEnum.NORTH)
-))
+((Drone)thisJoinPoint.getArgs()[0]).getWindDirection()==DirectionEnum.NORTH
+)
 )
 {
 goDestination(thisJoinPoint);
+return false;
 }
 public void goDestination(JoinPoint thisJoinPoint)
 {
