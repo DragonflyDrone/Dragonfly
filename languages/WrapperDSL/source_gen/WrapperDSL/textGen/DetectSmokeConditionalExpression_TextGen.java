@@ -13,8 +13,12 @@ public class DetectSmokeConditionalExpression_TextGen extends TextGenDescriptorB
   @Override
   public void generateText(final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
-    tgs.append(SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.operators$RwcY).toString());
-    tgs.append(SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.right$Rwdt).toString());
+    tgs.append("(");
+    tgs.append(" ((Drone)thisJoinPoint.getArgs()[0]).getSmokeState() ");
+    transformationOperations.transformOperator(SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.operators$RwcY).toString(), ctx);
+    tgs.append(" SmokeStateEnum.");
+    tgs.append(SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.right$Rwdt).toString().toUpperCase());
+    tgs.append(")");
   }
 
   private static final class PROPS {

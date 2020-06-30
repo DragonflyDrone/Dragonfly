@@ -13,8 +13,10 @@ public class TurnCamera_TextGen extends TextGenDescriptorBase {
   @Override
   public void generateText(final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
-    tgs.append("fazer camera");
-    tgs.append(SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.turn$Xdl0).toString());
+    tgs.append("drone.setCameraState(CameraStateEnum.");
+    tgs.append(SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.turn$Xdl0).toString().toUpperCase());
+    tgs.append(");");
+    tgs.newLine();
   }
 
   private static final class PROPS {

@@ -13,8 +13,12 @@ public class CollisionSensorConditionalExpression_TextGen extends TextGenDescrip
   @Override
   public void generateText(final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
-    tgs.append(SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.operators$ZMbu).toString());
-    tgs.append(SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.right$ZMbX).toString());
+    tgs.append("((Drone)thisJoinPoint.getArgs()[0]).getCollisionState() ");
+    transformationOperations.transformOperator(SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.operators$ZMbu).toString(), ctx);
+    tgs.append(" CollisionStateEnum.");
+    tgs.append(SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.right$ZMbX).getName().toUpperCase());
+    tgs.append(")");
+    tgs.newLine();
   }
 
   private static final class PROPS {

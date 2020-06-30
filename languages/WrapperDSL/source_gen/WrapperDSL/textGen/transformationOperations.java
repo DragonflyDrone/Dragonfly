@@ -20,6 +20,8 @@ public abstract class transformationOperations {
       tgs.append("pointcut safeLanding(): call (* model.entity.drone.DroneBusinessObject.safeLanding(*));");
     } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(when, LINKS.event$_7rR), CONCEPTS.FlyDirection$E9)) {
       tgs.append("pointcut flyingToDirection(): call (* model.entity.drone.DroneBusinessObject.flyToDirection(*));");
+    } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(when, LINKS.event$_7rR), CONCEPTS.ReturnToHome$K8)) {
+      tgs.append("pointcut flyingToDirection(): call (* model.entity.drone.DroneBusinessObject.flyToDirection(*));");
     }
   }
   public static void whenAndThenToContitionalPointCutCall(SNode when, SNode then, final TextGenContext ctx) {
@@ -28,6 +30,8 @@ public abstract class transformationOperations {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(when, LINKS.event$_7rR), CONCEPTS.SafeLand$_s)) {
       call = "safeLanding()";
     } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(when, LINKS.event$_7rR), CONCEPTS.FlyDirection$E9)) {
+      call = "flyingToDirection()";
+    } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(when, LINKS.event$_7rR), CONCEPTS.ReturnToHome$K8)) {
       call = "flyingToDirection()";
     }
 
@@ -66,6 +70,7 @@ public abstract class transformationOperations {
   private static final class CONCEPTS {
     /*package*/ static final SConcept SafeLand$_s = MetaAdapterFactory.getConcept(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x4f78da14d91a0524L, "WrapperDSL.structure.SafeLand");
     /*package*/ static final SConcept FlyDirection$E9 = MetaAdapterFactory.getConcept(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x3069a986202e1f01L, "WrapperDSL.structure.FlyDirection");
+    /*package*/ static final SConcept ReturnToHome$K8 = MetaAdapterFactory.getConcept(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd935895a950aL, "WrapperDSL.structure.ReturnToHome");
   }
 
   private static final class PROPS {

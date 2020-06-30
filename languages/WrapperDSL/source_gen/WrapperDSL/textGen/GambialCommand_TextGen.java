@@ -13,8 +13,10 @@ public class GambialCommand_TextGen extends TextGenDescriptorBase {
   @Override
   public void generateText(final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
-    tgs.append("Fazer camera receber");
-    tgs.append(SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.value$Xey0).toString());
+    tgs.append("drone.setGambialState(GambialStateEnum.");
+    tgs.append(SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.value$Xey0).toString().toUpperCase());
+    tgs.append(");");
+    tgs.newLine();
   }
 
   private static final class PROPS {

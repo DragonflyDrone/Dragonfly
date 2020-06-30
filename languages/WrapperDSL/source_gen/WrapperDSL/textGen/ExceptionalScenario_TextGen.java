@@ -25,7 +25,19 @@ public class ExceptionalScenario_TextGen extends TextGenDescriptorBase {
     tgs.append("//JAVA IMPORTS\n\n");
 
     tgs.append("//Dragonfly API IMPORTS\n");
-    tgs.append("import controller.DroneController;\nimport controller.EnvironmentController;\nimport controller.LoggerController;\nimport model.entity.drone.Drone;\nimport model.entity.drone.DroneBusinessObject;\nimport view.CellView;\nimport view.drone.DroneView;\nimport view.river.RiverView;\nimport model.entity.drone.sensors.CameraStateEnum;\nimport model.entity.drone.sensors.CollisionStateEnum;\nimport model.entity.drone.sensors.GPSStateEnum;\nimport model.entity.drone.sensors.SmokeStateEnum;\nimport util.DirectionEnum;\nimport controller.CellController;\n");
+    tgs.append("import controller.*;");
+    tgs.newLine();
+    tgs.append("import model.entity.drone.*;");
+    tgs.newLine();
+    tgs.append("import model.entity.drone.sensors.*;");
+    tgs.newLine();
+    tgs.append("import util.*;");
+    tgs.newLine();
+    tgs.append("import view.*;");
+    tgs.newLine();
+    tgs.append("import view.drone.*;");
+    tgs.newLine();
+
     tgs.append("//Dragonfly API IMPORTS\n\n");
     tgs.append("//IMPORTS//\n\n");
 

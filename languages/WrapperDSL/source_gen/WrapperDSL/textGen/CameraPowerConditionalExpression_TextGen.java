@@ -13,8 +13,12 @@ public class CameraPowerConditionalExpression_TextGen extends TextGenDescriptorB
   @Override
   public void generateText(final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
-    tgs.append(SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.operators$7XIv).toString());
-    tgs.append(SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.right$7XIY).toString());
+    tgs.append("(");
+    tgs.append(" ((Drone)thisJoinPoint.getArgs()[0]).getCameraState() ");
+    transformationOperations.transformOperator(SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.operators$7XIv).toString(), ctx);
+    tgs.append(" CameraStateEnum.");
+    tgs.append(SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.right$7XIY).toString().toUpperCase());
+    tgs.append(")");
   }
 
   private static final class PROPS {

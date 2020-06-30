@@ -10,20 +10,12 @@ import java.util.List;
 //JAVA IMPORTS
 
 //Dragonfly API IMPORTS
-import controller.DroneController;
-import controller.EnvironmentController;
-import controller.LoggerController;
-import model.entity.drone.Drone;
-import model.entity.drone.DroneBusinessObject;
-import view.CellView;
-import view.drone.DroneView;
-import view.river.RiverView;
-import model.entity.drone.sensors.CameraStateEnum;
-import model.entity.drone.sensors.CollisionStateEnum;
-import model.entity.drone.sensors.GPSStateEnum;
-import model.entity.drone.sensors.SmokeStateEnum;
-import util.DirectionEnum;
-import controller.CellController;
+import controller.*;
+import model.entity.drone.*;
+import model.entity.drone.sensors.*;
+import util.*;
+import view.*;
+import view.drone.*;
 //Dragonfly API IMPORTS
 
 //IMPORTS//
@@ -34,9 +26,13 @@ before():flyingToDirection()
 &&
 if
 (
-(isoff)
+(( ((Drone)thisJoinPoint.getArgs()[0]).getSmokeState() == SmokeStateEnum.DETECTED))
 &&
-(isdetected)
+((
+(( ((Drone)thisJoinPoint.getArgs()[0]).getCameraState() == CameraStateEnum.FAILURE))
+||
+(( ((Drone)thisJoinPoint.getArgs()[0]).getCameraState() == CameraStateEnum.OFF))
+))
 )
 {
 framework(thisJoinPoint);

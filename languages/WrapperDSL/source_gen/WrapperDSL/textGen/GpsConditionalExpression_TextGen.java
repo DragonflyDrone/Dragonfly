@@ -13,10 +13,12 @@ public class GpsConditionalExpression_TextGen extends TextGenDescriptorBase {
   @Override
   public void generateText(final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
-    tgs.append("((Drone)thisJoinPoint.getArgs()[0]).getGpsState()");
-    tgs.append(SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.operators$1kKD).toString());
-    tgs.append("GPSStateEnum.");
-    tgs.append(SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.right$1kL8).toString());
+    tgs.append("((Drone)thisJoinPoint.getArgs()[0]).getGpsState() ");
+    transformationOperations.transformOperator(SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.operators$1kKD).toString(), ctx);
+    tgs.append(" GPSStateEnum.");
+    tgs.append(SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.right$1kL8).toString().toUpperCase());
+    tgs.append(")");
+    tgs.newLine();
   }
 
   private static final class PROPS {
