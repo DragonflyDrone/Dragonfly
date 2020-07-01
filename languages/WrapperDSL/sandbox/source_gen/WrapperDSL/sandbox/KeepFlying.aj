@@ -27,12 +27,12 @@ boolean around():safeLanding()
 &&
 if
 (
-((Drone)thisJoinPoint.getArgs()[0]).getDistanceDestiny()<=60
+((Drone)thisJoinPoint.getArgs()[0]).getDistanceDestiny()<=90
 &&
 (
 ((Drone)thisJoinPoint.getArgs()[0]).isStrongWind()==true
 &&
-((Drone)thisJoinPoint.getArgs()[0]).getWindDirection()==DirectionEnum.NORTH
+((Drone)thisJoinPoint.getArgs()[0]).getWindDirection()==DirectionEnum.EAST
 )
 )
 {
@@ -46,11 +46,26 @@ Drone drone = (Drone) thisJoinPoint.getArgs()[0];
 System.out.println("Drone["+drone.getLabel()+"] "+"KeepFlying");
 LoggerController.getInstance().print("Drone["+drone.getLabel()+"] KeepFlying");
 
-while(((Drone)thisJoinPoint.getArgs()[0]).getDistanceDestiny() != 0){
+        new StopWatch(0,1000) {
+            @Override
+            public void task() {
+                Platform.runLater(() -> {
 DroneView droneView = DroneController.getInstance().getDroneViewFrom(drone.getUniqueID());
 CellView destinationCellView = CellController.getInstance().getCellViewFrom(drone.getDestinyCell());
 DirectionEnum goDirection = DroneBusinessObject.closeDirection(droneView.getCurrentCellView(), destinationCellView);
 DroneBusinessObject.flyToDirection(drone, goDirection);
-}
+                DroneBusinessObject.updateBatteryPerSecond(drone);
+                    DroneBusinessObject.updateBatteryPerBlock(drone);
+                    DroneBusinessObject.updateDistances(drone);
+                    DroneBusinessObject.checkStatus(drone);
+                });
+
+            }
+            @Override
+            public boolean conditionStop() {
+
+            
+return !(((Drone)thisJoinPoint.getArgs()[0]).getDistanceDestiny() != 0);}
+ };
 }
 }

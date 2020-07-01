@@ -145,7 +145,7 @@
             <property role="22r6dB" value="7_KOYEjfYK5/destination" />
             <property role="22r6dD" value="5eYfGK4mCLf/greater_than_or_equal_to" />
             <node concept="gklgG" id="4NY2oxuEQvY" role="22r6dE">
-              <property role="gklgH" value="60" />
+              <property role="gklgH" value="10" />
             </node>
           </node>
         </node>
@@ -184,7 +184,7 @@
           <property role="22r6dB" value="7_KOYEjfYK5/destination" />
           <property role="22r6dD" value="5eYfGK4mCLl/less_than_or_equal_to" />
           <node concept="gklgG" id="4NY2oxuDi43" role="22r6dE">
-            <property role="gklgH" value="60" />
+            <property role="gklgH" value="10" />
           </node>
         </node>
         <node concept="3Em$gh" id="24MtOl5VO_E" role="3EglUc">
@@ -195,7 +195,7 @@
           </node>
           <node concept="gii1b" id="4NY2oxuDi48" role="3EglUc">
             <property role="gii1Q" value="7_KOYEjd0pz/is" />
-            <property role="iq1WG" value="11jlgVoCRQQ/NORTH" />
+            <property role="iq1WG" value="11jlgVoCRQU/EAST" />
           </node>
         </node>
       </node>

@@ -5,8 +5,8 @@ package WrapperDSL.textGen;
 import jetbrains.mps.text.rt.TextGenDescriptorBase;
 import jetbrains.mps.text.rt.TextGenContext;
 import jetbrains.mps.text.impl.TextGenSupport;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
@@ -14,21 +14,30 @@ public class While_TextGen extends TextGenDescriptorBase {
   @Override
   public void generateText(final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
-    tgs.append("while(");
-    tgs.appendNode(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.condition$jseW));
-    tgs.append(")");
-    tgs.append("{");
+    tgs.append("        new StopWatch(0,1000) {\n            @Override\n            public void task() {\n                Platform.runLater(() -> {");
     tgs.newLine();
-    ctx.getBuffer().area().increaseIndent();
     for (SNode item : SLinkOperations.getChildren(ctx.getPrimaryInput(), LINKS.body$jsq5)) {
       tgs.appendNode(item);
     }
-    ctx.getBuffer().area().decreaseIndent();
-    tgs.append("}\n");
+    tgs.newLine();
+    tgs.append("                });\n\n            }");
+    tgs.newLine();
+
+    tgs.append("            @Override\n            public boolean conditionStop() {\n\n            ");
+    tgs.newLine();
+    tgs.append("return ");
+    tgs.append("!(");
+    tgs.appendNode(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.condition$jseW));
+    tgs.append(")");
+    tgs.append(";");
+    tgs.append("}");
+    tgs.newLine();
+    tgs.append(" };");
+    tgs.newLine();
   }
 
   private static final class LINKS {
-    /*package*/ static final SContainmentLink condition$jseW = MetaAdapterFactory.getContainmentLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045b45acL, 0x53be3ecc045b45d2L, "condition");
     /*package*/ static final SContainmentLink body$jsq5 = MetaAdapterFactory.getContainmentLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045b45acL, 0x53be3ecc045b45d4L, "body");
+    /*package*/ static final SContainmentLink condition$jseW = MetaAdapterFactory.getContainmentLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045b45acL, 0x53be3ecc045b45d2L, "condition");
   }
 }

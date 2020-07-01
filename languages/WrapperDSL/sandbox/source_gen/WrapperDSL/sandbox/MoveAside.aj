@@ -32,7 +32,7 @@ if
 (
 ((Drone)thisJoinPoint.getArgs()[0]).isStrongWind()==false
 &&
-((Drone)thisJoinPoint.getArgs()[0]).getDistanceDestiny()>=60
+((Drone)thisJoinPoint.getArgs()[0]).getDistanceDestiny()>=90
 )
 )
 {
@@ -45,11 +45,26 @@ Drone drone = (Drone) thisJoinPoint.getArgs()[0];
 System.out.println("Drone["+drone.getLabel()+"] "+"MoveAside");
 LoggerController.getInstance().print("Drone["+drone.getLabel()+"] MoveAside");
 
-while(((Drone)thisJoinPoint.getArgs()[0]).isOnWater()==true){
+        new StopWatch(0,1000) {
+            @Override
+            public void task() {
+                Platform.runLater(() -> {
 DroneView droneView = DroneController.getInstance().getDroneViewFrom(drone.getUniqueID());
 CellView destinationCellView = EnvironmentController.getInstance().getCloserLand(drone);
 DirectionEnum goDirection = DroneBusinessObject.closeDirection(droneView.getCurrentCellView(), destinationCellView);
 DroneBusinessObject.flyToDirection(drone, goDirection);
-}
+                DroneBusinessObject.updateBatteryPerSecond(drone);
+                    DroneBusinessObject.updateBatteryPerBlock(drone);
+                    DroneBusinessObject.updateDistances(drone);
+                    DroneBusinessObject.checkStatus(drone);
+                });
+
+            }
+            @Override
+            public boolean conditionStop() {
+
+            
+return !(((Drone)thisJoinPoint.getArgs()[0]).isOnWater()==true);}
+ };
 }
 }

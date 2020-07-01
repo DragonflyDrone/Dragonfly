@@ -21,18 +21,19 @@ import view.drone.*;
 //IMPORTS//
 
 public aspect MoveAside{
+private boolean alreadyExecuting = false;
 pointcut safeLanding(): call (* model.entity.drone.DroneBusinessObject.safeLanding(*));
 before():safeLanding()
 &&
 if
 (
-(((Drone)thisJoinPoint.getArgs()[0]).isOnWater()==true)
+((Drone)thisJoinPoint.getArgs()[0]).isOnWater()==true
 &&
-((
-(((Drone)thisJoinPoint.getArgs()[0]).isStrongWind()==false)
+(
+((Drone)thisJoinPoint.getArgs()[0]).isStrongWind()==false
 &&
-(((Drone)thisJoinPoint.getArgs()[0]).getDistanceDestiny()>=60)
-))
+((Drone)thisJoinPoint.getArgs()[0]).getDistanceDestiny()>=60
+)
 )
 {
 goLandRegion(thisJoinPoint);

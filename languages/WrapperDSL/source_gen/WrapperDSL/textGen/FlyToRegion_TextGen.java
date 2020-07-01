@@ -37,6 +37,7 @@ public class FlyToRegion_TextGen extends TextGenDescriptorBase {
     }
     tgs.append("DirectionEnum goDirection = DroneBusinessObject.closeDirection(droneView.getCurrentCellView(), destinationCellView);\n");
     tgs.append("DroneBusinessObject.flyToDirection(drone, goDirection);\n");
+    tgs.append("                DroneBusinessObject.updateBatteryPerSecond(drone);\n                    DroneBusinessObject.updateBatteryPerBlock(drone);\n                    DroneBusinessObject.updateDistances(drone);\n                    DroneBusinessObject.checkStatus(drone);");
   }
 
   private static final class PROPS {
