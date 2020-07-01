@@ -16,7 +16,7 @@ public aspect Wrapper1 {
     pointcut safeLanding(): call (* model.entity.drone.DroneBusinessObject.safeLanding(*));
     pointcut applyEconomyMode(): call (* model.entity.drone.DroneBusinessObject.applyEconomyMode(*));
     pointcut fireDetect(): call (* model.entity.drone.DroneBusinessObject.fireDetect(*));
-    pointcut flyingToDirection(): call (* model.entity.drone.DroneBusinessObject.flyToDirection(*,*));
+    pointcut flyingToDirection(): call (* model.entity.drone.DroneBusinessObject.flyToDirection(*));
 
 
     after(): fireDetect()
@@ -70,7 +70,6 @@ public aspect Wrapper1 {
     ){
         moveASide(thisJoinPoint);
     }
-
 
 
    boolean around(): safeLanding()

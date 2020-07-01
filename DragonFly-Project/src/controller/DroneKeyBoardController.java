@@ -369,7 +369,7 @@ public class DroneKeyBoardController extends DroneController {
 
 
 
-    private boolean allTheDronesAreShutDown() {
+    private static boolean allTheDronesAreShutDown() {
         boolean isShutdown = false;
 
         for(Drone drone : droneMap.values()){
@@ -416,10 +416,12 @@ public class DroneKeyBoardController extends DroneController {
 
             @Override
             public boolean conditionStop() {
-                return  mustStopAutomaticExecution;
+                return  mustStopAutomaticExecution || allTheDronesAreShutDown();
             }
 
         };
     }
+
+
 
 }
