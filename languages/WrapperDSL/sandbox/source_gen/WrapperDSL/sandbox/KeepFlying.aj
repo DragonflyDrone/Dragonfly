@@ -21,6 +21,7 @@ import view.drone.*;
 //IMPORTS//
 
 public aspect KeepFlying{
+private boolean alreadyExecuting = false;
 pointcut safeLanding(): call (* model.entity.drone.DroneBusinessObject.safeLanding(*));
 boolean around():safeLanding()
 &&

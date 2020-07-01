@@ -412,7 +412,7 @@
   </node>
   <node concept="24kQdi" id="6UvQjm9mWHX">
     <property role="3GE5qa" value="command" />
-    <ref role="1XX52x" to="lpas:6UvQjm9mWHO" resolve="Mission" />
+    <ref role="1XX52x" to="lpas:6UvQjm9mWHO" resolve="TurnMission" />
     <node concept="3EZMnI" id="1bns0lwX48m" role="2wV5jI">
       <node concept="l2Vlx" id="1bns0lwX48n" role="2iSdaV" />
       <node concept="3F0A7n" id="1bns0lwX48q" role="3EZMnx">
@@ -1263,6 +1263,17 @@
         <property role="3F0ifm" value="any" />
       </node>
       <node concept="l2Vlx" id="31DEoowfa27" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="1OCskmtPQe_">
+    <property role="3GE5qa" value="command" />
+    <ref role="1XX52x" to="lpas:1OCskmtPQer" resolve="SetMission" />
+    <node concept="3EZMnI" id="1OCskmtRfXW" role="2wV5jI">
+      <node concept="2iRkQZ" id="1OCskmtRfXX" role="2iSdaV" />
+      <node concept="3F2HdR" id="1OCskmtTqC$" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:1OCskmtPQes" resolve="values" />
+        <node concept="2iRkQZ" id="1OCskmtTqC_" role="2czzBx" />
+      </node>
     </node>
   </node>
 </model>

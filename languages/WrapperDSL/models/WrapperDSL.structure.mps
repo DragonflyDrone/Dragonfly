@@ -562,7 +562,7 @@
   <node concept="1TIwiD" id="6UvQjm9mWHO">
     <property role="EcuMT" value="7971328689430055796" />
     <property role="3GE5qa" value="command" />
-    <property role="TrG5h" value="Mission" />
+    <property role="TrG5h" value="TurnMission" />
     <property role="34LRSv" value="mission" />
     <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="CommandCall" />
     <node concept="1TJgyi" id="1bns0lwX48i" role="1TKVEl">
@@ -1593,6 +1593,19 @@
     <property role="3GE5qa" value="math" />
     <property role="TrG5h" value="AnyBoolean" />
     <ref role="1TJDcQ" node="31DEoowfa1x" resolve="BooleanValue" />
+  </node>
+  <node concept="1TIwiD" id="1OCskmtPQer">
+    <property role="EcuMT" value="2101053769983157147" />
+    <property role="3GE5qa" value="command" />
+    <property role="TrG5h" value="SetMission" />
+    <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="CommandCall" />
+    <node concept="1TJgyj" id="1OCskmtPQes" role="1TKVEi">
+      <property role="IQ2ns" value="2101053769983157148" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="values" />
+      <property role="20lbJX" value="fLJekj6/_1__n" />
+      <ref role="20lvS9" node="31DEoowbxW1" resolve="FlyDirection" />
+    </node>
   </node>
 </model>
 

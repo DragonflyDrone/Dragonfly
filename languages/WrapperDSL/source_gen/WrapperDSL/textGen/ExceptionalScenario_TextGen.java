@@ -47,7 +47,10 @@ public class ExceptionalScenario_TextGen extends TextGenDescriptorBase {
     tgs.append(SPropertyOperations.getString(ctx.getPrimaryInput(), PROPS.name$tAp1));
     tgs.append("{\n");
     tgs.popTextArea();
-
+    tgs.pushTextArea("HEADER");
+    tgs.append("private boolean alreadyExecuting = false;");
+    tgs.newLine();
+    tgs.popTextArea();
     tgs.pushTextArea("pointcut");
     transformationOperations.whenToPointcut(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.when$Bwg0), ctx);
     tgs.append("\n");

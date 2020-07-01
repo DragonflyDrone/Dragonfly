@@ -21,16 +21,19 @@ import view.drone.*;
 //IMPORTS//
 
 public aspect SafeRTH{
+private boolean alreadyExecuting = false;
 pointcut flyingToDirection(): call (* model.entity.drone.DroneBusinessObject.flyToDirection(*,*));
 boolean around():flyingToDirection()
 &&
 if
 (
-((Drone)thisJoinPoint.getArgs()[0]).isReturningToHome() == true)
-
+(((Drone)thisJoinPoint.getArgs()[0]).isReturningToHome() == true)
 &&
-((Drone)thisJoinPoint.getArgs()[0]).getCollisionState() == CollisionStateEnum.OFF)
-
+(
+(((Drone)thisJoinPoint.getArgs()[0]).getCollisionState() == CollisionStateEnum.OFF)
+||
+(((Drone)thisJoinPoint.getArgs()[0]).getCollisionState() == CollisionStateEnum.FAILURE)
+)
 )
 {
 newSafeLand(thisJoinPoint);
@@ -44,5 +47,9 @@ System.out.println("Drone["+drone.getLabel()+"] "+"SafeRTH");
 LoggerController.getInstance().print("Drone["+drone.getLabel()+"] SafeRTH");
 
 DroneBusinessObject.getInstance().safeLanding(drone);
+DroneBusinessObject.getInstance().landing(drone);
+DroneBusinessObject.getInstance().landed(drone);
+DroneBusinessObject.getInstance().shutDown(drone);
+((DroneViewImpl)DroneController.getInstance().getDroneViewFrom(drone.getUniqueID())).applyStyleNormalConnection();
 }
 }

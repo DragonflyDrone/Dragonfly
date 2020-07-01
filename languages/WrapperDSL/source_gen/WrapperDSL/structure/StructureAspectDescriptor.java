@@ -51,7 +51,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptLandingGearConditionalExpression = createDescriptorForLandingGearConditionalExpression();
   /*package*/ final ConceptDescriptor myConceptLinearAccelerationConditionalExpression = createDescriptorForLinearAccelerationConditionalExpression();
   /*package*/ final ConceptDescriptor myConceptLogicalExpression = createDescriptorForLogicalExpression();
-  /*package*/ final ConceptDescriptor myConceptMission = createDescriptorForMission();
   /*package*/ final ConceptDescriptor myConceptMotorsPowerConditionalExpression = createDescriptorForMotorsPowerConditionalExpression();
   /*package*/ final ConceptDescriptor myConceptNormalBooleanValue = createDescriptorForNormalBooleanValue();
   /*package*/ final ConceptDescriptor myConceptNumber = createDescriptorForNumber();
@@ -69,6 +68,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptSetHomeLocation = createDescriptorForSetHomeLocation();
   /*package*/ final ConceptDescriptor myConceptSetHomeLocationUsingAircraftCurrentLocation = createDescriptorForSetHomeLocationUsingAircraftCurrentLocation();
   /*package*/ final ConceptDescriptor myConceptSetLowBatteryWarningThreshold = createDescriptorForSetLowBatteryWarningThreshold();
+  /*package*/ final ConceptDescriptor myConceptSetMission = createDescriptorForSetMission();
   /*package*/ final ConceptDescriptor myConceptSetSeriousLowBatteryWarningThreshold = createDescriptorForSetSeriousLowBatteryWarningThreshold();
   /*package*/ final ConceptDescriptor myConceptSetSmartReturnToHomeEnabled = createDescriptorForSetSmartReturnToHomeEnabled();
   /*package*/ final ConceptDescriptor myConceptSpeedConditionalExpression = createDescriptorForSpeedConditionalExpression();
@@ -79,6 +79,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptTurnAutomaticControl = createDescriptorForTurnAutomaticControl();
   /*package*/ final ConceptDescriptor myConceptTurnCamera = createDescriptorForTurnCamera();
   /*package*/ final ConceptDescriptor myConceptTurnEconomyMode = createDescriptorForTurnEconomyMode();
+  /*package*/ final ConceptDescriptor myConceptTurnMission = createDescriptorForTurnMission();
   /*package*/ final ConceptDescriptor myConceptTurnMotors = createDescriptorForTurnMotors();
   /*package*/ final ConceptDescriptor myConceptValue = createDescriptorForValue();
   /*package*/ final ConceptDescriptor myConceptWhen = createDescriptorForWhen();
@@ -114,7 +115,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAdaptationBehavior, myConceptAdaptationScript, myConceptAltitudeConditionalExpression, myConceptAngularAccelerationConditionalExpression, myConceptAnyBoolean, myConceptAnyNumber, myConceptBatteryConditionalExpression, myConceptBooleanValue, myConceptCameraPowerConditionalExpression, myConceptCardinalPointsRotate, myConceptCategoricalDistanceConditionalExpression, myConceptCategoricalWindConditionalExpression, myConceptCollisionSensorConditionalExpression, myConceptCommandCall, myConceptCompassConditionalExpression, myConceptConditionalExpression, myConceptCoordenateConditionalExpression, myConceptDegreesRotate, myConceptDetectSmokeConditionalExpression, myConceptElse, myConceptExceptionalScenario, myConceptExpression, myConceptFlyDirection, myConceptFlyToCoordinates, myConceptFlyToRegion, myConceptGambialCommand, myConceptGimbalConditionalExpression, myConceptGiven, myConceptGpsConditionalExpression, myConceptIf, myConceptIntegerNumber, myConceptLanding, myConceptLandingGearConditionalExpression, myConceptLinearAccelerationConditionalExpression, myConceptLogicalExpression, myConceptMission, myConceptMotorsPowerConditionalExpression, myConceptNormalBooleanValue, myConceptNumber, myConceptOnOffSmokeConditionalExpression, myConceptOriginAndDestinationDistanceConditionalExpression, myConceptPayloadConditionalExpression, myConceptPerformingCommandConditionalExpression, myConceptRegionConditionalExpression, myConceptReturnToHome, myConceptSafeLand, myConceptScalarDistanceConditionalExpression, myConceptScalarWindConditionalExpression, myConceptSetAutoFlightSpeed, myConceptSetGoHomeHeightInMeters, myConceptSetHomeLocation, myConceptSetHomeLocationUsingAircraftCurrentLocation, myConceptSetLowBatteryWarningThreshold, myConceptSetSeriousLowBatteryWarningThreshold, myConceptSetSmartReturnToHomeEnabled, myConceptSpeedConditionalExpression, myConceptStatement, myConceptTakeOff, myConceptText, myConceptThen, myConceptTurnAutomaticControl, myConceptTurnCamera, myConceptTurnEconomyMode, myConceptTurnMotors, myConceptValue, myConceptWhen, myConceptWhile, myConceptWifiConditionalExpression, myConceptWindDirectionConditionalExpression);
+    return Arrays.asList(myConceptAdaptationBehavior, myConceptAdaptationScript, myConceptAltitudeConditionalExpression, myConceptAngularAccelerationConditionalExpression, myConceptAnyBoolean, myConceptAnyNumber, myConceptBatteryConditionalExpression, myConceptBooleanValue, myConceptCameraPowerConditionalExpression, myConceptCardinalPointsRotate, myConceptCategoricalDistanceConditionalExpression, myConceptCategoricalWindConditionalExpression, myConceptCollisionSensorConditionalExpression, myConceptCommandCall, myConceptCompassConditionalExpression, myConceptConditionalExpression, myConceptCoordenateConditionalExpression, myConceptDegreesRotate, myConceptDetectSmokeConditionalExpression, myConceptElse, myConceptExceptionalScenario, myConceptExpression, myConceptFlyDirection, myConceptFlyToCoordinates, myConceptFlyToRegion, myConceptGambialCommand, myConceptGimbalConditionalExpression, myConceptGiven, myConceptGpsConditionalExpression, myConceptIf, myConceptIntegerNumber, myConceptLanding, myConceptLandingGearConditionalExpression, myConceptLinearAccelerationConditionalExpression, myConceptLogicalExpression, myConceptMotorsPowerConditionalExpression, myConceptNormalBooleanValue, myConceptNumber, myConceptOnOffSmokeConditionalExpression, myConceptOriginAndDestinationDistanceConditionalExpression, myConceptPayloadConditionalExpression, myConceptPerformingCommandConditionalExpression, myConceptRegionConditionalExpression, myConceptReturnToHome, myConceptSafeLand, myConceptScalarDistanceConditionalExpression, myConceptScalarWindConditionalExpression, myConceptSetAutoFlightSpeed, myConceptSetGoHomeHeightInMeters, myConceptSetHomeLocation, myConceptSetHomeLocationUsingAircraftCurrentLocation, myConceptSetLowBatteryWarningThreshold, myConceptSetMission, myConceptSetSeriousLowBatteryWarningThreshold, myConceptSetSmartReturnToHomeEnabled, myConceptSpeedConditionalExpression, myConceptStatement, myConceptTakeOff, myConceptText, myConceptThen, myConceptTurnAutomaticControl, myConceptTurnCamera, myConceptTurnEconomyMode, myConceptTurnMission, myConceptTurnMotors, myConceptValue, myConceptWhen, myConceptWhile, myConceptWifiConditionalExpression, myConceptWindDirectionConditionalExpression);
   }
 
   @Override
@@ -191,8 +192,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptLinearAccelerationConditionalExpression;
       case LanguageConceptSwitch.LogicalExpression:
         return myConceptLogicalExpression;
-      case LanguageConceptSwitch.Mission:
-        return myConceptMission;
       case LanguageConceptSwitch.MotorsPowerConditionalExpression:
         return myConceptMotorsPowerConditionalExpression;
       case LanguageConceptSwitch.NormalBooleanValue:
@@ -227,6 +226,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptSetHomeLocationUsingAircraftCurrentLocation;
       case LanguageConceptSwitch.SetLowBatteryWarningThreshold:
         return myConceptSetLowBatteryWarningThreshold;
+      case LanguageConceptSwitch.SetMission:
+        return myConceptSetMission;
       case LanguageConceptSwitch.SetSeriousLowBatteryWarningThreshold:
         return myConceptSetSeriousLowBatteryWarningThreshold;
       case LanguageConceptSwitch.SetSmartReturnToHomeEnabled:
@@ -247,6 +248,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptTurnCamera;
       case LanguageConceptSwitch.TurnEconomyMode:
         return myConceptTurnEconomyMode;
+      case LanguageConceptSwitch.TurnMission:
+        return myConceptTurnMission;
       case LanguageConceptSwitch.TurnMotors:
         return myConceptTurnMotors;
       case LanguageConceptSwitch.Value:
@@ -608,16 +611,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.aggregate("right", 0x7970d3ea93318d66L).target(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x7970d3ea932ed73dL).optional(false).ordered(true).multiple(false).origin("8750727080426179942").done();
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForMission() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "Mission", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd935895bcb74L);
-    b.class_(false, false, false);
-    b.super_("WrapperDSL.structure.CommandCall", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd9358955fd28L);
-    b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/7971328689430055796");
-    b.version(2);
-    b.property("value", 0x12d7700560f44212L).type(MetaIdFactory.dataTypeId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x12d7700560f441d4L)).origin("1357676981079261714").done();
-    b.alias("mission");
-    return b.create();
-  }
   private static ConceptDescriptor createDescriptorForMotorsPowerConditionalExpression() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "MotorsPowerConditionalExpression", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x1053550ed8b2a0a3L);
     b.class_(false, false, false);
@@ -788,6 +781,15 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.alias("set Low Battery Warning Threshold");
     return b.create();
   }
+  private static ConceptDescriptor createDescriptorForSetMission() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "SetMission", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x1d2871459dd7639bL);
+    b.class_(false, false, false);
+    b.super_("WrapperDSL.structure.CommandCall", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd9358955fd28L);
+    b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/2101053769983157147");
+    b.version(2);
+    b.aggregate("values", 0x1d2871459dd7639cL).target(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x3069a986202e1f01L).optional(false).ordered(true).multiple(true).origin("2101053769983157148").done();
+    return b.create();
+  }
   private static ConceptDescriptor createDescriptorForSetSeriousLowBatteryWarningThreshold() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "SetSeriousLowBatteryWarningThreshold", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd935895bcb00L);
     b.class_(false, false, false);
@@ -878,6 +880,16 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(2);
     b.property("value", 0x12d7700560f0203fL).type(MetaIdFactory.dataTypeId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x12d7700560f441d4L)).origin("1357676981078990911").done();
     b.alias("setEconomicMode");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTurnMission() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "TurnMission", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd935895bcb74L);
+    b.class_(false, false, false);
+    b.super_("WrapperDSL.structure.CommandCall", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd9358955fd28L);
+    b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/7971328689430055796");
+    b.version(2);
+    b.property("value", 0x12d7700560f44212L).type(MetaIdFactory.dataTypeId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x12d7700560f441d4L)).origin("1357676981079261714").done();
+    b.alias("mission");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForTurnMotors() {

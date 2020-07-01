@@ -8,6 +8,7 @@ import jetbrains.mps.text.impl.TextGenSupport;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SProperty;
@@ -20,7 +21,7 @@ public class FlyDirection_TextGen extends TextGenDescriptorBase {
     int distanceInt = SPropertyOperations.getInteger(distanceNode, PROPS.value$9VW0);
 
     int blockCount = distanceInt / 5;
-
+    SNodeOperations.getParent(ctx.getPrimaryInput());
     for (int i = 0; i < blockCount; i++) {
       tgs.append("DroneBusinessObject.getInstance().flyToDirection(drone,DirectionEnum.");
       tgs.append(SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.direc$k0Fw).getName());

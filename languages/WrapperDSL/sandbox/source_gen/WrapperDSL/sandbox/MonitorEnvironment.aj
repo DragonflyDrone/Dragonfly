@@ -21,6 +21,7 @@ import view.drone.*;
 //IMPORTS//
 
 public aspect MonitorEnvironment{
+private boolean alreadyExecuting = false;
 pointcut flyingToDirection(): call (* model.entity.drone.DroneBusinessObject.flyToDirection(*,*));
 before():flyingToDirection()
 &&
@@ -44,13 +45,45 @@ Drone drone = (Drone) thisJoinPoint.getArgs()[0];
 System.out.println("Drone["+drone.getLabel()+"] "+"MonitorEnvironment");
 LoggerController.getInstance().print("Drone["+drone.getLabel()+"] MonitorEnvironment");
 
-DroneBusinessObject.getInstance().flyToDirection(drone,DirectionEnum.NORTH);
-DroneBusinessObject.getInstance().flyToDirection(drone,DirectionEnum.WEST);
-DroneBusinessObject.getInstance().flyToDirection(drone,DirectionEnum.SOUTH);
-DroneBusinessObject.getInstance().flyToDirection(drone,DirectionEnum.SOUTH);
-DroneBusinessObject.getInstance().flyToDirection(drone,DirectionEnum.EAST);
-DroneBusinessObject.getInstance().flyToDirection(drone,DirectionEnum.EAST);
-DroneBusinessObject.getInstance().flyToDirection(drone,DirectionEnum.NORTH);
-DroneBusinessObject.getInstance().flyToDirection(drone,DirectionEnum.NORTH);
+if(alreadyExecuting){
+            return;
+        }
+        alreadyExecuting =true;
+int numberOfMoviments = 9;
+final int[] movimentCount = {1};
+new StopWatch(0,1000) {
+@Override
+public void task() {
+Platform.runLater(() -> {
+switch (movimentCount[0]){
+case 1: DroneBusinessObject.getInstance().flyToDirection(drone,DirectionEnum.WEST);
+break;
+case 2: DroneBusinessObject.getInstance().flyToDirection(drone,DirectionEnum.NORTH);
+break;
+case 3: DroneBusinessObject.getInstance().flyToDirection(drone,DirectionEnum.WEST);
+break;
+case 4: DroneBusinessObject.getInstance().flyToDirection(drone,DirectionEnum.SOUTH);
+break;
+case 5: DroneBusinessObject.getInstance().flyToDirection(drone,DirectionEnum.SOUTH);
+break;
+case 6: DroneBusinessObject.getInstance().flyToDirection(drone,DirectionEnum.EAST);
+break;
+case 7: DroneBusinessObject.getInstance().flyToDirection(drone,DirectionEnum.EAST);
+break;
+case 8: DroneBusinessObject.getInstance().flyToDirection(drone,DirectionEnum.NORTH);
+break;
+case 9: DroneBusinessObject.getInstance().flyToDirection(drone,DirectionEnum.NORTH);
+break;
+}
+movimentCount[0]++;
+});
+}
+            @Override
+            public boolean conditionStop() {
+                if(movimentCount[0] > numberOfMoviments){
+                    return true;
+                }
+                return false;
+            }};
 }
 }

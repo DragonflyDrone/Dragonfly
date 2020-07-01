@@ -44,7 +44,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_LandingGearConditionalExpression;
   private ConceptPresentation props_LinearAccelerationConditionalExpression;
   private ConceptPresentation props_LogicalExpression;
-  private ConceptPresentation props_Mission;
   private ConceptPresentation props_MotorsPowerConditionalExpression;
   private ConceptPresentation props_NormalBooleanValue;
   private ConceptPresentation props_Number;
@@ -62,6 +61,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_SetHomeLocation;
   private ConceptPresentation props_SetHomeLocationUsingAircraftCurrentLocation;
   private ConceptPresentation props_SetLowBatteryWarningThreshold;
+  private ConceptPresentation props_SetMission;
   private ConceptPresentation props_SetSeriousLowBatteryWarningThreshold;
   private ConceptPresentation props_SetSmartReturnToHomeEnabled;
   private ConceptPresentation props_SpeedConditionalExpression;
@@ -72,6 +72,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_TurnAutomaticControl;
   private ConceptPresentation props_TurnCamera;
   private ConceptPresentation props_TurnEconomyMode;
+  private ConceptPresentation props_TurnMission;
   private ConceptPresentation props_TurnMotors;
   private ConceptPresentation props_Value;
   private ConceptPresentation props_When;
@@ -338,13 +339,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_LogicalExpression = cpb.create();
         }
         return props_LogicalExpression;
-      case LanguageConceptSwitch.Mission:
-        if (props_Mission == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("mission");
-          props_Mission = cpb.create();
-        }
-        return props_Mission;
       case LanguageConceptSwitch.MotorsPowerConditionalExpression:
         if (props_MotorsPowerConditionalExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -469,6 +463,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_SetLowBatteryWarningThreshold = cpb.create();
         }
         return props_SetLowBatteryWarningThreshold;
+      case LanguageConceptSwitch.SetMission:
+        if (props_SetMission == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("SetMission");
+          props_SetMission = cpb.create();
+        }
+        return props_SetMission;
       case LanguageConceptSwitch.SetSeriousLowBatteryWarningThreshold:
         if (props_SetSeriousLowBatteryWarningThreshold == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -539,6 +540,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_TurnEconomyMode = cpb.create();
         }
         return props_TurnEconomyMode;
+      case LanguageConceptSwitch.TurnMission:
+        if (props_TurnMission == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("mission");
+          props_TurnMission = cpb.create();
+        }
+        return props_TurnMission;
       case LanguageConceptSwitch.TurnMotors:
         if (props_TurnMotors == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

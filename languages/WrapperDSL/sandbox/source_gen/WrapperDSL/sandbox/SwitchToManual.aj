@@ -21,6 +21,7 @@ import view.drone.*;
 //IMPORTS//
 
 public aspect SwitchToManual{
+private boolean alreadyExecuting = false;
 pointcut flyingToDirection(): call (* model.entity.drone.DroneBusinessObject.flyToDirection(*,*));
 boolean around():flyingToDirection()
 &&

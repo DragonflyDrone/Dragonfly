@@ -64,8 +64,6 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
         return new IntegerNumber_TextGen();
       case LanguageConceptSwitch.LogicalExpression:
         return new LogicalExpression_TextGen();
-      case LanguageConceptSwitch.Mission:
-        return new Mission_TextGen();
       case LanguageConceptSwitch.OriginAndDestinationDistanceConditionalExpression:
         return new OriginAndDestinationDistanceConditionalExpression_TextGen();
       case LanguageConceptSwitch.PerformingCommandConditionalExpression:
@@ -78,12 +76,16 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
         return new SafeLand_TextGen();
       case LanguageConceptSwitch.ScalarDistanceConditionalExpression:
         return new ScalarDistanceConditionalExpression_TextGen();
+      case LanguageConceptSwitch.SetMission:
+        return new SetMission_TextGen();
       case LanguageConceptSwitch.TurnAutomaticControl:
         return new TurnAutomaticControl_TextGen();
       case LanguageConceptSwitch.TurnCamera:
         return new TurnCamera_TextGen();
       case LanguageConceptSwitch.TurnEconomyMode:
         return new TurnEconomyMode_TextGen();
+      case LanguageConceptSwitch.TurnMission:
+        return new TurnMission_TextGen();
       case LanguageConceptSwitch.While:
         return new While_TextGen();
       case LanguageConceptSwitch.WindDirectionConditionalExpression:
