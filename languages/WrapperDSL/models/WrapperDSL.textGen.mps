@@ -3675,18 +3675,121 @@
     <ref role="WuzLi" to="lpas:7_KOYEjfYJX" resolve="CategoricalDistanceConditionalExpression" />
     <node concept="11bSqf" id="1E9PaQYgzXB" role="11c4hB">
       <node concept="3clFbS" id="1E9PaQYgzXC" role="2VODD2">
-        <node concept="lc7rE" id="1E9PaQYgzXT" role="3cqZAp">
-          <node concept="l9hG8" id="1E9PaQYgzYd" role="lcghm">
-            <node concept="2OqwBi" id="1E9PaQYg$ry" role="lb14g">
-              <node concept="2OqwBi" id="1E9PaQYg$63" role="2Oq$k0">
-                <node concept="117lpO" id="1E9PaQYgzZ3" role="2Oq$k0" />
-                <node concept="3TrcHB" id="1E9PaQYg$g5" role="2OqNvi">
-                  <ref role="3TsBF5" to="lpas:7_KOYEjfYKc" resolve="left" />
+        <node concept="3cpWs8" id="1OCskmu1sQv" role="3cqZAp">
+          <node concept="3cpWsn" id="1OCskmu1sQw" role="3cpWs9">
+            <property role="TrG5h" value="left" />
+            <node concept="3uibUv" id="1OCskmu1sQx" role="1tU5fm">
+              <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+            </node>
+            <node concept="Xl_RD" id="1OCskmu1sUA" role="33vP2m">
+              <property role="Xl_RC" value="" />
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="1OCskmu1uYt" role="3cqZAp">
+          <node concept="3cpWsn" id="1OCskmu1uYu" role="3cpWs9">
+            <property role="TrG5h" value="right" />
+            <node concept="3uibUv" id="1OCskmu1uYv" role="1tU5fm">
+              <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+            </node>
+            <node concept="Xl_RD" id="1OCskmu1vsg" role="33vP2m">
+              <property role="Xl_RC" value="" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="1OCskmu1qFP" role="3cqZAp">
+          <node concept="3clFbS" id="1OCskmu1qFR" role="3clFbx">
+            <node concept="3clFbF" id="1OCskmu1sUZ" role="3cqZAp">
+              <node concept="37vLTI" id="1OCskmu1tcV" role="3clFbG">
+                <node concept="Xl_RD" id="1OCskmu1tlT" role="37vLTx">
+                  <property role="Xl_RC" value="drone.getDistanceDestiny()" />
+                </node>
+                <node concept="37vLTw" id="1OCskmu1sUX" role="37vLTJ">
+                  <ref role="3cqZAo" node="1OCskmu1sQw" resolve="left" />
                 </node>
               </node>
-              <node concept="liA8E" id="1E9PaQYg$DT" role="2OqNvi">
-                <ref role="37wK5l" to="wyt6:~Object.toString()" resolve="toString" />
+            </node>
+          </node>
+          <node concept="3clFbC" id="1OCskmu1rjg" role="3clFbw">
+            <node concept="2OqwBi" id="1OCskmu1sjm" role="3uHU7w">
+              <node concept="1XH99k" id="1OCskmu1rq9" role="2Oq$k0">
+                <ref role="1XH99l" to="lpas:7_KOYEjfYK4" resolve="CategoricalDistanceEnum" />
               </node>
+              <node concept="2ViDtV" id="1OCskmu1swy" role="2OqNvi">
+                <ref role="2ViDtZ" to="lpas:7_KOYEjfYK5" resolve="destination" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="1OCskmu1qZN" role="3uHU7B">
+              <node concept="117lpO" id="1OCskmu1qIC" role="2Oq$k0" />
+              <node concept="3TrcHB" id="1OCskmu1rbm" role="2OqNvi">
+                <ref role="3TsBF5" to="lpas:7_KOYEjfYKc" resolve="left" />
+              </node>
+            </node>
+          </node>
+          <node concept="9aQIb" id="1OCskmu1tn5" role="9aQIa">
+            <node concept="3clFbS" id="1OCskmu1tn6" role="9aQI4">
+              <node concept="3clFbF" id="1OCskmu1tCy" role="3cqZAp">
+                <node concept="37vLTI" id="1OCskmu1tCz" role="3clFbG">
+                  <node concept="Xl_RD" id="1OCskmu1tC$" role="37vLTx">
+                    <property role="Xl_RC" value="drone.getDistanceSource()" />
+                  </node>
+                  <node concept="37vLTw" id="1OCskmu1tC_" role="37vLTJ">
+                    <ref role="3cqZAo" node="1OCskmu1sQw" resolve="left" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="1OCskmu1tVv" role="3cqZAp">
+          <node concept="3clFbS" id="1OCskmu1tVw" role="3clFbx">
+            <node concept="3clFbF" id="1OCskmu2esg" role="3cqZAp">
+              <node concept="37vLTI" id="1OCskmu2eIj" role="3clFbG">
+                <node concept="37vLTw" id="1OCskmu2ese" role="37vLTJ">
+                  <ref role="3cqZAo" node="1OCskmu1uYu" resolve="right" />
+                </node>
+                <node concept="Xl_RD" id="1OCskmu1tVz" role="37vLTx">
+                  <property role="Xl_RC" value="drone.getDistanceDestiny()" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbC" id="1OCskmu1tV_" role="3clFbw">
+            <node concept="2OqwBi" id="1OCskmu1tVA" role="3uHU7w">
+              <node concept="1XH99k" id="1OCskmu1tVB" role="2Oq$k0">
+                <ref role="1XH99l" to="lpas:7_KOYEjfYK4" resolve="CategoricalDistanceEnum" />
+              </node>
+              <node concept="2ViDtV" id="1OCskmu1tVC" role="2OqNvi">
+                <ref role="2ViDtZ" to="lpas:7_KOYEjfYK5" resolve="destination" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="1OCskmu1tVD" role="3uHU7B">
+              <node concept="117lpO" id="1OCskmu1tVE" role="2Oq$k0" />
+              <node concept="3TrcHB" id="1OCskmu1ukj" role="2OqNvi">
+                <ref role="3TsBF5" to="lpas:7_KOYEjfYK9" resolve="right" />
+              </node>
+            </node>
+          </node>
+          <node concept="9aQIb" id="1OCskmu1tVG" role="9aQIa">
+            <node concept="3clFbS" id="1OCskmu1tVH" role="9aQI4">
+              <node concept="3clFbF" id="1OCskmu2eXc" role="3cqZAp">
+                <node concept="37vLTI" id="1OCskmu2faZ" role="3clFbG">
+                  <node concept="37vLTw" id="1OCskmu2eXa" role="37vLTJ">
+                    <ref role="3cqZAo" node="1OCskmu1uYu" resolve="right" />
+                  </node>
+                  <node concept="Xl_RD" id="1OCskmu1tVK" role="37vLTx">
+                    <property role="Xl_RC" value="drone.getDistanceSource()" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="1OCskmu1tHE" role="3cqZAp" />
+        <node concept="lc7rE" id="1E9PaQYgzXT" role="3cqZAp">
+          <node concept="l9hG8" id="1E9PaQYgzYd" role="lcghm">
+            <node concept="37vLTw" id="1OCskmu1uuM" role="lb14g">
+              <ref role="3cqZAo" node="1OCskmu1sQw" resolve="left" />
             </node>
           </node>
           <node concept="l9hG8" id="1E9PaQYg$GM" role="lcghm">
@@ -3703,16 +3806,8 @@
             </node>
           </node>
           <node concept="l9hG8" id="1E9PaQYg_jv" role="lcghm">
-            <node concept="2OqwBi" id="1E9PaQYg_Mt" role="lb14g">
-              <node concept="2OqwBi" id="1E9PaQYg_sF" role="2Oq$k0">
-                <node concept="117lpO" id="1E9PaQYg_lF" role="2Oq$k0" />
-                <node concept="3TrcHB" id="1E9PaQYg_B0" role="2OqNvi">
-                  <ref role="3TsBF5" to="lpas:7_KOYEjfYK9" resolve="right" />
-                </node>
-              </node>
-              <node concept="liA8E" id="1E9PaQYg_Um" role="2OqNvi">
-                <ref role="37wK5l" to="wyt6:~Object.toString()" resolve="toString" />
-              </node>
+            <node concept="37vLTw" id="1OCskmu2fl0" role="lb14g">
+              <ref role="3cqZAo" node="1OCskmu1uYu" resolve="right" />
             </node>
           </node>
         </node>

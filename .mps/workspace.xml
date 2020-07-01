@@ -8,68 +8,13 @@
   <component name="ChangeListManager">
     <list default="true" id="67f9d5de-1d1c-4b09-879f-44fe21ffd1bc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.mps/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.mps/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/EditorAspectDescriptorImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/EditorAspectDescriptorImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/Mission_Editor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/Mission_EditorBuilder_a$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/Mission_EditorBuilder_a$CONCEPTS.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/Mission_EditorBuilder_a$PROPS.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/Mission_EditorBuilder_a.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/structure/ConceptPresentationAspectImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/structure/ConceptPresentationAspectImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/structure/LanguageConceptSwitch.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/structure/LanguageConceptSwitch.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/structure/StructureAspectDescriptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/structure/StructureAspectDescriptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/structure/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/structure/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/structure/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/structure/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/CollisionSensorConditionalExpression_TextGen.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/CollisionSensorConditionalExpression_TextGen.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/ExceptionalScenario_TextGen$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/ExceptionalScenario_TextGen$LINKS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/ExceptionalScenario_TextGen$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/ExceptionalScenario_TextGen$PROPS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/ExceptionalScenario_TextGen.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/ExceptionalScenario_TextGen.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/FlyDirection_TextGen$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/FlyDirection_TextGen$LINKS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/FlyDirection_TextGen$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/FlyDirection_TextGen$PROPS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/FlyDirection_TextGen.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/FlyDirection_TextGen.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/Mission_TextGen$PROPS.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/Mission_TextGen.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/ReturnToHome_TextGen.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/ReturnToHome_TextGen.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/SafeLand_TextGen$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/SafeLand_TextGen$PROPS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/SafeLand_TextGen.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/SafeLand_TextGen.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/TextGenAspectDescriptor$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/TextGenAspectDescriptor$CONCEPTS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/TextGenAspectDescriptor$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/TextGenAspectDescriptor$PROPS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/TextGenAspectDescriptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/TextGenAspectDescriptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/aspectcps-descriptorclasses.mps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/models/WrapperDSL.editor.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/models/WrapperDSL.editor.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/models/WrapperDSL.structure.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/models/WrapperDSL.structure.mps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/models/WrapperDSL.textGen.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/models/WrapperDSL.textGen.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/sandbox/models/WrapperDSL.sandbox.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/sandbox/models/WrapperDSL.sandbox.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/sandbox/source_gen.caches/WrapperDSL/sandbox/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/sandbox/source_gen.caches/WrapperDSL/sandbox/generated" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/sandbox/source_gen/WrapperDSL/sandbox/EmergencyCamera.aj" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/sandbox/source_gen/WrapperDSL/sandbox/EmergencyCamera.aj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/sandbox/source_gen/WrapperDSL/sandbox/KeepFlying.aj" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/sandbox/source_gen/WrapperDSL/sandbox/KeepFlying.aj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/sandbox/source_gen/WrapperDSL/sandbox/MonitorEnvironment.aj" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/sandbox/source_gen/WrapperDSL/sandbox/MonitorEnvironment.aj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/sandbox/source_gen/WrapperDSL/sandbox/MoveAside.aj" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/sandbox/source_gen/WrapperDSL/sandbox/MoveAside.aj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/sandbox/source_gen/WrapperDSL/sandbox/SafeRTH.aj" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/sandbox/source_gen/WrapperDSL/sandbox/SafeRTH.aj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/sandbox/source_gen/WrapperDSL/sandbox/SwitchToManual.aj" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/sandbox/source_gen/WrapperDSL/sandbox/SwitchToManual.aj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen.caches/WrapperDSL/editor/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/source_gen.caches/WrapperDSL/editor/dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen.caches/WrapperDSL/editor/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/source_gen.caches/WrapperDSL/editor/generated" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen.caches/WrapperDSL/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/source_gen.caches/WrapperDSL/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen.caches/WrapperDSL/structure/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/source_gen.caches/WrapperDSL/structure/generated" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen.caches/WrapperDSL/textGen/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/source_gen.caches/WrapperDSL/textGen/dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen.caches/WrapperDSL/textGen/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/source_gen.caches/WrapperDSL/textGen/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/EditorAspectDescriptorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/EditorAspectDescriptorImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/Mission_Editor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/Mission_EditorBuilder_a.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/structure/ConceptPresentationAspectImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/structure/ConceptPresentationAspectImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/structure/LanguageConceptSwitch.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/structure/LanguageConceptSwitch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/structure/StructureAspectDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/structure/StructureAspectDescriptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/structure/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/structure/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/structure/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/structure/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/textGen/CollisionSensorConditionalExpression_TextGen.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/textGen/CollisionSensorConditionalExpression_TextGen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/textGen/ExceptionalScenario_TextGen.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/textGen/ExceptionalScenario_TextGen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/textGen/FlyDirection_TextGen.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/textGen/FlyDirection_TextGen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/textGen/Mission_TextGen.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/textGen/ReturnToHome_TextGen.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/textGen/ReturnToHome_TextGen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/textGen/SafeLand_TextGen.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/textGen/SafeLand_TextGen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/textGen/TextGenAspectDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/textGen/TextGenAspectDescriptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/textGen/CategoricalDistanceConditionalExpression_TextGen.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/textGen/CategoricalDistanceConditionalExpression_TextGen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/textGen/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/textGen/aspectcps-descriptorclasses.mps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/textGen/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/textGen/trace.info" afterDir="false" />
     </list>
@@ -243,27 +188,15 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="f28eb6d4-9071-4c11-bf66-bea682178e30" />
+              <option name="myItemId" value="3e1c68c4-ebe6-40bd-a27f-e74585aa2487(WrapperDSL)" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="DSL-Dragonfly" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
+              <option name="myItemId" value="r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure) in IdeaFile[path: /home/lucas_alves/Workspace/gesad/dragonfly/dsl/DSL-Dragonfly (copy)/languages/WrapperDSL/models/WrapperDSL.structure.mps]" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="a553a0f8-13de-431b-9df4-f626a3ec4dda" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
+              <option name="myItemId" value="math" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -273,15 +206,11 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="a553a0f8-13de-431b-9df4-f626a3ec4dda" />
+              <option name="myItemId" value="3e1c68c4-ebe6-40bd-a27f-e74585aa2487(WrapperDSL)" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="WrapperDSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:2cb78c7c-c192-47c0-ae08-cf53d23996c9(WrapperDSL.sandbox) in IdeaFile[path: /home/lucas_alves/Workspace/gesad/dragonfly/dsl/DSL-Dragonfly (copy)/languages/WrapperDSL/sandbox/models/WrapperDSL.sandbox.mps]" />
+              <option name="myItemId" value="r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure) in IdeaFile[path: /home/lucas_alves/Workspace/gesad/dragonfly/dsl/DSL-Dragonfly (copy)/languages/WrapperDSL/models/WrapperDSL.structure.mps]" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -291,11 +220,7 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="a553a0f8-13de-431b-9df4-f626a3ec4dda" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WrapperDSL" />
+              <option name="myItemId" value="3e1c68c4-ebe6-40bd-a27f-e74585aa2487(WrapperDSL)" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -323,7 +248,129 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="a553a0f8-13de-431b-9df4-f626a3ec4dda" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WrapperDSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="f28eb6d4-9071-4c11-bf66-bea682178e30" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DSL-Dragonfly" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="a553a0f8-13de-431b-9df4-f626a3ec4dda" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="3e1c68c4-ebe6-40bd-a27f-e74585aa2487(WrapperDSL)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure) in IdeaFile[path: /home/lucas_alves/Workspace/gesad/dragonfly/dsl/DSL-Dragonfly (copy)/languages/WrapperDSL/models/WrapperDSL.structure.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="math" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="expression" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="conditional_expression" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="f28eb6d4-9071-4c11-bf66-bea682178e30" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="3e1c68c4-ebe6-40bd-a27f-e74585aa2487(WrapperDSL)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure) in IdeaFile[path: /home/lucas_alves/Workspace/gesad/dragonfly/dsl/DSL-Dragonfly (copy)/languages/WrapperDSL/models/WrapperDSL.structure.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="math" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="expression" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="conditional_expression" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="distance" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="3e1c68c4-ebe6-40bd-a27f-e74585aa2487(WrapperDSL)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure) in IdeaFile[path: /home/lucas_alves/Workspace/gesad/dragonfly/dsl/DSL-Dragonfly (copy)/languages/WrapperDSL/models/WrapperDSL.structure.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="math" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="expression" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -334,6 +381,30 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="3e1c68c4-ebe6-40bd-a27f-e74585aa2487(WrapperDSL)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure) in IdeaFile[path: /home/lucas_alves/Workspace/gesad/dragonfly/dsl/DSL-Dragonfly (copy)/languages/WrapperDSL/models/WrapperDSL.structure.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="math" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="expression" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="conditional_expression" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="distance" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="8750727080427121661" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </SELECTED>

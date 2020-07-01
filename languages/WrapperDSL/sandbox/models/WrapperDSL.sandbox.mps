@@ -124,9 +124,6 @@
         <child id="8750727080426179942" name="right" index="3EglUc" />
         <child id="8750727080426179941" name="left" index="3EglUf" />
       </concept>
-      <concept id="1357676981078990910" name="WrapperDSL.structure.TurnEconomyMode" flags="ng" index="1M9P0V">
-        <property id="1357676981078990911" name="value" index="1M9P0U" />
-      </concept>
     </language>
   </registry>
   <node concept="1nTbkf" id="4VxqpBPzXkE">
@@ -286,9 +283,6 @@
           </node>
           <node concept="1$L7Pe" id="24MtOl64TMt" role="1nfDy6">
             <property role="1$L7P9" value="24MtOl5XwD6/on" />
-          </node>
-          <node concept="1M9P0V" id="24MtOl64TMV" role="1nfDy6">
-            <property role="1M9P0U" value="1bns0lwX47l/Start" />
           </node>
           <node concept="1nTnHB" id="24MtOl60mfj" role="1nfDy6">
             <node concept="1$L7Pe" id="24MtOl622XJ" role="1nTnyY">

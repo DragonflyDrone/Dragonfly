@@ -39,8 +39,7 @@ LoggerController.getInstance().print("Drone["+drone.getLabel()+"] EmergencyCamer
 
 drone.setCameraState(CameraStateEnum.ON);
 drone.setGambialState(GambialStateEnum.ON);
-drone.setEconomyMode(true);
-if(origin<destination){
+if(drone.getDistanceSource()<drone.getDistanceDestiny()){
 drone.setGambialState(GambialStateEnum.EAST);
 
 }else{

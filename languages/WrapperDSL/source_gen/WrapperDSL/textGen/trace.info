@@ -497,22 +497,39 @@
   </root>
   <root nodeRef="r:98ce4f8d-75ef-41b6-8025-6561aecf815f(WrapperDSL.textGen)/1912293359481929574">
     <file name="CategoricalDistanceConditionalExpression_TextGen.java">
-      <node id="1912293359481929574" at="14,54,15,55" concept="8" />
-      <node id="1912293359481929613" at="15,55,16,95" concept="3" />
-      <node id="1912293359481932594" at="16,95,17,99" concept="3" />
-      <node id="1912293359481935071" at="17,99,18,96" concept="3" />
-      <node id="1912293359481929574" at="22,0,23,0" concept="12" trace="left$H7qt" />
-      <node id="1912293359481929574" at="23,0,24,0" concept="12" trace="operator$H7au" />
-      <node id="1912293359481929574" at="24,0,25,0" concept="12" trace="right$H7p0" />
-      <node id="1912293359481929574" at="13,0,20,0" concept="7" trace="generateText#(Ljetbrains/mps/text/rt/TextGenContext;)V" />
-      <scope id="1912293359481929574" at="14,54,18,96">
+      <node id="1912293359481929574" at="15,54,16,55" concept="8" />
+      <node id="2101053769986198943" at="16,55,17,21" concept="8" />
+      <node id="2101053769986207645" at="17,21,18,22" concept="8" />
+      <node id="2101053769986199231" at="19,289,20,42" concept="3" />
+      <node id="2101053769986202146" at="21,12,22,41" concept="3" />
+      <node id="2101053769986402064" at="24,290,25,43" concept="3" />
+      <node id="2101053769986404172" at="26,12,27,42" concept="3" />
+      <node id="2101053769986202474" at="28,5,29,0" concept="11" />
+      <node id="1912293359481929613" at="29,0,30,21" concept="3" />
+      <node id="1912293359481932594" at="30,21,31,99" concept="3" />
+      <node id="1912293359481935071" at="31,99,32,22" concept="3" />
+      <node id="1912293359481929574" at="36,0,37,0" concept="12" trace="left$H7qt" />
+      <node id="1912293359481929574" at="37,0,38,0" concept="12" trace="right$H7p0" />
+      <node id="1912293359481929574" at="38,0,39,0" concept="12" trace="operator$H7au" />
+      <node id="2101053769986201029" at="21,10,23,5" concept="0" />
+      <node id="2101053769986203372" at="26,10,28,5" concept="0" />
+      <node id="2101053769986190069" at="18,22,23,5" concept="6" />
+      <node id="2101053769986203359" at="23,5,28,5" concept="6" />
+      <node id="1912293359481929574" at="14,0,34,0" concept="7" trace="generateText#(Ljetbrains/mps/text/rt/TextGenContext;)V" />
+      <scope id="2101053769986190071" at="19,289,20,42" />
+      <scope id="2101053769986201030" at="21,12,22,41" />
+      <scope id="2101053769986203360" at="24,290,25,43" />
+      <scope id="2101053769986203373" at="26,12,27,42" />
+      <scope id="1912293359481929574" at="15,54,32,22">
+        <var name="left" id="2101053769986198944" />
+        <var name="right" id="2101053769986207646" />
         <var name="tgs" id="1912293359481929574" />
       </scope>
-      <scope id="1912293359481929574" at="13,0,20,0">
+      <scope id="1912293359481929574" at="14,0,34,0">
         <var name="ctx" id="1912293359481929574" />
       </scope>
-      <unit id="1912293359481929574" at="21,0,26,0" name="WrapperDSL.textGen.CategoricalDistanceConditionalExpression_TextGen$PROPS" />
-      <unit id="1912293359481929574" at="12,0,27,0" name="WrapperDSL.textGen.CategoricalDistanceConditionalExpression_TextGen" />
+      <unit id="1912293359481929574" at="35,0,40,0" name="WrapperDSL.textGen.CategoricalDistanceConditionalExpression_TextGen$PROPS" />
+      <unit id="1912293359481929574" at="13,0,41,0" name="WrapperDSL.textGen.CategoricalDistanceConditionalExpression_TextGen" />
     </file>
     <file name="TextGenAspectDescriptor.java">
       <node id="1912293359481929574" at="35,74,36,70" concept="9" />
