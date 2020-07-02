@@ -363,6 +363,7 @@ public class DroneBusinessObject {
         return true;
     }
 
+    //Ainda não sei onde botar essas funcoes sabe...
     /**
      * Colisao se drone e arvore, futuramente objeto, caso estejam menor ou igual em altura
      * @param selectDrone
