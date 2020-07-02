@@ -9,6 +9,7 @@ import view.CellView;
 import view.SelectableView;
 import view.drone.DroneView;
 import view.drone.DroneViewImpl;
+import model.entity.Tree;
 
 import java.util.List;
 import java.util.Random;
@@ -208,7 +209,7 @@ public class DroneBusinessObject {
 
         if (selectedDrone.isBadConnection()
                 && !selectedDrone.isReturningToHome()
-                && selectedDrone.getCurrentBattery()>10 // da prioridade ao sefaland
+                && selectedDrone.getCurrentBattery()>10 // da prioridade ao safeland
                 ) {
 
 
@@ -258,6 +259,12 @@ public class DroneBusinessObject {
 
         if (selectedDrone.getCurrentBattery() <= 15 && selectedDrone.isNormalMode()) {
             applyEconomyMode(selectedDrone);
+        }
+
+        //Compara as duas alturas porem n posso instaciar uma Tree aqui...
+        if(selectedDrone.isHeightGreater()){
+
+
         }
 
         if (selectedDrone.getCurrentBattery() <= 10 && selectedDrone.getDistanceDestiny() > 0
@@ -339,6 +346,48 @@ public class DroneBusinessObject {
 
 
 
+    }
+
+    /**
+     * Drone sobrevoa se a altura for maior
+     * @param selectedDrone Drone selecionado
+     * @return
+     */
+    public static boolean overfly(Drone selectedDrone) {
+        if(selectedDrone.isHeightGreater()){
+            return false;
+        }
+
+        selectedDrone.setHeightGreater(true);
+
+        return true;
+    }
+
+    /**
+     * Colisao se drone e arvore, futuramente objeto, caso estejam menor ou igual em altura
+     * @param selectDrone
+     * @param tree
+     */
+    public static void collision(Drone selectDrone, Tree tree){
+        //**
+        System.out.println("Collision");
+    }
+
+    /**
+     * Compara as alturas por enquanto do drone com a Tree, que futuramente sera um Obj
+     * @param selectedDrone
+     * @param tree
+     */
+    public static void compareHeight(Drone selectedDrone, Tree tree){
+        KeyCode flyDirectionCommand = selectedDrone.getFlyDirectionCommand();
+        if (selectedDrone.getHeight() > tree.getHeightTree()){
+            overfly(selectedDrone);
+            flying(selectedDrone, flyDirectionCommand);
+        }
+        else if(selectedDrone.getHeight() <= tree.getHeightTree()){
+            overfly(selectedDrone);
+            collision(selectedDrone, tree);
+        }
     }
 
     public static boolean landing(Drone selectedDrone) {
@@ -1167,7 +1216,7 @@ public class DroneBusinessObject {
             return;
         }*/
 
-        if (drone.isOnWater()) {
+        if (drone.isOnWater()) {;
             System.out.println("Drone[" + drone.getLabel() + "] " + "Drone landed on water");
             LoggerController.getInstance().print("Drone[" + drone.getLabel() + "] " + "Drone landed on water");
         } else {

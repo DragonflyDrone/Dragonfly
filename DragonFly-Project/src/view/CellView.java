@@ -22,6 +22,7 @@ public class CellView extends Pane implements SelectableView, Cell.Listener {
     private EnvironmentView environmentView;
     private Integer rowPosition =0, collunmPosition =0;
     private List<Node> nodeList = new ArrayList<>();
+    private Double heightObject = 0.D;
 
     private SelectHelper selectHelper = new SelectHelper(SelectHelper.DEFAULT_COLOR);
 
@@ -105,8 +106,6 @@ public class CellView extends Pane implements SelectableView, Cell.Listener {
 
     }
 
-
-
     public int getCollunmPosition() {
         return collunmPosition;
     }
@@ -114,6 +113,11 @@ public class CellView extends Pane implements SelectableView, Cell.Listener {
     public void setCollunmPosition(int collunmPosition) {
         this.collunmPosition = collunmPosition;
     }
+
+    public Double getHeightObject(){ return heightObject; }
+
+    public void setHeightObject(Double heightObject){ this.heightObject = heightObject; }
+
 
     public EnvironmentView getEnvironmentView() {
         return environmentView;

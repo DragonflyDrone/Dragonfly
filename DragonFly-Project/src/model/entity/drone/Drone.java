@@ -52,6 +52,7 @@ public class Drone extends Entity {
     private Boolean isGoingManualToDestiny = true;
     private Boolean isGoingAutomaticToDestiny = false;
     private Boolean isReturningToHome = false;
+    private Boolean isHeightGreater = false;
 
     private Boolean isLost = false;
 
@@ -265,7 +266,7 @@ public class Drone extends Entity {
         notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
     }
 
-    public Double getHeight(){ return height; } //**
+    public Double getHeight(){ return height; }
 
     public void setHeight(Double height) {
         Double oldValue = this.height;
@@ -360,6 +361,22 @@ public class Drone extends Entity {
         this.isStrongWind = isStrongWind;
 
         notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
+    }
+
+
+    public boolean isHeightGreater(){ return isHeightGreater; } //**
+
+    public void setHeightGreater(boolean isHeightGreater){
+        boolean oldValue = this.isHeightGreater;
+        boolean newValue = isHeightGreater;
+
+        if(oldValue == newValue){
+            return;
+        }
+
+        this.isHeightGreater = isHeightGreater;
+
+        notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(), oldValue, newValue);
     }
 
     public void setIsAutomatic(boolean isAutomatic) {

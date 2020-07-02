@@ -133,7 +133,7 @@ public class DroneSettingsPanelController extends SettingsPanelController<Drone>
 
             MainController.getInstance().notitySaveFromPanelSettings();
 
-            saved =true;
+            saved = true;
 
 
         });
@@ -275,6 +275,7 @@ public class DroneSettingsPanelController extends SettingsPanelController<Drone>
         Double batteryPerSecond = selectedDrone.getBatteryPerSecond();
         Double initialBattery = selectedDrone.getInitialBattery();
         Double height = selectedDrone.getHeight();
+
         String currentSourceCellString =
                 "<" + selectedDrone.getSourceCell().getRowPosition()
                         + "," + selectedDrone.getSourceCell().getColumnPosition() + ">";
@@ -306,6 +307,7 @@ public class DroneSettingsPanelController extends SettingsPanelController<Drone>
         consumptionPerBlockTextView.setText("");
         consumptionPerSecondTextView.setText("");
         initialBatteryTextView.setText("");
+        heightTextView.setText("");
         wrapperComboBox.getSelectionModel().clearSelection();
         currentSourceCell.setText("<0,0>");
         currentDestinyCell.setText("<0,0>");
