@@ -1216,7 +1216,7 @@ public class DroneBusinessObject {
             return;
         }*/
 
-        if (drone.isOnWater()) {;
+        if (drone.isOnWater()) {
             System.out.println("Drone[" + drone.getLabel() + "] " + "Drone landed on water");
             LoggerController.getInstance().print("Drone[" + drone.getLabel() + "] " + "Drone landed on water");
         } else {
