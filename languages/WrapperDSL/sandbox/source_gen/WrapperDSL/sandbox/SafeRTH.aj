@@ -27,7 +27,7 @@ boolean around():flyingToDirection()
 &&
 if
 (
-(((Drone)thisJoinPoint.getArgs()[0]).isReturningToHome() == true)
+
 &&
 (
 (((Drone)thisJoinPoint.getArgs()[0]).getCollisionState() == CollisionStateEnum.OFF)

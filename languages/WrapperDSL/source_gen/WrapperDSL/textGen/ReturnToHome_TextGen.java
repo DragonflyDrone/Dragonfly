@@ -20,14 +20,14 @@ public class ReturnToHome_TextGen extends TextGenDescriptorBase {
     // conditional expression 
     if ((SNodeOperations.getNodeAncestor(ctx.getPrimaryInput(), CONCEPTS.Given$e3, false, false) != null)) {
       SNode performimRTHExpression = (SNode) SNodeOperations.getParent(ctx.getPrimaryInput());
-      if (SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.value$e63s) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x12d7700560f441d4L, "WrapperDSL.structure.CommandStateEnum"), 0x12d7700560f441d5L, "START") || SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.value$e63s) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x12d7700560f441d4L, "WrapperDSL.structure.CommandStateEnum"), 0x12d7700560f441d6L, "RESUME") || SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.value$e63s) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x12d7700560f441d4L, "WrapperDSL.structure.CommandStateEnum"), 0x2132774545ef497dL, "RUNNING")) {
+      if (SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.value$e63s) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x12d7700560f441d4L, "WrapperDSL.structure.CommandStateEnum"), 0x12d7700560f441d5L, "STARTED") || SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.value$e63s) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x12d7700560f441d4L, "WrapperDSL.structure.CommandStateEnum"), 0x12d7700560f441d6L, "RESUMED")) {
         tgs.append("(");
         tgs.append("((Drone)thisJoinPoint.getArgs()[0]).isReturningToHome() ");
         transformationOperations.transformOperator(SPropertyOperations.getEnum(performimRTHExpression, PROPS.operation$y8VS).getName(), ctx);
         tgs.append(" true");
         tgs.append(")");
 
-      } else if (SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.value$e63s) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x12d7700560f441d4L, "WrapperDSL.structure.CommandStateEnum"), 0x12d7700560f441d9L, "CANCEL") || SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.value$e63s) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x12d7700560f441d4L, "WrapperDSL.structure.CommandStateEnum"), 0x12d7700560f44223L, "PAUSE")) {
+      } else if (SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.value$e63s) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x12d7700560f441d4L, "WrapperDSL.structure.CommandStateEnum"), 0x12d7700560f441d9L, "CANCELED") || SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.value$e63s) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x12d7700560f441d4L, "WrapperDSL.structure.CommandStateEnum"), 0x12d7700560f44223L, "PAUSED")) {
         tgs.append("(");
         tgs.append("((Drone)thisJoinPoint.getArgs()[0]).isReturningToHome() ");
         transformationOperations.transformOperator(SPropertyOperations.getEnum(performimRTHExpression, PROPS.operation$y8VS).getName(), ctx);
@@ -37,13 +37,13 @@ public class ReturnToHome_TextGen extends TextGenDescriptorBase {
     }
     //  
     if ((SNodeOperations.getNodeAncestor(ctx.getPrimaryInput(), CONCEPTS.Then$f1, false, false) != null)) {
-      if (SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.value$e63s) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x12d7700560f441d4L, "WrapperDSL.structure.CommandStateEnum"), 0x12d7700560f441d5L, "START") || SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.value$e63s) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x12d7700560f441d4L, "WrapperDSL.structure.CommandStateEnum"), 0x12d7700560f441d6L, "RESUME") || SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.value$e63s) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x12d7700560f441d4L, "WrapperDSL.structure.CommandStateEnum"), 0x2132774545ef497dL, "RUNNING")) {
+      if (SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.value$e63s) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x12d7700560f441d4L, "WrapperDSL.structure.CommandStateEnum"), 0x12d7700560f441d5L, "STARTED") || SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.value$e63s) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x12d7700560f441d4L, "WrapperDSL.structure.CommandStateEnum"), 0x12d7700560f441d6L, "RESUMED")) {
         tgs.append("drone.setReturningToHome( ");
         tgs.append("true");
         tgs.append(");");
         tgs.newLine();
 
-      } else if (SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.value$e63s) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x12d7700560f441d4L, "WrapperDSL.structure.CommandStateEnum"), 0x12d7700560f441d9L, "CANCEL") || SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.value$e63s) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x12d7700560f441d4L, "WrapperDSL.structure.CommandStateEnum"), 0x12d7700560f44223L, "PAUSE")) {
+      } else if (SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.value$e63s) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x12d7700560f441d4L, "WrapperDSL.structure.CommandStateEnum"), 0x12d7700560f441d9L, "CANCELED") || SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.value$e63s) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x12d7700560f441d4L, "WrapperDSL.structure.CommandStateEnum"), 0x12d7700560f44223L, "PAUSED")) {
         tgs.append("drone.setReturningToHome( ");
         tgs.append("false");
         tgs.append(");");

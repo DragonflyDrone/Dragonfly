@@ -14,7 +14,7 @@ public class SafeLand_TextGen extends TextGenDescriptorBase {
   @Override
   public void generateText(final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
-    if (SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.value$8reH) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x12d7700560f441d4L, "WrapperDSL.structure.CommandStateEnum"), 0x12d7700560f441d5L, "START") || SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.value$8reH) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x12d7700560f441d4L, "WrapperDSL.structure.CommandStateEnum"), 0x12d7700560f441d6L, "RESUME")) {
+    if (SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.value$8reH) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x12d7700560f441d4L, "WrapperDSL.structure.CommandStateEnum"), 0x12d7700560f441d5L, "STARTED") || SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.value$8reH) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x12d7700560f441d4L, "WrapperDSL.structure.CommandStateEnum"), 0x12d7700560f441d6L, "RESUMED")) {
       tgs.append("DroneBusinessObject.getInstance().safeLanding(drone);");
       tgs.newLine();
       tgs.append("DroneBusinessObject.getInstance().landing(drone);");

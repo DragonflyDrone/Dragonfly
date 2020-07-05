@@ -50,7 +50,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_OnOffSmokeConditionalExpression;
   private ConceptPresentation props_OriginAndDestinationDistanceConditionalExpression;
   private ConceptPresentation props_PayloadConditionalExpression;
-  private ConceptPresentation props_PerformingCommandConditionalExpression;
+  private ConceptPresentation props_PerformingOperationConditionalExpression;
   private ConceptPresentation props_RegionConditionalExpression;
   private ConceptPresentation props_ReturnToHome;
   private ConceptPresentation props_SafeLand;
@@ -383,13 +383,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_PayloadConditionalExpression = cpb.create();
         }
         return props_PayloadConditionalExpression;
-      case LanguageConceptSwitch.PerformingCommandConditionalExpression:
-        if (props_PerformingCommandConditionalExpression == null) {
+      case LanguageConceptSwitch.PerformingOperationConditionalExpression:
+        if (props_PerformingOperationConditionalExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("PerformingCommandConditionalExpression");
-          props_PerformingCommandConditionalExpression = cpb.create();
+          cpb.rawPresentation("PerformingOperationConditionalExpression");
+          props_PerformingOperationConditionalExpression = cpb.create();
         }
-        return props_PerformingCommandConditionalExpression;
+        return props_PerformingOperationConditionalExpression;
       case LanguageConceptSwitch.RegionConditionalExpression:
         if (props_RegionConditionalExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

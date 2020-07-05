@@ -24,9 +24,12 @@ public class EnumerationDescriptor_InternalStateEnum extends EnumerationDescript
   private final EnumerationDescriptor.MemberDescriptor myMember_RECOVERING_0 = new EnumerationDescriptor.MemberDescriptor("RECOVERING", "RECOVERING", 0x78c933fd42a4d750L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/8703544917708035920");
   private final EnumerationDescriptor.MemberDescriptor myMember_UNKNOWN_0 = new EnumerationDescriptor.MemberDescriptor("UNKNOWN", "UNKNOWN", 0x78c933fd42a4d758L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/8703544917708035928");
   private final EnumerationDescriptor.MemberDescriptor myMember_NOT_SUPPORTED_0 = new EnumerationDescriptor.MemberDescriptor("NOT_SUPPORTED", "NOT_SUPPORTED", 0x78c933fd42a4d76bL, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/8703544917708035947");
+  private final EnumerationDescriptor.MemberDescriptor myMember_PAUSED_0 = new EnumerationDescriptor.MemberDescriptor("PAUSED", "PAUSED", 0x76bf29ae476d7d36L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/8556603645526637878");
+  private final EnumerationDescriptor.MemberDescriptor myMember_CANCELED_0 = new EnumerationDescriptor.MemberDescriptor("CANCELED", "CANCELED", 0x76bf29ae476d7d41L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/8556603645526637889");
+  private final EnumerationDescriptor.MemberDescriptor myMember_RESUMED_0 = new EnumerationDescriptor.MemberDescriptor("RESUMED", "RESUMED", 0x76bf29ae476d7d65L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/8556603645526637925");
 
-  private final EnumerationLiteralsIndex myIndex = EnumerationLiteralsIndex.build(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x78c933fd42a4d735L, 0x78c933fd42a4d736L, 0x78c933fd42a4d737L, 0x78c933fd42a4d73aL, 0x78c933fd42a4d73eL, 0x78c933fd42a4d743L, 0x78c933fd42a4d749L, 0x78c933fd42a4d750L, 0x78c933fd42a4d758L, 0x78c933fd42a4d76bL);
-  private final List<EnumerationDescriptor.MemberDescriptor> myMembers = new EnumerationDescriptorBase.MembersList(myIndex, myMember_EXECUTING_0, myMember_READY_TO_EXECUTE_0, myMember_READY_TO_UPLOAD_0, myMember_UPLOADING_0, myMember_EXECUTION_PAUSED_0, myMember_DISCONNECTED_0, myMember_RECOVERING_0, myMember_UNKNOWN_0, myMember_NOT_SUPPORTED_0);
+  private final EnumerationLiteralsIndex myIndex = EnumerationLiteralsIndex.build(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x78c933fd42a4d735L, 0x78c933fd42a4d736L, 0x78c933fd42a4d737L, 0x78c933fd42a4d73aL, 0x78c933fd42a4d73eL, 0x78c933fd42a4d743L, 0x78c933fd42a4d749L, 0x78c933fd42a4d750L, 0x78c933fd42a4d758L, 0x78c933fd42a4d76bL, 0x76bf29ae476d7d36L, 0x76bf29ae476d7d41L, 0x76bf29ae476d7d65L);
+  private final List<EnumerationDescriptor.MemberDescriptor> myMembers = new EnumerationDescriptorBase.MembersList(myIndex, myMember_EXECUTING_0, myMember_READY_TO_EXECUTE_0, myMember_READY_TO_UPLOAD_0, myMember_UPLOADING_0, myMember_EXECUTION_PAUSED_0, myMember_DISCONNECTED_0, myMember_RECOVERING_0, myMember_UNKNOWN_0, myMember_NOT_SUPPORTED_0, myMember_PAUSED_0, myMember_CANCELED_0, myMember_RESUMED_0);
 
   @Nullable
   @Override
@@ -65,6 +68,12 @@ public class EnumerationDescriptor_InternalStateEnum extends EnumerationDescript
         return myMember_UNKNOWN_0;
       case "NOT_SUPPORTED":
         return myMember_NOT_SUPPORTED_0;
+      case "PAUSED":
+        return myMember_PAUSED_0;
+      case "CANCELED":
+        return myMember_CANCELED_0;
+      case "RESUMED":
+        return myMember_RESUMED_0;
     }
     return null;
   }

@@ -200,13 +200,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SProperty" />
     <classNode extendsClassName="jetbrains.mps.text.rt.TextGenDescriptorBase" />
   </dependency>
-  <dependency className="WrapperDSL.textGen.PerformingCommandConditionalExpression_TextGen">
+  <dependency className="WrapperDSL.textGen.PerformingOperationConditionalExpression_TextGen">
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.text.impl.TextGenSupport" />
     <classNode dependClassName="jetbrains.mps.text.rt.TextGenContext" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
     <classNode extendsClassName="jetbrains.mps.text.rt.TextGenDescriptorBase" />
   </dependency>
   <dependency className="WrapperDSL.textGen.RegionConditionalExpression_TextGen">
@@ -288,7 +285,7 @@
     <classNode dependClassName="WrapperDSL.textGen.IntegerNumber_TextGen" />
     <classNode dependClassName="WrapperDSL.textGen.LogicalExpression_TextGen" />
     <classNode dependClassName="WrapperDSL.textGen.OriginAndDestinationDistanceConditionalExpression_TextGen" />
-    <classNode dependClassName="WrapperDSL.textGen.PerformingCommandConditionalExpression_TextGen" />
+    <classNode dependClassName="WrapperDSL.textGen.PerformingOperationConditionalExpression_TextGen" />
     <classNode dependClassName="WrapperDSL.textGen.RegionConditionalExpression_TextGen" />
     <classNode dependClassName="WrapperDSL.textGen.ReturnToHome_TextGen" />
     <classNode dependClassName="WrapperDSL.textGen.SafeLand_TextGen" />

@@ -91,7 +91,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       case 35:
         return Collections.<ConceptEditor>singletonList(new PayloadConditionalExpression_Editor());
       case 36:
-        return Collections.<ConceptEditor>singletonList(new PerformingCommandConditionalExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new PerformingOperationConditionalExpression_Editor());
       case 37:
         return Collections.<ConceptEditor>singletonList(new RegionConditionalExpression_Editor());
       case 38:

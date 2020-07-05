@@ -484,25 +484,22 @@
   </node>
   <node concept="24kQdi" id="7z9cZP2AH7$">
     <property role="3GE5qa" value="math.expression.conditional_expression" />
-    <ref role="1XX52x" to="lpas:7z9cZP2AH7p" resolve="PerformingCommandConditionalExpression" />
+    <ref role="1XX52x" to="lpas:7z9cZP2AH7p" resolve="PerformingOperationConditionalExpression" />
     <node concept="3EZMnI" id="7z9cZP2AH7A" role="2wV5jI">
       <node concept="3F0ifn" id="7z9cZP2AH7H" role="3EZMnx">
         <property role="3F0ifm" value="(" />
       </node>
-      <node concept="3F0ifn" id="7z9cZP2AH7V" role="3EZMnx">
-        <property role="3F0ifm" value="Drone" />
+      <node concept="3F0A7n" id="7qZaqT7pzYT" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:7qZaqT7pzXy" resolve="drone_operator" />
       </node>
-      <node concept="3F0A7n" id="7z9cZP2AH85" role="3EZMnx">
+      <node concept="3F0A7n" id="7qZaqT7pzZ3" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:7z9cZP2AH83" resolve="operation" />
       </node>
-      <node concept="3F0ifn" id="7z9cZP2AH8f" role="3EZMnx">
-        <property role="3F0ifm" value="executing" />
-      </node>
-      <node concept="3F1sOY" id="7z9cZP2AH8r" role="3EZMnx">
-        <ref role="1NtTu8" to="lpas:7z9cZP2AH7q" resolve="perfomingCommand" />
+      <node concept="3F0A7n" id="7qZaqT7pzZj" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:7qZaqT7pzZ9" resolve="state" />
       </node>
       <node concept="3F0ifn" id="7z9cZP2AH8D" role="3EZMnx">
-        <property role="3F0ifm" value="command)" />
+        <property role="3F0ifm" value=")" />
       </node>
       <node concept="l2Vlx" id="7z9cZP2AH7D" role="2iSdaV" />
     </node>

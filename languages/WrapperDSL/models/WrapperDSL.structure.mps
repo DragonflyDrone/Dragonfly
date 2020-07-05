@@ -54,9 +54,17 @@
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
         <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+      <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
+        <property id="709746936026609031" name="linkId" index="3V$3ak" />
+        <property id="709746936026609029" name="role_DebugInfo" index="3V$3am" />
+      </concept>
+      <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
+        <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
       </concept>
     </language>
   </registry>
@@ -364,11 +372,6 @@
       <property role="TrG5h" value="SOUTH_WEAST" />
       <property role="1L1pqM" value="south west" />
     </node>
-    <node concept="25R33" id="31DEoowfNFD" role="25R1y">
-      <property role="3tVfz5" value="3488505779906886377" />
-      <property role="TrG5h" value="ANY" />
-      <property role="1L1pqM" value="any" />
-    </node>
   </node>
   <node concept="25R3W" id="11jlgVoGE2C">
     <property role="3F6X1D" value="1176377449927319720" />
@@ -624,19 +627,22 @@
   <node concept="1TIwiD" id="7z9cZP2AH7p">
     <property role="EcuMT" value="8703544917707379161" />
     <property role="3GE5qa" value="math.expression.conditional_expression" />
-    <property role="TrG5h" value="PerformingCommandConditionalExpression" />
+    <property role="TrG5h" value="PerformingOperationConditionalExpression" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="7z9cZP2AH7q" role="1TKVEi">
-      <property role="IQ2ns" value="8703544917707379162" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="perfomingCommand" />
-      <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="6UvQjm9lvOC" resolve="CommandCall" />
-    </node>
     <node concept="1TJgyi" id="7z9cZP2AH83" role="1TKVEl">
       <property role="IQ2nx" value="8703544917707379203" />
       <property role="TrG5h" value="operation" />
       <ref role="AX2Wp" node="7_KOYEjd0pt" resolve="IqualityOperatorEnum" />
+    </node>
+    <node concept="1TJgyi" id="7qZaqT7pzXy" role="1TKVEl">
+      <property role="IQ2nx" value="8556603645526163298" />
+      <property role="TrG5h" value="drone_operator" />
+      <ref role="AX2Wp" node="7qZaqT7pzXA" resolve="PerformedOperationEnum" />
+    </node>
+    <node concept="1TJgyi" id="7qZaqT7pzZ9" role="1TKVEl">
+      <property role="IQ2nx" value="8556603645526163401" />
+      <property role="TrG5h" value="state" />
+      <ref role="AX2Wp" node="7z9cZP2DdsP" resolve="InternalStateEnum" />
     </node>
     <node concept="PrWs8" id="7z9cZP2C$lA" role="PzmwI">
       <ref role="PrY4T" node="7_KOYEjbOnV" resolve="ConditionalExpression" />
@@ -1208,9 +1214,13 @@
       <property role="3tVfz5" value="8703544917708035902" />
       <property role="TrG5h" value="UPLOADING" />
     </node>
-    <node concept="25R33" id="7z9cZP2Ddt3" role="25R1y">
-      <property role="3tVfz5" value="8703544917708035907" />
-      <property role="TrG5h" value="EXECUTION_PAUSED" />
+    <node concept="1X3_iC" id="7qZaqT7s8UE" role="lGtFl">
+      <property role="3V$3am" value="members" />
+      <property role="3V$3ak" value="c72da2b9-7cce-4447-8389-f407dc1158b7/3348158742936976479/3348158742936976577" />
+      <node concept="25R33" id="7z9cZP2Ddt3" role="8Wnug">
+        <property role="3tVfz5" value="8703544917708035907" />
+        <property role="TrG5h" value="EXECUTION_PAUSED" />
+      </node>
     </node>
     <node concept="25R33" id="7z9cZP2Ddt9" role="25R1y">
       <property role="3tVfz5" value="8703544917708035913" />
@@ -1227,6 +1237,22 @@
     <node concept="25R33" id="7z9cZP2DdtF" role="25R1y">
       <property role="3tVfz5" value="8703544917708035947" />
       <property role="TrG5h" value="NOT_SUPPORTED" />
+    </node>
+    <node concept="25R33" id="7qZaqT7rnOQ" role="25R1y">
+      <property role="3tVfz5" value="8556603645526637878" />
+      <property role="TrG5h" value="PAUSED" />
+    </node>
+    <node concept="25R33" id="7qZaqT7rnP1" role="25R1y">
+      <property role="3tVfz5" value="8556603645526637889" />
+      <property role="TrG5h" value="CANCELED" />
+    </node>
+    <node concept="25R33" id="7qZaqT7rnP_" role="25R1y">
+      <property role="3tVfz5" value="8556603645526637925" />
+      <property role="TrG5h" value="RESUMED" />
+    </node>
+    <node concept="25R33" id="7qZaqT7s8Us" role="25R1y">
+      <property role="3tVfz5" value="8556603645526838940" />
+      <property role="TrG5h" value="STARTED" />
     </node>
   </node>
   <node concept="1TIwiD" id="1bns0lwW20Y">
@@ -1247,28 +1273,23 @@
     <property role="TrG5h" value="CommandStateEnum" />
     <node concept="25R33" id="1bns0lwX47l" role="25R1y">
       <property role="3tVfz5" value="1357676981079261653" />
-      <property role="TrG5h" value="START" />
-      <property role="1L1pqM" value="start" />
+      <property role="TrG5h" value="STARTED" />
+      <property role="1L1pqM" value="started" />
     </node>
     <node concept="25R33" id="1bns0lwX47m" role="25R1y">
       <property role="3tVfz5" value="1357676981079261654" />
-      <property role="TrG5h" value="RESUME" />
-      <property role="1L1pqM" value="resume" />
+      <property role="TrG5h" value="RESUMED" />
+      <property role="1L1pqM" value="resumed" />
     </node>
     <node concept="25R33" id="1bns0lwX47p" role="25R1y">
       <property role="3tVfz5" value="1357676981079261657" />
-      <property role="TrG5h" value="CANCEL" />
-      <property role="1L1pqM" value="cancel" />
+      <property role="TrG5h" value="CANCELED" />
+      <property role="1L1pqM" value="canceled" />
     </node>
     <node concept="25R33" id="1bns0lwX48z" role="25R1y">
       <property role="3tVfz5" value="1357676981079261731" />
-      <property role="TrG5h" value="PAUSE" />
-      <property role="1L1pqM" value="pause" />
-    </node>
-    <node concept="25R33" id="24MtOl5VO_X" role="25R1y">
-      <property role="3tVfz5" value="2392105491496913277" />
-      <property role="TrG5h" value="RUNNING" />
-      <property role="1L1pqM" value="running" />
+      <property role="TrG5h" value="PAUSED" />
+      <property role="1L1pqM" value="paused" />
     </node>
     <node concept="25R33" id="31DEoowefQq" role="25R1y">
       <property role="3tVfz5" value="3488505779906477466" />
@@ -1606,6 +1627,111 @@
       <property role="20lbJX" value="fLJekj6/_1__n" />
       <ref role="20lvS9" node="31DEoowbxW1" resolve="FlyDirection" />
     </node>
+  </node>
+  <node concept="25R3W" id="7qZaqT7pzXA">
+    <property role="3F6X1D" value="8556603645526163302" />
+    <property role="3GE5qa" value="math.expression.conditional_expression" />
+    <property role="TrG5h" value="PerformedOperationEnum" />
+    <node concept="25R33" id="7qZaqT7pzXB" role="25R1y">
+      <property role="3tVfz5" value="8556603645526163303" />
+      <property role="TrG5h" value="returnToHome" />
+      <property role="1L1pqM" value="Return to Home" />
+    </node>
+    <node concept="25R33" id="7qZaqT7pzXC" role="25R1y">
+      <property role="3tVfz5" value="8556603645526163304" />
+      <property role="TrG5h" value="economicMode" />
+      <property role="1L1pqM" value="Economic Mode" />
+    </node>
+    <node concept="25R33" id="7qZaqT7pzXF" role="25R1y">
+      <property role="3tVfz5" value="8556603645526163307" />
+      <property role="TrG5h" value="safeLand" />
+      <property role="1L1pqM" value="Safe Land" />
+    </node>
+    <node concept="25R33" id="7qZaqT7pzXJ" role="25R1y">
+      <property role="3tVfz5" value="8556603645526163311" />
+      <property role="TrG5h" value="landing" />
+      <property role="1L1pqM" value="Landing" />
+    </node>
+    <node concept="25R33" id="7qZaqT7pzXO" role="25R1y">
+      <property role="3tVfz5" value="8556603645526163316" />
+      <property role="TrG5h" value="TakeOff" />
+      <property role="1L1pqM" value="Takeoff" />
+    </node>
+    <node concept="25R33" id="7qZaqT7pzY1" role="25R1y">
+      <property role="3tVfz5" value="8556603645526163329" />
+      <property role="TrG5h" value="manualControl" />
+      <property role="1L1pqM" value="Manual Control" />
+    </node>
+    <node concept="25R33" id="7qZaqT7pzY9" role="25R1y">
+      <property role="3tVfz5" value="8556603645526163337" />
+      <property role="TrG5h" value="mission" />
+      <property role="1L1pqM" value="Mission" />
+    </node>
+    <node concept="25R33" id="7qZaqT7pzXU" role="25R1y">
+      <property role="3tVfz5" value="8556603645526163322" />
+      <property role="TrG5h" value="rotation" />
+      <property role="1L1pqM" value="Rotation" />
+    </node>
+    <node concept="25R33" id="7qZaqT7pzYi" role="25R1y">
+      <property role="3tVfz5" value="8556603645526163346" />
+      <property role="TrG5h" value="maneuver" />
+      <property role="1L1pqM" value="Maneuver" />
+    </node>
+    <node concept="25R33" id="7qZaqT7pzYs" role="25R1y">
+      <property role="3tVfz5" value="8556603645526163356" />
+      <property role="TrG5h" value="gambial_movement" />
+      <property role="1L1pqM" value="Gambial Moviment" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7qZaqT7s8UW">
+    <property role="EcuMT" value="8556603645526838972" />
+    <property role="3GE5qa" value="math.moviment" />
+    <property role="TrG5h" value="DirectionMovimentConditionalExpression" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="7qZaqT7s8UY" role="1TKVEl">
+      <property role="IQ2nx" value="8556603645526838974" />
+      <property role="TrG5h" value="direction" />
+      <ref role="AX2Wp" node="11jlgVoCRQP" resolve="DirectionsEnum" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7qZaqT7s8UX">
+    <property role="EcuMT" value="8556603645526838973" />
+    <property role="3GE5qa" value="math.moviment" />
+    <property role="TrG5h" value="RotateMovimentConditionalExpression" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="7qZaqT7s8Vh" role="1TKVEl">
+      <property role="IQ2nx" value="8556603645526838993" />
+      <property role="TrG5h" value="rotateType" />
+      <ref role="AX2Wp" node="7qZaqT7s8V8" resolve="RotateTypeEnum" />
+    </node>
+    <node concept="1TJgyi" id="7qZaqT7s8Vj" role="1TKVEl">
+      <property role="IQ2nx" value="8556603645526838995" />
+      <property role="TrG5h" value="degree" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+  </node>
+  <node concept="25R3W" id="7qZaqT7s8V8">
+    <property role="3F6X1D" value="8556603645526838984" />
+    <property role="3GE5qa" value="math.moviment" />
+    <property role="TrG5h" value="RotateTypeEnum" />
+    <node concept="25R33" id="7qZaqT7s8Va" role="25R1y">
+      <property role="3tVfz5" value="8556603645526838986" />
+      <property role="TrG5h" value="PITCH" />
+    </node>
+    <node concept="25R33" id="7qZaqT7s8V9" role="25R1y">
+      <property role="3tVfz5" value="8556603645526838985" />
+      <property role="TrG5h" value="ROLL" />
+    </node>
+    <node concept="25R33" id="7qZaqT7s8Vd" role="25R1y">
+      <property role="3tVfz5" value="8556603645526838989" />
+      <property role="TrG5h" value="YAW" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7qZaqT7s8Vm">
+    <property role="EcuMT" value="8556603645526838998" />
+    <property role="3GE5qa" value="math.moviment" />
+    <property role="TrG5h" value="SpeedMovimentConditionalExpression" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
 </model>
 

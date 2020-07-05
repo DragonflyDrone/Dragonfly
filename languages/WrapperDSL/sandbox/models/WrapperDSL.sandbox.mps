@@ -54,7 +54,9 @@
       <concept id="838450833433631730" name="WrapperDSL.structure.FlyToRegion" flags="ng" index="NOXP_">
         <property id="838450833433631751" name="region" index="NOXEg" />
       </concept>
-      <concept id="8703544917707379161" name="WrapperDSL.structure.PerformingCommandConditionalExpression" flags="ng" index="UkY8$">
+      <concept id="8703544917707379161" name="WrapperDSL.structure.PerformingOperationConditionalExpression" flags="ng" index="UkY8$">
+        <property id="8556603645526163401" name="state" index="LQhpB" />
+        <property id="8556603645526163298" name="drone_operator" index="LQhrc" />
         <property id="8703544917707379203" name="operation" index="UkY7Y" />
         <child id="8703544917707379162" name="perfomingCommand" index="UkY8B" />
       </concept>
@@ -308,12 +310,6 @@
     <node concept="1nTbk6" id="31DEoowaEDx" role="1nTbk1">
       <node concept="3Em$gh" id="31DEoowbxVC" role="1nTnJQ">
         <property role="3EnToj" value="5eYfGK4nkaD/and" />
-        <node concept="UkY8$" id="31DEoowbxVJ" role="3EglUf">
-          <property role="UkY7Y" value="7_KOYEjd0pz/is" />
-          <node concept="3BLkKZ" id="31DEoowbxVP" role="UkY8B">
-            <property role="1M8N8H" value="24MtOl5VO_X/Running" />
-          </node>
-        </node>
         <node concept="3Em$gh" id="1OCskmtKOYT" role="3EglUc">
           <property role="3EnToj" value="5eYfGK4nkaL/or" />
           <node concept="ggKfR" id="1OCskmtKOZ0" role="3EglUf">
@@ -324,6 +320,11 @@
             <property role="ggKfM" value="7_KOYEjd0pz/is" />
             <property role="ggKfN" value="1E9PaQY5Rs3/FAILURE" />
           </node>
+        </node>
+        <node concept="UkY8$" id="7qZaqT7rnOv" role="3EglUf">
+          <property role="LQhrc" value="7qZaqT7pzXC/economicMode" />
+          <property role="UkY7Y" value="7_KOYEjd0pz/is" />
+          <property role="LQhpB" value="7z9cZP2DdsQ/EXECUTING" />
         </node>
       </node>
     </node>
@@ -433,6 +434,55 @@
               <node concept="gklgG" id="1OCskmtU6FH" role="glgBa">
                 <property role="gklgH" value="5" />
               </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1nTbkf" id="izYLMlyEsJ">
+    <property role="TrG5h" value="KeepFly1" />
+    <node concept="1nTbk6" id="izYLMlyEsK" role="1nTbk1">
+      <node concept="3Em$gh" id="izYLMlyEsZ" role="1nTnJQ">
+        <property role="3EnToj" value="5eYfGK4nkaD/and" />
+        <node concept="22r6dy" id="izYLMlyEt6" role="3EglUf">
+          <property role="22r6dB" value="7_KOYEjfYK5/destination" />
+          <property role="22r6dD" value="5eYfGK4mCLl/less_than_or_equal_to" />
+          <node concept="gklgG" id="izYLMlyEt8" role="22r6dE">
+            <property role="gklgH" value="10" />
+          </node>
+        </node>
+        <node concept="3Em$gh" id="izYLMlyEtc" role="3EglUc">
+          <property role="3EnToj" value="5eYfGK4nkaD/and" />
+          <node concept="1nTb8h" id="izYLMlyEtj" role="3EglUf">
+            <property role="3Eh7qo" value="7_KOYEjd0pz/is" />
+            <property role="3EhgtX" value="7_KOYEjdthV/STRONG" />
+          </node>
+          <node concept="gii1b" id="izYLMlyEtm" role="3EglUc">
+            <property role="gii1Q" value="7_KOYEjd0pz/is" />
+            <property role="iq1WG" value="11jlgVoCRQU/EAST" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1nTbk7" id="izYLMlyEsM" role="1nTbk3">
+      <node concept="2moHWK" id="izYLMlyEtp" role="2mxZ8X">
+        <property role="1M8N7D" value="1bns0lwX47l/START" />
+      </node>
+    </node>
+    <node concept="1nTbk0" id="izYLMlyEsO" role="1nTbku">
+      <node concept="2mxZ9A" id="izYLMlyEsP" role="1nTnH_">
+        <property role="2mxZ9H" value="5eYfGK4mOi_/around" />
+        <ref role="2mxZ9N" node="izYLMlyEsQ" resolve="goDesti" />
+        <node concept="1nO3mo" id="izYLMlyEsQ" role="2mxZ7t">
+          <property role="TrG5h" value="goDesti" />
+          <node concept="1nTnHw" id="izYLMlyEts" role="1nfDy6">
+            <node concept="1nTb8G" id="izYLMlyEtG" role="1nTnGu">
+              <property role="22qAF_" value="7_KOYEjd0p$/not_equal_to" />
+              <property role="22qAE9" value="79gzy7KeYOS/destination" />
+            </node>
+            <node concept="NOXP_" id="izYLMlyEtJ" role="1nTnGo">
+              <property role="NOXEg" value="79gzy7KeYOS/destination" />
             </node>
           </node>
         </node>

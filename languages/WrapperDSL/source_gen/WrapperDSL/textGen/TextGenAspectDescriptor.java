@@ -66,8 +66,8 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
         return new LogicalExpression_TextGen();
       case LanguageConceptSwitch.OriginAndDestinationDistanceConditionalExpression:
         return new OriginAndDestinationDistanceConditionalExpression_TextGen();
-      case LanguageConceptSwitch.PerformingCommandConditionalExpression:
-        return new PerformingCommandConditionalExpression_TextGen();
+      case LanguageConceptSwitch.PerformingOperationConditionalExpression:
+        return new PerformingOperationConditionalExpression_TextGen();
       case LanguageConceptSwitch.RegionConditionalExpression:
         return new RegionConditionalExpression_TextGen();
       case LanguageConceptSwitch.ReturnToHome:

@@ -50,7 +50,7 @@ public final class LanguageConceptSwitch {
   public static final int OnOffSmokeConditionalExpression = 38;
   public static final int OriginAndDestinationDistanceConditionalExpression = 39;
   public static final int PayloadConditionalExpression = 40;
-  public static final int PerformingCommandConditionalExpression = 41;
+  public static final int PerformingOperationConditionalExpression = 41;
   public static final int RegionConditionalExpression = 42;
   public static final int ReturnToHome = 43;
   public static final int SafeLand = 44;
@@ -123,7 +123,7 @@ public final class LanguageConceptSwitch {
     builder.put(0x3069a9862031a595L, OnOffSmokeConditionalExpression);
     builder.put(0x72508e21f03ced43L, OriginAndDestinationDistanceConditionalExpression);
     builder.put(0x1053550ed8b3fc74L, PayloadConditionalExpression);
-    builder.put(0x78c933fd429ad1d9L, PerformingCommandConditionalExpression);
+    builder.put(0x78c933fd429ad1d9L, PerformingOperationConditionalExpression);
     builder.put(0x53be3ecc045a8ce0L, RegionConditionalExpression);
     builder.put(0x6e9fd935895a950aL, ReturnToHome);
     builder.put(0x4f78da14d91a0524L, SafeLand);

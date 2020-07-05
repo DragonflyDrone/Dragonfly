@@ -57,7 +57,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptOnOffSmokeConditionalExpression = createDescriptorForOnOffSmokeConditionalExpression();
   /*package*/ final ConceptDescriptor myConceptOriginAndDestinationDistanceConditionalExpression = createDescriptorForOriginAndDestinationDistanceConditionalExpression();
   /*package*/ final ConceptDescriptor myConceptPayloadConditionalExpression = createDescriptorForPayloadConditionalExpression();
-  /*package*/ final ConceptDescriptor myConceptPerformingCommandConditionalExpression = createDescriptorForPerformingCommandConditionalExpression();
+  /*package*/ final ConceptDescriptor myConceptPerformingOperationConditionalExpression = createDescriptorForPerformingOperationConditionalExpression();
   /*package*/ final ConceptDescriptor myConceptRegionConditionalExpression = createDescriptorForRegionConditionalExpression();
   /*package*/ final ConceptDescriptor myConceptReturnToHome = createDescriptorForReturnToHome();
   /*package*/ final ConceptDescriptor myConceptSafeLand = createDescriptorForSafeLand();
@@ -97,6 +97,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final EnumerationDescriptor myEnumerationInternalStateEnum = new EnumerationDescriptor_InternalStateEnum();
   /*package*/ final EnumerationDescriptor myEnumerationIqualityOperatorEnum = new EnumerationDescriptor_IqualityOperatorEnum();
   /*package*/ final EnumerationDescriptor myEnumerationLogicalOperatorEnum = new EnumerationDescriptor_LogicalOperatorEnum();
+  /*package*/ final EnumerationDescriptor myEnumerationPerformedOperationEnum = new EnumerationDescriptor_PerformedOperationEnum();
   /*package*/ final EnumerationDescriptor myEnumerationRegionEnum = new EnumerationDescriptor_RegionEnum();
   /*package*/ final EnumerationDescriptor myEnumerationTurnConditionalEnum = new EnumerationDescriptor_TurnConditionalEnum();
   /*package*/ final EnumerationDescriptor myEnumerationTypeOfAdaptationEnum = new EnumerationDescriptor_TypeOfAdaptationEnum();
@@ -115,7 +116,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAdaptationBehavior, myConceptAdaptationScript, myConceptAltitudeConditionalExpression, myConceptAngularAccelerationConditionalExpression, myConceptAnyBoolean, myConceptAnyNumber, myConceptBatteryConditionalExpression, myConceptBooleanValue, myConceptCameraPowerConditionalExpression, myConceptCardinalPointsRotate, myConceptCategoricalDistanceConditionalExpression, myConceptCategoricalWindConditionalExpression, myConceptCollisionSensorConditionalExpression, myConceptCommandCall, myConceptCompassConditionalExpression, myConceptConditionalExpression, myConceptCoordenateConditionalExpression, myConceptDegreesRotate, myConceptDetectSmokeConditionalExpression, myConceptElse, myConceptExceptionalScenario, myConceptExpression, myConceptFlyDirection, myConceptFlyToCoordinates, myConceptFlyToRegion, myConceptGambialCommand, myConceptGimbalConditionalExpression, myConceptGiven, myConceptGpsConditionalExpression, myConceptIf, myConceptIntegerNumber, myConceptLanding, myConceptLandingGearConditionalExpression, myConceptLinearAccelerationConditionalExpression, myConceptLogicalExpression, myConceptMotorsPowerConditionalExpression, myConceptNormalBooleanValue, myConceptNumber, myConceptOnOffSmokeConditionalExpression, myConceptOriginAndDestinationDistanceConditionalExpression, myConceptPayloadConditionalExpression, myConceptPerformingCommandConditionalExpression, myConceptRegionConditionalExpression, myConceptReturnToHome, myConceptSafeLand, myConceptScalarDistanceConditionalExpression, myConceptScalarWindConditionalExpression, myConceptSetAutoFlightSpeed, myConceptSetGoHomeHeightInMeters, myConceptSetHomeLocation, myConceptSetHomeLocationUsingAircraftCurrentLocation, myConceptSetLowBatteryWarningThreshold, myConceptSetMission, myConceptSetSeriousLowBatteryWarningThreshold, myConceptSetSmartReturnToHomeEnabled, myConceptSpeedConditionalExpression, myConceptStatement, myConceptTakeOff, myConceptText, myConceptThen, myConceptTurnAutomaticControl, myConceptTurnCamera, myConceptTurnEconomyMode, myConceptTurnMission, myConceptTurnMotors, myConceptValue, myConceptWhen, myConceptWhile, myConceptWifiConditionalExpression, myConceptWindDirectionConditionalExpression);
+    return Arrays.asList(myConceptAdaptationBehavior, myConceptAdaptationScript, myConceptAltitudeConditionalExpression, myConceptAngularAccelerationConditionalExpression, myConceptAnyBoolean, myConceptAnyNumber, myConceptBatteryConditionalExpression, myConceptBooleanValue, myConceptCameraPowerConditionalExpression, myConceptCardinalPointsRotate, myConceptCategoricalDistanceConditionalExpression, myConceptCategoricalWindConditionalExpression, myConceptCollisionSensorConditionalExpression, myConceptCommandCall, myConceptCompassConditionalExpression, myConceptConditionalExpression, myConceptCoordenateConditionalExpression, myConceptDegreesRotate, myConceptDetectSmokeConditionalExpression, myConceptElse, myConceptExceptionalScenario, myConceptExpression, myConceptFlyDirection, myConceptFlyToCoordinates, myConceptFlyToRegion, myConceptGambialCommand, myConceptGimbalConditionalExpression, myConceptGiven, myConceptGpsConditionalExpression, myConceptIf, myConceptIntegerNumber, myConceptLanding, myConceptLandingGearConditionalExpression, myConceptLinearAccelerationConditionalExpression, myConceptLogicalExpression, myConceptMotorsPowerConditionalExpression, myConceptNormalBooleanValue, myConceptNumber, myConceptOnOffSmokeConditionalExpression, myConceptOriginAndDestinationDistanceConditionalExpression, myConceptPayloadConditionalExpression, myConceptPerformingOperationConditionalExpression, myConceptRegionConditionalExpression, myConceptReturnToHome, myConceptSafeLand, myConceptScalarDistanceConditionalExpression, myConceptScalarWindConditionalExpression, myConceptSetAutoFlightSpeed, myConceptSetGoHomeHeightInMeters, myConceptSetHomeLocation, myConceptSetHomeLocationUsingAircraftCurrentLocation, myConceptSetLowBatteryWarningThreshold, myConceptSetMission, myConceptSetSeriousLowBatteryWarningThreshold, myConceptSetSmartReturnToHomeEnabled, myConceptSpeedConditionalExpression, myConceptStatement, myConceptTakeOff, myConceptText, myConceptThen, myConceptTurnAutomaticControl, myConceptTurnCamera, myConceptTurnEconomyMode, myConceptTurnMission, myConceptTurnMotors, myConceptValue, myConceptWhen, myConceptWhile, myConceptWifiConditionalExpression, myConceptWindDirectionConditionalExpression);
   }
 
   @Override
@@ -204,8 +205,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptOriginAndDestinationDistanceConditionalExpression;
       case LanguageConceptSwitch.PayloadConditionalExpression:
         return myConceptPayloadConditionalExpression;
-      case LanguageConceptSwitch.PerformingCommandConditionalExpression:
-        return myConceptPerformingCommandConditionalExpression;
+      case LanguageConceptSwitch.PerformingOperationConditionalExpression:
+        return myConceptPerformingOperationConditionalExpression;
       case LanguageConceptSwitch.RegionConditionalExpression:
         return myConceptRegionConditionalExpression;
       case LanguageConceptSwitch.ReturnToHome:
@@ -269,7 +270,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<DataTypeDescriptor> getDataTypeDescriptors() {
-    return Arrays.asList(myEnumerationAxisEnum, myEnumerationCategoricalDistanceEnum, myEnumerationCategoricalWindEnum, myEnumerationCommandStateEnum, myEnumerationConditionalOperatorEnum, myEnumerationDirectionsEnum, myEnumerationGambialEnum, myEnumerationInaquelityConditionalOperator, myEnumerationInternalStateEnum, myEnumerationIqualityOperatorEnum, myEnumerationLogicalOperatorEnum, myEnumerationRegionEnum, myEnumerationTurnConditionalEnum, myEnumerationTypeOfAdaptationEnum, myEnumerationbooleanDetectionEnum);
+    return Arrays.asList(myEnumerationAxisEnum, myEnumerationCategoricalDistanceEnum, myEnumerationCategoricalWindEnum, myEnumerationCommandStateEnum, myEnumerationConditionalOperatorEnum, myEnumerationDirectionsEnum, myEnumerationGambialEnum, myEnumerationInaquelityConditionalOperator, myEnumerationInternalStateEnum, myEnumerationIqualityOperatorEnum, myEnumerationLogicalOperatorEnum, myEnumerationPerformedOperationEnum, myEnumerationRegionEnum, myEnumerationTurnConditionalEnum, myEnumerationTypeOfAdaptationEnum, myEnumerationbooleanDetectionEnum);
   }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
@@ -668,14 +669,15 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.property("operators", 0x1053550ed8b3fc76L).type(MetaIdFactory.dataTypeId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x7970d3ea9334065dL)).origin("1176377449927408758").done();
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForPerformingCommandConditionalExpression() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "PerformingCommandConditionalExpression", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x78c933fd429ad1d9L);
+  private static ConceptDescriptor createDescriptorForPerformingOperationConditionalExpression() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WrapperDSL", "PerformingOperationConditionalExpression", 0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x78c933fd429ad1d9L);
     b.class_(false, false, false);
     b.parent(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x7970d3ea932a97ffL);
     b.origin("r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/8703544917707379161");
     b.version(2);
     b.property("operation", 0x78c933fd429ad203L).type(MetaIdFactory.dataTypeId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x7970d3ea9334065dL)).origin("8703544917707379203").done();
-    b.aggregate("perfomingCommand", 0x78c933fd429ad1daL).target(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x6e9fd9358955fd28L).optional(false).ordered(true).multiple(false).origin("8703544917707379162").done();
+    b.property("drone_operator", 0x76bf29ae47663f62L).type(MetaIdFactory.dataTypeId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x76bf29ae47663f66L)).origin("8556603645526163298").done();
+    b.property("state", 0x76bf29ae47663fc9L).type(MetaIdFactory.dataTypeId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x78c933fd42a4d735L)).origin("8556603645526163401").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForRegionConditionalExpression() {

@@ -7,8 +7,8 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class PerformingCommandConditionalExpression_Editor extends DefaultNodeEditor {
+public class PerformingOperationConditionalExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return new PerformingCommandConditionalExpression_EditorBuilder_a(editorContext, node).createCell();
+    return new PerformingOperationConditionalExpression_EditorBuilder_a(editorContext, node).createCell();
   }
 }
