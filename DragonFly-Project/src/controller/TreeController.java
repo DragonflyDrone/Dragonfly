@@ -35,7 +35,7 @@ public class TreeController {
         treeViewMap.put(uniqueID, treeView);
 
 
-        Tree tree = new Tree(uniqueID, labelTree, currentCellView.getRowPosition(), currentCellView.getCollunmPosition(), currentCellView.getHeightObject());
+        Tree tree = new Tree(uniqueID, labelTree, currentCellView.getRowPosition(), currentCellView.getCollunmPosition());
 
         tree.addListener(treeView);
 

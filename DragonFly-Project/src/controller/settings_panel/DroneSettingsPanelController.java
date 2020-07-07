@@ -336,7 +336,7 @@ public class DroneSettingsPanelController extends SettingsPanelController<Drone>
 
                 waitForClickInCell = false;
 
-        }else {
+        }else { //**
             if (selectableView instanceof DroneView) {
                 DroneView droneView = (DroneView) selectableView;
                 Drone drone = DroneController.getInstance().getDroneFrom(droneView.getUniqueID());

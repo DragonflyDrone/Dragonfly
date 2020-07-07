@@ -226,7 +226,7 @@ public class CellController {
         }
     }
 
-    public List<SelectableView> getOverSelectableView(DroneView droneView) {
+    public List<SelectableView> getAboveSelectableView(DroneView droneView) { //*********************
         List<SelectableView> selectableViewList = new ArrayList<>();
 
         CellView currentCellView = droneView.getCurrentCellView();
@@ -240,7 +240,7 @@ public class CellController {
 
     }
 
-    public SelectableView getSelectedEntityView(CellView selectedCellView) {
+    public SelectableView getSelectedEntityView(CellView selectedCellView) { //***
 
         if(selectedCellView.getCurrentCellView().getChildren().isEmpty()){
             return null;

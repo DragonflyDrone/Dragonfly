@@ -10,14 +10,13 @@ public class Tree {
     private Boolean selected = false;
     private List<Listener> listeners = new ArrayList<>();
     private String label;
-    private Double heightTree = 8.D;
+    private Double height = 8.D;
 
-    public Tree(String uniqueID, String label, int rowPosition, int columnPosition, Double heightTree) {
+    public Tree(String uniqueID, String label, int rowPosition, int columnPosition) {
         this.uniqueID = uniqueID;
         this.rowPosition = rowPosition;
         this.columnPosition = columnPosition;
         this.label = label;
-        this.heightTree = heightTree;
         COUNT_TREE++;
     }
 
@@ -66,17 +65,17 @@ public class Tree {
         notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
     }
 
-    public Double getHeightTree(){ return heightTree; }
+    public Double getHeight(){ return height; }
 
-    public void setHeightTree(Double heightTree){
-        Double oldValue = this.heightTree;
-        Double newValue = heightTree;
+    public void setHeight(Double height){
+        Double oldValue = this.height;
+        Double newValue = height;
 
         if(oldValue == newValue){
             return;
         }
 
-        this.heightTree = heightTree;
+        this.height = height;
 
         notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
     }

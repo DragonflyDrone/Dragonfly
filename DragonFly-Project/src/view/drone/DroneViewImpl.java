@@ -167,7 +167,7 @@ public class DroneViewImpl extends DroneView {
         imageViewDrone.setImage(new Image("/view/res/notSelectedDrone.png"));
     }
 
-    public void applyStyleBadConnection() {
+    public void applyStyleBadConnection() { //**
         imageViewBadConnection.setVisible(true);
     }
 
@@ -179,7 +179,7 @@ public class DroneViewImpl extends DroneView {
         imageViewLostDrone.setVisible(false);
     }
 
-    public void applyStyleNormalConnection() {
+    public void applyStyleNormalConnection() { //**
         imageViewBadConnection.setVisible(false);
     }
 
@@ -278,6 +278,29 @@ public class DroneViewImpl extends DroneView {
             return;
         }
 
+        if(methodName.equals("setIsCollision") && !((Boolean) oldValue) && (Boolean) newValue) {
+            applyStyleLostDrone();
+
+            loggerController.print("Drone[" + getDroneLabel() + "] " + "Height of drone greater");
+
+            return;
+        }
+
+        if (methodName.equals("setIsCollision") && ((Boolean) oldValue) && !(Boolean) newValue) {
+            applyStyleNotLostDrone();
+            applyStyleShutDown();
+
+            if(drone.isOnTree()){
+                applyStyleLostDrone();
+            }
+
+            loggerController.print("Drone[" + getDroneLabel() + "] " + "Collision");
+            DroneBusinessObject.updateItIsAbove(drone);
+
+            return;
+        }
+
+
         if (methodName.equals("setIsTookOff") && !((Boolean) oldValue) && (Boolean) newValue) {
 
             applyStyleTakeOff();
@@ -313,15 +336,12 @@ public class DroneViewImpl extends DroneView {
         }
 
 
-        if ((methodName.equals("setCurrentPositionI") || methodName.equals("setCurrentPositionJ"))
+        if ((methodName.equals("setCurrentPositionI") || methodName.equals("setCurrentPositionJ")) //**
                 && ((Integer) oldValue).intValue() != ((Integer) newValue).intValue()) {
 
             updadePositionDroneView(drone);
             // updateItIsOver(drone);
-            DroneBusinessObject.updateItIsOver(drone);
-
-
-
+            DroneBusinessObject.updateItIsAbove(drone);
 
             return;
         }
@@ -334,7 +354,7 @@ public class DroneViewImpl extends DroneView {
             return;
         }
 
-        if (methodName.equals("setBadConnection")
+        if (methodName.equals("setBadConnection") //**
                 && !((Boolean) oldValue) && (Boolean) newValue) {
             applyStyleBadConnection();
 
@@ -342,7 +362,7 @@ public class DroneViewImpl extends DroneView {
 
         }
 
-        if (methodName.equals("setBadConnection")
+        if (methodName.equals("setBadConnection") //**
                 && (Boolean) oldValue && !(Boolean) newValue) {
 
             if (drone.isReturningToHome()) {

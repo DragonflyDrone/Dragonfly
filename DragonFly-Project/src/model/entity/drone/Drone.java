@@ -8,6 +8,7 @@ import model.Cell;
 import model.entity.Entity;
 import view.SelectableView;
 import view.river.RiverView;
+import view.tree.TreeView;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -25,7 +26,7 @@ public class Drone extends Entity {
     private Double initialBattery = 100.D;
     private Double batteryPerBlock = 1.D;
     private Double batteryPerSecond = 1.D;
-    private Double height = 0.D; //**
+    private Double height = 0.D;
 
     // Do changes in Runtime
     private Integer currentPositionI, currentPositionJ;
@@ -39,7 +40,6 @@ public class Drone extends Entity {
 
     private Boolean isBadConnection = false;
 
-
     private Boolean isEconomyMode = false;
 
     private Boolean isSafeland = false;
@@ -52,12 +52,12 @@ public class Drone extends Entity {
     private Boolean isGoingManualToDestiny = true;
     private Boolean isGoingAutomaticToDestiny = false;
     private Boolean isReturningToHome = false;
-    private Boolean isHeightGreater = false;
 
     private Boolean isLost = false;
 
-    private Boolean selected = false;
+    private Boolean isCollision = false;
 
+    private Boolean selected = false;
 
     private List<SelectableView> onTopOfList = new ArrayList<>();
     private List<Listener> listeners = new ArrayList<>();
@@ -266,20 +266,9 @@ public class Drone extends Entity {
         notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
     }
 
+    //**
     public Double getHeight(){ return height; }
-
-    public void setHeight(Double height) {
-        Double oldValue = this.height;
-        Double newValue = height;
-
-        if(oldValue == newValue){
-            return;
-        }
-
-        this.height = height;
-
-        notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
-    }
+    public void setHeight(Double height) { this.height = height; }
 
     public boolean isStrongWind() {
         return isStrongWind;
@@ -363,18 +352,28 @@ public class Drone extends Entity {
         notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
     }
 
+    /**
+     * clida se a altura é maior que...
+     * @return
+     */
+    public boolean isCollision(){
+        //if(getHeight() >= )
+        return isCollision;
+    }
 
-    public boolean isHeightGreater(){ return isHeightGreater; } //**
-
-    public void setHeightGreater(boolean isHeightGreater){
-        boolean oldValue = this.isHeightGreater;
-        boolean newValue = isHeightGreater;
+    /**
+     * Seta um valor novo para o velho, tambem serve para comparar e notificar
+     * @param isCollision
+     */
+    public void setIsCollision(boolean isCollision){
+        boolean oldValue = this.isCollision;
+        boolean newValue = isCollision;
 
         if(oldValue == newValue){
             return;
         }
 
-        this.isHeightGreater = isHeightGreater;
+        this.isCollision = isCollision;
 
         notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(), oldValue, newValue);
     }
@@ -541,7 +540,7 @@ public class Drone extends Entity {
 
     }
 
-    public void setOnTopOfList(List<SelectableView> onTopOfList) {
+    public void setOnTopOfList(List<SelectableView> onTopOfList) { //**
         this.onTopOfList = onTopOfList;
     }
 
@@ -615,7 +614,7 @@ public class Drone extends Entity {
         notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
     }
 
-    public boolean isOnWater(){
+    public boolean isOnWater(){ //************
 
         if(onTopOfList.isEmpty()){
             return false;
@@ -629,11 +628,29 @@ public class Drone extends Entity {
         return false;
     }
 
+    /**
+     * Retorna true ou false se ele esta em cima da arvore
+     * @return
+     */
+    public boolean isOnTree(){ //**************************************************************
+
+        if(onTopOfList.isEmpty()){
+            return false;
+        }
+        for(Object object :onTopOfList){
+            if(object instanceof TreeView){
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     public Boolean isLost() {
         return isLost;
     }
 
-    public void setLost(Boolean isLost) {
+    public void setLost(Boolean isLost) { //**
         boolean oldValue = this.isLost;
         boolean newValue = isLost;
 
