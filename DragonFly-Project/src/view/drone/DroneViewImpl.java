@@ -281,7 +281,7 @@ public class DroneViewImpl extends DroneView {
         if(methodName.equals("setIsCollision") && !((Boolean) oldValue) && (Boolean) newValue) {
             applyStyleLostDrone();
 
-            loggerController.print("Drone[" + getDroneLabel() + "] " + "Height of drone greater");
+            loggerController.print("Drone[" + getDroneLabel() + "] " + "Collision");
 
             return;
         }
@@ -294,7 +294,7 @@ public class DroneViewImpl extends DroneView {
                 applyStyleLostDrone();
             }
 
-            loggerController.print("Drone[" + getDroneLabel() + "] " + "Collision");
+            loggerController.print("Drone[" + getDroneLabel() + "] " + "Drone height is higher");
             DroneBusinessObject.updateItIsAbove(drone);
 
             return;

@@ -263,7 +263,13 @@ public class DroneBusinessObject {
 
             if(selectedDrone.isOnTree()){
                 checkAndPrintIfLostDrone(selectedDrone);
-                shutDown(selectedDrone);
+
+                boolean landedExecuted = landed(selectedDrone);
+
+                if (landedExecuted) {
+                    shutDown(selectedDrone);
+                    collision(selectedDrone);
+                }
             }
         }
 
@@ -358,7 +364,7 @@ public class DroneBusinessObject {
     }
 
     /**
-     * Colisao se o drone e a arvore tenham a mesma altura
+     * Seta colisao se o drone e a arvore tenham a mesma altura
      * @param selectedDrone drone selecionado no checkStatus
      */
     public static boolean collision(Drone selectedDrone){
@@ -367,6 +373,7 @@ public class DroneBusinessObject {
         return true;
     }
 
+    //Ainda n esotu usando essas funçoes
     /**
      * Drone sobrevoa se a altura for maior, ou seja, qnd nao ha colisao
      * @param selectedDrone Drone selecionado
