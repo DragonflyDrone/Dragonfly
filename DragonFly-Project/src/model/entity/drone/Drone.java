@@ -352,12 +352,7 @@ public class Drone extends Entity {
         notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
     }
 
-    /**
-     * clida se a altura é maior que...
-     * @return
-     */
     public boolean isCollision(){
-        //if(getHeight() >= )
         return isCollision;
     }
 
@@ -639,6 +634,7 @@ public class Drone extends Entity {
         }
         for(Object object :onTopOfList){
             if(object instanceof TreeView){
+
                 return true;
             }
         }

@@ -197,8 +197,7 @@ public class DroneBusinessObject {
                 && !selectedDrone.isReturningToHome()
                 && !selectedDrone.isSafeLand()
                 && !selectedDrone.isBadConnection()
-                && !selectedDrone.isSafeLand()
-                && !selectedDrone.isCollision()) {
+                && !selectedDrone.isSafeLand()) {
 
             flying(selectedDrone, flyDirectionCommand);
 
@@ -260,13 +259,23 @@ public class DroneBusinessObject {
             applyEconomyMode(selectedDrone);
         }
 
-        if(selectedDrone.isCollision() && selectedDrone.getHeight() >= 0){
-            //Collision
-            collision(selectedDrone);
+        if(selectedDrone.getHeight() <= 8.0){
 
-            checkAndPrintIfLostDrone(selectedDrone);
+            if(selectedDrone.isOnTree()){
+                checkAndPrintIfLostDrone(selectedDrone);
+                shutDown(selectedDrone);
+            }
         }
 
+        /*if(selectedDrone.isCollision() && selectedDrone.getHeight() <= 8){
+            //Collision
+            checkAndPrintIfLostDrone(selectedDrone);
+
+            //collision(selectedDrone);
+
+
+        }
+        */
         if (selectedDrone.getCurrentBattery() <= 10 && selectedDrone.getDistanceDestiny() > 0
                 && !selectedDrone.isSafeLand()) {
 
@@ -349,6 +358,16 @@ public class DroneBusinessObject {
     }
 
     /**
+     * Colisao se o drone e a arvore tenham a mesma altura
+     * @param selectedDrone drone selecionado no checkStatus
+     */
+    public static boolean collision(Drone selectedDrone){
+        selectedDrone.setIsCollision(true);
+
+        return true;
+    }
+
+    /**
      * Drone sobrevoa se a altura for maior, ou seja, qnd nao ha colisao
      * @param selectedDrone Drone selecionado
      * @return
@@ -361,16 +380,6 @@ public class DroneBusinessObject {
         selectedDrone.setIsCollision(true);
 
         return true;
-    }
-
-    /**
-     * Colisao se o drone e a arvore tenham a mesma altura
-     * @param selectDrone
-     */
-    public static void collision(Drone selectDrone){
-        Tree tree = new Tree("um", "arvore", 3, 5);
-        compareHeight(selectDrone, tree);
-        System.out.println("Collision");
     }
 
     /**
@@ -1210,7 +1219,7 @@ public class DroneBusinessObject {
         }
         if (drone.getDistanceDestiny() == 0) {
             System.out.println("Drone[" + drone.getLabel() + "] " + "Arrived at destination");
-            LoggerController.getInstance().print("Drone[" + drone.getLabel() + "]" + "Arrived at destination");
+            LoggerController.getInstance().print("Drone[" + drone.getLabel() + "] " + "Arrived at destination");
             return;
         }
 
@@ -1223,19 +1232,17 @@ public class DroneBusinessObject {
         if (drone.isOnWater()) {
             System.out.println("Drone[" + drone.getLabel() + "] " + "Drone landed on water");
             LoggerController.getInstance().print("Drone[" + drone.getLabel() + "] " + "Drone landed on water");
-        } else {
-            System.out.println("Drone[" + drone.getLabel() + "] " + "Drone landed successfully");
-            LoggerController.getInstance().print("Drone[" + drone.getLabel() + "] " + "Drone landed successfully");
         }
 
         if (drone.isOnTree()) {
-            System.out.println("Drone[" + drone.getLabel() + "] " + "Drone landed on tree(Collision)");
-            LoggerController.getInstance().print("Drone[" + drone.getLabel() + "] " + "Drone landed on tree");
-        } else {
+            System.out.println("Drone[" + drone.getLabel() + "] " + "Drone hit a tree");
+            LoggerController.getInstance().print("Drone[" + drone.getLabel() + "] " + "Drone hit a tree");
+        }
+
+        else {
             System.out.println("Drone[" + drone.getLabel() + "] " + "Drone landed successfully");
             LoggerController.getInstance().print("Drone[" + drone.getLabel() + "] " + "Drone landed successfully");
         }
-
 
     }
 
