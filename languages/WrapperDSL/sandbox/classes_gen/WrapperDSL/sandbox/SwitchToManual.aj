@@ -29,7 +29,7 @@ if
 (
 (((Drone)thisJoinPoint.getArgs()[0]).getGpsState() == GPSStateEnum.OFF)
 &&
-(((Drone)thisJoinPoint.getArgs()[0]).isAutomatic() == true)
+
 )
 {
 manual(thisJoinPoint);

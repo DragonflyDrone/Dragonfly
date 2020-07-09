@@ -782,7 +782,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="7_KOYEjdC$H">
-    <property role="3GE5qa" value="math.expression.conditional_expression.wind" />
+    <property role="3GE5qa" value="math.expression.conditional_expression.anemometrer" />
     <ref role="1XX52x" to="lpas:7_KOYEjdC$p" resolve="ScalarWindConditionalExpression" />
     <node concept="3EZMnI" id="7_KOYEjdC$J" role="2wV5jI">
       <node concept="3F0ifn" id="7_KOYEjdC$T" role="3EZMnx">
@@ -901,7 +901,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="7_KOYEjdalW">
-    <property role="3GE5qa" value="math.expression.conditional_expression.wind" />
+    <property role="3GE5qa" value="math.expression.conditional_expression.anemometrer" />
     <ref role="1XX52x" to="lpas:5eYfGK4mCNt" resolve="CategoricalWindConditionalExpression" />
     <node concept="3EZMnI" id="7_KOYEjdam1" role="2wV5jI">
       <node concept="3F0ifn" id="7_KOYEjdam3" role="3EZMnx">
@@ -1111,7 +1111,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="31DEoow88B$">
-    <property role="3GE5qa" value="math.expression.conditional_expression.wind" />
+    <property role="3GE5qa" value="math.expression.conditional_expression.anemometrer" />
     <ref role="1XX52x" to="lpas:31DEoow88Bd" resolve="WindDirectionConditionalExpression" />
     <node concept="3EZMnI" id="31DEoow88BA" role="2wV5jI">
       <node concept="3F0ifn" id="31DEoow88BH" role="3EZMnx">
@@ -1140,25 +1140,6 @@
         <property role="3F0ifm" value="automatic control" />
       </node>
       <node concept="l2Vlx" id="31DEoow8Ydj" role="2iSdaV" />
-    </node>
-  </node>
-  <node concept="24kQdi" id="31DEoowaEE0">
-    <property role="3GE5qa" value="math.expression.conditional_expression" />
-    <ref role="1XX52x" to="lpas:31DEoowaEDL" resolve="CollisionSensorConditionalExpression" />
-    <node concept="3EZMnI" id="31DEoowaEE2" role="2wV5jI">
-      <node concept="3F0ifn" id="31DEoowaEE3" role="3EZMnx">
-        <property role="3F0ifm" value="(Collision sensor" />
-      </node>
-      <node concept="l2Vlx" id="31DEoowaEE4" role="2iSdaV" />
-      <node concept="3F0A7n" id="31DEoowaEE5" role="3EZMnx">
-        <ref role="1NtTu8" to="lpas:31DEoowaEDO" resolve="operators" />
-      </node>
-      <node concept="3F0A7n" id="31DEoowaEE6" role="3EZMnx">
-        <ref role="1NtTu8" to="lpas:31DEoowaEDP" resolve="right" />
-      </node>
-      <node concept="3F0ifn" id="31DEoowaEE7" role="3EZMnx">
-        <property role="3F0ifm" value=")" />
-      </node>
     </node>
   </node>
   <node concept="24kQdi" id="31DEoowbxWf">

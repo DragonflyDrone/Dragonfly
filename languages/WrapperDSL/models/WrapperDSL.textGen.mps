@@ -1206,10 +1206,10 @@
           <node concept="3clFbC" id="1E9PaQYqPFG" role="3clFbw">
             <node concept="2OqwBi" id="1E9PaQYqQpy" role="3uHU7w">
               <node concept="1XH99k" id="1E9PaQYqPKx" role="2Oq$k0">
-                <ref role="1XH99l" to="lpas:7_KOYEjfYK4" resolve="CategoricalDistanceEnum" />
+                <ref role="1XH99l" to="lpas:7_KOYEjfYK4" resolve="RelativePositionEnum" />
               </node>
               <node concept="2ViDtV" id="1E9PaQYqQB1" role="2OqNvi">
-                <ref role="2ViDtZ" to="lpas:7_KOYEjfYK5" resolve="destination" />
+                <ref role="2ViDtZ" to="lpas:7_KOYEjfYK5" resolve="DESTINATION" />
               </node>
             </node>
             <node concept="2OqwBi" id="1E9PaQYqPda" role="3uHU7B">
@@ -1253,10 +1253,10 @@
           <node concept="3clFbC" id="1E9PaQYqQCB" role="3clFbw">
             <node concept="2OqwBi" id="1E9PaQYqQCC" role="3uHU7w">
               <node concept="1XH99k" id="1E9PaQYqQCD" role="2Oq$k0">
-                <ref role="1XH99l" to="lpas:7_KOYEjfYK4" resolve="CategoricalDistanceEnum" />
+                <ref role="1XH99l" to="lpas:7_KOYEjfYK4" resolve="RelativePositionEnum" />
               </node>
               <node concept="2ViDtV" id="1E9PaQYqQRe" role="2OqNvi">
-                <ref role="2ViDtZ" to="lpas:7_KOYEjfYK6" resolve="origin" />
+                <ref role="2ViDtZ" to="lpas:7_KOYEjfYK6" resolve="OBSTACLE" />
               </node>
             </node>
             <node concept="2OqwBi" id="1E9PaQYqQCF" role="3uHU7B">
@@ -1735,7 +1735,7 @@
     </node>
   </node>
   <node concept="WtQ9Q" id="IyLDsSHmQw">
-    <property role="3GE5qa" value="math.expression.conditional_expression.wind" />
+    <property role="3GE5qa" value="math.expression.conditional_expression.anemometrer" />
     <ref role="WuzLi" to="lpas:5eYfGK4mCNt" resolve="CategoricalWindConditionalExpression" />
     <node concept="11bSqf" id="IyLDsSHmQx" role="11c4hB">
       <node concept="3clFbS" id="IyLDsSHmQy" role="2VODD2">
@@ -1979,10 +1979,10 @@
           <node concept="3clFbC" id="IyLDsSPkfv" role="3clFbw">
             <node concept="2OqwBi" id="IyLDsSPkRo" role="3uHU7w">
               <node concept="1XH99k" id="IyLDsSPkkm" role="2Oq$k0">
-                <ref role="1XH99l" to="lpas:7_KOYEjfYK4" resolve="CategoricalDistanceEnum" />
+                <ref role="1XH99l" to="lpas:7_KOYEjfYK4" resolve="RelativePositionEnum" />
               </node>
               <node concept="2ViDtV" id="IyLDsSPl4A" role="2OqNvi">
-                <ref role="2ViDtZ" to="lpas:7_KOYEjfYK5" resolve="destination" />
+                <ref role="2ViDtZ" to="lpas:7_KOYEjfYK5" resolve="DESTINATION" />
               </node>
             </node>
             <node concept="2OqwBi" id="IyLDsSPjL9" role="3uHU7B">
@@ -2022,10 +2022,10 @@
           <node concept="3clFbC" id="IyLDsSPn5z" role="3clFbw">
             <node concept="2OqwBi" id="IyLDsSPn5$" role="3uHU7w">
               <node concept="1XH99k" id="IyLDsSPn5_" role="2Oq$k0">
-                <ref role="1XH99l" to="lpas:7_KOYEjfYK4" resolve="CategoricalDistanceEnum" />
+                <ref role="1XH99l" to="lpas:7_KOYEjfYK4" resolve="RelativePositionEnum" />
               </node>
               <node concept="2ViDtV" id="IyLDsSPntV" role="2OqNvi">
-                <ref role="2ViDtZ" to="lpas:7_KOYEjfYK6" resolve="origin" />
+                <ref role="2ViDtZ" to="lpas:7_KOYEjfYK6" resolve="OBSTACLE" />
               </node>
             </node>
             <node concept="2OqwBi" id="IyLDsSPn5B" role="3uHU7B">
@@ -2394,7 +2394,7 @@
     </node>
   </node>
   <node concept="WtQ9Q" id="593$Jq561iS">
-    <property role="3GE5qa" value="math.expression.conditional_expression.wind" />
+    <property role="3GE5qa" value="math.expression.conditional_expression.anemometrer" />
     <ref role="WuzLi" to="lpas:31DEoow88Bd" resolve="WindDirectionConditionalExpression" />
     <node concept="11bSqf" id="593$Jq561iT" role="11c4hB">
       <node concept="3clFbS" id="593$Jq561iU" role="2VODD2">
@@ -2949,60 +2949,6 @@
             <property role="lacIc" value=");" />
           </node>
           <node concept="l8MVK" id="20lP6cvxYZO" role="lcghm" />
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="WtQ9Q" id="1E9PaQY9tY2">
-    <property role="3GE5qa" value="math.expression.conditional_expression" />
-    <ref role="WuzLi" to="lpas:31DEoowaEDL" resolve="CollisionSensorConditionalExpression" />
-    <node concept="11bSqf" id="1E9PaQY9tY3" role="11c4hB">
-      <node concept="3clFbS" id="1E9PaQY9tY4" role="2VODD2">
-        <node concept="lc7rE" id="20lP6cvV4d0" role="3cqZAp">
-          <node concept="la8eA" id="1OCskmtNAus" role="lcghm">
-            <property role="lacIc" value="(" />
-          </node>
-          <node concept="la8eA" id="20lP6cvV4dk" role="lcghm">
-            <property role="lacIc" value="((Drone)thisJoinPoint.getArgs()[0]).getCollisionState() " />
-          </node>
-          <node concept="1bDJIP" id="20lP6cvV4ec" role="lcghm">
-            <ref role="1rvKf6" node="1E9PaQYxRN8" resolve="transformOperator" />
-            <node concept="2OqwBi" id="20lP6cvV4ES" role="1ryhcI">
-              <node concept="2OqwBi" id="20lP6cvV4nj" role="2Oq$k0">
-                <node concept="117lpO" id="20lP6cvV4ew" role="2Oq$k0" />
-                <node concept="3TrcHB" id="20lP6cvV4wO" role="2OqNvi">
-                  <ref role="3TsBF5" to="lpas:31DEoowaEDO" resolve="operators" />
-                </node>
-              </node>
-              <node concept="liA8E" id="20lP6cvV4LF" role="2OqNvi">
-                <ref role="37wK5l" to="wyt6:~Object.toString()" resolve="toString" />
-              </node>
-            </node>
-          </node>
-          <node concept="la8eA" id="20lP6cvV4PB" role="lcghm">
-            <property role="lacIc" value=" CollisionStateEnum." />
-          </node>
-          <node concept="l9hG8" id="20lP6cvV4Ut" role="lcghm">
-            <node concept="2OqwBi" id="20lP6cvV5RL" role="lb14g">
-              <node concept="2OqwBi" id="20lP6cvV5ry" role="2Oq$k0">
-                <node concept="2OqwBi" id="20lP6cvV55U" role="2Oq$k0">
-                  <node concept="117lpO" id="20lP6cvV4VT" role="2Oq$k0" />
-                  <node concept="3TrcHB" id="20lP6cvV5fW" role="2OqNvi">
-                    <ref role="3TsBF5" to="lpas:31DEoowaEDP" resolve="right" />
-                  </node>
-                </node>
-                <node concept="liA8E" id="20lP6cvV5$Z" role="2OqNvi">
-                  <ref role="37wK5l" to="c17a:~SEnumerationLiteral.getName()" resolve="getName" />
-                </node>
-              </node>
-              <node concept="liA8E" id="20lP6cvV6eB" role="2OqNvi">
-                <ref role="37wK5l" to="wyt6:~String.toUpperCase()" resolve="toUpperCase" />
-              </node>
-            </node>
-          </node>
-          <node concept="la8eA" id="20lP6cvV6os" role="lcghm">
-            <property role="lacIc" value=")" />
-          </node>
         </node>
       </node>
     </node>
@@ -3775,10 +3721,10 @@
           <node concept="3clFbC" id="1OCskmu1rjg" role="3clFbw">
             <node concept="2OqwBi" id="1OCskmu1sjm" role="3uHU7w">
               <node concept="1XH99k" id="1OCskmu1rq9" role="2Oq$k0">
-                <ref role="1XH99l" to="lpas:7_KOYEjfYK4" resolve="CategoricalDistanceEnum" />
+                <ref role="1XH99l" to="lpas:7_KOYEjfYK4" resolve="RelativePositionEnum" />
               </node>
               <node concept="2ViDtV" id="1OCskmu1swy" role="2OqNvi">
-                <ref role="2ViDtZ" to="lpas:7_KOYEjfYK5" resolve="destination" />
+                <ref role="2ViDtZ" to="lpas:7_KOYEjfYK5" resolve="DESTINATION" />
               </node>
             </node>
             <node concept="2OqwBi" id="1OCskmu1qZN" role="3uHU7B">
@@ -3819,10 +3765,10 @@
           <node concept="3clFbC" id="1OCskmu1tV_" role="3clFbw">
             <node concept="2OqwBi" id="1OCskmu1tVA" role="3uHU7w">
               <node concept="1XH99k" id="1OCskmu1tVB" role="2Oq$k0">
-                <ref role="1XH99l" to="lpas:7_KOYEjfYK4" resolve="CategoricalDistanceEnum" />
+                <ref role="1XH99l" to="lpas:7_KOYEjfYK4" resolve="RelativePositionEnum" />
               </node>
               <node concept="2ViDtV" id="1OCskmu1tVC" role="2OqNvi">
-                <ref role="2ViDtZ" to="lpas:7_KOYEjfYK5" resolve="destination" />
+                <ref role="2ViDtZ" to="lpas:7_KOYEjfYK5" resolve="DESTINATION" />
               </node>
             </node>
             <node concept="2OqwBi" id="1OCskmu1tVD" role="3uHU7B">

@@ -81,7 +81,7 @@
     </language>
   </registry>
   <node concept="13h7C7" id="7_KOYEjdCAs">
-    <property role="3GE5qa" value="math.expression.conditional_expression.wind" />
+    <property role="3GE5qa" value="math.expression.conditional_expression.anemometrer" />
     <ref role="13h7C2" to="lpas:7_KOYEjdC$p" resolve="ScalarWindConditionalExpression" />
     <node concept="13hLZK" id="7_KOYEjdCAt" role="13h7CW">
       <node concept="3clFbS" id="7_KOYEjdCAu" role="2VODD2">
