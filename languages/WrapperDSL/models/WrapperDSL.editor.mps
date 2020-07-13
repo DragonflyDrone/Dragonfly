@@ -251,16 +251,6 @@
       <node concept="l2Vlx" id="4NrzS7qoG_U" role="2iSdaV" />
     </node>
   </node>
-  <node concept="24kQdi" id="7_KOYEjcGF7">
-    <property role="3GE5qa" value="expression.math" />
-    <ref role="1XX52x" to="lpas:5eYfGK4oHfY" resolve="Text" />
-    <node concept="3EZMnI" id="7_KOYEjcGFc" role="2wV5jI">
-      <node concept="3F0A7n" id="7_KOYEjcGFj" role="3EZMnx">
-        <ref role="1NtTu8" to="lpas:5eYfGK4oHfZ" resolve="value" />
-      </node>
-      <node concept="l2Vlx" id="7_KOYEjcGFf" role="2iSdaV" />
-    </node>
-  </node>
   <node concept="24kQdi" id="4NrzS7qn7SQ">
     <property role="3GE5qa" value="adaptation" />
     <ref role="1XX52x" to="lpas:4NrzS7qn7RB" resolve="AdaptationBehavior" />
@@ -487,47 +477,6 @@
         <property role="3F0ifm" value=")" />
       </node>
       <node concept="l2Vlx" id="31DEoowcqnc" role="2iSdaV" />
-    </node>
-  </node>
-  <node concept="24kQdi" id="31DEoowefQQ">
-    <property role="3GE5qa" value="expression.math" />
-    <ref role="1XX52x" to="lpas:31DEoowefQH" resolve="AnyNumber" />
-    <node concept="3EZMnI" id="31DEoowefQS" role="2wV5jI">
-      <node concept="3F0ifn" id="31DEoowefQZ" role="3EZMnx">
-        <property role="3F0ifm" value="any" />
-        <node concept="Vb9p2" id="4NY2oxuFDce" role="3F10Kt" />
-      </node>
-      <node concept="l2Vlx" id="31DEoowefQV" role="2iSdaV" />
-    </node>
-  </node>
-  <node concept="24kQdi" id="31DEoowefRa">
-    <property role="3GE5qa" value="expression.math" />
-    <ref role="1XX52x" to="lpas:31DEoowefQE" resolve="IntegerNumber" />
-    <node concept="3EZMnI" id="7_KOYEjcGFE" role="2wV5jI">
-      <node concept="3F0A7n" id="7_KOYEjcGFL" role="3EZMnx">
-        <ref role="1NtTu8" to="lpas:31DEoowefQF" resolve="value" />
-      </node>
-      <node concept="l2Vlx" id="7_KOYEjcGFH" role="2iSdaV" />
-    </node>
-  </node>
-  <node concept="24kQdi" id="31DEoowfa1H">
-    <property role="3GE5qa" value="expression.math" />
-    <ref role="1XX52x" to="lpas:31DEoowfa1y" resolve="NormalBooleanValue" />
-    <node concept="3EZMnI" id="31DEoowfa1J" role="2wV5jI">
-      <node concept="3F0A7n" id="31DEoowfa1Q" role="3EZMnx">
-        <ref role="1NtTu8" to="lpas:31DEoowfa1z" resolve="value" />
-      </node>
-      <node concept="l2Vlx" id="31DEoowfa1M" role="2iSdaV" />
-    </node>
-  </node>
-  <node concept="24kQdi" id="31DEoowfa22">
-    <property role="3GE5qa" value="expression.math" />
-    <ref role="1XX52x" to="lpas:31DEoowfa1T" resolve="AnyBoolean" />
-    <node concept="3EZMnI" id="31DEoowfa24" role="2wV5jI">
-      <node concept="3F0ifn" id="31DEoowfa2b" role="3EZMnx">
-        <property role="3F0ifm" value="any" />
-      </node>
-      <node concept="l2Vlx" id="31DEoowfa27" role="2iSdaV" />
     </node>
   </node>
 </model>

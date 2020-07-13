@@ -127,7 +127,7 @@
   </node>
   <node concept="25R3W" id="5eYfGK4mCJv">
     <property role="3F6X1D" value="6034329596690336735" />
-    <property role="3GE5qa" value="expression.math" />
+    <property role="3GE5qa" value="expression" />
     <property role="TrG5h" value="LogicalOperatorEnum" />
     <node concept="25R33" id="5eYfGK4nkaD" role="25R1y">
       <property role="3tVfz5" value="6034329596690514601" />
@@ -207,24 +207,6 @@
       <ref role="20lvS9" node="5eYfGK4mOkW" resolve="Statement" />
     </node>
   </node>
-  <node concept="1TIwiD" id="5eYfGK4oHfV">
-    <property role="EcuMT" value="6034329596690879483" />
-    <property role="3GE5qa" value="expression.math" />
-    <property role="TrG5h" value="Value" />
-    <property role="R5$K7" value="true" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-  </node>
-  <node concept="1TIwiD" id="5eYfGK4oHfY">
-    <property role="EcuMT" value="6034329596690879486" />
-    <property role="3GE5qa" value="expression.math" />
-    <property role="TrG5h" value="Text" />
-    <ref role="1TJDcQ" node="5eYfGK4oHfV" resolve="Value" />
-    <node concept="1TJgyi" id="5eYfGK4oHfZ" role="1TKVEl">
-      <property role="IQ2nx" value="6034329596690879487" />
-      <property role="TrG5h" value="value" />
-      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
-    </node>
-  </node>
   <node concept="1TIwiD" id="5eYfGK4rwHk">
     <property role="EcuMT" value="6034329596691614548" />
     <property role="3GE5qa" value="adaptation" />
@@ -241,45 +223,10 @@
       <ref role="20lvS9" node="5eYfGK4mOkW" resolve="Statement" />
     </node>
   </node>
-  <node concept="25R3W" id="7_KOYEjbOnF">
-    <property role="3F6X1D" value="8750727080426030571" />
-    <property role="3GE5qa" value="expression.math" />
-    <property role="TrG5h" value="ConditionalOperatorEnum" />
-    <node concept="25R33" id="5eYfGK4mCKX" role="25R1y">
-      <property role="3tVfz5" value="6034329596690336829" />
-      <property role="TrG5h" value="is" />
-      <property role="1L1pqM" value="is" />
-    </node>
-    <node concept="25R33" id="5eYfGK4mCL3" role="25R1y">
-      <property role="3tVfz5" value="6034329596690336835" />
-      <property role="TrG5h" value="not_equal_to" />
-      <property role="1L1pqM" value="is not" />
-    </node>
-    <node concept="25R33" id="5eYfGK4mCL6" role="25R1y">
-      <property role="3tVfz5" value="6034329596690336838" />
-      <property role="TrG5h" value="less_than" />
-      <property role="1L1pqM" value="&lt;" />
-    </node>
-    <node concept="25R33" id="5eYfGK4mCLa" role="25R1y">
-      <property role="3tVfz5" value="6034329596690336842" />
-      <property role="TrG5h" value="greater_than" />
-      <property role="1L1pqM" value="&gt;" />
-    </node>
-    <node concept="25R33" id="5eYfGK4mCLl" role="25R1y">
-      <property role="3tVfz5" value="6034329596690336853" />
-      <property role="TrG5h" value="less_than_or_equal_to" />
-      <property role="1L1pqM" value="&lt;=" />
-    </node>
-    <node concept="25R33" id="5eYfGK4mCLf" role="25R1y">
-      <property role="3tVfz5" value="6034329596690336847" />
-      <property role="TrG5h" value="greater_than_or_equal_to" />
-      <property role="1L1pqM" value="&gt;=" />
-    </node>
-  </node>
   <node concept="25R3W" id="7_KOYEjd0p5">
     <property role="3F6X1D" value="8750727080426341957" />
-    <property role="3GE5qa" value="expression.math" />
-    <property role="TrG5h" value="InaquelityConditionalOperator" />
+    <property role="3GE5qa" value="expression" />
+    <property role="TrG5h" value="InaquelityOperator" />
     <node concept="25R33" id="7_KOYEjd0pa" role="25R1y">
       <property role="3tVfz5" value="8750727080426341962" />
       <property role="TrG5h" value="less_than" />
@@ -303,17 +250,17 @@
   </node>
   <node concept="25R3W" id="7_KOYEjd0pt">
     <property role="3F6X1D" value="8750727080426341981" />
-    <property role="3GE5qa" value="expression.math" />
+    <property role="3GE5qa" value="expression" />
     <property role="TrG5h" value="IqualityOperatorEnum" />
     <node concept="25R33" id="7_KOYEjd0pz" role="25R1y">
       <property role="3tVfz5" value="8750727080426341987" />
-      <property role="TrG5h" value="is" />
-      <property role="1L1pqM" value="is" />
+      <property role="TrG5h" value="equal" />
+      <property role="1L1pqM" value="==" />
     </node>
     <node concept="25R33" id="7_KOYEjd0p$" role="25R1y">
       <property role="3tVfz5" value="8750727080426341988" />
-      <property role="TrG5h" value="not_equal_to" />
-      <property role="1L1pqM" value="is not" />
+      <property role="TrG5h" value="different" />
+      <property role="1L1pqM" value="≠" />
     </node>
   </node>
   <node concept="25R3W" id="11jlgVoCRQP">
@@ -359,51 +306,6 @@
       <property role="3tVfz5" value="1176377449926327768" />
       <property role="TrG5h" value="SOUTH_WEAST" />
       <property role="1L1pqM" value="SOUTH WEAST" />
-    </node>
-  </node>
-  <node concept="25R3W" id="11jlgVoGE2C">
-    <property role="3F6X1D" value="1176377449927319720" />
-    <property role="3GE5qa" value="expression.math" />
-    <property role="TrG5h" value="TurnConditionalEnum" />
-    <node concept="25R33" id="11jlgVoGE2D" role="25R1y">
-      <property role="3tVfz5" value="1176377449927319721" />
-      <property role="TrG5h" value="ON" />
-      <property role="1L1pqM" value="on" />
-    </node>
-    <node concept="25R33" id="11jlgVoGE2E" role="25R1y">
-      <property role="3tVfz5" value="1176377449927319722" />
-      <property role="TrG5h" value="OFF" />
-      <property role="1L1pqM" value="off" />
-    </node>
-    <node concept="25R33" id="31DEoowfa18" role="25R1y">
-      <property role="3tVfz5" value="3488505779906715720" />
-      <property role="TrG5h" value="ANY" />
-      <property role="1L1pqM" value="any" />
-    </node>
-    <node concept="25R33" id="1E9PaQY5Rs3" role="25R1y">
-      <property role="3tVfz5" value="1912293359479125763" />
-      <property role="TrG5h" value="FAILURE" />
-      <property role="1L1pqM" value="failure" />
-    </node>
-  </node>
-  <node concept="25R3W" id="304WrIr4qch">
-    <property role="3F6X1D" value="3460156201790186257" />
-    <property role="3GE5qa" value="expression.math" />
-    <property role="TrG5h" value="AxisEnum" />
-    <node concept="25R33" id="304WrIr4qci" role="25R1y">
-      <property role="3tVfz5" value="3460156201790186258" />
-      <property role="TrG5h" value="AxisX" />
-      <property role="1L1pqM" value="x" />
-    </node>
-    <node concept="25R33" id="304WrIr4qcj" role="25R1y">
-      <property role="3tVfz5" value="3460156201790186259" />
-      <property role="TrG5h" value="AxisY" />
-      <property role="1L1pqM" value="y" />
-    </node>
-    <node concept="25R33" id="304WrIr4qcm" role="25R1y">
-      <property role="3tVfz5" value="3460156201790186262" />
-      <property role="TrG5h" value="AxisZ" />
-      <property role="1L1pqM" value="z" />
     </node>
   </node>
   <node concept="1TIwiD" id="6UvQjm9lvOC">
@@ -655,54 +557,6 @@
       <property role="TrG5h" value="right" />
       <ref role="AX2Wp" node="31DEoowcqmU" resolve="booleanDetectionEnum" />
     </node>
-  </node>
-  <node concept="1TIwiD" id="31DEoowefQD">
-    <property role="EcuMT" value="3488505779906477481" />
-    <property role="3GE5qa" value="expression.math" />
-    <property role="TrG5h" value="Number" />
-    <property role="R5$K7" value="true" />
-    <ref role="1TJDcQ" node="5eYfGK4oHfV" resolve="Value" />
-  </node>
-  <node concept="1TIwiD" id="31DEoowefQE">
-    <property role="EcuMT" value="3488505779906477482" />
-    <property role="3GE5qa" value="expression.math" />
-    <property role="TrG5h" value="IntegerNumber" />
-    <ref role="1TJDcQ" node="31DEoowefQD" resolve="Number" />
-    <node concept="1TJgyi" id="31DEoowefQF" role="1TKVEl">
-      <property role="IQ2nx" value="3488505779906477483" />
-      <property role="TrG5h" value="value" />
-      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
-    </node>
-  </node>
-  <node concept="1TIwiD" id="31DEoowefQH">
-    <property role="EcuMT" value="3488505779906477485" />
-    <property role="3GE5qa" value="expression.math" />
-    <property role="TrG5h" value="AnyNumber" />
-    <ref role="1TJDcQ" node="31DEoowefQD" resolve="Number" />
-  </node>
-  <node concept="1TIwiD" id="31DEoowfa1x">
-    <property role="EcuMT" value="3488505779906715745" />
-    <property role="3GE5qa" value="expression.math" />
-    <property role="TrG5h" value="BooleanValue" />
-    <property role="R5$K7" value="true" />
-    <ref role="1TJDcQ" node="5eYfGK4oHfV" resolve="Value" />
-  </node>
-  <node concept="1TIwiD" id="31DEoowfa1y">
-    <property role="EcuMT" value="3488505779906715746" />
-    <property role="3GE5qa" value="expression.math" />
-    <property role="TrG5h" value="NormalBooleanValue" />
-    <ref role="1TJDcQ" node="31DEoowfa1x" resolve="BooleanValue" />
-    <node concept="1TJgyi" id="31DEoowfa1z" role="1TKVEl">
-      <property role="IQ2nx" value="3488505779906715747" />
-      <property role="TrG5h" value="value" />
-      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
-    </node>
-  </node>
-  <node concept="1TIwiD" id="31DEoowfa1T">
-    <property role="EcuMT" value="3488505779906715769" />
-    <property role="3GE5qa" value="expression.math" />
-    <property role="TrG5h" value="AnyBoolean" />
-    <ref role="1TJDcQ" node="31DEoowfa1x" resolve="BooleanValue" />
   </node>
   <node concept="1TIwiD" id="5fwjzFJ5lFm">
     <property role="EcuMT" value="6043916714957429462" />
@@ -1009,15 +863,15 @@
   </node>
   <node concept="1TIwiD" id="5fwjzFJ5$d1">
     <property role="EcuMT" value="6043916714957488961" />
-    <property role="3GE5qa" value="expression.thermometer" />
+    <property role="3GE5qa" value="expression.thermometer.conditional_expression" />
     <property role="TrG5h" value="ThermometerStateConditionalExpression" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <ref role="1TJDcQ" node="w2EP0onGAV" resolve="ConditionalExpression" />
   </node>
   <node concept="1TIwiD" id="5fwjzFJ5$d2">
     <property role="EcuMT" value="6043916714957488962" />
-    <property role="3GE5qa" value="expression.thermometer" />
+    <property role="3GE5qa" value="expression.thermometer.conditional_expression" />
     <property role="TrG5h" value="TemperatureLevelConditionalExpression" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <ref role="1TJDcQ" node="w2EP0onGAV" resolve="ConditionalExpression" />
   </node>
   <node concept="1TIwiD" id="5fwjzFJ5$d3">
     <property role="EcuMT" value="6043916714957488963" />
@@ -1988,7 +1842,7 @@
   </node>
   <node concept="25R3W" id="5fwjzFJ5$Cu">
     <property role="3F6X1D" value="6043916714957490718" />
-    <property role="3GE5qa" value="expression.thermometer" />
+    <property role="3GE5qa" value="expression.thermometer.conditional_expression" />
     <property role="TrG5h" value="ThermometerStateGetEnum" />
     <node concept="25R33" id="5fwjzFJ5$Cw" role="25R1y">
       <property role="3tVfz5" value="6043916714957490720" />
@@ -2010,7 +1864,7 @@
   </node>
   <node concept="25R3W" id="5fwjzFJ5$CC">
     <property role="3F6X1D" value="6043916714957490728" />
-    <property role="3GE5qa" value="expression.thermometer" />
+    <property role="3GE5qa" value="expression.thermometer.command" />
     <property role="TrG5h" value="ThermometerStateSetEnum" />
     <node concept="25R33" id="5fwjzFJ5$CE" role="25R1y">
       <property role="3tVfz5" value="6043916714957490730" />
@@ -2580,6 +2434,658 @@
     <property role="3GE5qa" value="expression.emergency_stop_mode.command" />
     <property role="TrG5h" value="EmergencyStopModeStateCommandExpression" />
     <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="Command" />
+  </node>
+  <node concept="25R3W" id="3gtR0Xn_DqA">
+    <property role="3F6X1D" value="3755399622748968614" />
+    <property role="3GE5qa" value="expression" />
+    <property role="TrG5h" value="GeneralOperator" />
+    <node concept="25R33" id="3gtR0Xn_DqF" role="25R1y">
+      <property role="3tVfz5" value="3755399622748968619" />
+      <property role="TrG5h" value="less_than" />
+      <property role="1L1pqM" value="&lt;" />
+    </node>
+    <node concept="25R33" id="3gtR0Xn_DqG" role="25R1y">
+      <property role="3tVfz5" value="3755399622748968620" />
+      <property role="TrG5h" value="greater_than" />
+      <property role="1L1pqM" value="&gt;" />
+    </node>
+    <node concept="25R33" id="3gtR0Xn_DqH" role="25R1y">
+      <property role="3tVfz5" value="3755399622748968621" />
+      <property role="TrG5h" value="less_than_or_equal_to" />
+      <property role="1L1pqM" value="&lt;=" />
+    </node>
+    <node concept="25R33" id="3gtR0Xn_DqI" role="25R1y">
+      <property role="3tVfz5" value="3755399622748968622" />
+      <property role="TrG5h" value="greater_than_or_equal_to" />
+      <property role="1L1pqM" value="&gt;=" />
+    </node>
+    <node concept="25R33" id="3gtR0Xn_Dr4" role="25R1y">
+      <property role="3tVfz5" value="3755399622748968644" />
+      <property role="TrG5h" value="equal" />
+      <property role="1L1pqM" value="==" />
+    </node>
+    <node concept="25R33" id="3gtR0Xn_Dr5" role="25R1y">
+      <property role="3tVfz5" value="3755399622748968645" />
+      <property role="TrG5h" value="different" />
+      <property role="1L1pqM" value="≠" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="3gtR0Xn_GIE">
+    <property role="EcuMT" value="3755399622748982186" />
+    <property role="3GE5qa" value="expression.UAV.trigger_event" />
+    <property role="TrG5h" value="UAVManeuverDirectionTriggerEvent" />
+    <ref role="1TJDcQ" node="w2EP0omFze" resolve="TriggerEvent" />
+  </node>
+  <node concept="1TIwiD" id="3gtR0Xn_GIF">
+    <property role="EcuMT" value="3755399622748982187" />
+    <property role="3GE5qa" value="expression.UAV.trigger_event" />
+    <property role="TrG5h" value="UAVRotateTriggerEvent" />
+    <ref role="1TJDcQ" node="w2EP0omFze" resolve="TriggerEvent" />
+  </node>
+  <node concept="1TIwiD" id="3gtR0Xn_GIG">
+    <property role="EcuMT" value="3755399622748982188" />
+    <property role="3GE5qa" value="expression.UAV.trigger_event" />
+    <property role="TrG5h" value="UAVSpeedTriggerEvent" />
+    <ref role="1TJDcQ" node="w2EP0omFze" resolve="TriggerEvent" />
+  </node>
+  <node concept="1TIwiD" id="3gtR0Xn_GIH">
+    <property role="EcuMT" value="3755399622748982189" />
+    <property role="3GE5qa" value="expression.UAV.trigger_event" />
+    <property role="TrG5h" value="UAVAccelerationTriggerEvent" />
+    <ref role="1TJDcQ" node="w2EP0omFze" resolve="TriggerEvent" />
+  </node>
+  <node concept="1TIwiD" id="3gtR0Xn_GII">
+    <property role="EcuMT" value="3755399622748982190" />
+    <property role="3GE5qa" value="expression.UAV.trigger_event" />
+    <property role="TrG5h" value="UAVAltitudeTriggerEvent" />
+    <ref role="1TJDcQ" node="w2EP0omFze" resolve="TriggerEvent" />
+  </node>
+  <node concept="1TIwiD" id="3gtR0Xn_GIJ">
+    <property role="EcuMT" value="3755399622748982191" />
+    <property role="3GE5qa" value="expression.UAV.motor.trigger_event" />
+    <property role="TrG5h" value="UAVMotorTriggerEvent" />
+    <ref role="1TJDcQ" node="w2EP0omFze" resolve="TriggerEvent" />
+  </node>
+  <node concept="1TIwiD" id="3gtR0Xn_GIK">
+    <property role="EcuMT" value="3755399622748982192" />
+    <property role="3GE5qa" value="expression.mission.trigger_event" />
+    <property role="TrG5h" value="MissionStateTriggerEvent" />
+    <ref role="1TJDcQ" node="w2EP0omFze" resolve="TriggerEvent" />
+  </node>
+  <node concept="1TIwiD" id="3gtR0Xn_GIL">
+    <property role="EcuMT" value="3755399622748982193" />
+    <property role="3GE5qa" value="expression.RTH.trigger_event" />
+    <property role="TrG5h" value="ReturnToHomeHomePointTriggerEvent" />
+    <ref role="1TJDcQ" node="w2EP0omFze" resolve="TriggerEvent" />
+  </node>
+  <node concept="1TIwiD" id="3gtR0Xn_GIM">
+    <property role="EcuMT" value="3755399622748982194" />
+    <property role="3GE5qa" value="expression.RTH.trigger_event" />
+    <property role="TrG5h" value="ReturnToHomeStateTriggerEvent" />
+    <ref role="1TJDcQ" node="w2EP0omFze" resolve="TriggerEvent" />
+  </node>
+  <node concept="1TIwiD" id="3gtR0Xn_GIN">
+    <property role="EcuMT" value="3755399622748982195" />
+    <property role="3GE5qa" value="expression.energy_saving_mode.trigger_event" />
+    <property role="TrG5h" value="EnergySavingModeStateTriggerEvent" />
+    <ref role="1TJDcQ" node="w2EP0omFze" resolve="TriggerEvent" />
+  </node>
+  <node concept="1TIwiD" id="3gtR0Xn_GIO">
+    <property role="EcuMT" value="3755399622748982196" />
+    <property role="3GE5qa" value="expression.safe_landing.trigger_event" />
+    <property role="TrG5h" value="SafeLandingStateTriggerEvent" />
+    <ref role="1TJDcQ" node="w2EP0omFze" resolve="TriggerEvent" />
+  </node>
+  <node concept="1TIwiD" id="3gtR0Xn_GIP">
+    <property role="EcuMT" value="3755399622748982197" />
+    <property role="3GE5qa" value="expression.landing.trigger_event" />
+    <property role="TrG5h" value="LandingStateStateTrigger" />
+    <ref role="1TJDcQ" node="w2EP0omFze" resolve="TriggerEvent" />
+  </node>
+  <node concept="1TIwiD" id="3gtR0Xn_GIQ">
+    <property role="EcuMT" value="3755399622748982198" />
+    <property role="3GE5qa" value="expression.takeoff.trigger_event" />
+    <property role="TrG5h" value="TakeOffStateTriggerEvent" />
+    <ref role="1TJDcQ" node="w2EP0omFze" resolve="TriggerEvent" />
+  </node>
+  <node concept="1TIwiD" id="3gtR0Xn_GIR">
+    <property role="EcuMT" value="3755399622748982199" />
+    <property role="3GE5qa" value="expression.flight.control.trigger_event" />
+    <property role="TrG5h" value="FlightControlStateTriggerEvent" />
+    <ref role="1TJDcQ" node="w2EP0omFze" resolve="TriggerEvent" />
+  </node>
+  <node concept="1TIwiD" id="3gtR0Xn_GIS">
+    <property role="EcuMT" value="3755399622748982200" />
+    <property role="3GE5qa" value="expression.gimbal.trigger_event" />
+    <property role="TrG5h" value="GimbalRotationTriggerEvent" />
+    <ref role="1TJDcQ" node="w2EP0omFze" resolve="TriggerEvent" />
+  </node>
+  <node concept="1TIwiD" id="3gtR0Xn_GIT">
+    <property role="EcuMT" value="3755399622748982201" />
+    <property role="3GE5qa" value="expression.gimbal.trigger_event" />
+    <property role="TrG5h" value="GimbalStateTriggerEvent" />
+    <ref role="1TJDcQ" node="w2EP0omFze" resolve="TriggerEvent" />
+  </node>
+  <node concept="1TIwiD" id="3gtR0Xn_GIU">
+    <property role="EcuMT" value="3755399622748982202" />
+    <property role="3GE5qa" value="expression.camera.trigger_event" />
+    <property role="TrG5h" value="CameraStateTriggerEvent" />
+    <ref role="1TJDcQ" node="w2EP0omFze" resolve="TriggerEvent" />
+  </node>
+  <node concept="1TIwiD" id="3gtR0Xn_GIV">
+    <property role="EcuMT" value="3755399622748982203" />
+    <property role="3GE5qa" value="expression.camera.trigger_event" />
+    <property role="TrG5h" value="CameraFocuslPointTriggerEvent" />
+    <ref role="1TJDcQ" node="w2EP0omFze" resolve="TriggerEvent" />
+  </node>
+  <node concept="1TIwiD" id="3gtR0Xn_GIW">
+    <property role="EcuMT" value="3755399622748982204" />
+    <property role="3GE5qa" value="expression.payload.trigger_event" />
+    <property role="TrG5h" value="PayloadStateTriggerEvent" />
+    <ref role="1TJDcQ" node="w2EP0omFze" resolve="TriggerEvent" />
+  </node>
+  <node concept="1TIwiD" id="3gtR0Xn_GIX">
+    <property role="EcuMT" value="3755399622748982205" />
+    <property role="3GE5qa" value="expression.GPS.trigger_event" />
+    <property role="TrG5h" value="GPSStateTriggerEvent" />
+    <ref role="1TJDcQ" node="w2EP0omFze" resolve="TriggerEvent" />
+  </node>
+  <node concept="1TIwiD" id="3gtR0Xn_GIY">
+    <property role="EcuMT" value="3755399622748982206" />
+    <property role="3GE5qa" value="expression.obstacle_avoidance.trigger_event" />
+    <property role="TrG5h" value="ObstacleAvoidanceSensorStateTriggerEvent" />
+    <ref role="1TJDcQ" node="w2EP0omFze" resolve="TriggerEvent" />
+  </node>
+  <node concept="1TIwiD" id="3gtR0Xn_GIZ">
+    <property role="EcuMT" value="3755399622748982207" />
+    <property role="3GE5qa" value="expression.IMU.trigger_event" />
+    <property role="TrG5h" value="IMUStateTriggerEvent" />
+    <ref role="1TJDcQ" node="w2EP0omFze" resolve="TriggerEvent" />
+  </node>
+  <node concept="1TIwiD" id="3gtR0Xn_GJ0">
+    <property role="EcuMT" value="3755399622748982208" />
+    <property role="3GE5qa" value="expression.accelerometer.trigger_event" />
+    <property role="TrG5h" value="AccelerometerStateTriggerEvent" />
+    <ref role="1TJDcQ" node="w2EP0omFze" resolve="TriggerEvent" />
+  </node>
+  <node concept="1TIwiD" id="3gtR0Xn_GJ1">
+    <property role="EcuMT" value="3755399622748982209" />
+    <property role="3GE5qa" value="expression.gyroscope.trigger_event" />
+    <property role="TrG5h" value="GyroscopeStateTriggerEvent" />
+    <ref role="1TJDcQ" node="w2EP0omFze" resolve="TriggerEvent" />
+  </node>
+  <node concept="1TIwiD" id="3gtR0Xn_GJ3">
+    <property role="EcuMT" value="3755399622748982211" />
+    <property role="3GE5qa" value="expression.compass.trigger_event" />
+    <property role="TrG5h" value="CompassStateTriggerEvent" />
+    <ref role="1TJDcQ" node="w2EP0omFze" resolve="TriggerEvent" />
+  </node>
+  <node concept="1TIwiD" id="3gtR0Xn_GJ4">
+    <property role="EcuMT" value="3755399622748982212" />
+    <property role="3GE5qa" value="expression.magnetometer.trigger_event" />
+    <property role="TrG5h" value="MagnetometerStateTriggerEvent" />
+    <ref role="1TJDcQ" node="w2EP0omFze" resolve="TriggerEvent" />
+  </node>
+  <node concept="1TIwiD" id="3gtR0Xn_GJ5">
+    <property role="EcuMT" value="3755399622748982213" />
+    <property role="3GE5qa" value="expression.barometer.trigger_event" />
+    <property role="TrG5h" value="BarometerStateTriggerEvent" />
+    <ref role="1TJDcQ" node="w2EP0omFze" resolve="TriggerEvent" />
+  </node>
+  <node concept="1TIwiD" id="3gtR0Xn_GJ6">
+    <property role="EcuMT" value="3755399622748982214" />
+    <property role="3GE5qa" value="expression.hygrometer.trigger_event" />
+    <property role="TrG5h" value="HygrometerStateTriggerEvent" />
+    <ref role="1TJDcQ" node="w2EP0omFze" resolve="TriggerEvent" />
+  </node>
+  <node concept="1TIwiD" id="3gtR0Xn_GJ7">
+    <property role="EcuMT" value="3755399622748982215" />
+    <property role="3GE5qa" value="expression.thermometer.trigger_event" />
+    <property role="TrG5h" value="ThermometerStateTriggerEvent" />
+    <ref role="1TJDcQ" node="w2EP0omFze" resolve="TriggerEvent" />
+  </node>
+  <node concept="1TIwiD" id="3gtR0Xn_GJ8">
+    <property role="EcuMT" value="3755399622748982216" />
+    <property role="3GE5qa" value="expression.thermometer.command" />
+    <property role="TrG5h" value="ThermometerStateCommand" />
+    <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="Command" />
+  </node>
+  <node concept="1TIwiD" id="3gtR0Xn_GJ9">
+    <property role="EcuMT" value="3755399622748982217" />
+    <property role="3GE5qa" value="expression.light.trigger_event" />
+    <property role="TrG5h" value="LightStatusStateTriggerEvent" />
+    <ref role="1TJDcQ" node="w2EP0omFze" resolve="TriggerEvent" />
+  </node>
+  <node concept="1TIwiD" id="3gtR0Xn_GJa">
+    <property role="EcuMT" value="3755399622748982218" />
+    <property role="3GE5qa" value="expression.landguear.trigger_event" />
+    <property role="TrG5h" value="LandinggearStateTriggerEvent" />
+    <ref role="1TJDcQ" node="w2EP0omFze" resolve="TriggerEvent" />
+  </node>
+  <node concept="1TIwiD" id="3gtR0Xn_GJb">
+    <property role="EcuMT" value="3755399622748982219" />
+    <property role="3GE5qa" value="expression.anemometrer.trigger_event" />
+    <property role="TrG5h" value="AnemometrerStateTriggerEvent" />
+    <ref role="1TJDcQ" node="w2EP0omFze" resolve="TriggerEvent" />
+  </node>
+  <node concept="1TIwiD" id="3gtR0Xn_GJc">
+    <property role="EcuMT" value="3755399622748982220" />
+    <property role="3GE5qa" value="expression.emergency_stop_mode.trigger_event" />
+    <property role="TrG5h" value="EmergencyStopModeStateTriggerEvent" />
+    <ref role="1TJDcQ" node="w2EP0omFze" resolve="TriggerEvent" />
+  </node>
+  <node concept="25R3W" id="3gtR0Xn_GJd">
+    <property role="3F6X1D" value="3755399622748982221" />
+    <property role="3GE5qa" value="expression.UAV.motor.trigger_event" />
+    <property role="TrG5h" value="MotorStateTriggerEventEnum" />
+    <node concept="25R33" id="3gtR0Xn_GJe" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982222" />
+      <property role="TrG5h" value="STARTS" />
+    </node>
+    <node concept="25R33" id="3gtR0Xn_GJf" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982223" />
+      <property role="TrG5h" value="STOPS" />
+    </node>
+  </node>
+  <node concept="25R3W" id="3gtR0Xn_GJi">
+    <property role="3F6X1D" value="3755399622748982226" />
+    <property role="3GE5qa" value="expression.mission.trigger_event" />
+    <property role="TrG5h" value="MissionStateTriggerEventEnum" />
+    <node concept="25R33" id="3gtR0Xn_GJj" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982227" />
+      <property role="TrG5h" value="UPLOADS" />
+    </node>
+    <node concept="25R33" id="3gtR0Xn_GJo" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982232" />
+      <property role="TrG5h" value="STARTS" />
+    </node>
+    <node concept="25R33" id="3gtR0Xn_GJr" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982235" />
+      <property role="TrG5h" value="PAUSES" />
+    </node>
+    <node concept="25R33" id="3gtR0Xn_GJv" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982239" />
+      <property role="TrG5h" value="CANCELS" />
+    </node>
+    <node concept="25R33" id="3gtR0Xn_GJ$" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982244" />
+      <property role="TrG5h" value="RESUMES" />
+    </node>
+  </node>
+  <node concept="25R3W" id="3gtR0Xn_GJE">
+    <property role="3F6X1D" value="3755399622748982250" />
+    <property role="3GE5qa" value="expression.RTH.trigger_event" />
+    <property role="TrG5h" value="ReturnToHomeTriggerEventEnum" />
+    <node concept="25R33" id="3gtR0Xn_GJG" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982252" />
+      <property role="TrG5h" value="UPLOADS" />
+    </node>
+    <node concept="25R33" id="3gtR0Xn_GJF" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982251" />
+      <property role="TrG5h" value="STARTS" />
+    </node>
+    <node concept="25R33" id="3gtR0Xn_GJJ" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982255" />
+      <property role="TrG5h" value="PAUSES" />
+    </node>
+    <node concept="25R33" id="3gtR0Xn_GJN" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982259" />
+      <property role="TrG5h" value="CANCELS" />
+    </node>
+    <node concept="25R33" id="3gtR0Xn_GJS" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982264" />
+      <property role="TrG5h" value="RESUMES" />
+    </node>
+  </node>
+  <node concept="25R3W" id="3gtR0Xn_GJY">
+    <property role="3F6X1D" value="3755399622748982270" />
+    <property role="3GE5qa" value="expression.energy_saving_mode.trigger_event" />
+    <property role="TrG5h" value="EnergySavingModeTriggerEventEnum" />
+    <node concept="25R33" id="3gtR0Xn_GK0" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982272" />
+      <property role="TrG5h" value="STARTS" />
+    </node>
+    <node concept="25R33" id="3gtR0Xn_GK1" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982273" />
+      <property role="TrG5h" value="PAUSES" />
+    </node>
+    <node concept="25R33" id="3gtR0Xn_GK2" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982274" />
+      <property role="TrG5h" value="CANCELS" />
+    </node>
+    <node concept="25R33" id="3gtR0Xn_GK3" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982275" />
+      <property role="TrG5h" value="RESUMES" />
+    </node>
+  </node>
+  <node concept="25R3W" id="3gtR0Xn_GKd">
+    <property role="3F6X1D" value="3755399622748982285" />
+    <property role="3GE5qa" value="expression.safe_landing.trigger_event" />
+    <property role="TrG5h" value="SafeLandingStateTriggerEventEnum" />
+    <node concept="25R33" id="3gtR0Xn_GKf" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982287" />
+      <property role="TrG5h" value="STARTS" />
+    </node>
+    <node concept="25R33" id="3gtR0Xn_GKg" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982288" />
+      <property role="TrG5h" value="PAUSES" />
+    </node>
+    <node concept="25R33" id="3gtR0Xn_GKh" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982289" />
+      <property role="TrG5h" value="CANCELS" />
+    </node>
+    <node concept="25R33" id="3gtR0Xn_GKi" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982290" />
+      <property role="TrG5h" value="RESUMES" />
+    </node>
+  </node>
+  <node concept="25R3W" id="3gtR0Xn_GKs">
+    <property role="3F6X1D" value="3755399622748982300" />
+    <property role="3GE5qa" value="expression.landing.trigger_event" />
+    <property role="TrG5h" value="LandingStateTriggerEventEnum" />
+    <node concept="25R33" id="3gtR0Xn_GKy" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982306" />
+      <property role="TrG5h" value="STARTS" />
+    </node>
+    <node concept="25R33" id="3gtR0Xn_GKz" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982307" />
+      <property role="TrG5h" value="PAUSES" />
+    </node>
+    <node concept="25R33" id="3gtR0Xn_GK$" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982308" />
+      <property role="TrG5h" value="CANCELS" />
+    </node>
+    <node concept="25R33" id="3gtR0Xn_GK_" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982309" />
+      <property role="TrG5h" value="RESUMES" />
+    </node>
+  </node>
+  <node concept="25R3W" id="3gtR0Xn_GKJ">
+    <property role="3F6X1D" value="3755399622748982319" />
+    <property role="3GE5qa" value="expression.takeoff.trigger_event" />
+    <property role="TrG5h" value="TakeOffStateTriggerEventEnum" />
+    <node concept="25R33" id="3gtR0Xn_GKO" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982324" />
+      <property role="TrG5h" value="STARTS" />
+    </node>
+    <node concept="25R33" id="3gtR0Xn_GKP" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982325" />
+      <property role="TrG5h" value="PAUSES" />
+    </node>
+    <node concept="25R33" id="3gtR0Xn_GKQ" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982326" />
+      <property role="TrG5h" value="CANCELS" />
+    </node>
+    <node concept="25R33" id="3gtR0Xn_GKR" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982327" />
+      <property role="TrG5h" value="RESUMES" />
+    </node>
+  </node>
+  <node concept="25R3W" id="3gtR0Xn_GL7">
+    <property role="3F6X1D" value="3755399622748982343" />
+    <property role="3GE5qa" value="expression.flight.control.trigger_event" />
+    <property role="TrG5h" value="FlightControlStateTriggerEventEnum" />
+    <node concept="25R33" id="3gtR0Xn_GL8" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982344" />
+      <property role="TrG5h" value="STARTS" />
+    </node>
+    <node concept="25R33" id="3gtR0Xn_GL9" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982345" />
+      <property role="TrG5h" value="STOPS" />
+    </node>
+  </node>
+  <node concept="25R3W" id="3gtR0Xn_GLc">
+    <property role="3F6X1D" value="3755399622748982348" />
+    <property role="3GE5qa" value="expression.gimbal.trigger_event" />
+    <property role="TrG5h" value="GambialStateTriggerEventEnum" />
+    <node concept="25R33" id="3gtR0Xn_GLh" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982353" />
+      <property role="TrG5h" value="STARTS" />
+    </node>
+    <node concept="25R33" id="3gtR0Xn_GLi" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982354" />
+      <property role="TrG5h" value="PAUSES" />
+    </node>
+    <node concept="25R33" id="3gtR0Xn_GLj" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982355" />
+      <property role="TrG5h" value="CANCELS" />
+    </node>
+    <node concept="25R33" id="3gtR0Xn_GLk" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982356" />
+      <property role="TrG5h" value="RESUMES" />
+    </node>
+  </node>
+  <node concept="25R3W" id="3gtR0Xn_GLp">
+    <property role="3F6X1D" value="3755399622748982361" />
+    <property role="3GE5qa" value="expression.camera.trigger_event" />
+    <property role="TrG5h" value="CameraStateTriggerEventEnum" />
+    <node concept="25R33" id="3gtR0Xn_GLy" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982370" />
+      <property role="TrG5h" value="STARTS" />
+    </node>
+    <node concept="25R33" id="3gtR0Xn_GLz" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982371" />
+      <property role="TrG5h" value="PAUSES" />
+    </node>
+    <node concept="25R33" id="3gtR0Xn_GL$" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982372" />
+      <property role="TrG5h" value="CANCELS" />
+    </node>
+    <node concept="25R33" id="3gtR0Xn_GL_" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982373" />
+      <property role="TrG5h" value="RESUMES" />
+    </node>
+  </node>
+  <node concept="25R3W" id="3gtR0Xn_GLE">
+    <property role="3F6X1D" value="3755399622748982378" />
+    <property role="3GE5qa" value="expression.payload.trigger_event" />
+    <property role="TrG5h" value="PayloadStateTriggerEventEnum" />
+    <node concept="25R33" id="3gtR0Xn_GLF" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982379" />
+      <property role="TrG5h" value="CANCELS" />
+    </node>
+    <node concept="25R33" id="3gtR0Xn_GLG" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982380" />
+      <property role="TrG5h" value="LOADS" />
+    </node>
+    <node concept="25R33" id="3gtR0Xn_GLJ" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982383" />
+      <property role="TrG5h" value="UNLOADS" />
+    </node>
+  </node>
+  <node concept="25R3W" id="3gtR0Xn_GLN">
+    <property role="3F6X1D" value="3755399622748982387" />
+    <property role="3GE5qa" value="expression.GPS.trigger_event" />
+    <property role="TrG5h" value="GPSStateTriggerEventEnum" />
+    <node concept="25R33" id="3gtR0Xn_GLO" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982388" />
+      <property role="TrG5h" value="ACTIVATES" />
+    </node>
+    <node concept="25R33" id="3gtR0Xn_GLP" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982389" />
+      <property role="TrG5h" value="DEACTIVATES" />
+    </node>
+    <node concept="25R33" id="3gtR0Xn_GLS" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982392" />
+      <property role="TrG5h" value="CALIBRATES" />
+    </node>
+  </node>
+  <node concept="25R3W" id="3gtR0Xn_GLW">
+    <property role="3F6X1D" value="3755399622748982396" />
+    <property role="3GE5qa" value="expression.obstacle_avoidance.trigger_event" />
+    <property role="TrG5h" value="ObstacleAvoidanceTriggerEventEnum" />
+    <node concept="25R33" id="3gtR0Xn_GLX" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982397" />
+      <property role="TrG5h" value="ACTIVATES" />
+    </node>
+    <node concept="25R33" id="3gtR0Xn_GLY" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982398" />
+      <property role="TrG5h" value="DEACTIVATES" />
+    </node>
+  </node>
+  <node concept="25R3W" id="3gtR0Xn_GM1">
+    <property role="3F6X1D" value="3755399622748982401" />
+    <property role="3GE5qa" value="expression.IMU.trigger_event" />
+    <property role="TrG5h" value="IMUStateTriggerEventEnum" />
+    <node concept="25R33" id="3gtR0Xn_GM3" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982403" />
+      <property role="TrG5h" value="ACTIVATES" />
+    </node>
+    <node concept="25R33" id="3gtR0Xn_GM4" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982404" />
+      <property role="TrG5h" value="DEACTIVATES" />
+    </node>
+  </node>
+  <node concept="25R3W" id="3gtR0Xn_GMa">
+    <property role="3F6X1D" value="3755399622748982410" />
+    <property role="3GE5qa" value="expression.accelerometer.trigger_event" />
+    <property role="TrG5h" value="AccelerometerStateTriggerEventEnum" />
+    <node concept="25R33" id="3gtR0Xn_GMc" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982412" />
+      <property role="TrG5h" value="ACTIVATES" />
+    </node>
+    <node concept="25R33" id="3gtR0Xn_GMd" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982413" />
+      <property role="TrG5h" value="DEACTIVATES" />
+    </node>
+  </node>
+  <node concept="25R3W" id="3gtR0Xn_GMg">
+    <property role="3F6X1D" value="3755399622748982416" />
+    <property role="3GE5qa" value="expression.gyroscope.trigger_event" />
+    <property role="TrG5h" value="GyroscopeStateTriggerEventEnum" />
+    <node concept="25R33" id="3gtR0Xn_GMi" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982418" />
+      <property role="TrG5h" value="ACTIVATES" />
+    </node>
+    <node concept="25R33" id="3gtR0Xn_GMj" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982419" />
+      <property role="TrG5h" value="DEACTIVATES" />
+    </node>
+  </node>
+  <node concept="25R3W" id="3gtR0Xn_GMm">
+    <property role="3F6X1D" value="3755399622748982422" />
+    <property role="3GE5qa" value="expression.compass.trigger_event" />
+    <property role="TrG5h" value="CompassStateTriggerEventEnum" />
+    <node concept="25R33" id="3gtR0Xn_GMs" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982428" />
+      <property role="TrG5h" value="ACTIVATES" />
+    </node>
+    <node concept="25R33" id="3gtR0Xn_GMt" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982429" />
+      <property role="TrG5h" value="DEACTIVATES" />
+    </node>
+  </node>
+  <node concept="25R3W" id="3gtR0Xn_GMx">
+    <property role="3F6X1D" value="3755399622748982433" />
+    <property role="3GE5qa" value="expression.magnetometer.trigger_event" />
+    <property role="TrG5h" value="MagnetometerStateTriggerEventEnum" />
+    <node concept="25R33" id="3gtR0Xn_GMz" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982435" />
+      <property role="TrG5h" value="ACTIVATES" />
+    </node>
+    <node concept="25R33" id="3gtR0Xn_GM$" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982436" />
+      <property role="TrG5h" value="DEACTIVATES" />
+    </node>
+  </node>
+  <node concept="25R3W" id="3gtR0Xn_GME">
+    <property role="3F6X1D" value="3755399622748982442" />
+    <property role="3GE5qa" value="expression.barometer.trigger_event" />
+    <property role="TrG5h" value="BarometricStateTriggerEventEnum" />
+    <node concept="25R33" id="3gtR0Xn_GMJ" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982447" />
+      <property role="TrG5h" value="ACTIVATES" />
+    </node>
+    <node concept="25R33" id="3gtR0Xn_GMK" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982448" />
+      <property role="TrG5h" value="DEACTIVATES" />
+    </node>
+  </node>
+  <node concept="25R3W" id="3gtR0Xn_GMN">
+    <property role="3F6X1D" value="3755399622748982451" />
+    <property role="3GE5qa" value="expression.hygrometer.trigger_event" />
+    <property role="TrG5h" value="HygrometerStateTriggerEventEnum" />
+    <node concept="25R33" id="3gtR0Xn_GMP" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982453" />
+      <property role="TrG5h" value="ACTIVATES" />
+    </node>
+    <node concept="25R33" id="3gtR0Xn_GMQ" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982454" />
+      <property role="TrG5h" value="DEACTIVATES" />
+    </node>
+  </node>
+  <node concept="25R3W" id="3gtR0Xn_GMU">
+    <property role="3F6X1D" value="3755399622748982458" />
+    <property role="3GE5qa" value="expression.thermometer.trigger_event" />
+    <property role="TrG5h" value="ThermometerStateTriggerEventEnum" />
+    <node concept="25R33" id="3gtR0Xn_GN0" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982464" />
+      <property role="TrG5h" value="ACTIVATES" />
+    </node>
+    <node concept="25R33" id="3gtR0Xn_GN1" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982465" />
+      <property role="TrG5h" value="DEACTIVATES" />
+    </node>
+  </node>
+  <node concept="25R3W" id="3gtR0Xn_GN4">
+    <property role="3F6X1D" value="3755399622748982468" />
+    <property role="3GE5qa" value="expression.light.trigger_event" />
+    <property role="TrG5h" value="LightStatusTriggerEventEnum" />
+    <node concept="25R33" id="3gtR0Xn_GN6" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982470" />
+      <property role="TrG5h" value="ACTIVATES" />
+    </node>
+    <node concept="25R33" id="3gtR0Xn_GN7" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982471" />
+      <property role="TrG5h" value="DEACTIVATES" />
+    </node>
+  </node>
+  <node concept="25R3W" id="3gtR0Xn_GNa">
+    <property role="3F6X1D" value="3755399622748982474" />
+    <property role="3GE5qa" value="expression.landguear.trigger_event" />
+    <property role="TrG5h" value="LandguearStateTriggerEventEnum" />
+    <node concept="25R33" id="3gtR0Xn_GNc" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982476" />
+      <property role="TrG5h" value="ACTIVATES" />
+    </node>
+    <node concept="25R33" id="3gtR0Xn_GNd" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982477" />
+      <property role="TrG5h" value="DEACTIVATES" />
+    </node>
+  </node>
+  <node concept="25R3W" id="3gtR0Xn_GNg">
+    <property role="3F6X1D" value="3755399622748982480" />
+    <property role="3GE5qa" value="expression.anemometrer.trigger_event" />
+    <property role="TrG5h" value="AnemometrerStateTriggerEventEnum" />
+    <node concept="25R33" id="3gtR0Xn_GNi" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982482" />
+      <property role="TrG5h" value="ACTIVATES" />
+    </node>
+    <node concept="25R33" id="3gtR0Xn_GNj" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982483" />
+      <property role="TrG5h" value="DEACTIVATES" />
+    </node>
+  </node>
+  <node concept="25R3W" id="3gtR0Xn_GNm">
+    <property role="3F6X1D" value="3755399622748982486" />
+    <property role="3GE5qa" value="expression.emergency_stop_mode.trigger_event" />
+    <property role="TrG5h" value="EmergencyStopModeTriggerEventEnum" />
+    <node concept="25R33" id="3gtR0Xn_GNn" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982487" />
+      <property role="TrG5h" value="STARTS" />
+    </node>
+    <node concept="25R33" id="3gtR0Xn_GNo" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982488" />
+      <property role="TrG5h" value="PAUSES" />
+    </node>
+    <node concept="25R33" id="3gtR0Xn_GNr" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982491" />
+      <property role="TrG5h" value="CANCELS" />
+    </node>
+    <node concept="25R33" id="3gtR0Xn_GNv" role="25R1y">
+      <property role="3tVfz5" value="3755399622748982495" />
+      <property role="TrG5h" value="RESUMES" />
+    </node>
   </node>
 </model>
 
