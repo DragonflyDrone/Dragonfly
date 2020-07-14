@@ -223,31 +223,6 @@
       <ref role="20lvS9" node="5eYfGK4mOkW" resolve="Statement" />
     </node>
   </node>
-  <node concept="25R3W" id="7_KOYEjd0p5">
-    <property role="3F6X1D" value="8750727080426341957" />
-    <property role="3GE5qa" value="expression" />
-    <property role="TrG5h" value="InaquelityOperator" />
-    <node concept="25R33" id="7_KOYEjd0pa" role="25R1y">
-      <property role="3tVfz5" value="8750727080426341962" />
-      <property role="TrG5h" value="less_than" />
-      <property role="1L1pqM" value="&lt;" />
-    </node>
-    <node concept="25R33" id="7_KOYEjd0pb" role="25R1y">
-      <property role="3tVfz5" value="8750727080426341963" />
-      <property role="TrG5h" value="greater_than" />
-      <property role="1L1pqM" value="&gt;" />
-    </node>
-    <node concept="25R33" id="7_KOYEjd0pc" role="25R1y">
-      <property role="3tVfz5" value="8750727080426341964" />
-      <property role="TrG5h" value="less_than_or_equal_to" />
-      <property role="1L1pqM" value="&lt;=" />
-    </node>
-    <node concept="25R33" id="7_KOYEjd0pd" role="25R1y">
-      <property role="3tVfz5" value="8750727080426341965" />
-      <property role="TrG5h" value="greater_than_or_equal_to" />
-      <property role="1L1pqM" value="&gt;=" />
-    </node>
-  </node>
   <node concept="25R3W" id="7_KOYEjd0pt">
     <property role="3F6X1D" value="8750727080426341981" />
     <property role="3GE5qa" value="expression" />
@@ -563,34 +538,89 @@
     <property role="3GE5qa" value="expression.UAV.conditional_expression" />
     <property role="TrG5h" value="UAVManeuverDirectionConditionalExpression" />
     <ref role="1TJDcQ" node="w2EP0onGAV" resolve="ConditionalExpression" />
+    <node concept="1TJgyi" id="3gtR0Xn_GNY" role="1TKVEl">
+      <property role="IQ2nx" value="3755399622748982526" />
+      <property role="TrG5h" value="operatator" />
+      <ref role="AX2Wp" node="5fwjzFJ5$bC" resolve="EqualityOperatorEnum" />
+    </node>
+    <node concept="1TJgyi" id="3gtR0Xn_GO0" role="1TKVEl">
+      <property role="IQ2nx" value="3755399622748982528" />
+      <property role="TrG5h" value="direction" />
+      <ref role="AX2Wp" node="11jlgVoCRQP" resolve="DirectionEnum" />
+    </node>
   </node>
   <node concept="1TIwiD" id="5fwjzFJ5$b$">
     <property role="EcuMT" value="6043916714957488868" />
     <property role="3GE5qa" value="expression.UAV.conditional_expression" />
     <property role="TrG5h" value="UAVRotateConditionalExpression" />
     <ref role="1TJDcQ" node="w2EP0onGAV" resolve="ConditionalExpression" />
+    <node concept="1TJgyi" id="3gtR0Xn_GRr" role="1TKVEl">
+      <property role="IQ2nx" value="3755399622748982747" />
+      <property role="TrG5h" value="operator" />
+      <ref role="AX2Wp" node="5fwjzFJ5$bW" resolve="GeneralOperatorEnum" />
+    </node>
+    <node concept="1TJgyi" id="3gtR0Xn_GRt" role="1TKVEl">
+      <property role="IQ2nx" value="3755399622748982749" />
+      <property role="TrG5h" value="axes" />
+      <ref role="AX2Wp" node="5fwjzFJ5$q$" resolve="AxesEnum" />
+    </node>
+    <node concept="1TJgyi" id="3gtR0Xn_GRw" role="1TKVEl">
+      <property role="IQ2nx" value="3755399622748982752" />
+      <property role="TrG5h" value="degrees" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
   </node>
   <node concept="1TIwiD" id="5fwjzFJ5$b_">
     <property role="EcuMT" value="6043916714957488869" />
     <property role="3GE5qa" value="expression.UAV.conditional_expression" />
     <property role="TrG5h" value="UAVSpeedConditionalExpression" />
     <ref role="1TJDcQ" node="w2EP0onGAV" resolve="ConditionalExpression" />
+    <node concept="1TJgyi" id="3gtR0Xn_GSI" role="1TKVEl">
+      <property role="IQ2nx" value="3755399622748982830" />
+      <property role="TrG5h" value="speed" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="3gtR0Xn_GTi" role="1TKVEl">
+      <property role="IQ2nx" value="3755399622748982866" />
+      <property role="TrG5h" value="operator" />
+      <ref role="AX2Wp" node="5fwjzFJ5$bW" resolve="GeneralOperatorEnum" />
+    </node>
   </node>
   <node concept="1TIwiD" id="5fwjzFJ5$bA">
     <property role="EcuMT" value="6043916714957488870" />
     <property role="3GE5qa" value="expression.UAV.conditional_expression" />
     <property role="TrG5h" value="UAVAccelerationConditionalExpression" />
     <ref role="1TJDcQ" node="w2EP0onGAV" resolve="ConditionalExpression" />
+    <node concept="1TJgyi" id="3gtR0Xn_GV6" role="1TKVEl">
+      <property role="IQ2nx" value="3755399622748982982" />
+      <property role="TrG5h" value="operator" />
+      <ref role="AX2Wp" node="5fwjzFJ5$bW" resolve="GeneralOperatorEnum" />
+    </node>
+    <node concept="1TJgyi" id="3gtR0Xn_GV8" role="1TKVEl">
+      <property role="IQ2nx" value="3755399622748982984" />
+      <property role="TrG5h" value="acceleration" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
   </node>
   <node concept="1TIwiD" id="5fwjzFJ5$bB">
     <property role="EcuMT" value="6043916714957488871" />
     <property role="3GE5qa" value="expression.UAV.conditional_expression" />
     <property role="TrG5h" value="UAVAltitudeConditionalExpression" />
     <ref role="1TJDcQ" node="w2EP0onGAV" resolve="ConditionalExpression" />
+    <node concept="1TJgyi" id="3gtR0Xn_GXp" role="1TKVEl">
+      <property role="IQ2nx" value="3755399622748983129" />
+      <property role="TrG5h" value="altitude" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="3gtR0Xn_GXr" role="1TKVEl">
+      <property role="IQ2nx" value="3755399622748983131" />
+      <property role="TrG5h" value="operator" />
+      <ref role="AX2Wp" node="5fwjzFJ5$bW" resolve="GeneralOperatorEnum" />
+    </node>
   </node>
   <node concept="25R3W" id="5fwjzFJ5$bC">
     <property role="3F6X1D" value="6043916714957488872" />
-    <property role="3GE5qa" value="expression.operators" />
+    <property role="3GE5qa" value="expression" />
     <property role="TrG5h" value="EqualityOperatorEnum" />
     <node concept="25R33" id="5fwjzFJ5$bD" role="25R1y">
       <property role="3tVfz5" value="6043916714957488873" />
@@ -605,7 +635,7 @@
   </node>
   <node concept="25R3W" id="5fwjzFJ5$bI">
     <property role="3F6X1D" value="6043916714957488878" />
-    <property role="3GE5qa" value="expression.operators" />
+    <property role="3GE5qa" value="expression" />
     <property role="TrG5h" value="InequalityOperatorEnum" />
     <node concept="25R33" id="5fwjzFJ5$bJ" role="25R1y">
       <property role="3tVfz5" value="6043916714957488879" />
@@ -630,7 +660,7 @@
   </node>
   <node concept="25R3W" id="5fwjzFJ5$bW">
     <property role="3F6X1D" value="6043916714957488892" />
-    <property role="3GE5qa" value="expression.operators" />
+    <property role="3GE5qa" value="expression" />
     <property role="TrG5h" value="GeneralOperatorEnum" />
     <node concept="25R33" id="5fwjzFJ5$bY" role="25R1y">
       <property role="3tVfz5" value="6043916714957488894" />
@@ -668,90 +698,246 @@
     <property role="3GE5qa" value="expression.mission.conditional_expression" />
     <property role="TrG5h" value="MissionWayPointsConditionalExpression" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="3gtR0Xn_H0X" role="1TKVEi">
+      <property role="IQ2ns" value="3755399622748983357" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="waypoints" />
+      <property role="20lbJX" value="fLJekj6/_1__n" />
+      <ref role="20lvS9" node="3gtR0Xn_GZD" resolve="Point" />
+    </node>
   </node>
   <node concept="1TIwiD" id="5fwjzFJ5$cx">
     <property role="EcuMT" value="6043916714957488929" />
     <property role="3GE5qa" value="expression.mission.conditional_expression" />
     <property role="TrG5h" value="MissionStateConditionalExpression" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="3gtR0Xn_H1Q" role="1TKVEl">
+      <property role="IQ2nx" value="3755399622748983414" />
+      <property role="TrG5h" value="operator" />
+      <ref role="AX2Wp" node="5fwjzFJ5$bC" resolve="EqualityOperatorEnum" />
+    </node>
+    <node concept="1TJgyi" id="3gtR0Xn_H1S" role="1TKVEl">
+      <property role="IQ2nx" value="3755399622748983416" />
+      <property role="TrG5h" value="state" />
+      <ref role="AX2Wp" node="5fwjzFJ5$qW" resolve="MissionStateGetEnum" />
+    </node>
   </node>
   <node concept="1TIwiD" id="5fwjzFJ5$cy">
     <property role="EcuMT" value="6043916714957488930" />
     <property role="3GE5qa" value="expression.RTH.conditional_expression" />
     <property role="TrG5h" value="ReturnToHomeHomePointConditionalExpression" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="3gtR0Xn_H3p" role="1TKVEl">
+      <property role="IQ2nx" value="3755399622748983513" />
+      <property role="TrG5h" value="operator" />
+      <ref role="AX2Wp" node="5fwjzFJ5$bC" resolve="EqualityOperatorEnum" />
+    </node>
+    <node concept="1TJgyj" id="3gtR0Xn_H3r" role="1TKVEi">
+      <property role="IQ2ns" value="3755399622748983515" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="point" />
+      <property role="20lbJX" value="fLJekj6/_1__n" />
+      <ref role="20lvS9" node="3gtR0Xn_GZD" resolve="Point" />
+    </node>
   </node>
   <node concept="1TIwiD" id="5fwjzFJ5$cz">
     <property role="EcuMT" value="6043916714957488931" />
     <property role="3GE5qa" value="expression.RTH.conditional_expression" />
     <property role="TrG5h" value="ReturnToHomeStateConditionalExpression" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="3gtR0Xn_H4s" role="1TKVEl">
+      <property role="IQ2nx" value="3755399622748983580" />
+      <property role="TrG5h" value="operator" />
+      <ref role="AX2Wp" node="5fwjzFJ5$bC" resolve="EqualityOperatorEnum" />
+    </node>
+    <node concept="1TJgyi" id="3gtR0Xn_H4u" role="1TKVEl">
+      <property role="IQ2nx" value="3755399622748983582" />
+      <property role="TrG5h" value="state" />
+      <ref role="AX2Wp" node="5fwjzFJ5$s3" resolve="ReturnToHomeGetEnum" />
+    </node>
   </node>
   <node concept="1TIwiD" id="5fwjzFJ5$c$">
     <property role="EcuMT" value="6043916714957488932" />
     <property role="3GE5qa" value="expression.energy_saving_mode.conditional_expression" />
     <property role="TrG5h" value="EnergySavingModeLowWarningConditionalExpression" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <ref role="1TJDcQ" node="w2EP0onGAV" resolve="ConditionalExpression" />
+    <node concept="1TJgyi" id="3gtR0Xn_H5s" role="1TKVEl">
+      <property role="IQ2nx" value="3755399622748983644" />
+      <property role="TrG5h" value="operator" />
+      <ref role="AX2Wp" node="5fwjzFJ5$bW" resolve="GeneralOperatorEnum" />
+    </node>
+    <node concept="1TJgyi" id="3gtR0Xn_H5u" role="1TKVEl">
+      <property role="IQ2nx" value="3755399622748983646" />
+      <property role="TrG5h" value="value" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
   </node>
   <node concept="1TIwiD" id="5fwjzFJ5$c_">
     <property role="EcuMT" value="6043916714957488933" />
     <property role="3GE5qa" value="expression.energy_saving_mode.conditional_expression" />
     <property role="TrG5h" value="EnergySavingModeVeryLowWarningConditionalExpression" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="3gtR0Xn_H6F" role="1TKVEl">
+      <property role="IQ2nx" value="3755399622748983723" />
+      <property role="TrG5h" value="operator" />
+      <ref role="AX2Wp" node="5fwjzFJ5$bW" resolve="GeneralOperatorEnum" />
+    </node>
+    <node concept="1TJgyi" id="3gtR0Xn_H6Q" role="1TKVEl">
+      <property role="IQ2nx" value="3755399622748983734" />
+      <property role="TrG5h" value="value" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
   </node>
   <node concept="1TIwiD" id="5fwjzFJ5$cA">
     <property role="EcuMT" value="6043916714957488934" />
     <property role="3GE5qa" value="expression.energy_saving_mode.conditional_expression" />
     <property role="TrG5h" value="EnergySavingModeStateConditionalExpression" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="3gtR0Xn_H7l" role="1TKVEl">
+      <property role="IQ2nx" value="3755399622748983765" />
+      <property role="TrG5h" value="operator" />
+      <ref role="AX2Wp" node="5fwjzFJ5$bC" resolve="EqualityOperatorEnum" />
+    </node>
+    <node concept="1TJgyi" id="3gtR0Xn_H7n" role="1TKVEl">
+      <property role="IQ2nx" value="3755399622748983767" />
+      <property role="TrG5h" value="state" />
+      <ref role="AX2Wp" node="5fwjzFJ5$tx" resolve="EnergySavingModeGetEnum" />
+    </node>
   </node>
   <node concept="1TIwiD" id="5fwjzFJ5$cB">
     <property role="EcuMT" value="6043916714957488935" />
     <property role="3GE5qa" value="expression.safe_landing.conditional_expression" />
     <property role="TrG5h" value="SafeLandingStateConditionalExpression" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="3gtR0Xn_H8x" role="1TKVEl">
+      <property role="IQ2nx" value="3755399622748983841" />
+      <property role="TrG5h" value="operator" />
+      <ref role="AX2Wp" node="5fwjzFJ5$bC" resolve="EqualityOperatorEnum" />
+    </node>
+    <node concept="1TJgyi" id="3gtR0Xn_H8z" role="1TKVEl">
+      <property role="IQ2nx" value="3755399622748983843" />
+      <property role="TrG5h" value="state" />
+      <ref role="AX2Wp" node="5fwjzFJ5$ui" resolve="SafeLandingStateGetEnum" />
+    </node>
   </node>
   <node concept="1TIwiD" id="5fwjzFJ5$cC">
     <property role="EcuMT" value="6043916714957488936" />
     <property role="3GE5qa" value="expression.landing.conditional_expression" />
     <property role="TrG5h" value="LandingStateConditionalExpression" />
     <ref role="1TJDcQ" node="w2EP0onGAV" resolve="ConditionalExpression" />
+    <node concept="1TJgyi" id="3gtR0Xn_H9z" role="1TKVEl">
+      <property role="IQ2nx" value="3755399622748983907" />
+      <property role="TrG5h" value="operator" />
+      <ref role="AX2Wp" node="5fwjzFJ5$bC" resolve="EqualityOperatorEnum" />
+    </node>
+    <node concept="1TJgyi" id="3gtR0Xn_H9_" role="1TKVEl">
+      <property role="IQ2nx" value="3755399622748983909" />
+      <property role="TrG5h" value="state" />
+      <ref role="AX2Wp" node="5fwjzFJ5$uO" resolve="LandingStateGetEnum" />
+    </node>
   </node>
   <node concept="1TIwiD" id="5fwjzFJ5$cD">
     <property role="EcuMT" value="6043916714957488937" />
     <property role="3GE5qa" value="expression.takeoff.conditional_expression" />
     <property role="TrG5h" value="TakeOffStateConditionalExpression" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="3gtR0Xn_Haz" role="1TKVEl">
+      <property role="IQ2nx" value="3755399622748983971" />
+      <property role="TrG5h" value="operator" />
+      <ref role="AX2Wp" node="5fwjzFJ5$bC" resolve="EqualityOperatorEnum" />
+    </node>
+    <node concept="1TJgyi" id="3gtR0Xn_Ha_" role="1TKVEl">
+      <property role="IQ2nx" value="3755399622748983973" />
+      <property role="TrG5h" value="state" />
+      <ref role="AX2Wp" node="5fwjzFJ5$vt" resolve="TakeOffStateGetEnum" />
+    </node>
   </node>
   <node concept="1TIwiD" id="5fwjzFJ5$cE">
     <property role="EcuMT" value="6043916714957488938" />
     <property role="3GE5qa" value="expression.flight.control.conditional_expression" />
     <property role="TrG5h" value="FlightControlStateConditionalExpression" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="3gtR0Xn_HaZ" role="1TKVEl">
+      <property role="IQ2nx" value="3755399622748983999" />
+      <property role="TrG5h" value="controlSwitch" />
+      <ref role="AX2Wp" node="5fwjzFJ5$vS" resolve="ControlSwitchEnum" />
+    </node>
+    <node concept="1TJgyi" id="3gtR0Xn_Hb1" role="1TKVEl">
+      <property role="IQ2nx" value="3755399622748984001" />
+      <property role="TrG5h" value="operator" />
+      <ref role="AX2Wp" node="5fwjzFJ5$bC" resolve="EqualityOperatorEnum" />
+    </node>
   </node>
   <node concept="1TIwiD" id="5fwjzFJ5$cF">
     <property role="EcuMT" value="6043916714957488939" />
     <property role="3GE5qa" value="expression.gimbal.conditional_expression" />
     <property role="TrG5h" value="GimbalRotationConditionalExpression" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="3gtR0Xn_HbZ" role="1TKVEl">
+      <property role="IQ2nx" value="3755399622748984063" />
+      <property role="TrG5h" value="axes" />
+      <ref role="AX2Wp" node="5fwjzFJ5$q$" resolve="AxesEnum" />
+    </node>
+    <node concept="1TJgyi" id="3gtR0Xn_Hc1" role="1TKVEl">
+      <property role="IQ2nx" value="3755399622748984065" />
+      <property role="TrG5h" value="rotation" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
   </node>
   <node concept="1TIwiD" id="5fwjzFJ5$cG">
     <property role="EcuMT" value="6043916714957488940" />
     <property role="3GE5qa" value="expression.gimbal.conditional_expression" />
     <property role="TrG5h" value="GimbalStateConditionalExpression" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <ref role="1TJDcQ" node="w2EP0onGAV" resolve="ConditionalExpression" />
+    <node concept="1TJgyi" id="3gtR0Xn_Hdx" role="1TKVEl">
+      <property role="IQ2nx" value="3755399622748984161" />
+      <property role="TrG5h" value="controlSwitch" />
+      <ref role="AX2Wp" node="5fwjzFJ5$vS" resolve="ControlSwitchEnum" />
+    </node>
+    <node concept="1TJgyi" id="3gtR0Xn_Hdz" role="1TKVEl">
+      <property role="IQ2nx" value="3755399622748984163" />
+      <property role="TrG5h" value="operator" />
+      <ref role="AX2Wp" node="5fwjzFJ5$bC" resolve="EqualityOperatorEnum" />
+    </node>
+    <node concept="1TJgyi" id="3gtR0Xn_HdA" role="1TKVEl">
+      <property role="IQ2nx" value="3755399622748984166" />
+      <property role="TrG5h" value="state" />
+      <ref role="AX2Wp" node="5fwjzFJ5$vX" resolve="GimbalStateGetEnum" />
+    </node>
   </node>
   <node concept="1TIwiD" id="5fwjzFJ5$cH">
     <property role="EcuMT" value="6043916714957488941" />
     <property role="3GE5qa" value="expression.camera.conditional_expression" />
     <property role="TrG5h" value="CameraStateConditionalExpression" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="3gtR0Xn_HfT" role="1TKVEl">
+      <property role="IQ2nx" value="3755399622748984313" />
+      <property role="TrG5h" value="operator" />
+      <ref role="AX2Wp" node="5fwjzFJ5$bC" resolve="EqualityOperatorEnum" />
+    </node>
+    <node concept="1TJgyi" id="3gtR0Xn_HfV" role="1TKVEl">
+      <property role="IQ2nx" value="3755399622748984315" />
+      <property role="TrG5h" value="state" />
+      <ref role="AX2Wp" node="5fwjzFJ5$wR" resolve="CameraStateGetEnum" />
+    </node>
   </node>
   <node concept="1TIwiD" id="5fwjzFJ5$cI">
     <property role="EcuMT" value="6043916714957488942" />
     <property role="3GE5qa" value="expression.camera.conditional_expression" />
     <property role="TrG5h" value="CameraFocusPointConditionalExpression" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="3gtR0Xn_HeS" role="1TKVEl">
+      <property role="IQ2nx" value="3755399622748984248" />
+      <property role="TrG5h" value="operator" />
+      <ref role="AX2Wp" node="5fwjzFJ5$bC" resolve="EqualityOperatorEnum" />
+    </node>
+    <node concept="1TJgyj" id="3gtR0Xn_HeU" role="1TKVEi">
+      <property role="IQ2ns" value="3755399622748984250" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="point" />
+      <property role="20lbJX" value="fLJekj6/_1__n" />
+      <ref role="20lvS9" node="3gtR0Xn_GZD" resolve="Point" />
+    </node>
   </node>
   <node concept="1TIwiD" id="5fwjzFJ5$cJ">
     <property role="EcuMT" value="6043916714957488943" />
@@ -912,7 +1098,7 @@
   <node concept="25R3W" id="5fwjzFJ5$q$">
     <property role="3F6X1D" value="6043916714957489828" />
     <property role="3GE5qa" value="expression" />
-    <property role="TrG5h" value="UAVAxesEnum" />
+    <property role="TrG5h" value="AxesEnum" />
     <node concept="25R33" id="5fwjzFJ5$q_" role="25R1y">
       <property role="3tVfz5" value="6043916714957489829" />
       <property role="TrG5h" value="PITCH" />
@@ -1260,7 +1446,7 @@
   <node concept="25R3W" id="5fwjzFJ5$vX">
     <property role="3F6X1D" value="6043916714957490173" />
     <property role="3GE5qa" value="expression.gimbal.conditional_expression" />
-    <property role="TrG5h" value="GambialStateGetEnum" />
+    <property role="TrG5h" value="GimbalStateGetEnum" />
     <node concept="25R33" id="5fwjzFJ5$vZ" role="25R1y">
       <property role="3tVfz5" value="6043916714957490175" />
       <property role="TrG5h" value="READY_TO_START" />
@@ -2048,6 +2234,16 @@
     <property role="3GE5qa" value="expression.UAV.motor.conditional_expression" />
     <property role="TrG5h" value="UAVMotorConditionalExpression" />
     <ref role="1TJDcQ" node="w2EP0onGAV" resolve="ConditionalExpression" />
+    <node concept="1TJgyi" id="3gtR0Xn_GYD" role="1TKVEl">
+      <property role="IQ2nx" value="3755399622748983209" />
+      <property role="TrG5h" value="operator" />
+      <ref role="AX2Wp" node="5fwjzFJ5$bC" resolve="EqualityOperatorEnum" />
+    </node>
+    <node concept="1TJgyi" id="3gtR0Xn_GYF" role="1TKVEl">
+      <property role="IQ2nx" value="3755399622748983211" />
+      <property role="TrG5h" value="state" />
+      <ref role="AX2Wp" node="w2EP0omFyR" resolve="MotorStateGetEnum" />
+    </node>
   </node>
   <node concept="25R3W" id="w2EP0omFyM">
     <property role="3F6X1D" value="577212062751176882" />
@@ -2112,6 +2308,16 @@
     <property role="3GE5qa" value="expression.UAV.conditional_expression" />
     <property role="TrG5h" value="UAVManeuverDirectionToRegionConditionalExpression" />
     <ref role="1TJDcQ" node="w2EP0onGAV" resolve="ConditionalExpression" />
+    <node concept="1TJgyi" id="3gtR0Xn_GO$" role="1TKVEl">
+      <property role="IQ2nx" value="3755399622748982564" />
+      <property role="TrG5h" value="operator" />
+      <ref role="AX2Wp" node="5fwjzFJ5$bC" resolve="EqualityOperatorEnum" />
+    </node>
+    <node concept="1TJgyi" id="3gtR0Xn_GOA" role="1TKVEl">
+      <property role="IQ2nx" value="3755399622748982566" />
+      <property role="TrG5h" value="region" />
+      <ref role="AX2Wp" node="79gzy7KeIiz" resolve="RegionEnum" />
+    </node>
   </node>
   <node concept="1TIwiD" id="w2EP0onGAV">
     <property role="TrG5h" value="ConditionalExpression" />
@@ -2185,12 +2391,32 @@
     <property role="3GE5qa" value="expression.UAV.conditional_expression" />
     <property role="TrG5h" value="UAVSpeedModeConditionalExpression" />
     <ref role="1TJDcQ" node="w2EP0onGAV" resolve="ConditionalExpression" />
+    <node concept="1TJgyi" id="3gtR0Xn_GU1" role="1TKVEl">
+      <property role="IQ2nx" value="3755399622748982913" />
+      <property role="TrG5h" value="operator" />
+      <ref role="AX2Wp" node="5fwjzFJ5$bC" resolve="EqualityOperatorEnum" />
+    </node>
+    <node concept="1TJgyi" id="3gtR0Xn_GUK" role="1TKVEl">
+      <property role="IQ2nx" value="3755399622748982960" />
+      <property role="TrG5h" value="controlSwitch" />
+      <ref role="AX2Wp" node="5fwjzFJ5$vS" resolve="ControlSwitchEnum" />
+    </node>
   </node>
   <node concept="1TIwiD" id="w2EP0onGBc">
     <property role="EcuMT" value="577212062751443404" />
     <property role="3GE5qa" value="expression.UAV.conditional_expression" />
     <property role="TrG5h" value="AccelerationModeConditionalExpression" />
     <ref role="1TJDcQ" node="w2EP0onGAV" resolve="ConditionalExpression" />
+    <node concept="1TJgyi" id="3gtR0Xn_GW6" role="1TKVEl">
+      <property role="IQ2nx" value="3755399622748983046" />
+      <property role="TrG5h" value="operator" />
+      <ref role="AX2Wp" node="5fwjzFJ5$bC" resolve="EqualityOperatorEnum" />
+    </node>
+    <node concept="1TJgyi" id="3gtR0Xn_GW8" role="1TKVEl">
+      <property role="IQ2nx" value="3755399622748983048" />
+      <property role="TrG5h" value="controlSwitch" />
+      <ref role="AX2Wp" node="5fwjzFJ5$vS" resolve="ControlSwitchEnum" />
+    </node>
   </node>
   <node concept="1TIwiD" id="w2EP0onGBd">
     <property role="EcuMT" value="577212062751443405" />
@@ -2434,41 +2660,6 @@
     <property role="3GE5qa" value="expression.emergency_stop_mode.command" />
     <property role="TrG5h" value="EmergencyStopModeStateCommandExpression" />
     <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="Command" />
-  </node>
-  <node concept="25R3W" id="3gtR0Xn_DqA">
-    <property role="3F6X1D" value="3755399622748968614" />
-    <property role="3GE5qa" value="expression" />
-    <property role="TrG5h" value="GeneralOperator" />
-    <node concept="25R33" id="3gtR0Xn_DqF" role="25R1y">
-      <property role="3tVfz5" value="3755399622748968619" />
-      <property role="TrG5h" value="less_than" />
-      <property role="1L1pqM" value="&lt;" />
-    </node>
-    <node concept="25R33" id="3gtR0Xn_DqG" role="25R1y">
-      <property role="3tVfz5" value="3755399622748968620" />
-      <property role="TrG5h" value="greater_than" />
-      <property role="1L1pqM" value="&gt;" />
-    </node>
-    <node concept="25R33" id="3gtR0Xn_DqH" role="25R1y">
-      <property role="3tVfz5" value="3755399622748968621" />
-      <property role="TrG5h" value="less_than_or_equal_to" />
-      <property role="1L1pqM" value="&lt;=" />
-    </node>
-    <node concept="25R33" id="3gtR0Xn_DqI" role="25R1y">
-      <property role="3tVfz5" value="3755399622748968622" />
-      <property role="TrG5h" value="greater_than_or_equal_to" />
-      <property role="1L1pqM" value="&gt;=" />
-    </node>
-    <node concept="25R33" id="3gtR0Xn_Dr4" role="25R1y">
-      <property role="3tVfz5" value="3755399622748968644" />
-      <property role="TrG5h" value="equal" />
-      <property role="1L1pqM" value="==" />
-    </node>
-    <node concept="25R33" id="3gtR0Xn_Dr5" role="25R1y">
-      <property role="3tVfz5" value="3755399622748968645" />
-      <property role="TrG5h" value="different" />
-      <property role="1L1pqM" value="≠" />
-    </node>
   </node>
   <node concept="1TIwiD" id="3gtR0Xn_GIE">
     <property role="EcuMT" value="3755399622748982186" />
@@ -3085,6 +3276,53 @@
     <node concept="25R33" id="3gtR0Xn_GNv" role="25R1y">
       <property role="3tVfz5" value="3755399622748982495" />
       <property role="TrG5h" value="RESUMES" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="3gtR0Xn_GP0">
+    <property role="EcuMT" value="3755399622748982592" />
+    <property role="3GE5qa" value="expression.UAV.conditional_expression" />
+    <property role="TrG5h" value="UAVCurrentPositionConditionalExpression" />
+    <ref role="1TJDcQ" node="w2EP0onGAV" resolve="ConditionalExpression" />
+    <node concept="1TJgyi" id="3gtR0Xn_GP1" role="1TKVEl">
+      <property role="IQ2nx" value="3755399622748982593" />
+      <property role="TrG5h" value="operator" />
+      <ref role="AX2Wp" node="5fwjzFJ5$bC" resolve="EqualityOperatorEnum" />
+    </node>
+    <node concept="1TJgyi" id="3gtR0Xn_GP3" role="1TKVEl">
+      <property role="IQ2nx" value="3755399622748982595" />
+      <property role="TrG5h" value="latitude" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="3gtR0Xn_GP6" role="1TKVEl">
+      <property role="IQ2nx" value="3755399622748982598" />
+      <property role="TrG5h" value="longitude" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="3gtR0Xn_GPa" role="1TKVEl">
+      <property role="IQ2nx" value="3755399622748982602" />
+      <property role="TrG5h" value="altitude" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="3gtR0Xn_GZD">
+    <property role="EcuMT" value="3755399622748983273" />
+    <property role="3GE5qa" value="expression" />
+    <property role="TrG5h" value="Point" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="3gtR0Xn_GZE" role="1TKVEl">
+      <property role="IQ2nx" value="3755399622748983274" />
+      <property role="TrG5h" value="latitude" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="3gtR0Xn_GZG" role="1TKVEl">
+      <property role="IQ2nx" value="3755399622748983276" />
+      <property role="TrG5h" value="longitude" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="3gtR0Xn_GZJ" role="1TKVEl">
+      <property role="IQ2nx" value="3755399622748983279" />
+      <property role="TrG5h" value="altitude" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
   </node>
 </model>
