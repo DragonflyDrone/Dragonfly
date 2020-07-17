@@ -71,6 +71,10 @@ public class TreeView extends Group implements SelectableView, Tree.Listener {
         return uniqueID;
     }
 
+    public void setUniqueID(String uniqueID) {
+        this.uniqueID = uniqueID;
+    }
+
     @Override
     public void removeStyleSelected() {
         if(getChildren().contains(selectHelper)){

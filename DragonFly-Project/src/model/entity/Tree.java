@@ -1,16 +1,21 @@
 package model.entity;
 
+import controller.CellController;
+import model.Cell;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Tree {
     public static int COUNT_TREE = 1;
-    private final String uniqueID;
+    private String uniqueID;
     int rowPosition, columnPosition;
     private Boolean selected = false;
     private List<Listener> listeners = new ArrayList<>();
     private String label;
-    private Double height = 8.D;
+    private Double height;
+
+    private Cell sourceCell = CellController.getInstance().getCellFrom(0,0);
 
     public Tree(String uniqueID, String label, int rowPosition, int columnPosition) {
         this.uniqueID = uniqueID;
@@ -52,6 +57,19 @@ public class Tree {
         return uniqueID;
     }
 
+    public void setUniqueID(String uniqueID) {
+        String oldValue = this.uniqueID;
+        String newValue = uniqueID;
+
+        if(oldValue == newValue){
+            return;
+        }
+
+        this.uniqueID = uniqueID;
+
+        notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
+    }
+
     public Boolean getSelected() {
         return selected;
     }
@@ -76,6 +94,23 @@ public class Tree {
         }
 
         this.height = height;
+
+        notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
+    }
+
+    public Cell getSourceCell() {
+        return sourceCell;
+    }
+
+    public void setSourceCell(Cell sourceCell) {
+        Cell oldValue = this.sourceCell;
+        Cell newValue = sourceCell;
+
+        this.sourceCell = sourceCell;
+
+        if(oldValue == newValue){
+            return;
+        }
 
         notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
     }

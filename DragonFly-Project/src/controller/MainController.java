@@ -2,6 +2,7 @@ package controller;
 
 import controller.settings_panel.BoatSettingsPanelController;
 import controller.settings_panel.DroneSettingsPanelController;
+import controller.settings_panel.TreeSettingsPanelController;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -400,8 +401,9 @@ public class MainController extends Application {
 
             //add drone settings_panel
             environmentController.createDrone(selectedCellView);
-            DroneSettingsPanelController.getInstance().show();
             BoatSettingsPanelController.getInstance().hide();
+            TreeSettingsPanelController.getInstance().hide();
+            DroneSettingsPanelController.getInstance().show();
 
             canCreateElements = false;
 
@@ -414,6 +416,7 @@ public class MainController extends Application {
 
             canCreateElements = false;
             DroneSettingsPanelController.getInstance().hide();
+            TreeSettingsPanelController.getInstance().hide();
             BoatSettingsPanelController.getInstance().show();
 
 
@@ -422,7 +425,12 @@ public class MainController extends Application {
             environmentController.createHouse(selectedCellView);
         }
         else if(treeToggleButton.isSelected()){
+            //add tree settings_panel
             environmentController.createTree(selectedCellView);
+            DroneSettingsPanelController.getInstance().hide();
+            BoatSettingsPanelController.getInstance().hide();
+            TreeSettingsPanelController.getInstance().show();
+
         }
 
             }catch (Exception e){
@@ -477,10 +485,9 @@ public class MainController extends Application {
 
         DroneSettingsPanelController.init(defaultPanelSettingsAnchorPane);
 
-
         BoatSettingsPanelController.init(defaultPanelSettingsAnchorPane);
 
-
+        TreeSettingsPanelController.init(defaultPanelSettingsAnchorPane);
 
 
     }
@@ -504,6 +511,7 @@ public class MainController extends Application {
 
             DroneSettingsPanelController.getInstance().notifyMouseClick(currentSelectableView);
             BoatSettingsPanelController.getInstance().notifyMouseClick(currentSelectableView);
+            TreeSettingsPanelController.getInstance().notifyMouseClick(currentSelectableView);
 
             if(!isEmpty(defaultPanelSettingsAnchorPane))
                 canCreateElements = false;

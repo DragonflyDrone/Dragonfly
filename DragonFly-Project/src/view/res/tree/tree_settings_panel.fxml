@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="treeSettingsPanelAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="272.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+
+        <Label fx:id="currentTreeLabel" disable="true" layoutX="10.0" layoutY="11.0" text="Current Tree (ID):" />
+        <TextField fx:id="currentTreeTextField" disable="true" layoutX="106.0" layoutY="5.0" prefHeight="26.0" prefWidth="58.0" text="0" />
+
+        <Label fx:id="heightLabel" disable="true" layoutX="10.0" layoutY="45.0" text="Height:" />
+        <TextField fx:id="heightTextView" disable="true" layoutX="60.0" layoutY="41.0" prefHeight="26.0" prefWidth="53.0" promptText="0" />
+
+        <Label fx:id="sourceLabel" disable="true" layoutX="10.0" layoutY="75.0" text="Source:" />
+        <Label fx:id="currentSourceCell" disable="true" layoutX="60.0" layoutY="76.0" text="&lt;0,0&gt;" />
+
+        <Button fx:id="saveButton" disable="true" layoutX="288.0" layoutY="241.0" mnemonicParsing="false" text="Save" />
+
+    </children>
+</AnchorPane>
