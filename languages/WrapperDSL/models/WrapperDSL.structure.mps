@@ -469,15 +469,10 @@
     <property role="3GE5qa" value="expression.smoke_detector.command" />
     <property role="TrG5h" value="SmokerDetectorStateCommandExpression" />
     <ref role="1TJDcQ" node="w2EP0onGAV" resolve="ConditionalExpression" />
-    <node concept="1TJgyi" id="31DEoowcqmP" role="1TKVEl">
-      <property role="IQ2nx" value="3488505779905996213" />
-      <property role="TrG5h" value="operators" />
-      <ref role="AX2Wp" node="7_KOYEjd0pt" resolve="IqualityOperatorEnum" />
-    </node>
-    <node concept="1TJgyi" id="31DEoowcqmQ" role="1TKVEl">
-      <property role="IQ2nx" value="3488505779905996214" />
-      <property role="TrG5h" value="right" />
-      <ref role="AX2Wp" node="31DEoowcqmU" resolve="booleanDetectionEnum" />
+    <node concept="1TJgyi" id="7Zo9yKw9x6i" role="1TKVEl">
+      <property role="IQ2nx" value="9212155008746131858" />
+      <property role="TrG5h" value="state" />
+      <ref role="AX2Wp" node="w2EP0onGBW" resolve="smokerSensorSetEnum" />
     </node>
   </node>
   <node concept="1TIwiD" id="5fwjzFJ5lFm">
@@ -1689,7 +1684,7 @@
   <node concept="25R3W" id="5fwjzFJ5$wh">
     <property role="3F6X1D" value="6043916714957490193" />
     <property role="3GE5qa" value="expression.gimbal.command" />
-    <property role="TrG5h" value="GambialStateSetEnum" />
+    <property role="TrG5h" value="GimbalStateSetEnum" />
     <node concept="25R33" id="5fwjzFJ5$wi" role="25R1y">
       <property role="3tVfz5" value="6043916714957490194" />
       <property role="TrG5h" value="START" />
@@ -2229,7 +2224,7 @@
   <node concept="25R3W" id="5fwjzFJ5$Ci">
     <property role="3F6X1D" value="6043916714957490706" />
     <property role="3GE5qa" value="expression.hygrometer.command" />
-    <property role="TrG5h" value="HumidityStateSetEnum" />
+    <property role="TrG5h" value="HygrometerStateSetEnum" />
     <node concept="25R33" id="5fwjzFJ5$Ck" role="25R1y">
       <property role="3tVfz5" value="6043916714957490708" />
       <property role="TrG5h" value="ACTIVATE" />
@@ -2385,7 +2380,7 @@
   <node concept="25R3W" id="5fwjzFJ5$Dz">
     <property role="3F6X1D" value="6043916714957490787" />
     <property role="3GE5qa" value="expression.anemometrer.command" />
-    <property role="TrG5h" value="WindStateSetEnum" />
+    <property role="TrG5h" value="AnemometerStateSetEnum" />
     <node concept="25R33" id="5fwjzFJ5$D$" role="25R1y">
       <property role="3tVfz5" value="6043916714957490788" />
       <property role="TrG5h" value="ACTIVATE" />
@@ -2554,54 +2549,99 @@
     <property role="3GE5qa" value="expression.UAV.command" />
     <property role="TrG5h" value="UAVManeuverDirectionCommandExpression" />
     <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="Command" />
+    <node concept="1TJgyi" id="7Zo9yKw9x6u" role="1TKVEl">
+      <property role="IQ2nx" value="9212155008746131870" />
+      <property role="TrG5h" value="direction" />
+      <ref role="AX2Wp" node="11jlgVoCRQP" resolve="DirectionEnum" />
+    </node>
   </node>
   <node concept="1TIwiD" id="w2EP0onGB3">
     <property role="EcuMT" value="577212062751443395" />
     <property role="3GE5qa" value="expression.UAV.command" />
     <property role="TrG5h" value="UAVManeuverDirectionToRegionCommandExpression" />
     <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="Command" />
+    <node concept="1TJgyi" id="7Zo9yKw9x6w" role="1TKVEl">
+      <property role="IQ2nx" value="9212155008746131872" />
+      <property role="TrG5h" value="RegionDirection" />
+      <ref role="AX2Wp" node="79gzy7KeIiz" resolve="RegionEnum" />
+    </node>
   </node>
   <node concept="1TIwiD" id="w2EP0onGB4">
     <property role="EcuMT" value="577212062751443396" />
     <property role="3GE5qa" value="expression.UAV.command" />
     <property role="TrG5h" value="UAVRotateCommandExpression" />
     <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="Command" />
+    <node concept="1TJgyi" id="7Zo9yKw9x6y" role="1TKVEl">
+      <property role="IQ2nx" value="9212155008746131874" />
+      <property role="TrG5h" value="value" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
   </node>
   <node concept="1TIwiD" id="w2EP0onGB5">
     <property role="EcuMT" value="577212062751443397" />
     <property role="3GE5qa" value="expression.UAV.command" />
     <property role="TrG5h" value="UAVSpeedCommandExpression" />
     <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="Command" />
+    <node concept="1TJgyi" id="7Zo9yKw9x6$" role="1TKVEl">
+      <property role="IQ2nx" value="9212155008746131876" />
+      <property role="TrG5h" value="value" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
   </node>
   <node concept="1TIwiD" id="w2EP0onGB6">
     <property role="EcuMT" value="577212062751443398" />
     <property role="3GE5qa" value="expression.UAV.command" />
     <property role="TrG5h" value="UAVSpeedModeCommandExpression" />
     <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="Command" />
+    <node concept="1TJgyi" id="7Zo9yKw9x6A" role="1TKVEl">
+      <property role="IQ2nx" value="9212155008746131878" />
+      <property role="TrG5h" value="state" />
+      <ref role="AX2Wp" node="5fwjzFJ5$vS" resolve="ControlSwitchEnum" />
+    </node>
   </node>
   <node concept="1TIwiD" id="w2EP0onGB7">
     <property role="EcuMT" value="577212062751443399" />
     <property role="3GE5qa" value="expression.UAV.command" />
     <property role="TrG5h" value="UAVAccelerationCommandExpression" />
     <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="Command" />
+    <node concept="1TJgyi" id="7Zo9yKw9x6o" role="1TKVEl">
+      <property role="IQ2nx" value="9212155008746131864" />
+      <property role="TrG5h" value="value" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
   </node>
   <node concept="1TIwiD" id="w2EP0onGB8">
     <property role="EcuMT" value="577212062751443400" />
     <property role="3GE5qa" value="expression.UAV.command" />
     <property role="TrG5h" value="UAVAccelerationModeCommandExpression" />
     <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="Command" />
+    <node concept="1TJgyi" id="7Zo9yKw9x6q" role="1TKVEl">
+      <property role="IQ2nx" value="9212155008746131866" />
+      <property role="TrG5h" value="state" />
+      <ref role="AX2Wp" node="5fwjzFJ5$vS" resolve="ControlSwitchEnum" />
+    </node>
   </node>
   <node concept="1TIwiD" id="w2EP0onGB9">
     <property role="EcuMT" value="577212062751443401" />
     <property role="3GE5qa" value="expression.UAV.command" />
     <property role="TrG5h" value="UAVAltitudeCommandExpression" />
     <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="Command" />
+    <node concept="1TJgyi" id="7Zo9yKw9x6s" role="1TKVEl">
+      <property role="IQ2nx" value="9212155008746131868" />
+      <property role="TrG5h" value="value" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
   </node>
   <node concept="1TIwiD" id="w2EP0onGBa">
     <property role="EcuMT" value="577212062751443402" />
     <property role="3GE5qa" value="expression.UAV.motor.command" />
     <property role="TrG5h" value="UAVMotorCommandExpression" />
     <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="Command" />
+    <node concept="1TJgyi" id="7Zo9yKw9x6C" role="1TKVEl">
+      <property role="IQ2nx" value="9212155008746131880" />
+      <property role="TrG5h" value="state" />
+      <ref role="AX2Wp" node="w2EP0omFyM" resolve="MotorStateSetEnum" />
+    </node>
   </node>
   <node concept="1TIwiD" id="w2EP0onGBb">
     <property role="EcuMT" value="577212062751443403" />
@@ -2640,18 +2680,37 @@
     <property role="3GE5qa" value="expression.mission.command" />
     <property role="TrG5h" value="MissionWayPointsCommandExpression" />
     <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="Command" />
+    <node concept="1TJgyj" id="7Zo9yKw9x5K" role="1TKVEi">
+      <property role="IQ2ns" value="9212155008746131824" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="waypoints" />
+      <property role="20lbJX" value="fLJekj6/_1__n" />
+      <ref role="20lvS9" node="3gtR0Xn_GZD" resolve="Point" />
+    </node>
   </node>
   <node concept="1TIwiD" id="w2EP0onGBe">
     <property role="EcuMT" value="577212062751443406" />
     <property role="3GE5qa" value="expression.mission.command" />
     <property role="TrG5h" value="MissionStateCommandExpression" />
     <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="Command" />
+    <node concept="1TJgyi" id="7Zo9yKw9x5H" role="1TKVEl">
+      <property role="IQ2nx" value="9212155008746131821" />
+      <property role="TrG5h" value="state" />
+      <ref role="AX2Wp" node="5fwjzFJ5$rC" resolve="MissionStateSetEnum" />
+    </node>
   </node>
   <node concept="1TIwiD" id="w2EP0onGBf">
     <property role="EcuMT" value="577212062751443407" />
     <property role="3GE5qa" value="expression.RTH.command" />
     <property role="TrG5h" value="ReturnToHomeHomePointCommandExpression" />
     <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="Command" />
+    <node concept="1TJgyj" id="7Zo9yKw9x6c" role="1TKVEi">
+      <property role="IQ2ns" value="9212155008746131852" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="waypoint" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="3gtR0Xn_GZD" resolve="Point" />
+    </node>
   </node>
   <node concept="1TIwiD" id="w2EP0onGBg">
     <property role="EcuMT" value="577212062751443408" />
@@ -2664,150 +2723,257 @@
     <property role="3GE5qa" value="expression.RTH.command" />
     <property role="TrG5h" value="ReturnToHomeStateCommandExpression" />
     <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="Command" />
+    <node concept="1TJgyi" id="7Zo9yKw9x6e" role="1TKVEl">
+      <property role="IQ2nx" value="9212155008746131854" />
+      <property role="TrG5h" value="state" />
+      <ref role="AX2Wp" node="5fwjzFJ5$t6" resolve="ReturnToHomeStateSetEnum" />
+    </node>
   </node>
   <node concept="1TIwiD" id="w2EP0onGBi">
     <property role="EcuMT" value="577212062751443410" />
     <property role="3GE5qa" value="expression.energy_saving_mode.command" />
     <property role="TrG5h" value="EnergySavingModeLowWarningCommandExpression" />
     <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="Command" />
+    <node concept="1TJgyi" id="7Zo9yKw9x58" role="1TKVEl">
+      <property role="IQ2nx" value="9212155008746131784" />
+      <property role="TrG5h" value="value" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
   </node>
   <node concept="1TIwiD" id="w2EP0onGBj">
     <property role="EcuMT" value="577212062751443411" />
     <property role="3GE5qa" value="expression.energy_saving_mode.command" />
     <property role="TrG5h" value="EnergySavingModeVeryLowWarningCommandExpression" />
     <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="Command" />
+    <node concept="1TJgyi" id="7Zo9yKw9x5a" role="1TKVEl">
+      <property role="IQ2nx" value="9212155008746131786" />
+      <property role="TrG5h" value="value" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
   </node>
   <node concept="1TIwiD" id="w2EP0onGBk">
     <property role="EcuMT" value="577212062751443412" />
     <property role="3GE5qa" value="expression.energy_saving_mode.command" />
     <property role="TrG5h" value="EnergySavingModeStateCommandExpression" />
     <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="Command" />
+    <node concept="1TJgyi" id="7Zo9yKw9x55" role="1TKVEl">
+      <property role="IQ2nx" value="9212155008746131781" />
+      <property role="TrG5h" value="state" />
+      <ref role="AX2Wp" node="5fwjzFJ5$u4" resolve="EnergySavingModeStateSetEnum" />
+    </node>
   </node>
   <node concept="1TIwiD" id="w2EP0onGBl">
     <property role="EcuMT" value="577212062751443413" />
     <property role="3GE5qa" value="expression.safe_landing.command" />
     <property role="TrG5h" value="SafeLandingStateCommandExpression" />
     <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="Command" />
+    <node concept="1TJgyi" id="7Zo9yKw9x6g" role="1TKVEl">
+      <property role="IQ2nx" value="9212155008746131856" />
+      <property role="TrG5h" value="state" />
+      <ref role="AX2Wp" node="5fwjzFJ5$uA" resolve="SafeLandingStateSetEnum" />
+    </node>
   </node>
   <node concept="1TIwiD" id="w2EP0onGBm">
     <property role="EcuMT" value="577212062751443414" />
     <property role="3GE5qa" value="expression.landing.command" />
     <property role="TrG5h" value="LandingStateCommandExpression" />
     <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="Command" />
+    <node concept="1TJgyi" id="7Zo9yKw9x5x" role="1TKVEl">
+      <property role="IQ2nx" value="9212155008746131809" />
+      <property role="TrG5h" value="state" />
+      <ref role="AX2Wp" node="5fwjzFJ5$vf" resolve="LandingStateSetEnum" />
+    </node>
   </node>
   <node concept="1TIwiD" id="w2EP0onGBn">
     <property role="EcuMT" value="577212062751443415" />
     <property role="3GE5qa" value="expression.takeoff.command" />
     <property role="TrG5h" value="TakeOffStateCommandExpression" />
     <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="Command" />
+    <node concept="1TJgyi" id="7Zo9yKw9x6k" role="1TKVEl">
+      <property role="IQ2nx" value="9212155008746131860" />
+      <property role="TrG5h" value="state" />
+      <ref role="AX2Wp" node="w2EP0omFz0" resolve="TakeOffStateSetEnum" />
+    </node>
   </node>
   <node concept="1TIwiD" id="w2EP0onGBo">
     <property role="EcuMT" value="577212062751443416" />
     <property role="3GE5qa" value="expression.flight.control.command" />
     <property role="TrG5h" value="FlightControlStateCommandExpression" />
     <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="Command" />
+    <node concept="1TJgyi" id="7Zo9yKw9x5d" role="1TKVEl">
+      <property role="IQ2nx" value="9212155008746131789" />
+      <property role="TrG5h" value="state" />
+      <ref role="AX2Wp" node="5fwjzFJ5$wM" resolve="FlightControlStateSetEnum" />
+    </node>
   </node>
   <node concept="1TIwiD" id="w2EP0onGBp">
     <property role="EcuMT" value="577212062751443417" />
     <property role="3GE5qa" value="expression.gimbal.command" />
     <property role="TrG5h" value="GimbalRotationCommandExpression" />
     <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="Command" />
+    <node concept="1TJgyi" id="7Zo9yKw9x5h" role="1TKVEl">
+      <property role="IQ2nx" value="9212155008746131793" />
+      <property role="TrG5h" value="state" />
+      <ref role="AX2Wp" node="5fwjzFJ5$wh" resolve="GimbalStateSetEnum" />
+    </node>
   </node>
   <node concept="1TIwiD" id="w2EP0onGBq">
     <property role="EcuMT" value="577212062751443418" />
     <property role="3GE5qa" value="expression.camera.command" />
     <property role="TrG5h" value="CameraStateCommandExpression" />
     <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="Command" />
+    <node concept="1TJgyi" id="7Zo9yKw9x4R" role="1TKVEl">
+      <property role="IQ2nx" value="9212155008746131767" />
+      <property role="TrG5h" value="state" />
+      <ref role="AX2Wp" node="5fwjzFJ5$xi" resolve="CameraStateSetEnum" />
+    </node>
   </node>
   <node concept="1TIwiD" id="w2EP0onGBr">
     <property role="EcuMT" value="577212062751443419" />
     <property role="3GE5qa" value="expression.camera.command" />
     <property role="TrG5h" value="CameraFocuslPointCommandExpression" />
     <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="Command" />
+    <node concept="1TJgyj" id="7Zo9yKw9x4U" role="1TKVEi">
+      <property role="IQ2ns" value="9212155008746131770" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="waypoint" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="3gtR0Xn_GZD" resolve="Point" />
+    </node>
   </node>
   <node concept="1TIwiD" id="w2EP0onGBs">
     <property role="EcuMT" value="577212062751443420" />
     <property role="3GE5qa" value="expression.payload.command" />
     <property role="TrG5h" value="PayloadStateCommandExpression" />
     <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="Command" />
+    <node concept="1TJgyi" id="7Zo9yKw9x6a" role="1TKVEl">
+      <property role="IQ2nx" value="9212155008746131850" />
+      <property role="TrG5h" value="state" />
+      <ref role="AX2Wp" node="5fwjzFJ5$xO" resolve="PayloadStateSetEnum" />
+    </node>
   </node>
   <node concept="1TIwiD" id="w2EP0onGBt">
     <property role="EcuMT" value="577212062751443421" />
     <property role="3GE5qa" value="expression.battery.command" />
     <property role="TrG5h" value="BatteryCapacityCommandExpression" />
-    <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="Command" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="w2EP0onGBu">
     <property role="EcuMT" value="577212062751443422" />
     <property role="3GE5qa" value="expression.battery.command" />
     <property role="TrG5h" value="BatteryVoltageCommandExpression" />
-    <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="Command" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="w2EP0onGBv">
     <property role="EcuMT" value="577212062751443423" />
     <property role="3GE5qa" value="expression.battery.command" />
     <property role="TrG5h" value="BatteryCurrentCommandExpression" />
-    <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="Command" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="w2EP0onGBw">
     <property role="EcuMT" value="577212062751443424" />
     <property role="3GE5qa" value="expression.battery.command" />
     <property role="TrG5h" value="BatteryPercentageCommandExpression" />
-    <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="Command" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="w2EP0onGBz">
     <property role="EcuMT" value="577212062751443427" />
     <property role="3GE5qa" value="expression.GPS.command" />
     <property role="TrG5h" value="GPSStateCommandExpression" />
     <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="Command" />
+    <node concept="1TJgyi" id="7Zo9yKw9x4J" role="1TKVEl">
+      <property role="IQ2nx" value="9212155008746131759" />
+      <property role="TrG5h" value="state" />
+      <ref role="AX2Wp" node="5fwjzFJ5$z$" resolve="GPSStateSetEnum" />
+    </node>
   </node>
   <node concept="1TIwiD" id="w2EP0onGB$">
     <property role="EcuMT" value="577212062751443428" />
     <property role="3GE5qa" value="expression.obstacle_avoidance.command" />
     <property role="TrG5h" value="ObstacleAvoidanceSensorStateCommandExpression" />
     <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="Command" />
+    <node concept="1TJgyi" id="7Zo9yKw9x64" role="1TKVEl">
+      <property role="IQ2nx" value="9212155008746131844" />
+      <property role="TrG5h" value="state" />
+      <ref role="AX2Wp" node="5fwjzFJ5$$B" resolve="ObstacleAvoidanceSetEnum" />
+    </node>
   </node>
   <node concept="1TIwiD" id="w2EP0onGB_">
     <property role="EcuMT" value="577212062751443429" />
     <property role="3GE5qa" value="expression.IMU.command" />
     <property role="TrG5h" value="IMUStateCommandExpression" />
     <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="Command" />
+    <node concept="1TJgyi" id="7Zo9yKw9x5p" role="1TKVEl">
+      <property role="IQ2nx" value="9212155008746131801" />
+      <property role="TrG5h" value="state" />
+      <ref role="AX2Wp" node="5fwjzFJ5$_9" resolve="IMUStateSetEnum" />
+    </node>
   </node>
   <node concept="1TIwiD" id="w2EP0onGBA">
     <property role="EcuMT" value="577212062751443430" />
     <property role="3GE5qa" value="expression.accelerometer.command" />
     <property role="TrG5h" value="AccelerometerStateCommandExpression" />
     <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="Command" />
+    <node concept="1TJgyi" id="7Zo9yKw9x4z" role="1TKVEl">
+      <property role="IQ2nx" value="9212155008746131747" />
+      <property role="TrG5h" value="state" />
+      <ref role="AX2Wp" node="5fwjzFJ5$Am" resolve="AccelerometerStateSet" />
+    </node>
   </node>
   <node concept="1TIwiD" id="w2EP0onGBB">
     <property role="EcuMT" value="577212062751443431" />
     <property role="3GE5qa" value="expression.gyroscope.command" />
     <property role="TrG5h" value="GyroscopeStateCommandExpression" />
     <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="Command" />
+    <node concept="1TJgyi" id="7Zo9yKw9x4N" role="1TKVEl">
+      <property role="IQ2nx" value="9212155008746131763" />
+      <property role="TrG5h" value="state" />
+      <ref role="AX2Wp" node="5fwjzFJ5$AQ" resolve="GyroscopeStateSetEnum" />
+    </node>
   </node>
   <node concept="1TIwiD" id="w2EP0onGBC">
     <property role="EcuMT" value="577212062751443432" />
     <property role="3GE5qa" value="expression.compass.command" />
     <property role="TrG5h" value="CompassStateCommandExpression" />
     <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="Command" />
+    <node concept="1TJgyi" id="7Zo9yKw9x4X" role="1TKVEl">
+      <property role="IQ2nx" value="9212155008746131773" />
+      <property role="TrG5h" value="state" />
+      <ref role="AX2Wp" node="5fwjzFJ5$Bh" resolve="CompassStateSetEnum" />
+    </node>
   </node>
   <node concept="1TIwiD" id="w2EP0onGBD">
     <property role="EcuMT" value="577212062751443433" />
     <property role="3GE5qa" value="expression.magnetometer.command" />
     <property role="TrG5h" value="MagnetometerStateCommandExpression" />
     <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="Command" />
+    <node concept="1TJgyi" id="7Zo9yKw9x5D" role="1TKVEl">
+      <property role="IQ2nx" value="9212155008746131817" />
+      <property role="TrG5h" value="state" />
+      <ref role="AX2Wp" node="5fwjzFJ5$Bz" resolve="MagnetometerStateSetEnum" />
+    </node>
   </node>
   <node concept="1TIwiD" id="w2EP0onGBE">
     <property role="EcuMT" value="577212062751443434" />
     <property role="3GE5qa" value="expression.barometer.command" />
     <property role="TrG5h" value="BarometerStateCommandExpression" />
     <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="Command" />
+    <node concept="1TJgyi" id="7Zo9yKw9x4F" role="1TKVEl">
+      <property role="IQ2nx" value="9212155008746131755" />
+      <property role="TrG5h" value="state" />
+      <ref role="AX2Wp" node="5fwjzFJ5$BV" resolve="BarometricStateSetEnum" />
+    </node>
   </node>
   <node concept="1TIwiD" id="w2EP0onGBF">
     <property role="EcuMT" value="577212062751443435" />
     <property role="3GE5qa" value="expression.hygrometer.command" />
     <property role="TrG5h" value="HygrometerStateCommandExpression" />
     <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="Command" />
+    <node concept="1TJgyi" id="7Zo9yKw9x5l" role="1TKVEl">
+      <property role="IQ2nx" value="9212155008746131797" />
+      <property role="TrG5h" value="state" />
+      <ref role="AX2Wp" node="5fwjzFJ5$Ci" resolve="HygrometerStateSetEnum" />
+    </node>
   </node>
   <node concept="1TIwiD" id="w2EP0onGBG">
     <property role="EcuMT" value="577212062751443436" />
@@ -2869,24 +3035,44 @@
     <property role="3GE5qa" value="expression.light.command" />
     <property role="TrG5h" value="LightStatusStateCommandExpression" />
     <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="Command" />
+    <node concept="1TJgyi" id="7Zo9yKw9x5_" role="1TKVEl">
+      <property role="IQ2nx" value="9212155008746131813" />
+      <property role="TrG5h" value="state" />
+      <ref role="AX2Wp" node="5fwjzFJ5$D7" resolve="LightStatusStateSetEnum" />
+    </node>
   </node>
   <node concept="1TIwiD" id="w2EP0onGC6">
     <property role="EcuMT" value="577212062751443462" />
     <property role="3GE5qa" value="expression.landguear.command" />
     <property role="TrG5h" value="LandinggearStateCommandExpression" />
     <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="Command" />
+    <node concept="1TJgyi" id="7Zo9yKw9x5t" role="1TKVEl">
+      <property role="IQ2nx" value="9212155008746131805" />
+      <property role="TrG5h" value="state" />
+      <ref role="AX2Wp" node="5fwjzFJ5$Dl" resolve="LandguearStateSetEnum" />
+    </node>
   </node>
   <node concept="1TIwiD" id="w2EP0onHix">
     <property role="EcuMT" value="577212062751446177" />
     <property role="3GE5qa" value="expression.anemometrer.command" />
     <property role="TrG5h" value="AnemometrerStateCommandExpression" />
     <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="Command" />
+    <node concept="1TJgyi" id="7Zo9yKw9x4B" role="1TKVEl">
+      <property role="IQ2nx" value="9212155008746131751" />
+      <property role="TrG5h" value="state" />
+      <ref role="AX2Wp" node="5fwjzFJ5$Dz" resolve="AnemometerStateSetEnum" />
+    </node>
   </node>
   <node concept="1TIwiD" id="w2EP0onHiy">
     <property role="EcuMT" value="577212062751446178" />
     <property role="3GE5qa" value="expression.emergency_stop_mode.command" />
     <property role="TrG5h" value="EmergencyStopModeStateCommandExpression" />
     <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="Command" />
+    <node concept="1TJgyi" id="7Zo9yKw9x51" role="1TKVEl">
+      <property role="IQ2nx" value="9212155008746131777" />
+      <property role="TrG5h" value="state" />
+      <ref role="AX2Wp" node="5fwjzFJ5$E3" resolve="EmergencyStopModeSetEnum" />
+    </node>
   </node>
   <node concept="1TIwiD" id="3gtR0Xn_GIE">
     <property role="EcuMT" value="3755399622748982186" />
@@ -3067,6 +3253,11 @@
     <property role="3GE5qa" value="expression.thermometer.command" />
     <property role="TrG5h" value="ThermometerStateCommand" />
     <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="Command" />
+    <node concept="1TJgyi" id="7Zo9yKw9x6m" role="1TKVEl">
+      <property role="IQ2nx" value="9212155008746131862" />
+      <property role="TrG5h" value="state" />
+      <ref role="AX2Wp" node="5fwjzFJ5$CC" resolve="ThermometerStateSetEnum" />
+    </node>
   </node>
   <node concept="1TIwiD" id="3gtR0Xn_GJ9">
     <property role="EcuMT" value="3755399622748982217" />
