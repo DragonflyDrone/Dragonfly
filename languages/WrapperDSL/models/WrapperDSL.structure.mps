@@ -96,7 +96,7 @@
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="expression" />
       <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="7_KOYEjbHsX" resolve="Expression" />
+      <ref role="20lvS9" node="w2EP0onGAX" resolve="Expression" />
     </node>
   </node>
   <node concept="1TIwiD" id="5eYfGK4mCJb">
@@ -109,7 +109,7 @@
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="event" />
       <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="6UvQjm9lvOC" resolve="Command" />
+      <ref role="20lvS9" node="w2EP0omFze" resolve="TriggerEvent" />
     </node>
   </node>
   <node concept="1TIwiD" id="5eYfGK4mCJc">
@@ -177,7 +177,7 @@
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="condition" />
       <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="7_KOYEjbHsX" resolve="Expression" />
+      <ref role="20lvS9" node="w2EP0onGAX" resolve="Expression" />
     </node>
     <node concept="1TJgyj" id="5eYfGK4mOpM" role="1TKVEi">
       <property role="IQ2ns" value="6034329596690384498" />
@@ -197,7 +197,7 @@
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="condition" />
       <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="7_KOYEjbHsX" resolve="Expression" />
+      <ref role="20lvS9" node="w2EP0onGAX" resolve="Expression" />
     </node>
     <node concept="1TJgyj" id="5eYfGK4mOnk" role="1TKVEi">
       <property role="IQ2ns" value="6034329596690384340" />
@@ -314,36 +314,6 @@
       <ref role="20lvS9" node="5eYfGK4rwHk" resolve="AdaptationScript" />
     </node>
   </node>
-  <node concept="25R3W" id="79gzy7KeIiz">
-    <property role="3F6X1D" value="8237239994876093603" />
-    <property role="3GE5qa" value="expression.region" />
-    <property role="TrG5h" value="RegionEnum" />
-    <node concept="25R33" id="79gzy7KeIi$" role="25R1y">
-      <property role="3tVfz5" value="8237239994876093604" />
-      <property role="TrG5h" value="land" />
-      <property role="1L1pqM" value="land" />
-    </node>
-    <node concept="25R33" id="79gzy7KeIi_" role="25R1y">
-      <property role="3tVfz5" value="8237239994876093605" />
-      <property role="TrG5h" value="water" />
-      <property role="1L1pqM" value="water" />
-    </node>
-    <node concept="25R33" id="79gzy7KeYOS" role="25R1y">
-      <property role="3tVfz5" value="8237239994876161336" />
-      <property role="TrG5h" value="destination" />
-      <property role="1L1pqM" value="destination" />
-    </node>
-    <node concept="25R33" id="79gzy7KeYOW" role="25R1y">
-      <property role="3tVfz5" value="8237239994876161340" />
-      <property role="TrG5h" value="origin" />
-      <property role="1L1pqM" value="origin" />
-    </node>
-    <node concept="25R33" id="31DEoowfa1o" role="25R1y">
-      <property role="3tVfz5" value="3488505779906715736" />
-      <property role="TrG5h" value="any" />
-      <property role="1L1pqM" value="any" />
-    </node>
-  </node>
   <node concept="25R3W" id="7_KOYEjfYK4">
     <property role="3F6X1D" value="8750727080427121668" />
     <property role="3GE5qa" value="expression" />
@@ -403,7 +373,7 @@
     <node concept="1TJgyi" id="7Zo9yKw9x33" role="1TKVEl">
       <property role="IQ2nx" value="9212155008746131651" />
       <property role="TrG5h" value="operator" />
-      <ref role="AX2Wp" node="5fwjzFJ5$bI" resolve="InequalityOperatorEnum" />
+      <ref role="AX2Wp" node="5fwjzFJ5$bW" resolve="GeneralOperatorEnum" />
     </node>
     <node concept="1TJgyi" id="7Zo9yKw9x37" role="1TKVEl">
       <property role="IQ2nx" value="9212155008746131655" />
@@ -424,10 +394,10 @@
     <property role="TrG5h" value="RegionConditionalExpression" />
     <property role="R4oN_" value="Drone [is|not is] over [water|land|origin|destination] region" />
     <ref role="1TJDcQ" node="w2EP0onGAV" resolve="ConditionalExpression" />
-    <node concept="1TJgyi" id="79gzy7KeIiC" role="1TKVEl">
-      <property role="IQ2nx" value="8237239994876093608" />
+    <node concept="1TJgyi" id="17uiePtpl_k" role="1TKVEl">
+      <property role="IQ2nx" value="1287546727785912660" />
       <property role="TrG5h" value="right" />
-      <ref role="AX2Wp" node="79gzy7KeIiz" resolve="RegionEnum" />
+      <ref role="AX2Wp" node="7_KOYEjfYK4" resolve="RelativePositionEnum" />
     </node>
     <node concept="1TJgyi" id="79gzy7KeIj4" role="1TKVEl">
       <property role="IQ2nx" value="8237239994876093636" />
@@ -1006,7 +976,7 @@
     <node concept="1TJgyi" id="7Zo9yKw9tGE" role="1TKVEl">
       <property role="IQ2nx" value="9212155008746117930" />
       <property role="TrG5h" value="operator" />
-      <ref role="AX2Wp" node="5fwjzFJ5$bI" resolve="InequalityOperatorEnum" />
+      <ref role="AX2Wp" node="5fwjzFJ5$bW" resolve="GeneralOperatorEnum" />
     </node>
     <node concept="1TJgyi" id="7Zo9yKw9tHE" role="1TKVEl">
       <property role="IQ2nx" value="9212155008746117994" />
@@ -1032,7 +1002,7 @@
     <node concept="1TJgyi" id="7Zo9yKw9x1A" role="1TKVEl">
       <property role="IQ2nx" value="9212155008746131558" />
       <property role="TrG5h" value="operator" />
-      <ref role="AX2Wp" node="5fwjzFJ5$bI" resolve="InequalityOperatorEnum" />
+      <ref role="AX2Wp" node="5fwjzFJ5$bW" resolve="GeneralOperatorEnum" />
     </node>
   </node>
   <node concept="1TIwiD" id="5fwjzFJ5$cS">
@@ -1267,7 +1237,7 @@
     <node concept="1TJgyi" id="7Zo9yKw9tDm" role="1TKVEl">
       <property role="IQ2nx" value="9212155008746117718" />
       <property role="TrG5h" value="operator" />
-      <ref role="AX2Wp" node="5fwjzFJ5$bI" resolve="InequalityOperatorEnum" />
+      <ref role="AX2Wp" node="5fwjzFJ5$bW" resolve="GeneralOperatorEnum" />
     </node>
     <node concept="1TJgyi" id="7Zo9yKw9tDo" role="1TKVEl">
       <property role="IQ2nx" value="9212155008746117720" />
@@ -2528,7 +2498,7 @@
     <node concept="1TJgyi" id="3gtR0Xn_GOA" role="1TKVEl">
       <property role="IQ2nx" value="3755399622748982566" />
       <property role="TrG5h" value="region" />
-      <ref role="AX2Wp" node="79gzy7KeIiz" resolve="RegionEnum" />
+      <ref role="AX2Wp" node="7_KOYEjfYK4" resolve="RelativePositionEnum" />
     </node>
   </node>
   <node concept="1TIwiD" id="w2EP0onGAV">
@@ -2560,10 +2530,10 @@
     <property role="3GE5qa" value="expression.UAV.command" />
     <property role="TrG5h" value="UAVManeuverDirectionToRegionCommandExpression" />
     <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="Command" />
-    <node concept="1TJgyi" id="7Zo9yKw9x6w" role="1TKVEl">
-      <property role="IQ2nx" value="9212155008746131872" />
+    <node concept="1TJgyi" id="17uiePtpkgH" role="1TKVEl">
+      <property role="IQ2nx" value="1287546727785907245" />
       <property role="TrG5h" value="RegionDirection" />
-      <ref role="AX2Wp" node="79gzy7KeIiz" resolve="RegionEnum" />
+      <ref role="AX2Wp" node="7_KOYEjfYK4" resolve="RelativePositionEnum" />
     </node>
   </node>
   <node concept="1TIwiD" id="w2EP0onGB4">
@@ -3097,7 +3067,7 @@
     <node concept="1TJgyi" id="7Zo9yKw9xsV" role="1TKVEl">
       <property role="IQ2nx" value="9212155008746133307" />
       <property role="TrG5h" value="direction" />
-      <ref role="AX2Wp" node="11jlgVoCRQP" resolve="DirectionEnum" />
+      <ref role="AX2Wp" node="17uiePtvI8K" resolve="DirectionTriggerDirectionEnum" />
     </node>
   </node>
   <node concept="1TIwiD" id="3gtR0Xn_GIF">
@@ -3105,15 +3075,17 @@
     <property role="3GE5qa" value="expression.UAV.trigger_event" />
     <property role="TrG5h" value="UAVRotateTriggerEvent" />
     <ref role="1TJDcQ" node="w2EP0omFze" resolve="TriggerEvent" />
+    <node concept="1TJgyj" id="17uiePtvIaP" role="1TKVEi">
+      <property role="IQ2ns" value="1287546727787586229" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="value" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="17uiePtvI9D" resolve="GeneralInteger" />
+    </node>
     <node concept="1TJgyi" id="7Zo9yKw9xtp" role="1TKVEl">
       <property role="IQ2nx" value="9212155008746133337" />
       <property role="TrG5h" value="axes" />
       <ref role="AX2Wp" node="5fwjzFJ5$q$" resolve="AxesEnum" />
-    </node>
-    <node concept="1TJgyi" id="7Zo9yKw9xtr" role="1TKVEl">
-      <property role="IQ2nx" value="9212155008746133339" />
-      <property role="TrG5h" value="value" />
-      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
   </node>
   <node concept="1TIwiD" id="3gtR0Xn_GIG">
@@ -3121,10 +3093,12 @@
     <property role="3GE5qa" value="expression.UAV.trigger_event" />
     <property role="TrG5h" value="UAVSpeedTriggerEvent" />
     <ref role="1TJDcQ" node="w2EP0omFze" resolve="TriggerEvent" />
-    <node concept="1TJgyi" id="7Zo9yKw9xum" role="1TKVEl">
-      <property role="IQ2nx" value="9212155008746133398" />
-      <property role="TrG5h" value="value" />
-      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    <node concept="1TJgyj" id="17uiePtvIb5" role="1TKVEi">
+      <property role="IQ2ns" value="1287546727787586245" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="value" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="17uiePtvI9D" resolve="GeneralInteger" />
     </node>
   </node>
   <node concept="1TIwiD" id="3gtR0Xn_GIH">
@@ -3132,10 +3106,12 @@
     <property role="3GE5qa" value="expression.UAV.trigger_event" />
     <property role="TrG5h" value="UAVAccelerationTriggerEvent" />
     <ref role="1TJDcQ" node="w2EP0omFze" resolve="TriggerEvent" />
-    <node concept="1TJgyi" id="7Zo9yKw9xv6" role="1TKVEl">
-      <property role="IQ2nx" value="9212155008746133446" />
-      <property role="TrG5h" value="value" />
-      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    <node concept="1TJgyj" id="17uiePtvIak" role="1TKVEi">
+      <property role="IQ2ns" value="1287546727787586196" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="value" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="17uiePtvI9D" resolve="GeneralInteger" />
     </node>
   </node>
   <node concept="1TIwiD" id="3gtR0Xn_GII">
@@ -3143,10 +3119,12 @@
     <property role="3GE5qa" value="expression.UAV.trigger_event" />
     <property role="TrG5h" value="UAVAltitudeTriggerEvent" />
     <ref role="1TJDcQ" node="w2EP0omFze" resolve="TriggerEvent" />
-    <node concept="1TJgyi" id="7Zo9yKw9xw4" role="1TKVEl">
-      <property role="IQ2nx" value="9212155008746133508" />
-      <property role="TrG5h" value="value" />
-      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    <node concept="1TJgyj" id="17uiePtvIa$" role="1TKVEi">
+      <property role="IQ2ns" value="1287546727787586212" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="value" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="17uiePtvI9D" resolve="GeneralInteger" />
     </node>
   </node>
   <node concept="1TIwiD" id="3gtR0Xn_GIJ">
@@ -3181,7 +3159,7 @@
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="waypoint" />
       <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="3gtR0Xn_GZD" resolve="Point" />
+      <ref role="20lvS9" node="17uiePtvIbr" resolve="PointTriggerEvent" />
     </node>
   </node>
   <node concept="1TIwiD" id="3gtR0Xn_GIM">
@@ -3260,15 +3238,17 @@
     <property role="3GE5qa" value="expression.gimbal.trigger_event" />
     <property role="TrG5h" value="GimbalRotationTriggerEvent" />
     <ref role="1TJDcQ" node="w2EP0omFze" resolve="TriggerEvent" />
-    <node concept="1TJgyi" id="7Zo9yKw9x_5" role="1TKVEl">
-      <property role="IQ2nx" value="9212155008746133829" />
-      <property role="TrG5h" value="value" />
-      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
-    </node>
     <node concept="1TJgyi" id="7Zo9yKw9x_7" role="1TKVEl">
       <property role="IQ2nx" value="9212155008746133831" />
       <property role="TrG5h" value="axes" />
-      <ref role="AX2Wp" node="5fwjzFJ5$q$" resolve="AxesEnum" />
+      <ref role="AX2Wp" node="17uiePtvIdR" resolve="AxesTriggerEventEnum" />
+    </node>
+    <node concept="1TJgyj" id="17uiePtvIdO" role="1TKVEi">
+      <property role="IQ2ns" value="1287546727787586420" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="value" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="17uiePtvIa0" resolve="AnyInteger" />
     </node>
   </node>
   <node concept="1TIwiD" id="3gtR0Xn_GIT">
@@ -3308,7 +3288,7 @@
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="waypoint" />
       <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="3gtR0Xn_GZD" resolve="Point" />
+      <ref role="20lvS9" node="17uiePtvIbr" resolve="PointTriggerEvent" />
     </node>
   </node>
   <node concept="1TIwiD" id="3gtR0Xn_GIW">
@@ -3499,6 +3479,11 @@
       <property role="3tVfz5" value="3755399622748982223" />
       <property role="TrG5h" value="STOPS" />
     </node>
+    <node concept="25R33" id="17uiePtvI8G" role="25R1y">
+      <property role="3tVfz5" value="1287546727787586092" />
+      <property role="TrG5h" value="any" />
+      <property role="1L1pqM" value="*" />
+    </node>
   </node>
   <node concept="25R3W" id="3gtR0Xn_GJi">
     <property role="3F6X1D" value="3755399622748982226" />
@@ -3523,6 +3508,11 @@
     <node concept="25R33" id="3gtR0Xn_GJ$" role="25R1y">
       <property role="3tVfz5" value="3755399622748982244" />
       <property role="TrG5h" value="RESUMES" />
+    </node>
+    <node concept="25R33" id="17uiePtvI79" role="25R1y">
+      <property role="3tVfz5" value="1287546727787585993" />
+      <property role="TrG5h" value="any" />
+      <property role="1L1pqM" value="*" />
     </node>
   </node>
   <node concept="25R3W" id="3gtR0Xn_GJE">
@@ -3549,6 +3539,11 @@
       <property role="3tVfz5" value="3755399622748982264" />
       <property role="TrG5h" value="RESUMES" />
     </node>
+    <node concept="25R33" id="17uiePtvI7p" role="25R1y">
+      <property role="3tVfz5" value="1287546727787586009" />
+      <property role="TrG5h" value="any" />
+      <property role="1L1pqM" value="*" />
+    </node>
   </node>
   <node concept="25R3W" id="3gtR0Xn_GJY">
     <property role="3F6X1D" value="3755399622748982270" />
@@ -3569,6 +3564,11 @@
     <node concept="25R33" id="3gtR0Xn_GK3" role="25R1y">
       <property role="3tVfz5" value="3755399622748982275" />
       <property role="TrG5h" value="RESUMES" />
+    </node>
+    <node concept="25R33" id="17uiePtvI6c" role="25R1y">
+      <property role="3tVfz5" value="1287546727787585932" />
+      <property role="TrG5h" value="any" />
+      <property role="1L1pqM" value="*" />
     </node>
   </node>
   <node concept="25R3W" id="3gtR0Xn_GKd">
@@ -3591,6 +3591,11 @@
       <property role="3tVfz5" value="3755399622748982290" />
       <property role="TrG5h" value="RESUMES" />
     </node>
+    <node concept="25R33" id="17uiePtvI7w" role="25R1y">
+      <property role="3tVfz5" value="1287546727787586016" />
+      <property role="TrG5h" value="any" />
+      <property role="1L1pqM" value="*" />
+    </node>
   </node>
   <node concept="25R3W" id="3gtR0Xn_GKs">
     <property role="3F6X1D" value="3755399622748982300" />
@@ -3611,6 +3616,11 @@
     <node concept="25R33" id="3gtR0Xn_GK_" role="25R1y">
       <property role="3tVfz5" value="3755399622748982309" />
       <property role="TrG5h" value="RESUMES" />
+    </node>
+    <node concept="25R33" id="17uiePtvI6V" role="25R1y">
+      <property role="3tVfz5" value="1287546727787585979" />
+      <property role="TrG5h" value="any" />
+      <property role="1L1pqM" value="*" />
     </node>
   </node>
   <node concept="25R3W" id="3gtR0Xn_GKJ">
@@ -3633,6 +3643,11 @@
       <property role="3tVfz5" value="3755399622748982327" />
       <property role="TrG5h" value="RESUMES" />
     </node>
+    <node concept="25R33" id="17uiePtvI8y" role="25R1y">
+      <property role="3tVfz5" value="1287546727787586082" />
+      <property role="TrG5h" value="any" />
+      <property role="1L1pqM" value="*" />
+    </node>
   </node>
   <node concept="25R3W" id="3gtR0Xn_GL7">
     <property role="3F6X1D" value="3755399622748982343" />
@@ -3645,6 +3660,11 @@
     <node concept="25R33" id="3gtR0Xn_GL9" role="25R1y">
       <property role="3tVfz5" value="3755399622748982345" />
       <property role="TrG5h" value="STOPS" />
+    </node>
+    <node concept="25R33" id="17uiePtvI6i" role="25R1y">
+      <property role="3tVfz5" value="1287546727787585938" />
+      <property role="TrG5h" value="any" />
+      <property role="1L1pqM" value="*" />
     </node>
   </node>
   <node concept="25R3W" id="3gtR0Xn_GLc">
@@ -3667,6 +3687,11 @@
       <property role="3tVfz5" value="3755399622748982356" />
       <property role="TrG5h" value="RESUMES" />
     </node>
+    <node concept="25R33" id="17uiePtvI6w" role="25R1y">
+      <property role="3tVfz5" value="1287546727787585952" />
+      <property role="TrG5h" value="any" />
+      <property role="1L1pqM" value="*" />
+    </node>
   </node>
   <node concept="25R3W" id="3gtR0Xn_GLp">
     <property role="3F6X1D" value="3755399622748982361" />
@@ -3688,6 +3713,11 @@
       <property role="3tVfz5" value="3755399622748982373" />
       <property role="TrG5h" value="RESUMES" />
     </node>
+    <node concept="25R33" id="17uiePtvI5W" role="25R1y">
+      <property role="3tVfz5" value="1287546727787585916" />
+      <property role="TrG5h" value="any" />
+      <property role="1L1pqM" value="*" />
+    </node>
   </node>
   <node concept="25R3W" id="3gtR0Xn_GLE">
     <property role="3F6X1D" value="3755399622748982378" />
@@ -3704,6 +3734,11 @@
     <node concept="25R33" id="3gtR0Xn_GLJ" role="25R1y">
       <property role="3tVfz5" value="3755399622748982383" />
       <property role="TrG5h" value="UNLOADS" />
+    </node>
+    <node concept="25R33" id="17uiePtvI7k" role="25R1y">
+      <property role="3tVfz5" value="1287546727787586004" />
+      <property role="TrG5h" value="any" />
+      <property role="1L1pqM" value="*" />
     </node>
   </node>
   <node concept="25R3W" id="3gtR0Xn_GLN">
@@ -3722,6 +3757,11 @@
       <property role="3tVfz5" value="3755399622748982392" />
       <property role="TrG5h" value="CALIBRATES" />
     </node>
+    <node concept="25R33" id="17uiePtvI6A" role="25R1y">
+      <property role="3tVfz5" value="1287546727787585958" />
+      <property role="TrG5h" value="any" />
+      <property role="1L1pqM" value="*" />
+    </node>
   </node>
   <node concept="25R3W" id="3gtR0Xn_GLW">
     <property role="3F6X1D" value="3755399622748982396" />
@@ -3734,6 +3774,11 @@
     <node concept="25R33" id="3gtR0Xn_GLY" role="25R1y">
       <property role="3tVfz5" value="3755399622748982398" />
       <property role="TrG5h" value="DEACTIVATES" />
+    </node>
+    <node concept="25R33" id="17uiePtvI7g" role="25R1y">
+      <property role="3tVfz5" value="1287546727787586000" />
+      <property role="TrG5h" value="any" />
+      <property role="1L1pqM" value="*" />
     </node>
   </node>
   <node concept="25R3W" id="3gtR0Xn_GM1">
@@ -3748,6 +3793,11 @@
       <property role="3tVfz5" value="3755399622748982404" />
       <property role="TrG5h" value="DEACTIVATES" />
     </node>
+    <node concept="25R33" id="17uiePtvI6N" role="25R1y">
+      <property role="3tVfz5" value="1287546727787585971" />
+      <property role="TrG5h" value="any" />
+      <property role="1L1pqM" value="*" />
+    </node>
   </node>
   <node concept="25R3W" id="3gtR0Xn_GMa">
     <property role="3F6X1D" value="3755399622748982410" />
@@ -3760,6 +3810,11 @@
     <node concept="25R33" id="3gtR0Xn_GMd" role="25R1y">
       <property role="3tVfz5" value="3755399622748982413" />
       <property role="TrG5h" value="DEACTIVATES" />
+    </node>
+    <node concept="25R33" id="17uiePttPzQ" role="25R1y">
+      <property role="3tVfz5" value="1287546727787092214" />
+      <property role="TrG5h" value="any" />
+      <property role="1L1pqM" value="*" />
     </node>
   </node>
   <node concept="25R3W" id="3gtR0Xn_GMg">
@@ -3774,6 +3829,11 @@
       <property role="3tVfz5" value="3755399622748982419" />
       <property role="TrG5h" value="DEACTIVATES" />
     </node>
+    <node concept="25R33" id="17uiePtvI6F" role="25R1y">
+      <property role="3tVfz5" value="1287546727787585963" />
+      <property role="TrG5h" value="any" />
+      <property role="1L1pqM" value="*" />
+    </node>
   </node>
   <node concept="25R3W" id="3gtR0Xn_GMm">
     <property role="3F6X1D" value="3755399622748982422" />
@@ -3786,6 +3846,11 @@
     <node concept="25R33" id="3gtR0Xn_GMt" role="25R1y">
       <property role="3tVfz5" value="3755399622748982429" />
       <property role="TrG5h" value="DEACTIVATES" />
+    </node>
+    <node concept="25R33" id="17uiePtvI62" role="25R1y">
+      <property role="3tVfz5" value="1287546727787585922" />
+      <property role="TrG5h" value="any" />
+      <property role="1L1pqM" value="*" />
     </node>
   </node>
   <node concept="25R3W" id="3gtR0Xn_GMx">
@@ -3800,6 +3865,11 @@
       <property role="3tVfz5" value="3755399622748982436" />
       <property role="TrG5h" value="DEACTIVATES" />
     </node>
+    <node concept="25R33" id="17uiePtvI75" role="25R1y">
+      <property role="3tVfz5" value="1287546727787585989" />
+      <property role="TrG5h" value="any" />
+      <property role="1L1pqM" value="*" />
+    </node>
   </node>
   <node concept="25R3W" id="3gtR0Xn_GME">
     <property role="3F6X1D" value="3755399622748982442" />
@@ -3812,6 +3882,11 @@
     <node concept="25R33" id="3gtR0Xn_GMK" role="25R1y">
       <property role="3tVfz5" value="3755399622748982448" />
       <property role="TrG5h" value="DEACTIVATES" />
+    </node>
+    <node concept="25R33" id="17uiePtvI5y" role="25R1y">
+      <property role="3tVfz5" value="1287546727787585890" />
+      <property role="TrG5h" value="any" />
+      <property role="1L1pqM" value="*" />
     </node>
   </node>
   <node concept="25R3W" id="3gtR0Xn_GMN">
@@ -3826,6 +3901,11 @@
       <property role="3tVfz5" value="3755399622748982454" />
       <property role="TrG5h" value="DEACTIVATES" />
     </node>
+    <node concept="25R33" id="17uiePtvI6J" role="25R1y">
+      <property role="3tVfz5" value="1287546727787585967" />
+      <property role="TrG5h" value="any" />
+      <property role="1L1pqM" value="*" />
+    </node>
   </node>
   <node concept="25R3W" id="3gtR0Xn_GMU">
     <property role="3F6X1D" value="3755399622748982458" />
@@ -3838,6 +3918,11 @@
     <node concept="25R33" id="3gtR0Xn_GN1" role="25R1y">
       <property role="3tVfz5" value="3755399622748982465" />
       <property role="TrG5h" value="DEACTIVATES" />
+    </node>
+    <node concept="25R33" id="17uiePtvI8C" role="25R1y">
+      <property role="3tVfz5" value="1287546727787586088" />
+      <property role="TrG5h" value="any" />
+      <property role="1L1pqM" value="*" />
     </node>
   </node>
   <node concept="25R3W" id="3gtR0Xn_GN4">
@@ -3852,6 +3937,11 @@
       <property role="3tVfz5" value="3755399622748982471" />
       <property role="TrG5h" value="DEACTIVATES" />
     </node>
+    <node concept="25R33" id="17uiePtvI71" role="25R1y">
+      <property role="3tVfz5" value="1287546727787585985" />
+      <property role="TrG5h" value="any" />
+      <property role="1L1pqM" value="*" />
+    </node>
   </node>
   <node concept="25R3W" id="3gtR0Xn_GNa">
     <property role="3F6X1D" value="3755399622748982474" />
@@ -3865,6 +3955,11 @@
       <property role="3tVfz5" value="3755399622748982477" />
       <property role="TrG5h" value="DEACTIVATES" />
     </node>
+    <node concept="25R33" id="17uiePtvI6R" role="25R1y">
+      <property role="3tVfz5" value="1287546727787585975" />
+      <property role="TrG5h" value="any" />
+      <property role="1L1pqM" value="*" />
+    </node>
   </node>
   <node concept="25R3W" id="3gtR0Xn_GNg">
     <property role="3F6X1D" value="3755399622748982480" />
@@ -3877,6 +3972,11 @@
     <node concept="25R33" id="3gtR0Xn_GNj" role="25R1y">
       <property role="3tVfz5" value="3755399622748982483" />
       <property role="TrG5h" value="DEACTIVATES" />
+    </node>
+    <node concept="25R33" id="17uiePtvI5u" role="25R1y">
+      <property role="3tVfz5" value="1287546727787585886" />
+      <property role="TrG5h" value="any" />
+      <property role="1L1pqM" value="*" />
     </node>
   </node>
   <node concept="25R3W" id="3gtR0Xn_GNm">
@@ -3898,6 +3998,11 @@
     <node concept="25R33" id="3gtR0Xn_GNv" role="25R1y">
       <property role="3tVfz5" value="3755399622748982495" />
       <property role="TrG5h" value="RESUMES" />
+    </node>
+    <node concept="25R33" id="17uiePtvI66" role="25R1y">
+      <property role="3tVfz5" value="1287546727787585926" />
+      <property role="TrG5h" value="any" />
+      <property role="1L1pqM" value="*" />
     </node>
   </node>
   <node concept="1TIwiD" id="3gtR0Xn_GP0">
@@ -4053,6 +4158,186 @@
       <property role="TrG5h" value="state" />
       <ref role="AX2Wp" node="5fwjzFJ5$wh" resolve="GimbalStateSetEnum" />
     </node>
+  </node>
+  <node concept="1TIwiD" id="17uiePtvI7A">
+    <property role="EcuMT" value="1287546727787586022" />
+    <property role="3GE5qa" value="expression.smoke_detector.trigger_event" />
+    <property role="TrG5h" value="SmokerDetectorTriggerEvent" />
+    <ref role="1TJDcQ" node="w2EP0omFze" resolve="TriggerEvent" />
+    <node concept="1TJgyi" id="17uiePtvI7R" role="1TKVEl">
+      <property role="IQ2nx" value="1287546727787586039" />
+      <property role="TrG5h" value="state" />
+      <ref role="AX2Wp" node="17uiePtvI7B" resolve="SmokerDetectorTriggerEventEnum" />
+    </node>
+  </node>
+  <node concept="25R3W" id="17uiePtvI7B">
+    <property role="3F6X1D" value="1287546727787586023" />
+    <property role="3GE5qa" value="expression.smoke_detector.trigger_event" />
+    <property role="TrG5h" value="SmokerDetectorTriggerEventEnum" />
+    <node concept="25R33" id="17uiePtvI7H" role="25R1y">
+      <property role="3tVfz5" value="1287546727787586029" />
+      <property role="TrG5h" value="CALIBRATES" />
+    </node>
+    <node concept="25R33" id="17uiePtvI7I" role="25R1y">
+      <property role="3tVfz5" value="1287546727787586030" />
+      <property role="TrG5h" value="ACTIVATES" />
+    </node>
+    <node concept="25R33" id="17uiePtvI7J" role="25R1y">
+      <property role="3tVfz5" value="1287546727787586031" />
+      <property role="TrG5h" value="DEACTIVATES" />
+    </node>
+    <node concept="25R33" id="17uiePtvI8t" role="25R1y">
+      <property role="3tVfz5" value="1287546727787586077" />
+      <property role="TrG5h" value="any" />
+      <property role="1L1pqM" value="*" />
+    </node>
+  </node>
+  <node concept="25R3W" id="17uiePtvI8K">
+    <property role="3F6X1D" value="1287546727787586096" />
+    <property role="3GE5qa" value="expression.UAV.trigger_event" />
+    <property role="TrG5h" value="DirectionTriggerDirectionEnum" />
+    <node concept="25R33" id="17uiePtvI8M" role="25R1y">
+      <property role="3tVfz5" value="1287546727787586098" />
+      <property role="TrG5h" value="NORTH" />
+      <property role="1L1pqM" value="NORTH" />
+    </node>
+    <node concept="25R33" id="17uiePtvI8N" role="25R1y">
+      <property role="3tVfz5" value="1287546727787586099" />
+      <property role="TrG5h" value="SOUTH" />
+      <property role="1L1pqM" value="SOUTH" />
+    </node>
+    <node concept="25R33" id="17uiePtvI8O" role="25R1y">
+      <property role="3tVfz5" value="1287546727787586100" />
+      <property role="TrG5h" value="EAST" />
+      <property role="1L1pqM" value="EAST" />
+    </node>
+    <node concept="25R33" id="17uiePtvI8P" role="25R1y">
+      <property role="3tVfz5" value="1287546727787586101" />
+      <property role="TrG5h" value="WEST" />
+      <property role="1L1pqM" value="WEST" />
+    </node>
+    <node concept="25R33" id="17uiePtvI8Q" role="25R1y">
+      <property role="3tVfz5" value="1287546727787586102" />
+      <property role="TrG5h" value="NORTH_EAST" />
+      <property role="1L1pqM" value="NORTH EAST" />
+    </node>
+    <node concept="25R33" id="17uiePtvI8R" role="25R1y">
+      <property role="3tVfz5" value="1287546727787586103" />
+      <property role="TrG5h" value="SOUTH_EAST" />
+      <property role="1L1pqM" value="SOUTH EAST" />
+    </node>
+    <node concept="25R33" id="17uiePtvI8S" role="25R1y">
+      <property role="3tVfz5" value="1287546727787586104" />
+      <property role="TrG5h" value="NORTH_WEST" />
+      <property role="1L1pqM" value="NORTH WEST" />
+    </node>
+    <node concept="25R33" id="17uiePtvI8T" role="25R1y">
+      <property role="3tVfz5" value="1287546727787586105" />
+      <property role="TrG5h" value="SOUTH_WEAST" />
+      <property role="1L1pqM" value="SOUTH WEAST" />
+    </node>
+    <node concept="25R33" id="17uiePtvI9b" role="25R1y">
+      <property role="3tVfz5" value="1287546727787586123" />
+      <property role="TrG5h" value="any" />
+      <property role="1L1pqM" value="*" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="17uiePtvI9D">
+    <property role="EcuMT" value="1287546727787586153" />
+    <property role="3GE5qa" value="expression" />
+    <property role="TrG5h" value="GeneralInteger" />
+    <property role="R5$K7" value="true" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="17uiePtvI9E">
+    <property role="EcuMT" value="1287546727787586154" />
+    <property role="3GE5qa" value="expression" />
+    <property role="TrG5h" value="integer" />
+    <ref role="1TJDcQ" node="17uiePtvI9D" resolve="GeneralInteger" />
+    <node concept="1TJgyi" id="17uiePtvI9F" role="1TKVEl">
+      <property role="IQ2nx" value="1287546727787586155" />
+      <property role="TrG5h" value="value" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="17uiePtvIa0">
+    <property role="EcuMT" value="1287546727787586176" />
+    <property role="3GE5qa" value="expression" />
+    <property role="TrG5h" value="AnyInteger" />
+    <ref role="1TJDcQ" node="17uiePtvI9D" resolve="GeneralInteger" />
+  </node>
+  <node concept="1TIwiD" id="17uiePtvIbr">
+    <property role="EcuMT" value="1287546727787586267" />
+    <property role="3GE5qa" value="expression" />
+    <property role="TrG5h" value="PointTriggerEvent" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="17uiePtvIbL" role="1TKVEi">
+      <property role="IQ2ns" value="1287546727787586289" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="latitude" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="17uiePtvIa0" resolve="AnyInteger" />
+    </node>
+    <node concept="1TJgyj" id="17uiePtvIbN" role="1TKVEi">
+      <property role="IQ2ns" value="1287546727787586291" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="longitude" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="17uiePtvIa0" resolve="AnyInteger" />
+    </node>
+    <node concept="1TJgyj" id="17uiePtvIbQ" role="1TKVEi">
+      <property role="IQ2ns" value="1287546727787586294" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="altitude" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="17uiePtvIa0" resolve="AnyInteger" />
+    </node>
+  </node>
+  <node concept="25R3W" id="17uiePtvIdR">
+    <property role="3F6X1D" value="1287546727787586423" />
+    <property role="3GE5qa" value="expression" />
+    <property role="TrG5h" value="AxesTriggerEventEnum" />
+    <node concept="25R33" id="17uiePtvIdW" role="25R1y">
+      <property role="3tVfz5" value="1287546727787586428" />
+      <property role="TrG5h" value="PITCH" />
+    </node>
+    <node concept="25R33" id="17uiePtvIdX" role="25R1y">
+      <property role="3tVfz5" value="1287546727787586429" />
+      <property role="TrG5h" value="ROLL" />
+    </node>
+    <node concept="25R33" id="17uiePtvIdY" role="25R1y">
+      <property role="3tVfz5" value="1287546727787586430" />
+      <property role="TrG5h" value="YAM" />
+    </node>
+    <node concept="25R33" id="17uiePtvIdS" role="25R1y">
+      <property role="3tVfz5" value="1287546727787586424" />
+      <property role="TrG5h" value="any" />
+      <property role="1L1pqM" value="*" />
+    </node>
+  </node>
+  <node concept="25R3W" id="17uiePtw8zI">
+    <property role="3F6X1D" value="1287546727787694318" />
+    <property role="3GE5qa" value="expression" />
+    <property role="TrG5h" value="ControlSwitchTriggerEventEnum" />
+    <node concept="25R33" id="17uiePtw8zK" role="25R1y">
+      <property role="3tVfz5" value="1287546727787694320" />
+      <property role="TrG5h" value="AUTOMATIC" />
+    </node>
+    <node concept="25R33" id="17uiePtw8zL" role="25R1y">
+      <property role="3tVfz5" value="1287546727787694321" />
+      <property role="TrG5h" value="MANUAL" />
+    </node>
+    <node concept="25R33" id="17uiePtw8zR" role="25R1y">
+      <property role="3tVfz5" value="1287546727787694327" />
+      <property role="TrG5h" value="any" />
+      <property role="1L1pqM" value="*" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="17uiePty3UP">
+    <property role="EcuMT" value="1287546727788199605" />
+    <property role="3GE5qa" value="expression.battery.command" />
+    <property role="TrG5h" value="Baterry" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
 </model>
 

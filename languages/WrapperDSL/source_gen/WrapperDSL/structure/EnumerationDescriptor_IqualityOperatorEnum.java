@@ -15,11 +15,11 @@ public class EnumerationDescriptor_IqualityOperatorEnum extends EnumerationDescr
     super(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x7970d3ea9334065dL, "IqualityOperatorEnum", "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/8750727080426341981");
   }
 
-  private final EnumerationDescriptor.MemberDescriptor myMember_is_0 = new EnumerationDescriptor.MemberDescriptor("is", "is", 0x7970d3ea93340663L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/8750727080426341987");
-  private final EnumerationDescriptor.MemberDescriptor myMember_not_equal_to_0 = new EnumerationDescriptor.MemberDescriptor("not_equal_to", "is not", 0x7970d3ea93340664L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/8750727080426341988");
+  private final EnumerationDescriptor.MemberDescriptor myMember_equal_0 = new EnumerationDescriptor.MemberDescriptor("equal", "==", 0x7970d3ea93340663L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/8750727080426341987");
+  private final EnumerationDescriptor.MemberDescriptor myMember_different_0 = new EnumerationDescriptor.MemberDescriptor("different", "≠", 0x7970d3ea93340664L, "r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure)/8750727080426341988");
 
   private final EnumerationLiteralsIndex myIndex = EnumerationLiteralsIndex.build(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x7970d3ea9334065dL, 0x7970d3ea93340663L, 0x7970d3ea93340664L);
-  private final List<EnumerationDescriptor.MemberDescriptor> myMembers = new EnumerationDescriptorBase.MembersList(myIndex, myMember_is_0, myMember_not_equal_to_0);
+  private final List<EnumerationDescriptor.MemberDescriptor> myMembers = new EnumerationDescriptorBase.MembersList(myIndex, myMember_equal_0, myMember_different_0);
 
   @Nullable
   @Override
@@ -40,10 +40,10 @@ public class EnumerationDescriptor_IqualityOperatorEnum extends EnumerationDescr
       return null;
     }
     switch (memberName) {
-      case "is":
-        return myMember_is_0;
-      case "not_equal_to":
-        return myMember_not_equal_to_0;
+      case "equal":
+        return myMember_equal_0;
+      case "different":
+        return myMember_different_0;
     }
     return null;
   }

@@ -51,7 +51,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     setCellContext(editorCell);
     editorCell.addEditorCell(createConstant_0());
     editorCell.addEditorCell(createRefNode_0());
-    editorCell.addEditorCell(createConstant_1());
     return editorCell;
   }
   private EditorCell createConstant_0() {
@@ -117,12 +116,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     protected String getNoTargetText() {
       return "<no event>";
     }
-  }
-  private EditorCell createConstant_1() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "event occurs");
-    editorCell.setCellId("Constant_32ttl5_c0");
-    editorCell.setDefaultText("");
-    return editorCell;
   }
 
   private static final class LINKS {

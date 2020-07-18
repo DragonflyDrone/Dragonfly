@@ -8,8 +8,582 @@
   <component name="ChangeListManager">
     <list default="true" id="67f9d5de-1d1c-4b09-879f-44fe21ffd1bc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.mps/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.mps/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/Language.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/Language.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/behavior/BatteryConditionalExpression__BehaviorDescriptor$LINKS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/behavior/BatteryConditionalExpression__BehaviorDescriptor$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/behavior/BatteryConditionalExpression__BehaviorDescriptor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/behavior/BehaviorAspectDescriptor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/behavior/ScalarWindConditionalExpression__BehaviorDescriptor$LINKS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/behavior/ScalarWindConditionalExpression__BehaviorDescriptor$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/behavior/ScalarWindConditionalExpression__BehaviorDescriptor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/behavior/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/behavior/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/AltitudeConditionalExpression_Editor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/AltitudeConditionalExpression_EditorBuilder_a$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/AltitudeConditionalExpression_EditorBuilder_a$CONCEPTS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/AltitudeConditionalExpression_EditorBuilder_a$LINKS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/AltitudeConditionalExpression_EditorBuilder_a$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/AltitudeConditionalExpression_EditorBuilder_a$rightSingleRoleHandler_ebfzbc_d0.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/AltitudeConditionalExpression_EditorBuilder_a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/AngularAccelerationConditionalExpression_Editor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/AngularAccelerationConditionalExpression_EditorBuilder_a$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/AngularAccelerationConditionalExpression_EditorBuilder_a$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/AngularAccelerationConditionalExpression_EditorBuilder_a$CONCEPTS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/AngularAccelerationConditionalExpression_EditorBuilder_a$LINKS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/AngularAccelerationConditionalExpression_EditorBuilder_a$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/AngularAccelerationConditionalExpression_EditorBuilder_a$rightSingleRoleHandler_eo5mmw_d0.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/AngularAccelerationConditionalExpression_EditorBuilder_a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/AnyBoolean_Editor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/AnyBoolean_EditorBuilder_a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/AnyNumber_Editor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/AnyNumber_EditorBuilder_a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/BatteryConditionalExpression_Editor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/BatteryConditionalExpression_EditorBuilder_a$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/BatteryConditionalExpression_EditorBuilder_a$CONCEPTS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/BatteryConditionalExpression_EditorBuilder_a$LINKS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/BatteryConditionalExpression_EditorBuilder_a$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/BatteryConditionalExpression_EditorBuilder_a$leftSingleRoleHandler_twzj6l_b0.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/BatteryConditionalExpression_EditorBuilder_a$rightSingleRoleHandler_twzj6l_d0.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/BatteryConditionalExpression_EditorBuilder_a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/CameraPowerConditionalExpression_Editor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/CameraPowerConditionalExpression_EditorBuilder_a$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/CameraPowerConditionalExpression_EditorBuilder_a$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/CameraPowerConditionalExpression_EditorBuilder_a$CONCEPTS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/CameraPowerConditionalExpression_EditorBuilder_a$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/CameraPowerConditionalExpression_EditorBuilder_a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/CardinalPointsRotate_Editor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/CardinalPointsRotate_EditorBuilder_a$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/CardinalPointsRotate_EditorBuilder_a$CONCEPTS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/CardinalPointsRotate_EditorBuilder_a$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/CardinalPointsRotate_EditorBuilder_a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/CategoricalDistanceConditionalExpression_Editor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/CategoricalDistanceConditionalExpression_EditorBuilder_a$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/CategoricalDistanceConditionalExpression_EditorBuilder_a$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/CategoricalDistanceConditionalExpression_EditorBuilder_a$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/CategoricalDistanceConditionalExpression_EditorBuilder_a$CONCEPTS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/CategoricalDistanceConditionalExpression_EditorBuilder_a$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/CategoricalDistanceConditionalExpression_EditorBuilder_a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/CategoricalWindConditionalExpression_Editor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/CategoricalWindConditionalExpression_EditorBuilder_a$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/CategoricalWindConditionalExpression_EditorBuilder_a$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/CategoricalWindConditionalExpression_EditorBuilder_a$CONCEPTS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/CategoricalWindConditionalExpression_EditorBuilder_a$LINKS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/CategoricalWindConditionalExpression_EditorBuilder_a$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/CategoricalWindConditionalExpression_EditorBuilder_a$leftSingleRoleHandler_2adozf_b0.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/CategoricalWindConditionalExpression_EditorBuilder_a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/CollisionSensorConditionalExpression_Editor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/CollisionSensorConditionalExpression_EditorBuilder_a$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/CollisionSensorConditionalExpression_EditorBuilder_a$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/CollisionSensorConditionalExpression_EditorBuilder_a$CONCEPTS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/CollisionSensorConditionalExpression_EditorBuilder_a$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/CollisionSensorConditionalExpression_EditorBuilder_a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/CompassConditionalExpression_Editor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/CompassConditionalExpression_EditorBuilder_a$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/CompassConditionalExpression_EditorBuilder_a$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/CompassConditionalExpression_EditorBuilder_a$CONCEPTS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/CompassConditionalExpression_EditorBuilder_a$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/CompassConditionalExpression_EditorBuilder_a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/CoordenateConditionalExpression_Editor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/CoordenateConditionalExpression_EditorBuilder_a$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/CoordenateConditionalExpression_EditorBuilder_a$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/CoordenateConditionalExpression_EditorBuilder_a$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/CoordenateConditionalExpression_EditorBuilder_a$CONCEPTS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/CoordenateConditionalExpression_EditorBuilder_a$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/CoordenateConditionalExpression_EditorBuilder_a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/DegreesRotate_Editor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/DegreesRotate_EditorBuilder_a$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/DegreesRotate_EditorBuilder_a$CONCEPTS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/DegreesRotate_EditorBuilder_a$LINKS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/DegreesRotate_EditorBuilder_a$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/DegreesRotate_EditorBuilder_a$valueSingleRoleHandler_megcd1_b0.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/DegreesRotate_EditorBuilder_a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/DetectSmokeConditionalExpression_Editor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/DetectSmokeConditionalExpression_EditorBuilder_a$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/DetectSmokeConditionalExpression_EditorBuilder_a$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/DetectSmokeConditionalExpression_EditorBuilder_a$CONCEPTS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/DetectSmokeConditionalExpression_EditorBuilder_a$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/DetectSmokeConditionalExpression_EditorBuilder_a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/EditorAspectDescriptorImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/EditorAspectDescriptorImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/FlyDirection_Editor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/FlyDirection_EditorBuilder_a$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/FlyDirection_EditorBuilder_a$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/FlyDirection_EditorBuilder_a$CONCEPTS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/FlyDirection_EditorBuilder_a$LINKS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/FlyDirection_EditorBuilder_a$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/FlyDirection_EditorBuilder_a$distanceSingleRoleHandler_ewa7hc_d0.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/FlyDirection_EditorBuilder_a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/FlyToCoordinates_Editor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/FlyToCoordinates_EditorBuilder_a$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/FlyToCoordinates_EditorBuilder_a$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/FlyToCoordinates_EditorBuilder_a$CONCEPTS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/FlyToCoordinates_EditorBuilder_a$LINKS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/FlyToCoordinates_EditorBuilder_a$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/FlyToCoordinates_EditorBuilder_a$latSingleRoleHandler_5nczgv_b0.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/FlyToCoordinates_EditorBuilder_a$longSingleRoleHandler_5nczgv_d0.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/FlyToCoordinates_EditorBuilder_a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/FlyToRegion_Editor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/FlyToRegion_EditorBuilder_a$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/FlyToRegion_EditorBuilder_a$CONCEPTS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/FlyToRegion_EditorBuilder_a$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/FlyToRegion_EditorBuilder_a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/GambialCommand_Editor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/GambialCommand_EditorBuilder_a$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/GambialCommand_EditorBuilder_a$CONCEPTS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/GambialCommand_EditorBuilder_a$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/GambialCommand_EditorBuilder_a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/GimbalConditionalExpression_Editor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/GimbalConditionalExpression_EditorBuilder_a$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/GimbalConditionalExpression_EditorBuilder_a$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/GimbalConditionalExpression_EditorBuilder_a$CONCEPTS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/GimbalConditionalExpression_EditorBuilder_a$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/GimbalConditionalExpression_EditorBuilder_a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/GpsConditionalExpression_Editor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/GpsConditionalExpression_EditorBuilder_a$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/GpsConditionalExpression_EditorBuilder_a$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/GpsConditionalExpression_EditorBuilder_a$CONCEPTS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/GpsConditionalExpression_EditorBuilder_a$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/GpsConditionalExpression_EditorBuilder_a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/IntegerNumber_Editor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/IntegerNumber_EditorBuilder_a$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/IntegerNumber_EditorBuilder_a$CONCEPTS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/IntegerNumber_EditorBuilder_a$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/IntegerNumber_EditorBuilder_a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/LandingGearConditionalExpression_Editor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/LandingGearConditionalExpression_EditorBuilder_a$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/LandingGearConditionalExpression_EditorBuilder_a$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/LandingGearConditionalExpression_EditorBuilder_a$CONCEPTS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/LandingGearConditionalExpression_EditorBuilder_a$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/LandingGearConditionalExpression_EditorBuilder_a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/Landing_Editor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/Landing_EditorBuilder_a$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/Landing_EditorBuilder_a$CONCEPTS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/Landing_EditorBuilder_a$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/Landing_EditorBuilder_a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/LinearAccelerationConditionalExpression_Editor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/LinearAccelerationConditionalExpression_EditorBuilder_a$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/LinearAccelerationConditionalExpression_EditorBuilder_a$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/LinearAccelerationConditionalExpression_EditorBuilder_a$CONCEPTS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/LinearAccelerationConditionalExpression_EditorBuilder_a$LINKS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/LinearAccelerationConditionalExpression_EditorBuilder_a$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/LinearAccelerationConditionalExpression_EditorBuilder_a$rightSingleRoleHandler_jyhn2x_d0.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/LinearAccelerationConditionalExpression_EditorBuilder_a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/LogicalExpression_EditorBuilder_a$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/LogicalExpression_EditorBuilder_a$LINKS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/LogicalExpression_EditorBuilder_a$leftSingleRoleHandler_qqsumt_b0.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/LogicalExpression_EditorBuilder_a$leftSingleRoleHandler_qqsumt_b0.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/LogicalExpression_EditorBuilder_a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/LogicalExpression_EditorBuilder_a.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/MotorsPowerConditionalExpression_Editor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/MotorsPowerConditionalExpression_EditorBuilder_a$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/MotorsPowerConditionalExpression_EditorBuilder_a$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/MotorsPowerConditionalExpression_EditorBuilder_a$CONCEPTS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/MotorsPowerConditionalExpression_EditorBuilder_a$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/MotorsPowerConditionalExpression_EditorBuilder_a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/NormalBooleanValue_Editor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/NormalBooleanValue_EditorBuilder_a$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/NormalBooleanValue_EditorBuilder_a$CONCEPTS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/NormalBooleanValue_EditorBuilder_a$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/NormalBooleanValue_EditorBuilder_a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/OnOffSmokeConditionalExpression_Editor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/OnOffSmokeConditionalExpression_EditorBuilder_a$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/OnOffSmokeConditionalExpression_EditorBuilder_a$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/OnOffSmokeConditionalExpression_EditorBuilder_a$CONCEPTS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/OnOffSmokeConditionalExpression_EditorBuilder_a$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/OnOffSmokeConditionalExpression_EditorBuilder_a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/OriginAndDestinationDistanceConditionalExpression_Editor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/OriginAndDestinationDistanceConditionalExpression_EditorBuilder_a$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/OriginAndDestinationDistanceConditionalExpression_EditorBuilder_a$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/OriginAndDestinationDistanceConditionalExpression_EditorBuilder_a$CONCEPTS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/OriginAndDestinationDistanceConditionalExpression_EditorBuilder_a$LINKS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/OriginAndDestinationDistanceConditionalExpression_EditorBuilder_a$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/OriginAndDestinationDistanceConditionalExpression_EditorBuilder_a$right1SingleRoleHandler_4uooao_e0.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/OriginAndDestinationDistanceConditionalExpression_EditorBuilder_a$rightSingleRoleHandler_4uooao_e0.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/OriginAndDestinationDistanceConditionalExpression_EditorBuilder_a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/PayloadConditionalExpression_Editor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/PayloadConditionalExpression_EditorBuilder_a$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/PayloadConditionalExpression_EditorBuilder_a$CONCEPTS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/PayloadConditionalExpression_EditorBuilder_a$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/PayloadConditionalExpression_EditorBuilder_a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/PerformingOperationConditionalExpression_Editor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/PerformingOperationConditionalExpression_EditorBuilder_a$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/PerformingOperationConditionalExpression_EditorBuilder_a$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/PerformingOperationConditionalExpression_EditorBuilder_a$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/PerformingOperationConditionalExpression_EditorBuilder_a$CONCEPTS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/PerformingOperationConditionalExpression_EditorBuilder_a$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/PerformingOperationConditionalExpression_EditorBuilder_a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/RegionConditionalExpression_EditorBuilder_a$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/RegionConditionalExpression_EditorBuilder_a$PROPS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/RegionConditionalExpression_EditorBuilder_a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/RegionConditionalExpression_EditorBuilder_a.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/ReturnToHome_Editor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/ReturnToHome_EditorBuilder_a$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/ReturnToHome_EditorBuilder_a$CONCEPTS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/ReturnToHome_EditorBuilder_a$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/ReturnToHome_EditorBuilder_a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/SafeLand_Editor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/SafeLand_EditorBuilder_a$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/SafeLand_EditorBuilder_a$CONCEPTS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/SafeLand_EditorBuilder_a$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/SafeLand_EditorBuilder_a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/ScalarDistanceConditionalExpression_EditorBuilder_a$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/ScalarDistanceConditionalExpression_EditorBuilder_a$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/ScalarDistanceConditionalExpression_EditorBuilder_a$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/ScalarDistanceConditionalExpression_EditorBuilder_a$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/ScalarDistanceConditionalExpression_EditorBuilder_a$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/ScalarDistanceConditionalExpression_EditorBuilder_a$CONCEPTS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/ScalarDistanceConditionalExpression_EditorBuilder_a$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/ScalarDistanceConditionalExpression_EditorBuilder_a$LINKS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/ScalarDistanceConditionalExpression_EditorBuilder_a$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/ScalarDistanceConditionalExpression_EditorBuilder_a$PROPS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/ScalarDistanceConditionalExpression_EditorBuilder_a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/ScalarDistanceConditionalExpression_EditorBuilder_a.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/ScalarWindConditionalExpression_Editor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/ScalarWindConditionalExpression_EditorBuilder_a$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/ScalarWindConditionalExpression_EditorBuilder_a$CONCEPTS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/ScalarWindConditionalExpression_EditorBuilder_a$LINKS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/ScalarWindConditionalExpression_EditorBuilder_a$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/ScalarWindConditionalExpression_EditorBuilder_a$leftSingleRoleHandler_fer2yp_b0.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/ScalarWindConditionalExpression_EditorBuilder_a$rightSingleRoleHandler_fer2yp_d0.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/ScalarWindConditionalExpression_EditorBuilder_a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/SetAutoFlightSpeed_Editor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/SetAutoFlightSpeed_EditorBuilder_a$LINKS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/SetAutoFlightSpeed_EditorBuilder_a$speedSingleRoleHandler_fgggzn_b0.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/SetAutoFlightSpeed_EditorBuilder_a$speedSingleRoleHandler_fgggzn_c0.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/SetAutoFlightSpeed_EditorBuilder_a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/SetGoHomeHeightInMeters_Editor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/SetGoHomeHeightInMeters_EditorBuilder_a$LINKS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/SetGoHomeHeightInMeters_EditorBuilder_a$heightSingleRoleHandler_vx6y5i_b0.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/SetGoHomeHeightInMeters_EditorBuilder_a$heightSingleRoleHandler_vx6y5i_c0.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/SetGoHomeHeightInMeters_EditorBuilder_a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/SetHomeLocationUsingAircraftCurrentLocation_Editor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/SetHomeLocationUsingAircraftCurrentLocation_EditorBuilder_a$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/SetHomeLocationUsingAircraftCurrentLocation_EditorBuilder_a$CONCEPTS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/SetHomeLocationUsingAircraftCurrentLocation_EditorBuilder_a$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/SetHomeLocationUsingAircraftCurrentLocation_EditorBuilder_a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/SetHomeLocation_Editor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/SetHomeLocation_EditorBuilder_a$LINKS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/SetHomeLocation_EditorBuilder_a$latSingleRoleHandler_ewjlgr_c0.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/SetHomeLocation_EditorBuilder_a$longSingleRoleHandler_ewjlgr_e0.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/SetHomeLocation_EditorBuilder_a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/SetLowBatteryWarningThreshold_Editor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/SetLowBatteryWarningThreshold_EditorBuilder_a$LINKS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/SetLowBatteryWarningThreshold_EditorBuilder_a$percentSingleRoleHandler_m56v0x_b0.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/SetLowBatteryWarningThreshold_EditorBuilder_a$percentSingleRoleHandler_m56v0x_c0.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/SetLowBatteryWarningThreshold_EditorBuilder_a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/SetMission_Editor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/SetMission_EditorBuilder_a$CONCEPTS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/SetMission_EditorBuilder_a$LINKS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/SetMission_EditorBuilder_a$valuesListHandler_750t35_a0.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/SetMission_EditorBuilder_a$valuesListHandler_750t35_a0a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/SetMission_EditorBuilder_a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/SetSeriousLowBatteryWarningThreshold_Editor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/SetSeriousLowBatteryWarningThreshold_EditorBuilder_a$LINKS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/SetSeriousLowBatteryWarningThreshold_EditorBuilder_a$percentSingleRoleHandler_fqaoc1_b0.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/SetSeriousLowBatteryWarningThreshold_EditorBuilder_a$percentSingleRoleHandler_fqaoc1_c0.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/SetSeriousLowBatteryWarningThreshold_EditorBuilder_a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/SetSmartReturnToHomeEnabled_Editor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/SetSmartReturnToHomeEnabled_EditorBuilder_a$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/SetSmartReturnToHomeEnabled_EditorBuilder_a$CONCEPTS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/SetSmartReturnToHomeEnabled_EditorBuilder_a$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/SetSmartReturnToHomeEnabled_EditorBuilder_a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/SpeedConditionalExpression_Editor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/SpeedConditionalExpression_EditorBuilder_a$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/SpeedConditionalExpression_EditorBuilder_a$CONCEPTS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/SpeedConditionalExpression_EditorBuilder_a$LINKS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/SpeedConditionalExpression_EditorBuilder_a$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/SpeedConditionalExpression_EditorBuilder_a$rightSingleRoleHandler_dzme0q_d0.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/SpeedConditionalExpression_EditorBuilder_a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/TakeOff_Editor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/TakeOff_EditorBuilder_a$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/TakeOff_EditorBuilder_a$CONCEPTS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/TakeOff_EditorBuilder_a$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/TakeOff_EditorBuilder_a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/Text_Editor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/Text_EditorBuilder_a$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/Text_EditorBuilder_a$CONCEPTS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/Text_EditorBuilder_a$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/Text_EditorBuilder_a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/TurnAutomaticControl_Editor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/TurnAutomaticControl_EditorBuilder_a$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/TurnAutomaticControl_EditorBuilder_a$CONCEPTS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/TurnAutomaticControl_EditorBuilder_a$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/TurnAutomaticControl_EditorBuilder_a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/TurnCamera_Editor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/TurnCamera_EditorBuilder_a$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/TurnCamera_EditorBuilder_a$CONCEPTS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/TurnCamera_EditorBuilder_a$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/TurnCamera_EditorBuilder_a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/TurnEconomyMode_Editor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/TurnEconomyMode_EditorBuilder_a$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/TurnEconomyMode_EditorBuilder_a$CONCEPTS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/TurnEconomyMode_EditorBuilder_a$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/TurnEconomyMode_EditorBuilder_a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/TurnMission_Editor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/TurnMission_EditorBuilder_a$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/TurnMission_EditorBuilder_a$CONCEPTS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/TurnMission_EditorBuilder_a$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/TurnMission_EditorBuilder_a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/TurnMotors_Editor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/TurnMotors_EditorBuilder_a$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/TurnMotors_EditorBuilder_a$CONCEPTS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/TurnMotors_EditorBuilder_a$LINKS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/TurnMotors_EditorBuilder_a$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/TurnMotors_EditorBuilder_a$valueSingleRoleHandler_vqua1k_b0.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/TurnMotors_EditorBuilder_a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/When_EditorBuilder_a$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/When_EditorBuilder_a$LINKS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/When_EditorBuilder_a$eventSingleRoleHandler_32ttl5_b0.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/When_EditorBuilder_a$eventSingleRoleHandler_32ttl5_b0.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/When_EditorBuilder_a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/When_EditorBuilder_a.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/WifiConditionalExpression_Editor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/WifiConditionalExpression_EditorBuilder_a$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/WifiConditionalExpression_EditorBuilder_a$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/WifiConditionalExpression_EditorBuilder_a$CONCEPTS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/WifiConditionalExpression_EditorBuilder_a$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/WifiConditionalExpression_EditorBuilder_a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/editor/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/structure/ConceptPresentationAspectImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/structure/ConceptPresentationAspectImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/structure/EnumerationDescriptor_AxisEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/structure/EnumerationDescriptor_CategoricalDistanceEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/structure/EnumerationDescriptor_CategoricalWindEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/structure/EnumerationDescriptor_CommandStateEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/structure/EnumerationDescriptor_ConditionalOperatorEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/structure/EnumerationDescriptor_DirectionsEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/structure/EnumerationDescriptor_GambialEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/structure/EnumerationDescriptor_InaquelityConditionalOperator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/structure/EnumerationDescriptor_InternalStateEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/structure/EnumerationDescriptor_IqualityOperatorEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/structure/EnumerationDescriptor_IqualityOperatorEnum.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/structure/EnumerationDescriptor_PerformedOperationEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/structure/EnumerationDescriptor_RegionEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/structure/EnumerationDescriptor_TurnConditionalEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/structure/EnumerationDescriptor_booleanDetectionEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/structure/LanguageConceptSwitch.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/structure/LanguageConceptSwitch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/structure/StructureAspectDescriptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/structure/StructureAspectDescriptor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/structure/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/structure/aspectcps-descriptorclasses.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/structure/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/structure/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/CameraPowerConditionalExpression_TextGen$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/CameraPowerConditionalExpression_TextGen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/CategoricalDistanceConditionalExpression_TextGen$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/CategoricalDistanceConditionalExpression_TextGen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/CategoricalWindConditionalExpression_TextGen$LINKS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/CategoricalWindConditionalExpression_TextGen$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/CategoricalWindConditionalExpression_TextGen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/CollisionSensorConditionalExpression_TextGen$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/CollisionSensorConditionalExpression_TextGen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/CompassConditionalExpression_TextGen$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/CompassConditionalExpression_TextGen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/DetectSmokeConditionalExpression_TextGen$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/DetectSmokeConditionalExpression_TextGen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/FlyDirection_TextGen$LINKS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/FlyDirection_TextGen$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/FlyDirection_TextGen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/FlyToRegion_TextGen$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/FlyToRegion_TextGen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/GambialCommand_TextGen$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/GambialCommand_TextGen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/GimbalConditionalExpression_TextGen$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/GimbalConditionalExpression_TextGen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/GpsConditionalExpression_TextGen$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/GpsConditionalExpression_TextGen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/IntegerNumber_TextGen$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/IntegerNumber_TextGen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/LogicalExpression_TextGen.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/LogicalExpression_TextGen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/OriginAndDestinationDistanceConditionalExpression_TextGen$LINKS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/OriginAndDestinationDistanceConditionalExpression_TextGen$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/OriginAndDestinationDistanceConditionalExpression_TextGen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/PerformingOperationConditionalExpression_TextGen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/RegionConditionalExpression_TextGen.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/RegionConditionalExpression_TextGen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/ReturnToHome_TextGen$CONCEPTS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/ReturnToHome_TextGen$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/ReturnToHome_TextGen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/SafeLand_TextGen$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/SafeLand_TextGen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/ScalarDistanceConditionalExpression_TextGen.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/ScalarDistanceConditionalExpression_TextGen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/SetMission_TextGen$LINKS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/SetMission_TextGen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/TextGenAspectDescriptor$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/TextGenAspectDescriptor$CONCEPTS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/TextGenAspectDescriptor$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/TextGenAspectDescriptor$PROPS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/TextGenAspectDescriptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/TextGenAspectDescriptor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/TurnAutomaticControl_TextGen$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/TurnAutomaticControl_TextGen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/TurnCamera_TextGen$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/TurnCamera_TextGen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/TurnEconomyMode_TextGen$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/TurnEconomyMode_TextGen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/TurnMission_TextGen$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/TurnMission_TextGen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/aspectcps-descriptorclasses.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/transformationOperations$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/transformationOperations$PROPS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/transformationOperations.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/textGen/transformationOperations.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/classes_gen/WrapperDSL/trace.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/models/WrapperDSL.editor.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/models/WrapperDSL.editor.mps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/models/WrapperDSL.structure.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/models/WrapperDSL.structure.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/models/WrapperDSL.textGen.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/models/WrapperDSL.textGen.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/sandbox/models/WrapperDSL.sandbox.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/sandbox/models/WrapperDSL.sandbox.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/sandbox/source_gen.caches/WrapperDSL/sandbox/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/sandbox/source_gen.caches/WrapperDSL/sandbox/generated" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/sandbox/source_gen/WrapperDSL/sandbox/EmergencyCamera.aj" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/sandbox/source_gen/WrapperDSL/sandbox/EmergencyCamera.aj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/sandbox/source_gen/WrapperDSL/sandbox/KeepFly1.aj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/sandbox/source_gen/WrapperDSL/sandbox/KeepFlying.aj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/sandbox/source_gen/WrapperDSL/sandbox/MonitorEnvironment.aj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/sandbox/source_gen/WrapperDSL/sandbox/MoveAside.aj" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/sandbox/source_gen/WrapperDSL/sandbox/MoveAside.aj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/sandbox/source_gen/WrapperDSL/sandbox/SafeRTH.aj" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/sandbox/source_gen/WrapperDSL/sandbox/SafeRTH.aj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/sandbox/source_gen/WrapperDSL/sandbox/SwitchToManual.aj" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/sandbox/source_gen/WrapperDSL/sandbox/SwitchToManual.aj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen.caches/WrapperDSL/behavior/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/source_gen.caches/WrapperDSL/behavior/dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen.caches/WrapperDSL/behavior/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/source_gen.caches/WrapperDSL/behavior/generated" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen.caches/WrapperDSL/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/source_gen.caches/WrapperDSL/dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen.caches/WrapperDSL/editor/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/source_gen.caches/WrapperDSL/editor/dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen.caches/WrapperDSL/editor/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/source_gen.caches/WrapperDSL/editor/generated" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen.caches/WrapperDSL/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/source_gen.caches/WrapperDSL/generated" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen.caches/WrapperDSL/structure/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/source_gen.caches/WrapperDSL/structure/dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen.caches/WrapperDSL/structure/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/source_gen.caches/WrapperDSL/structure/generated" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen.caches/WrapperDSL/textGen/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/source_gen.caches/WrapperDSL/textGen/dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen.caches/WrapperDSL/textGen/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/source_gen.caches/WrapperDSL/textGen/generated" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/Language.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/Language.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/behavior/BatteryConditionalExpression__BehaviorDescriptor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/behavior/BehaviorAspectDescriptor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/behavior/ScalarWindConditionalExpression__BehaviorDescriptor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/behavior/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/behavior/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/AltitudeConditionalExpression_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/AltitudeConditionalExpression_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/AngularAccelerationConditionalExpression_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/AngularAccelerationConditionalExpression_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/AnyBoolean_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/AnyBoolean_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/AnyNumber_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/AnyNumber_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/BatteryConditionalExpression_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/BatteryConditionalExpression_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/CameraPowerConditionalExpression_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/CameraPowerConditionalExpression_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/CardinalPointsRotate_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/CardinalPointsRotate_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/CategoricalDistanceConditionalExpression_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/CategoricalDistanceConditionalExpression_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/CategoricalWindConditionalExpression_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/CategoricalWindConditionalExpression_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/CollisionSensorConditionalExpression_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/CollisionSensorConditionalExpression_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/CompassConditionalExpression_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/CompassConditionalExpression_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/CoordenateConditionalExpression_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/CoordenateConditionalExpression_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/DegreesRotate_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/DegreesRotate_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/DetectSmokeConditionalExpression_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/DetectSmokeConditionalExpression_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/EditorAspectDescriptorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/EditorAspectDescriptorImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/FlyDirection_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/FlyDirection_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/FlyToCoordinates_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/FlyToCoordinates_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/FlyToRegion_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/FlyToRegion_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/GambialCommand_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/GambialCommand_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/GimbalConditionalExpression_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/GimbalConditionalExpression_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/GpsConditionalExpression_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/GpsConditionalExpression_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/IntegerNumber_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/IntegerNumber_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/LandingGearConditionalExpression_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/LandingGearConditionalExpression_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/Landing_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/Landing_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/LinearAccelerationConditionalExpression_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/LinearAccelerationConditionalExpression_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/LogicalExpression_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/LogicalExpression_EditorBuilder_a.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/MotorsPowerConditionalExpression_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/MotorsPowerConditionalExpression_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/NormalBooleanValue_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/NormalBooleanValue_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/OnOffSmokeConditionalExpression_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/OnOffSmokeConditionalExpression_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/OriginAndDestinationDistanceConditionalExpression_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/OriginAndDestinationDistanceConditionalExpression_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/PayloadConditionalExpression_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/PayloadConditionalExpression_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/PerformingOperationConditionalExpression_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/PerformingOperationConditionalExpression_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/RegionConditionalExpression_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/RegionConditionalExpression_EditorBuilder_a.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/ReturnToHome_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/ReturnToHome_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/SafeLand_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/SafeLand_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/ScalarDistanceConditionalExpression_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/ScalarDistanceConditionalExpression_EditorBuilder_a.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/ScalarWindConditionalExpression_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/ScalarWindConditionalExpression_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/SetAutoFlightSpeed_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/SetAutoFlightSpeed_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/SetGoHomeHeightInMeters_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/SetGoHomeHeightInMeters_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/SetHomeLocationUsingAircraftCurrentLocation_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/SetHomeLocationUsingAircraftCurrentLocation_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/SetHomeLocation_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/SetHomeLocation_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/SetLowBatteryWarningThreshold_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/SetLowBatteryWarningThreshold_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/SetMission_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/SetMission_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/SetSeriousLowBatteryWarningThreshold_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/SetSeriousLowBatteryWarningThreshold_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/SetSmartReturnToHomeEnabled_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/SetSmartReturnToHomeEnabled_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/SpeedConditionalExpression_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/SpeedConditionalExpression_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/TakeOff_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/TakeOff_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/Text_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/Text_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/TurnAutomaticControl_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/TurnAutomaticControl_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/TurnCamera_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/TurnCamera_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/TurnEconomyMode_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/TurnEconomyMode_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/TurnMission_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/TurnMission_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/TurnMotors_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/TurnMotors_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/When_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/When_EditorBuilder_a.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/WifiConditionalExpression_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/WifiConditionalExpression_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/editor/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/structure/ConceptPresentationAspectImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/structure/ConceptPresentationAspectImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/structure/EnumerationDescriptor_AxisEnum.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/structure/EnumerationDescriptor_CategoricalDistanceEnum.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/structure/EnumerationDescriptor_CategoricalWindEnum.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/structure/EnumerationDescriptor_CommandStateEnum.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/structure/EnumerationDescriptor_ConditionalOperatorEnum.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/structure/EnumerationDescriptor_DirectionsEnum.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/structure/EnumerationDescriptor_GambialEnum.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/structure/EnumerationDescriptor_InaquelityConditionalOperator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/structure/EnumerationDescriptor_InternalStateEnum.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/structure/EnumerationDescriptor_IqualityOperatorEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/structure/EnumerationDescriptor_IqualityOperatorEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/structure/EnumerationDescriptor_PerformedOperationEnum.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/structure/EnumerationDescriptor_RegionEnum.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/structure/EnumerationDescriptor_TurnConditionalEnum.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/structure/EnumerationDescriptor_booleanDetectionEnum.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/structure/LanguageConceptSwitch.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/structure/LanguageConceptSwitch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/structure/StructureAspectDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/structure/StructureAspectDescriptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/structure/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/structure/aspectcps-descriptorclasses.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/structure/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/structure/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/textGen/CameraPowerConditionalExpression_TextGen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/textGen/CategoricalDistanceConditionalExpression_TextGen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/textGen/CategoricalWindConditionalExpression_TextGen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/textGen/CollisionSensorConditionalExpression_TextGen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/textGen/CompassConditionalExpression_TextGen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/textGen/DetectSmokeConditionalExpression_TextGen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/textGen/FlyDirection_TextGen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/textGen/FlyToRegion_TextGen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/textGen/GambialCommand_TextGen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/textGen/GimbalConditionalExpression_TextGen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/textGen/GpsConditionalExpression_TextGen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/textGen/IntegerNumber_TextGen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/textGen/LogicalExpression_TextGen.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/textGen/LogicalExpression_TextGen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/textGen/OriginAndDestinationDistanceConditionalExpression_TextGen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/textGen/PerformingOperationConditionalExpression_TextGen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/textGen/RegionConditionalExpression_TextGen.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/textGen/RegionConditionalExpression_TextGen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/textGen/ReturnToHome_TextGen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/textGen/SafeLand_TextGen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/textGen/ScalarDistanceConditionalExpression_TextGen.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/textGen/ScalarDistanceConditionalExpression_TextGen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/textGen/SetMission_TextGen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/textGen/TextGenAspectDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/textGen/TextGenAspectDescriptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/textGen/TurnAutomaticControl_TextGen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/textGen/TurnCamera_TextGen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/textGen/TurnEconomyMode_TextGen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/textGen/TurnMission_TextGen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/textGen/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/textGen/aspectcps-descriptorclasses.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/textGen/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/textGen/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/textGen/transformationOperations.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/textGen/transformationOperations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/source_gen/WrapperDSL/trace.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +596,7 @@
         <TabState>
           <option name="title" value="Console" />
           <tab>
-            <model ref="c949c75c-7306-4238-a41e-b8b24bf139b8/r:fea668d2-6ee2-415e-8c8d-25477f571bb6(TempModulec949c75c-7306-4238-a41e-b8b24bf139b8/ConsoleModel_42734608185869)">
+            <model ref="582ff5f8-3d86-42a8-9f66-b2e690dcfe65/r:5f2d5385-ce93-4b1b-91f8-88175f91a56e(TempModule582ff5f8-3d86-42a8-9f66-b2e690dcfe65/ConsoleModel_5917417129654)">
               <persistence version="9" />
               <languages>
                 <devkit ref="70d3d6da-af63-483d-a75f-9c8acf8de332(jetbrains.mps.console.devkit)" />
@@ -42,11 +616,11 @@
                   <concept id="757553790980850366" name="jetbrains.mps.console.base.structure.History" flags="ng" index="3balQm" />
                 </language>
               </registry>
-              <node concept="aymSD" id="7Zo9yKw9tkV">
-                <node concept="3balQm" id="7Zo9yKw9tkW" role="aymYE" />
-                <node concept="2Clz$F" id="7Zo9yKw9tkX" role="aymYO" />
-                <node concept="2_V_lH" id="7Zo9yKw9tkY" role="1PhJh3">
-                  <ref role="2_V_lI" node="7Zo9yKw9tkX" resolve="CommandHolder" />
+              <node concept="aymSD" id="17uiePtda5a">
+                <node concept="3balQm" id="17uiePtda5b" role="aymYE" />
+                <node concept="2Clz$F" id="17uiePtda5c" role="aymYO" />
+                <node concept="2_V_lH" id="17uiePtda5d" role="1PhJh3">
+                  <ref role="2_V_lI" node="17uiePtda5c" resolve="CommandHolder" />
                 </node>
               </node>
             </model>
@@ -173,6 +747,178 @@
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" />
     <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="a553a0f8-13de-431b-9df4-f626a3ec4dda" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WrapperDSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:2cb78c7c-c192-47c0-ae08-cf53d23996c9(WrapperDSL.sandbox) in IdeaFile[path: /home/lucas_alves/Workspace/gesad/dragonfly/dsl/DSL-Dragonfly (copy)/languages/WrapperDSL/sandbox/models/WrapperDSL.sandbox.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="3e1c68c4-ebe6-40bd-a27f-e74585aa2487(WrapperDSL)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="3e1c68c4-ebe6-40bd-a27f-e74585aa2487(WrapperDSL)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure) in IdeaFile[path: /home/lucas_alves/Workspace/gesad/dragonfly/dsl/DSL-Dragonfly (copy)/languages/WrapperDSL/models/WrapperDSL.structure.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="expression" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UAV" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trigger_event" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="3e1c68c4-ebe6-40bd-a27f-e74585aa2487(WrapperDSL)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure) in IdeaFile[path: /home/lucas_alves/Workspace/gesad/dragonfly/dsl/DSL-Dragonfly (copy)/languages/WrapperDSL/models/WrapperDSL.structure.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="a553a0f8-13de-431b-9df4-f626a3ec4dda" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="3e1c68c4-ebe6-40bd-a27f-e74585aa2487(WrapperDSL)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure) in IdeaFile[path: /home/lucas_alves/Workspace/gesad/dragonfly/dsl/DSL-Dragonfly (copy)/languages/WrapperDSL/models/WrapperDSL.structure.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="expression" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="3e1c68c4-ebe6-40bd-a27f-e74585aa2487(WrapperDSL)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure) in IdeaFile[path: /home/lucas_alves/Workspace/gesad/dragonfly/dsl/DSL-Dragonfly (copy)/languages/WrapperDSL/models/WrapperDSL.structure.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="expression" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UAV" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="a553a0f8-13de-431b-9df4-f626a3ec4dda" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WrapperDSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <SELECTED>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="3e1c68c4-ebe6-40bd-a27f-e74585aa2487(WrapperDSL)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure) in IdeaFile[path: /home/lucas_alves/Workspace/gesad/dragonfly/dsl/DSL-Dragonfly (copy)/languages/WrapperDSL/models/WrapperDSL.structure.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="expression" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UAV" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trigger_event" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="3755399622748982188" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </SELECTED>
+        </subPane>
+      </pane>
       <pane id="FileSystem">
         <subPane>
           <expand>
@@ -211,136 +957,6 @@
             </path>
           </expand>
           <select />
-        </subPane>
-      </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="3e1c68c4-ebe6-40bd-a27f-e74585aa2487(WrapperDSL)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="3e1c68c4-ebe6-40bd-a27f-e74585aa2487(WrapperDSL)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure) in IdeaFile[path: /home/lucas_alves/Workspace/gesad/dragonfly/dsl/DSL-Dragonfly (copy)/languages/WrapperDSL/models/WrapperDSL.structure.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="3e1c68c4-ebe6-40bd-a27f-e74585aa2487(WrapperDSL)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure) in IdeaFile[path: /home/lucas_alves/Workspace/gesad/dragonfly/dsl/DSL-Dragonfly (copy)/languages/WrapperDSL/models/WrapperDSL.structure.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="expression" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hygrometer" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trigger_event" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="3e1c68c4-ebe6-40bd-a27f-e74585aa2487(WrapperDSL)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure) in IdeaFile[path: /home/lucas_alves/Workspace/gesad/dragonfly/dsl/DSL-Dragonfly (copy)/languages/WrapperDSL/models/WrapperDSL.structure.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="expression" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hygrometer" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="3e1c68c4-ebe6-40bd-a27f-e74585aa2487(WrapperDSL)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure) in IdeaFile[path: /home/lucas_alves/Workspace/gesad/dragonfly/dsl/DSL-Dragonfly (copy)/languages/WrapperDSL/models/WrapperDSL.structure.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="expression" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <SELECTED>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="3e1c68c4-ebe6-40bd-a27f-e74585aa2487(WrapperDSL)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure) in IdeaFile[path: /home/lucas_alves/Workspace/gesad/dragonfly/dsl/DSL-Dragonfly (copy)/languages/WrapperDSL/models/WrapperDSL.structure.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="expression" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hygrometer" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trigger_event" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="3755399622748982214" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </SELECTED>
         </subPane>
       </pane>
       <pane id="Favorites" />
@@ -460,10 +1076,10 @@
     <state x="603" y="428" key="com.intellij.ide.util.TipDialog/1920.0.1366.768/0.65.1920.1080@0.65.1920.1080" timestamp="1588339709003" />
     <state x="2349" y="258" key="com.intellij.ide.util.TipDialog/1920.0.1366.768/0.65.1920.1080@1920.0.1366.768" timestamp="1589853322122" />
     <state x="475" y="276" key="com.intellij.ide.util.TipDialog/67.27.1299.741@67.27.1299.741" timestamp="1592825693756" />
-    <state x="2560" y="212" width="1920" height="579" maximized="true" key="dock-window-1" timestamp="1593729303322">
+    <state x="2560" y="276" width="1732" height="647" key="dock-window-1" timestamp="1595103407891">
       <screen x="2560" y="0" width="1920" height="1080" />
     </state>
-    <state x="2560" y="212" width="1920" height="579" maximized="true" key="dock-window-1/0.27.2560.999/2560.0.1920.1080@0.27.2560.999" timestamp="1593729303322" />
+    <state x="2560" y="276" width="1732" height="647" key="dock-window-1/0.27.2560.999/2560.0.1920.1080@0.27.2560.999" timestamp="1595103407891" />
     <state x="1016" y="328" width="1363" height="800" key="dock-window-1/0.27.2560.999/2560.0.1920.1080@2560.0.1920.1080" timestamp="1593553616197" />
     <state x="686" y="27" width="1874" height="999" key="dock-window-2" timestamp="1593553616197">
       <screen x="0" y="27" width="2560" height="999" />
@@ -485,10 +1101,10 @@
       <screen x="2560" y="0" width="1920" height="1080" />
     </state>
     <state x="2560" y="195" width="1920" height="719" maximized="true" key="dock-window-6/0.27.2560.999/2560.0.1920.1080@0.27.2560.999" timestamp="1593564747911" />
-    <state x="814" y="245" width="1327" height="646" key="search.everywhere.popup" timestamp="1595034114434">
+    <state x="814" y="245" width="1327" height="646" key="search.everywhere.popup" timestamp="1595084581058">
       <screen x="0" y="27" width="2560" height="999" />
     </state>
-    <state x="814" y="245" width="1327" height="646" key="search.everywhere.popup/0.27.2560.999/2560.0.1920.1080@0.27.2560.999" timestamp="1595034114434" />
+    <state x="814" y="245" width="1327" height="646" key="search.everywhere.popup/0.27.2560.999/2560.0.1920.1080@0.27.2560.999" timestamp="1595084581058" />
     <state x="3171" y="236" width="996" height="699" key="search.everywhere.popup/0.27.2560.999/2560.0.1920.1080@2560.0.1920.1080" timestamp="1594582282949" />
     <state x="2354" y="168" width="707" height="496" key="search.everywhere.popup/1920.0.1366.768/0.27.1920.1053@1920.0.1366.768" timestamp="1587828714079" />
     <state x="610" y="301" width="994" height="698" key="search.everywhere.popup/1920.0.1366.768/0.65.1920.1080@0.65.1920.1080" timestamp="1588172983584" />

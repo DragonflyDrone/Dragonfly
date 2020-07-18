@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="-c9jjcb4pirrlbkdrneuv5w7h6f87p24">
-  <files names="EmergencyCamera.aj:KeepFly1.aj:KeepFlying.aj:MonitorEnvironment.aj:MoveAside.aj:SafeRTH.aj:SwitchToManual.aj" />
+<product version="3" modelHash="4w0mdo65szhv139rrtopongqd56okis">
+  <files names="EmergencyCamera.aj:Keepflying.aj:MonitorEnvironment1.aj:MoveAside.aj:SafeRTH.aj:SwitchToManual.aj" />
 </product>
 

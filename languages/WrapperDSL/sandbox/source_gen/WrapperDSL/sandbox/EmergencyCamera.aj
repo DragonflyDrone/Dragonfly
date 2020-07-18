@@ -22,11 +22,8 @@ import view.drone.*;
 
 public aspect EmergencyCamera{
 private boolean alreadyExecuting = false;
-pointcut safeLanding(): call (* model.entity.drone.DroneBusinessObject.safeLanding(*));
-after():safeLanding()
-&&
-if
-(((Drone)thisJoinPoint.getArgs()[0]).getGpsState() == GPSStateEnum.OFF)
+
+<!TextGen not found for 'WrapperDSL.structure.GPSStateConditionalExpression'!>
 {
 helperCamera(thisJoinPoint);
 }
@@ -37,12 +34,8 @@ Drone drone = (Drone) thisJoinPoint.getArgs()[0];
 System.out.println("Drone["+drone.getLabel()+"] "+"EmergencyCamera");
 LoggerController.getInstance().print("Drone["+drone.getLabel()+"] EmergencyCamera");
 
-drone.setCameraState(CameraStateEnum.ON);
-drone.setGambialState(GambialStateEnum.ON);
-if(drone.getDistanceSource()<drone.getDistanceDestiny()){
-drone.setGambialState(GambialStateEnum.EAST);
-
+<!TextGen not found for 'WrapperDSL.structure.CameraStateCommandExpression'!><!TextGen not found for 'WrapperDSL.structure.GimbalStateCommand'!><!TextGen not found for 'WrapperDSL.structure.EnergySavingModeStateCommandExpression'!>if(<!TextGen not found for 'WrapperDSL.structure.ComparativeRelativeDistanceConditionalExpression'!>){
+<!TextGen not found for 'WrapperDSL.structure.GimbalRotationCommandExpression'!>
 }else{
-drone.setGambialState(GambialStateEnum.WEST);
-}}
+<!TextGen not found for 'WrapperDSL.structure.GimbalRotationCommandExpression'!>}}
 }

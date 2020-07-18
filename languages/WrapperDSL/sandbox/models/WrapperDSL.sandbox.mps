@@ -12,68 +12,71 @@
       </concept>
     </language>
     <language id="3e1c68c4-ebe6-40bd-a27f-e74585aa2487" name="WrapperDSL">
-      <concept id="2101053769983157147" name="WrapperDSL.structure.SetMission" flags="ng" index="20ZLbu">
-        <child id="2101053769983157148" name="values" index="20ZLbp" />
-      </concept>
-      <concept id="8237239994876226883" name="WrapperDSL.structure.OriginAndDestinationDistanceConditionalExpression" flags="ng" index="22r6dy">
-        <property id="8237239994876226886" name="left" index="22r6dB" />
-        <property id="8237239994876226888" name="operator" index="22r6dD" />
-        <child id="8237239994876226891" name="right1" index="22r6dE" />
-      </concept>
-      <concept id="3488505779905538673" name="WrapperDSL.structure.CollisionSensorConditionalExpression" flags="ng" index="ggKfR">
-        <property id="3488505779905538676" name="operators" index="ggKfM" />
-        <property id="3488505779905538677" name="right" index="ggKfN" />
-      </concept>
-      <concept id="3488505779905765121" name="WrapperDSL.structure.FlyDirection" flags="ng" index="ghVq7">
-        <property id="3488505779905765122" name="direc" index="ghVq4" />
-        <child id="3488505779906715724" name="distance" index="glgBa" />
-      </concept>
       <concept id="3488505779904874957" name="WrapperDSL.structure.WindDirectionConditionalExpression" flags="ng" index="gii1b">
         <property id="3488505779904874992" name="operator" index="gii1Q" />
         <property id="5547882272274126500" name="value" index="iq1WG" />
       </concept>
-      <concept id="3488505779905094455" name="WrapperDSL.structure.TurnAutomaticControl" flags="ng" index="gi$EL">
-        <property id="3488505779905094458" name="value" index="gi$EW" />
+      <concept id="577212062751443412" name="WrapperDSL.structure.EnergySavingModeStateCommandExpression" flags="ng" index="gn6a4">
+        <property id="9212155008746131781" name="state" index="1vZztD" />
       </concept>
-      <concept id="3488505779906477485" name="WrapperDSL.structure.AnyNumber" flags="ng" index="gklgF" />
-      <concept id="3488505779906477482" name="WrapperDSL.structure.IntegerNumber" flags="ng" index="gklgG">
-        <property id="3488505779906477483" name="value" index="gklgH" />
+      <concept id="577212062751443413" name="WrapperDSL.structure.SafeLandingStateCommandExpression" flags="ng" index="gn6a5">
+        <property id="9212155008746131856" name="state" index="1vZzuW" />
       </concept>
-      <concept id="3488505779905996210" name="WrapperDSL.structure.DetectSmokeConditionalExpression" flags="ng" index="gm0KO">
-        <property id="3488505779905996214" name="right" index="gm0KK" />
-        <property id="3488505779905996213" name="operators" index="gm0KN" />
+      <concept id="577212062751443416" name="WrapperDSL.structure.FlightControlStateCommandExpression" flags="ng" index="gn6a8">
+        <property id="9212155008746132675" name="switchControl" index="1vZzbJ" />
+        <property id="9212155008746131789" name="state" index="1vZztx" />
       </concept>
-      <concept id="5726566709278147876" name="WrapperDSL.structure.SafeLand" flags="ng" index="2moHWK">
-        <property id="1357676981079261676" name="value" index="1M8N7D" />
+      <concept id="577212062751443417" name="WrapperDSL.structure.GimbalRotationCommandExpression" flags="ng" index="gn6a9">
+        <property id="9212155008746132766" name="axes" index="1vZzcM" />
+        <property id="9212155008746131793" name="value" index="1vZztX" />
+      </concept>
+      <concept id="577212062751443418" name="WrapperDSL.structure.CameraStateCommandExpression" flags="ng" index="gn6aa">
+        <property id="9212155008746131767" name="state" index="1vZzsr" />
+      </concept>
+      <concept id="577212062751443394" name="WrapperDSL.structure.UAVManeuverDirectionCommandExpression" flags="ng" index="gn6ai">
+        <property id="9212155008746131870" name="direction" index="1vZzuM" />
+      </concept>
+      <concept id="577212062751443395" name="WrapperDSL.structure.UAVManeuverDirectionToRegionCommandExpression" flags="ng" index="gn6aj">
+        <property id="1287546727785907245" name="RegionDirection" index="1cIKN0" />
       </concept>
       <concept id="5538177954659204583" name="WrapperDSL.structure.AdaptationBehavior" flags="ng" index="2mxZ9A">
         <property id="5538177954659204588" name="typeOfAdaptation" index="2mxZ9H" />
         <reference id="5538177954659204594" name="adaptationScriptName" index="2mxZ9N" />
         <child id="5538177954659204700" name="adaptationScript" index="2mxZ7t" />
       </concept>
-      <concept id="838450833433631730" name="WrapperDSL.structure.FlyToRegion" flags="ng" index="NOXP_">
-        <property id="838450833433631751" name="region" index="NOXEg" />
+      <concept id="6043916714957488952" name="WrapperDSL.structure.ObstacleAvoidanceSensorStateConditionalExpression" flags="ng" index="2WXwO2">
+        <property id="9212155008746116941" name="operator" index="1vZv5x" />
+        <property id="9212155008746116942" name="state" index="1vZv5y" />
       </concept>
-      <concept id="8703544917707379161" name="WrapperDSL.structure.PerformingOperationConditionalExpression" flags="ng" index="UkY8$">
-        <property id="8556603645526163401" name="state" index="LQhpB" />
-        <property id="8556603645526163298" name="drone_operator" index="LQhrc" />
-        <property id="8703544917707379203" name="operation" index="UkY7Y" />
-        <child id="8703544917707379162" name="perfomingCommand" index="UkY8B" />
+      <concept id="6043916714957488950" name="WrapperDSL.structure.RelativeDistanceConditionalExpression" flags="ng" index="2WXwOc">
+        <property id="9212155008746117928" name="relativePosition" index="1vZvO4" />
+        <property id="9212155008746117930" name="operator" index="1vZvO6" />
+        <property id="9212155008746117994" name="value" index="1vZvP6" />
       </concept>
-      <concept id="1176377449927611923" name="WrapperDSL.structure.CameraPowerConditionalExpression" flags="ng" index="38T4ct">
-        <property id="1176377449927611926" name="right" index="38T4co" />
-        <property id="1176377449927611925" name="operators" index="38T4cr" />
+      <concept id="6043916714957488951" name="WrapperDSL.structure.ComparativeRelativeDistanceConditionalExpression" flags="ng" index="2WXwOd">
+        <property id="9212155008746131558" name="operator" index="1vZzpa" />
+        <property id="9212155008746131552" name="relativePosition2" index="1vZzpc" />
+        <property id="9212155008746131547" name="relativePosition1" index="1vZzpR" />
       </concept>
+      <concept id="6043916714957488949" name="WrapperDSL.structure.GPSStateConditionalExpression" flags="ng" index="2WXwOf">
+        <property id="9212155008746116826" name="operator" index="1vZv3Q" />
+        <property id="9212155008746116827" name="state" index="1vZv3R" />
+      </concept>
+      <concept id="6043916714957488941" name="WrapperDSL.structure.CameraStateConditionalExpression" flags="ng" index="2WXwOn">
+        <property id="3755399622748984315" name="state" index="1zyKZO" />
+        <property id="3755399622748984313" name="operator" index="1zyKZQ" />
+      </concept>
+      <concept id="6043916714957488931" name="WrapperDSL.structure.ReturnToHomeStateConditionalExpression" flags="ng" index="2WXwOp">
+        <property id="3755399622748983582" name="state" index="1zyKOh" />
+        <property id="3755399622748983580" name="operator" index="1zyKOj" />
+      </concept>
+      <concept id="6043916714957488966" name="WrapperDSL.structure.WindSpeedConditionalExpression" flags="ng" index="2WXwPW">
+        <property id="9212155008746117720" name="value" index="1vZvLO" />
+        <property id="9212155008746117718" name="operator" index="1vZvLU" />
+      </concept>
+      <concept id="1287546727787586176" name="WrapperDSL.structure.AnyInteger" flags="ng" index="1cCaDH" />
       <concept id="6034329596691614548" name="WrapperDSL.structure.AdaptationScript" flags="ng" index="1nO3mo">
         <child id="6034329596692833866" name="body" index="1nfDy6" />
-      </concept>
-      <concept id="6034329596690336989" name="WrapperDSL.structure.CategoricalWindConditionalExpression" flags="ng" index="1nTb8h">
-        <property id="8750727080426382706" name="operator" index="3Eh7qo" />
-        <property id="8750727080426460311" name="right" index="3EhgtX" />
-      </concept>
-      <concept id="6034329596690336992" name="WrapperDSL.structure.RegionConditionalExpression" flags="ng" index="1nTb8G">
-        <property id="8237239994876093608" name="right" index="22qAE9" />
-        <property id="8237239994876093636" name="operator" index="22qAF_" />
       </concept>
       <concept id="6034329596690336716" name="WrapperDSL.structure.Then" flags="ng" index="1nTbk0">
         <child id="6034329596690384297" name="adaptiveBehavior" index="1nTnH_" />
@@ -97,393 +100,285 @@
         <child id="6034329596690384496" name="condition" index="1nTnyW" />
         <child id="6034329596690384498" name="body" index="1nTnyY" />
       </concept>
-      <concept id="2392105491497210748" name="WrapperDSL.structure.GpsConditionalExpression" flags="ng" index="1$KqgT">
-        <property id="2392105491497210751" name="operators" index="1$KqgU" />
-        <property id="2392105491497210752" name="right" index="1$Kqj5" />
+      <concept id="9212155008746132705" name="WrapperDSL.structure.GimbalStateCommand" flags="ng" index="1vZzbd">
+        <property id="9212155008746132708" name="state" index="1vZzb8" />
+        <property id="9212155008746132706" name="controlSwitch" index="1vZzbe" />
       </concept>
-      <concept id="2392105491497355787" name="WrapperDSL.structure.GambialCommand" flags="ng" index="1$L7Pe">
-        <property id="2392105491497355788" name="value" index="1$L7P9" />
+      <concept id="3755399622748982189" name="WrapperDSL.structure.UAVAccelerationTriggerEvent" flags="ng" index="1zyLuy">
+        <child id="1287546727787586196" name="value" index="1cCaDT" />
       </concept>
-      <concept id="2392105491497355738" name="WrapperDSL.structure.TurnCamera" flags="ng" index="1$L7Uv">
-        <property id="2392105491497355739" name="turn" index="1$L7Uu" />
+      <concept id="3755399622748982186" name="WrapperDSL.structure.UAVManeuverDirectionTriggerEvent" flags="ng" index="1zyLu_">
+        <property id="9212155008746133307" name="direction" index="1vZz4n" />
+      </concept>
+      <concept id="3755399622748982196" name="WrapperDSL.structure.SafeLandingStateTriggerEvent" flags="ng" index="1zyLuV">
+        <property id="9212155008746133705" name="state" index="1vZzV_" />
       </concept>
       <concept id="2392105491498693605" name="WrapperDSL.structure.Else" flags="ng" index="1Be0iw">
         <child id="2392105491498693607" name="body" index="1Be0iy" />
       </concept>
-      <concept id="7971328689430055796" name="WrapperDSL.structure.TurnMission" flags="ng" index="3BL191">
-        <property id="1357676981079261714" name="value" index="1M8N8n" />
-      </concept>
-      <concept id="7971328689429976330" name="WrapperDSL.structure.ReturnToHome" flags="ng" index="3BLkKZ">
-        <property id="1357676981079261736" name="value" index="1M8N8H" />
-      </concept>
-      <concept id="8750727080427121661" name="WrapperDSL.structure.CategoricalDistanceConditionalExpression" flags="ng" index="3EjNwn">
-        <property id="8750727080427121673" name="right" index="3EjNZz" />
-        <property id="8750727080427121676" name="left" index="3EjNZA" />
-        <property id="8750727080427121664" name="operator" index="3EjNZE" />
-      </concept>
       <concept id="8750727080425723899" name="WrapperDSL.structure.LogicalExpression" flags="ng" index="3Em$gh">
         <property id="8750727080426030585" name="operator" index="3EnToj" />
+        <child id="577212062751443391" name="left" index="gn6bJ" />
         <child id="8750727080426179942" name="right" index="3EglUc" />
-        <child id="8750727080426179941" name="left" index="3EglUf" />
       </concept>
     </language>
   </registry>
-  <node concept="1nTbkf" id="4VxqpBPzXkE">
-    <property role="TrG5h" value="MoveAside" />
-    <node concept="1nTbk6" id="4VxqpBPzXkF" role="1nTbk1">
-      <node concept="3Em$gh" id="4VxqpBP$TZy" role="1nTnJQ">
+  <node concept="1nTbkf" id="17uiePtfG8u">
+    <property role="TrG5h" value="Keepflying" />
+    <node concept="1nTbk6" id="17uiePtfG8v" role="1nTbk1">
+      <node concept="3Em$gh" id="17uiePtjCfN" role="1nTnJQ">
         <property role="3EnToj" value="5eYfGK4nkaD/and" />
-        <node concept="1nTb8G" id="4VxqpBP$TZD" role="3EglUf">
-          <property role="22qAF_" value="7_KOYEjd0pz/is" />
-          <property role="22qAE9" value="79gzy7KeIi_/water" />
+        <node concept="2WXwOc" id="17uiePtjCfW" role="gn6bJ">
+          <property role="1vZvO4" value="7_KOYEjfYK5/DESTINATION" />
+          <property role="1vZvO6" value="5fwjzFJ5$ch/greater_than_or_equal_to" />
+          <property role="1vZvP6" value="200" />
         </node>
-        <node concept="3Em$gh" id="4VxqpBP$TZG" role="3EglUc">
+        <node concept="3Em$gh" id="17uiePtlxmm" role="3EglUc">
           <property role="3EnToj" value="5eYfGK4nkaD/and" />
-          <node concept="1nTb8h" id="4VxqpBP$TZN" role="3EglUf">
-            <property role="3Eh7qo" value="7_KOYEjd0p$/not_equal_to" />
-            <property role="3EhgtX" value="7_KOYEjdthV/strong" />
+          <node concept="2WXwPW" id="17uiePtlxmv" role="gn6bJ">
+            <property role="1vZvLU" value="5fwjzFJ5$ch/greater_than_or_equal_to" />
+            <property role="1vZvLO" value="5" />
           </node>
-          <node concept="22r6dy" id="4VxqpBP$TZQ" role="3EglUc">
-            <property role="22r6dB" value="7_KOYEjfYK5/destination" />
-            <property role="22r6dD" value="5eYfGK4mCLf/greater_than_or_equal_to" />
-            <node concept="gklgG" id="4NY2oxuEQvY" role="22r6dE">
-              <property role="gklgH" value="10" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="1nTbk7" id="4VxqpBPzXkH" role="1nTbk3">
-      <node concept="2moHWK" id="4VxqpBP$TZW" role="2mxZ8X">
-        <property role="1M8N7D" value="1bns0lwX47l/Start" />
-      </node>
-    </node>
-    <node concept="1nTbk0" id="4VxqpBPzXkJ" role="1nTbku">
-      <node concept="2mxZ9A" id="4VxqpBPzXkK" role="1nTnH_">
-        <property role="2mxZ9H" value="5eYfGK4mOi$/before" />
-        <ref role="2mxZ9N" node="4VxqpBPzXkL" resolve="goLandRegion" />
-        <node concept="1nO3mo" id="4VxqpBPzXkL" role="2mxZ7t">
-          <property role="TrG5h" value="goLandRegion" />
-          <node concept="1nTnHw" id="4VxqpBP$TZZ" role="1nfDy6">
-            <node concept="1nTb8G" id="4VxqpBP$U03" role="1nTnGu">
-              <property role="22qAF_" value="7_KOYEjd0pz/is" />
-              <property role="22qAE9" value="79gzy7KeIi_/water" />
-            </node>
-            <node concept="NOXP_" id="4VxqpBP$U06" role="1nTnGo">
-              <property role="NOXEg" value="79gzy7KeIi$/land" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="1nTbkf" id="24MtOl5VO$N">
-    <property role="TrG5h" value="KeepFlying" />
-    <node concept="1nTbk6" id="24MtOl5VO$O" role="1nTbk1">
-      <node concept="3Em$gh" id="24MtOl5VO$V" role="1nTnJQ">
-        <property role="3EnToj" value="5eYfGK4nkaD/and" />
-        <node concept="22r6dy" id="24MtOl5VO_7" role="3EglUf">
-          <property role="22r6dB" value="7_KOYEjfYK5/destination" />
-          <property role="22r6dD" value="5eYfGK4mCLl/less_than_or_equal_to" />
-          <node concept="gklgG" id="4NY2oxuDi43" role="22r6dE">
-            <property role="gklgH" value="10" />
-          </node>
-        </node>
-        <node concept="3Em$gh" id="24MtOl5VO_E" role="3EglUc">
-          <property role="3EnToj" value="5eYfGK4nkaD/and" />
-          <node concept="1nTb8h" id="24MtOl5VO_L" role="3EglUf">
-            <property role="3Eh7qo" value="7_KOYEjd0pz/is" />
-            <property role="3EhgtX" value="7_KOYEjdthV/strong" />
-          </node>
-          <node concept="gii1b" id="4NY2oxuDi48" role="3EglUc">
-            <property role="gii1Q" value="7_KOYEjd0pz/is" />
+          <node concept="gii1b" id="17uiePtnqN_" role="3EglUc">
+            <property role="gii1Q" value="7_KOYEjd0pz/equal" />
             <property role="iq1WG" value="11jlgVoCRQU/EAST" />
           </node>
         </node>
       </node>
     </node>
-    <node concept="1nTbk7" id="24MtOl5VO$Q" role="1nTbk3">
-      <node concept="2moHWK" id="24MtOl5VO_s" role="2mxZ8X">
-        <property role="1M8N7D" value="1bns0lwX47l/START" />
+    <node concept="1nTbk7" id="17uiePtfG8x" role="1nTbk3">
+      <node concept="1zyLuV" id="17uiePtnqNC" role="2mxZ8X">
+        <property role="1vZzV_" value="3gtR0Xn_GKf/STARTS" />
       </node>
     </node>
-    <node concept="1nTbk0" id="24MtOl5VO$S" role="1nTbku">
-      <node concept="2mxZ9A" id="24MtOl5VO$T" role="1nTnH_">
+    <node concept="1nTbk0" id="17uiePtfG8z" role="1nTbku">
+      <node concept="2mxZ9A" id="17uiePtfG8$" role="1nTnH_">
         <property role="2mxZ9H" value="5eYfGK4mOi_/around" />
-        <ref role="2mxZ9N" node="24MtOl5VO$U" resolve="goDestination" />
-        <node concept="1nO3mo" id="24MtOl5VO$U" role="2mxZ7t">
+        <ref role="2mxZ9N" node="17uiePtfG8_" resolve="goDestination" />
+        <node concept="1nO3mo" id="17uiePtfG8_" role="2mxZ7t">
           <property role="TrG5h" value="goDestination" />
-          <node concept="1nTnHw" id="24MtOl5VO_v" role="1nfDy6">
-            <node concept="1nTb8G" id="24MtOl5VO_z" role="1nTnGu">
-              <property role="22qAF_" value="7_KOYEjd0p$/not_equal_to" />
-              <property role="22qAE9" value="79gzy7KeYOS/destination" />
+          <node concept="1nTnHw" id="17uiePtnqNF" role="1nfDy6">
+            <node concept="2WXwOc" id="17uiePtnqNN" role="1nTnGu">
+              <property role="1vZvO4" value="7_KOYEjfYK5/DESTINATION" />
+              <property role="1vZvO6" value="5fwjzFJ5$bZ/not_equal" />
+              <property role="1vZvP6" value="0" />
             </node>
-            <node concept="NOXP_" id="24MtOl5VO_A" role="1nTnGo">
-              <property role="NOXEg" value="79gzy7KeYOS/destination" />
+            <node concept="gn6aj" id="17uiePtpkgE" role="1nTnGo">
+              <property role="1cIKN0" value="7_KOYEjfYK5/DESTINATION" />
             </node>
           </node>
         </node>
       </node>
     </node>
   </node>
-  <node concept="1nTbkf" id="24MtOl5WXdN">
-    <property role="TrG5h" value="SwitchToManual" />
-    <node concept="1nTbk6" id="24MtOl5WXdO" role="1nTbk1">
-      <node concept="3Em$gh" id="24MtOl5XwAF" role="1nTnJQ">
+  <node concept="1nTbkf" id="17uiePtrX1v">
+    <property role="TrG5h" value="MoveAside" />
+    <node concept="1nTbk6" id="17uiePtrX1w" role="1nTbk1">
+      <node concept="3Em$gh" id="17uiePtrX1B" role="1nTnJQ">
         <property role="3EnToj" value="5eYfGK4nkaD/and" />
-        <node concept="1$KqgT" id="24MtOl5XwAM" role="3EglUf">
-          <property role="1$KqgU" value="7_KOYEjd0pz/is" />
-          <property role="1$Kqj5" value="11jlgVoGE2E/off" />
+        <node concept="2WXwOc" id="17uiePtrX1K" role="gn6bJ">
+          <property role="1vZvO4" value="5fwjzFJ5$qL/WATER" />
+          <property role="1vZvO6" value="5fwjzFJ5$bY/iqual" />
+          <property role="1vZvP6" value="0" />
         </node>
-        <node concept="UkY8$" id="24MtOl5XwAP" role="3EglUc">
-          <property role="UkY7Y" value="7_KOYEjd0pz/is" />
-          <node concept="3BL191" id="24MtOl5XwAV" role="UkY8B">
-            <property role="1M8N8n" value="24MtOl5VO_X/Running" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="1nTbk7" id="24MtOl5WXdQ" role="1nTbk3">
-      <node concept="3BLkKZ" id="24MtOl5XwAY" role="2mxZ8X">
-        <property role="1M8N8H" value="1bns0lwX47l/Start" />
-      </node>
-    </node>
-    <node concept="1nTbk0" id="24MtOl5WXdS" role="1nTbku">
-      <node concept="2mxZ9A" id="24MtOl5WXdT" role="1nTnH_">
-        <property role="2mxZ9H" value="5eYfGK4mOi_/around" />
-        <ref role="2mxZ9N" node="24MtOl5WXdU" resolve="manual" />
-        <node concept="1nO3mo" id="24MtOl5WXdU" role="2mxZ7t">
-          <property role="TrG5h" value="manual" />
-          <node concept="gi$EL" id="31DEoowaEDu" role="1nfDy6">
-            <property role="gi$EW" value="1bns0lwX48z/Pause" />
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="1nTbkf" id="24MtOl5XwB1">
-    <property role="TrG5h" value="EmergencyCamera" />
-    <node concept="1nTbk6" id="24MtOl5XwB2" role="1nTbk1">
-      <node concept="1$KqgT" id="24MtOl5XwBk" role="1nTnJQ">
-        <property role="1$KqgU" value="7_KOYEjd0pz/is" />
-        <property role="1$Kqj5" value="11jlgVoGE2E/off" />
-      </node>
-    </node>
-    <node concept="1nTbk7" id="24MtOl5XwB4" role="1nTbk3">
-      <node concept="2moHWK" id="24MtOl5XwBn" role="2mxZ8X">
-        <property role="1M8N7D" value="1bns0lwX47l/Start" />
-      </node>
-    </node>
-    <node concept="1nTbk0" id="24MtOl5XwB6" role="1nTbku">
-      <node concept="2mxZ9A" id="24MtOl5XwB7" role="1nTnH_">
-        <property role="2mxZ9H" value="5eYfGK4mOiC/after" />
-        <ref role="2mxZ9N" node="24MtOl5XwB8" resolve="helperCamera" />
-        <node concept="1nO3mo" id="24MtOl5XwB8" role="2mxZ7t">
-          <property role="TrG5h" value="helperCamera" />
-          <node concept="1$L7Uv" id="24MtOl64TM1" role="1nfDy6">
-            <property role="1$L7Uu" value="11jlgVoGE2D/on" />
-          </node>
-          <node concept="1$L7Pe" id="24MtOl64TMt" role="1nfDy6">
-            <property role="1$L7P9" value="24MtOl5XwD6/on" />
-          </node>
-          <node concept="1nTnHB" id="24MtOl60mfj" role="1nfDy6">
-            <node concept="1$L7Pe" id="24MtOl622XJ" role="1nTnyY">
-              <property role="1$L7P9" value="24MtOl5XwDg/E" />
-            </node>
-            <node concept="3EjNwn" id="24MtOl60mft" role="1nTnyW">
-              <property role="3EjNZA" value="7_KOYEjfYK6/origin" />
-              <property role="3EjNZE" value="5eYfGK4mCL6/less_than" />
-              <property role="3EjNZz" value="7_KOYEjfYK5/destination" />
-            </node>
-          </node>
-          <node concept="1Be0iw" id="24MtOl63bUm" role="1nfDy6">
-            <node concept="1$L7Pe" id="24MtOl63bUF" role="1Be0iy">
-              <property role="1$L7P9" value="24MtOl5XwDh/W" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="1nTbkf" id="31DEoowaEDw">
-    <property role="TrG5h" value="SafeRTH" />
-    <node concept="1nTbk6" id="31DEoowaEDx" role="1nTbk1">
-      <node concept="3Em$gh" id="31DEoowbxVC" role="1nTnJQ">
-        <property role="3EnToj" value="5eYfGK4nkaD/and" />
-        <node concept="3Em$gh" id="1OCskmtKOYT" role="3EglUc">
-          <property role="3EnToj" value="5eYfGK4nkaL/or" />
-          <node concept="ggKfR" id="1OCskmtKOZ0" role="3EglUf">
-            <property role="ggKfM" value="7_KOYEjd0pz/is" />
-            <property role="ggKfN" value="11jlgVoGE2E/OFF" />
-          </node>
-          <node concept="ggKfR" id="1OCskmtKOZ3" role="3EglUc">
-            <property role="ggKfM" value="7_KOYEjd0pz/is" />
-            <property role="ggKfN" value="1E9PaQY5Rs3/FAILURE" />
-          </node>
-        </node>
-        <node concept="UkY8$" id="7qZaqT7rnOv" role="3EglUf">
-          <property role="LQhrc" value="7qZaqT7pzXC/economicMode" />
-          <property role="UkY7Y" value="7_KOYEjd0pz/is" />
-          <property role="LQhpB" value="7z9cZP2DdsQ/EXECUTING" />
-        </node>
-      </node>
-    </node>
-    <node concept="1nTbk7" id="31DEoowaEDz" role="1nTbk3">
-      <node concept="3BLkKZ" id="31DEoowbxVV" role="2mxZ8X">
-        <property role="1M8N8H" value="24MtOl5VO_X/Running" />
-      </node>
-    </node>
-    <node concept="1nTbk0" id="31DEoowaED_" role="1nTbku">
-      <node concept="2mxZ9A" id="31DEoowaEDA" role="1nTnH_">
-        <property role="2mxZ9H" value="5eYfGK4mOi_/around" />
-        <ref role="2mxZ9N" node="31DEoowaEDB" resolve="newSafeLand" />
-        <node concept="1nO3mo" id="31DEoowaEDB" role="2mxZ7t">
-          <property role="TrG5h" value="newSafeLand" />
-          <node concept="2moHWK" id="31DEoowbxVY" role="1nfDy6">
-            <property role="1M8N7D" value="1bns0lwX47l/Start" />
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="1nTbkf" id="31DEoowcqmd">
-    <property role="TrG5h" value="MonitorEnvironment" />
-    <node concept="1nTbk6" id="31DEoowcqme" role="1nTbk1">
-      <node concept="3Em$gh" id="31DEoowdl5D" role="1nTnJQ">
-        <property role="3EnToj" value="5eYfGK4nkaD/and" />
-        <node concept="3Em$gh" id="20lP6cvoqkA" role="3EglUc">
-          <property role="3EnToj" value="5eYfGK4nkaL/or" />
-          <node concept="38T4ct" id="20lP6cvoqkH" role="3EglUf">
-            <property role="38T4cr" value="7_KOYEjd0pz/is" />
-            <property role="38T4co" value="1E9PaQY5Rs3/FAILURE" />
-          </node>
-          <node concept="38T4ct" id="31DEoowdl5K" role="3EglUc">
-            <property role="38T4cr" value="7_KOYEjd0pz/is" />
-            <property role="38T4co" value="11jlgVoGE2E/off" />
-          </node>
-        </node>
-        <node concept="gm0KO" id="20lP6cvoqkL" role="3EglUf">
-          <property role="gm0KN" value="7_KOYEjd0pz/is" />
-          <property role="gm0KK" value="31DEoowcqmV/true" />
-        </node>
-      </node>
-    </node>
-    <node concept="1nTbk7" id="31DEoowcqmg" role="1nTbk3">
-      <node concept="ghVq7" id="31DEoowhnoa" role="2mxZ8X">
-        <property role="ghVq4" value="31DEoowfNFD/ANY" />
-        <node concept="gklgF" id="20lP6cvnyS2" role="glgBa" />
-      </node>
-    </node>
-    <node concept="1nTbk0" id="31DEoowcqmi" role="1nTbku">
-      <node concept="2mxZ9A" id="31DEoowcqmj" role="1nTnH_">
-        <property role="2mxZ9H" value="5eYfGK4mOi$/before" />
-        <ref role="2mxZ9N" node="31DEoowcqmk" resolve="framework" />
-        <node concept="1nO3mo" id="31DEoowcqmk" role="2mxZ7t">
-          <property role="TrG5h" value="framework" />
-          <node concept="20ZLbu" id="1OCskmtRfX1" role="1nfDy6">
-            <node concept="ghVq7" id="1OCskmu0EYD" role="20ZLbp">
-              <property role="ghVq4" value="11jlgVoCRQY/WEST" />
-              <node concept="gklgG" id="1OCskmu0EZ0" role="glgBa">
-                <property role="gklgH" value="5" />
-              </node>
-            </node>
-            <node concept="ghVq7" id="1OCskmtU6Dd" role="20ZLbp">
-              <property role="ghVq4" value="11jlgVoCRQQ/NORTH" />
-              <node concept="gklgG" id="1OCskmtU6Fo" role="glgBa">
-                <property role="gklgH" value="5" />
-              </node>
-            </node>
-            <node concept="ghVq7" id="1OCskmtU6Dj" role="20ZLbp">
-              <property role="ghVq4" value="11jlgVoCRQY/WEST" />
-              <node concept="gklgG" id="1OCskmtU6Fr" role="glgBa">
-                <property role="gklgH" value="5" />
-              </node>
-            </node>
-            <node concept="ghVq7" id="1OCskmtU6Dr" role="20ZLbp">
-              <property role="ghVq4" value="11jlgVoCRQR/SOUTH" />
-              <node concept="gklgG" id="1OCskmtU6Fu" role="glgBa">
-                <property role="gklgH" value="5" />
-              </node>
-            </node>
-            <node concept="ghVq7" id="1OCskmtU6D_" role="20ZLbp">
-              <property role="ghVq4" value="11jlgVoCRQR/SOUTH" />
-              <node concept="gklgG" id="1OCskmtU6Fx" role="glgBa">
-                <property role="gklgH" value="5" />
-              </node>
-            </node>
-            <node concept="ghVq7" id="1OCskmtU6E9" role="20ZLbp">
-              <property role="ghVq4" value="11jlgVoCRQU/EAST" />
-              <node concept="gklgG" id="1OCskmtU6F$" role="glgBa">
-                <property role="gklgH" value="5" />
-              </node>
-            </node>
-            <node concept="ghVq7" id="1OCskmtU6En" role="20ZLbp">
-              <property role="ghVq4" value="11jlgVoCRQU/EAST" />
-              <node concept="gklgG" id="1OCskmtU6FB" role="glgBa">
-                <property role="gklgH" value="5" />
-              </node>
-            </node>
-            <node concept="ghVq7" id="1OCskmtU6EN" role="20ZLbp">
-              <property role="ghVq4" value="11jlgVoCRQQ/NORTH" />
-              <node concept="gklgG" id="1OCskmtU6FE" role="glgBa">
-                <property role="gklgH" value="5" />
-              </node>
-            </node>
-            <node concept="ghVq7" id="1OCskmtU6F3" role="20ZLbp">
-              <property role="ghVq4" value="11jlgVoCRQQ/NORTH" />
-              <node concept="gklgG" id="1OCskmtU6FH" role="glgBa">
-                <property role="gklgH" value="5" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="1nTbkf" id="izYLMlyEsJ">
-    <property role="TrG5h" value="KeepFly1" />
-    <node concept="1nTbk6" id="izYLMlyEsK" role="1nTbk1">
-      <node concept="3Em$gh" id="izYLMlyEsZ" role="1nTnJQ">
-        <property role="3EnToj" value="5eYfGK4nkaD/and" />
-        <node concept="22r6dy" id="izYLMlyEt6" role="3EglUf">
-          <property role="22r6dB" value="7_KOYEjfYK5/destination" />
-          <property role="22r6dD" value="5eYfGK4mCLl/less_than_or_equal_to" />
-          <node concept="gklgG" id="izYLMlyEt8" role="22r6dE">
-            <property role="gklgH" value="10" />
-          </node>
-        </node>
-        <node concept="3Em$gh" id="izYLMlyEtc" role="3EglUc">
+        <node concept="3Em$gh" id="17uiePtrX1N" role="3EglUc">
           <property role="3EnToj" value="5eYfGK4nkaD/and" />
-          <node concept="1nTb8h" id="izYLMlyEtj" role="3EglUf">
-            <property role="3Eh7qo" value="7_KOYEjd0pz/is" />
-            <property role="3EhgtX" value="7_KOYEjdthV/STRONG" />
+          <node concept="2WXwOc" id="17uiePtrX24" role="3EglUc">
+            <property role="1vZvO4" value="7_KOYEjfYK5/DESTINATION" />
+            <property role="1vZvO6" value="5fwjzFJ5$ch/greater_than_or_equal_to" />
+            <property role="1vZvP6" value="200" />
           </node>
-          <node concept="gii1b" id="izYLMlyEtm" role="3EglUc">
-            <property role="gii1Q" value="7_KOYEjd0pz/is" />
-            <property role="iq1WG" value="11jlgVoCRQU/EAST" />
+          <node concept="2WXwPW" id="17uiePtrX21" role="gn6bJ">
+            <property role="1vZvLU" value="5fwjzFJ5$cg/less_than" />
+            <property role="1vZvLO" value="5" />
           </node>
         </node>
       </node>
     </node>
-    <node concept="1nTbk7" id="izYLMlyEsM" role="1nTbk3">
-      <node concept="2moHWK" id="izYLMlyEtp" role="2mxZ8X">
-        <property role="1M8N7D" value="1bns0lwX47l/START" />
+    <node concept="1nTbk7" id="17uiePtrX1y" role="1nTbk3">
+      <node concept="1zyLuV" id="17uiePtrX27" role="2mxZ8X">
+        <property role="1vZzV_" value="3gtR0Xn_GKf/STARTS" />
       </node>
     </node>
-    <node concept="1nTbk0" id="izYLMlyEsO" role="1nTbku">
-      <node concept="2mxZ9A" id="izYLMlyEsP" role="1nTnH_">
+    <node concept="1nTbk0" id="17uiePtrX1$" role="1nTbku">
+      <node concept="2mxZ9A" id="17uiePtrX1_" role="1nTnH_">
+        <property role="2mxZ9H" value="5eYfGK4mOi$/before" />
+        <ref role="2mxZ9N" node="17uiePtrX1A" resolve="goLandRegion" />
+        <node concept="1nO3mo" id="17uiePtrX1A" role="2mxZ7t">
+          <property role="TrG5h" value="goLandRegion" />
+          <node concept="1nTnHw" id="17uiePtrX2a" role="1nfDy6">
+            <node concept="2WXwOc" id="17uiePtrX2e" role="1nTnGu">
+              <property role="1vZvO4" value="5fwjzFJ5$qQ/LAND" />
+              <property role="1vZvO6" value="5fwjzFJ5$bZ/not_equal" />
+              <property role="1vZvP6" value="0" />
+            </node>
+            <node concept="gn6aj" id="17uiePttPzq" role="1nTnGo">
+              <property role="1cIKN0" value="5fwjzFJ5$qQ/LAND" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1nTbkf" id="17uiePttPzs">
+    <property role="TrG5h" value="SwitchToManual" />
+    <node concept="1nTbk6" id="17uiePttPzt" role="1nTbk1">
+      <node concept="3Em$gh" id="17uiePttPz$" role="1nTnJQ">
+        <property role="3EnToj" value="5eYfGK4nkaD/and" />
+        <node concept="2WXwOf" id="17uiePttPzH" role="gn6bJ">
+          <property role="1vZv3Q" value="5fwjzFJ5$bD/iqual" />
+          <property role="1vZv3R" value="5fwjzFJ5$y7/ACTIVATED" />
+        </node>
+        <node concept="2WXwOp" id="17uiePttPzK" role="3EglUc">
+          <property role="1zyKOj" value="5fwjzFJ5$bD/iqual" />
+          <property role="1zyKOh" value="5fwjzFJ5$sl/STARTED" />
+        </node>
+      </node>
+    </node>
+    <node concept="1nTbk7" id="17uiePttPzv" role="1nTbk3">
+      <node concept="1zyLuy" id="17uiePtwaAA" role="2mxZ8X">
+        <node concept="1cCaDH" id="17uiePty3TB" role="1cCaDT" />
+      </node>
+    </node>
+    <node concept="1nTbk0" id="17uiePttPzx" role="1nTbku">
+      <node concept="2mxZ9A" id="17uiePttPzy" role="1nTnH_">
         <property role="2mxZ9H" value="5eYfGK4mOi_/around" />
-        <ref role="2mxZ9N" node="izYLMlyEsQ" resolve="goDesti" />
-        <node concept="1nO3mo" id="izYLMlyEsQ" role="2mxZ7t">
-          <property role="TrG5h" value="goDesti" />
-          <node concept="1nTnHw" id="izYLMlyEts" role="1nfDy6">
-            <node concept="1nTb8G" id="izYLMlyEtG" role="1nTnGu">
-              <property role="22qAF_" value="7_KOYEjd0p$/not_equal_to" />
-              <property role="22qAE9" value="79gzy7KeYOS/destination" />
+        <ref role="2mxZ9N" node="17uiePttPzz" resolve="turnManual" />
+        <node concept="1nO3mo" id="17uiePttPzz" role="2mxZ7t">
+          <property role="TrG5h" value="turnManual" />
+          <node concept="gn6a8" id="17uiePty3TD" role="1nfDy6">
+            <property role="1vZzbJ" value="5fwjzFJ5$vU/MANUAL" />
+            <property role="1vZztx" value="5fwjzFJ5$wN/START" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1nTbkf" id="17uiePty3TF">
+    <property role="TrG5h" value="SafeRTH" />
+    <node concept="1nTbk6" id="17uiePty3TG" role="1nTbk1">
+      <node concept="3Em$gh" id="17uiePty3TN" role="1nTnJQ">
+        <property role="3EnToj" value="5eYfGK4nkaD/and" />
+        <node concept="2WXwOp" id="17uiePty3TW" role="gn6bJ">
+          <property role="1zyKOj" value="5fwjzFJ5$bD/iqual" />
+          <property role="1zyKOh" value="5fwjzFJ5$sl/STARTED" />
+        </node>
+        <node concept="2WXwO2" id="17uiePty3TZ" role="3EglUc">
+          <property role="1vZv5x" value="5fwjzFJ5$bD/iqual" />
+          <property role="1vZv5y" value="5fwjzFJ5$zS/ERROR" />
+        </node>
+      </node>
+    </node>
+    <node concept="1nTbk7" id="17uiePty3TI" role="1nTbk3">
+      <node concept="1zyLu_" id="17uiePty3Ui" role="2mxZ8X">
+        <property role="1vZz4n" value="17uiePtvI9b/any" />
+      </node>
+    </node>
+    <node concept="1nTbk0" id="17uiePty3TK" role="1nTbku">
+      <node concept="2mxZ9A" id="17uiePty3TL" role="1nTnH_">
+        <property role="2mxZ9H" value="5eYfGK4mOi_/around" />
+        <ref role="2mxZ9N" node="17uiePty3TM" resolve="newSafeLand" />
+        <node concept="1nO3mo" id="17uiePty3TM" role="2mxZ7t">
+          <property role="TrG5h" value="newSafeLand" />
+          <node concept="gn6a5" id="17uiePty3Un" role="1nfDy6">
+            <property role="1vZzuW" value="5fwjzFJ5$uB/START" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1nTbkf" id="17uiePty3Uq">
+    <property role="TrG5h" value="EmergencyCamera" />
+    <node concept="1nTbk6" id="17uiePty3Ur" role="1nTbk1">
+      <node concept="2WXwOf" id="17uiePty3Uy" role="1nTnJQ">
+        <property role="1vZv3Q" value="5fwjzFJ5$bD/iqual" />
+        <property role="1vZv3R" value="5fwjzFJ5$y4/ERROR" />
+      </node>
+    </node>
+    <node concept="1nTbk7" id="17uiePty3Ut" role="1nTbk3">
+      <node concept="1zyLuV" id="17uiePty3U_" role="2mxZ8X">
+        <property role="1vZzV_" value="3gtR0Xn_GKf/STARTS" />
+      </node>
+    </node>
+    <node concept="1nTbk0" id="17uiePty3Uv" role="1nTbku">
+      <node concept="2mxZ9A" id="17uiePty3Uw" role="1nTnH_">
+        <property role="2mxZ9H" value="5eYfGK4mOiC/after" />
+        <ref role="2mxZ9N" node="17uiePty3Ux" resolve="helperCamera" />
+        <node concept="1nO3mo" id="17uiePty3Ux" role="2mxZ7t">
+          <property role="TrG5h" value="helperCamera" />
+          <node concept="gn6aa" id="17uiePty3UC" role="1nfDy6">
+            <property role="1vZzsr" value="5fwjzFJ5$xj/START" />
+          </node>
+          <node concept="1vZzbd" id="17uiePty3UH" role="1nfDy6">
+            <property role="1vZzbe" value="5fwjzFJ5$vT/AUTOMATIC" />
+            <property role="1vZzb8" value="5fwjzFJ5$wi/START" />
+          </node>
+          <node concept="gn6a4" id="17uiePty3UQ" role="1nfDy6">
+            <property role="1vZztD" value="5fwjzFJ5$u6/START" />
+          </node>
+          <node concept="1nTnHB" id="17uiePty3V0" role="1nfDy6">
+            <node concept="gn6a9" id="17uiePty3Vi" role="1nTnyY">
+              <property role="1vZzcM" value="5fwjzFJ5$qD/YAM" />
+              <property role="1vZztX" value="90" />
             </node>
-            <node concept="NOXP_" id="izYLMlyEtJ" role="1nTnGo">
-              <property role="NOXEg" value="79gzy7KeYOS/destination" />
+            <node concept="2WXwOd" id="17uiePty3Vd" role="1nTnyW">
+              <property role="1vZzpR" value="5fwjzFJ5$qH/ORIGIN" />
+              <property role="1vZzpa" value="5fwjzFJ5$cg/less_than" />
+              <property role="1vZzpc" value="7_KOYEjfYK5/DESTINATION" />
             </node>
+          </node>
+          <node concept="1Be0iw" id="17uiePty3W6" role="1nfDy6">
+            <node concept="gn6a9" id="17uiePty3Wf" role="1Be0iy">
+              <property role="1vZzcM" value="5fwjzFJ5$qD/YAM" />
+              <property role="1vZztX" value="270" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1nTbkf" id="17uiePt_Qhm">
+    <property role="TrG5h" value="MonitorEnviroment" />
+    <node concept="1nTbk6" id="17uiePt_Qhn" role="1nTbk1">
+      <node concept="2WXwOn" id="17uiePt_QhW" role="1nTnJQ">
+        <property role="1zyKZQ" value="5fwjzFJ5$bE/not_equal" />
+        <property role="1zyKZO" value="5fwjzFJ5$wW/STARTED" />
+      </node>
+    </node>
+    <node concept="1nTbk7" id="17uiePt_Qhp" role="1nTbk3">
+      <node concept="1zyLu_" id="17uiePt_QhZ" role="2mxZ8X">
+        <property role="1vZz4n" value="17uiePtvI9b/any" />
+      </node>
+    </node>
+    <node concept="1nTbk0" id="17uiePt_Qhr" role="1nTbku">
+      <node concept="2mxZ9A" id="17uiePt_Qhs" role="1nTnH_">
+        <property role="2mxZ9H" value="5eYfGK4mOi$/before" />
+        <ref role="2mxZ9N" node="17uiePt_Qht" resolve="framework" />
+        <node concept="1nO3mo" id="17uiePt_Qht" role="2mxZ7t">
+          <property role="TrG5h" value="framework" />
+          <node concept="gn6ai" id="17uiePt_Qi2" role="1nfDy6">
+            <property role="1vZzuM" value="11jlgVoCRQQ/NORTH" />
+          </node>
+          <node concept="gn6ai" id="17uiePt_Qi7" role="1nfDy6">
+            <property role="1vZzuM" value="11jlgVoCRQY/WEST" />
+          </node>
+          <node concept="gn6ai" id="17uiePt_Qie" role="1nfDy6">
+            <property role="1vZzuM" value="11jlgVoCRQR/SOUTH" />
+          </node>
+          <node concept="gn6ai" id="17uiePt_Qin" role="1nfDy6">
+            <property role="1vZzuM" value="11jlgVoCRQR/SOUTH" />
+          </node>
+          <node concept="gn6ai" id="17uiePt_Qiy" role="1nfDy6">
+            <property role="1vZzuM" value="11jlgVoCRQU/EAST" />
+          </node>
+          <node concept="gn6ai" id="17uiePt_QiJ" role="1nfDy6">
+            <property role="1vZzuM" value="11jlgVoCRQU/EAST" />
+          </node>
+          <node concept="gn6ai" id="17uiePt_QiQ" role="1nfDy6">
+            <property role="1vZzuM" value="11jlgVoCRQQ/NORTH" />
+          </node>
+          <node concept="gn6ai" id="17uiePt_Qj7" role="1nfDy6">
+            <property role="1vZzuM" value="11jlgVoCRQQ/NORTH" />
           </node>
         </node>
       </node>

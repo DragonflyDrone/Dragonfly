@@ -30,62 +30,22 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
     switch (myIndex.index(concept)) {
       case LanguageConceptSwitch.AdaptationScript:
         return new AdaptationScript_TextGen();
-      case LanguageConceptSwitch.CameraPowerConditionalExpression:
-        return new CameraPowerConditionalExpression_TextGen();
-      case LanguageConceptSwitch.CategoricalDistanceConditionalExpression:
-        return new CategoricalDistanceConditionalExpression_TextGen();
-      case LanguageConceptSwitch.CategoricalWindConditionalExpression:
-        return new CategoricalWindConditionalExpression_TextGen();
-      case LanguageConceptSwitch.CollisionSensorConditionalExpression:
-        return new CollisionSensorConditionalExpression_TextGen();
-      case LanguageConceptSwitch.CompassConditionalExpression:
-        return new CompassConditionalExpression_TextGen();
-      case LanguageConceptSwitch.DetectSmokeConditionalExpression:
-        return new DetectSmokeConditionalExpression_TextGen();
       case LanguageConceptSwitch.Else:
         return new Else_TextGen();
       case LanguageConceptSwitch.ExceptionalScenario:
         return new ExceptionalScenario_TextGen();
-      case LanguageConceptSwitch.FlyDirection:
-        return new FlyDirection_TextGen();
-      case LanguageConceptSwitch.FlyToRegion:
-        return new FlyToRegion_TextGen();
-      case LanguageConceptSwitch.GambialCommand:
-        return new GambialCommand_TextGen();
-      case LanguageConceptSwitch.GimbalConditionalExpression:
-        return new GimbalConditionalExpression_TextGen();
       case LanguageConceptSwitch.Given:
         return new Given_TextGen();
-      case LanguageConceptSwitch.GpsConditionalExpression:
-        return new GpsConditionalExpression_TextGen();
       case LanguageConceptSwitch.If:
         return new If_TextGen();
-      case LanguageConceptSwitch.IntegerNumber:
-        return new IntegerNumber_TextGen();
       case LanguageConceptSwitch.LogicalExpression:
         return new LogicalExpression_TextGen();
-      case LanguageConceptSwitch.OriginAndDestinationDistanceConditionalExpression:
-        return new OriginAndDestinationDistanceConditionalExpression_TextGen();
-      case LanguageConceptSwitch.PerformingOperationConditionalExpression:
-        return new PerformingOperationConditionalExpression_TextGen();
       case LanguageConceptSwitch.RegionConditionalExpression:
         return new RegionConditionalExpression_TextGen();
-      case LanguageConceptSwitch.ReturnToHome:
-        return new ReturnToHome_TextGen();
-      case LanguageConceptSwitch.SafeLand:
-        return new SafeLand_TextGen();
       case LanguageConceptSwitch.ScalarDistanceConditionalExpression:
         return new ScalarDistanceConditionalExpression_TextGen();
-      case LanguageConceptSwitch.SetMission:
-        return new SetMission_TextGen();
-      case LanguageConceptSwitch.TurnAutomaticControl:
-        return new TurnAutomaticControl_TextGen();
-      case LanguageConceptSwitch.TurnCamera:
-        return new TurnCamera_TextGen();
-      case LanguageConceptSwitch.TurnEconomyMode:
-        return new TurnEconomyMode_TextGen();
-      case LanguageConceptSwitch.TurnMission:
-        return new TurnMission_TextGen();
+      case LanguageConceptSwitch.SmokerDetectorStateCommandExpression:
+        return new SmokerDetectorStateCommandExpression_TextGen();
       case LanguageConceptSwitch.While:
         return new While_TextGen();
       case LanguageConceptSwitch.WindDirectionConditionalExpression:

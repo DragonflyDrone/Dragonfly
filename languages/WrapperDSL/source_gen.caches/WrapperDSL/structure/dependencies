@@ -11,7 +11,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase" />
   </dependency>
-  <dependency className="WrapperDSL.structure.EnumerationDescriptor_AxisEnum">
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_AccelerometerStateGet">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
@@ -21,7 +21,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
   </dependency>
-  <dependency className="WrapperDSL.structure.EnumerationDescriptor_CategoricalDistanceEnum">
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_AccelerometerStateSet">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
@@ -31,7 +31,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
   </dependency>
-  <dependency className="WrapperDSL.structure.EnumerationDescriptor_CategoricalWindEnum">
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_AccelerometerStateTriggerEventEnum">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
@@ -41,7 +41,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
   </dependency>
-  <dependency className="WrapperDSL.structure.EnumerationDescriptor_CommandStateEnum">
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_AnemometerStateGetEnum">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
@@ -51,7 +51,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
   </dependency>
-  <dependency className="WrapperDSL.structure.EnumerationDescriptor_ConditionalOperatorEnum">
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_AnemometerStateSetEnum">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
@@ -61,7 +61,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
   </dependency>
-  <dependency className="WrapperDSL.structure.EnumerationDescriptor_DirectionsEnum">
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_AnemometrerStateTriggerEventEnum">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
@@ -71,7 +71,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
   </dependency>
-  <dependency className="WrapperDSL.structure.EnumerationDescriptor_GambialEnum">
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_AxesEnum">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
@@ -81,7 +81,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
   </dependency>
-  <dependency className="WrapperDSL.structure.EnumerationDescriptor_InaquelityConditionalOperator">
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_AxesTriggerEventEnum">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
@@ -91,7 +91,427 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
   </dependency>
-  <dependency className="WrapperDSL.structure.EnumerationDescriptor_InternalStateEnum">
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_BarometricStateGetEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_BarometricStateSetEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_BarometricStateTriggerEventEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_BatteryStateGetEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_CameraStateGetEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_CameraStateSetEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_CameraStateTriggerEventEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_CompassStateGetEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_CompassStateSetEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_CompassStateTriggerEventEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_ControlSwitchEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_ControlSwitchTriggerEventEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_DirectionEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_DirectionTriggerDirectionEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_EmergencyStopModeGetEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_EmergencyStopModeSetEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_EmergencyStopModeTriggerEventEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_EnergySavingModeGetEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_EnergySavingModeStateSetEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_EnergySavingModeTriggerEventEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_EqualityOperatorEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_FlightControlStateGetEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_FlightControlStateSetEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_FlightControlStateTriggerEventEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_FlightStatusStateGetEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_GPSResultEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_GPSStateGetEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_GPSStateSetEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_GPSStateTriggerEventEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_GeneralOperatorEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_GimbalStateGetEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_GimbalStateSetEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_GimbalStateTriggerEventEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_GyroscopeStateGetEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_GyroscopeStateSetEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_GyroscopeStateTriggerEventEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_HygrometerStateGetEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_HygrometerStateSetEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_HygrometerStateTriggerEventEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_IMUStateGetEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_IMUStateSetEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_IMUStateTriggerEventEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_InequalityOperatorEnum">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
@@ -111,6 +531,96 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
   </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_LandguearStateGetEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_LandguearStateSetEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_LandguearStateTriggerEventEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_LandingStateGetEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_LandingStateSetEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_LandingStateTriggerEventEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_LightStatusStaeGetEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_LightStatusStateSetEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_LightStatusTriggerEventEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
   <dependency className="WrapperDSL.structure.EnumerationDescriptor_LogicalOperatorEnum">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -121,7 +631,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
   </dependency>
-  <dependency className="WrapperDSL.structure.EnumerationDescriptor_PerformedOperationEnum">
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_MagnetometerStateGetEnum">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
@@ -131,7 +641,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
   </dependency>
-  <dependency className="WrapperDSL.structure.EnumerationDescriptor_RegionEnum">
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_MagnetometerStateSetEnum">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
@@ -141,7 +651,287 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
   </dependency>
-  <dependency className="WrapperDSL.structure.EnumerationDescriptor_TurnConditionalEnum">
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_MagnetometerStateTriggerEventEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_MissionStateGetEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_MissionStateSetEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_MissionStateTriggerEventEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_MotorStateGetEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_MotorStateSetEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_MotorStateTriggerEventEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_ObstacleAvoidanceGetEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_ObstacleAvoidanceResultEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_ObstacleAvoidanceSetEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_ObstacleAvoidanceTriggerEventEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_PayloadStateGetEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_PayloadStateSetEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_PayloadStateTriggerEventEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_RelativePositionEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_ReturnToHomeGetEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_ReturnToHomeStateSetEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_ReturnToHomeTriggerEventEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_SafeLandingStateGetEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_SafeLandingStateSetEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_SafeLandingStateTriggerEventEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_SmokerDetectorTriggerEventEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_SmokerStateResultEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_TakeOffStateGetEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_TakeOffStateSetEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_TakeOffStateTriggerEventEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_ThermometerStateGetEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_ThermometerStateSetEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_ThermometerStateTriggerEventEnum">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
@@ -161,7 +951,17 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
   </dependency>
-  <dependency className="WrapperDSL.structure.EnumerationDescriptor_booleanDetectionEnum">
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_smokerSensorSetEnum">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
+  </dependency>
+  <dependency className="WrapperDSL.structure.EnumerationDescriptor_smokerSensorStateGetEnum">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
@@ -178,22 +978,102 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
   </dependency>
   <dependency className="WrapperDSL.structure.StructureAspectDescriptor">
-    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_AxisEnum" />
-    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_CategoricalDistanceEnum" />
-    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_CategoricalWindEnum" />
-    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_CommandStateEnum" />
-    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_ConditionalOperatorEnum" />
-    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_DirectionsEnum" />
-    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_GambialEnum" />
-    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_InaquelityConditionalOperator" />
-    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_InternalStateEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_AccelerometerStateGet" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_AccelerometerStateSet" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_AccelerometerStateTriggerEventEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_AnemometerStateGetEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_AnemometerStateSetEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_AnemometrerStateTriggerEventEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_AxesEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_AxesTriggerEventEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_BarometricStateGetEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_BarometricStateSetEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_BarometricStateTriggerEventEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_BatteryStateGetEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_CameraStateGetEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_CameraStateSetEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_CameraStateTriggerEventEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_CompassStateGetEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_CompassStateSetEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_CompassStateTriggerEventEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_ControlSwitchEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_ControlSwitchTriggerEventEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_DirectionEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_DirectionTriggerDirectionEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_EmergencyStopModeGetEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_EmergencyStopModeSetEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_EmergencyStopModeTriggerEventEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_EnergySavingModeGetEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_EnergySavingModeStateSetEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_EnergySavingModeTriggerEventEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_EqualityOperatorEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_FlightControlStateGetEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_FlightControlStateSetEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_FlightControlStateTriggerEventEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_FlightStatusStateGetEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_GPSResultEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_GPSStateGetEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_GPSStateSetEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_GPSStateTriggerEventEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_GeneralOperatorEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_GimbalStateGetEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_GimbalStateSetEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_GimbalStateTriggerEventEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_GyroscopeStateGetEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_GyroscopeStateSetEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_GyroscopeStateTriggerEventEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_HygrometerStateGetEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_HygrometerStateSetEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_HygrometerStateTriggerEventEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_IMUStateGetEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_IMUStateSetEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_IMUStateTriggerEventEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_InequalityOperatorEnum" />
     <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_IqualityOperatorEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_LandguearStateGetEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_LandguearStateSetEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_LandguearStateTriggerEventEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_LandingStateGetEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_LandingStateSetEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_LandingStateTriggerEventEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_LightStatusStaeGetEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_LightStatusStateSetEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_LightStatusTriggerEventEnum" />
     <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_LogicalOperatorEnum" />
-    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_PerformedOperationEnum" />
-    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_RegionEnum" />
-    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_TurnConditionalEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_MagnetometerStateGetEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_MagnetometerStateSetEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_MagnetometerStateTriggerEventEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_MissionStateGetEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_MissionStateSetEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_MissionStateTriggerEventEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_MotorStateGetEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_MotorStateSetEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_MotorStateTriggerEventEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_ObstacleAvoidanceGetEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_ObstacleAvoidanceResultEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_ObstacleAvoidanceSetEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_ObstacleAvoidanceTriggerEventEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_PayloadStateGetEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_PayloadStateSetEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_PayloadStateTriggerEventEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_RelativePositionEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_ReturnToHomeGetEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_ReturnToHomeStateSetEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_ReturnToHomeTriggerEventEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_SafeLandingStateGetEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_SafeLandingStateSetEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_SafeLandingStateTriggerEventEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_SmokerDetectorTriggerEventEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_SmokerStateResultEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_TakeOffStateGetEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_TakeOffStateSetEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_TakeOffStateTriggerEventEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_ThermometerStateGetEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_ThermometerStateSetEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_ThermometerStateTriggerEventEnum" />
     <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_TypeOfAdaptationEnum" />
-    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_booleanDetectionEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_smokerSensorSetEnum" />
+    <classNode dependClassName="WrapperDSL.structure.EnumerationDescriptor_smokerSensorStateGetEnum" />
     <classNode dependClassName="WrapperDSL.structure.LanguageConceptSwitch" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />

@@ -216,9 +216,6 @@
         <ref role="1NtTu8" to="lpas:4NrzS7qn7QW" resolve="event" />
       </node>
       <node concept="l2Vlx" id="5eYfGK4rwKd" role="2iSdaV" />
-      <node concept="3F0ifn" id="4NrzS7qn7Rw" role="3EZMnx">
-        <property role="3F0ifm" value="event occurs" />
-      </node>
     </node>
   </node>
   <node concept="24kQdi" id="5eYfGK4rwHO">
@@ -301,8 +298,8 @@
       <node concept="3F0ifn" id="7_KOYEjcgpE" role="3EZMnx">
         <property role="3F0ifm" value="(" />
       </node>
-      <node concept="3F1sOY" id="7_KOYEjcgpK" role="3EZMnx">
-        <ref role="1NtTu8" to="lpas:7_KOYEjcoP_" resolve="left" />
+      <node concept="3F1sOY" id="17uiePtdhBo" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:w2EP0onGAZ" resolve="left" />
       </node>
       <node concept="3F0A7n" id="7_KOYEjcgpS" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:7_KOYEjbOnT" resolve="operator" />
@@ -358,7 +355,7 @@
         <property role="3F0ifm" value="over" />
       </node>
       <node concept="3F0A7n" id="79gzy7KeIiV" role="3EZMnx">
-        <ref role="1NtTu8" to="lpas:79gzy7KeIiC" resolve="right" />
+        <ref role="1NtTu8" to="lpas:17uiePtpl_k" resolve="right" />
       </node>
       <node concept="3F0ifn" id="79gzy7KeIDg" role="3EZMnx">
         <property role="3F0ifm" value="region)" />
@@ -1603,6 +1600,9 @@
       <node concept="3F0A7n" id="7Zo9yKw9tE9" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:7Zo9yKw9tDo" resolve="value" />
       </node>
+      <node concept="3F0ifn" id="17uiePtlxmD" role="3EZMnx">
+        <property role="3F0ifm" value="m/s" />
+      </node>
       <node concept="3F0ifn" id="7Zo9yKw9tEl" role="3EZMnx">
         <property role="3F0ifm" value=")" />
       </node>
@@ -1666,11 +1666,17 @@
       <node concept="3F0A7n" id="7Zo9yKw9tHk" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:7Zo9yKw9tGC" resolve="relativePosition" />
       </node>
+      <node concept="3F0ifn" id="17uiePtrX2Y" role="3EZMnx">
+        <property role="3F0ifm" value="region" />
+      </node>
       <node concept="3F0A7n" id="7Zo9yKw9tHu" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:7Zo9yKw9tGE" resolve="operator" />
       </node>
       <node concept="3F0A7n" id="7Zo9yKw9tHI" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:7Zo9yKw9tHE" resolve="value" />
+      </node>
+      <node concept="3F0ifn" id="17uiePtjCg7" role="3EZMnx">
+        <property role="3F0ifm" value="m" />
       </node>
       <node concept="3F0ifn" id="7Zo9yKw9tHW" role="3EZMnx">
         <property role="3F0ifm" value=")" />
@@ -1691,11 +1697,17 @@
       <node concept="3F0A7n" id="7Zo9yKw9x28" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:7Zo9yKw9x1r" resolve="relativePosition1" />
       </node>
+      <node concept="3F0ifn" id="17uiePtrX2p" role="3EZMnx">
+        <property role="3F0ifm" value="region" />
+      </node>
       <node concept="3F0A7n" id="7Zo9yKw9x2i" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:7Zo9yKw9x1A" resolve="operator" />
       </node>
       <node concept="3F0A7n" id="7Zo9yKw9x2u" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:7Zo9yKw9x1w" resolve="relativePosition2" />
+      </node>
+      <node concept="3F0ifn" id="17uiePtrX2F" role="3EZMnx">
+        <property role="3F0ifm" value="region" />
       </node>
       <node concept="3F0ifn" id="7Zo9yKw9x2G" role="3EZMnx">
         <property role="3F0ifm" value=")" />
@@ -1730,7 +1742,7 @@
         <property role="3F0ifm" value="=" />
       </node>
       <node concept="3F0A7n" id="7Zo9yKw9x7p" role="3EZMnx">
-        <ref role="1NtTu8" to="lpas:7Zo9yKw9x6w" resolve="RegionDirection" />
+        <ref role="1NtTu8" to="lpas:17uiePtpkgH" resolve="RegionDirection" />
       </node>
       <node concept="3F0ifn" id="7Zo9yKw9x7G" role="3EZMnx">
         <property role="3F0ifm" value="region" />
@@ -2090,6 +2102,9 @@
       <node concept="3F0ifn" id="7Zo9yKw9xkI" role="3EZMnx">
         <property role="3F0ifm" value="rotation" />
       </node>
+      <node concept="3F0ifn" id="17uiePtzXiE" role="3EZMnx">
+        <property role="3F0ifm" value="to" />
+      </node>
       <node concept="3F0A7n" id="7Zo9yKw9xkQ" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:7Zo9yKw9x5h" resolve="value" />
       </node>
@@ -2397,8 +2412,11 @@
       <node concept="3F0ifn" id="7Zo9yKw9xtW" role="3EZMnx">
         <property role="3F0ifm" value="turns" />
       </node>
-      <node concept="3F0A7n" id="7Zo9yKw9xug" role="3EZMnx">
-        <ref role="1NtTu8" to="lpas:7Zo9yKw9xtr" resolve="value" />
+      <node concept="3F0ifn" id="17uiePt_Qjm" role="3EZMnx">
+        <property role="3F0ifm" value="to" />
+      </node>
+      <node concept="3F1sOY" id="17uiePtvIaZ" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:17uiePtvIaP" resolve="value" />
       </node>
       <node concept="l2Vlx" id="7Zo9yKw9xtE" role="2iSdaV" />
     </node>
@@ -2413,8 +2431,8 @@
       <node concept="3F0ifn" id="7Zo9yKw9xuI" role="3EZMnx">
         <property role="3F0ifm" value="goes to" />
       </node>
-      <node concept="3F0A7n" id="7Zo9yKw9xuQ" role="3EZMnx">
-        <ref role="1NtTu8" to="lpas:7Zo9yKw9xum" resolve="value" />
+      <node concept="3F1sOY" id="17uiePtvIbl" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:17uiePtvIb5" resolve="value" />
       </node>
       <node concept="3F0ifn" id="7Zo9yKw9xv0" role="3EZMnx">
         <property role="3F0ifm" value="m/s" />
@@ -2432,8 +2450,8 @@
       <node concept="3F0ifn" id="7Zo9yKw9xvu" role="3EZMnx">
         <property role="3F0ifm" value="goes to" />
       </node>
-      <node concept="3F0A7n" id="7Zo9yKw9xvF" role="3EZMnx">
-        <ref role="1NtTu8" to="lpas:7Zo9yKw9xv6" resolve="value" />
+      <node concept="3F1sOY" id="17uiePtvIau" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:17uiePtvIak" resolve="value" />
       </node>
       <node concept="3F0ifn" id="7Zo9yKw9xvP" role="3EZMnx">
         <property role="3F0ifm" value="m/s2" />
@@ -2451,8 +2469,8 @@
       <node concept="3F0ifn" id="7Zo9yKw9xwj" role="3EZMnx">
         <property role="3F0ifm" value="goes to" />
       </node>
-      <node concept="3F0A7n" id="7Zo9yKw9xwr" role="3EZMnx">
-        <ref role="1NtTu8" to="lpas:7Zo9yKw9xw4" resolve="value" />
+      <node concept="3F1sOY" id="17uiePtvIaI" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:17uiePtvIa$" resolve="value" />
       </node>
       <node concept="3F0ifn" id="7Zo9yKw9xw_" role="3EZMnx">
         <property role="3F0ifm" value="m" />
@@ -2596,8 +2614,11 @@
       <node concept="3F0ifn" id="7Zo9yKw9x_I" role="3EZMnx">
         <property role="3F0ifm" value="turns" />
       </node>
-      <node concept="3F0A7n" id="7Zo9yKw9x_S" role="3EZMnx">
-        <ref role="1NtTu8" to="lpas:7Zo9yKw9x_5" resolve="value" />
+      <node concept="3F0ifn" id="17uiePt_Qj$" role="3EZMnx">
+        <property role="3F0ifm" value="to" />
+      </node>
+      <node concept="3F1sOY" id="17uiePtw9_h" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:17uiePtvIdO" resolve="value" />
       </node>
       <node concept="3F0ifn" id="7Zo9yKw9xA4" role="3EZMnx">
         <property role="3F0ifm" value="°" />
@@ -2843,6 +2864,64 @@
         <ref role="1NtTu8" to="lpas:7Zo9yKw9xIx" resolve="state" />
       </node>
       <node concept="l2Vlx" id="7Zo9yKw9xIJ" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="17uiePtvI80">
+    <property role="3GE5qa" value="expression.smoke_detector.trigger_event" />
+    <ref role="1XX52x" to="lpas:17uiePtvI7A" resolve="SmokerDetectorTriggerEvent" />
+    <node concept="3EZMnI" id="17uiePtvI82" role="2wV5jI">
+      <node concept="3F0ifn" id="17uiePtvI89" role="3EZMnx">
+        <property role="3F0ifm" value="Smoker detector state" />
+      </node>
+      <node concept="3F0A7n" id="17uiePtvI8p" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:17uiePtvI7R" resolve="state" />
+      </node>
+      <node concept="l2Vlx" id="17uiePtvI85" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="17uiePtvI9O">
+    <property role="3GE5qa" value="expression" />
+    <ref role="1XX52x" to="lpas:17uiePtvI9E" resolve="integer" />
+    <node concept="3EZMnI" id="17uiePtvI9Q" role="2wV5jI">
+      <node concept="3F0A7n" id="17uiePtvI9X" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:17uiePtvI9F" resolve="value" />
+      </node>
+      <node concept="l2Vlx" id="17uiePtvI9T" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="17uiePtvIa8">
+    <property role="3GE5qa" value="expression" />
+    <ref role="1XX52x" to="lpas:17uiePtvIa0" resolve="AnyInteger" />
+    <node concept="3EZMnI" id="17uiePtvIaa" role="2wV5jI">
+      <node concept="3F0ifn" id="17uiePtvIah" role="3EZMnx">
+        <property role="3F0ifm" value="*" />
+      </node>
+      <node concept="l2Vlx" id="17uiePtvIad" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="17uiePtvIc1">
+    <property role="3GE5qa" value="expression" />
+    <ref role="1XX52x" to="lpas:17uiePtvIbr" resolve="PointTriggerEvent" />
+    <node concept="3EZMnI" id="17uiePtvIc3" role="2wV5jI">
+      <node concept="3F0ifn" id="17uiePtvIc4" role="3EZMnx">
+        <property role="3F0ifm" value="Latitude" />
+      </node>
+      <node concept="3F1sOY" id="17uiePtvIcv" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:17uiePtvIbQ" resolve="altitude" />
+      </node>
+      <node concept="3F0ifn" id="17uiePtvIc6" role="3EZMnx">
+        <property role="3F0ifm" value="Longitude" />
+      </node>
+      <node concept="3F1sOY" id="17uiePtvIcV" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:17uiePtvIbN" resolve="longitude" />
+      </node>
+      <node concept="3F0ifn" id="17uiePtvIc8" role="3EZMnx">
+        <property role="3F0ifm" value="Altitude" />
+      </node>
+      <node concept="3F1sOY" id="17uiePtvId_" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:17uiePtvIbQ" resolve="altitude" />
+      </node>
+      <node concept="l2Vlx" id="17uiePtvIca" role="2iSdaV" />
     </node>
   </node>
 </model>
