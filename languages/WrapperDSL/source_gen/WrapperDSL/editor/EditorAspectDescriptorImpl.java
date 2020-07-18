@@ -121,7 +121,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       case 50:
         return Collections.<ConceptEditor>singletonList(new GimbalRotationTriggerEvent_Editor());
       case 51:
-        return Collections.<ConceptEditor>singletonList(new GimbalStateCommand_Editor());
+        return Collections.<ConceptEditor>singletonList(new GimbalStateCommandeExpression_Editor());
       case 52:
         return Collections.<ConceptEditor>singletonList(new GimbalStateConditionalExpression_Editor());
       case 53:

@@ -69,7 +69,7 @@ public final class LanguageConceptSwitch {
   public static final int GimbalRotationCommandExpression = 57;
   public static final int GimbalRotationConditionalExpression = 58;
   public static final int GimbalRotationTriggerEvent = 59;
-  public static final int GimbalStateCommand = 60;
+  public static final int GimbalStateCommandeExpression = 60;
   public static final int GimbalStateConditionalExpression = 61;
   public static final int GimbalStateTriggerEvent = 62;
   public static final int Given = 63;
@@ -230,7 +230,7 @@ public final class LanguageConceptSwitch {
     builder.put(0x802ab50185ec9d9L, GimbalRotationCommandExpression);
     builder.put(0x53e04e3aef16432bL, GimbalRotationConditionalExpression);
     builder.put(0x341ddc0f5796cbb8L, GimbalRotationTriggerEvent);
-    builder.put(0x7fd8262c202614e1L, GimbalStateCommand);
+    builder.put(0x7fd8262c202614e1L, GimbalStateCommandeExpression);
     builder.put(0x53e04e3aef16432cL, GimbalStateConditionalExpression);
     builder.put(0x341ddc0f5796cbb9L, GimbalStateTriggerEvent);
     builder.put(0x53be3ecc045a8bcaL, Given);

@@ -411,11 +411,11 @@
     <property role="3GE5qa" value="expression.smoke_detector.command" />
     <ref role="1XX52x" to="lpas:31DEoowcqmM" resolve="SmokerDetectorStateCommandExpression" />
     <node concept="3EZMnI" id="31DEoowcqn9" role="2wV5jI">
-      <node concept="3F0ifn" id="31DEoowcqng" role="3EZMnx">
-        <property role="3F0ifm" value="Smoke sensor =" />
-      </node>
       <node concept="3F0A7n" id="7Zo9yKw9xr9" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:7Zo9yKw9x6i" resolve="state" />
+      </node>
+      <node concept="3F0ifn" id="31DEoowcqng" role="3EZMnx">
+        <property role="3F0ifm" value="Smoke sensor" />
       </node>
       <node concept="l2Vlx" id="31DEoowcqnc" role="2iSdaV" />
     </node>
@@ -558,6 +558,9 @@
       <node concept="3F0ifn" id="3gtR0Xn_GUp" role="3EZMnx">
         <property role="3F0ifm" value="Speed" />
       </node>
+      <node concept="3F0ifn" id="17uiePtBJvv" role="3EZMnx">
+        <property role="3F0ifm" value="mode" />
+      </node>
       <node concept="3F0A7n" id="3gtR0Xn_GUA" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:3gtR0Xn_GU1" resolve="operator" />
       </node>
@@ -601,6 +604,9 @@
       </node>
       <node concept="3F0ifn" id="3gtR0Xn_GWx" role="3EZMnx">
         <property role="3F0ifm" value="Acceleration" />
+      </node>
+      <node concept="3F0ifn" id="17uiePtBJvg" role="3EZMnx">
+        <property role="3F0ifm" value="mode" />
       </node>
       <node concept="3F0A7n" id="3gtR0Xn_GWJ" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:3gtR0Xn_GW6" resolve="operator" />
@@ -717,7 +723,7 @@
         <property role="3F0ifm" value="(" />
       </node>
       <node concept="3F0ifn" id="3gtR0Xn_H2p" role="3EZMnx">
-        <property role="3F0ifm" value="Mission state" />
+        <property role="3F0ifm" value="Mission status" />
       </node>
       <node concept="3F0A7n" id="3gtR0Xn_H2D" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:3gtR0Xn_H1Q" resolve="operator" />
@@ -763,6 +769,9 @@
       </node>
       <node concept="3F0ifn" id="3gtR0Xn_H4R" role="3EZMnx">
         <property role="3F0ifm" value="RTH" />
+      </node>
+      <node concept="3F0ifn" id="17uiePtBJuz" role="3EZMnx">
+        <property role="3F0ifm" value="status" />
       </node>
       <node concept="3F0A7n" id="3gtR0Xn_H4Z" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:3gtR0Xn_H4s" resolve="operator" />
@@ -858,6 +867,9 @@
       <node concept="3F0ifn" id="3gtR0Xn_H8W" role="3EZMnx">
         <property role="3F0ifm" value="Safe landing" />
       </node>
+      <node concept="3F0ifn" id="17uiePtBJuM" role="3EZMnx">
+        <property role="3F0ifm" value="status" />
+      </node>
       <node concept="3F0A7n" id="3gtR0Xn_H94" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:3gtR0Xn_H8x" resolve="operator" />
       </node>
@@ -880,6 +892,9 @@
       <node concept="3F0ifn" id="3gtR0Xn_H9Y" role="3EZMnx">
         <property role="3F0ifm" value="Landing" />
       </node>
+      <node concept="3F0ifn" id="17uiePtBJuk" role="3EZMnx">
+        <property role="3F0ifm" value="status" />
+      </node>
       <node concept="3F0A7n" id="3gtR0Xn_Ha6" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:3gtR0Xn_H9z" resolve="operator" />
       </node>
@@ -901,6 +916,9 @@
       </node>
       <node concept="3F0ifn" id="3gtR0Xn_HaN" role="3EZMnx">
         <property role="3F0ifm" value="TakeOff" />
+      </node>
+      <node concept="3F0ifn" id="17uiePtBJv1" role="3EZMnx">
+        <property role="3F0ifm" value="status" />
       </node>
       <node concept="3F0A7n" id="3gtR0Xn_HaO" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:3gtR0Xn_Haz" resolve="operator" />
@@ -925,7 +943,7 @@
         <ref role="1NtTu8" to="lpas:3gtR0Xn_HaZ" resolve="controlSwitch" />
       </node>
       <node concept="3F0ifn" id="3gtR0Xn_Hby" role="3EZMnx">
-        <property role="3F0ifm" value="flight control state" />
+        <property role="3F0ifm" value="flight control status" />
       </node>
       <node concept="3F0A7n" id="3gtR0Xn_HbG" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:3gtR0Xn_Hb1" resolve="operator" />
@@ -969,7 +987,7 @@
         <ref role="1NtTu8" to="lpas:3gtR0Xn_Hdx" resolve="controlSwitch" />
       </node>
       <node concept="3F0ifn" id="3gtR0Xn_Hec" role="3EZMnx">
-        <property role="3F0ifm" value="gimbal state" />
+        <property role="3F0ifm" value="gimbal status" />
       </node>
       <node concept="3F0A7n" id="3gtR0Xn_Hem" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:3gtR0Xn_Hdz" resolve="operator" />
@@ -1016,6 +1034,9 @@
       <node concept="3F0ifn" id="3gtR0Xn_Hgk" role="3EZMnx">
         <property role="3F0ifm" value="Camera" />
       </node>
+      <node concept="3F0ifn" id="17uiePtBJu5" role="3EZMnx">
+        <property role="3F0ifm" value="status" />
+      </node>
       <node concept="3F0A7n" id="3gtR0Xn_Hgs" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:3gtR0Xn_HfT" resolve="operator" />
       </node>
@@ -1036,7 +1057,7 @@
         <property role="3F0ifm" value="(" />
       </node>
       <node concept="3F0ifn" id="7Zo9yKw9tmM" role="3EZMnx">
-        <property role="3F0ifm" value="Payload state" />
+        <property role="3F0ifm" value="Payload status" />
       </node>
       <node concept="3F0A7n" id="7Zo9yKw9tmU" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:7Zo9yKw9tmn" resolve="operator" />
@@ -1155,7 +1176,7 @@
         <property role="3F0ifm" value="(" />
       </node>
       <node concept="3F0ifn" id="7Zo9yKw9tqK" role="3EZMnx">
-        <property role="3F0ifm" value="Battery state" />
+        <property role="3F0ifm" value="Battery status" />
       </node>
       <node concept="3F0A7n" id="7Zo9yKw9tqX" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:7Zo9yKw9tql" resolve="operator" />
@@ -1174,7 +1195,7 @@
     <ref role="1XX52x" to="lpas:5fwjzFJ5$cP" resolve="GPSStateConditionalExpression" />
     <node concept="3EZMnI" id="7Zo9yKw9ts5" role="2wV5jI">
       <node concept="3F0ifn" id="7Zo9yKw9ts7" role="3EZMnx">
-        <property role="3F0ifm" value="( GPS result" />
+        <property role="3F0ifm" value="( GPS status" />
       </node>
       <node concept="3F0A7n" id="7Zo9yKw9tsf" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:7Zo9yKw9trq" resolve="operator" />
@@ -1196,7 +1217,7 @@
         <property role="3F0ifm" value="(" />
       </node>
       <node concept="3F0ifn" id="7Zo9yKw9tuV" role="3EZMnx">
-        <property role="3F0ifm" value=" GPS state" />
+        <property role="3F0ifm" value=" GPS result" />
       </node>
       <node concept="3F0A7n" id="7Zo9yKw9tt3" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:7Zo9yKw9trv" resolve="operator" />
@@ -1215,7 +1236,7 @@
     <ref role="1XX52x" to="lpas:5fwjzFJ5$cS" resolve="ObstacleAvoidanceSensorStateConditionalExpression" />
     <node concept="3EZMnI" id="7Zo9yKw9ttq" role="2wV5jI">
       <node concept="3F0ifn" id="7Zo9yKw9ttr" role="3EZMnx">
-        <property role="3F0ifm" value="( Obstacle avoidance state" />
+        <property role="3F0ifm" value="( Obstacle avoidance status" />
       </node>
       <node concept="3F0A7n" id="7Zo9yKw9tts" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:7Zo9yKw9ttd" resolve="operator" />
@@ -1256,7 +1277,7 @@
         <property role="3F0ifm" value="( " />
       </node>
       <node concept="3F0ifn" id="7Zo9yKw9tuI" role="3EZMnx">
-        <property role="3F0ifm" value="IMU state" />
+        <property role="3F0ifm" value="IMU status" />
       </node>
       <node concept="3F0A7n" id="7Zo9yKw9tuu" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:7Zo9yKw9tuc" resolve="operator" />
@@ -1278,7 +1299,7 @@
         <property role="3F0ifm" value="( " />
       </node>
       <node concept="3F0ifn" id="7Zo9yKw9tvh" role="3EZMnx">
-        <property role="3F0ifm" value="Accelerometer state" />
+        <property role="3F0ifm" value="Accelerometer status" />
       </node>
       <node concept="3F0A7n" id="7Zo9yKw9tvi" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:7Zo9yKw9tv2" resolve="operator" />
@@ -1300,7 +1321,7 @@
         <property role="3F0ifm" value="( " />
       </node>
       <node concept="3F0ifn" id="7Zo9yKw9tvG" role="3EZMnx">
-        <property role="3F0ifm" value="Gyroscope state" />
+        <property role="3F0ifm" value="Gyroscope status" />
       </node>
       <node concept="3F0A7n" id="7Zo9yKw9tvH" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:7Zo9yKw9tvt" resolve="operator" />
@@ -1344,7 +1365,7 @@
         <property role="3F0ifm" value="( " />
       </node>
       <node concept="3F0ifn" id="7Zo9yKw9twy" role="3EZMnx">
-        <property role="3F0ifm" value="Magnetometer state" />
+        <property role="3F0ifm" value="Magnetometer status" />
       </node>
       <node concept="3F0A7n" id="7Zo9yKw9twz" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:7Zo9yKw9twj" resolve="operator" />
@@ -1366,7 +1387,7 @@
         <property role="3F0ifm" value="( " />
       </node>
       <node concept="3F0ifn" id="7Zo9yKw9txb" role="3EZMnx">
-        <property role="3F0ifm" value="Barometer state" />
+        <property role="3F0ifm" value="Barometer status" />
       </node>
       <node concept="3F0A7n" id="7Zo9yKw9txc" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:7Zo9yKw9twI" resolve="operator" />
@@ -1388,7 +1409,7 @@
         <property role="3F0ifm" value="( " />
       </node>
       <node concept="3F0ifn" id="7Zo9yKw9txA" role="3EZMnx">
-        <property role="3F0ifm" value="Hygrometer state" />
+        <property role="3F0ifm" value="Hygrometer status" />
       </node>
       <node concept="3F0A7n" id="7Zo9yKw9txB" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:7Zo9yKw9txn" resolve="operator" />
@@ -1435,7 +1456,7 @@
         <property role="3F0ifm" value="( " />
       </node>
       <node concept="3F0ifn" id="7Zo9yKw9tzu" role="3EZMnx">
-        <property role="3F0ifm" value="Thermometer state" />
+        <property role="3F0ifm" value="Thermometer status" />
       </node>
       <node concept="3F0A7n" id="7Zo9yKw9tzv" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:7Zo9yKw9tzf" resolve="operator" />
@@ -1482,7 +1503,7 @@
         <property role="3F0ifm" value="(" />
       </node>
       <node concept="3F0ifn" id="7Zo9yKw9t$D" role="3EZMnx">
-        <property role="3F0ifm" value="Smoker detector state" />
+        <property role="3F0ifm" value="Smoker detector status" />
       </node>
       <node concept="3F0A7n" id="7Zo9yKw9t$E" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:7Zo9yKw9t$i" resolve="operator" />
@@ -1570,7 +1591,7 @@
         <property role="3F0ifm" value="(" />
       </node>
       <node concept="3F0ifn" id="7Zo9yKw9tCL" role="3EZMnx">
-        <property role="3F0ifm" value="Landing gear state" />
+        <property role="3F0ifm" value="Landing gear status" />
       </node>
       <node concept="3F0A7n" id="7Zo9yKw9tCT" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:7Zo9yKw9tCd" resolve="operator" />
@@ -1617,7 +1638,7 @@
         <property role="3F0ifm" value="(" />
       </node>
       <node concept="3F0ifn" id="7Zo9yKw9tF3" role="3EZMnx">
-        <property role="3F0ifm" value="Anemometrer state" />
+        <property role="3F0ifm" value="Anemometrer status" />
       </node>
       <node concept="3F0A7n" id="7Zo9yKw9tFb" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:7Zo9yKw9tEC" resolve="operator" />
@@ -1723,7 +1744,7 @@
         <property role="3F0ifm" value="Direction" />
       </node>
       <node concept="3F0ifn" id="7Zo9yKw9x70" role="3EZMnx">
-        <property role="3F0ifm" value="=" />
+        <property role="3F0ifm" value="to" />
       </node>
       <node concept="3F0A7n" id="7Zo9yKw9x78" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:7Zo9yKw9x6u" resolve="direction" />
@@ -1739,7 +1760,7 @@
         <property role="3F0ifm" value="Direction" />
       </node>
       <node concept="3F0ifn" id="7Zo9yKw9x7o" role="3EZMnx">
-        <property role="3F0ifm" value="=" />
+        <property role="3F0ifm" value="to" />
       </node>
       <node concept="3F0A7n" id="7Zo9yKw9x7p" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:17uiePtpkgH" resolve="RegionDirection" />
@@ -1761,7 +1782,7 @@
         <property role="3F0ifm" value="rotation" />
       </node>
       <node concept="3F0ifn" id="7Zo9yKw9x8p" role="3EZMnx">
-        <property role="3F0ifm" value="=" />
+        <property role="3F0ifm" value="to" />
       </node>
       <node concept="3F0A7n" id="7Zo9yKw9x8z" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:7Zo9yKw9x6y" resolve="value" />
@@ -1780,7 +1801,7 @@
         <property role="3F0ifm" value="Speed" />
       </node>
       <node concept="3F0ifn" id="7Zo9yKw9x9c" role="3EZMnx">
-        <property role="3F0ifm" value="=" />
+        <property role="3F0ifm" value="to" />
       </node>
       <node concept="3F0A7n" id="7Zo9yKw9x9k" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:7Zo9yKw9x6$" resolve="value" />
@@ -1795,14 +1816,11 @@
     <property role="3GE5qa" value="expression.UAV.command" />
     <ref role="1XX52x" to="lpas:w2EP0onGB6" resolve="UAVSpeedModeCommandExpression" />
     <node concept="3EZMnI" id="7Zo9yKw9x9H" role="2wV5jI">
-      <node concept="3F0ifn" id="7Zo9yKw9x9O" role="3EZMnx">
-        <property role="3F0ifm" value="Speed" />
-      </node>
-      <node concept="3F0ifn" id="7Zo9yKw9x9U" role="3EZMnx">
-        <property role="3F0ifm" value="=" />
-      </node>
       <node concept="3F0A7n" id="7Zo9yKw9xa2" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:7Zo9yKw9x6A" resolve="state" />
+      </node>
+      <node concept="3F0ifn" id="7Zo9yKw9x9O" role="3EZMnx">
+        <property role="3F0ifm" value="Speed" />
       </node>
       <node concept="l2Vlx" id="7Zo9yKw9x9K" role="2iSdaV" />
     </node>
@@ -1815,7 +1833,7 @@
         <property role="3F0ifm" value="Acceleration" />
       </node>
       <node concept="3F0ifn" id="7Zo9yKw9xat" role="3EZMnx">
-        <property role="3F0ifm" value="=" />
+        <property role="3F0ifm" value="to" />
       </node>
       <node concept="3F0A7n" id="7Zo9yKw9xa_" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:7Zo9yKw9x6o" resolve="value" />
@@ -1830,14 +1848,11 @@
     <property role="3GE5qa" value="expression.UAV.command" />
     <ref role="1XX52x" to="lpas:w2EP0onGB8" resolve="UAVAccelerationModeCommandExpression" />
     <node concept="3EZMnI" id="7Zo9yKw9xb1" role="2wV5jI">
-      <node concept="3F0ifn" id="7Zo9yKw9xb3" role="3EZMnx">
-        <property role="3F0ifm" value="Acceleration" />
-      </node>
-      <node concept="3F0ifn" id="7Zo9yKw9xbb" role="3EZMnx">
-        <property role="3F0ifm" value="=" />
-      </node>
       <node concept="3F0A7n" id="7Zo9yKw9xbj" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:7Zo9yKw9x6q" resolve="state" />
+      </node>
+      <node concept="3F0ifn" id="7Zo9yKw9xb3" role="3EZMnx">
+        <property role="3F0ifm" value="Acceleration" />
       </node>
       <node concept="l2Vlx" id="7Zo9yKw9xb4" role="2iSdaV" />
     </node>
@@ -1850,7 +1865,7 @@
         <property role="3F0ifm" value="Altitude" />
       </node>
       <node concept="3F0ifn" id="7Zo9yKw9xbI" role="3EZMnx">
-        <property role="3F0ifm" value="=" />
+        <property role="3F0ifm" value="to" />
       </node>
       <node concept="3F0A7n" id="7Zo9yKw9xbQ" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:7Zo9yKw9x6s" resolve="value" />
@@ -1878,14 +1893,11 @@
     <property role="3GE5qa" value="expression.mission.command" />
     <ref role="1XX52x" to="lpas:w2EP0onGBe" resolve="MissionStateCommandExpression" />
     <node concept="3EZMnI" id="7Zo9yKw9xcB" role="2wV5jI">
-      <node concept="3F0ifn" id="7Zo9yKw9xcI" role="3EZMnx">
-        <property role="3F0ifm" value="Mission" />
-      </node>
-      <node concept="3F0ifn" id="7Zo9yKw9xcO" role="3EZMnx">
-        <property role="3F0ifm" value="=" />
-      </node>
       <node concept="3F0A7n" id="7Zo9yKw9xcW" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:7Zo9yKw9x5H" resolve="state" />
+      </node>
+      <node concept="3F0ifn" id="7Zo9yKw9xcI" role="3EZMnx">
+        <property role="3F0ifm" value="Mission" />
       </node>
       <node concept="l2Vlx" id="7Zo9yKw9xcE" role="2iSdaV" />
     </node>
@@ -1911,9 +1923,6 @@
       <node concept="3F0ifn" id="7Zo9yKw9xdH" role="3EZMnx">
         <property role="3F0ifm" value="Home point" />
       </node>
-      <node concept="3F0ifn" id="7Zo9yKw9xdN" role="3EZMnx">
-        <property role="3F0ifm" value="=" />
-      </node>
       <node concept="3F1sOY" id="7Zo9yKw9xeh" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:7Zo9yKw9x6c" resolve="waypoint" />
       </node>
@@ -1927,11 +1936,9 @@
       <node concept="3F0ifn" id="7Zo9yKw9xe$" role="3EZMnx">
         <property role="3F0ifm" value="Home point" />
       </node>
-      <node concept="3F0ifn" id="7Zo9yKw9xeG" role="3EZMnx">
-        <property role="3F0ifm" value="=" />
-      </node>
       <node concept="3F0ifn" id="7Zo9yKw9xeO" role="3EZMnx">
-        <property role="3F0ifm" value="current position" />
+        <property role="3F0ifm" value="CURRENT POSITION" />
+        <node concept="Vb9p2" id="17uiePt_QlL" role="3F10Kt" />
       </node>
       <node concept="l2Vlx" id="7Zo9yKw9xe_" role="2iSdaV" />
     </node>
@@ -1940,14 +1947,11 @@
     <property role="3GE5qa" value="expression.RTH.command" />
     <ref role="1XX52x" to="lpas:w2EP0onGBh" resolve="ReturnToHomeStateCommandExpression" />
     <node concept="3EZMnI" id="7Zo9yKw9xf2" role="2wV5jI">
-      <node concept="3F0ifn" id="7Zo9yKw9xf9" role="3EZMnx">
-        <property role="3F0ifm" value="RTH" />
-      </node>
-      <node concept="3F0ifn" id="7Zo9yKw9xfj" role="3EZMnx">
-        <property role="3F0ifm" value="=" />
-      </node>
       <node concept="3F0A7n" id="7Zo9yKw9xfr" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:7Zo9yKw9x6e" resolve="state" />
+      </node>
+      <node concept="3F0ifn" id="7Zo9yKw9xf9" role="3EZMnx">
+        <property role="3F0ifm" value="RTH" />
       </node>
       <node concept="l2Vlx" id="7Zo9yKw9xf5" role="2iSdaV" />
     </node>
@@ -1975,14 +1979,11 @@
     <property role="3GE5qa" value="expression.energy_saving_mode.command" />
     <ref role="1XX52x" to="lpas:w2EP0onGBk" resolve="EnergySavingModeStateCommandExpression" />
     <node concept="3EZMnI" id="7Zo9yKw9xgn" role="2wV5jI">
+      <node concept="3F0A7n" id="17uiePt_Qkq" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:7Zo9yKw9x55" resolve="state" />
+      </node>
       <node concept="3F0ifn" id="7Zo9yKw9xgu" role="3EZMnx">
         <property role="3F0ifm" value="Energy saving mode" />
-      </node>
-      <node concept="3F0ifn" id="7Zo9yKw9xg$" role="3EZMnx">
-        <property role="3F0ifm" value="=" />
-      </node>
-      <node concept="3F0A7n" id="7Zo9yKw9xgG" role="3EZMnx">
-        <ref role="1NtTu8" to="lpas:7Zo9yKw9x55" resolve="state" />
       </node>
       <node concept="l2Vlx" id="7Zo9yKw9xgq" role="2iSdaV" />
     </node>
@@ -2010,14 +2011,11 @@
     <property role="3GE5qa" value="expression.safe_landing.command" />
     <ref role="1XX52x" to="lpas:w2EP0onGBl" resolve="SafeLandingStateCommandExpression" />
     <node concept="3EZMnI" id="7Zo9yKw9xhC" role="2wV5jI">
-      <node concept="3F0ifn" id="7Zo9yKw9xhJ" role="3EZMnx">
-        <property role="3F0ifm" value="SafeLanding" />
-      </node>
-      <node concept="3F0ifn" id="7Zo9yKw9xhP" role="3EZMnx">
-        <property role="3F0ifm" value="=" />
-      </node>
       <node concept="3F0A7n" id="7Zo9yKw9xi5" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:7Zo9yKw9x6g" resolve="state" />
+      </node>
+      <node concept="3F0ifn" id="7Zo9yKw9xhJ" role="3EZMnx">
+        <property role="3F0ifm" value="SafeLanding" />
       </node>
       <node concept="l2Vlx" id="7Zo9yKw9xhF" role="2iSdaV" />
     </node>
@@ -2026,14 +2024,11 @@
     <property role="3GE5qa" value="expression.landing.command" />
     <ref role="1XX52x" to="lpas:w2EP0onGBm" resolve="LandingStateCommandExpression" />
     <node concept="3EZMnI" id="7Zo9yKw9xij" role="2wV5jI">
-      <node concept="3F0ifn" id="7Zo9yKw9xik" role="3EZMnx">
-        <property role="3F0ifm" value="Landing" />
-      </node>
-      <node concept="3F0ifn" id="7Zo9yKw9xil" role="3EZMnx">
-        <property role="3F0ifm" value="=" />
-      </node>
       <node concept="3F0A7n" id="7Zo9yKw9xim" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:7Zo9yKw9x5x" resolve="state" />
+      </node>
+      <node concept="3F0ifn" id="7Zo9yKw9xik" role="3EZMnx">
+        <property role="3F0ifm" value="Landing" />
       </node>
       <node concept="l2Vlx" id="7Zo9yKw9xin" role="2iSdaV" />
     </node>
@@ -2042,14 +2037,11 @@
     <property role="3GE5qa" value="expression.takeoff.command" />
     <ref role="1XX52x" to="lpas:w2EP0onGBn" resolve="TakeOffStateCommandExpression" />
     <node concept="3EZMnI" id="7Zo9yKw9xiA" role="2wV5jI">
-      <node concept="3F0ifn" id="7Zo9yKw9xiB" role="3EZMnx">
-        <property role="3F0ifm" value="TakeOff" />
-      </node>
-      <node concept="3F0ifn" id="7Zo9yKw9xiC" role="3EZMnx">
-        <property role="3F0ifm" value="=" />
-      </node>
       <node concept="3F0A7n" id="7Zo9yKw9xiD" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:7Zo9yKw9x6k" resolve="state" />
+      </node>
+      <node concept="3F0ifn" id="7Zo9yKw9xiB" role="3EZMnx">
+        <property role="3F0ifm" value="TakeOff" />
       </node>
       <node concept="l2Vlx" id="7Zo9yKw9xiE" role="2iSdaV" />
     </node>
@@ -2058,36 +2050,30 @@
     <property role="3GE5qa" value="expression.flight.control.command" />
     <ref role="1XX52x" to="lpas:w2EP0onGBo" resolve="FlightControlStateCommandExpression" />
     <node concept="3EZMnI" id="7Zo9yKw9xiT" role="2wV5jI">
+      <node concept="3F0A7n" id="7Zo9yKw9xjr" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:7Zo9yKw9x5d" resolve="state" />
+      </node>
       <node concept="3F0A7n" id="7Zo9yKw9xj0" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:7Zo9yKw9xj3" resolve="switchControl" />
       </node>
       <node concept="3F0ifn" id="7Zo9yKw9xj9" role="3EZMnx">
         <property role="3F0ifm" value="flight control" />
       </node>
-      <node concept="3F0ifn" id="7Zo9yKw9xjh" role="3EZMnx">
-        <property role="3F0ifm" value="=" />
-      </node>
-      <node concept="3F0A7n" id="7Zo9yKw9xjr" role="3EZMnx">
-        <ref role="1NtTu8" to="lpas:7Zo9yKw9x5d" resolve="state" />
-      </node>
       <node concept="l2Vlx" id="7Zo9yKw9xiW" role="2iSdaV" />
     </node>
   </node>
   <node concept="24kQdi" id="7Zo9yKw9xjI">
     <property role="3GE5qa" value="expression.gimbal.command" />
-    <ref role="1XX52x" to="lpas:7Zo9yKw9xjx" resolve="GimbalStateCommand" />
+    <ref role="1XX52x" to="lpas:7Zo9yKw9xjx" resolve="GimbalStateCommandeExpression" />
     <node concept="3EZMnI" id="7Zo9yKw9xjK" role="2wV5jI">
+      <node concept="3F0A7n" id="7Zo9yKw9xkf" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:7Zo9yKw9xj$" resolve="state" />
+      </node>
       <node concept="3F0A7n" id="7Zo9yKw9xjR" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:7Zo9yKw9xjy" resolve="controlSwitch" />
       </node>
       <node concept="3F0ifn" id="7Zo9yKw9xjX" role="3EZMnx">
         <property role="3F0ifm" value="gimbal" />
-      </node>
-      <node concept="3F0ifn" id="7Zo9yKw9xk5" role="3EZMnx">
-        <property role="3F0ifm" value="=" />
-      </node>
-      <node concept="3F0A7n" id="7Zo9yKw9xkf" role="3EZMnx">
-        <ref role="1NtTu8" to="lpas:7Zo9yKw9xj$" resolve="state" />
       </node>
       <node concept="l2Vlx" id="7Zo9yKw9xjN" role="2iSdaV" />
     </node>
@@ -2134,14 +2120,11 @@
     <property role="3GE5qa" value="expression.camera.command" />
     <ref role="1XX52x" to="lpas:w2EP0onGBq" resolve="CameraStateCommandExpression" />
     <node concept="3EZMnI" id="7Zo9yKw9xlM" role="2wV5jI">
-      <node concept="3F0ifn" id="7Zo9yKw9xlT" role="3EZMnx">
-        <property role="3F0ifm" value="Camera" />
-      </node>
-      <node concept="3F0ifn" id="7Zo9yKw9xlZ" role="3EZMnx">
-        <property role="3F0ifm" value="=" />
-      </node>
       <node concept="3F0A7n" id="7Zo9yKw9xm7" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:7Zo9yKw9x4R" resolve="state" />
+      </node>
+      <node concept="3F0ifn" id="7Zo9yKw9xlT" role="3EZMnx">
+        <property role="3F0ifm" value="Camera" />
       </node>
       <node concept="l2Vlx" id="7Zo9yKw9xlP" role="2iSdaV" />
     </node>
@@ -2150,14 +2133,11 @@
     <property role="3GE5qa" value="expression.payload.command" />
     <ref role="1XX52x" to="lpas:w2EP0onGBs" resolve="PayloadStateCommandExpression" />
     <node concept="3EZMnI" id="7Zo9yKw9xml" role="2wV5jI">
-      <node concept="3F0ifn" id="7Zo9yKw9xms" role="3EZMnx">
-        <property role="3F0ifm" value="Payload" />
-      </node>
-      <node concept="3F0ifn" id="7Zo9yKw9xmy" role="3EZMnx">
-        <property role="3F0ifm" value="=" />
-      </node>
       <node concept="3F0A7n" id="7Zo9yKw9xmE" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:7Zo9yKw9x6a" resolve="state" />
+      </node>
+      <node concept="3F0ifn" id="7Zo9yKw9xms" role="3EZMnx">
+        <property role="3F0ifm" value="Payload" />
       </node>
       <node concept="l2Vlx" id="7Zo9yKw9xmo" role="2iSdaV" />
     </node>
@@ -2166,14 +2146,11 @@
     <property role="3GE5qa" value="expression.GPS.command" />
     <ref role="1XX52x" to="lpas:w2EP0onGBz" resolve="GPSStateCommandExpression" />
     <node concept="3EZMnI" id="7Zo9yKw9xn1" role="2wV5jI">
-      <node concept="3F0ifn" id="7Zo9yKw9xn8" role="3EZMnx">
-        <property role="3F0ifm" value="GPS state" />
-      </node>
-      <node concept="3F0ifn" id="7Zo9yKw9xne" role="3EZMnx">
-        <property role="3F0ifm" value="=" />
-      </node>
       <node concept="3F0A7n" id="7Zo9yKw9xnm" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:7Zo9yKw9x4J" resolve="state" />
+      </node>
+      <node concept="3F0ifn" id="7Zo9yKw9xn8" role="3EZMnx">
+        <property role="3F0ifm" value="GPS state" />
       </node>
       <node concept="l2Vlx" id="7Zo9yKw9xn4" role="2iSdaV" />
     </node>
@@ -2182,14 +2159,11 @@
     <property role="3GE5qa" value="expression.obstacle_avoidance.command" />
     <ref role="1XX52x" to="lpas:w2EP0onGB$" resolve="ObstacleAvoidanceSensorStateCommandExpression" />
     <node concept="3EZMnI" id="7Zo9yKw9xnB" role="2wV5jI">
-      <node concept="3F0ifn" id="7Zo9yKw9xnD" role="3EZMnx">
-        <property role="3F0ifm" value="Obstacle avoidance" />
-      </node>
-      <node concept="3F0ifn" id="7Zo9yKw9xnL" role="3EZMnx">
-        <property role="3F0ifm" value="=" />
-      </node>
       <node concept="3F0A7n" id="7Zo9yKw9xnT" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:7Zo9yKw9x64" resolve="state" />
+      </node>
+      <node concept="3F0ifn" id="7Zo9yKw9xnD" role="3EZMnx">
+        <property role="3F0ifm" value="Obstacle avoidance" />
       </node>
       <node concept="l2Vlx" id="7Zo9yKw9xnE" role="2iSdaV" />
     </node>
@@ -2198,14 +2172,11 @@
     <property role="3GE5qa" value="expression.IMU.command" />
     <ref role="1XX52x" to="lpas:w2EP0onGB_" resolve="IMUStateCommandExpression" />
     <node concept="3EZMnI" id="7Zo9yKw9xo7" role="2wV5jI">
-      <node concept="3F0ifn" id="7Zo9yKw9xoi" role="3EZMnx">
-        <property role="3F0ifm" value="IMU" />
-      </node>
-      <node concept="3F0ifn" id="7Zo9yKw9xoo" role="3EZMnx">
-        <property role="3F0ifm" value="=" />
-      </node>
       <node concept="3F0A7n" id="7Zo9yKw9xow" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:7Zo9yKw9x5p" resolve="state" />
+      </node>
+      <node concept="3F0ifn" id="7Zo9yKw9xoi" role="3EZMnx">
+        <property role="3F0ifm" value="IMU" />
       </node>
       <node concept="l2Vlx" id="7Zo9yKw9xoa" role="2iSdaV" />
     </node>
@@ -2214,14 +2185,11 @@
     <property role="3GE5qa" value="expression.accelerometer.command" />
     <ref role="1XX52x" to="lpas:w2EP0onGBA" resolve="AccelerometerStateCommandExpression" />
     <node concept="3EZMnI" id="7Zo9yKw9xoI" role="2wV5jI">
-      <node concept="3F0ifn" id="7Zo9yKw9xoP" role="3EZMnx">
-        <property role="3F0ifm" value="Accelerometer" />
-      </node>
-      <node concept="3F0ifn" id="7Zo9yKw9xoV" role="3EZMnx">
-        <property role="3F0ifm" value="=" />
-      </node>
       <node concept="3F0A7n" id="7Zo9yKw9xp3" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:7Zo9yKw9x4z" resolve="state" />
+      </node>
+      <node concept="3F0ifn" id="7Zo9yKw9xoP" role="3EZMnx">
+        <property role="3F0ifm" value="Accelerometer" />
       </node>
       <node concept="l2Vlx" id="7Zo9yKw9xoL" role="2iSdaV" />
     </node>
@@ -2230,14 +2198,11 @@
     <property role="3GE5qa" value="expression.gyroscope.command" />
     <ref role="1XX52x" to="lpas:w2EP0onGBB" resolve="GyroscopeStateCommandExpression" />
     <node concept="3EZMnI" id="7Zo9yKw9xph" role="2wV5jI">
-      <node concept="3F0ifn" id="7Zo9yKw9xpi" role="3EZMnx">
-        <property role="3F0ifm" value="Gyroscope" />
-      </node>
-      <node concept="3F0ifn" id="7Zo9yKw9xpj" role="3EZMnx">
-        <property role="3F0ifm" value="=" />
-      </node>
       <node concept="3F0A7n" id="7Zo9yKw9xpk" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:7Zo9yKw9x4N" resolve="state" />
+      </node>
+      <node concept="3F0ifn" id="7Zo9yKw9xpi" role="3EZMnx">
+        <property role="3F0ifm" value="Gyroscope" />
       </node>
       <node concept="l2Vlx" id="7Zo9yKw9xpl" role="2iSdaV" />
     </node>
@@ -2246,14 +2211,11 @@
     <property role="3GE5qa" value="expression.compass.command" />
     <ref role="1XX52x" to="lpas:w2EP0onGBC" resolve="CompassStateCommandExpression" />
     <node concept="3EZMnI" id="7Zo9yKw9xp$" role="2wV5jI">
-      <node concept="3F0ifn" id="7Zo9yKw9xp_" role="3EZMnx">
-        <property role="3F0ifm" value="Compass" />
-      </node>
-      <node concept="3F0ifn" id="7Zo9yKw9xpA" role="3EZMnx">
-        <property role="3F0ifm" value="=" />
-      </node>
       <node concept="3F0A7n" id="7Zo9yKw9xpB" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:7Zo9yKw9x4X" resolve="state" />
+      </node>
+      <node concept="3F0ifn" id="7Zo9yKw9xp_" role="3EZMnx">
+        <property role="3F0ifm" value="Compass" />
       </node>
       <node concept="l2Vlx" id="7Zo9yKw9xpC" role="2iSdaV" />
     </node>
@@ -2262,14 +2224,11 @@
     <property role="3GE5qa" value="expression.magnetometer.command" />
     <ref role="1XX52x" to="lpas:w2EP0onGBD" resolve="MagnetometerStateCommandExpression" />
     <node concept="3EZMnI" id="7Zo9yKw9xpR" role="2wV5jI">
-      <node concept="3F0ifn" id="7Zo9yKw9xpS" role="3EZMnx">
-        <property role="3F0ifm" value="Magnetometer" />
-      </node>
-      <node concept="3F0ifn" id="7Zo9yKw9xpT" role="3EZMnx">
-        <property role="3F0ifm" value="=" />
-      </node>
       <node concept="3F0A7n" id="7Zo9yKw9xpU" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:7Zo9yKw9x5D" resolve="state" />
+      </node>
+      <node concept="3F0ifn" id="7Zo9yKw9xpS" role="3EZMnx">
+        <property role="3F0ifm" value="Magnetometer" />
       </node>
       <node concept="l2Vlx" id="7Zo9yKw9xpV" role="2iSdaV" />
     </node>
@@ -2278,14 +2237,11 @@
     <property role="3GE5qa" value="expression.barometer.command" />
     <ref role="1XX52x" to="lpas:w2EP0onGBE" resolve="BarometerStateCommandExpression" />
     <node concept="3EZMnI" id="7Zo9yKw9xqa" role="2wV5jI">
-      <node concept="3F0ifn" id="7Zo9yKw9xqb" role="3EZMnx">
-        <property role="3F0ifm" value="Barometer" />
-      </node>
-      <node concept="3F0ifn" id="7Zo9yKw9xqc" role="3EZMnx">
-        <property role="3F0ifm" value="=" />
-      </node>
       <node concept="3F0A7n" id="7Zo9yKw9xqd" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:7Zo9yKw9x4F" resolve="state" />
+      </node>
+      <node concept="3F0ifn" id="7Zo9yKw9xqb" role="3EZMnx">
+        <property role="3F0ifm" value="Barometer" />
       </node>
       <node concept="l2Vlx" id="7Zo9yKw9xqe" role="2iSdaV" />
     </node>
@@ -2294,14 +2250,11 @@
     <property role="3GE5qa" value="expression.hygrometer.command" />
     <ref role="1XX52x" to="lpas:w2EP0onGBF" resolve="HygrometerStateCommandExpression" />
     <node concept="3EZMnI" id="7Zo9yKw9xqt" role="2wV5jI">
-      <node concept="3F0ifn" id="7Zo9yKw9xqu" role="3EZMnx">
-        <property role="3F0ifm" value="Hygrometer" />
-      </node>
-      <node concept="3F0ifn" id="7Zo9yKw9xqv" role="3EZMnx">
-        <property role="3F0ifm" value="=" />
-      </node>
       <node concept="3F0A7n" id="7Zo9yKw9xqw" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:7Zo9yKw9x5l" resolve="state" />
+      </node>
+      <node concept="3F0ifn" id="7Zo9yKw9xqu" role="3EZMnx">
+        <property role="3F0ifm" value="Hygrometer" />
       </node>
       <node concept="l2Vlx" id="7Zo9yKw9xqx" role="2iSdaV" />
     </node>
@@ -2310,14 +2263,11 @@
     <property role="3GE5qa" value="expression.thermometer.command" />
     <ref role="1XX52x" to="lpas:3gtR0Xn_GJ8" resolve="ThermometerStateCommand" />
     <node concept="3EZMnI" id="7Zo9yKw9xqK" role="2wV5jI">
-      <node concept="3F0ifn" id="7Zo9yKw9xqL" role="3EZMnx">
-        <property role="3F0ifm" value="Thermometer" />
-      </node>
-      <node concept="3F0ifn" id="7Zo9yKw9xqM" role="3EZMnx">
-        <property role="3F0ifm" value="=" />
-      </node>
       <node concept="3F0A7n" id="7Zo9yKw9xqN" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:7Zo9yKw9x6m" resolve="state" />
+      </node>
+      <node concept="3F0ifn" id="7Zo9yKw9xqL" role="3EZMnx">
+        <property role="3F0ifm" value="Thermometer" />
       </node>
       <node concept="l2Vlx" id="7Zo9yKw9xqO" role="2iSdaV" />
     </node>
@@ -2326,14 +2276,11 @@
     <property role="3GE5qa" value="expression.light.command" />
     <ref role="1XX52x" to="lpas:w2EP0onGC5" resolve="LightStatusStateCommandExpression" />
     <node concept="3EZMnI" id="7Zo9yKw9xrm" role="2wV5jI">
-      <node concept="3F0ifn" id="7Zo9yKw9xrn" role="3EZMnx">
-        <property role="3F0ifm" value="Lights" />
-      </node>
-      <node concept="3F0ifn" id="7Zo9yKw9xro" role="3EZMnx">
-        <property role="3F0ifm" value="=" />
-      </node>
       <node concept="3F0A7n" id="7Zo9yKw9xrp" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:7Zo9yKw9x5_" resolve="state" />
+      </node>
+      <node concept="3F0ifn" id="7Zo9yKw9xrn" role="3EZMnx">
+        <property role="3F0ifm" value="Lights" />
       </node>
       <node concept="l2Vlx" id="7Zo9yKw9xrq" role="2iSdaV" />
     </node>
@@ -2342,14 +2289,11 @@
     <property role="3GE5qa" value="expression.landguear.command" />
     <ref role="1XX52x" to="lpas:w2EP0onGC6" resolve="LandinggearStateCommandExpression" />
     <node concept="3EZMnI" id="7Zo9yKw9xrD" role="2wV5jI">
-      <node concept="3F0ifn" id="7Zo9yKw9xrK" role="3EZMnx">
-        <property role="3F0ifm" value="Landing gear" />
-      </node>
-      <node concept="3F0ifn" id="7Zo9yKw9xrQ" role="3EZMnx">
-        <property role="3F0ifm" value="=" />
-      </node>
       <node concept="3F0A7n" id="7Zo9yKw9xrY" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:7Zo9yKw9x5t" resolve="state" />
+      </node>
+      <node concept="3F0ifn" id="7Zo9yKw9xrK" role="3EZMnx">
+        <property role="3F0ifm" value="Landing gear" />
       </node>
       <node concept="l2Vlx" id="7Zo9yKw9xrG" role="2iSdaV" />
     </node>
@@ -2358,14 +2302,11 @@
     <property role="3GE5qa" value="expression.anemometrer.command" />
     <ref role="1XX52x" to="lpas:w2EP0onHix" resolve="AnemometrerStateCommandExpression" />
     <node concept="3EZMnI" id="7Zo9yKw9xsc" role="2wV5jI">
-      <node concept="3F0ifn" id="7Zo9yKw9xsd" role="3EZMnx">
-        <property role="3F0ifm" value="Anemometrer" />
-      </node>
-      <node concept="3F0ifn" id="7Zo9yKw9xse" role="3EZMnx">
-        <property role="3F0ifm" value="=" />
-      </node>
       <node concept="3F0A7n" id="7Zo9yKw9xsf" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:7Zo9yKw9x4B" resolve="state" />
+      </node>
+      <node concept="3F0ifn" id="7Zo9yKw9xsd" role="3EZMnx">
+        <property role="3F0ifm" value="Anemometrer" />
       </node>
       <node concept="l2Vlx" id="7Zo9yKw9xsg" role="2iSdaV" />
     </node>
@@ -2374,14 +2315,11 @@
     <property role="3GE5qa" value="expression.emergency_stop_mode.command" />
     <ref role="1XX52x" to="lpas:w2EP0onHiy" resolve="EmergencyStopModeStateCommandExpression" />
     <node concept="3EZMnI" id="7Zo9yKw9xsv" role="2wV5jI">
+      <node concept="3F0A7n" id="17uiePt_Qkk" role="3EZMnx">
+        <ref role="1NtTu8" to="lpas:7Zo9yKw9x51" resolve="state" />
+      </node>
       <node concept="3F0ifn" id="7Zo9yKw9xsA" role="3EZMnx">
         <property role="3F0ifm" value="Emergency stop mode" />
-      </node>
-      <node concept="3F0ifn" id="7Zo9yKw9xsG" role="3EZMnx">
-        <property role="3F0ifm" value="=" />
-      </node>
-      <node concept="3F0A7n" id="7Zo9yKw9xsO" role="3EZMnx">
-        <ref role="1NtTu8" to="lpas:7Zo9yKw9x51" resolve="state" />
       </node>
       <node concept="l2Vlx" id="7Zo9yKw9xsy" role="2iSdaV" />
     </node>

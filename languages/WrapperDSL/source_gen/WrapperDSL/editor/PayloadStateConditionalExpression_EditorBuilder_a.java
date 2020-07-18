@@ -65,7 +65,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     return editorCell;
   }
   private EditorCell createConstant_1() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Payload state");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Payload status");
     editorCell.setCellId("Constant_bi1sug_b0");
     editorCell.setDefaultText("");
     return editorCell;

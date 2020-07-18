@@ -34,7 +34,7 @@ Drone drone = (Drone) thisJoinPoint.getArgs()[0];
 System.out.println("Drone["+drone.getLabel()+"] "+"EmergencyCamera");
 LoggerController.getInstance().print("Drone["+drone.getLabel()+"] EmergencyCamera");
 
-<!TextGen not found for 'WrapperDSL.structure.CameraStateCommandExpression'!><!TextGen not found for 'WrapperDSL.structure.GimbalStateCommand'!><!TextGen not found for 'WrapperDSL.structure.EnergySavingModeStateCommandExpression'!>if(<!TextGen not found for 'WrapperDSL.structure.ComparativeRelativeDistanceConditionalExpression'!>){
+<!TextGen not found for 'WrapperDSL.structure.CameraStateCommandExpression'!><!TextGen not found for 'WrapperDSL.structure.GimbalStateCommandeExpression'!><!TextGen not found for 'WrapperDSL.structure.EnergySavingModeStateCommandExpression'!>if(<!TextGen not found for 'WrapperDSL.structure.ComparativeRelativeDistanceConditionalExpression'!>){
 <!TextGen not found for 'WrapperDSL.structure.GimbalRotationCommandExpression'!>
 }else{
 <!TextGen not found for 'WrapperDSL.structure.GimbalRotationCommandExpression'!>}}

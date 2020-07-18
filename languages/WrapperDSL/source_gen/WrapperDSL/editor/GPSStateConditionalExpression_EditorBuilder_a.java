@@ -58,7 +58,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     return editorCell;
   }
   private EditorCell createConstant_0() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "( GPS result");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "( GPS status");
     editorCell.setCellId("Constant_l2wdiy_a0");
     editorCell.setDefaultText("");
     return editorCell;

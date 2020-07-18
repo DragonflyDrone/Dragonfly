@@ -1081,7 +1081,7 @@
     <classNode dependClassName="WrapperDSL.editor.GimbalRotationCommandExpression_Editor" />
     <classNode dependClassName="WrapperDSL.editor.GimbalRotationConditionalExpression_Editor" />
     <classNode dependClassName="WrapperDSL.editor.GimbalRotationTriggerEvent_Editor" />
-    <classNode dependClassName="WrapperDSL.editor.GimbalStateCommand_Editor" />
+    <classNode dependClassName="WrapperDSL.editor.GimbalStateCommandeExpression_Editor" />
     <classNode dependClassName="WrapperDSL.editor.GimbalStateConditionalExpression_Editor" />
     <classNode dependClassName="WrapperDSL.editor.GimbalStateTriggerEvent_Editor" />
     <classNode dependClassName="WrapperDSL.editor.Given_Editor" />
@@ -2022,14 +2022,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="WrapperDSL.editor.GimbalStateCommand_Editor">
-    <classNode dependClassName="WrapperDSL.editor.GimbalStateCommand_EditorBuilder_a" />
+  <dependency className="WrapperDSL.editor.GimbalStateCommandeExpression_Editor">
+    <classNode dependClassName="WrapperDSL.editor.GimbalStateCommandeExpression_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="WrapperDSL.editor.GimbalStateCommand_EditorBuilder_a">
+  <dependency className="WrapperDSL.editor.GimbalStateCommandeExpression_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
@@ -3643,11 +3643,15 @@
   </dependency>
   <dependency className="WrapperDSL.editor.ReturnToHomeHomePointCurrentPositionCommandExpression_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.MPSFonts" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />

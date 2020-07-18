@@ -7,8 +7,8 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class GimbalStateCommand_Editor extends DefaultNodeEditor {
+public class GimbalStateCommandeExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return new GimbalStateCommand_EditorBuilder_a(editorContext, node).createCell();
+    return new GimbalStateCommandeExpression_EditorBuilder_a(editorContext, node).createCell();
   }
 }

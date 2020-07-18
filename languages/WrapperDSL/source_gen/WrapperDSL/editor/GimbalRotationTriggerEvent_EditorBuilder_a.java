@@ -62,8 +62,9 @@ import org.jetbrains.mps.openapi.language.SConcept;
     editorCell.addEditorCell(createProperty_0());
     editorCell.addEditorCell(createConstant_0());
     editorCell.addEditorCell(createConstant_1());
-    editorCell.addEditorCell(createRefNode_0());
     editorCell.addEditorCell(createConstant_2());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createConstant_3());
     return editorCell;
   }
   private EditorCell createProperty_0() {
@@ -103,15 +104,21 @@ import org.jetbrains.mps.openapi.language.SConcept;
     editorCell.setDefaultText("");
     return editorCell;
   }
+  private EditorCell createConstant_2() {
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "to");
+    editorCell.setCellId("Constant_svbzg5_d0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
   private EditorCell createRefNode_0() {
-    SingleRoleCellProvider provider = new valueSingleRoleHandler_svbzg5_d0(myNode, LINKS.value$gGX4, getEditorContext());
+    SingleRoleCellProvider provider = new valueSingleRoleHandler_svbzg5_e0(myNode, LINKS.value$gGX4, getEditorContext());
     return provider.createCell();
   }
-  private static class valueSingleRoleHandler_svbzg5_d0 extends SingleRoleCellProvider {
+  private static class valueSingleRoleHandler_svbzg5_e0 extends SingleRoleCellProvider {
     @NotNull
     private SNode myNode;
 
-    public valueSingleRoleHandler_svbzg5_d0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+    public valueSingleRoleHandler_svbzg5_e0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(containmentLink, context);
       myNode = ownerNode;
     }
@@ -158,9 +165,9 @@ import org.jetbrains.mps.openapi.language.SConcept;
       return "<no value>";
     }
   }
-  private EditorCell createConstant_2() {
+  private EditorCell createConstant_3() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "°");
-    editorCell.setCellId("Constant_svbzg5_e0");
+    editorCell.setCellId("Constant_svbzg5_f0");
     editorCell.setDefaultText("");
     return editorCell;
   }

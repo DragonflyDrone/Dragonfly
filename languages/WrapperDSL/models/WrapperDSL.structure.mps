@@ -4146,7 +4146,7 @@
   <node concept="1TIwiD" id="7Zo9yKw9xjx">
     <property role="EcuMT" value="9212155008746132705" />
     <property role="3GE5qa" value="expression.gimbal.command" />
-    <property role="TrG5h" value="GimbalStateCommand" />
+    <property role="TrG5h" value="GimbalStateCommandeExpression" />
     <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="Command" />
     <node concept="1TJgyi" id="7Zo9yKw9xjy" role="1TKVEl">
       <property role="IQ2nx" value="9212155008746132706" />

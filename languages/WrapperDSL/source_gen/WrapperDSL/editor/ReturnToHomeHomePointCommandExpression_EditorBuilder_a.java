@@ -45,7 +45,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     editorCell.setBig(true);
     setCellContext(editorCell);
     editorCell.addEditorCell(createConstant_0());
-    editorCell.addEditorCell(createConstant_1());
     editorCell.addEditorCell(createRefNode_0());
     return editorCell;
   }
@@ -55,21 +54,15 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_1() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "=");
-    editorCell.setCellId("Constant_luedig_b0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
   private EditorCell createRefNode_0() {
-    SingleRoleCellProvider provider = new waypointSingleRoleHandler_luedig_c0(myNode, LINKS.waypoint$zAxK, getEditorContext());
+    SingleRoleCellProvider provider = new waypointSingleRoleHandler_luedig_b0(myNode, LINKS.waypoint$zAxK, getEditorContext());
     return provider.createCell();
   }
-  private static class waypointSingleRoleHandler_luedig_c0 extends SingleRoleCellProvider {
+  private static class waypointSingleRoleHandler_luedig_b0 extends SingleRoleCellProvider {
     @NotNull
     private SNode myNode;
 
-    public waypointSingleRoleHandler_luedig_c0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+    public waypointSingleRoleHandler_luedig_b0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(containmentLink, context);
       myNode = ownerNode;
     }

@@ -65,7 +65,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     return editorCell;
   }
   private EditorCell createConstant_1() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Landing gear state");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Landing gear status");
     editorCell.setCellId("Constant_g8s518_b0");
     editorCell.setDefaultText("");
     return editorCell;

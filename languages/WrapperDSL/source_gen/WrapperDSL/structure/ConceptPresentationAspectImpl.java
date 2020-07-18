@@ -69,7 +69,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_GimbalRotationCommandExpression;
   private ConceptPresentation props_GimbalRotationConditionalExpression;
   private ConceptPresentation props_GimbalRotationTriggerEvent;
-  private ConceptPresentation props_GimbalStateCommand;
+  private ConceptPresentation props_GimbalStateCommandeExpression;
   private ConceptPresentation props_GimbalStateConditionalExpression;
   private ConceptPresentation props_GimbalStateTriggerEvent;
   private ConceptPresentation props_Given;
@@ -589,13 +589,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_GimbalRotationTriggerEvent = cpb.create();
         }
         return props_GimbalRotationTriggerEvent;
-      case LanguageConceptSwitch.GimbalStateCommand:
-        if (props_GimbalStateCommand == null) {
+      case LanguageConceptSwitch.GimbalStateCommandeExpression:
+        if (props_GimbalStateCommandeExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("GimbalStateCommand");
-          props_GimbalStateCommand = cpb.create();
+          cpb.rawPresentation("GimbalStateCommandeExpression");
+          props_GimbalStateCommandeExpression = cpb.create();
         }
-        return props_GimbalStateCommand;
+        return props_GimbalStateCommandeExpression;
       case LanguageConceptSwitch.GimbalStateConditionalExpression:
         if (props_GimbalStateConditionalExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

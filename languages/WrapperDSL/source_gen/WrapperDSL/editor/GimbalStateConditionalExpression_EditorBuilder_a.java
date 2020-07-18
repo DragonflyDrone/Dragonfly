@@ -91,7 +91,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     }
   }
   private EditorCell createConstant_1() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "gimbal state");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "gimbal status");
     editorCell.setCellId("Constant_odmk1q_c0");
     editorCell.setDefaultText("");
     return editorCell;

@@ -62,6 +62,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     editorCell.addEditorCell(createProperty_0());
     editorCell.addEditorCell(createConstant_0());
     editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createConstant_2());
     editorCell.addEditorCell(createRefNode_0());
     return editorCell;
   }
@@ -102,15 +103,21 @@ import org.jetbrains.mps.openapi.language.SConcept;
     editorCell.setDefaultText("");
     return editorCell;
   }
+  private EditorCell createConstant_2() {
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "to");
+    editorCell.setCellId("Constant_q9wolu_d0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
   private EditorCell createRefNode_0() {
-    SingleRoleCellProvider provider = new valueSingleRoleHandler_q9wolu_d0(myNode, LINKS.value$gujr, getEditorContext());
+    SingleRoleCellProvider provider = new valueSingleRoleHandler_q9wolu_e0(myNode, LINKS.value$gujr, getEditorContext());
     return provider.createCell();
   }
-  private static class valueSingleRoleHandler_q9wolu_d0 extends SingleRoleCellProvider {
+  private static class valueSingleRoleHandler_q9wolu_e0 extends SingleRoleCellProvider {
     @NotNull
     private SNode myNode;
 
-    public valueSingleRoleHandler_q9wolu_d0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+    public valueSingleRoleHandler_q9wolu_e0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(containmentLink, context);
       myNode = ownerNode;
     }
