@@ -2571,6 +2571,11 @@
     <property role="3GE5qa" value="expression.UAV.command" />
     <property role="TrG5h" value="UAVRotateCommandExpression" />
     <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="Command" />
+    <node concept="1TJgyi" id="7Zo9yKw9x85" role="1TKVEl">
+      <property role="IQ2nx" value="9212155008746131973" />
+      <property role="TrG5h" value="axe" />
+      <ref role="AX2Wp" node="5fwjzFJ5$q$" resolve="AxesEnum" />
+    </node>
     <node concept="1TJgyi" id="7Zo9yKw9x6y" role="1TKVEl">
       <property role="IQ2nx" value="9212155008746131874" />
       <property role="TrG5h" value="value" />
@@ -2805,6 +2810,11 @@
       <property role="TrG5h" value="state" />
       <ref role="AX2Wp" node="5fwjzFJ5$wM" resolve="FlightControlStateSetEnum" />
     </node>
+    <node concept="1TJgyi" id="7Zo9yKw9xj3" role="1TKVEl">
+      <property role="IQ2nx" value="9212155008746132675" />
+      <property role="TrG5h" value="switchControl" />
+      <ref role="AX2Wp" node="5fwjzFJ5$vS" resolve="ControlSwitchEnum" />
+    </node>
   </node>
   <node concept="1TIwiD" id="w2EP0onGBp">
     <property role="EcuMT" value="577212062751443417" />
@@ -2813,8 +2823,13 @@
     <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="Command" />
     <node concept="1TJgyi" id="7Zo9yKw9x5h" role="1TKVEl">
       <property role="IQ2nx" value="9212155008746131793" />
-      <property role="TrG5h" value="state" />
-      <ref role="AX2Wp" node="5fwjzFJ5$wh" resolve="GimbalStateSetEnum" />
+      <property role="TrG5h" value="value" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="7Zo9yKw9xku" role="1TKVEl">
+      <property role="IQ2nx" value="9212155008746132766" />
+      <property role="TrG5h" value="axes" />
+      <ref role="AX2Wp" node="5fwjzFJ5$q$" resolve="AxesEnum" />
     </node>
   </node>
   <node concept="1TIwiD" id="w2EP0onGBq">
@@ -3832,6 +3847,22 @@
       <property role="3tVfz5" value="9212155008746117444" />
       <property role="TrG5h" value="NON_DETECTED" />
       <property role="1L1pqM" value="NON DETECTED" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7Zo9yKw9xjx">
+    <property role="EcuMT" value="9212155008746132705" />
+    <property role="3GE5qa" value="expression.gimbal.command" />
+    <property role="TrG5h" value="GimbalStateCommand" />
+    <ref role="1TJDcQ" node="6UvQjm9lvOC" resolve="Command" />
+    <node concept="1TJgyi" id="7Zo9yKw9xjy" role="1TKVEl">
+      <property role="IQ2nx" value="9212155008746132706" />
+      <property role="TrG5h" value="controlSwitch" />
+      <ref role="AX2Wp" node="5fwjzFJ5$vS" resolve="ControlSwitchEnum" />
+    </node>
+    <node concept="1TJgyi" id="7Zo9yKw9xj$" role="1TKVEl">
+      <property role="IQ2nx" value="9212155008746132708" />
+      <property role="TrG5h" value="state" />
+      <ref role="AX2Wp" node="5fwjzFJ5$wh" resolve="GimbalStateSetEnum" />
     </node>
   </node>
 </model>

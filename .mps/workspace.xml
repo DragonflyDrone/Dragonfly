@@ -8,6 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="67f9d5de-1d1c-4b09-879f-44fe21ffd1bc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.mps/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.mps/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/models/WrapperDSL.editor.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/models/WrapperDSL.editor.mps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/models/WrapperDSL.structure.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/models/WrapperDSL.structure.mps" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -224,7 +225,7 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="r:98ce4f8d-75ef-41b6-8025-6561aecf815f(WrapperDSL.textGen) in IdeaFile[path: /home/lucas_alves/Workspace/gesad/dragonfly/dsl/DSL-Dragonfly (copy)/languages/WrapperDSL/models/WrapperDSL.textGen.mps]" />
+              <option name="myItemId" value="r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure) in IdeaFile[path: /home/lucas_alves/Workspace/gesad/dragonfly/dsl/DSL-Dragonfly (copy)/languages/WrapperDSL/models/WrapperDSL.structure.mps]" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -232,17 +233,7 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="distance" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="conditional_expression" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
+              <option name="myItemId" value="smoke_detector" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -269,12 +260,22 @@
               <option name="myItemId" value="r:f4985144-6f22-4733-9b56-ad070ae98e98(WrapperDSL.editor) in IdeaFile[path: /home/lucas_alves/Workspace/gesad/dragonfly/dsl/DSL-Dragonfly (copy)/languages/WrapperDSL/models/WrapperDSL.editor.mps]" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="expression" />
+              <option name="myItemId" value="Project" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="UAV" />
+              <option name="myItemId" value="3e1c68c4-ebe6-40bd-a27f-e74585aa2487(WrapperDSL)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure) in IdeaFile[path: /home/lucas_alves/Workspace/gesad/dragonfly/dsl/DSL-Dragonfly (copy)/languages/WrapperDSL/models/WrapperDSL.structure.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="expression" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -288,7 +289,11 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="r:98ce4f8d-75ef-41b6-8025-6561aecf815f(WrapperDSL.textGen) in IdeaFile[path: /home/lucas_alves/Workspace/gesad/dragonfly/dsl/DSL-Dragonfly (copy)/languages/WrapperDSL/models/WrapperDSL.textGen.mps]" />
+              <option name="myItemId" value="r:f4985144-6f22-4733-9b56-ad070ae98e98(WrapperDSL.editor) in IdeaFile[path: /home/lucas_alves/Workspace/gesad/dragonfly/dsl/DSL-Dragonfly (copy)/languages/WrapperDSL/models/WrapperDSL.editor.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="expression" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -302,7 +307,7 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="r:98ce4f8d-75ef-41b6-8025-6561aecf815f(WrapperDSL.textGen) in IdeaFile[path: /home/lucas_alves/Workspace/gesad/dragonfly/dsl/DSL-Dragonfly (copy)/languages/WrapperDSL/models/WrapperDSL.textGen.mps]" />
+              <option name="myItemId" value="r:f4985144-6f22-4733-9b56-ad070ae98e98(WrapperDSL.editor) in IdeaFile[path: /home/lucas_alves/Workspace/gesad/dragonfly/dsl/DSL-Dragonfly (copy)/languages/WrapperDSL/models/WrapperDSL.editor.mps]" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -310,7 +315,7 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="distance" />
+              <option name="myItemId" value="GPS" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -332,7 +337,7 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="RTH" />
+              <option name="myItemId" value="smoke_detector" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -350,64 +355,6 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="r:f4985144-6f22-4733-9b56-ad070ae98e98(WrapperDSL.editor) in IdeaFile[path: /home/lucas_alves/Workspace/gesad/dragonfly/dsl/DSL-Dragonfly (copy)/languages/WrapperDSL/models/WrapperDSL.editor.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="3e1c68c4-ebe6-40bd-a27f-e74585aa2487(WrapperDSL)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:f4985144-6f22-4733-9b56-ad070ae98e98(WrapperDSL.editor) in IdeaFile[path: /home/lucas_alves/Workspace/gesad/dragonfly/dsl/DSL-Dragonfly (copy)/languages/WrapperDSL/models/WrapperDSL.editor.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="expression" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="distance" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="3e1c68c4-ebe6-40bd-a27f-e74585aa2487(WrapperDSL)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure) in IdeaFile[path: /home/lucas_alves/Workspace/gesad/dragonfly/dsl/DSL-Dragonfly (copy)/languages/WrapperDSL/models/WrapperDSL.structure.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="expression" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RTH" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="3e1c68c4-ebe6-40bd-a27f-e74585aa2487(WrapperDSL)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure) in IdeaFile[path: /home/lucas_alves/Workspace/gesad/dragonfly/dsl/DSL-Dragonfly (copy)/languages/WrapperDSL/models/WrapperDSL.structure.mps]" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -415,154 +362,6 @@
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="3e1c68c4-ebe6-40bd-a27f-e74585aa2487(WrapperDSL)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:f4985144-6f22-4733-9b56-ad070ae98e98(WrapperDSL.editor) in IdeaFile[path: /home/lucas_alves/Workspace/gesad/dragonfly/dsl/DSL-Dragonfly (copy)/languages/WrapperDSL/models/WrapperDSL.editor.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="expression" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="UAV" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="conditional_expression" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="3e1c68c4-ebe6-40bd-a27f-e74585aa2487(WrapperDSL)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:f4985144-6f22-4733-9b56-ad070ae98e98(WrapperDSL.editor) in IdeaFile[path: /home/lucas_alves/Workspace/gesad/dragonfly/dsl/DSL-Dragonfly (copy)/languages/WrapperDSL/models/WrapperDSL.editor.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="expression" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="distance" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="conditional_expression" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="3e1c68c4-ebe6-40bd-a27f-e74585aa2487(WrapperDSL)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:98ce4f8d-75ef-41b6-8025-6561aecf815f(WrapperDSL.textGen) in IdeaFile[path: /home/lucas_alves/Workspace/gesad/dragonfly/dsl/DSL-Dragonfly (copy)/languages/WrapperDSL/models/WrapperDSL.textGen.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="expression" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="3e1c68c4-ebe6-40bd-a27f-e74585aa2487(WrapperDSL)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:f4985144-6f22-4733-9b56-ad070ae98e98(WrapperDSL.editor) in IdeaFile[path: /home/lucas_alves/Workspace/gesad/dragonfly/dsl/DSL-Dragonfly (copy)/languages/WrapperDSL/models/WrapperDSL.editor.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="expression" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="smoke_detector" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="conditional_expression" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="3e1c68c4-ebe6-40bd-a27f-e74585aa2487(WrapperDSL)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:f4985144-6f22-4733-9b56-ad070ae98e98(WrapperDSL.editor) in IdeaFile[path: /home/lucas_alves/Workspace/gesad/dragonfly/dsl/DSL-Dragonfly (copy)/languages/WrapperDSL/models/WrapperDSL.editor.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="expression" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="3e1c68c4-ebe6-40bd-a27f-e74585aa2487(WrapperDSL)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:f4985144-6f22-4733-9b56-ad070ae98e98(WrapperDSL.editor) in IdeaFile[path: /home/lucas_alves/Workspace/gesad/dragonfly/dsl/DSL-Dragonfly (copy)/languages/WrapperDSL/models/WrapperDSL.editor.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="expression" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="smoke_detector" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="3e1c68c4-ebe6-40bd-a27f-e74585aa2487(WrapperDSL)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure) in IdeaFile[path: /home/lucas_alves/Workspace/gesad/dragonfly/dsl/DSL-Dragonfly (copy)/languages/WrapperDSL/models/WrapperDSL.structure.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="expression" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -584,7 +383,7 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="RTH" />
+              <option name="myItemId" value="smoke_detector" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -592,7 +391,7 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="577212062751443407" />
+              <option name="myItemId" value="3488505779905996210" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </SELECTED>
