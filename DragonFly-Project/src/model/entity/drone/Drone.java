@@ -3,9 +3,11 @@ package model.entity.drone;
 
 
 import controller.CellController;
+import controller.TreeController;
 import javafx.scene.input.KeyCode;
 import model.Cell;
 import model.entity.Entity;
+import model.entity.Tree;
 import view.SelectableView;
 import view.river.RiverView;
 import view.tree.TreeView;
@@ -266,7 +268,6 @@ public class Drone extends Entity {
         notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
     }
 
-    //**
     public Double getHeight(){ return height; }
     public void setHeight(Double height) { this.height = height; }
 
@@ -634,7 +635,6 @@ public class Drone extends Entity {
         }
         for(Object object :onTopOfList){
             if(object instanceof TreeView){
-
                 return true;
             }
         }

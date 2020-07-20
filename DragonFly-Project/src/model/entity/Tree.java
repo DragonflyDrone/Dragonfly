@@ -2,6 +2,7 @@ package model.entity;
 
 import controller.CellController;
 import model.Cell;
+import model.entity.drone.Drone;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,14 +14,16 @@ public class Tree {
     private Boolean selected = false;
     private List<Listener> listeners = new ArrayList<>();
     private String label;
-    private Double height;
+    private Double height = 0.D;
+    private Double distanceSource;
 
     private Cell sourceCell = CellController.getInstance().getCellFrom(0,0);
 
-    public Tree(String uniqueID, String label, int rowPosition, int columnPosition) {
+    public Tree(String uniqueID, String label, int rowPosition, int columnPosition, Cell sourceCell) {
         this.uniqueID = uniqueID;
         this.rowPosition = rowPosition;
         this.columnPosition = columnPosition;
+        this.sourceCell = sourceCell;
         this.label = label;
         COUNT_TREE++;
     }
@@ -113,6 +116,40 @@ public class Tree {
         }
 
         notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
+    }
+
+    public Double getDistanceSource() {
+        return distanceSource;
+    }
+
+    public void setDistanceSource(Double distanceSource) {
+        Double oldValue = this.distanceSource;
+        Double newValue = distanceSource;
+
+        if(oldValue == newValue){
+            return;
+        }
+
+        this.distanceSource = distanceSource;
+
+        notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
+    }
+
+    public static double calculeteDistanceFrom(Tree selectedTree, Cell cell) {
+
+        int xInitial = (selectedTree.getColumnPosition() + 1) * 30,
+                xFinal = (cell.getColumnPosition() + 1) * 30,
+                yInitial = (selectedTree.getRowPosition() + 1) * 30,
+                yFinal = (cell.getRowPosition() + 1) * 30;
+
+        return Math.sqrt(((xFinal - xInitial) * (xFinal - xInitial)) + ((yFinal - yInitial) * (yFinal - yInitial)));
+
+    }
+
+    static synchronized public void updateDistanceSource(Tree selectedTree) {
+        Double distanceSource = calculeteDistanceFrom(selectedTree, selectedTree.getSourceCell());
+        // System.out.println("distanceHospitalSource"+ distanceHospitalSource);
+        selectedTree.setDistanceSource(distanceSource);
     }
 
     public List<Listener> getListeners() {

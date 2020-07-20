@@ -1,6 +1,7 @@
 package model.entity.drone;
 
 import controller.*;
+import controller.settings_panel.TreeSettingsPanelController;
 import javafx.application.Platform;
 import javafx.scene.input.KeyCode;
 import model.Cell;
@@ -10,6 +11,7 @@ import view.SelectableView;
 import view.drone.DroneView;
 import view.drone.DroneViewImpl;
 import model.entity.Tree;
+import view.tree.TreeView;
 
 import java.util.List;
 import java.util.Random;
@@ -183,7 +185,7 @@ public class DroneBusinessObject {
     }
 
 
-    public static void checkStatus(Drone selectedDrone) { //***********
+    public static void checkStatus(Drone selectedDrone) { //******************
 
         if (selectedDrone.isShutDown()) {
             return;
@@ -259,9 +261,31 @@ public class DroneBusinessObject {
             applyEconomyMode(selectedDrone);
         }
 
-        if(selectedDrone.getHeight() <= 8.0){
 
-            if(selectedDrone.isOnTree()){
+        if(selectedDrone.isOnTree()){ //***********************************************************************
+
+            for(Object object : selectedDrone.getOnTopOfList()){
+                if(object instanceof TreeView){
+                    TreeView treeView = (TreeView) object;
+                    Tree selectedTree = TreeController.getInstance().getTreeFrom(treeView.getUniqueID());
+
+                    if(compareHeight(selectedDrone, selectedTree)){
+                        checkAndPrintIfLostDrone(selectedDrone);
+                        //collision(selectedDrone);
+                        boolean landedExecuted = landed(selectedDrone);
+                        if (landedExecuted) {
+                            shutDown(selectedDrone);
+                            collision(selectedDrone);
+                        }
+                    }else{
+                        System.out.println("Overfly");
+                        LoggerController.getInstance().print("Drone[" + selectedDrone.getLabel() + "] " + "Overfly");
+                    }
+
+                }
+            }
+            /*
+            if(selectedDrone.getHeight() <= 8.0){
                 checkAndPrintIfLostDrone(selectedDrone);
 
                 boolean landedExecuted = landed(selectedDrone);
@@ -271,17 +295,10 @@ public class DroneBusinessObject {
                     collision(selectedDrone);
                 }
             }
-        }
-
-        /*if(selectedDrone.isCollision() && selectedDrone.getHeight() <= 8){
-            //Collision
-            checkAndPrintIfLostDrone(selectedDrone);
-
-            //collision(selectedDrone);
-
+            */
 
         }
-        */
+
         if (selectedDrone.getCurrentBattery() <= 10 && selectedDrone.getDistanceDestiny() > 0
                 && !selectedDrone.isSafeLand()) {
 
@@ -373,37 +390,17 @@ public class DroneBusinessObject {
         return true;
     }
 
-    //Ainda n esotu usando essas funçoes
-    /**
-     * Drone sobrevoa se a altura for maior, ou seja, qnd nao ha colisao
-     * @param selectedDrone Drone selecionado
-     * @return
-     */
-    public static boolean overfly(Drone selectedDrone) {
-        if(selectedDrone.isCollision()){
-            return false;
-        }
-
-        selectedDrone.setIsCollision(true);
-
-        return true;
-    }
-
     /**
      * Compara as alturas por enquanto do drone com a Tree, que futuramente sera um Obj
      * @param selectedDrone
-     * @param tree
+     * @param selectedTree
      */
-    public static void compareHeight(Drone selectedDrone, Tree tree){
-        KeyCode flyDirectionCommand = selectedDrone.getFlyDirectionCommand();
-        if (selectedDrone.getHeight() > tree.getHeight()){
-            overfly(selectedDrone);
-            flying(selectedDrone, flyDirectionCommand);
+    public static boolean compareHeight(Drone selectedDrone, Tree selectedTree){
+
+        if (selectedDrone.getHeight() <= selectedTree.getHeight()){
+            return true;
         }
-        else if(selectedDrone.getHeight() <= tree.getHeight()){
-            overfly(selectedDrone);
-            collision(selectedDrone);
-        }
+        return false;
     }
 
     public static boolean landing(Drone selectedDrone) {

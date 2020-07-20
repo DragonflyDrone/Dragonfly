@@ -129,7 +129,7 @@ public class TreeSettingsPanelController extends SettingsPanelController<Tree> {
     }
 
     @Override
-    void saveAttributesInEntity(Tree tree) {
+    void saveAttributesInEntity(Tree selectedTree) {
 
         selectedTree.setHeight(Double.parseDouble(heightTextView.getText()));
 
@@ -139,7 +139,7 @@ public class TreeSettingsPanelController extends SettingsPanelController<Tree> {
     }
 
     @Override
-    void updateSettingsViewsFromEntity(Tree tree) {
+    void updateSettingsViewsFromEntity(Tree selectedTree) {
         String treeLabel = selectedTree.getLabel();
 
         Double height = selectedTree.getHeight();
@@ -148,14 +148,9 @@ public class TreeSettingsPanelController extends SettingsPanelController<Tree> {
                 "<" + selectedTree.getSourceCell().getRowPosition()
                         + "," + selectedTree.getSourceCell().getColumnPosition() + ">";
 
-        try {
-            currentTreeTextField.setText(treeLabel);
-            heightTextView.setText(String.valueOf(height));
-            currentSourceCell.setText(currentSourceCellString);
-        }catch (NullPointerException e){
-            e.getMessage();
-        }
-
+        currentTreeTextField.setText(treeLabel);
+        currentSourceCell.setText(currentSourceCellString);
+        heightTextView.setText(String.valueOf(height));
     }
 
     @Override
@@ -171,7 +166,6 @@ public class TreeSettingsPanelController extends SettingsPanelController<Tree> {
         if (waitForClickInCell) {
 
             CellView cellview = selectableView.getCurrentCellView();
-            Cell cell = CellController.getInstance().getCellFrom(cellview.getUniqueID());
 
             waitForClickInCell = false;
 

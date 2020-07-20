@@ -1,6 +1,7 @@
 package controller;
 
 import javafx.scene.input.KeyEvent;
+import model.Cell;
 import model.entity.Tree;
 import view.CellView;
 import view.SelectableView;
@@ -34,8 +35,9 @@ public class TreeController {
 
         treeViewMap.put(uniqueID, treeView);
 
+        Cell currentCell = CellController.getInstance().getCellFrom(currentCellView.getUniqueID());
 
-        Tree tree = new Tree(uniqueID, labelTree, currentCellView.getRowPosition(), currentCellView.getCollunmPosition());
+        Tree tree = new Tree(uniqueID, labelTree, currentCellView.getRowPosition(), currentCellView.getCollunmPosition(), currentCell);
 
         tree.addListener(treeView);
 
