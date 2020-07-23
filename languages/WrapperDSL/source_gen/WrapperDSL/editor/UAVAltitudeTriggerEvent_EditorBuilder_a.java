@@ -51,7 +51,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     return editorCell;
   }
   private EditorCell createConstant_0() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Altitude");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "UAV.altitude");
     editorCell.setCellId("Constant_wuirnj_a0");
     editorCell.setDefaultText("");
     return editorCell;

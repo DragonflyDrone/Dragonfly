@@ -66,7 +66,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     return editorCell;
   }
   private EditorCell createConstant_1() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Low battery warning");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "EnergySavingMode.lowBatteryWarning");
     editorCell.setCellId("Constant_joea5p_b0");
     editorCell.setDefaultText("");
     return editorCell;

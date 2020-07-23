@@ -1162,6 +1162,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(2);
     b.property("axes", 0x341ddc0f5796d2ffL).type(MetaIdFactory.dataTypeId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53e04e3aef1646a4L)).origin("3755399622748984063").done();
     b.property("rotation", 0x341ddc0f5796d301L).type(PrimitiveTypeId.INTEGER).origin("3755399622748984065").done();
+    b.property("operator", 0x4a928176d15d35L).type(MetaIdFactory.dataTypeId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53e04e3aef1642fcL)).origin("20990233018457397").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForGimbalRotationTriggerEvent() {

@@ -66,7 +66,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     return editorCell;
   }
   private EditorCell createConstant_1() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Battery capacity");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Battery.capacity");
     editorCell.setCellId("Constant_a46ngq_b0");
     editorCell.setDefaultText("");
     return editorCell;

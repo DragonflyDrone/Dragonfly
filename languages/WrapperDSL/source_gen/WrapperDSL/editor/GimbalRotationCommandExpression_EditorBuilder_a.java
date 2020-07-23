@@ -84,7 +84,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     }
   }
   private EditorCell createConstant_0() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "rotation");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Gimbal.rotation");
     editorCell.setCellId("Constant_rty5k4_b0");
     editorCell.setDefaultText("");
     return editorCell;

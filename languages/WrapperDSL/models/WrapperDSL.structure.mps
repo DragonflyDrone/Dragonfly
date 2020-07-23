@@ -795,6 +795,11 @@
       <property role="TrG5h" value="rotation" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
+    <node concept="1TJgyi" id="1a$C5QOlOP" role="1TKVEl">
+      <property role="IQ2nx" value="20990233018457397" />
+      <property role="TrG5h" value="operator" />
+      <ref role="AX2Wp" node="5fwjzFJ5$bW" resolve="GeneralOperatorEnum" />
+    </node>
   </node>
   <node concept="1TIwiD" id="5fwjzFJ5$cG">
     <property role="EcuMT" value="6043916714957488940" />

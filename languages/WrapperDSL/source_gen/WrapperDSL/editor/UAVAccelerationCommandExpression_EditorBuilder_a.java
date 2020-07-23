@@ -58,7 +58,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     return editorCell;
   }
   private EditorCell createConstant_0() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Acceleration");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "UAV.acceleration");
     editorCell.setCellId("Constant_8xauix_a0");
     editorCell.setDefaultText("");
     return editorCell;

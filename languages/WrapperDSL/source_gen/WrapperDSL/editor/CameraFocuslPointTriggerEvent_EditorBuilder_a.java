@@ -50,7 +50,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     return editorCell;
   }
   private EditorCell createConstant_0() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Camera focus point");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Camera.focusPoint");
     editorCell.setCellId("Constant_fhc755_a0");
     editorCell.setDefaultText("");
     return editorCell;

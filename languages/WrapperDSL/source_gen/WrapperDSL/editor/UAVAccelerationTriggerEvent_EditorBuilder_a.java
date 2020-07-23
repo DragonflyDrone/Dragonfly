@@ -51,7 +51,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     return editorCell;
   }
   private EditorCell createConstant_0() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Acceleration");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "UAV.acceleration");
     editorCell.setCellId("Constant_wgfs1c_a0");
     editorCell.setDefaultText("");
     return editorCell;

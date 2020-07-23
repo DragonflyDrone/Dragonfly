@@ -107,7 +107,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     }
   }
   private EditorCell createConstant_0() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "flight control");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "FlightControl");
     editorCell.setCellId("Constant_n9cmfa_c0");
     editorCell.setDefaultText("");
     return editorCell;

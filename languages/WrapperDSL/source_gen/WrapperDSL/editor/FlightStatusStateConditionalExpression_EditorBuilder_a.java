@@ -65,7 +65,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     return editorCell;
   }
   private EditorCell createConstant_1() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Flight status");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "FlightControl.status");
     editorCell.setCellId("Constant_d9e1v2_b0");
     editorCell.setDefaultText("");
     return editorCell;

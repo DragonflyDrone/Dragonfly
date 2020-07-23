@@ -75,7 +75,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     return editorCell;
   }
   private EditorCell createConstant_1() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Camera focus point");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Camera.focusPoint");
     editorCell.setCellId("Constant_c0jw3p_b0");
     editorCell.setDefaultText("");
     return editorCell;

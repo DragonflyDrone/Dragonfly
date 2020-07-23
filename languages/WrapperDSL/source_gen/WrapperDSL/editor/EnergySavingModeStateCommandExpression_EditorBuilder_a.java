@@ -81,7 +81,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     }
   }
   private EditorCell createConstant_0() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Energy saving mode");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "EnergySavingMode");
     editorCell.setCellId("Constant_s5xonu_b0");
     editorCell.setDefaultText("");
     return editorCell;

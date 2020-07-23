@@ -22,19 +22,8 @@ import view.drone.*;
 
 public aspect MoveAside{
 private boolean alreadyExecuting = false;
-pointcut safeLanding(): call (* model.entity.drone.DroneBusinessObject.safeLanding(*));
-before():safeLanding()
-&&
-if
-(
-((Drone)thisJoinPoint.getArgs()[0]).isOnWater()==true
-&&
-(
-((Drone)thisJoinPoint.getArgs()[0]).isStrongWind()==false
-&&
-((Drone)thisJoinPoint.getArgs()[0]).getDistanceDestiny()>=90
-)
-)
+
+
 {
 goLandRegion(thisJoinPoint);
 }
@@ -49,14 +38,7 @@ LoggerController.getInstance().print("Drone["+drone.getLabel()+"] MoveAside");
             @Override
             public void task() {
                 Platform.runLater(() -> {
-DroneView droneView = DroneController.getInstance().getDroneViewFrom(drone.getUniqueID());
-CellView destinationCellView = EnvironmentController.getInstance().getCloserLand(drone);
-DirectionEnum goDirection = DroneBusinessObject.closeDirection(droneView.getCurrentCellView(), destinationCellView);
-DroneBusinessObject.flyToDirection(drone, goDirection);
-                DroneBusinessObject.updateBatteryPerSecond(drone);
-                    DroneBusinessObject.updateBatteryPerBlock(drone);
-                    DroneBusinessObject.updateDistances(drone);
-                    DroneBusinessObject.checkStatus(drone);
+<!TextGen not found for 'WrapperDSL.structure.UAVManeuverDirectionToRegionCommandExpression'!>
                 });
 
             }
@@ -64,7 +46,7 @@ DroneBusinessObject.flyToDirection(drone, goDirection);
             public boolean conditionStop() {
 
             
-return !(((Drone)thisJoinPoint.getArgs()[0]).isOnWater()==true);}
+return !(<!TextGen not found for 'WrapperDSL.structure.RelativeDistanceConditionalExpression'!>);}
  };
 }
 }

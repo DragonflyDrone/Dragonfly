@@ -93,7 +93,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     }
   }
   private EditorCell createConstant_0() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "rotation");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "rotation.rotation");
     editorCell.setCellId("Constant_svbzg5_b0");
     editorCell.setDefaultText("");
     return editorCell;

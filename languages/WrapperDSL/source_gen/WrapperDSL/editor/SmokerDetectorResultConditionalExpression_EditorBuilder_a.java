@@ -65,7 +65,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     return editorCell;
   }
   private EditorCell createConstant_1() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Smoker detector result");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "SmokerDetector.result");
     editorCell.setCellId("Constant_37efve_b0");
     editorCell.setDefaultText("");
     return editorCell;

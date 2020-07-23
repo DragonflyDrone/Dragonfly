@@ -49,7 +49,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     return editorCell;
   }
   private EditorCell createConstant_0() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Home point");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "RTH.homePoint");
     editorCell.setCellId("Constant_luedig_a0");
     editorCell.setDefaultText("");
     return editorCell;

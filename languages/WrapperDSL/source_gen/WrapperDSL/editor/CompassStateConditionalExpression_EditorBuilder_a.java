@@ -65,7 +65,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     return editorCell;
   }
   private EditorCell createConstant_1() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Compass state");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Compass.state");
     editorCell.setCellId("Constant_3b0jba_b0");
     editorCell.setDefaultText("");
     return editorCell;

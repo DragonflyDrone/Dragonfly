@@ -58,7 +58,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     return editorCell;
   }
   private EditorCell createConstant_0() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "( Wind direction");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "( Wind.direction");
     editorCell.setCellId("Constant_2pl1fm_a0");
     editorCell.setDefaultText("");
     return editorCell;
