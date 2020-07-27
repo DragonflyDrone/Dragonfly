@@ -1,16 +1,20 @@
 package model.entity.drone;
 
 import controller.*;
-import controller.settings_panel.TreeSettingsPanelController;
-import javafx.application.Platform;
 import javafx.scene.input.KeyCode;
 import model.Cell;
+import model.entity.Antenna;
+import model.entity.Hospital;
+import model.entity.House;
+import model.entity.Tree;
 import util.StopWatch;
 import view.CellView;
 import view.SelectableView;
+import view.antenna.AntennaView;
 import view.drone.DroneView;
 import view.drone.DroneViewImpl;
-import model.entity.Tree;
+import view.hospital.HospitalView;
+import view.house.HouseView;
 import view.tree.TreeView;
 
 import java.util.List;
@@ -262,40 +266,49 @@ public class DroneBusinessObject {
         }
 
 
-        if(selectedDrone.isOnTree()){ //***********************************************************************
+        if(selectedDrone.isOnTree() || selectedDrone.isOnHouse() || selectedDrone.isOnHospital()){ //*********
 
             for(Object object : selectedDrone.getOnTopOfList()){
                 if(object instanceof TreeView){
                     TreeView treeView = (TreeView) object;
                     Tree selectedTree = TreeController.getInstance().getTreeFrom(treeView.getUniqueID());
 
-                    if(compareHeight(selectedDrone, selectedTree)){
-                        checkAndPrintIfLostDrone(selectedDrone);
-                        //collision(selectedDrone);
-                        boolean landedExecuted = landed(selectedDrone);
-                        if (landedExecuted) {
-                            shutDown(selectedDrone);
-                            collision(selectedDrone);
-                        }
+                    if(selectedDrone.getHeight() <= selectedTree.getHeight()){
+                        printCheck(selectedDrone);
                     }else{
                         System.out.println("Overfly");
                         LoggerController.getInstance().print("Drone[" + selectedDrone.getLabel() + "] " + "Overfly");
                     }
 
                 }
-            }
-            /*
-            if(selectedDrone.getHeight() <= 8.0){
-                checkAndPrintIfLostDrone(selectedDrone);
 
-                boolean landedExecuted = landed(selectedDrone);
+                if(object instanceof HouseView){
+                    HouseView treeView = (HouseView) object;
+                    House selectedHouse = HouseController.getInstance().getHouseFrom(treeView.getUniqueID());
 
-                if (landedExecuted) {
-                    shutDown(selectedDrone);
-                    collision(selectedDrone);
+                    if(selectedDrone.getHeight() <= selectedHouse.getHeight()){
+                        printCheck(selectedDrone);
+                    }else{
+                        System.out.println("Overfly");
+                        LoggerController.getInstance().print("Drone[" + selectedDrone.getLabel() + "] " + "Overfly");
+                    }
+
                 }
+
+                if(object instanceof HospitalView){
+                    HospitalView hospitalView = (HospitalView) object;
+                    Hospital selectedHospital = HospitalController.getInstance().getHospitalFrom(hospitalView.getUniqueID());
+
+                    if(selectedDrone.getHeight() <= selectedHospital.getHeight()){
+                        printCheck(selectedDrone);
+                    }else{
+                        System.out.println("Overfly");
+                        LoggerController.getInstance().print("Drone[" + selectedDrone.getLabel() + "] " + "Overfly");
+                    }
+
+                }
+
             }
-            */
 
         }
 
@@ -357,26 +370,17 @@ public class DroneBusinessObject {
                             selectedDrone.setGoingAutomaticToDestiny(false);
                             selectedDrone.setGoingManualToDestiny(false);
 
-
                         }
 
                         checkAndPrintIfLostDrone(selectedDrone);
 
                     }
 
-
                 }
-
 
             }
 
-
-
-
-
         }
-
-
 
     }
 
@@ -390,17 +394,13 @@ public class DroneBusinessObject {
         return true;
     }
 
-    /**
-     * Compara as alturas por enquanto do drone com a Tree, que futuramente sera um Obj
-     * @param selectedDrone
-     * @param selectedTree
-     */
-    public static boolean compareHeight(Drone selectedDrone, Tree selectedTree){
-
-        if (selectedDrone.getHeight() <= selectedTree.getHeight()){
-            return true;
+    public static void printCheck(Drone selectedDrone){
+        checkAndPrintIfLostDrone(selectedDrone);
+        boolean landedExecuted = landed(selectedDrone);
+        if (landedExecuted) {
+            shutDown(selectedDrone);
+            collision(selectedDrone);
         }
-        return false;
     }
 
     public static boolean landing(Drone selectedDrone) {
@@ -1241,6 +1241,11 @@ public class DroneBusinessObject {
         if (drone.isOnTree()) {
             System.out.println("Drone[" + drone.getLabel() + "] " + "Drone hit a tree");
             LoggerController.getInstance().print("Drone[" + drone.getLabel() + "] " + "Drone hit a tree");
+        }
+
+        if(drone.isOnHouse()){
+            System.out.println("Drone[" + drone.getLabel() + "] " + "Drone hit a house");
+            LoggerController.getInstance().print("Drone[" + drone.getLabel() + "] " + "Drone hit a house");
         }
 
         else {

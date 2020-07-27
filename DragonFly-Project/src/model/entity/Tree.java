@@ -135,23 +135,6 @@ public class Tree {
         notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
     }
 
-    public static double calculeteDistanceFrom(Tree selectedTree, Cell cell) {
-
-        int xInitial = (selectedTree.getColumnPosition() + 1) * 30,
-                xFinal = (cell.getColumnPosition() + 1) * 30,
-                yInitial = (selectedTree.getRowPosition() + 1) * 30,
-                yFinal = (cell.getRowPosition() + 1) * 30;
-
-        return Math.sqrt(((xFinal - xInitial) * (xFinal - xInitial)) + ((yFinal - yInitial) * (yFinal - yInitial)));
-
-    }
-
-    static synchronized public void updateDistanceSource(Tree selectedTree) {
-        Double distanceSource = calculeteDistanceFrom(selectedTree, selectedTree.getSourceCell());
-        // System.out.println("distanceHospitalSource"+ distanceHospitalSource);
-        selectedTree.setDistanceSource(distanceSource);
-    }
-
     public List<Listener> getListeners() {
         return listeners;
     }

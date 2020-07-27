@@ -1,6 +1,7 @@
 package controller;
 
 import javafx.scene.input.KeyEvent;
+import model.Cell;
 import model.entity.House;
 import view.CellView;
 import view.SelectableView;
@@ -31,11 +32,11 @@ public class HouseController {
 
         HouseView houseView  = new HouseView(uniqueID, labelHouse,currentCellView);
 
-
         houseViewMap.put(uniqueID, houseView);
 
+        Cell currentCell = CellController.getInstance().getCellFrom(currentCellView.getUniqueID());
 
-        House house = new House(uniqueID, labelHouse, currentCellView.getRowPosition(), currentCellView.getCollunmPosition());
+        House house = new House(uniqueID, labelHouse, currentCellView.getRowPosition(), currentCellView.getCollunmPosition(), currentCell);
 
         house.addListener(houseView);
 

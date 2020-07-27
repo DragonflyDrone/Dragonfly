@@ -1,14 +1,13 @@
 package model.entity.drone;
 
 
-
 import controller.CellController;
-import controller.TreeController;
 import javafx.scene.input.KeyCode;
 import model.Cell;
 import model.entity.Entity;
-import model.entity.Tree;
 import view.SelectableView;
+import view.hospital.HospitalView;
+import view.house.HouseView;
 import view.river.RiverView;
 import view.tree.TreeView;
 
@@ -610,8 +609,8 @@ public class Drone extends Entity {
         notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
     }
 
-    public boolean isOnWater(){ //************
-
+    // Retorna true ou false se ele esta em cima do rio
+    public boolean isOnWater(){
         if(onTopOfList.isEmpty()){
             return false;
         }
@@ -624,12 +623,8 @@ public class Drone extends Entity {
         return false;
     }
 
-    /**
-     * Retorna true ou false se ele esta em cima da arvore
-     * @return
-     */
-    public boolean isOnTree(){ //**************************************************************
-
+    // Retorna true ou false se ele esta em cima da árvore
+    public boolean isOnTree(){
         if(onTopOfList.isEmpty()){
             return false;
         }
@@ -638,7 +633,32 @@ public class Drone extends Entity {
                 return true;
             }
         }
+        return false;
+    }
 
+    // Retorna true ou false se ele esta em cima da casa
+    public boolean isOnHouse(){
+        if(onTopOfList.isEmpty()){
+            return false;
+        }
+        for(Object object :onTopOfList){
+            if(object instanceof HouseView){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    // Retorna true ou false se ele esta em cima do hospital
+    public boolean isOnHospital(){
+        if(onTopOfList.isEmpty()){
+            return false;
+        }
+        for(Object object :onTopOfList){
+            if(object instanceof HospitalView){
+                return true;
+            }
+        }
         return false;
     }
 

@@ -1,8 +1,6 @@
 package controller;
 
-import controller.settings_panel.BoatSettingsPanelController;
-import controller.settings_panel.DroneSettingsPanelController;
-import controller.settings_panel.TreeSettingsPanelController;
+import controller.settings_panel.*;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -393,22 +391,28 @@ public class MainController extends Application {
         } else if (hospitalToggleButton.isSelected()) {
             //todo posso fazer o tratamento p não se sobrepor o mesmo objeto
             environmentController.createHospital(selectedCellView);
+            DroneSettingsPanelController.getInstance().hide();
+            BoatSettingsPanelController.getInstance().hide();
+            HouseSettingsPanelController.getInstance().hide();
+            TreeSettingsPanelController.getInstance().hide();
+            HospitalSettingsPanelController.getInstance().show();
 
         } else if (antennaToggleButton.isSelected()) {
             //todo posso fazer o tratamento p não se sobrepor o mesmo objeto
             environmentController.createAntenna(selectedCellView);
-        } else if (droneToggleButton.isSelected()) {
 
+        } else if (droneToggleButton.isSelected()) {
             //add drone settings_panel
             environmentController.createDrone(selectedCellView);
             BoatSettingsPanelController.getInstance().hide();
             TreeSettingsPanelController.getInstance().hide();
+            HouseSettingsPanelController.getInstance().hide();
+            HospitalSettingsPanelController.getInstance().hide();
             DroneSettingsPanelController.getInstance().show();
 
             canCreateElements = false;
 
             droneToggleButton.setSelected(false);
-
 
 
         }else if(boatToggleButton.isSelected()){
@@ -417,18 +421,27 @@ public class MainController extends Application {
             canCreateElements = false;
             DroneSettingsPanelController.getInstance().hide();
             TreeSettingsPanelController.getInstance().hide();
+            HouseSettingsPanelController.getInstance().hide();
+            HospitalSettingsPanelController.getInstance().hide();
             BoatSettingsPanelController.getInstance().show();
 
 
             boatToggleButton.setSelected(false);
         }else if(houseToggleButton.isSelected()){
             environmentController.createHouse(selectedCellView);
+            DroneSettingsPanelController.getInstance().hide();
+            BoatSettingsPanelController.getInstance().hide();
+            TreeSettingsPanelController.getInstance().hide();
+            HospitalSettingsPanelController.getInstance().hide();
+            HouseSettingsPanelController.getInstance().show();
         }
         else if(treeToggleButton.isSelected()){
             //add tree settings_panel
             environmentController.createTree(selectedCellView);
             DroneSettingsPanelController.getInstance().hide();
             BoatSettingsPanelController.getInstance().hide();
+            HouseSettingsPanelController.getInstance().hide();
+            HospitalSettingsPanelController.getInstance().hide();
             TreeSettingsPanelController.getInstance().show();
 
         }
@@ -484,12 +497,10 @@ public class MainController extends Application {
         loggerController = LoggerController.getInstance();
 
         DroneSettingsPanelController.init(defaultPanelSettingsAnchorPane);
-
         BoatSettingsPanelController.init(defaultPanelSettingsAnchorPane);
-
         TreeSettingsPanelController.init(defaultPanelSettingsAnchorPane);
-
-
+        HouseSettingsPanelController.init(defaultPanelSettingsAnchorPane);
+        HospitalSettingsPanelController.init(defaultPanelSettingsAnchorPane);
     }
 
     public static MainController getInstance(){
@@ -512,6 +523,8 @@ public class MainController extends Application {
             DroneSettingsPanelController.getInstance().notifyMouseClick(currentSelectableView);
             BoatSettingsPanelController.getInstance().notifyMouseClick(currentSelectableView);
             TreeSettingsPanelController.getInstance().notifyMouseClick(currentSelectableView);
+            HouseSettingsPanelController.getInstance().notifyMouseClick(currentSelectableView);
+            HospitalSettingsPanelController.getInstance().notifyMouseClick(currentSelectableView);
 
             if(!isEmpty(defaultPanelSettingsAnchorPane))
                 canCreateElements = false;

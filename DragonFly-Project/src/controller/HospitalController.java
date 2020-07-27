@@ -1,6 +1,7 @@
 package controller;
 
 import javafx.scene.input.KeyEvent;
+import model.Cell;
 import model.entity.Hospital;
 import view.CellView;
 import view.SelectableView;
@@ -36,8 +37,9 @@ public class HospitalController {
 
         hospitalViewMap.put(uniqueID, hospitalView);
 
+        Cell currentCell = CellController.getInstance().getCellFrom(currentCellView.getUniqueID());
 
-        Hospital hospital = new Hospital(uniqueID, labelHospital, currentCellView.getRowPosition(), currentCellView.getCollunmPosition());
+        Hospital hospital = new Hospital(uniqueID, labelHospital, currentCellView.getRowPosition(), currentCellView.getCollunmPosition(), currentCell);
 
         hospital.addListener(hospitalView);
 

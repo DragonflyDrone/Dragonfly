@@ -336,7 +336,7 @@ public class DroneViewImpl extends DroneView {
         }
 
 
-        if ((methodName.equals("setCurrentPositionI") || methodName.equals("setCurrentPositionJ")) //**
+        if ((methodName.equals("setCurrentPositionI") || methodName.equals("setCurrentPositionJ"))
                 && ((Integer) oldValue).intValue() != ((Integer) newValue).intValue()) {
 
             updadePositionDroneView(drone);
