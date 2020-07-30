@@ -2,12 +2,11 @@ package model.entity;
 
 import controller.CellController;
 import model.Cell;
-import model.entity.drone.Drone;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Tree {
+public class Tree extends Entity{
     public static int COUNT_TREE = 1;
     private String uniqueID;
     int rowPosition, columnPosition;
@@ -88,18 +87,7 @@ public class Tree {
 
     public Double getHeight(){ return height; }
 
-    public void setHeight(Double height){
-        Double oldValue = this.height;
-        Double newValue = height;
-
-        if(oldValue == newValue){
-            return;
-        }
-
-        this.height = height;
-
-        notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
-    }
+    public void setHeight(Double height){ this.height = height; }
 
     public Cell getSourceCell() {
         return sourceCell;
@@ -134,6 +122,24 @@ public class Tree {
 
         notifiesListeners(Thread.currentThread().getStackTrace()[1].getMethodName(),oldValue, newValue);
     }
+
+    public static double calculeteDistanceFrom(Tree selectedTree, Cell cell) {
+
+        int xInitial = (selectedTree.getColumnPosition() + 1) * 30,
+                xFinal = (cell.getColumnPosition() + 1) * 30,
+                yInitial = (selectedTree.getRowPosition() + 1) * 30,
+                yFinal = (cell.getRowPosition() + 1) * 30;
+
+        return Math.sqrt(((xFinal - xInitial) * (xFinal - xInitial)) + ((yFinal - yInitial) * (yFinal - yInitial)));
+
+    }
+
+    static synchronized public void updateDistanceSource(Tree selectedTree) {
+        Double distanceSource = calculeteDistanceFrom(selectedTree, selectedTree.getSourceCell());
+        // System.out.println("distanceHospitalSource"+ distanceHospitalSource);
+        selectedTree.setDistanceSource(distanceSource);
+    }
+
 
     public List<Listener> getListeners() {
         return listeners;

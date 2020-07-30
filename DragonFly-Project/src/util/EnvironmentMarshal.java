@@ -64,6 +64,7 @@ abstract public class EnvironmentMarshal {
             hospitalElement.setAttribute(ConstantXml.LABEL_ATTRIBUTE, hospital.getLabel());
             hospitalElement.setAttribute(ConstantXml.SOURCE_COLUMN_POSITION_ATTRIBUTE, String.valueOf(hospital.getColumnPosition()));
             hospitalElement.setAttribute(ConstantXml.SOURCE_ROW_POSITION_ATTRIBUTE, String.valueOf(hospital.getRowPosition()));
+            hospitalElement.setAttribute(ConstantXml.HEIGHT_ATTRIBUTE, String.valueOf(hospital.getHeight()));
 
             hospitalElements.appendChild(hospitalElement);
 
@@ -81,12 +82,13 @@ abstract public class EnvironmentMarshal {
             houseElement.setAttribute(ConstantXml.LABEL_ATTRIBUTE, house.getLabel());
             houseElement.setAttribute(ConstantXml.SOURCE_COLUMN_POSITION_ATTRIBUTE, String.valueOf(house.getColumnPosition()));
             houseElement.setAttribute(ConstantXml.SOURCE_ROW_POSITION_ATTRIBUTE, String.valueOf(house.getRowPosition()));
+            houseElement.setAttribute(ConstantXml.HEIGHT_ATTRIBUTE, String.valueOf(house.getHeight()));
 
             houseElements.appendChild(houseElement);
 
         }
 
-        //HOUSE
+        //TREE
         Element treeElements = document.createElement(ConstantXml.ROOT_TREE_ELEMENT);
         environmentElements.appendChild(treeElements);
 
@@ -96,6 +98,8 @@ abstract public class EnvironmentMarshal {
 
             treeElement.setAttribute(ConstantXml.UNIQUE_ID_ATTRIBUTE,tree.getUniqueID());
             treeElement.setAttribute(ConstantXml.LABEL_ATTRIBUTE, tree.getLabel());
+            treeElement.setAttribute(ConstantXml.HEIGHT_ATTRIBUTE, String.valueOf(tree.getHeight()));
+
             treeElement.setAttribute(ConstantXml.SOURCE_COLUMN_POSITION_ATTRIBUTE, String.valueOf(tree.getColumnPosition()));
             treeElement.setAttribute(ConstantXml.SOURCE_ROW_POSITION_ATTRIBUTE, String.valueOf(tree.getRowPosition()));
 
@@ -239,12 +243,14 @@ abstract public class EnvironmentMarshal {
             String label = hospitalNode.getAttributes().getNamedItem(ConstantXml.LABEL_ATTRIBUTE).getNodeValue();
             int columnPosition = Integer.parseInt(hospitalNode.getAttributes().getNamedItem(ConstantXml.SOURCE_COLUMN_POSITION_ATTRIBUTE).getNodeValue());
             int rowPosition = Integer.parseInt(hospitalNode.getAttributes().getNamedItem(ConstantXml.SOURCE_ROW_POSITION_ATTRIBUTE).getNodeValue());
+            double height = Double.parseDouble(hospitalNode.getAttributes().getNamedItem(ConstantXml.HEIGHT_ATTRIBUTE).getNodeValue());
 
             CellController cellController = CellController.getInstance();
             CellView cellView = cellController.getCellViewFrom(rowPosition,columnPosition);
 
 
-            HospitalController.getInstance().createHospital(uniqueID, label, cellView);
+            Hospital hospital = HospitalController.getInstance().createHospital(uniqueID, label, cellView);
+            hospital.setHeight(height);
         }
 
         //HOUSE
@@ -262,12 +268,14 @@ abstract public class EnvironmentMarshal {
             String label = houseNode.getAttributes().getNamedItem(ConstantXml.LABEL_ATTRIBUTE).getNodeValue();
             int columnPosition = Integer.parseInt(houseNode.getAttributes().getNamedItem(ConstantXml.SOURCE_COLUMN_POSITION_ATTRIBUTE).getNodeValue());
             int rowPosition = Integer.parseInt(houseNode.getAttributes().getNamedItem(ConstantXml.SOURCE_ROW_POSITION_ATTRIBUTE).getNodeValue());
+            double height = Double.parseDouble(houseNode.getAttributes().getNamedItem(ConstantXml.HEIGHT_ATTRIBUTE).getNodeValue());
 
             CellController cellController = CellController.getInstance();
             CellView cellView = cellController.getCellViewFrom(rowPosition,columnPosition);
 
 
-            HouseController.getInstance().createHouse(uniqueID, label, cellView);
+            House house = HouseController.getInstance().createHouse(uniqueID, label, cellView);
+            house.setHeight(height);
         }
 
         //TREE
@@ -285,12 +293,16 @@ abstract public class EnvironmentMarshal {
             String label = treeNode.getAttributes().getNamedItem(ConstantXml.LABEL_ATTRIBUTE).getNodeValue();
             int columnPosition = Integer.parseInt(treeNode.getAttributes().getNamedItem(ConstantXml.SOURCE_COLUMN_POSITION_ATTRIBUTE).getNodeValue());
             int rowPosition = Integer.parseInt(treeNode.getAttributes().getNamedItem(ConstantXml.SOURCE_ROW_POSITION_ATTRIBUTE).getNodeValue());
+            double height = Double.parseDouble(treeNode.getAttributes().getNamedItem(ConstantXml.HEIGHT_ATTRIBUTE).getNodeValue());
+
 
             CellController cellController = CellController.getInstance();
             CellView cellView = cellController.getCellViewFrom(rowPosition,columnPosition);
 
 
-            TreeController.getInstance().createTree(uniqueID, label, cellView);
+            Tree tree = TreeController.getInstance().createTree(uniqueID, label, cellView);
+            tree.setHeight(height);
+            Tree.updateDistanceSource(tree);
         }
 
 
@@ -376,6 +388,7 @@ abstract public class EnvironmentMarshal {
             drone.setBatteryPerSecond(batteryConsumptionPerSeconds);
             drone.setInitialBattery(initialBattery);
             drone.setCurrentBattery(initialBattery);
+            drone.setHeight(height);
             drone.setWrapperId(wrapperId);
 
         }

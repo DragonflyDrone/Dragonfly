@@ -6,7 +6,7 @@ import model.Cell;
 import java.util.ArrayList;
 import java.util.List;
 
-public class House {
+public class House extends Entity{
     public static int COUNT_HOUSE = 1;
     private String uniqueID;
     int rowPosition, columnPosition;

@@ -266,7 +266,7 @@ public class DroneBusinessObject {
         }
 
 
-        if(selectedDrone.isOnTree() || selectedDrone.isOnHouse() || selectedDrone.isOnHospital()){ //*********
+        if(selectedDrone.isOnTree() || selectedDrone.isOnHouse() || selectedDrone.isOnHospital() || selectedDrone.isOnDrone()){ //*********
 
             for(Object object : selectedDrone.getOnTopOfList()){
                 if(object instanceof TreeView){
@@ -304,6 +304,30 @@ public class DroneBusinessObject {
                     }else{
                         System.out.println("Overfly");
                         LoggerController.getInstance().print("Drone[" + selectedDrone.getLabel() + "] " + "Overfly");
+                    }
+
+                }
+                
+                if(object instanceof DroneViewImpl){
+                    DroneViewImpl droneViewImpl = (DroneViewImpl) object;
+                    Drone selectOtherDrone = DroneController.getInstance().getDroneFrom(droneViewImpl.getUniqueID());
+
+                    if(selectOtherDrone.getUniqueID().equals(selectedDrone.getUniqueID())){ continue; }
+
+                    if(selectedDrone.getHeight().equals(selectOtherDrone.getHeight())){
+                        printCheck(selectedDrone);
+                    }else if(selectedDrone.getHeight() >= selectOtherDrone.getHeight()){
+                        System.out.println("Drone[" + selectedDrone.getLabel() + "] " + "Overfly Drone[" + selectOtherDrone.getLabel() + "] ");
+                        LoggerController.getInstance().print("Drone[" + selectedDrone.getLabel() + "] " + "Overfly Drone[" + selectOtherDrone.getLabel() + "] ");
+
+                    }
+
+                    if(selectOtherDrone.getHeight().equals(selectedDrone.getHeight())){
+                        printCheck(selectOtherDrone);
+                    }else if(selectOtherDrone.getHeight() >= selectedDrone.getHeight()){
+                        System.out.println("Drone[" + selectOtherDrone.getLabel() + "] " + "Overfly Drone[" + selectedDrone.getLabel() + "] ");
+                        LoggerController.getInstance().print("Drone[" + selectOtherDrone.getLabel() + "] " + "Overfly Drone[" + selectedDrone.getLabel() + "] ");
+
                     }
 
                 }
@@ -396,8 +420,7 @@ public class DroneBusinessObject {
 
     public static void printCheck(Drone selectedDrone){
         checkAndPrintIfLostDrone(selectedDrone);
-        boolean landedExecuted = landed(selectedDrone);
-        if (landedExecuted) {
+        if (landed(selectedDrone)) {
             shutDown(selectedDrone);
             collision(selectedDrone);
         }
@@ -1246,6 +1269,16 @@ public class DroneBusinessObject {
         if(drone.isOnHouse()){
             System.out.println("Drone[" + drone.getLabel() + "] " + "Drone hit a house");
             LoggerController.getInstance().print("Drone[" + drone.getLabel() + "] " + "Drone hit a house");
+        }
+
+        if(drone.isOnHospital()){
+            System.out.println("Drone[" + drone.getLabel() + "] " + "Drone hit a hospital");
+            LoggerController.getInstance().print("Drone[" + drone.getLabel() + "] " + "Drone hit a hospital");
+        }
+
+        if(drone.isOnDrone()){
+            System.out.println("Drone[" + drone.getLabel() + "] " + "Drone hit another drone");
+            LoggerController.getInstance().print("Drone[" + drone.getLabel() + "] " + "Drone hit another drone");
         }
 
         else {

@@ -6,6 +6,7 @@ import javafx.scene.input.KeyCode;
 import model.Cell;
 import model.entity.Entity;
 import view.SelectableView;
+import view.drone.DroneViewImpl;
 import view.hospital.HospitalView;
 import view.house.HouseView;
 import view.river.RiverView;
@@ -656,6 +657,19 @@ public class Drone extends Entity {
         }
         for(Object object :onTopOfList){
             if(object instanceof HospitalView){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    // Retorna true ou false se ele esta em cima do drone
+    public boolean isOnDrone(){
+        if(onTopOfList.isEmpty()){
+            return false;
+        }
+        for(Object object :onTopOfList){
+            if(object instanceof DroneViewImpl){
                 return true;
             }
         }

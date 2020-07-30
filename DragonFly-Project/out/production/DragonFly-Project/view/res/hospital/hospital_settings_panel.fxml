@@ -6,7 +6,7 @@
 <AnchorPane fx:id="hospitalSettingsPanelAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="272.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
     <children>
 
-        <Label fx:id="currentTreeLabel" disable="true" layoutX="110.0" layoutY="11.0" text="Current Tree (ID):" />
+        <Label fx:id="currentTreeLabel" disable="true" layoutX="110.0" layoutY="11.0" text="Current Hospital (ID):" />
         <TextField fx:id="currentTreeTextField" disable="true" layoutX="274.0" layoutY="5.0" prefHeight="26.0" prefWidth="58.0" text="0" />
 
         <Label fx:id="heightLabel" disable="true" layoutX="110.0" layoutY="45.0" text="Height:" />

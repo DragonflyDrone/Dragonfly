@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<EnvironmentElements>
+<riverElements/>
+<hospitalElements/>
+<houseElements/>
+<treeElements/>
+<antennaElements/>
+<droneElements>
+<droneElement UniqueID="5a524d83-4660-438d-809a-85f78a367168" baterryConsumptionPerBlock="1.0" destinyColumnPosition="11" destinyRowPosition="8" height="5.0" initialBaterry="100.0" label="1" sourceColumnPosition="7" sourceRowPosition="8" wrapperId="0"/>
+<droneElement UniqueID="361338a8-553d-4124-b9cb-762f3898cbd8" baterryConsumptionPerBlock="1.0" destinyColumnPosition="9" destinyRowPosition="10" height="5.0" initialBaterry="100.0" label="2" sourceColumnPosition="9" sourceRowPosition="6" wrapperId="0"/>
+</droneElements>
+<boatElements/>
+</EnvironmentElements>
