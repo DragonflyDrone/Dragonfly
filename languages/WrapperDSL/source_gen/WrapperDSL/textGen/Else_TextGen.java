@@ -17,13 +17,13 @@ public class Else_TextGen extends TextGenDescriptorBase {
     tgs.append("else");
     tgs.append("{");
     tgs.newLine();
-    for (SNode item : SLinkOperations.getChildren(ctx.getPrimaryInput(), LINKS.body$uTQZ)) {
+    for (SNode item : SLinkOperations.getChildren(ctx.getPrimaryInput(), LINKS.body$ilKT)) {
       tgs.appendNode(item);
     }
     tgs.append("}");
   }
 
   private static final class LINKS {
-    /*package*/ static final SContainmentLink body$uTQZ = MetaAdapterFactory.getContainmentLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x21327745460a73e5L, 0x21327745460a73e7L, "body");
+    /*package*/ static final SContainmentLink body$ilKT = MetaAdapterFactory.getContainmentLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x21327745460a73e5L, 0x21327745460a73e7L, "body");
   }
 }

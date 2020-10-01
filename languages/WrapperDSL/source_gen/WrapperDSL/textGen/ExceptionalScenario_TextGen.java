@@ -44,7 +44,7 @@ public class ExceptionalScenario_TextGen extends TextGenDescriptorBase {
 
     tgs.pushTextArea("HEADER");
     tgs.append("public aspect ");
-    tgs.append(SPropertyOperations.getString(ctx.getPrimaryInput(), PROPS.name$tAp1));
+    tgs.append(SPropertyOperations.getString(ctx.getPrimaryInput(), PROPS.name$MnvL));
     tgs.append("{\n");
     tgs.popTextArea();
     tgs.pushTextArea("HEADER");
@@ -52,24 +52,24 @@ public class ExceptionalScenario_TextGen extends TextGenDescriptorBase {
     tgs.newLine();
     tgs.popTextArea();
     tgs.pushTextArea("pointcut");
-    transformationOperations.whenToPointcut(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.when$Bwg0), ctx);
+    transformationOperations.whenToPointcut(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.when$sVSo), ctx);
     tgs.append("\n");
     tgs.popTextArea();
     tgs.pushTextArea("conditionalAdvice");
-    transformationOperations.whenAndThenToContitionalPointCutCall(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.when$Bwg0), SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.then$BwrC), ctx);
+    transformationOperations.whenAndThenToContitionalPointCutCall(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.when$sVSo), SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.then$t1wK), ctx);
     tgs.popTextArea();
     tgs.pushTextArea("conditionalAdvice");
-    tgs.appendNode(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.given$Bwf2));
+    tgs.appendNode(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.given$sVqm));
     tgs.append("\n");
     tgs.popTextArea();
     tgs.pushTextArea("advice");
     tgs.append("{\n");
     tgs.popTextArea();
     tgs.pushTextArea("advice");
-    tgs.appendNode(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.then$BwrC), LINKS.adaptiveBehavior$1YwA), LINKS.adaptationScriptName$XPix));
+    tgs.appendNode(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.then$t1wK), LINKS.adaptiveBehavior$h_UM), LINKS.adaptationScriptName$h86n));
     tgs.append("(thisJoinPoint);\n");
     tgs.popTextArea();
-    if (SPropertyOperations.getEnum(SLinkOperations.getTarget(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.then$BwrC), LINKS.adaptiveBehavior$1YwA), PROPS.typeOfAdaptation$XP5s) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045b44a3L, "WrapperDSL.structure.TypeOfAdaptationEnum"), 0x53be3ecc045b44a5L, "around")) {
+    if (SPropertyOperations.getEnum(SLinkOperations.getTarget(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.then$t1wK), LINKS.adaptiveBehavior$h_UM), PROPS.typeOfAdaptation$h1KW) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045b44a3L, "WrapperDSL.structure.TypeOfAdaptationEnum"), 0x53be3ecc045b44a5L, "around")) {
       tgs.pushTextArea("advice");
       tgs.append("return false;");
       tgs.newLine();
@@ -81,7 +81,7 @@ public class ExceptionalScenario_TextGen extends TextGenDescriptorBase {
 
     tgs.pushTextArea("methodAdvice");
     tgs.append("public void ");
-    tgs.appendNode(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.then$BwrC), LINKS.adaptiveBehavior$1YwA), LINKS.adaptationScriptName$XPix));
+    tgs.appendNode(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.then$t1wK), LINKS.adaptiveBehavior$h_UM), LINKS.adaptationScriptName$h86n));
     tgs.append("(JoinPoint thisJoinPoint)");
     tgs.newLine();
     tgs.popTextArea();
@@ -99,7 +99,7 @@ public class ExceptionalScenario_TextGen extends TextGenDescriptorBase {
     tgs.newLine();
     tgs.popTextArea();
     tgs.pushTextArea("methodAdvice");
-    for (SNode item : SLinkOperations.getChildren(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.then$BwrC), LINKS.adaptiveBehavior$1YwA), LINKS.adaptationScript$Y1Gq), LINKS.body$BmMw)) {
+    for (SNode item : SLinkOperations.getChildren(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.then$t1wK), LINKS.adaptiveBehavior$h_UM), LINKS.adaptationScript$n8CY), LINKS.body$om_S)) {
       tgs.appendNode(item);
     }
     tgs.popTextArea();
@@ -113,17 +113,17 @@ public class ExceptionalScenario_TextGen extends TextGenDescriptorBase {
   }
 
   private static final class PROPS {
-    /*package*/ static final SProperty name$tAp1 = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
-    /*package*/ static final SProperty typeOfAdaptation$XP5s = MetaAdapterFactory.getProperty(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x4cdb8f81da5c7de7L, 0x4cdb8f81da5c7decL, "typeOfAdaptation");
+    /*package*/ static final SProperty name$MnvL = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
+    /*package*/ static final SProperty typeOfAdaptation$h1KW = MetaAdapterFactory.getProperty(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x4cdb8f81da5c7de7L, 0x4cdb8f81da5c7decL, "typeOfAdaptation");
   }
 
   private static final class LINKS {
-    /*package*/ static final SContainmentLink when$Bwg0 = MetaAdapterFactory.getContainmentLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bc3L, 0x53be3ecc045a8bcfL, "when");
-    /*package*/ static final SContainmentLink then$BwrC = MetaAdapterFactory.getContainmentLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bc3L, 0x53be3ecc045a8bd2L, "then");
-    /*package*/ static final SContainmentLink given$Bwf2 = MetaAdapterFactory.getContainmentLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bc3L, 0x53be3ecc045a8bcdL, "given");
-    /*package*/ static final SContainmentLink adaptiveBehavior$1YwA = MetaAdapterFactory.getContainmentLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bccL, 0x53be3ecc045b45a9L, "adaptiveBehavior");
-    /*package*/ static final SReferenceLink adaptationScriptName$XPix = MetaAdapterFactory.getReferenceLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x4cdb8f81da5c7de7L, 0x4cdb8f81da5c7df2L, "adaptationScriptName");
-    /*package*/ static final SContainmentLink adaptationScript$Y1Gq = MetaAdapterFactory.getContainmentLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x4cdb8f81da5c7de7L, 0x4cdb8f81da5c7e5cL, "adaptationScript");
-    /*package*/ static final SContainmentLink body$BmMw = MetaAdapterFactory.getContainmentLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc046e0b54L, 0x53be3ecc0480a64aL, "body");
+    /*package*/ static final SContainmentLink when$sVSo = MetaAdapterFactory.getContainmentLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bc3L, 0x53be3ecc045a8bcfL, "when");
+    /*package*/ static final SContainmentLink then$t1wK = MetaAdapterFactory.getContainmentLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bc3L, 0x53be3ecc045a8bd2L, "then");
+    /*package*/ static final SContainmentLink given$sVqm = MetaAdapterFactory.getContainmentLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bc3L, 0x53be3ecc045a8bcdL, "given");
+    /*package*/ static final SContainmentLink adaptiveBehavior$h_UM = MetaAdapterFactory.getContainmentLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bccL, 0x53be3ecc045b45a9L, "adaptiveBehavior");
+    /*package*/ static final SReferenceLink adaptationScriptName$h86n = MetaAdapterFactory.getReferenceLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x4cdb8f81da5c7de7L, 0x4cdb8f81da5c7df2L, "adaptationScriptName");
+    /*package*/ static final SContainmentLink adaptationScript$n8CY = MetaAdapterFactory.getContainmentLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x4cdb8f81da5c7de7L, 0x4cdb8f81da5c7e5cL, "adaptationScript");
+    /*package*/ static final SContainmentLink body$om_S = MetaAdapterFactory.getContainmentLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc046e0b54L, 0x53be3ecc0480a64aL, "body");
   }
 }

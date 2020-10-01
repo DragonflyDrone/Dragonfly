@@ -57,7 +57,7 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
   @Override
   public void breakdownToUnits(@NotNull TextGenModelOutline outline) {
     for (SNode root : outline.getModel().getRootNodes()) {
-      if (root.getConcept().equals(CONCEPTS.ExceptionalScenario$v)) {
+      if (root.getConcept().equals(CONCEPTS.ExceptionalScenario$8R)) {
         String fname = getFileName_ExceptionalScenario(root);
         String ext = getFileExtension_ExceptionalScenario(root);
         outline.registerTextUnit(createTextUnit0((ext == null ? fname : (fname + '.' + ext)), root));
@@ -66,7 +66,7 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
     }
   }
   private static String getFileName_ExceptionalScenario(SNode node) {
-    return SPropertyOperations.getString(node, PROPS.name$tAp1);
+    return SPropertyOperations.getString(node, PROPS.name$MnvL);
   }
   private static String getFileExtension_ExceptionalScenario(SNode node) {
     return "aj";
@@ -88,10 +88,10 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
   }
 
   private static final class CONCEPTS {
-    /*package*/ static final SConcept ExceptionalScenario$v = MetaAdapterFactory.getConcept(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bc3L, "WrapperDSL.structure.ExceptionalScenario");
+    /*package*/ static final SConcept ExceptionalScenario$8R = MetaAdapterFactory.getConcept(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bc3L, "WrapperDSL.structure.ExceptionalScenario");
   }
 
   private static final class PROPS {
-    /*package*/ static final SProperty name$tAp1 = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
+    /*package*/ static final SProperty name$MnvL = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
   }
 }

@@ -59,7 +59,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     return editorCell;
   }
   private EditorCell createRefNode_0() {
-    SingleRoleCellProvider provider = new altitudeSingleRoleHandler_rq45u5_b0(myNode, LINKS.altitude$YVN7, getEditorContext());
+    SingleRoleCellProvider provider = new altitudeSingleRoleHandler_rq45u5_b0(myNode, LINKS.altitude$NhSL, getEditorContext());
     return provider.createCell();
   }
   private static class altitudeSingleRoleHandler_rq45u5_b0 extends SingleRoleCellProvider {
@@ -79,8 +79,8 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = getUpdateSession().updateChildNodeCell(child);
-      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(getNode(), LINKS.altitude$YVN7, child));
-      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(getNode(), LINKS.altitude$YVN7, child));
+      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(getNode(), LINKS.altitude$NhSL, child));
+      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(getNode(), LINKS.altitude$NhSL, child));
       installCellInfo(child, editorCell, false);
       return editorCell;
     }
@@ -92,13 +92,13 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
         editorCell.setSubstituteInfo((isEmpty ? new SEmptyContainmentSubstituteInfo(editorCell) : new SChildSubstituteInfo(editorCell)));
       }
       if (editorCell.getSRole() == null) {
-        editorCell.setSRole(LINKS.altitude$YVN7);
+        editorCell.setSRole(LINKS.altitude$NhSL);
       }
     }
     @Override
     protected EditorCell createEmptyCell() {
       getCellFactory().pushCellContext();
-      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(getNode(), LINKS.altitude$YVN7));
+      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(getNode(), LINKS.altitude$NhSL));
       try {
         EditorCell editorCell = super.createEmptyCell();
         editorCell.setCellId("empty_altitude");
@@ -120,7 +120,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     return editorCell;
   }
   private EditorCell createRefNode_1() {
-    SingleRoleCellProvider provider = new longitudeSingleRoleHandler_rq45u5_d0(myNode, LINKS.longitude$YVLE, getEditorContext());
+    SingleRoleCellProvider provider = new longitudeSingleRoleHandler_rq45u5_d0(myNode, LINKS.longitude$NhbI, getEditorContext());
     return provider.createCell();
   }
   private static class longitudeSingleRoleHandler_rq45u5_d0 extends SingleRoleCellProvider {
@@ -140,8 +140,8 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = getUpdateSession().updateChildNodeCell(child);
-      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(getNode(), LINKS.longitude$YVLE, child));
-      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(getNode(), LINKS.longitude$YVLE, child));
+      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(getNode(), LINKS.longitude$NhbI, child));
+      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(getNode(), LINKS.longitude$NhbI, child));
       installCellInfo(child, editorCell, false);
       return editorCell;
     }
@@ -153,13 +153,13 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
         editorCell.setSubstituteInfo((isEmpty ? new SEmptyContainmentSubstituteInfo(editorCell) : new SChildSubstituteInfo(editorCell)));
       }
       if (editorCell.getSRole() == null) {
-        editorCell.setSRole(LINKS.longitude$YVLE);
+        editorCell.setSRole(LINKS.longitude$NhbI);
       }
     }
     @Override
     protected EditorCell createEmptyCell() {
       getCellFactory().pushCellContext();
-      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(getNode(), LINKS.longitude$YVLE));
+      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(getNode(), LINKS.longitude$NhbI));
       try {
         EditorCell editorCell = super.createEmptyCell();
         editorCell.setCellId("empty_longitude");
@@ -181,7 +181,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     return editorCell;
   }
   private EditorCell createRefNode_2() {
-    SingleRoleCellProvider provider = new altitudeSingleRoleHandler_rq45u5_f0(myNode, LINKS.altitude$YVN7, getEditorContext());
+    SingleRoleCellProvider provider = new altitudeSingleRoleHandler_rq45u5_f0(myNode, LINKS.altitude$NhSL, getEditorContext());
     return provider.createCell();
   }
   private static class altitudeSingleRoleHandler_rq45u5_f0 extends SingleRoleCellProvider {
@@ -201,8 +201,8 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = getUpdateSession().updateChildNodeCell(child);
-      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(getNode(), LINKS.altitude$YVN7, child));
-      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(getNode(), LINKS.altitude$YVN7, child));
+      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(getNode(), LINKS.altitude$NhSL, child));
+      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(getNode(), LINKS.altitude$NhSL, child));
       installCellInfo(child, editorCell, false);
       return editorCell;
     }
@@ -214,13 +214,13 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
         editorCell.setSubstituteInfo((isEmpty ? new SEmptyContainmentSubstituteInfo(editorCell) : new SChildSubstituteInfo(editorCell)));
       }
       if (editorCell.getSRole() == null) {
-        editorCell.setSRole(LINKS.altitude$YVN7);
+        editorCell.setSRole(LINKS.altitude$NhSL);
       }
     }
     @Override
     protected EditorCell createEmptyCell() {
       getCellFactory().pushCellContext();
-      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(getNode(), LINKS.altitude$YVN7));
+      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(getNode(), LINKS.altitude$NhSL));
       try {
         EditorCell editorCell = super.createEmptyCell();
         editorCell.setCellId("empty_altitude");
@@ -237,7 +237,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
   }
 
   private static final class LINKS {
-    /*package*/ static final SContainmentLink altitude$YVN7 = MetaAdapterFactory.getContainmentLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x11de48ed5d7ee2dbL, 0x11de48ed5d7ee2f6L, "altitude");
-    /*package*/ static final SContainmentLink longitude$YVLE = MetaAdapterFactory.getContainmentLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x11de48ed5d7ee2dbL, 0x11de48ed5d7ee2f3L, "longitude");
+    /*package*/ static final SContainmentLink altitude$NhSL = MetaAdapterFactory.getContainmentLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x11de48ed5d7ee2dbL, 0x11de48ed5d7ee2f6L, "altitude");
+    /*package*/ static final SContainmentLink longitude$NhbI = MetaAdapterFactory.getContainmentLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x11de48ed5d7ee2dbL, 0x11de48ed5d7ee2f3L, "longitude");
   }
 }

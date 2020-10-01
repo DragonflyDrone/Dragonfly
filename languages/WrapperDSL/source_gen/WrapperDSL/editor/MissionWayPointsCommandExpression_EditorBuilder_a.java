@@ -78,10 +78,10 @@ import org.jetbrains.mps.openapi.language.SConcept;
       return myNode;
     }
     public SContainmentLink getSLink() {
-      return LINKS.waypoints$z_PD;
+      return LINKS.waypoints$zD7f;
     }
     public SAbstractConcept getChildSConcept() {
-      return CONCEPTS.Point$9j;
+      return CONCEPTS.Point$hF;
     }
 
     public EditorCell createNodeCell(SNode elementNode) {
@@ -91,7 +91,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     }
     public EditorCell createEmptyCell() {
       getCellFactory().pushCellContext();
-      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(waypointsListHandler_gfusbr_b0.this.getNode(), LINKS.waypoints$z_PD));
+      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(waypointsListHandler_gfusbr_b0.this.getNode(), LINKS.waypoints$zD7f));
       try {
         EditorCell emptyCell = null;
         emptyCell = super.createEmptyCell();
@@ -133,10 +133,10 @@ import org.jetbrains.mps.openapi.language.SConcept;
   }
 
   private static final class LINKS {
-    /*package*/ static final SContainmentLink waypoints$z_PD = MetaAdapterFactory.getContainmentLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x802ab50185ec9cdL, 0x7fd8262c20261170L, "waypoints");
+    /*package*/ static final SContainmentLink waypoints$zD7f = MetaAdapterFactory.getContainmentLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x802ab50185ec9cdL, 0x7fd8262c20261170L, "waypoints");
   }
 
   private static final class CONCEPTS {
-    /*package*/ static final SConcept Point$9j = MetaAdapterFactory.getConcept(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x341ddc0f5796cfe9L, "WrapperDSL.structure.Point");
+    /*package*/ static final SConcept Point$hF = MetaAdapterFactory.getConcept(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x341ddc0f5796cfe9L, "WrapperDSL.structure.Point");
   }
 }

@@ -16,7 +16,7 @@ public class While_TextGen extends TextGenDescriptorBase {
     final TextGenSupport tgs = new TextGenSupport(ctx);
     tgs.append("        new StopWatch(0,1000) {\n            @Override\n            public void task() {\n                Platform.runLater(() -> {");
     tgs.newLine();
-    for (SNode item : SLinkOperations.getChildren(ctx.getPrimaryInput(), LINKS.body$jsq5)) {
+    for (SNode item : SLinkOperations.getChildren(ctx.getPrimaryInput(), LINKS.body$J4KN)) {
       tgs.appendNode(item);
     }
     tgs.newLine();
@@ -27,7 +27,7 @@ public class While_TextGen extends TextGenDescriptorBase {
     tgs.newLine();
     tgs.append("return ");
     tgs.append("!(");
-    tgs.appendNode(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.condition$jseW));
+    tgs.appendNode(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.condition$IZns));
     tgs.append(")");
     tgs.append(";");
     tgs.append("}");
@@ -37,7 +37,7 @@ public class While_TextGen extends TextGenDescriptorBase {
   }
 
   private static final class LINKS {
-    /*package*/ static final SContainmentLink body$jsq5 = MetaAdapterFactory.getContainmentLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045b45acL, 0x53be3ecc045b45d4L, "body");
-    /*package*/ static final SContainmentLink condition$jseW = MetaAdapterFactory.getContainmentLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045b45acL, 0x53be3ecc045b45d2L, "condition");
+    /*package*/ static final SContainmentLink body$J4KN = MetaAdapterFactory.getContainmentLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045b45acL, 0x53be3ecc045b45d4L, "body");
+    /*package*/ static final SContainmentLink condition$IZns = MetaAdapterFactory.getContainmentLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045b45acL, 0x53be3ecc045b45d2L, "condition");
   }
 }

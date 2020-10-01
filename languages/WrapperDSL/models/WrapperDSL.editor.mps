@@ -44,7 +44,7 @@
       </concept>
       <concept id="1088185857835" name="jetbrains.mps.lang.editor.structure.InlineEditorComponent" flags="ig" index="1sVBvm" />
       <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="ng" index="1$h60E">
-        <property id="1140017977771" name="readOnly" index="1Intyy" />
+        <property id="1139852716018" name="noTargetText" index="1$x2rV" />
         <reference id="1140103550593" name="relationDeclaration" index="1NtTu8" />
       </concept>
       <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" stub="3013115976261988961" index="3EZMnI">
@@ -137,6 +137,7 @@
       </node>
       <node concept="l2Vlx" id="5eYfGK4mZ_2" role="2iSdaV" />
       <node concept="3F1sOY" id="7_KOYEjeZ7B" role="3EZMnx">
+        <property role="1$x2rV" value="teste" />
         <ref role="1NtTu8" to="lpas:5eYfGK4mOkU" resolve="expression" />
       </node>
     </node>
@@ -151,6 +152,7 @@
         </node>
       </node>
       <node concept="3F0A7n" id="5eYfGK4n5rf" role="3EZMnx">
+        <property role="1$x2rV" value="&lt;no exceptional scenario name&gt;" />
         <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
       </node>
       <node concept="3EZMnI" id="5eYfGK4ncyA" role="3EZMnx">
@@ -223,6 +225,7 @@
     <ref role="1XX52x" to="lpas:5eYfGK4rwHk" resolve="AdaptationScript" />
     <node concept="3EZMnI" id="4NrzS7qoG_R" role="2wV5jI">
       <node concept="3F0A7n" id="4NrzS7qoGA1" role="3EZMnx">
+        <property role="1$x2rV" value="&lt;no adaptation script name&gt;" />
         <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
         <node concept="VechU" id="4XSQxjp8Hg8" role="3F10Kt">
           <property role="Vb096" value="g1_qRwE/darkGreen" />
@@ -257,6 +260,7 @@
           <property role="3F0ifm" value="execute" />
         </node>
         <node concept="3F0A7n" id="4NrzS7qn7T6" role="3EZMnx">
+          <property role="1$x2rV" value="&lt;no type of adaptation&gt;" />
           <ref role="1NtTu8" to="lpas:4NrzS7qn7RG" resolve="typeOfAdaptation" />
           <node concept="VechU" id="4XSQxjp81K1" role="3F10Kt">
             <property role="Vb096" value="fLwANPp/orange" />
@@ -264,15 +268,13 @@
               <property role="1iTho6" value="d9a414" />
             </node>
           </node>
-          <node concept="Vb9p2" id="4XSQxjp84I1" role="3F10Kt">
-            <property role="Vbekb" value="g1_k_vY/BOLD" />
-          </node>
         </node>
         <node concept="1iCGBv" id="4NrzS7qn7Te" role="3EZMnx">
+          <property role="1$x2rV" value="&lt;no reference to adaptation script&gt;" />
           <ref role="1NtTu8" to="lpas:4NrzS7qn7RM" resolve="adaptationScriptName" />
           <node concept="1sVBvm" id="4NrzS7qn7Tg" role="1sWHZn">
             <node concept="3F0A7n" id="4NrzS7qn7Tp" role="2wV5jI">
-              <property role="1Intyy" value="true" />
+              <property role="1$x2rV" value="&lt;no adaptation script name&gt;" />
               <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
               <node concept="VechU" id="4XSQxjp9luo" role="3F10Kt">
                 <property role="Vb096" value="g1_qRwE/darkGreen" />

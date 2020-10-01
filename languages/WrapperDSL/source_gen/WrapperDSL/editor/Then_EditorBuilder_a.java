@@ -63,7 +63,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     return editorCell;
   }
   private EditorCell createRefNode_0() {
-    SingleRoleCellProvider provider = new adaptiveBehaviorSingleRoleHandler_c525ev_b0(myNode, LINKS.adaptiveBehavior$1YwA, getEditorContext());
+    SingleRoleCellProvider provider = new adaptiveBehaviorSingleRoleHandler_c525ev_b0(myNode, LINKS.adaptiveBehavior$h_UM, getEditorContext());
     return provider.createCell();
   }
   private static class adaptiveBehaviorSingleRoleHandler_c525ev_b0 extends SingleRoleCellProvider {
@@ -83,8 +83,8 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = getUpdateSession().updateChildNodeCell(child);
-      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(getNode(), LINKS.adaptiveBehavior$1YwA, child));
-      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(getNode(), LINKS.adaptiveBehavior$1YwA, child));
+      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(getNode(), LINKS.adaptiveBehavior$h_UM, child));
+      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(getNode(), LINKS.adaptiveBehavior$h_UM, child));
       installCellInfo(child, editorCell, false);
       return editorCell;
     }
@@ -96,13 +96,13 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
         editorCell.setSubstituteInfo((isEmpty ? new SEmptyContainmentSubstituteInfo(editorCell) : new SChildSubstituteInfo(editorCell)));
       }
       if (editorCell.getSRole() == null) {
-        editorCell.setSRole(LINKS.adaptiveBehavior$1YwA);
+        editorCell.setSRole(LINKS.adaptiveBehavior$h_UM);
       }
     }
     @Override
     protected EditorCell createEmptyCell() {
       getCellFactory().pushCellContext();
-      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(getNode(), LINKS.adaptiveBehavior$1YwA));
+      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(getNode(), LINKS.adaptiveBehavior$h_UM));
       try {
         EditorCell editorCell = super.createEmptyCell();
         editorCell.setCellId("empty_adaptiveBehavior");
@@ -119,6 +119,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
   }
 
   private static final class LINKS {
-    /*package*/ static final SContainmentLink adaptiveBehavior$1YwA = MetaAdapterFactory.getContainmentLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bccL, 0x53be3ecc045b45a9L, "adaptiveBehavior");
+    /*package*/ static final SContainmentLink adaptiveBehavior$h_UM = MetaAdapterFactory.getContainmentLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bccL, 0x53be3ecc045b45a9L, "adaptiveBehavior");
   }
 }

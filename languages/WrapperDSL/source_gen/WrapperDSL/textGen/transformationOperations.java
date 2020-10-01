@@ -18,7 +18,7 @@ public abstract class transformationOperations {
   }
   public static void printExceptionalScenarioInLog(SNode exceptionalScenario, final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
-    String nameExceptionalScenario = SPropertyOperations.getString(exceptionalScenario, PROPS.name$tAp1);
+    String nameExceptionalScenario = SPropertyOperations.getString(exceptionalScenario, PROPS.name$MnvL);
 
     tgs.append("System.out.println(\"Drone[\"+drone.getLabel()+\"] \"+\"");
     tgs.append(nameExceptionalScenario);
@@ -39,6 +39,6 @@ public abstract class transformationOperations {
   }
 
   private static final class PROPS {
-    /*package*/ static final SProperty name$tAp1 = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
+    /*package*/ static final SProperty name$MnvL = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
   }
 }

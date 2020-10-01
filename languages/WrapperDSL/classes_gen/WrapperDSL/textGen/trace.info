@@ -48,8 +48,8 @@
       <node id="1912293359481749589" at="23,92,24,27" concept="2" />
       <node id="1912293359481750753" at="25,5,26,18" concept="2" />
       <node id="1912293359481746708" at="26,18,27,20" concept="2" />
-      <node id="1912293359481727487" at="31,0,32,0" concept="9" trace="condition$j$J2" />
-      <node id="1912293359481727487" at="32,0,33,0" concept="9" trace="body$j$K0" />
+      <node id="1912293359481727487" at="31,0,32,0" concept="9" trace="condition$N6Um" />
+      <node id="1912293359481727487" at="32,0,33,0" concept="9" trace="body$N7oo" />
       <node id="1912293359481749589" at="22,18,25,5" concept="3" />
       <node id="1912293359481727487" at="14,0,29,0" concept="5" trace="generateText#(Ljetbrains/mps/text/rt/TextGenContext;)V" />
       <scope id="1912293359481749589" at="23,92,24,27" />
@@ -78,7 +78,7 @@
       <node id="1912293359481953782" at="18,20,19,18" concept="2" />
       <node id="1912293359481952606" at="20,92,21,27" concept="2" />
       <node id="1912293359481953991" at="22,5,23,20" concept="2" />
-      <node id="1912293359481937688" at="27,0,28,0" concept="9" trace="body$uTQZ" />
+      <node id="1912293359481937688" at="27,0,28,0" concept="9" trace="body$ilKT" />
       <node id="1912293359481952606" at="19,18,22,5" concept="3" />
       <node id="1912293359481937688" at="14,0,25,0" concept="5" trace="generateText#(Ljetbrains/mps/text/rt/TextGenContext;)V" />
       <scope id="1912293359481952606" at="20,92,21,27" />
@@ -110,8 +110,8 @@
       <node id="1912293359486642044" at="16,73,17,135" concept="2" />
       <node id="1912293359484814047" at="17,135,18,33" concept="2" />
       <node id="1912293359484814241" at="18,33,19,110" concept="2" />
-      <node id="5927743122042262712" at="23,0,24,0" concept="9" trace="operator$QZqa" />
-      <node id="5927743122042262712" at="24,0,25,0" concept="9" trace="value$8RLj" />
+      <node id="5927743122042262712" at="23,0,24,0" concept="9" trace="operator$X1Ne" />
+      <node id="5927743122042262712" at="24,0,25,0" concept="9" trace="value$Bl0_" />
       <node id="5927743122042262712" at="13,0,21,0" concept="5" trace="generateText#(Ljetbrains/mps/text/rt/TextGenContext;)V" />
       <scope id="5927743122042262712" at="14,54,19,110">
         <var name="tgs" id="5927743122042262712" />
@@ -214,15 +214,15 @@
       <node id="838450833435873174" at="109,0,110,28" concept="2" />
       <node id="838450833436676303" at="110,28,111,20" concept="2" />
       <node id="838450833435873174" at="111,20,112,22" concept="2" />
-      <node id="838450833435873174" at="116,0,117,0" concept="9" trace="name$tAp1" />
-      <node id="838450833435873174" at="117,0,118,0" concept="9" trace="typeOfAdaptation$XP5s" />
-      <node id="838450833435873174" at="121,0,122,0" concept="9" trace="when$Bwg0" />
-      <node id="838450833435873174" at="122,0,123,0" concept="9" trace="then$BwrC" />
-      <node id="838450833435873174" at="123,0,124,0" concept="9" trace="given$Bwf2" />
-      <node id="838450833435873174" at="124,0,125,0" concept="9" trace="adaptiveBehavior$1YwA" />
-      <node id="838450833435873174" at="125,0,126,0" concept="9" trace="adaptationScriptName$XPix" />
-      <node id="838450833435873174" at="126,0,127,0" concept="9" trace="adaptationScript$Y1Gq" />
-      <node id="838450833435873174" at="127,0,128,0" concept="9" trace="body$BmMw" />
+      <node id="838450833435873174" at="116,0,117,0" concept="9" trace="name$MnvL" />
+      <node id="838450833435873174" at="117,0,118,0" concept="9" trace="typeOfAdaptation$h1KW" />
+      <node id="838450833435873174" at="121,0,122,0" concept="9" trace="when$sVSo" />
+      <node id="838450833435873174" at="122,0,123,0" concept="9" trace="then$t1wK" />
+      <node id="838450833435873174" at="123,0,124,0" concept="9" trace="given$sVqm" />
+      <node id="838450833435873174" at="124,0,125,0" concept="9" trace="adaptiveBehavior$h_UM" />
+      <node id="838450833435873174" at="125,0,126,0" concept="9" trace="adaptationScriptName$h86n" />
+      <node id="838450833435873174" at="126,0,127,0" concept="9" trace="adaptationScript$n8CY" />
+      <node id="838450833435873174" at="127,0,128,0" concept="9" trace="body$om_S" />
       <node id="838450833442595774" at="101,37,104,5" concept="3" />
       <node id="2101053769980563759" at="71,22,77,5" concept="4" />
       <node id="838450833435873174" at="18,0,114,0" concept="5" trace="generateText#(Ljetbrains/mps/text/rt/TextGenContext;)V" />
@@ -243,7 +243,7 @@
     </file>
     <file name="TextGenAspectDescriptor.java">
       <node id="838450833435873174" at="35,53,36,49" concept="7" />
-      <node id="838450833435873174" at="60,69,61,61" concept="6" />
+      <node id="838450833435873174" at="60,70,61,61" concept="6" />
       <node id="838450833435873174" at="61,61,62,64" concept="6" />
       <node id="838450833435873174" at="62,64,63,101" concept="2" />
       <node id="838450833435873174" at="63,101,64,17" concept="1" />
@@ -275,7 +275,7 @@
       <scope id="838450833435873174" at="71,0,74,0">
         <var name="node" id="838450833435873174" />
       </scope>
-      <scope id="838450833435873174" at="60,69,64,17">
+      <scope id="838450833435873174" at="60,70,64,17">
         <var name="ext" id="838450833435873174" />
         <var name="fname" id="838450833435873174" />
       </scope>
@@ -293,7 +293,7 @@
     <file name="Given_TextGen.java">
       <node id="838450833437569857" at="14,54,15,55" concept="6" />
       <node id="838450833437569900" at="15,55,16,92" concept="2" />
-      <node id="838450833437569857" at="20,0,21,0" concept="9" trace="expression$1QZ_" />
+      <node id="838450833437569857" at="20,0,21,0" concept="9" trace="expression$dWVj" />
       <node id="838450833437569857" at="13,0,18,0" concept="5" trace="generateText#(Ljetbrains/mps/text/rt/TextGenContext;)V" />
       <scope id="838450833437569857" at="14,54,16,92">
         <var name="tgs" id="838450833437569857" />
@@ -326,7 +326,7 @@
       <node id="1912293359486467550" at="33,16,34,25" concept="2" />
       <node id="1912293359486467624" at="34,25,35,14" concept="0" />
       <node id="1912293359486467684" at="36,20,37,25" concept="2" />
-      <node id="838450833437574330" at="42,0,43,0" concept="9" trace="name$tAp1" />
+      <node id="838450833437574330" at="42,0,43,0" concept="9" trace="name$MnvL" />
       <node id="838450833437574331" at="13,0,16,0" concept="10" trace="whenToPointcut#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/text/rt/TextGenContext;)V" />
       <node id="838450833440953390" at="16,0,19,0" concept="10" trace="whenAndThenToContitionalPointCutCall#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/text/rt/TextGenContext;)V" />
       <node id="1912293359486467461" at="31,55,38,5" concept="11" />
@@ -428,7 +428,7 @@
     <file name="AdaptationScript_TextGen.java">
       <node id="838450833441652400" at="14,54,15,55" concept="6" />
       <node id="838450833441652443" at="15,55,16,86" concept="2" />
-      <node id="838450833441652400" at="20,0,21,0" concept="9" trace="name$tAp1" />
+      <node id="838450833441652400" at="20,0,21,0" concept="9" trace="name$MnvL" />
       <node id="838450833441652400" at="13,0,18,0" concept="5" trace="generateText#(Ljetbrains/mps/text/rt/TextGenContext;)V" />
       <scope id="838450833441652400" at="14,54,16,86">
         <var name="tgs" id="838450833441652400" />
@@ -469,8 +469,8 @@
       <node id="965404598089266445" at="33,20,34,18" concept="2" />
       <node id="965404598089265520" at="34,18,35,22" concept="2" />
       <node id="965404598089265573" at="35,22,36,18" concept="2" />
-      <node id="838450833442606544" at="40,0,41,0" concept="9" trace="body$jsq5" />
-      <node id="838450833442606544" at="41,0,42,0" concept="9" trace="condition$jseW" />
+      <node id="838450833442606544" at="40,0,41,0" concept="9" trace="body$J4KN" />
+      <node id="838450833442606544" at="41,0,42,0" concept="9" trace="condition$IZns" />
       <node id="965404598089269368" at="18,18,21,5" concept="3" />
       <node id="838450833442606544" at="14,0,38,0" concept="5" trace="generateText#(Ljetbrains/mps/text/rt/TextGenContext;)V" />
       <scope id="965404598089269368" at="19,92,20,27" />

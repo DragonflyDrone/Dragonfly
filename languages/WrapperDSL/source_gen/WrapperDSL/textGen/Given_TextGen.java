@@ -13,10 +13,10 @@ public class Given_TextGen extends TextGenDescriptorBase {
   @Override
   public void generateText(final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
-    tgs.appendNode(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.expression$1QZ_));
+    tgs.appendNode(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.expression$dWVj));
   }
 
   private static final class LINKS {
-    /*package*/ static final SContainmentLink expression$1QZ_ = MetaAdapterFactory.getContainmentLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bcaL, 0x53be3ecc045b453aL, "expression");
+    /*package*/ static final SContainmentLink expression$dWVj = MetaAdapterFactory.getContainmentLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bcaL, 0x53be3ecc045b453aL, "expression");
   }
 }

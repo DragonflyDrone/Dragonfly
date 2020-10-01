@@ -14,13 +14,13 @@ public class WindDirectionConditionalExpression_TextGen extends TextGenDescripto
   public void generateText(final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
     tgs.append("((Drone)thisJoinPoint.getArgs()[0]).getWindDirection()");
-    transformationOperations.transformOperator(SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.operator$QZqa).getName(), ctx);
+    transformationOperations.transformOperator(SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.operator$X1Ne).getName(), ctx);
     tgs.append("DirectionEnum.");
-    tgs.append(SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.value$8RLj).toString().toUpperCase());
+    tgs.append(SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.value$Bl0_).toString().toUpperCase());
   }
 
   private static final class PROPS {
-    /*package*/ static final SProperty operator$QZqa = MetaAdapterFactory.getProperty(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x3069a986202089cdL, 0x3069a986202089f0L, "operator");
-    /*package*/ static final SProperty value$8RLj = MetaAdapterFactory.getProperty(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x3069a986202089cdL, 0x4cfe09885e9616a4L, "value");
+    /*package*/ static final SProperty operator$X1Ne = MetaAdapterFactory.getProperty(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x3069a986202089cdL, 0x3069a986202089f0L, "operator");
+    /*package*/ static final SProperty value$Bl0_ = MetaAdapterFactory.getProperty(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x3069a986202089cdL, 0x4cfe09885e9616a4L, "value");
   }
 }

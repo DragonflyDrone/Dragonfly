@@ -16,7 +16,6 @@
         <property id="3488505779904874992" name="operator" index="gii1Q" />
         <property id="5547882272274126500" name="value" index="iq1WG" />
       </concept>
-      <concept id="577212062751176910" name="WrapperDSL.structure.TriggerEvent" flags="ng" index="gm1eu" />
       <concept id="577212062751443412" name="WrapperDSL.structure.EnergySavingModeStateCommandExpression" flags="ng" index="gn6a4">
         <property id="9212155008746131781" name="state" index="1vZztD" />
       </concept>
@@ -122,7 +121,6 @@
         <child id="577212062751443391" name="left" index="gn6bJ" />
         <child id="8750727080426179942" name="right" index="3EglUc" />
       </concept>
-      <concept id="8750727080426002237" name="WrapperDSL.structure.Expression" flags="ng" index="3Enwjn" />
     </language>
   </registry>
   <node concept="1nTbkf" id="17uiePtfG8u">
@@ -383,19 +381,6 @@
             <property role="1vZzuM" value="11jlgVoCRQQ/NORTH" />
           </node>
         </node>
-      </node>
-    </node>
-  </node>
-  <node concept="1nTbkf" id="1iZmpWZeG95">
-    <node concept="1nTbk6" id="1iZmpWZeG96" role="1nTbk1">
-      <node concept="3Enwjn" id="1iZmpWZeG97" role="1nTnJQ" />
-    </node>
-    <node concept="1nTbk7" id="1iZmpWZeG98" role="1nTbk3">
-      <node concept="gm1eu" id="1iZmpWZeG99" role="2mxZ8X" />
-    </node>
-    <node concept="1nTbk0" id="1iZmpWZeG9a" role="1nTbku">
-      <node concept="2mxZ9A" id="1iZmpWZeG9b" role="1nTnH_">
-        <node concept="1nO3mo" id="1iZmpWZeG9c" role="2mxZ7t" />
       </node>
     </node>
   </node>

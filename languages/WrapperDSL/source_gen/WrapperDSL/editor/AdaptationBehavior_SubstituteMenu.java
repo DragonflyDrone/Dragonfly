@@ -28,7 +28,7 @@ public class AdaptationBehavior_SubstituteMenu extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new SMP_ReferenceScope_jwfpc9_a(), CONCEPTS.AdaptationBehavior$pp));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new SMP_ReferenceScope_jwfpc9_a(), CONCEPTS.AdaptationBehavior$xL));
     result.add(new SMP_Subconcepts_jwfpc9_b());
     return result;
   }
@@ -50,7 +50,7 @@ public class AdaptationBehavior_SubstituteMenu extends SubstituteMenuBase {
 
     public SMP_ReferenceScope_jwfpc9_a() {
       // that cast is needed for prevent the users from https://youtrack.jetbrains.com/issue/MPS-29051 
-      super((SAbstractConcept) CONCEPTS.AdaptationBehavior$pp, LINKS.adaptationScriptName$XPix);
+      super((SAbstractConcept) CONCEPTS.AdaptationBehavior$xL, LINKS.adaptationScriptName$h86n);
     }
     @NotNull
     @Override
@@ -67,7 +67,7 @@ public class AdaptationBehavior_SubstituteMenu extends SubstituteMenuBase {
   }
   public class SMP_Subconcepts_jwfpc9_b extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
     protected Collection getConcepts(final SubstituteMenuContext _context) {
-      return ConceptDescendantsCache.getInstance().getDirectDescendants(CONCEPTS.AdaptationBehavior$pp);
+      return ConceptDescendantsCache.getInstance().getDirectDescendants(CONCEPTS.AdaptationBehavior$xL);
     }
     @NotNull
     @Override
@@ -88,10 +88,10 @@ public class AdaptationBehavior_SubstituteMenu extends SubstituteMenuBase {
   }
 
   private static final class CONCEPTS {
-    /*package*/ static final SConcept AdaptationBehavior$pp = MetaAdapterFactory.getConcept(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x4cdb8f81da5c7de7L, "WrapperDSL.structure.AdaptationBehavior");
+    /*package*/ static final SConcept AdaptationBehavior$xL = MetaAdapterFactory.getConcept(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x4cdb8f81da5c7de7L, "WrapperDSL.structure.AdaptationBehavior");
   }
 
   private static final class LINKS {
-    /*package*/ static final SReferenceLink adaptationScriptName$XPix = MetaAdapterFactory.getReferenceLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x4cdb8f81da5c7de7L, 0x4cdb8f81da5c7df2L, "adaptationScriptName");
+    /*package*/ static final SReferenceLink adaptationScriptName$h86n = MetaAdapterFactory.getReferenceLink(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x4cdb8f81da5c7de7L, 0x4cdb8f81da5c7df2L, "adaptationScriptName");
   }
 }
