@@ -77,10 +77,6 @@
         <property id="3755399622748983582" name="state" index="1zyKOh" />
         <property id="3755399622748983580" name="operator" index="1zyKOj" />
       </concept>
-      <concept id="6043916714957488929" name="WrapperDSL.structure.MissionStateConditionalExpression" flags="ng" index="2WXwOr">
-        <property id="3755399622748983416" name="state" index="1zyKLR" />
-        <property id="3755399622748983414" name="operator" index="1zyKLT" />
-      </concept>
       <concept id="6043916714957488966" name="WrapperDSL.structure.WindSpeedConditionalExpression" flags="ng" index="2WXwPW">
         <property id="9212155008746117720" name="value" index="1vZvLO" />
         <property id="9212155008746117718" name="operator" index="1vZvLU" />
@@ -243,24 +239,17 @@
           <property role="1vZv3Q" value="5fwjzFJ5$bD/iqual" />
           <property role="1vZv3R" value="5fwjzFJ5$yb/DEACTIVATED" />
         </node>
-        <node concept="3Em$gh" id="7RBanqqDDlz" role="3EglUc">
+        <node concept="3Em$gh" id="1omKG4kj9VJ" role="3EglUc">
           <property role="3EnToj" value="5eYfGK4nkaD/and" />
-          <node concept="2WXwOr" id="7RBanqqDDm4" role="gn6bJ">
-            <property role="1zyKLT" value="5fwjzFJ5$bD/iqual" />
-            <property role="1zyKLR" value="5fwjzFJ5$ra/STARTED" />
+          <node concept="2WXwOd" id="7RBanqqDDlE" role="gn6bJ">
+            <property role="1vZzpR" value="7_KOYEjfYK5/DESTINATION" />
+            <property role="1vZzpa" value="5fwjzFJ5$cg/less_than" />
+            <property role="1vZzpc" value="5fwjzFJ5$qH/ORIGIN" />
           </node>
-          <node concept="3Em$gh" id="1omKG4kj9VJ" role="3EglUc">
-            <property role="3EnToj" value="5eYfGK4nkaD/and" />
-            <node concept="2WXwOd" id="7RBanqqDDlE" role="gn6bJ">
-              <property role="1vZzpR" value="7_KOYEjfYK5/DESTINATION" />
-              <property role="1vZzpa" value="5fwjzFJ5$cg/less_than" />
-              <property role="1vZzpc" value="5fwjzFJ5$qH/ORIGIN" />
-            </node>
-            <node concept="2WXwOg" id="1omKG4kstV5" role="3EglUc">
-              <property role="1zyKUK" value="5fwjzFJ5$vT/AUTOMATIC" />
-              <property role="1zyKVe" value="5fwjzFJ5$bD/iqual" />
-              <property role="2m_R1" value="5fwjzFJ5$wv/STARTED" />
-            </node>
+          <node concept="2WXwOg" id="1omKG4kstV5" role="3EglUc">
+            <property role="1zyKUK" value="5fwjzFJ5$vT/AUTOMATIC" />
+            <property role="1zyKVe" value="5fwjzFJ5$bD/iqual" />
+            <property role="2m_R1" value="5fwjzFJ5$wv/STARTED" />
           </node>
         </node>
       </node>
