@@ -20,19 +20,19 @@ import view.drone.*;
 
 //IMPORTS//
 
-public aspect asd{
+public aspect Test{
 private boolean alreadyExecuting = false;
 
 <!TextGen not found for 'WrapperDSL.structure.AccelerationModeConditionalExpression'!>
 {
-a(thisJoinPoint);
+???(thisJoinPoint);
 }
-public void a(JoinPoint thisJoinPoint)
+public void ???(JoinPoint thisJoinPoint)
 {
 Drone drone = (Drone) thisJoinPoint.getArgs()[0];
 
-System.out.println("Drone["+drone.getLabel()+"] "+"asd");
-LoggerController.getInstance().print("Drone["+drone.getLabel()+"] asd");
+System.out.println("Drone["+drone.getLabel()+"] "+"Test");
+LoggerController.getInstance().print("Drone["+drone.getLabel()+"] Test");
 
 }
 }

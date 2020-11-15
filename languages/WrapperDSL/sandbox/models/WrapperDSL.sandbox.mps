@@ -105,6 +105,10 @@
         <child id="6034329596690384496" name="condition" index="1nTnyW" />
         <child id="6034329596690384498" name="body" index="1nTnyY" />
       </concept>
+      <concept id="9212155008746117436" name="WrapperDSL.structure.SmokerDetectorResultConditionalExpression" flags="ng" index="1vZvWg">
+        <property id="9212155008746117437" name="operator" index="1vZvWh" />
+        <property id="9212155008746117439" name="result" index="1vZvWj" />
+      </concept>
       <concept id="9212155008746132705" name="WrapperDSL.structure.GimbalStateCommandeExpression" flags="ng" index="1vZzbd">
         <property id="9212155008746132708" name="state" index="1vZzb8" />
         <property id="9212155008746132706" name="controlSwitch" index="1vZzbe" />
@@ -353,9 +357,16 @@
   <node concept="1nTbkf" id="17uiePt_Qhm">
     <property role="TrG5h" value="MonitorEnviroment" />
     <node concept="1nTbk6" id="17uiePt_Qhn" role="1nTbk1">
-      <node concept="2WXwOn" id="17uiePt_QhW" role="1nTnJQ">
-        <property role="1zyKZQ" value="5fwjzFJ5$bE/not_equal" />
-        <property role="1zyKZO" value="5fwjzFJ5$wW/STARTED" />
+      <node concept="3Em$gh" id="7RBanqqHwbU" role="1nTnJQ">
+        <property role="3EnToj" value="5eYfGK4nkaD/and" />
+        <node concept="1vZvWg" id="7RBanqqHwc0" role="gn6bJ">
+          <property role="1vZvWh" value="5fwjzFJ5$bD/iqual" />
+          <property role="1vZvWj" value="7Zo9yKw9t_3/DETECTED" />
+        </node>
+        <node concept="2WXwOn" id="17uiePt_QhW" role="3EglUc">
+          <property role="1zyKZQ" value="5fwjzFJ5$bD/iqual" />
+          <property role="1zyKZO" value="5fwjzFJ5$wT/ERROR" />
+        </node>
       </node>
     </node>
     <node concept="1nTbk7" id="17uiePt_Qhp" role="1nTbk3">
