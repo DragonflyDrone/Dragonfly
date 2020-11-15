@@ -7,7 +7,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67f9d5de-1d1c-4b09-879f-44fe21ffd1bc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.mps/dictionaries/vieir.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.mps/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.mps/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/sandbox/classes_gen/WrapperDSL/sandbox/EmergencyCamera.aj" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/sandbox/classes_gen/WrapperDSL/sandbox/EmergencyCamera.aj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/sandbox/classes_gen/WrapperDSL/sandbox/Keepflying.aj" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/sandbox/classes_gen/WrapperDSL/sandbox/Keepflying.aj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/sandbox/classes_gen/WrapperDSL/sandbox/MonitorEnviroment.aj" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/sandbox/classes_gen/WrapperDSL/sandbox/MonitorEnviroment.aj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/sandbox/classes_gen/WrapperDSL/sandbox/MoveAside.aj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/sandbox/classes_gen/WrapperDSL/sandbox/SafeRTH.aj" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/sandbox/classes_gen/WrapperDSL/sandbox/SafeRTH.aj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/sandbox/classes_gen/WrapperDSL/sandbox/SwitchToManual.aj" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/sandbox/classes_gen/WrapperDSL/sandbox/SwitchToManual.aj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/WrapperDSL/sandbox/models/WrapperDSL.sandbox.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WrapperDSL/sandbox/models/WrapperDSL.sandbox.mps" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,7 +28,7 @@
         <TabState>
           <option name="title" value="Console" />
           <tab>
-            <model ref="0c22cfc4-522c-4baa-96e2-7c7230a94c21/r:aa839f9c-7786-4bb2-ac56-3e1973f1f630(TempModule0c22cfc4-522c-4baa-96e2-7c7230a94c21/ConsoleModel_297388805295400)">
+            <model ref="0767bcf9-84c5-461b-91e5-dbe08cd57d86/r:c4e82c5f-9b0f-46ea-9359-793f7f080e03(TempModule0767bcf9-84c5-461b-91e5-dbe08cd57d86/ConsoleModel_18462124365400)">
               <persistence version="9" />
               <languages>
                 <devkit ref="70d3d6da-af63-483d-a75f-9c8acf8de332(jetbrains.mps.console.devkit)" />
@@ -41,11 +48,11 @@
                   <concept id="757553790980850366" name="jetbrains.mps.console.base.structure.History" flags="ng" index="3balQm" />
                 </language>
               </registry>
-              <node concept="aymSD" id="1J5Odww99ep">
-                <node concept="3balQm" id="1J5Odww99eq" role="aymYE" />
-                <node concept="2Clz$F" id="1J5Odww99er" role="aymYO" />
-                <node concept="2_V_lH" id="1J5Odww99es" role="1PhJh3">
-                  <ref role="2_V_lI" node="1J5Odww99er" resolve="CommandHolder" />
+              <node concept="aymSD" id="7RBanqqDDk4">
+                <node concept="3balQm" id="7RBanqqDDk5" role="aymYE" />
+                <node concept="2Clz$F" id="7RBanqqDDk6" role="aymYO" />
+                <node concept="2_V_lH" id="7RBanqqDDk7" role="1PhJh3">
+                  <ref role="2_V_lI" node="7RBanqqDDk6" resolve="CommandHolder" />
                 </node>
               </node>
             </model>
@@ -180,72 +187,6 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="3e1c68c4-ebe6-40bd-a27f-e74585aa2487(WrapperDSL)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure) in IdeaFile[path: C:/workspace/DSL-Dragonfly/languages/WrapperDSL/models/WrapperDSL.structure.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="3e1c68c4-ebe6-40bd-a27f-e74585aa2487(WrapperDSL)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="3e1c68c4-ebe6-40bd-a27f-e74585aa2487(WrapperDSL)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:9c9cc50d-a981-44a2-b316-c814bd5c4f34(WrapperDSL.constraints) in IdeaFile[path: C:/workspace/DSL-Dragonfly/languages/WrapperDSL/models/WrapperDSL.constraints.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="3e1c68c4-ebe6-40bd-a27f-e74585aa2487(WrapperDSL)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure) in IdeaFile[path: C:/workspace/DSL-Dragonfly/languages/WrapperDSL/models/WrapperDSL.structure.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="adaptation" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="a553a0f8-13de-431b-9df4-f626a3ec4dda" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="a553a0f8-13de-431b-9df4-f626a3ec4dda" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -264,7 +205,21 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="r:8d7df24b-080c-453c-bf3d-0bbe70cd2c54(WrapperDSL.typesystem) in IdeaFile[path: C:/workspace/DSL-Dragonfly/languages/WrapperDSL/models/WrapperDSL.typesystem.mps]" />
+              <option name="myItemId" value="r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure) in IdeaFile[path: C:/workspace/DSL-Dragonfly/languages/WrapperDSL/models/WrapperDSL.structure.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BDD" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="a553a0f8-13de-431b-9df4-f626a3ec4dda" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -298,11 +253,57 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="r:9c9cc50d-a981-44a2-b316-c814bd5c4f34(WrapperDSL.constraints) in IdeaFile[path: C:/workspace/DSL-Dragonfly/languages/WrapperDSL/models/WrapperDSL.constraints.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="3e1c68c4-ebe6-40bd-a27f-e74585aa2487(WrapperDSL)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure) in IdeaFile[path: C:/workspace/DSL-Dragonfly/languages/WrapperDSL/models/WrapperDSL.structure.mps]" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="BDD" />
+              <option name="myItemId" value="statiment" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="3e1c68c4-ebe6-40bd-a27f-e74585aa2487(WrapperDSL)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure) in IdeaFile[path: C:/workspace/DSL-Dragonfly/languages/WrapperDSL/models/WrapperDSL.structure.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="adaptation" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="3e1c68c4-ebe6-40bd-a27f-e74585aa2487(WrapperDSL)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:8d7df24b-080c-453c-bf3d-0bbe70cd2c54(WrapperDSL.typesystem) in IdeaFile[path: C:/workspace/DSL-Dragonfly/languages/WrapperDSL/models/WrapperDSL.typesystem.mps]" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -324,6 +325,52 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="3e1c68c4-ebe6-40bd-a27f-e74585aa2487(WrapperDSL)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:791815a7-51ee-4ec9-bcc3-2de9ba0316d3(WrapperDSL.structure) in IdeaFile[path: C:/workspace/DSL-Dragonfly/languages/WrapperDSL/models/WrapperDSL.structure.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="3e1c68c4-ebe6-40bd-a27f-e74585aa2487(WrapperDSL)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <SELECTED>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="a553a0f8-13de-431b-9df4-f626a3ec4dda" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WrapperDSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:2cb78c7c-c192-47c0-ae08-cf53d23996c9(WrapperDSL.sandbox) in IdeaFile[path: C:/workspace/DSL-Dragonfly/languages/WrapperDSL/sandbox/models/WrapperDSL.sandbox.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="1287546727787092188" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </SELECTED>
         </subPane>
       </pane>
       <pane id="FileSystem">
@@ -377,8 +424,9 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="full.screen.before.presentation.mode" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.pathVariables" />
+    <property name="settings.editor.selected.configurable" value="preferences.intentionPowerPack" />
   </component>
   <component name="RunManager">
     <configuration name="Tests in 'WrapperDSL.sandbox'" type="JUnit Tests" factoryName="JUnit Tests" temporary="true">
@@ -464,48 +512,13 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="942" y="89" width="666" height="881" key="#Tests_in_'WrapperDSL.sandbox'" timestamp="1593355656691">
-      <screen x="0" y="27" width="2560" height="999" />
+    <state x="781" y="164" key="SettingsEditor" timestamp="1604960750531">
+      <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="942" y="89" width="666" height="881" key="#Tests_in_'WrapperDSL.sandbox'/0.27.2560.999/2560.0.1920.1080@0.27.2560.999" timestamp="1593355656691" />
-    <state x="761" y="406" width="744" height="491" key="#jetbrains.mps.ide.migration.MigrationAssistantWizard" timestamp="1593127029576">
-      <screen x="0" y="27" width="2560" height="999" />
-    </state>
-    <state x="761" y="406" width="744" height="491" key="#jetbrains.mps.ide.migration.MigrationAssistantWizard/0.27.2560.999/2560.0.1920.1080@0.27.2560.999" timestamp="1593127029576" />
-    <state width="254" height="198" key="ShowFilterAction_Filter_Popup" timestamp="1593355846776">
-      <screen x="0" y="27" width="2560" height="999" />
-    </state>
-    <state width="254" height="198" key="ShowFilterAction_Filter_Popup/0.27.2560.999/2560.0.1920.1080@0.27.2560.999" timestamp="1593355846776" />
-    <state x="2560" y="276" width="1732" height="647" key="dock-window-1" timestamp="1595103407891">
-      <screen x="2560" y="0" width="1920" height="1080" />
-    </state>
-    <state x="2560" y="276" width="1732" height="647" key="dock-window-1/0.27.2560.999/2560.0.1920.1080@0.27.2560.999" timestamp="1595103407891" />
-    <state x="1016" y="328" width="1363" height="800" key="dock-window-1/0.27.2560.999/2560.0.1920.1080@2560.0.1920.1080" timestamp="1593553616197" />
-    <state x="686" y="27" width="1874" height="999" key="dock-window-2" timestamp="1593553616197">
-      <screen x="0" y="27" width="2560" height="999" />
-    </state>
-    <state x="686" y="27" width="1874" height="999" key="dock-window-2/0.27.2560.999/2560.0.1920.1080@2560.0.1920.1080" timestamp="1593553616197" />
-    <state x="686" y="27" width="1874" height="800" key="dock-window-3" timestamp="1593553937945">
-      <screen x="0" y="27" width="2560" height="999" />
-    </state>
-    <state x="686" y="27" width="1874" height="800" key="dock-window-3/0.27.2560.999/2560.0.1920.1080@2560.0.1920.1080" timestamp="1593553937945" />
-    <state x="686" y="27" width="1874" height="800" key="dock-window-4" timestamp="1593554263060">
-      <screen x="0" y="27" width="2560" height="999" />
-    </state>
-    <state x="686" y="27" width="1874" height="800" key="dock-window-4/0.27.2560.999/2560.0.1920.1080@2560.0.1920.1080" timestamp="1593554263060" />
-    <state x="361" y="66" width="1545" height="800" key="dock-window-5" timestamp="1593554263060">
-      <screen x="0" y="27" width="2560" height="999" />
-    </state>
-    <state x="361" y="66" width="1545" height="800" key="dock-window-5/0.27.2560.999/2560.0.1920.1080@2560.0.1920.1080" timestamp="1593554263060" />
-    <state x="2560" y="195" width="1920" height="719" maximized="true" key="dock-window-6" timestamp="1593564747911">
-      <screen x="2560" y="0" width="1920" height="1080" />
-    </state>
-    <state x="2560" y="195" width="1920" height="719" maximized="true" key="dock-window-6/0.27.2560.999/2560.0.1920.1080@0.27.2560.999" timestamp="1593564747911" />
+    <state x="781" y="164" key="SettingsEditor/-5.-1080.1536.832/0.0.2560.1040@0.0.2560.1040" timestamp="1604960750531" />
     <state x="814" y="227" width="1327" height="673" key="search.everywhere.popup" timestamp="1601509370454">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="814" y="227" width="1327" height="673" key="search.everywhere.popup/0.0.2560.1040/627.-1080.1536.824/2560.-9.1920.1040@0.0.2560.1040" timestamp="1601509370454" />
-    <state x="814" y="245" width="1327" height="646" key="search.everywhere.popup/0.27.2560.999/2560.0.1920.1080@0.27.2560.999" timestamp="1595084581058" />
-    <state x="3171" y="236" width="996" height="699" key="search.everywhere.popup/0.27.2560.999/2560.0.1920.1080@2560.0.1920.1080" timestamp="1594582282949" />
   </component>
 </project>

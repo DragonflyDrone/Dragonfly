@@ -20,7 +20,7 @@ import view.drone.*;
 
 //IMPORTS//
 
-public aspect MoveAside{
+public aspect Move Aside{
 private boolean alreadyExecuting = false;
 
 
@@ -31,8 +31,8 @@ public void goLandRegion(JoinPoint thisJoinPoint)
 {
 Drone drone = (Drone) thisJoinPoint.getArgs()[0];
 
-System.out.println("Drone["+drone.getLabel()+"] "+"MoveAside");
-LoggerController.getInstance().print("Drone["+drone.getLabel()+"] MoveAside");
+System.out.println("Drone["+drone.getLabel()+"] "+"Move Aside");
+LoggerController.getInstance().print("Drone["+drone.getLabel()+"] Move Aside");
 
         new StopWatch(0,1000) {
             @Override

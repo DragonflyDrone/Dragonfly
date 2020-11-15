@@ -712,9 +712,6 @@
     <property role="3GE5qa" value="expression.mission.conditional_expression" />
     <ref role="1XX52x" to="lpas:5fwjzFJ5$cx" resolve="MissionStateConditionalExpression" />
     <node concept="3EZMnI" id="3gtR0Xn_H27" role="2wV5jI">
-      <node concept="3F0ifn" id="3gtR0Xn_H29" role="3EZMnx">
-        <property role="3F0ifm" value="[" />
-      </node>
       <node concept="3F0ifn" id="3gtR0Xn_H2h" role="3EZMnx">
         <property role="3F0ifm" value="(" />
       </node>

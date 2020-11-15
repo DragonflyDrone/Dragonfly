@@ -16,6 +16,7 @@
         <property id="3488505779904874992" name="operator" index="gii1Q" />
         <property id="5547882272274126500" name="value" index="iq1WG" />
       </concept>
+      <concept id="577212062751176910" name="WrapperDSL.structure.TriggerEvent" flags="ng" index="gm1eu" />
       <concept id="577212062751443412" name="WrapperDSL.structure.EnergySavingModeStateCommandExpression" flags="ng" index="gn6a4">
         <property id="9212155008746131781" name="state" index="1vZztD" />
       </concept>
@@ -39,6 +40,7 @@
       <concept id="577212062751443395" name="WrapperDSL.structure.UAVManeuverDirectionToRegionCommandExpression" flags="ng" index="gn6aj">
         <property id="1287546727785907245" name="RegionDirection" index="1cIKN0" />
       </concept>
+      <concept id="577212062751443404" name="WrapperDSL.structure.AccelerationModeConditionalExpression" flags="ng" index="gn6as" />
       <concept id="5538177954659204583" name="WrapperDSL.structure.AdaptationBehavior" flags="ng" index="2mxZ9A">
         <property id="5538177954659204588" name="typeOfAdaptation" index="2mxZ9H" />
         <reference id="5538177954659204594" name="adaptationScriptName" index="2mxZ9N" />
@@ -70,11 +72,14 @@
         <property id="3755399622748983582" name="state" index="1zyKOh" />
         <property id="3755399622748983580" name="operator" index="1zyKOj" />
       </concept>
+      <concept id="6043916714957488929" name="WrapperDSL.structure.MissionStateConditionalExpression" flags="ng" index="2WXwOr">
+        <property id="3755399622748983416" name="state" index="1zyKLR" />
+        <property id="3755399622748983414" name="operator" index="1zyKLT" />
+      </concept>
       <concept id="6043916714957488966" name="WrapperDSL.structure.WindSpeedConditionalExpression" flags="ng" index="2WXwPW">
         <property id="9212155008746117720" name="value" index="1vZvLO" />
         <property id="9212155008746117718" name="operator" index="1vZvLU" />
       </concept>
-      <concept id="1287546727787586176" name="WrapperDSL.structure.AnyInteger" flags="ng" index="1cCaDH" />
       <concept id="6034329596691614548" name="WrapperDSL.structure.AdaptationScript" flags="ng" index="1nO3mo">
         <child id="6034329596692833866" name="body" index="1nfDy6" />
       </concept>
@@ -104,14 +109,14 @@
         <property id="9212155008746132708" name="state" index="1vZzb8" />
         <property id="9212155008746132706" name="controlSwitch" index="1vZzbe" />
       </concept>
-      <concept id="3755399622748982189" name="WrapperDSL.structure.UAVAccelerationTriggerEvent" flags="ng" index="1zyLuy">
-        <child id="1287546727787586196" name="value" index="1cCaDT" />
-      </concept>
       <concept id="3755399622748982186" name="WrapperDSL.structure.UAVManeuverDirectionTriggerEvent" flags="ng" index="1zyLu_">
         <property id="9212155008746133307" name="direction" index="1vZz4n" />
       </concept>
       <concept id="3755399622748982196" name="WrapperDSL.structure.SafeLandingStateTriggerEvent" flags="ng" index="1zyLuV">
         <property id="9212155008746133705" name="state" index="1vZzV_" />
+      </concept>
+      <concept id="3755399622748982194" name="WrapperDSL.structure.ReturnToHomeStateTriggerEvent" flags="ng" index="1zyLuX">
+        <property id="9212155008746133640" name="state" index="1vZzU$" />
       </concept>
       <concept id="2392105491498693605" name="WrapperDSL.structure.Else" flags="ng" index="1Be0iw">
         <child id="2392105491498693607" name="body" index="1Be0iy" />
@@ -227,17 +232,25 @@
         <property role="3EnToj" value="5eYfGK4nkaD/and" />
         <node concept="2WXwOf" id="17uiePttPzH" role="gn6bJ">
           <property role="1vZv3Q" value="5fwjzFJ5$bD/iqual" />
-          <property role="1vZv3R" value="5fwjzFJ5$y7/ACTIVATED" />
+          <property role="1vZv3R" value="5fwjzFJ5$yb/DEACTIVATED" />
         </node>
-        <node concept="2WXwOp" id="17uiePttPzK" role="3EglUc">
-          <property role="1zyKOj" value="5fwjzFJ5$bD/iqual" />
-          <property role="1zyKOh" value="5fwjzFJ5$sl/STARTED" />
+        <node concept="3Em$gh" id="7RBanqqDDlz" role="3EglUc">
+          <property role="3EnToj" value="5eYfGK4nkaD/and" />
+          <node concept="2WXwOd" id="7RBanqqDDlE" role="3EglUc">
+            <property role="1vZzpR" value="7_KOYEjfYK5/DESTINATION" />
+            <property role="1vZzpa" value="5fwjzFJ5$cg/less_than" />
+            <property role="1vZzpc" value="5fwjzFJ5$qH/ORIGIN" />
+          </node>
+          <node concept="2WXwOr" id="7RBanqqDDm4" role="gn6bJ">
+            <property role="1zyKLT" value="5fwjzFJ5$bD/iqual" />
+            <property role="1zyKLR" value="5fwjzFJ5$ra/STARTED" />
+          </node>
         </node>
       </node>
     </node>
     <node concept="1nTbk7" id="17uiePttPzv" role="1nTbk3">
-      <node concept="1zyLuy" id="17uiePtwaAA" role="2mxZ8X">
-        <node concept="1cCaDH" id="17uiePty3TB" role="1cCaDT" />
+      <node concept="1zyLuX" id="7RBanqqDDlZ" role="2mxZ8X">
+        <property role="1vZzU$" value="3gtR0Xn_GJF/STARTS" />
       </node>
     </node>
     <node concept="1nTbk0" id="17uiePttPzx" role="1nTbku">
@@ -381,6 +394,20 @@
             <property role="1vZzuM" value="11jlgVoCRQQ/NORTH" />
           </node>
         </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1nTbkf" id="7DPDb$iZeNs">
+    <property role="TrG5h" value="Test" />
+    <node concept="1nTbk6" id="7DPDb$iZeNt" role="1nTbk1">
+      <node concept="gn6as" id="4jFPKjQE$9J" role="1nTnJQ" />
+    </node>
+    <node concept="1nTbk7" id="7DPDb$iZeNv" role="1nTbk3">
+      <node concept="gm1eu" id="7DPDb$iZeNw" role="2mxZ8X" />
+    </node>
+    <node concept="1nTbk0" id="7DPDb$iZeNx" role="1nTbku">
+      <node concept="2mxZ9A" id="7DPDb$iZeNy" role="1nTnH_">
+        <node concept="1nO3mo" id="7DPDb$iZeNz" role="2mxZ7t" />
       </node>
     </node>
   </node>
