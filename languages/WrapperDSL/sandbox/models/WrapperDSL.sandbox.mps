@@ -64,6 +64,11 @@
         <property id="9212155008746116826" name="operator" index="1vZv3Q" />
         <property id="9212155008746116827" name="state" index="1vZv3R" />
       </concept>
+      <concept id="6043916714957488938" name="WrapperDSL.structure.FlightControlStateConditionalExpression" flags="ng" index="2WXwOg">
+        <property id="1591673652847091456" name="state" index="2m_R1" />
+        <property id="3755399622748983999" name="controlSwitch" index="1zyKUK" />
+        <property id="3755399622748984001" name="operator" index="1zyKVe" />
+      </concept>
       <concept id="6043916714957488941" name="WrapperDSL.structure.CameraStateConditionalExpression" flags="ng" index="2WXwOn">
         <property id="3755399622748984315" name="state" index="1zyKZO" />
         <property id="3755399622748984313" name="operator" index="1zyKZQ" />
@@ -139,8 +144,8 @@
         <property role="3EnToj" value="5eYfGK4nkaD/and" />
         <node concept="2WXwOc" id="17uiePtjCfW" role="gn6bJ">
           <property role="1vZvO4" value="7_KOYEjfYK5/DESTINATION" />
-          <property role="1vZvO6" value="5fwjzFJ5$ch/greater_than_or_equal_to" />
-          <property role="1vZvP6" value="200" />
+          <property role="1vZvO6" value="5fwjzFJ5$ci/less_than_or_equal_to" />
+          <property role="1vZvP6" value="2000" />
         </node>
         <node concept="3Em$gh" id="17uiePtlxmm" role="3EglUc">
           <property role="3EnToj" value="5eYfGK4nkaD/and" />
@@ -240,14 +245,22 @@
         </node>
         <node concept="3Em$gh" id="7RBanqqDDlz" role="3EglUc">
           <property role="3EnToj" value="5eYfGK4nkaD/and" />
-          <node concept="2WXwOd" id="7RBanqqDDlE" role="3EglUc">
-            <property role="1vZzpR" value="7_KOYEjfYK5/DESTINATION" />
-            <property role="1vZzpa" value="5fwjzFJ5$cg/less_than" />
-            <property role="1vZzpc" value="5fwjzFJ5$qH/ORIGIN" />
-          </node>
           <node concept="2WXwOr" id="7RBanqqDDm4" role="gn6bJ">
             <property role="1zyKLT" value="5fwjzFJ5$bD/iqual" />
             <property role="1zyKLR" value="5fwjzFJ5$ra/STARTED" />
+          </node>
+          <node concept="3Em$gh" id="1omKG4kj9VJ" role="3EglUc">
+            <property role="3EnToj" value="5eYfGK4nkaD/and" />
+            <node concept="2WXwOd" id="7RBanqqDDlE" role="gn6bJ">
+              <property role="1vZzpR" value="7_KOYEjfYK5/DESTINATION" />
+              <property role="1vZzpa" value="5fwjzFJ5$cg/less_than" />
+              <property role="1vZzpc" value="5fwjzFJ5$qH/ORIGIN" />
+            </node>
+            <node concept="2WXwOg" id="1omKG4kstV5" role="3EglUc">
+              <property role="1zyKUK" value="5fwjzFJ5$vT/AUTOMATIC" />
+              <property role="1zyKVe" value="5fwjzFJ5$bD/iqual" />
+              <property role="2m_R1" value="5fwjzFJ5$wv/STARTED" />
+            </node>
           </node>
         </node>
       </node>

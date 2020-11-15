@@ -1077,6 +1077,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(2);
     b.property("controlSwitch", 0x341ddc0f5796d2bfL).type(MetaIdFactory.dataTypeId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53e04e3aef1647f8L)).origin("3755399622748983999").done();
     b.property("operator", 0x341ddc0f5796d2c1L).type(MetaIdFactory.dataTypeId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53e04e3aef1642e8L)).origin("3755399622748984001").done();
+    b.property("state", 0x1616c2c1144c9f00L).type(MetaIdFactory.dataTypeId(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53e04e3aef16481aL)).origin("1591673652847091456").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForFlightControlStateTriggerEvent() {

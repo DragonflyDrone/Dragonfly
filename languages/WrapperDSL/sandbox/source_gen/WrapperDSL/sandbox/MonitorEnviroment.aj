@@ -23,7 +23,7 @@ import view.drone.*;
 public aspect MonitorEnviroment{
 private boolean alreadyExecuting = false;
 
-<!TextGen not found for 'WrapperDSL.structure.CameraStateConditionalExpression'!>
+
 {
 framework(thisJoinPoint);
 }

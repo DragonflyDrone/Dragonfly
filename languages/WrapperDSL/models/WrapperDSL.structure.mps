@@ -779,6 +779,11 @@
       <property role="TrG5h" value="operator" />
       <ref role="AX2Wp" node="5fwjzFJ5$bC" resolve="EqualityOperatorEnum" />
     </node>
+    <node concept="1TJgyi" id="1omKG4kj9W0" role="1TKVEl">
+      <property role="IQ2nx" value="1591673652847091456" />
+      <property role="TrG5h" value="state" />
+      <ref role="AX2Wp" node="5fwjzFJ5$wq" resolve="FlightControlStateGetEnum" />
+    </node>
   </node>
   <node concept="1TIwiD" id="5fwjzFJ5$cF">
     <property role="EcuMT" value="6043916714957488939" />
