@@ -86,7 +86,7 @@ abstract public class EnvironmentMarshal {
 
         }
 
-        //HOUSE
+        //TREE
         Element treeElements = document.createElement(ConstantXml.ROOT_TREE_ELEMENT);
         environmentElements.appendChild(treeElements);
 
@@ -117,6 +117,23 @@ abstract public class EnvironmentMarshal {
             antennaElement.setAttribute(ConstantXml.SOURCE_ROW_POSITION_ATTRIBUTE, String.valueOf(antenna.getRowPosition()));
 
             antennaElements.appendChild(antennaElement);
+
+        }
+
+        //SoSPoint
+        Element soSPointElements = document.createElement(ConstantXml.ROOT_SOS_POINT_ELEMENT);
+        environmentElements.appendChild(soSPointElements);
+
+        for(SoSPoint soSPoint : SoSPointController.getInstance().getSoSPointMap().values()){
+
+            Element soSPointElement = document.createElement(ConstantXml.SOS_POINT_ELEMENT);
+
+            soSPointElement.setAttribute(ConstantXml.UNIQUE_ID_ATTRIBUTE, soSPoint.getUniqueID());
+            soSPointElement.setAttribute(ConstantXml.LABEL_ATTRIBUTE, soSPoint.getLabel());
+            soSPointElement.setAttribute(ConstantXml.SOURCE_COLUMN_POSITION_ATTRIBUTE, String.valueOf(soSPoint.getColumnPosition()));
+            soSPointElement.setAttribute(ConstantXml.SOURCE_ROW_POSITION_ATTRIBUTE, String.valueOf(soSPoint.getRowPosition()));
+
+            soSPointElements.appendChild(soSPointElement);
 
         }
 
@@ -291,6 +308,30 @@ abstract public class EnvironmentMarshal {
 
             TreeController.getInstance().createTree(uniqueID, label, cellView);
         }
+
+        //SoSPoint
+        Node rootSoSPointElement = root.getElementsByTagName(ConstantXml.ROOT_SOS_POINT_ELEMENT).item(0);
+
+
+        for(int i=0; i<rootSoSPointElement.getChildNodes().getLength(); i++){
+            Node SoSPointNode = rootSoSPointElement.getChildNodes().item(i);
+
+            if(SoSPointNode.getNodeName().equals("#text")){ // I dont now why this problem
+                continue;
+            }
+
+            String uniqueID = SoSPointNode.getAttributes().getNamedItem(ConstantXml.UNIQUE_ID_ATTRIBUTE).getNodeValue();
+            String label = SoSPointNode.getAttributes().getNamedItem(ConstantXml.LABEL_ATTRIBUTE).getNodeValue();
+            int columnPosition = Integer.parseInt(SoSPointNode.getAttributes().getNamedItem(ConstantXml.SOURCE_COLUMN_POSITION_ATTRIBUTE).getNodeValue());
+            int rowPosition = Integer.parseInt(SoSPointNode.getAttributes().getNamedItem(ConstantXml.SOURCE_ROW_POSITION_ATTRIBUTE).getNodeValue());
+
+            CellController cellController = CellController.getInstance();
+            CellView cellView = cellController.getCellViewFrom(rowPosition,columnPosition);
+
+
+            SoSPointController.getInstance().createSoSPoint(uniqueID,label,cellView);
+        }
+
 
 
         //ANTENNA

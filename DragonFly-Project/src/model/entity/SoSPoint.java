@@ -5,15 +5,17 @@ import java.util.List;
 
 public class SoSPoint extends Entity{
     public static int COUNT_SOS_POINT = 1;
+    private String label;
     private String uniqueID;
     private Integer rowPosition, columnPosition;
     private Boolean selected = false;
     private List<Listener> listeners = new ArrayList<>();
 
-    public SoSPoint(String uniqueID, int rowPosition, int columnPosition) {
+    public SoSPoint(String uniqueID, String label, int rowPosition, int columnPosition) {
         setUniqueID(uniqueID);
         setRowPosition(rowPosition);
         setColumnPosition(columnPosition);
+        this.label = label;
 
         COUNT_SOS_POINT++;
     }
@@ -23,6 +25,14 @@ public class SoSPoint extends Entity{
 
     public static void restartCount() {
         COUNT_SOS_POINT = 1;
+    }
+
+    public String getLabel() {
+        return label;
+    }
+
+    public void setLabel(String label) {
+        this.label = label;
     }
 
     public interface Listener{

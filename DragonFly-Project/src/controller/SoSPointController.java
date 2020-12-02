@@ -34,7 +34,7 @@ public class SoSPointController {
 
     public SoSPoint createSoSPoint(String uniqueID, String labelSoSPoint, CellView currentCellView){
 
-        SoSPoint soSPoint  = new SoSPoint(uniqueID, currentCellView.getRowPosition(), currentCellView.getCollunmPosition());
+        SoSPoint soSPoint  = new SoSPoint(uniqueID, labelSoSPoint, currentCellView.getRowPosition(), currentCellView.getCollunmPosition());
 
         sosPointMap.put(uniqueID, soSPoint);
 

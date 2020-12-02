@@ -39,4 +39,8 @@ public class ConstantXml {
 
     public static final String ROOT_TREE_ELEMENT = "treeElements";
     public static final String TREE_ELEMENT = "treeElement";
+
+
+    public static final String ROOT_SOS_POINT_ELEMENT = "sosPointElements";
+    public static final String SOS_POINT_ELEMENT = "sosPointElement";
 }
