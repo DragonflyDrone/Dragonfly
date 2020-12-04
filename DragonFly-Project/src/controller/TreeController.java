@@ -95,13 +95,13 @@ public class TreeController {
     }
 
     private void startTree() {
-        fireStopWatch = new StopWatch(0, 3000) {
+        fireStopWatch = new StopWatch(0, 30000) {
             @Override
             public void task() {
                 AtomicBoolean isFire = new AtomicBoolean(false);
                 Platform.runLater(() -> {
                     for (Tree tree: treeMap.values()){
-                         isFire.set(ProbabilityHelper.prob(100));
+                         isFire.set(ProbabilityHelper.prob(20));
                          tree.setFire(isFire.get());
                          //System.out.println(isFire.get());
                     }
