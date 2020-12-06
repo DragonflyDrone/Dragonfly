@@ -62,6 +62,7 @@ public class DroneAutomaticController extends DroneController {
                             // Platform.runLater(() -> {
                             DroneBusinessObject.goDestinyAutomatic(drone);
                             //  });
+                            DroneBusinessObject.applyFailureProbabilityInSensorAndActuator(drone);
                             DroneBusinessObject.updateBatteryPerSecond(drone);
                             DroneBusinessObject.updateBatteryPerBlock(drone);
                             DroneBusinessObject.updateDistances(drone);

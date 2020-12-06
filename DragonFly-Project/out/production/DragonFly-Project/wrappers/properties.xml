@@ -60,5 +60,42 @@
                     class-name-settings-controller ="DroneSettingsPanelController"/>
 
 
+<!--EXPERIMENT-->
+    <WrapperElement name-file-aj="KeepFlying"
+                    id="10" name-shown-panel="Keepflying-experiment"
+                    color="#34eb77"
+                    description="Keepflying-experiment"
+                    class-name-settings-controller ="DroneSettingsPanelController"/>
+
+    <WrapperElement name-file-aj="MoveAside"
+                    id="11" name-shown-panel="MoveAside-experiment"
+                    color="#34eb77"
+                    description="MoveAside-experiment"
+                    class-name-settings-controller ="DroneSettingsPanelController"/>
+
+    <WrapperElement name-file-aj="SafeRTH"
+                    id="12" name-shown-panel="SafeRTH-experiment"
+                    color="#34eb77"
+                    description="SafeRTH-experiment"
+                    class-name-settings-controller ="DroneSettingsPanelController"/>
+
+    <WrapperElement name-file-aj="SwitchToManual"
+                    id="13" name-shown-panel="SwitchToManual-experiment"
+                    color="#34eb77"
+                    description="SwitchToManual-experiment"
+                    class-name-settings-controller ="DroneSettingsPanelController"/>
+
+    <WrapperElement name-file-aj="MonitorEnvironment"
+                    id="14" name-shown-panel="MonitorEnvironment-experiment"
+                    color="#34eb77"
+                    description="MonitorEnvironment-experiment"
+                    class-name-settings-controller ="DroneSettingsPanelController"/>
+
+    <WrapperElement name-file-aj="EmergencyCamera"
+                    id="15" name-shown-panel="EmergencyCamera-experiment"
+                    color="#34eb77"
+                    description="EmergencyCamera-experiment"
+                    class-name-settings-controller ="DroneSettingsPanelController"/>
+
 
 </WrapperElements>

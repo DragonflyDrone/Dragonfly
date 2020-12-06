@@ -85,6 +85,11 @@ public class Drone extends Entity {
     private DirectionEnum windDirection = DirectionEnum.EAST;
 
     private CollisionStateEnum collisionState = CollisionStateEnum.ON;
+
+    public double getCollisionFailureProbability() {
+        return collisionFailureProbability;
+    }
+
     private double collisionFailureProbability = 0.D;
 
     public Drone(String uniqueID, String label, Cell sourceCell) {

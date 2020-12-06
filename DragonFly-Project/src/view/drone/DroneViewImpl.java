@@ -360,6 +360,7 @@ public class DroneViewImpl extends DroneView {
             updadePositionDroneView(drone);
             // updateItIsOver(drone);
             DroneBusinessObject.updateItIsOver(drone);
+            loggerController.print("Drone[" + getDroneLabel() + "] " + "Current Position: ["+ drone.getCurrentPositionI()+","+""+drone.getCurrentPositionJ()+"]" );
 
             return;
         }

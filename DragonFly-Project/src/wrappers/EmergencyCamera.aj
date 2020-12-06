@@ -18,10 +18,9 @@ public aspect EmergencyCamera {
     after(): safeLanding()
             && if
             (
-            (((Drone)thisJoinPoint.getArgs()[0]).getWrapperId() == 1)
+            (((Drone)thisJoinPoint.getArgs()[0]).getWrapperId() == 15)
             &&
             (((Drone)thisJoinPoint.getArgs()[0]).getGpsState() == GPSStateEnum.FAILURE)
-            &&
             ){
         helperCamera(thisJoinPoint);
 
@@ -41,6 +40,7 @@ public aspect EmergencyCamera {
         drone.setCameraState(CameraStateEnum.ON);
         drone.setGambialState(GambialStateEnum.ON);
         drone.setEconomyMode(true);
+
         if (drone.getDistanceSource()<drone.getDistanceDestiny()){
             drone.setGambialState(GambialStateEnum.WEST);
         }else {

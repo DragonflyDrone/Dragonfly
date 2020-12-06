@@ -4,10 +4,7 @@ import controller.*;
 import javafx.scene.input.KeyCode;
 import model.Cell;
 import model.entity.Tree;
-import model.entity.drone.sensors.CameraStateEnum;
-import model.entity.drone.sensors.GPSStateEnum;
-import model.entity.drone.sensors.GambialStateEnum;
-import model.entity.drone.sensors.SmokeStateEnum;
+import model.entity.drone.sensors.*;
 import util.DirectionEnum;
 import util.ProbabilityHelper;
 import util.StopWatch;
@@ -24,7 +21,7 @@ import java.util.concurrent.ScheduledExecutorService;
 
 public class DroneBusinessObject {
     private static StopWatch returnToHomeStopWatch;
-    private static boolean mustStopReturnToHomeStopWatch;
+    public static boolean mustStopReturnToHomeStopWatch;
     private TimerTask batteryDecrementertimerTask;
     private ScheduledExecutorService batteryDecrementerExecutor;
 
@@ -80,6 +77,7 @@ public class DroneBusinessObject {
         }
 
         selectedDrone.setStarted(false);
+//        updateItIsOver(selectedDrone);
 /*
         stopBatteryDecrementer();
         stopReturnToHome();
@@ -687,6 +685,11 @@ public class DroneBusinessObject {
 
 
     public static void returnToHome(Drone drone) {
+
+        if(drone.isReturningToHome()){
+            return;
+        }
+
         drone.setReturningToHome(true);
 
         if(drone.isManual()){
@@ -1355,6 +1358,7 @@ public class DroneBusinessObject {
         boolean cameraIsAtFault = ProbabilityHelper.prob(currentDrone.getCameraFailureProbability());
         boolean gpsIsAtFault = ProbabilityHelper.prob(currentDrone.getGpsFailureProbability());
         boolean smokeIsAtFault = ProbabilityHelper.prob(currentDrone.getSmokeFailureProbability());
+        boolean collisionIsAtFault = ProbabilityHelper.prob(currentDrone.getCollisionFailureProbability());
 
         if (gambialIsAtFault
                 && currentDrone.getGambialState() != GambialStateEnum.FAILURE) {
@@ -1373,9 +1377,12 @@ public class DroneBusinessObject {
         if (gpsIsAtFault
                 && currentDrone.getGpsState()!=GPSStateEnum.FAILURE) {
             currentDrone.setGpsState(GPSStateEnum.FAILURE);
+            returnToHome(currentDrone);
         }else if (!gpsIsAtFault
                 && currentDrone.getGpsState()==GPSStateEnum.FAILURE){
             currentDrone.setGpsState(GPSStateEnum.ON);
+            mustStopReturnToHomeStopWatch = true;
+
         }
         if (smokeIsAtFault
                 && currentDrone.getSmokeState() != SmokeStateEnum.FAILURE) {
@@ -1383,6 +1390,14 @@ public class DroneBusinessObject {
         }else if (!smokeIsAtFault
                 && currentDrone.getSmokeState() == SmokeStateEnum.FAILURE){
             currentDrone.setSmokeState(SmokeStateEnum.ON);
+        }
+
+        if (collisionIsAtFault
+                && currentDrone.getCollisionState() != CollisionStateEnum.FAILURE) {
+            currentDrone.setCollisionState(CollisionStateEnum.FAILURE);
+        }else if (!collisionIsAtFault
+                && currentDrone.getCollisionState() == CollisionStateEnum.FAILURE){
+            currentDrone.setCollisionState(CollisionStateEnum.ON);
         }
     }
 

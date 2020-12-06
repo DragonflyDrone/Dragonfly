@@ -4,6 +4,7 @@ import controller.LoggerController;
 import javafx.application.Platform;
 import model.entity.drone.Drone;
 import model.entity.drone.DroneBusinessObject;
+import model.entity.drone.sensors.CameraStateEnum;
 import model.entity.drone.sensors.SmokeStateEnum;
 import org.aspectj.lang.JoinPoint;
 import util.DirectionEnum;
@@ -18,7 +19,7 @@ public aspect MonitorEnvironment {
             && if
             (
             (
-            ((Drone)thisJoinPoint.getArgs()[0]).getWrapperId() == 1
+            ((Drone)thisJoinPoint.getArgs()[0]).getWrapperId() == 14
             )
             &&
             (
