@@ -1182,8 +1182,13 @@ public class DroneBusinessObject {
         if (initialRowPosition < 0) {
             return 999999;
         }
+        try {
+            return CellController.getInstance().calculeteDisplacementFrom(initialRowPosition, initialCollunmPosition, finalRowPosition, finalCollunmPosition);
+        }catch (Exception e){
+            return 999999;
+        }
 
-        return CellController.getInstance().calculeteDisplacementFrom(initialRowPosition, initialCollunmPosition, finalRowPosition, finalCollunmPosition);
+
     }
 
     public static double distanceDroneWentLeft(CellView sourceCellView, CellView destinyCellView) {
