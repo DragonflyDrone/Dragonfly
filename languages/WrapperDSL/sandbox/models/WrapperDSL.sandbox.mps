@@ -16,7 +16,6 @@
         <property id="3488505779904874992" name="operator" index="gii1Q" />
         <property id="5547882272274126500" name="value" index="iq1WG" />
       </concept>
-      <concept id="577212062751176910" name="WrapperDSL.structure.TriggerEvent" flags="ng" index="gm1eu" />
       <concept id="577212062751443412" name="WrapperDSL.structure.EnergySavingModeStateCommandExpression" flags="ng" index="gn6a4">
         <property id="9212155008746131781" name="state" index="1vZztD" />
       </concept>
@@ -40,7 +39,6 @@
       <concept id="577212062751443395" name="WrapperDSL.structure.UAVManeuverDirectionToRegionCommandExpression" flags="ng" index="gn6aj">
         <property id="1287546727785907245" name="RegionDirection" index="1cIKN0" />
       </concept>
-      <concept id="577212062751443404" name="WrapperDSL.structure.AccelerationModeConditionalExpression" flags="ng" index="gn6as" />
       <concept id="5538177954659204583" name="WrapperDSL.structure.AdaptationBehavior" flags="ng" index="2mxZ9A">
         <property id="5538177954659204588" name="typeOfAdaptation" index="2mxZ9H" />
         <reference id="5538177954659204594" name="adaptationScriptName" index="2mxZ9N" />
@@ -357,7 +355,7 @@
     </node>
   </node>
   <node concept="1nTbkf" id="17uiePt_Qhm">
-    <property role="TrG5h" value="MonitorEnviroment" />
+    <property role="TrG5h" value="MonitorEnvironment" />
     <node concept="1nTbk6" id="17uiePt_Qhn" role="1nTbk1">
       <node concept="3Em$gh" id="7RBanqqHwbU" role="1nTnJQ">
         <property role="3EnToj" value="5eYfGK4nkaD/and" />
@@ -366,8 +364,8 @@
           <property role="1vZvWj" value="7Zo9yKw9t_3/DETECTED" />
         </node>
         <node concept="2WXwOn" id="17uiePt_QhW" role="3EglUc">
-          <property role="1zyKZQ" value="5fwjzFJ5$bD/iqual" />
-          <property role="1zyKZO" value="5fwjzFJ5$wT/ERROR" />
+          <property role="1zyKZQ" value="5fwjzFJ5$bE/not_equal" />
+          <property role="1zyKZO" value="5fwjzFJ5$wW/STARTED" />
         </node>
       </node>
     </node>
@@ -407,20 +405,6 @@
             <property role="1vZzuM" value="11jlgVoCRQQ/NORTH" />
           </node>
         </node>
-      </node>
-    </node>
-  </node>
-  <node concept="1nTbkf" id="7DPDb$iZeNs">
-    <property role="TrG5h" value="Test" />
-    <node concept="1nTbk6" id="7DPDb$iZeNt" role="1nTbk1">
-      <node concept="gn6as" id="4jFPKjQE$9J" role="1nTnJQ" />
-    </node>
-    <node concept="1nTbk7" id="7DPDb$iZeNv" role="1nTbk3">
-      <node concept="gm1eu" id="7DPDb$iZeNw" role="2mxZ8X" />
-    </node>
-    <node concept="1nTbk0" id="7DPDb$iZeNx" role="1nTbku">
-      <node concept="2mxZ9A" id="7DPDb$iZeNy" role="1nTnH_">
-        <node concept="1nO3mo" id="7DPDb$iZeNz" role="2mxZ7t" />
       </node>
     </node>
   </node>

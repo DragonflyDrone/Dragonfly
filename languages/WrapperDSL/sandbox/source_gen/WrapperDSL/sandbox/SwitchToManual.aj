@@ -23,6 +23,9 @@ import view.drone.*;
 public aspect SwitchToManual{
 private boolean alreadyExecuting = false;
 
+boolean around():
+&&
+if
 
 {
 turnManual(thisJoinPoint);
@@ -35,5 +38,5 @@ Drone drone = (Drone) thisJoinPoint.getArgs()[0];
 System.out.println("Drone["+drone.getLabel()+"] "+"SwitchToManual");
 LoggerController.getInstance().print("Drone["+drone.getLabel()+"] SwitchToManual");
 
-<!TextGen not found for 'WrapperDSL.structure.FlightControlStateCommandExpression'!>}
+FlightControlStateCommandExpression}
 }

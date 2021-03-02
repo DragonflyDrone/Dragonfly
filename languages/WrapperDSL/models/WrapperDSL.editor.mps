@@ -430,7 +430,7 @@
         <property role="3F0ifm" value="(" />
       </node>
       <node concept="3F0ifn" id="3gtR0Xn_GNU" role="3EZMnx">
-        <property role="3F0ifm" value="UAV.direction" />
+        <property role="3F0ifm" value="Drone.direction" />
       </node>
       <node concept="l2Vlx" id="3gtR0Xn_GNK" role="2iSdaV" />
       <node concept="3F0A7n" id="3gtR0Xn_GO7" role="3EZMnx">
@@ -452,7 +452,7 @@
         <property role="3F0ifm" value="(" />
       </node>
       <node concept="3F0ifn" id="3gtR0Xn_GOO" role="3EZMnx">
-        <property role="3F0ifm" value="UAV.direction" />
+        <property role="3F0ifm" value="Drone.direction" />
       </node>
       <node concept="l2Vlx" id="3gtR0Xn_GOP" role="2iSdaV" />
       <node concept="3F0A7n" id="3gtR0Xn_GOQ" role="3EZMnx">
@@ -474,7 +474,7 @@
         <property role="3F0ifm" value="(" />
       </node>
       <node concept="3F0ifn" id="3gtR0Xn_GP_" role="3EZMnx">
-        <property role="3F0ifm" value="UAV.position" />
+        <property role="3F0ifm" value="Drone.position" />
       </node>
       <node concept="3F0A7n" id="3gtR0Xn_GPH" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:3gtR0Xn_GP1" resolve="operator" />
@@ -511,7 +511,7 @@
         <ref role="1NtTu8" to="lpas:3gtR0Xn_GRt" resolve="axes" />
       </node>
       <node concept="3F0ifn" id="3gtR0Xn_GSc" role="3EZMnx">
-        <property role="3F0ifm" value="UAV.rotation" />
+        <property role="3F0ifm" value="Drone.rotation" />
       </node>
       <node concept="3F0A7n" id="3gtR0Xn_GS2" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:3gtR0Xn_GRr" resolve="operator" />
@@ -533,7 +533,7 @@
         <property role="3F0ifm" value="(" />
       </node>
       <node concept="3F0ifn" id="3gtR0Xn_GTa" role="3EZMnx">
-        <property role="3F0ifm" value="UAV.speed" />
+        <property role="3F0ifm" value="Drone.speed" />
       </node>
       <node concept="3F0A7n" id="3gtR0Xn_GTl" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:3gtR0Xn_GTi" resolve="operator" />
@@ -558,7 +558,7 @@
         <property role="3F0ifm" value="(" />
       </node>
       <node concept="3F0ifn" id="3gtR0Xn_GUp" role="3EZMnx">
-        <property role="3F0ifm" value="UAV.speedMode" />
+        <property role="3F0ifm" value="Drone.speedMode" />
       </node>
       <node concept="3F0A7n" id="3gtR0Xn_GUA" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:3gtR0Xn_GU1" resolve="operator" />
@@ -580,7 +580,7 @@
         <property role="3F0ifm" value="(" />
       </node>
       <node concept="3F0ifn" id="3gtR0Xn_GVx" role="3EZMnx">
-        <property role="3F0ifm" value="UAV.acceleration" />
+        <property role="3F0ifm" value="Drone.acceleration" />
       </node>
       <node concept="3F0A7n" id="3gtR0Xn_GVD" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:3gtR0Xn_GV6" resolve="operator" />
@@ -602,7 +602,7 @@
         <property role="3F0ifm" value="(" />
       </node>
       <node concept="3F0ifn" id="3gtR0Xn_GWx" role="3EZMnx">
-        <property role="3F0ifm" value="UAV.accelerationMode" />
+        <property role="3F0ifm" value="Drone.accelerationMode" />
       </node>
       <node concept="3F0A7n" id="3gtR0Xn_GWJ" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:3gtR0Xn_GW6" resolve="operator" />
@@ -624,7 +624,7 @@
         <property role="3F0ifm" value="(" />
       </node>
       <node concept="3F0ifn" id="3gtR0Xn_GXI" role="3EZMnx">
-        <property role="3F0ifm" value="UAV.altitude" />
+        <property role="3F0ifm" value="Drone.altitude" />
       </node>
       <node concept="3F0A7n" id="3gtR0Xn_GXX" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:3gtR0Xn_GXr" resolve="operator" />
@@ -1738,7 +1738,7 @@
     <ref role="1XX52x" to="lpas:w2EP0onGB3" resolve="UAVManeuverDirectionToRegionCommandExpression" />
     <node concept="3EZMnI" id="7Zo9yKw9x7m" role="2wV5jI">
       <node concept="3F0ifn" id="7Zo9yKw9x7n" role="3EZMnx">
-        <property role="3F0ifm" value="UAV.direction" />
+        <property role="3F0ifm" value="Drone.direction" />
       </node>
       <node concept="3F0A7n" id="7Zo9yKw9x7p" role="3EZMnx">
         <ref role="1NtTu8" to="lpas:17uiePtpkgH" resolve="RegionDirection" />

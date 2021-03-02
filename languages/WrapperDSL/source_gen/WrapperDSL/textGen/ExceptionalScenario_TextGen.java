@@ -19,7 +19,6 @@ public class ExceptionalScenario_TextGen extends TextGenDescriptorBase {
   public void generateText(final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
     tgs.append("package wrappers;\n\n");
-
     tgs.append("//IMPORTS//\n");
     tgs.append("//JAVA IMPORTS\n");
     tgs.append("import javafx.application.Platform;\nimport javafx.concurrent.Task;\nimport org.aspectj.lang.JoinPoint;\nimport java.util.ArrayList;\nimport java.util.List;\n");
@@ -56,7 +55,7 @@ public class ExceptionalScenario_TextGen extends TextGenDescriptorBase {
     tgs.append("\n");
     tgs.popTextArea();
     tgs.pushTextArea("conditionalAdvice");
-    transformationOperations.whenAndThenToContitionalPointCutCall(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.when$sVSo), SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.then$t1wK), ctx);
+    transformationOperations.whenAndThenToContitionalAdvice(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.when$sVSo), SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.then$t1wK), ctx);
     tgs.popTextArea();
     tgs.pushTextArea("conditionalAdvice");
     tgs.appendNode(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.given$sVqm));

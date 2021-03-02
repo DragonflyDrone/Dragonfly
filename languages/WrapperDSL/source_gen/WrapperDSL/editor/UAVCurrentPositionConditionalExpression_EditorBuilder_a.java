@@ -69,7 +69,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     return editorCell;
   }
   private EditorCell createConstant_1() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "UAV.position");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Drone.position");
     editorCell.setCellId("Constant_thhj5f_b0");
     editorCell.setDefaultText("");
     return editorCell;
