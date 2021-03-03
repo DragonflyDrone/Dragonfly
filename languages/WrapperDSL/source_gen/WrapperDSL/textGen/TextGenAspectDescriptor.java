@@ -48,6 +48,8 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
         return new FlightControlStateCommandExpression_TextGen();
       case LanguageConceptSwitch.GPSStateConditionalExpression:
         return new GPSStateConditionalExpression_TextGen();
+      case LanguageConceptSwitch.GimbalRotationCommandExpression:
+        return new GimbalRotationCommandExpression_TextGen();
       case LanguageConceptSwitch.GimbalRotationConditionalExpression:
         return new GimbalRotationConditionalExpression_TextGen();
       case LanguageConceptSwitch.GimbalStateCommandeExpression:
@@ -78,6 +80,8 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
         return new While_TextGen();
       case LanguageConceptSwitch.WindDirectionConditionalExpression:
         return new WindDirectionConditionalExpression_TextGen();
+      case LanguageConceptSwitch.WindSpeedConditionalExpression:
+        return new WindSpeedConditionalExpression_TextGen();
     }
     return null;
   }
