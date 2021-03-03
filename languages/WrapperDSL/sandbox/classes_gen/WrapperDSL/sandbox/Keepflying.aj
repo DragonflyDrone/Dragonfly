@@ -22,7 +22,10 @@ import view.drone.*;
 
 public aspect Keepflying{
 private boolean alreadyExecuting = false;
-
+pointcut safeLanding(): call (* model.entity.drone.DroneBusinessObject.safeLanding(*));
+boolean around():safeLanding()
+&&
+if
 
 {
 goDestination(thisJoinPoint);
@@ -39,7 +42,7 @@ LoggerController.getInstance().print("Drone["+drone.getLabel()+"] Keepflying");
             @Override
             public void task() {
                 Platform.runLater(() -> {
-<!TextGen not found for 'WrapperDSL.structure.UAVManeuverDirectionToRegionCommandExpression'!>
+UAVManeuverDirectionToRegionCommandExpression
                 });
 
             }
@@ -47,7 +50,7 @@ LoggerController.getInstance().print("Drone["+drone.getLabel()+"] Keepflying");
             public boolean conditionStop() {
 
             
-return !(<!TextGen not found for 'WrapperDSL.structure.RelativeDistanceConditionalExpression'!>);}
+return !();}
  };
 }
 }

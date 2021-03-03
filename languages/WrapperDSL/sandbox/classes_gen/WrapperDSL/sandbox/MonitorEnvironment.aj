@@ -20,23 +20,22 @@ import view.drone.*;
 
 //IMPORTS//
 
-public aspect SafeRTH{
+public aspect MonitorEnvironment{
 private boolean alreadyExecuting = false;
 pointcut flyingToDirection(): call (* model.entity.drone.DroneBusinessObject.flyToDirection(*,*));
-boolean around():flyingToDirection()
+before():flyingToDirection()
 &&
 if
 
 {
-newSafeLand(thisJoinPoint);
-return false;
+framework(thisJoinPoint);
 }
-public void newSafeLand(JoinPoint thisJoinPoint)
+public void framework(JoinPoint thisJoinPoint)
 {
 Drone drone = (Drone) thisJoinPoint.getArgs()[0];
 
-System.out.println("Drone["+drone.getLabel()+"] "+"SafeRTH");
-LoggerController.getInstance().print("Drone["+drone.getLabel()+"] SafeRTH");
+System.out.println("Drone["+drone.getLabel()+"] "+"MonitorEnvironment");
+LoggerController.getInstance().print("Drone["+drone.getLabel()+"] MonitorEnvironment");
 
-SafeLandingStateCommandExpression}
+UAVManeuverDirectionCommandExpressionUAVManeuverDirectionCommandExpressionUAVManeuverDirectionCommandExpressionUAVManeuverDirectionCommandExpressionUAVManeuverDirectionCommandExpressionUAVManeuverDirectionCommandExpressionUAVManeuverDirectionCommandExpressionUAVManeuverDirectionCommandExpression}
 }

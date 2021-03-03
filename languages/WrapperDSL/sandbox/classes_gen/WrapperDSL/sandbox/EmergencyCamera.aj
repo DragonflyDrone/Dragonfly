@@ -22,8 +22,11 @@ import view.drone.*;
 
 public aspect EmergencyCamera{
 private boolean alreadyExecuting = false;
-
-<!TextGen not found for 'WrapperDSL.structure.GPSStateConditionalExpression'!>
+pointcut safeLanding(): call (* model.entity.drone.DroneBusinessObject.safeLanding(*));
+after():safeLanding()
+&&
+if
+GPSStateConditionalExpression
 {
 helperCamera(thisJoinPoint);
 }
@@ -34,7 +37,7 @@ Drone drone = (Drone) thisJoinPoint.getArgs()[0];
 System.out.println("Drone["+drone.getLabel()+"] "+"EmergencyCamera");
 LoggerController.getInstance().print("Drone["+drone.getLabel()+"] EmergencyCamera");
 
-<!TextGen not found for 'WrapperDSL.structure.CameraStateCommandExpression'!><!TextGen not found for 'WrapperDSL.structure.GimbalStateCommandeExpression'!><!TextGen not found for 'WrapperDSL.structure.EnergySavingModeStateCommandExpression'!>if(<!TextGen not found for 'WrapperDSL.structure.ComparativeRelativeDistanceConditionalExpression'!>){
+CameraStateCommandExpressionGimbalStateCommandeExpressionEnergySavingModeStateCommandExpressionif(ComparativeRelativeDistanceConditionalExpression){
 <!TextGen not found for 'WrapperDSL.structure.GimbalRotationCommandExpression'!>
 }else{
 <!TextGen not found for 'WrapperDSL.structure.GimbalRotationCommandExpression'!>}}
