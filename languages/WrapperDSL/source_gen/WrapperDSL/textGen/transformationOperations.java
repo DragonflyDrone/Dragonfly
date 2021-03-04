@@ -21,11 +21,11 @@ public abstract class transformationOperations {
 
 
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(when, LINKS.event$iUC1), CONCEPTS.SafeLandingStateTriggerEvent$1E)) {
-      tgs.append("pointcut safeLanding(): call (* model.entity.drone.DroneBusinessObject.safeLanding(*));");
+      tgs.append("    pointcut safeLanding(): call (* model.entity.drone.DroneBusinessObject.safeLanding(*));");
     } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(when, LINKS.event$iUC1), CONCEPTS.UAVManeuverDirectionTriggerEvent$MD)) {
-      tgs.append("pointcut flyingToDirection(): call (* model.entity.drone.DroneBusinessObject.flyToDirection(*,*));");
+      tgs.append("    pointcut flyingToDirection(): call (* model.entity.drone.DroneBusinessObject.flyToDirection(*,*));");
     } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(when, LINKS.event$iUC1), CONCEPTS.ReturnToHomeHomePointTriggerEvent$d)) {
-      tgs.append("pointcut flyingToDirection(): call (* model.entity.drone.DroneBusinessObject.flyToDirection(*,*));");
+      tgs.append("    pointcut flyingToDirection(): call (* model.entity.drone.DroneBusinessObject.flyToDirection(*,*));");
     }
   }
   public static void whenAndThenToContitionalAdvice(SNode when, SNode then, final TextGenContext ctx) {
@@ -44,22 +44,25 @@ public abstract class transformationOperations {
       tgs.append(SPropertyOperations.getEnum(SLinkOperations.getTarget(then, LINKS.adaptiveBehavior$h_UM), PROPS.typeOfAdaptation$h1KW).getName());
       tgs.append("():");
       tgs.append(call);
+      tgs.newLine();
 
     } else {
+      tgs.append("    ");
       tgs.append(SPropertyOperations.getEnum(SLinkOperations.getTarget(then, LINKS.adaptiveBehavior$h_UM), PROPS.typeOfAdaptation$h1KW).getName());
       tgs.append("():");
       tgs.append(call);
+      tgs.newLine();
     }
-    tgs.append("\n&&\nif\n");
+    tgs.append("            && if\n");
   }
   public static void printExceptionalScenarioInLog(SNode exceptionalScenario, final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
     String nameExceptionalScenario = SPropertyOperations.getString(exceptionalScenario, PROPS.name$MnvL);
 
-    tgs.append("System.out.println(\"Drone[\"+drone.getLabel()+\"] \"+\"");
+    tgs.append("        System.out.println(\"Drone[\"+drone.getLabel()+\"] \"+\"");
     tgs.append(nameExceptionalScenario);
     tgs.append("\");\n");
-    tgs.append("LoggerController.getInstance().print(\"Drone[\"+drone.getLabel()+\"] ");
+    tgs.append("        LoggerController.getInstance().print(\"Drone[\"+drone.getLabel()+\"] ");
     tgs.append(nameExceptionalScenario);
     tgs.append("\");\n");
   }

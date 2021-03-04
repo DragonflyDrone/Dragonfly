@@ -17,25 +17,25 @@ public class LogicalExpression_TextGen extends TextGenDescriptorBase {
   public void generateText(final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
     if (SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.operator$UuMX) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53be3ecc045a8bdfL, "WrapperDSL.structure.LogicalOperatorEnum"), 0x53be3ecc045d42a9L, "and")) {
-      tgs.append("(");
+      tgs.append("            (");
       tgs.newLine();
       tgs.appendNode(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.left$lmh3));
       tgs.newLine();
-      tgs.append("&&");
+      tgs.append("            &&");
       tgs.newLine();
       tgs.appendNode(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.right$XylW));
       tgs.newLine();
-      tgs.append(")");
+      tgs.append("            )");
     } else {
-      tgs.append("(");
+      tgs.append("            (");
       tgs.newLine();
       tgs.appendNode(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.left$lmh3));
       tgs.newLine();
-      tgs.append("||");
+      tgs.append("            ||");
       tgs.newLine();
       tgs.appendNode(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.right$XylW));
       tgs.newLine();
-      tgs.append(")");
+      tgs.append("            )");
     }
   }
 

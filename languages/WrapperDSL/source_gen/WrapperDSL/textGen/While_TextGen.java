@@ -23,16 +23,16 @@ public class While_TextGen extends TextGenDescriptorBase {
     tgs.append("                });\n\n            }");
     tgs.newLine();
 
-    tgs.append("            @Override\n            public boolean conditionStop() {\n\n            ");
+    tgs.append("            @Override\n            public boolean conditionStop() {");
     tgs.newLine();
-    tgs.append("return ");
+    tgs.append("                return ");
     tgs.append("!(");
     tgs.appendNode(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.condition$IZns));
-    tgs.append(")");
-    tgs.append(";");
-    tgs.append("}");
+    tgs.append(");");
     tgs.newLine();
-    tgs.append(" };");
+    tgs.append("            }");
+    tgs.newLine();
+    tgs.append("    };");
     tgs.newLine();
   }
 

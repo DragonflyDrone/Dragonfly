@@ -126,6 +126,7 @@
       </concept>
       <concept id="1237305557638" name="jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart" flags="ng" index="la8eA">
         <property id="1237305576108" name="value" index="lacIc" />
+        <property id="1237306361677" name="withIndent" index="ldcpH" />
       </concept>
       <concept id="1237306079178" name="jetbrains.mps.lang.textGen.structure.AppendOperation" flags="nn" index="lc7rE">
         <reference id="3135747254706172356" name="textArea" index="2dFDx7" />
@@ -202,10 +203,10 @@
       </concept>
     </language>
     <language id="c7fb639f-be78-4307-89b0-b5959c3fa8c8" name="jetbrains.mps.lang.text">
-      <concept id="155656958578482948" name="jetbrains.mps.lang.text.structure.Word" flags="ng" index="3oM_SD">
+      <concept id="155656958578482948" name="jetbrains.mps.lang.text.structure.Word" flags="nn" index="3oM_SD">
         <property id="155656958578482949" name="value" index="3oM_SC" />
       </concept>
-      <concept id="2535923850359271782" name="jetbrains.mps.lang.text.structure.Line" flags="ng" index="1PaTwC">
+      <concept id="2535923850359271782" name="jetbrains.mps.lang.text.structure.Line" flags="nn" index="1PaTwC">
         <child id="2535923850359271783" name="elements" index="1PaTwD" />
       </concept>
     </language>
@@ -334,7 +335,8 @@
         <node concept="lc7rE" id="1OCskmtZbOO" role="3cqZAp">
           <ref role="2dFDx7" node="IyLDsS_eRV" resolve="HEADER" />
           <node concept="la8eA" id="1OCskmtZbXN" role="lcghm">
-            <property role="lacIc" value="private boolean alreadyExecuting = false;" />
+            <property role="lacIc" value="    private boolean alreadyExecuting = false;" />
+            <property role="ldcpH" value="true" />
           </node>
           <node concept="l8MVK" id="1OCskmtZc1j" role="lcghm" />
         </node>
@@ -388,11 +390,14 @@
         <node concept="lc7rE" id="IyLDsSVKzc" role="3cqZAp">
           <ref role="2dFDx7" node="IyLDsSFJbY" resolve="advice" />
           <node concept="la8eA" id="IyLDsSVK_V" role="lcghm">
-            <property role="lacIc" value="{\n" />
+            <property role="lacIc" value="            {\n" />
           </node>
         </node>
         <node concept="lc7rE" id="IyLDsSUrnW" role="3cqZAp">
           <ref role="2dFDx7" node="IyLDsSFJbY" resolve="advice" />
+          <node concept="la8eA" id="7bxYDiUSKKE" role="lcghm">
+            <property role="lacIc" value="        " />
+          </node>
           <node concept="l9hG8" id="IyLDsSUrrw" role="lcghm">
             <node concept="2OqwBi" id="IyLDsSUsbf" role="lb14g">
               <node concept="2OqwBi" id="IyLDsSUrRR" role="2Oq$k0">
@@ -455,14 +460,15 @@
         <node concept="lc7rE" id="IyLDsSVKDo" role="3cqZAp">
           <ref role="2dFDx7" node="IyLDsSFJbY" resolve="advice" />
           <node concept="la8eA" id="IyLDsSVKDp" role="lcghm">
-            <property role="lacIc" value="}\n" />
+            <property role="lacIc" value="    }\n" />
           </node>
+          <node concept="l8MVK" id="7bxYDiUSRH4" role="lcghm" />
         </node>
         <node concept="3clFbH" id="IyLDsSX4Rd" role="3cqZAp" />
         <node concept="lc7rE" id="IyLDsSX4f6" role="3cqZAp">
           <ref role="2dFDx7" node="IyLDsSX4UC" resolve="methodAdvice" />
           <node concept="la8eA" id="IyLDsSX4i8" role="lcghm">
-            <property role="lacIc" value="public void " />
+            <property role="lacIc" value="    public void " />
           </node>
           <node concept="l9hG8" id="IyLDsSX4jH" role="lcghm">
             <node concept="2OqwBi" id="IyLDsSX4kA" role="lb14g">
@@ -483,20 +489,14 @@
             </node>
           </node>
           <node concept="la8eA" id="IyLDsSX4wY" role="lcghm">
-            <property role="lacIc" value="(JoinPoint thisJoinPoint)" />
+            <property role="lacIc" value="(JoinPoint thisJoinPoint){" />
           </node>
           <node concept="l8MVK" id="1E9PaQYHoYH" role="lcghm" />
-        </node>
-        <node concept="lc7rE" id="IyLDsSX4JP" role="3cqZAp">
-          <ref role="2dFDx7" node="IyLDsSX4UC" resolve="methodAdvice" />
-          <node concept="la8eA" id="IyLDsSX4JQ" role="lcghm">
-            <property role="lacIc" value="{\n" />
-          </node>
         </node>
         <node concept="lc7rE" id="1E9PaQYNuPj" role="3cqZAp">
           <ref role="2dFDx7" node="IyLDsSX4UC" resolve="methodAdvice" />
           <node concept="la8eA" id="1E9PaQYNv4K" role="lcghm">
-            <property role="lacIc" value="Drone drone = (Drone) thisJoinPoint.getArgs()[0];\n" />
+            <property role="lacIc" value="        Drone drone = (Drone) thisJoinPoint.getArgs()[0];\n" />
           </node>
         </node>
         <node concept="lc7rE" id="1E9PaQYDjyv" role="3cqZAp">
@@ -544,12 +544,6 @@
           </node>
         </node>
         <node concept="3clFbH" id="IyLDsSX4yR" role="3cqZAp" />
-        <node concept="lc7rE" id="IyLDsSBT2n" role="3cqZAp">
-          <ref role="2dFDx7" node="IyLDsSDpHm" resolve="end" />
-          <node concept="la8eA" id="IyLDsSBT3f" role="lcghm">
-            <property role="lacIc" value="}" />
-          </node>
-        </node>
       </node>
     </node>
     <node concept="3znZDj" id="IyLDsS_eu0" role="3znZDQ">
@@ -612,7 +606,7 @@
           <node concept="3clFbS" id="IyLDsSFkSf" role="3clFbx">
             <node concept="lc7rE" id="IyLDsSFlqx" role="3cqZAp">
               <node concept="la8eA" id="IyLDsSFlqM" role="lcghm">
-                <property role="lacIc" value="pointcut safeLanding(): call (* model.entity.drone.DroneBusinessObject.safeLanding(*));" />
+                <property role="lacIc" value="    pointcut safeLanding(): call (* model.entity.drone.DroneBusinessObject.safeLanding(*));" />
               </node>
             </node>
           </node>
@@ -660,7 +654,7 @@
               </node>
               <node concept="lc7rE" id="20lP6cvibSQ" role="3cqZAp">
                 <node concept="la8eA" id="20lP6cvibSR" role="lcghm">
-                  <property role="lacIc" value="pointcut flyingToDirection(): call (* model.entity.drone.DroneBusinessObject.flyToDirection(*,*));" />
+                  <property role="lacIc" value="    pointcut flyingToDirection(): call (* model.entity.drone.DroneBusinessObject.flyToDirection(*,*));" />
                 </node>
               </node>
             </node>
@@ -684,7 +678,7 @@
             <node concept="3clFbS" id="20lP6cvYCnu" role="3eOfB_">
               <node concept="lc7rE" id="20lP6cvYCDD" role="3cqZAp">
                 <node concept="la8eA" id="20lP6cvYCDE" role="lcghm">
-                  <property role="lacIc" value="pointcut flyingToDirection(): call (* model.entity.drone.DroneBusinessObject.flyToDirection(*,*));" />
+                  <property role="lacIc" value="    pointcut flyingToDirection(): call (* model.entity.drone.DroneBusinessObject.flyToDirection(*,*));" />
                 </node>
               </node>
             </node>
@@ -860,6 +854,7 @@
                   <ref role="3cqZAo" node="IyLDsSSgGo" resolve="call" />
                 </node>
               </node>
+              <node concept="l8MVK" id="7bxYDiUSJ02" role="lcghm" />
             </node>
             <node concept="3clFbH" id="1OCskmt_8k6" role="3cqZAp" />
           </node>
@@ -889,6 +884,9 @@
           <node concept="9aQIb" id="1OCskmt_9E0" role="9aQIa">
             <node concept="3clFbS" id="1OCskmt_9E1" role="9aQI4">
               <node concept="lc7rE" id="IyLDsSSeCT" role="3cqZAp">
+                <node concept="la8eA" id="7bxYDiUSFsX" role="lcghm">
+                  <property role="lacIc" value="    " />
+                </node>
                 <node concept="l9hG8" id="IyLDsSSeD8" role="lcghm">
                   <node concept="2OqwBi" id="IyLDsSSfoX" role="lb14g">
                     <node concept="2OqwBi" id="IyLDsSSf2W" role="2Oq$k0">
@@ -917,13 +915,14 @@
                     <ref role="3cqZAo" node="IyLDsSSgGo" resolve="call" />
                   </node>
                 </node>
+                <node concept="l8MVK" id="7bxYDiUSIY5" role="lcghm" />
               </node>
             </node>
           </node>
         </node>
         <node concept="lc7rE" id="IyLDsSShOA" role="3cqZAp">
           <node concept="la8eA" id="IyLDsSShQ0" role="lcghm">
-            <property role="lacIc" value="\n&amp;&amp;\nif\n" />
+            <property role="lacIc" value="            &amp;&amp; if\n" />
           </node>
         </node>
       </node>
@@ -951,7 +950,7 @@
         <node concept="3clFbH" id="IyLDsSZ2zr" role="3cqZAp" />
         <node concept="lc7rE" id="IyLDsSZ2b_" role="3cqZAp">
           <node concept="la8eA" id="IyLDsSZ2cv" role="lcghm">
-            <property role="lacIc" value="System.out.println(&quot;Drone[&quot;+drone.getLabel()+&quot;] &quot;+&quot;" />
+            <property role="lacIc" value="        System.out.println(&quot;Drone[&quot;+drone.getLabel()+&quot;] &quot;+&quot;" />
           </node>
           <node concept="l9hG8" id="IyLDsSZ2$F" role="lcghm">
             <node concept="37vLTw" id="IyLDsSZ2_s" role="lb14g">
@@ -964,7 +963,7 @@
         </node>
         <node concept="lc7rE" id="IyLDsSZ2dq" role="3cqZAp">
           <node concept="la8eA" id="IyLDsSZ2dH" role="lcghm">
-            <property role="lacIc" value="LoggerController.getInstance().print(&quot;Drone[&quot;+drone.getLabel()+&quot;] " />
+            <property role="lacIc" value="        LoggerController.getInstance().print(&quot;Drone[&quot;+drone.getLabel()+&quot;] " />
           </node>
           <node concept="l9hG8" id="IyLDsSZ2NN" role="lcghm">
             <node concept="37vLTw" id="IyLDsSZ2O_" role="lb14g">
@@ -1035,7 +1034,7 @@
           <node concept="3clFbS" id="IyLDsSMQcC" role="3clFbx">
             <node concept="lc7rE" id="IyLDsSGwkx" role="3cqZAp">
               <node concept="la8eA" id="IyLDsSLaDP" role="lcghm">
-                <property role="lacIc" value="(" />
+                <property role="lacIc" value="            (" />
               </node>
               <node concept="l8MVK" id="1OCskmtCuwa" role="lcghm" />
               <node concept="l9hG8" id="IyLDsSGwkR" role="lcghm">
@@ -1048,7 +1047,7 @@
               </node>
               <node concept="l8MVK" id="1OCskmtCuyU" role="lcghm" />
               <node concept="la8eA" id="IyLDsSMRP$" role="lcghm">
-                <property role="lacIc" value="&amp;&amp;" />
+                <property role="lacIc" value="            &amp;&amp;" />
               </node>
               <node concept="l8MVK" id="1OCskmtCu_G" role="lcghm" />
               <node concept="l9hG8" id="IyLDsSGwUu" role="lcghm">
@@ -1061,7 +1060,7 @@
               </node>
               <node concept="l8MVK" id="1OCskmtE$eT" role="lcghm" />
               <node concept="la8eA" id="IyLDsSLaHQ" role="lcghm">
-                <property role="lacIc" value=")" />
+                <property role="lacIc" value="            )" />
               </node>
             </node>
           </node>
@@ -1085,7 +1084,7 @@
             <node concept="3clFbS" id="IyLDsSMRSf" role="9aQI4">
               <node concept="lc7rE" id="1OCskmtCuB6" role="3cqZAp">
                 <node concept="la8eA" id="1OCskmtCuB7" role="lcghm">
-                  <property role="lacIc" value="(" />
+                  <property role="lacIc" value="            (" />
                 </node>
                 <node concept="l8MVK" id="1OCskmtCuB8" role="lcghm" />
                 <node concept="l9hG8" id="1OCskmtCuB9" role="lcghm">
@@ -1098,7 +1097,7 @@
                 </node>
                 <node concept="l8MVK" id="1OCskmtCuBd" role="lcghm" />
                 <node concept="la8eA" id="1OCskmtCuBe" role="lcghm">
-                  <property role="lacIc" value="||" />
+                  <property role="lacIc" value="            ||" />
                 </node>
                 <node concept="l8MVK" id="1OCskmtCuBf" role="lcghm" />
                 <node concept="l9hG8" id="1OCskmtCuBg" role="lcghm">
@@ -1111,7 +1110,7 @@
                 </node>
                 <node concept="l8MVK" id="1OCskmtE$hI" role="lcghm" />
                 <node concept="la8eA" id="1OCskmtCuBk" role="lcghm">
-                  <property role="lacIc" value=")" />
+                  <property role="lacIc" value="            )" />
                 </node>
               </node>
             </node>
@@ -1893,13 +1892,13 @@
         </node>
         <node concept="lc7rE" id="P_N_RPCV6T" role="3cqZAp">
           <node concept="la8eA" id="P_N_RPCVbP" role="lcghm">
-            <property role="lacIc" value="            @Override\n            public boolean conditionStop() {\n\n            " />
+            <property role="lacIc" value="            @Override\n            public boolean conditionStop() {" />
           </node>
           <node concept="l8MVK" id="P_N_RPCVcT" role="lcghm" />
         </node>
         <node concept="lc7rE" id="P_N_RPCVlK" role="3cqZAp">
           <node concept="la8eA" id="P_N_RPCVn6" role="lcghm">
-            <property role="lacIc" value="return " />
+            <property role="lacIc" value="                return " />
           </node>
           <node concept="la8eA" id="P_N_RPEnn6" role="lcghm">
             <property role="lacIc" value="!(" />
@@ -1913,21 +1912,19 @@
             </node>
           </node>
           <node concept="la8eA" id="P_N_RPCVQi" role="lcghm">
-            <property role="lacIc" value=")" />
+            <property role="lacIc" value=");" />
           </node>
-          <node concept="la8eA" id="P_N_RPEnsx" role="lcghm">
-            <property role="lacIc" value=";" />
-          </node>
+          <node concept="l8MVK" id="7bxYDiUTeJO" role="lcghm" />
         </node>
         <node concept="lc7rE" id="P_N_RPCVep" role="3cqZAp">
           <node concept="la8eA" id="P_N_RPCVjo" role="lcghm">
-            <property role="lacIc" value="}" />
+            <property role="lacIc" value="            }" />
           </node>
           <node concept="l8MVK" id="P_N_RPCVkd" role="lcghm" />
         </node>
         <node concept="lc7rE" id="P_N_RPCV4y" role="3cqZAp">
           <node concept="la8eA" id="P_N_RPCV5K" role="lcghm">
-            <property role="lacIc" value=" };" />
+            <property role="lacIc" value="    };" />
           </node>
           <node concept="l8MVK" id="P_N_RPCV6_" role="lcghm" />
         </node>
@@ -2216,7 +2213,7 @@
               <node concept="3clFbS" id="bX1fLeLDbW" role="3clFbx">
                 <node concept="lc7rE" id="bX1fLeLHsh" role="3cqZAp">
                   <node concept="la8eA" id="bX1fLeLHum" role="lcghm">
-                    <property role="lacIc" value="(Drone)thisJoinPoint.getArgs()[0]).isOnWater()" />
+                    <property role="lacIc" value="            (((Drone)thisJoinPoint.getArgs()[0]).isOnWater())" />
                   </node>
                 </node>
               </node>
@@ -2309,7 +2306,7 @@
                   <property role="TrG5h" value="finalExpression" />
                   <node concept="17QB3L" id="7goH6Gfm86q" role="1tU5fm" />
                   <node concept="Xl_RD" id="7goH6Gfm4LJ" role="33vP2m">
-                    <property role="Xl_RC" value="(((Drone)thisJoinPoint.getArgs()[0]).getDistanceDestiny()" />
+                    <property role="Xl_RC" value="            (((Drone)thisJoinPoint.getArgs()[0]).getDistanceDestiny()" />
                   </node>
                 </node>
               </node>
@@ -2479,47 +2476,47 @@
         <node concept="3clFbH" id="7goH6GfmKJ9" role="3cqZAp" />
         <node concept="lc7rE" id="7goH6GfmBUN" role="3cqZAp">
           <node concept="la8eA" id="7goH6GfmBYB" role="lcghm">
-            <property role="lacIc" value=" DroneView droneView = DroneController.getInstance().getDroneViewFrom(drone.getUniqueID());\n" />
+            <property role="lacIc" value="                    DroneView droneView = DroneController.getInstance().getDroneViewFrom(drone.getUniqueID());\n" />
           </node>
         </node>
         <node concept="lc7rE" id="7goH6GfmC49" role="3cqZAp">
           <node concept="la8eA" id="7goH6GfmC56" role="lcghm">
-            <property role="lacIc" value="CellView destinationCellView = EnvironmentController.getInstance().getCloserLand(drone);\n" />
+            <property role="lacIc" value="                    CellView destinationCellView = EnvironmentController.getInstance().getCloserLand(drone);\n" />
           </node>
         </node>
         <node concept="lc7rE" id="7goH6GfmC9p" role="3cqZAp">
           <node concept="la8eA" id="7goH6GfmCbv" role="lcghm">
-            <property role="lacIc" value="DirectionEnum goDirection = DroneBusinessObject.closeDirection(droneView.getCurrentCellView(), destinationCellView);\n" />
+            <property role="lacIc" value="                    DirectionEnum goDirection = DroneBusinessObject.closeDirection(droneView.getCurrentCellView(), destinationCellView);\n" />
           </node>
         </node>
         <node concept="lc7rE" id="7goH6GfmMR_" role="3cqZAp">
           <node concept="la8eA" id="7goH6GfmN0p" role="lcghm">
-            <property role="lacIc" value="DroneBusinessObject.flyToDirection(drone, goDirection);\n" />
+            <property role="lacIc" value="                    DroneBusinessObject.flyToDirection(drone, goDirection);\n" />
           </node>
         </node>
         <node concept="lc7rE" id="7goH6GfmDhc" role="3cqZAp">
           <node concept="la8eA" id="7goH6GfmDqa" role="lcghm">
-            <property role="lacIc" value="DroneBusinessObject.updateBatteryPerSecond(drone);\n" />
+            <property role="lacIc" value="                    DroneBusinessObject.updateBatteryPerSecond(drone);\n" />
           </node>
         </node>
         <node concept="lc7rE" id="7goH6GfmDzO" role="3cqZAp">
           <node concept="la8eA" id="7goH6GfmDzP" role="lcghm">
-            <property role="lacIc" value="DroneBusinessObject.updateBatteryPerBlock(drone);\n" />
+            <property role="lacIc" value="                    DroneBusinessObject.updateBatteryPerBlock(drone);\n" />
           </node>
         </node>
         <node concept="lc7rE" id="7goH6GfmDHk" role="3cqZAp">
           <node concept="la8eA" id="7goH6GfmDHl" role="lcghm">
-            <property role="lacIc" value="DroneBusinessObject.updateDistances(drone);\n" />
+            <property role="lacIc" value="                    DroneBusinessObject.updateDistances(drone);\n" />
           </node>
         </node>
         <node concept="lc7rE" id="7goH6GfmDQO" role="3cqZAp">
           <node concept="la8eA" id="7goH6GfmDQP" role="lcghm">
-            <property role="lacIc" value="DroneBusinessObject.checkStatus(drone);\n" />
+            <property role="lacIc" value="                    DroneBusinessObject.checkStatus(drone);\n" />
           </node>
         </node>
         <node concept="lc7rE" id="7goH6GfmE0u" role="3cqZAp">
           <node concept="la8eA" id="7goH6GfmE0v" role="lcghm">
-            <property role="lacIc" value="DroneBusinessObject.updateItIsOver(drone);\n" />
+            <property role="lacIc" value="                    DroneBusinessObject.updateItIsOver(drone);\n" />
           </node>
         </node>
         <node concept="3clFbH" id="7goH6GfmDZS" role="3cqZAp" />
@@ -2721,7 +2718,7 @@
             </node>
             <node concept="lc7rE" id="7goH6GflQnt" role="3cqZAp">
               <node concept="la8eA" id="7goH6GflQnQ" role="lcghm">
-                <property role="lacIc" value="(((Drone)thisJoinPoint.getArgs()[0]).isStrongWind() == true)" />
+                <property role="lacIc" value="            (((Drone)thisJoinPoint.getArgs()[0]).isStrongWind() == true)" />
               </node>
             </node>
           </node>
@@ -2737,7 +2734,7 @@
             <node concept="3clFbS" id="7goH6GflQos" role="9aQI4">
               <node concept="lc7rE" id="7goH6GflQvm" role="3cqZAp">
                 <node concept="la8eA" id="7goH6GflQvn" role="lcghm">
-                  <property role="lacIc" value="(((Drone)thisJoinPoint.getArgs()[0]).isStrongWind() == false)" />
+                  <property role="lacIc" value="            (((Drone)thisJoinPoint.getArgs()[0]).isStrongWind() == false)" />
                 </node>
               </node>
             </node>

@@ -19,15 +19,15 @@ public class UAVManeuverDirectionToRegionCommandExpression_TextGen extends TextG
 
     }
 
-    tgs.append(" DroneView droneView = DroneController.getInstance().getDroneViewFrom(drone.getUniqueID());\n");
-    tgs.append("CellView destinationCellView = EnvironmentController.getInstance().getCloserLand(drone);\n");
-    tgs.append("DirectionEnum goDirection = DroneBusinessObject.closeDirection(droneView.getCurrentCellView(), destinationCellView);\n");
-    tgs.append("DroneBusinessObject.flyToDirection(drone, goDirection);\n");
-    tgs.append("DroneBusinessObject.updateBatteryPerSecond(drone);\n");
-    tgs.append("DroneBusinessObject.updateBatteryPerBlock(drone);\n");
-    tgs.append("DroneBusinessObject.updateDistances(drone);\n");
-    tgs.append("DroneBusinessObject.checkStatus(drone);\n");
-    tgs.append("DroneBusinessObject.updateItIsOver(drone);\n");
+    tgs.append("                    DroneView droneView = DroneController.getInstance().getDroneViewFrom(drone.getUniqueID());\n");
+    tgs.append("                    CellView destinationCellView = EnvironmentController.getInstance().getCloserLand(drone);\n");
+    tgs.append("                    DirectionEnum goDirection = DroneBusinessObject.closeDirection(droneView.getCurrentCellView(), destinationCellView);\n");
+    tgs.append("                    DroneBusinessObject.flyToDirection(drone, goDirection);\n");
+    tgs.append("                    DroneBusinessObject.updateBatteryPerSecond(drone);\n");
+    tgs.append("                    DroneBusinessObject.updateBatteryPerBlock(drone);\n");
+    tgs.append("                    DroneBusinessObject.updateDistances(drone);\n");
+    tgs.append("                    DroneBusinessObject.checkStatus(drone);\n");
+    tgs.append("                    DroneBusinessObject.updateItIsOver(drone);\n");
 
 
 

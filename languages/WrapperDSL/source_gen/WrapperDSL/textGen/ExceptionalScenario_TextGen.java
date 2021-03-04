@@ -47,7 +47,8 @@ public class ExceptionalScenario_TextGen extends TextGenDescriptorBase {
     tgs.append("{\n");
     tgs.popTextArea();
     tgs.pushTextArea("HEADER");
-    tgs.append("private boolean alreadyExecuting = false;");
+    tgs.indent();
+    tgs.append("    private boolean alreadyExecuting = false;");
     tgs.newLine();
     tgs.popTextArea();
     tgs.pushTextArea("pointcut");
@@ -62,9 +63,10 @@ public class ExceptionalScenario_TextGen extends TextGenDescriptorBase {
     tgs.append("\n");
     tgs.popTextArea();
     tgs.pushTextArea("advice");
-    tgs.append("{\n");
+    tgs.append("            {\n");
     tgs.popTextArea();
     tgs.pushTextArea("advice");
+    tgs.append("        ");
     tgs.appendNode(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.then$t1wK), LINKS.adaptiveBehavior$h_UM), LINKS.adaptationScriptName$h86n));
     tgs.append("(thisJoinPoint);\n");
     tgs.popTextArea();
@@ -75,20 +77,18 @@ public class ExceptionalScenario_TextGen extends TextGenDescriptorBase {
       tgs.popTextArea();
     }
     tgs.pushTextArea("advice");
-    tgs.append("}\n");
+    tgs.append("    }\n");
+    tgs.newLine();
     tgs.popTextArea();
 
     tgs.pushTextArea("methodAdvice");
-    tgs.append("public void ");
+    tgs.append("    public void ");
     tgs.appendNode(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.then$t1wK), LINKS.adaptiveBehavior$h_UM), LINKS.adaptationScriptName$h86n));
-    tgs.append("(JoinPoint thisJoinPoint)");
+    tgs.append("(JoinPoint thisJoinPoint){");
     tgs.newLine();
     tgs.popTextArea();
     tgs.pushTextArea("methodAdvice");
-    tgs.append("{\n");
-    tgs.popTextArea();
-    tgs.pushTextArea("methodAdvice");
-    tgs.append("Drone drone = (Drone) thisJoinPoint.getArgs()[0];\n");
+    tgs.append("        Drone drone = (Drone) thisJoinPoint.getArgs()[0];\n");
     tgs.popTextArea();
     tgs.pushTextArea("methodAdvice");
     tgs.newLine();
@@ -106,9 +106,6 @@ public class ExceptionalScenario_TextGen extends TextGenDescriptorBase {
     tgs.append("}\n");
     tgs.popTextArea();
 
-    tgs.pushTextArea("end");
-    tgs.append("}");
-    tgs.popTextArea();
   }
 
   private static final class PROPS {
