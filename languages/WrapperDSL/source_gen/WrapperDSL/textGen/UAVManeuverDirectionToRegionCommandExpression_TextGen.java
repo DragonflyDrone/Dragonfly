@@ -5,11 +5,35 @@ package WrapperDSL.textGen;
 import jetbrains.mps.text.rt.TextGenDescriptorBase;
 import jetbrains.mps.text.rt.TextGenContext;
 import jetbrains.mps.text.impl.TextGenSupport;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.mps.openapi.language.SProperty;
 
 public class UAVManeuverDirectionToRegionCommandExpression_TextGen extends TextGenDescriptorBase {
   @Override
   public void generateText(final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
-    tgs.append("UAVManeuverDirectionToRegionCommandExpression");
+    String goDirection = SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.RegionDirection$K1to).toString();
+    if (SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.RegionDirection$K1to) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x7970d3ea933fec04L, "WrapperDSL.structure.RelativePositionEnum"), 0x53e04e3aef1646b6L, "LAND")) {
+
+    }
+
+    tgs.append(" DroneView droneView = DroneController.getInstance().getDroneViewFrom(drone.getUniqueID());\n");
+    tgs.append("CellView destinationCellView = EnvironmentController.getInstance().getCloserLand(drone);\n");
+    tgs.append("DirectionEnum goDirection = DroneBusinessObject.closeDirection(droneView.getCurrentCellView(), destinationCellView);\n");
+    tgs.append("DroneBusinessObject.flyToDirection(drone, goDirection);\n");
+    tgs.append("DroneBusinessObject.updateBatteryPerSecond(drone);\n");
+    tgs.append("DroneBusinessObject.updateBatteryPerBlock(drone);\n");
+    tgs.append("DroneBusinessObject.updateDistances(drone);\n");
+    tgs.append("DroneBusinessObject.checkStatus(drone);\n");
+    tgs.append("DroneBusinessObject.updateItIsOver(drone);\n");
+
+
+
+  }
+
+  private static final class PROPS {
+    /*package*/ static final SProperty RegionDirection$K1to = MetaAdapterFactory.getProperty(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x802ab50185ec9c3L, 0x11de48ed5d65442dL, "RegionDirection");
   }
 }

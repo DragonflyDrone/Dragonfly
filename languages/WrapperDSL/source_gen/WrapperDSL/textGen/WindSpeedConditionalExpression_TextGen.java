@@ -5,11 +5,25 @@ package WrapperDSL.textGen;
 import jetbrains.mps.text.rt.TextGenDescriptorBase;
 import jetbrains.mps.text.rt.TextGenContext;
 import jetbrains.mps.text.impl.TextGenSupport;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.jetbrains.mps.openapi.language.SProperty;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class WindSpeedConditionalExpression_TextGen extends TextGenDescriptorBase {
   @Override
   public void generateText(final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
-    tgs.append("WindSpeedConditionalExpression");
+    int speedValue = SPropertyOperations.getInteger(ctx.getPrimaryInput(), PROPS.value$GYOy);
+    if (speedValue > 5) {
+      // strongWind 
+      tgs.append("(((Drone)thisJoinPoint.getArgs()[0]).isStrongWind() == true)");
+    } else {
+      tgs.append("(((Drone)thisJoinPoint.getArgs()[0]).isStrongWind() == false)");
+    }
+
+  }
+
+  private static final class PROPS {
+    /*package*/ static final SProperty value$GYOy = MetaAdapterFactory.getProperty(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53e04e3aef164346L, 0x7fd8262c2025da58L, "value");
   }
 }

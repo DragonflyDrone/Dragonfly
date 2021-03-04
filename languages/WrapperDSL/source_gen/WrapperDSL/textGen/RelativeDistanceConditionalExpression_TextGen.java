@@ -5,11 +5,37 @@ package WrapperDSL.textGen;
 import jetbrains.mps.text.rt.TextGenDescriptorBase;
 import jetbrains.mps.text.rt.TextGenContext;
 import jetbrains.mps.text.impl.TextGenSupport;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.mps.openapi.language.SProperty;
 
 public class RelativeDistanceConditionalExpression_TextGen extends TextGenDescriptorBase {
   @Override
   public void generateText(final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
-    tgs.append("\"RelativeDistanceConditionalExpression\"");
+    if (SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.relativePosition$O3mL) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x7970d3ea933fec04L, "WrapperDSL.structure.RelativePositionEnum"), 0x53e04e3aef1646b1L, "WATER")) {
+      if (SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.operator$O8K8) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53e04e3aef1642fcL, "WrapperDSL.structure.GeneralOperatorEnum"), 0x53e04e3aef1642feL, "iqual") && SPropertyOperations.getInteger(ctx.getPrimaryInput(), PROPS.value$OPl6) == 0) {
+        tgs.append("(Drone)thisJoinPoint.getArgs()[0]).isOnWater()");
+      }
+
+
+    } else if (SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.relativePosition$O3mL) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x7970d3ea933fec04L, "WrapperDSL.structure.RelativePositionEnum"), 0x7970d3ea933fec05L, "DESTINATION")) {
+      int value = SPropertyOperations.getInteger(ctx.getPrimaryInput(), PROPS.value$OPl6);
+      int newValue = (30 * value) / 1000;
+      String finalExpression = "(((Drone)thisJoinPoint.getArgs()[0]).getDistanceDestiny()";
+      finalExpression = finalExpression + SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.operator$O8K8).toString() + newValue + ")";
+      tgs.append(finalExpression);
+    } else if (SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.relativePosition$O3mL) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x7970d3ea933fec04L, "WrapperDSL.structure.RelativePositionEnum"), 0x53e04e3aef1646b6L, "LAND")) {
+      if (SPropertyOperations.getEnum(ctx.getPrimaryInput(), PROPS.operator$O8K8) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53e04e3aef1642fcL, "WrapperDSL.structure.GeneralOperatorEnum"), 0x53e04e3aef1642ffL, "not_equal") && SPropertyOperations.getInteger(ctx.getPrimaryInput(), PROPS.value$OPl6) == 0) {
+        tgs.append("((Drone)thisJoinPoint.getArgs()[0]).isOnWater()==true");
+      }
+    }
+  }
+
+  private static final class PROPS {
+    /*package*/ static final SProperty value$OPl6 = MetaAdapterFactory.getProperty(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53e04e3aef164336L, 0x7fd8262c2025db6aL, "value");
+    /*package*/ static final SProperty operator$O8K8 = MetaAdapterFactory.getProperty(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53e04e3aef164336L, 0x7fd8262c2025db2aL, "operator");
+    /*package*/ static final SProperty relativePosition$O3mL = MetaAdapterFactory.getProperty(0x3e1c68c4ebe640bdL, 0xa27fe74585aa2487L, 0x53e04e3aef164336L, 0x7fd8262c2025db28L, "relativePosition");
   }
 }
