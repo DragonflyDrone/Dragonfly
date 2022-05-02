@@ -102,6 +102,13 @@ public class AStarAlgorithm {
 
         }
 
+        if(tempIndexColumn >= 0 && isStreetView(tempIndexRow,tempIndexColumn)){
+
+            Node childNode = createAdjoiningNeighborNodeFrom(currentNode, destinyCellView, tempIndexRow, tempIndexColumn);
+            adjoiningNeighbors.put(childNode.getKey(),childNode);
+
+        }
+
         /*i,j+1 (right cell)*/
 
         tempIndexRow = currentIndexRow;
@@ -112,12 +119,22 @@ public class AStarAlgorithm {
             adjoiningNeighbors.put(childNode.getKey(),childNode);
         }
 
+        if(tempIndexColumn <= maxIndexColumn && isStreetView(tempIndexRow,tempIndexColumn)){
+            Node childNode = createAdjoiningNeighborNodeFrom(currentNode, destinyCellView, tempIndexRow, tempIndexColumn);
+            adjoiningNeighbors.put(childNode.getKey(),childNode);
+        }
+
         /*i-1,j (down cell)*/
 
         tempIndexRow = currentIndexRow -1;
         tempIndexColumn = currentIndexColumn;
 
         if(tempIndexRow >= 0 && isRiverView(tempIndexRow,tempIndexColumn)){
+            Node childNode = createAdjoiningNeighborNodeFrom(currentNode, destinyCellView, tempIndexRow, tempIndexColumn);
+            adjoiningNeighbors.put(childNode.getKey(),childNode);
+        }
+
+        if(tempIndexRow >= 0 && isStreetView(tempIndexRow,tempIndexColumn)){
             Node childNode = createAdjoiningNeighborNodeFrom(currentNode, destinyCellView, tempIndexRow, tempIndexColumn);
             adjoiningNeighbors.put(childNode.getKey(),childNode);
         }
@@ -133,6 +150,11 @@ public class AStarAlgorithm {
             adjoiningNeighbors.put(childNode.getKey(),childNode);
         }
 
+        if(tempIndexRow <= maxIndexRow && isStreetView(tempIndexRow,tempIndexColumn)){
+            Node childNode = createAdjoiningNeighborNodeFrom(currentNode, destinyCellView, tempIndexRow, tempIndexColumn);
+            adjoiningNeighbors.put(childNode.getKey(),childNode);
+        }
+
 
 
         return adjoiningNeighbors;
@@ -140,6 +162,10 @@ public class AStarAlgorithm {
 
     private static boolean isRiverView(int tempIndexRow, int tempIndexColumn) {
         return CellController.getInstance().isRiverView(tempIndexRow,tempIndexColumn);
+    }
+
+    private static boolean isStreetView(int tempIndexRow, int tempIndexColumn) {
+        return CellController.getInstance().isStreetView(tempIndexRow,tempIndexColumn);
     }
 
     private static Node createAdjoiningNeighborNodeFrom(Node currentNode, CellView destinyCellView, int tempIndexRow, int tempIndexColumn) {

@@ -76,6 +76,7 @@ public class EnvironmentController {
 
         if( selectedEntityView != null){
             RiverController.getInstance().consumeClickEvent(selectedEntityView);
+            StreetController.getInstance().consumeClickEvent(selectedEntityView);
             AntennaController.getInstance().consumeClickEvent(selectedEntityView);
             HospitalController.getInstance().consumeClickEvent(selectedEntityView);
             DroneController.getInstance().consumeClickEvent(selectedEntityView);
@@ -105,6 +106,7 @@ public class EnvironmentController {
 
         if (selectedCellView != null) {
             RiverController.getInstance().consumeOnKeyPressed(selectedEntityView, keyEvent);
+            StreetController.getInstance().consumeOnKeyPressed(selectedEntityView, keyEvent);
             AntennaController.getInstance().consumeOnKeyPressed(selectedEntityView, keyEvent);
             HospitalController.getInstance().consumeOnKeyPressed(selectedEntityView, keyEvent);
             DroneController.getInstance().consumeOnKeyPressed(selectedEntityView, keyEvent);
@@ -171,6 +173,7 @@ public class EnvironmentController {
         environmentView.notifyclearEnverionment();
 
         DroneController.getInstance().consumeCleanEnvironment();
+        StreetController.getInstance().consumeCleanEnvironment();
         HospitalController.getInstance().consumeCleanEnvironment();
         SoSPointController.getInstance().consumeClearEnvironment();
         AntennaController.getInstance().consumeClearEnvironment();
@@ -183,6 +186,7 @@ public class EnvironmentController {
 
     public void consumeRunEnviroment() {
         RiverController.getInstance().consumeRunEnviroment();
+        StreetController.getInstance().consumeRunEnviroment();
         AntennaController.getInstance().consumeRunEnviroment();
         HospitalController.getInstance().consumeRunEnviroment();
         DroneController.getInstance().consumeRunEnviroment();
@@ -200,6 +204,7 @@ public class EnvironmentController {
         //clearSelectionOnAllSelectableView();
 
         RiverController.getInstance().consumeReset();
+        StreetController.getInstance().consumeReset();
         AntennaController.getInstance().consumeReset();
         HospitalController.getInstance().consumeReset();
         DroneController.getInstance().consumeReset();
@@ -314,6 +319,31 @@ public class EnvironmentController {
         this.selectedEntityView = CellController.getInstance().getSelectedEntityView(selectedCellView);
 
         return  river;
+    }
+
+    public Street createStreet(CellView selectedCellView) throws ClickOutsideRegionException {
+
+        String uniqueID = UniqueIDGenenator.generate();
+        return createStreet(uniqueID, selectedCellView);
+
+    }
+
+    public Street createStreet(String uniqueID, CellView selectedCellView) throws ClickOutsideRegionException {
+        clearSelectionOnAllSelectableView();
+
+        StreetController streetController = StreetController.getInstance();
+
+
+        if (selectedCellView == null) {
+            throw new ClickOutsideRegionException();
+        }
+
+
+        Street street = streetController.createStreet(uniqueID, selectedCellView);
+
+        this.selectedEntityView = CellController.getInstance().getSelectedEntityView(selectedCellView);
+
+        return  street;
     }
 
 
@@ -479,6 +509,7 @@ public class EnvironmentController {
         DroneController.getInstance().cleanSelections();
         AntennaController.getInstance().cleanSelections();
         RiverController.getInstance().cleanSelections();
+        StreetController.getInstance().cleanSelections();
         HospitalController.getInstance().cleanSelections();
         CellController.getInstance().cleanSelections();
         BoatAutomaticController.getInstance().cleanSelections();

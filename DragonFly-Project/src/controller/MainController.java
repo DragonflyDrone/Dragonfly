@@ -26,6 +26,7 @@ import view.hospital.HospitalView;
 import view.house.HouseView;
 import view.river.RiverView;
 import view.sosPoint.SoSPointView;
+import view.street.StreetView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,7 +50,7 @@ public class MainController extends Application {
 
     @FXML
     private
-    ToggleButton riverToggleButton, hospitalToggleButton, droneToggleButton,
+    ToggleButton riverToggleButton, streetToggleButton, hospitalToggleButton, droneToggleButton,
             antennaToggleButton, boatToggleButton, houseToggleButton, treeToggleButton, sosToggleButton;
 
     @FXML
@@ -127,6 +128,7 @@ public class MainController extends Application {
 
         ToggleGroup toggleGroup1 = new ToggleGroup();
         riverToggleButton.setToggleGroup(toggleGroup1);
+        streetToggleButton.setToggleGroup(toggleGroup1);
         hospitalToggleButton.setToggleGroup(toggleGroup1);
         houseToggleButton.setToggleGroup(toggleGroup1);
         sosToggleButton.setToggleGroup(toggleGroup1);
@@ -239,6 +241,7 @@ public class MainController extends Application {
             environmentController.getEnvironmentView().getGridpane().requestFocus();
 
             riverToggleButton.setSelected(false);
+            streetToggleButton.setSelected(false);
             hospitalToggleButton.setSelected(false);
             houseToggleButton.setSelected(false);
             sosToggleButton.setSelected(false);
@@ -288,6 +291,7 @@ public class MainController extends Application {
 
             if(alert.getResult() == ButtonType.YES){
                 riverToggleButton.setSelected(false);
+                streetToggleButton.setSelected(false);
                 droneToggleButton.setSelected(false);
                 antennaToggleButton.setSelected(false);
                 hospitalToggleButton.setSelected(false);
@@ -323,6 +327,10 @@ public class MainController extends Application {
                 }else if( selectableView instanceof RiverView){
                     River river = RiverController.getInstance().getRiverFrom(selectableView.getUniqueID());
                     RiverController.getInstance().deleteRiver(river);
+
+                }else if( selectableView instanceof StreetView){
+                    Street street = StreetController.getInstance().getStreetFrom(selectableView.getUniqueID());
+                    StreetController.getInstance().deleteStreet(street);
 
                 }else if( selectableView instanceof AntennaView){
                     Antenna antenna = AntennaController.getInstance().getAntennaFrom(selectableView.getUniqueID());
@@ -424,7 +432,7 @@ public class MainController extends Application {
 
 
     private boolean mustCreateEntitiesView() {
-        return riverToggleButton.isSelected() || hospitalToggleButton.isSelected() || antennaToggleButton.isSelected()
+        return riverToggleButton.isSelected() || streetToggleButton.isSelected() || hospitalToggleButton.isSelected() || antennaToggleButton.isSelected()
                 || droneToggleButton.isSelected() || boatToggleButton.isSelected() || houseToggleButton.isSelected()
                 || treeToggleButton.isSelected() || sosToggleButton.isSelected();
     }
@@ -435,6 +443,10 @@ public class MainController extends Application {
         if (riverToggleButton.isSelected()) {
             //todo posso fazer o tratamento p não se sobrepor o mesmo objeto
             environmentController.createRiver(selectedCellView);
+
+        } else if (streetToggleButton.isSelected()) {
+                //todo posso fazer o tratamento p não se sobrepor o mesmo objeto
+                environmentController.createStreet(selectedCellView);
 
         } else if (hospitalToggleButton.isSelected()) {
             //todo posso fazer o tratamento p não se sobrepor o mesmo objeto
@@ -490,6 +502,7 @@ public class MainController extends Application {
     private void disableEnvironmentSettingViews() {
 
         riverToggleButton.setDisable(true);
+        streetToggleButton.setDisable(true);
         hospitalToggleButton.setDisable(true);
         houseToggleButton.setDisable(true);
         droneToggleButton.setDisable(true);
@@ -505,6 +518,7 @@ public class MainController extends Application {
     private void enableEnvironmentSettingViews() {
         //settingsAnchorPane.requestFocus();
         riverToggleButton.setDisable(false);
+        streetToggleButton.setDisable(false);
         hospitalToggleButton.setDisable(false);
         houseToggleButton.setDisable(false);
         droneToggleButton.setDisable(false);

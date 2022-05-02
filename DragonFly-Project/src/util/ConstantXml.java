@@ -22,6 +22,9 @@ public class ConstantXml {
     public static final String ROOT_RIVER_ELEMENT = "riverElements";
     public static final String RIVER_ELEMENT = "riverElement";
 
+    public static final String ROOT_STREET_ELEMENT = "streetElements";
+    public static final String STREET_ELEMENT = "streetrElement";
+
     public static final String ROOT_HOSPITAL_ELEMENT = "hospitalElements";
     public static final String HOSPITAL_ELEMENT = "hospitalElement";
 

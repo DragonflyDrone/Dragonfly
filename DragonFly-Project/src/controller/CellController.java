@@ -10,6 +10,7 @@ import view.SelectableView;
 import view.drone.DroneView;
 import view.EnvironmentView;
 import view.river.RiverView;
+import view.street.StreetView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -312,6 +313,18 @@ public class CellController {
 
         for(javafx.scene.Node node : cellView.getChildren()){
             if(node instanceof RiverView){
+                return true;
+
+            }
+        }
+        return false;
+    }
+
+    public boolean isStreetView(int rowPosition, int columnPosition) {
+        CellView cellView =getCellViewFrom(rowPosition, columnPosition);
+
+        for(javafx.scene.Node node : cellView.getChildren()){
+            if(node instanceof StreetView){
                 return true;
 
             }

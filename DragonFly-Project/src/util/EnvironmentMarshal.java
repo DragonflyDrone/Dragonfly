@@ -50,6 +50,21 @@ abstract public class EnvironmentMarshal {
 
         }
 
+        //Street
+        Element streetElements = document.createElement(ConstantXml.ROOT_STREET_ELEMENT);
+        environmentElements.appendChild(streetElements);
+
+        for(Street street : StreetController.getInstance().getStreetMap().values()){
+
+            Element streetElement = document.createElement(ConstantXml.STREET_ELEMENT);
+
+            streetElement.setAttribute(ConstantXml.UNIQUE_ID_ATTRIBUTE,street.getUniqueID());
+            streetElement.setAttribute(ConstantXml.SOURCE_COLUMN_POSITION_ATTRIBUTE, String.valueOf(street.getColumnPosition()));
+            streetElement.setAttribute(ConstantXml.SOURCE_ROW_POSITION_ATTRIBUTE, String.valueOf(street.getRowPosition()));
+
+            riverElements.appendChild(streetElement);
+
+        }
 
 
         //HOSPITAL
@@ -212,6 +227,8 @@ abstract public class EnvironmentMarshal {
 
        Node rootRiverElement = root.getElementsByTagName(ConstantXml.ROOT_RIVER_ELEMENT).item(0);
 
+       Node rootStreetElement = root.getElementsByTagName(ConstantXml.ROOT_STREET_ELEMENT).item(0);
+
        //RIVER
        for(int i=0; i<rootRiverElement.getChildNodes().getLength(); i++){
            Node riverNode = rootRiverElement.getChildNodes().item(i);
@@ -238,6 +255,27 @@ abstract public class EnvironmentMarshal {
 
          RiverController.getInstance().createRiver(uniqueID, cellView);
        }
+
+
+
+        //STREET
+        for(int i=0; i<rootStreetElement.getChildNodes().getLength(); i++){
+            Node streetNode = rootStreetElement.getChildNodes().item(i);
+
+            if(streetNode.getNodeName().equals("#text")){ // I dont now why this problem
+                continue;
+            }
+
+            String uniqueID = streetNode.getAttributes().getNamedItem(ConstantXml.UNIQUE_ID_ATTRIBUTE).getNodeValue();
+            int columnPosition = Integer.parseInt(streetNode.getAttributes().getNamedItem(ConstantXml.SOURCE_COLUMN_POSITION_ATTRIBUTE).getNodeValue());
+            int rowPosition = Integer.parseInt(streetNode.getAttributes().getNamedItem(ConstantXml.SOURCE_ROW_POSITION_ATTRIBUTE).getNodeValue());
+
+            CellController cellController = CellController.getInstance();
+            CellView cellView = cellController.getCellViewFrom(rowPosition,columnPosition);
+
+
+            RiverController.getInstance().createRiver(uniqueID, cellView);
+        }
 
 
        //HOSPITAL
