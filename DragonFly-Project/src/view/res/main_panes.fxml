@@ -13,15 +13,14 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<?import javafx.scene.control.ScrollPane?>
-<AnchorPane fx:id="mainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="710.0" prefWidth="903.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="mainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="710.0" prefWidth="903.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane fx:id="environmentAnchorPane" layoutX="2.0" layoutY="29.0" prefHeight="379.0" prefWidth="919.0" AnchorPane.bottomAnchor="312.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="29.0">
          <children>
 
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="settingsAnchorPane" layoutY="413.0" prefHeight="303.0" prefWidth="923.0">
+      <AnchorPane fx:id="settingsAnchorPane" layoutX="2.0" layoutY="416.0" prefHeight="303.0" prefWidth="923.0">
          <children>
 
 
@@ -30,7 +29,7 @@
             <ToggleButton fx:id="riverToggleButton" focusTraversable="false" layoutX="2.0" layoutY="5.0" selected="false" text="River">
 
             </ToggleButton>
-            <ToggleButton fx:id="streetToggleButton" focusTraversable="false" layoutX="5.0" layoutY="5.0" selected="false" text="Street">
+            <ToggleButton fx:id="streetToggleButton" focusTraversable="false" layoutX="212.0" layoutY="157.0" selected="false" text="Street">
 
             </ToggleButton>
             <ToggleButton fx:id="hospitalToggleButton" focusTraversable="false" layoutX="56.0" layoutY="5.0" prefHeight="26.0" prefWidth="76.0" text="Hospital">
@@ -82,7 +81,7 @@
             <ToggleButton fx:id="treeToggleButton" focusTraversable="false" layoutX="145.0" layoutY="84.0" mnemonicParsing="false" text="Tree" />
             <ComboBox fx:id="windForceCombBox" focusTraversable="false" layoutX="46.0" layoutY="157.0" prefHeight="26.0" prefWidth="73.0" />
             <ComboBox fx:id="windDirectionCombBox" focusTraversable="false" layoutX="130.0" layoutY="157.0" prefHeight="26.0" prefWidth="73.0" />
-            <ToggleButton  fx:id="sosToggleButton" layoutX="213.0" layoutY="84.0" mnemonicParsing="false" text="SoS" />
+            <ToggleButton fx:id="sosToggleButton" layoutX="213.0" layoutY="84.0" mnemonicParsing="false" text="SoS" />
             <ImageView layoutX="222.0" layoutY="116.0">
                <image>
                   <Image url="@safepoint.png" />
