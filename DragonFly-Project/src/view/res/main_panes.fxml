@@ -49,8 +49,8 @@
                   <Image url="@selectedDrone.png" />
                </image>
             </ImageView>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ADD8E6" height="32.0" layoutX="12.0" layoutY="42.0" stroke="BLACK" strokeType="INSIDE" width="32.0" />
-            <ToggleButton fx:id="antennaToggleButton" focusTraversable="false" layoutX="134.0" layoutY="5.0" mnemonicParsing="false" text="Antenna" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ADD8E6" height="32.0" layoutX="7.0" layoutY="41.0" stroke="BLACK" strokeType="INSIDE" width="32.0" />
+            <ToggleButton fx:id="antennaToggleButton" focusTraversable="false" layoutX="141.0" layoutY="5.0" mnemonicParsing="false" text="Antenna" />
             <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="155.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@antenna.png" />
@@ -72,7 +72,7 @@
                   <Image url="@house.png" />
                </image>
             </ImageView>
-            <ImageView layoutX="153.0" layoutY="112.0">
+            <ImageView layoutX="149.0" layoutY="112.0">
                <image>
                   <Image url="@tree.png" />
                </image>
