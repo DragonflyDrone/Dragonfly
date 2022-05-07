@@ -1,6 +1,8 @@
 package view.street;
 
 import javafx.scene.Node;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import model.entity.Street;
@@ -10,18 +12,22 @@ import view.SelectableView;
 
 
 public class StreetViewImpl extends StreetView implements Street.Listener{
+
+    private final ImageView streetImageView;
     private final CellView currentCellView;
     SelectHelper selectHelper = new SelectHelper(SelectHelper.DEFAULT_COLOR);
 
     public StreetViewImpl(String uniqueID, CellView currentCellView) {
         this.uniqueID = uniqueID;
 
-        Rectangle rectangle = new Rectangle( 30, 30);
-        rectangle.setStroke(Color.BLACK);
-        rectangle.setStrokeWidth(1);
-        rectangle.setFill(Color.BLACK);
+        streetImageView = new ImageView();
+        Image image = new Image("/view/res/street.png");
+        streetImageView.setImage(image);
+        streetImageView.setFitHeight(30);
+        streetImageView.setFitWidth(30);
+        streetImageView.setImage(image);
 
-        this.getChildren().add(rectangle);
+        this.getChildren().add(streetImageView);
 
         currentCellView.getChildren().add(this);
         this.currentCellView = currentCellView;

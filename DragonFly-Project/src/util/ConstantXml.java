@@ -37,6 +37,9 @@ public class ConstantXml {
     public static final String ROOT_BOAT_ELEMENT = "boatElements";
     public static final String BOAT_ELEMENT = "boatElement";
 
+    public static final String ROOT_CAR_ELEMENT = "cartElements";
+    public static final String CAR_ELEMENT = "carElement";
+
     public static final String ROOT_HOUSE_ELEMENT = "houseElements";
     public static final String HOUSE_ELEMENT = "houseElement";
 

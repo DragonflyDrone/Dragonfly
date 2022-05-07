@@ -1,4 +1,4 @@
-package view.boat;
+package view.car;
 
 import controller.CellController;
 import controller.LoggerController;
@@ -10,33 +10,37 @@ import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.text.TextAlignment;
 import model.entity.boat.Boat;
+import model.entity.car.Car;
 import util.SelectHelper;
 import view.CellView;
 import view.SelectableView;
 
-public class BoatView extends Group implements SelectableView, Boat.Listener {
+public class CarView  extends Group implements SelectableView, Car.Listener {
 
-    private final ImageView boatImageView;
+    private final ImageView carImageView;
     private final ImageView boxImageView;
     private CellView currentCellView;
-    private String boatLabel;
+    private String carLabel;
     private String uniqueID;
 
     private SelectHelper selectHelper = new SelectHelper(Color.YELLOW);
 
-    public BoatView(String uniqueID, String boatLabel, CellView currentCellView) {
+    public CarView(String uniqueID, String cartLabel, CellView currentCellView) {
         this.uniqueID = uniqueID;
-        this.boatLabel = boatLabel;
+        this.carLabel = cartLabel;
         this.currentCellView = currentCellView;
 
         Label label = new Label();
-        label.setText(boatLabel);
+        label.setText(cartLabel);
         label.setTextFill(Color.RED);
         label.setTextAlignment(TextAlignment.CENTER);
 
-        boatImageView = new ImageView();
-        Image image = new Image("/view/res/boat.png");
-        boatImageView.setImage(image);
+        carImageView = new ImageView();
+        Image image = new Image("/view/res/car.png");
+        carImageView.setFitHeight(20);
+        carImageView.setFitWidth(30);
+        carImageView.setLayoutY(5);
+        carImageView.setImage(image);
 
 
         boxImageView = new ImageView();
@@ -46,7 +50,7 @@ public class BoatView extends Group implements SelectableView, Boat.Listener {
         boxImageView.setLayoutY(5);
         boxImageView.setVisible(false);
 
-        this.getChildren().addAll( boatImageView, boxImageView, label);
+        this.getChildren().addAll( carImageView, boxImageView, label);
 
         currentCellView.getChildren().add(this);
 
@@ -85,12 +89,12 @@ public class BoatView extends Group implements SelectableView, Boat.Listener {
         this.currentCellView = currentCellView;
     }
 
-    public String getBoatLabel() {
-        return boatLabel;
+    public String getCarLabel() {
+        return carLabel;
     }
 
-    public void setBoatLabel(String boatLabel) {
-        this.boatLabel = boatLabel;
+    public void setCarLabel(String carLabel) {
+        this.carLabel = carLabel;
     }
 
     public void setUniqueID(String uniqueID) {
@@ -98,8 +102,8 @@ public class BoatView extends Group implements SelectableView, Boat.Listener {
     }
 
     @Override
-    public void onChange(Boat boat, String methodName, Object oldValue, Object newValue) {
-        if (boat.getUniqueID() != uniqueID) {
+    public void onChange(Car car, String methodName, Object oldValue, Object newValue) {
+        if (car.getUniqueID() != uniqueID) {
             return;
         }
 
@@ -125,10 +129,10 @@ public class BoatView extends Group implements SelectableView, Boat.Listener {
                 rotation = 270;
             }
 
-            updatateRotation(boat,rotation);
+            updatateRotation(car,rotation);
 
 
-            updadePositionBoatView(boat);
+            updadePositionCarView(car);
 
 
             return;
@@ -145,10 +149,10 @@ public class BoatView extends Group implements SelectableView, Boat.Listener {
                 rotation = 180;
             }
 
-            updatateRotation(boat,rotation);
+            updatateRotation(car,rotation);
 
 
-            updadePositionBoatView(boat);
+            updadePositionCarView(car);
 
 
             return;
@@ -160,11 +164,11 @@ public class BoatView extends Group implements SelectableView, Boat.Listener {
 
             if((boolean)newValue){
                 boxImageView.setVisible(true);
-                LoggerController.getInstance().print("Boat[" + boat.getLabel() + "] " + "Stocked");
+                LoggerController.getInstance().print("Car[" + car.getLabel() + "] " + "Stocked");
 
             }else {
                 boxImageView.setVisible(false);
-                LoggerController.getInstance().print("Boat[" + boat.getLabel() + "] " + "Shortage");
+                LoggerController.getInstance().print("Car[" + car.getLabel() + "] " + "Shortage");
 
             }
 
@@ -175,10 +179,10 @@ public class BoatView extends Group implements SelectableView, Boat.Listener {
         if(methodName.equals("setStarted") && (boolean)oldValue != (boolean)newValue){
 
             if((boolean)newValue){
-                LoggerController.getInstance().print("Boat[" + boat.getLabel() + "] " + "Start");
+                LoggerController.getInstance().print("Car[" + car.getLabel() + "] " + "Start");
 
             }else {
-                LoggerController.getInstance().print("Boat[" + boat.getLabel() + "] " + "ShutDown");
+                LoggerController.getInstance().print("Car[" + car.getLabel() + "] " + "ShutDown");
 
             }
 
@@ -187,18 +191,18 @@ public class BoatView extends Group implements SelectableView, Boat.Listener {
         }
 
 
-        }
+    }
 
 
-    private void updatateRotation(Boat boat, double rotation) {
-        boatImageView.setRotate(0);
+    private void updatateRotation(Car car, double rotation) {
+        carImageView.setRotate(0);
 
-        boatImageView.setRotate(boatImageView.getRotate() + rotation);
+        carImageView.setRotate(carImageView.getRotate() + rotation);
 
 
     }
 
-    private void updadePositionBoatView(Boat boat) {
+    private void updadePositionCarView(Car car) {
         if(currentCellView == null){
             return;
         }
@@ -212,7 +216,7 @@ public class BoatView extends Group implements SelectableView, Boat.Listener {
             }
         }
 
-        CellView newCellView = CellController.getInstance().getCellViewFrom(boat.getCurrentRowPosition(), boat.getCurrentCollunmPosition());
+        CellView newCellView = CellController.getInstance().getCellViewFrom(car.getCurrentRowPosition(), car.getCurrentCollunmPosition());
         currentCellView = newCellView;
 
         if(currentCellView != null && currentCellView.getChildren()!= null){

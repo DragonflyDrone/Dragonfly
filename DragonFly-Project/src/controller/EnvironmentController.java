@@ -8,6 +8,7 @@ import model.entity.SoSPoint;
 import model.entity.*;
 import model.Environment;
 import model.entity.boat.Boat;
+import model.entity.car.Car;
 import model.entity.drone.Drone;
 import util.DirectionEnum;
 import util.exceptions.ClickOutsideRegionException;
@@ -17,6 +18,7 @@ import view.SelectableView;
 import view.drone.DroneView;
 import view.EnvironmentView;
 import view.river.RiverView;
+import view.street.StreetView;
 
 import java.util.*;
 import java.util.concurrent.ScheduledExecutorService;
@@ -81,6 +83,7 @@ public class EnvironmentController {
             HospitalController.getInstance().consumeClickEvent(selectedEntityView);
             DroneController.getInstance().consumeClickEvent(selectedEntityView);
             BoatAutomaticController.getInstance().consumeClickEvent(selectedEntityView);
+            CarAutomaticController.getInstance().consumeClickEvent(selectedEntityView);
             HouseController.getInstance().consumeClickEvent(selectedEntityView);
             TreeController.getInstance().consumeClickEvent(selectedEntityView);
         }else {
@@ -111,6 +114,7 @@ public class EnvironmentController {
             HospitalController.getInstance().consumeOnKeyPressed(selectedEntityView, keyEvent);
             DroneController.getInstance().consumeOnKeyPressed(selectedEntityView, keyEvent);
             BoatAutomaticController.getInstance().consumeOnKeyPressed(selectedEntityView,keyEvent);
+            CarAutomaticController.getInstance().consumeOnKeyPressed(selectedEntityView,keyEvent);
             HouseController.getInstance().consumeOnKeyPressed(selectedEntityView,keyEvent);
             TreeController.getInstance().consumeOnKeyPressed(selectedEntityView,keyEvent);
         } else {
@@ -178,6 +182,7 @@ public class EnvironmentController {
         SoSPointController.getInstance().consumeClearEnvironment();
         AntennaController.getInstance().consumeClearEnvironment();
         BoatAutomaticController.getInstance().consumeCleanEnvironment();
+        CarAutomaticController.getInstance().consumeCleanEnvironment();
         RiverController.getInstance().consumeClearEnvirironment();
         HouseController.getInstance().consumeCleanEnvironment();
         TreeController.getInstance().consumeCleanEnvironment();
@@ -191,6 +196,7 @@ public class EnvironmentController {
         HospitalController.getInstance().consumeRunEnviroment();
         DroneController.getInstance().consumeRunEnviroment();
         BoatAutomaticController.getInstance().consumeRunEnviroment();
+        CarAutomaticController.getInstance().consumeRunEnviroment();
         CellController.getInstance().consumeRunEnviroment();
         HouseController.getInstance().consumeRunEnviroment();
         TreeController.getInstance().consumeRunEnviroment();
@@ -210,6 +216,7 @@ public class EnvironmentController {
         DroneController.getInstance().consumeReset();
         CellController.getInstance().consumeReset();
         BoatAutomaticController.getInstance().consumeReset();
+        CarAutomaticController.getInstance().consumeReset();
         HouseController.getInstance().consumeReset();
         TreeController.getInstance().consumeReset();
 
@@ -431,6 +438,41 @@ public class EnvironmentController {
 
     }
 
+    public Car createCar(CellView selectedCellView) throws ClickOutsideRegionException {
+        String uniqueID = UniqueIDGenenator.generate();
+
+        return createCar(uniqueID, selectedCellView);
+    }
+
+    public Car createCar(String uniqueID, CellView selectedCellView) throws ClickOutsideRegionException {
+
+        StreetView streetView = StreetController.getInstance().getStreetViewFrom(selectedCellView);
+
+        if(streetView == null){
+            throw new ClickOutsideRegionException("You must put the CarView on top of a StreetView. ");
+        }
+
+        clearSelectionOnAllSelectableView();
+
+        CarAutomaticController carAutomaticController = CarAutomaticController.getInstance();
+
+
+        if (selectedCellView == null) {
+            throw new ClickOutsideRegionException();
+        }
+
+
+
+
+        String carLabel = String.valueOf(Car.COUNT_CAR);
+
+        Car car = carAutomaticController.createCar(uniqueID, carLabel, selectedCellView);
+
+        this.selectedEntityView = CellController.getInstance().getSelectedEntityView(selectedCellView);
+        return car;
+
+    }
+
     public House createHouse(CellView selectedCellView) throws ClickOutsideRegionException {
 
         String uniqueID = UniqueIDGenenator.generate();
@@ -513,6 +555,7 @@ public class EnvironmentController {
         HospitalController.getInstance().cleanSelections();
         CellController.getInstance().cleanSelections();
         BoatAutomaticController.getInstance().cleanSelections();
+        CarAutomaticController.getInstance().cleanSelections();
         HouseController.getInstance().cleanSelections();
         TreeController.getInstance().cleanSelections();
         SoSPointController.getInstance().cleanSelections();

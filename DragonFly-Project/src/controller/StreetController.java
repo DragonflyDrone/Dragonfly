@@ -65,7 +65,7 @@ public class StreetController {
 
     public void consumeClickEvent(SelectableView selectedEntityView) {
 
-        if(selectedEntityView instanceof RiverView){
+        if(selectedEntityView instanceof Street){
             Street street =  getStreetFrom(selectedEntityView.getUniqueID());
             street.setSelected(true);
         }
