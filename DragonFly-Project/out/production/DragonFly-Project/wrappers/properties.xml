@@ -59,7 +59,7 @@
                     description="DSL"
                     class-name-settings-controller ="DroneSettingsPanelController"/>
 
-    <!--Boat Wrappers-->
+    <!--Car Wrappers-->
     <WrapperElement name-file-aj="NoneCarWrapper"
                     id="5"
                     name-shown-panel="None"

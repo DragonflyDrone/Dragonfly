@@ -79,6 +79,7 @@ public class EnvironmentController {
         if( selectedEntityView != null){
             RiverController.getInstance().consumeClickEvent(selectedEntityView);
             StreetController.getInstance().consumeClickEvent(selectedEntityView);
+            SidewalkController.getInstance().consumeClickEvent(selectedEntityView);
             AntennaController.getInstance().consumeClickEvent(selectedEntityView);
             HospitalController.getInstance().consumeClickEvent(selectedEntityView);
             DroneController.getInstance().consumeClickEvent(selectedEntityView);
@@ -110,6 +111,7 @@ public class EnvironmentController {
         if (selectedCellView != null) {
             RiverController.getInstance().consumeOnKeyPressed(selectedEntityView, keyEvent);
             StreetController.getInstance().consumeOnKeyPressed(selectedEntityView, keyEvent);
+            SidewalkController.getInstance().consumeOnKeyPressed(selectedEntityView, keyEvent);
             AntennaController.getInstance().consumeOnKeyPressed(selectedEntityView, keyEvent);
             HospitalController.getInstance().consumeOnKeyPressed(selectedEntityView, keyEvent);
             DroneController.getInstance().consumeOnKeyPressed(selectedEntityView, keyEvent);
@@ -178,6 +180,7 @@ public class EnvironmentController {
 
         DroneController.getInstance().consumeCleanEnvironment();
         StreetController.getInstance().consumeCleanEnvironment();
+        SidewalkController.getInstance().consumeClearEnvirironment();
         HospitalController.getInstance().consumeCleanEnvironment();
         SoSPointController.getInstance().consumeClearEnvironment();
         AntennaController.getInstance().consumeClearEnvironment();
@@ -192,6 +195,7 @@ public class EnvironmentController {
     public void consumeRunEnviroment() {
         RiverController.getInstance().consumeRunEnviroment();
         StreetController.getInstance().consumeRunEnviroment();
+        SidewalkController.getInstance().consumeRunEnviroment();
         AntennaController.getInstance().consumeRunEnviroment();
         HospitalController.getInstance().consumeRunEnviroment();
         DroneController.getInstance().consumeRunEnviroment();
@@ -211,6 +215,7 @@ public class EnvironmentController {
 
         RiverController.getInstance().consumeReset();
         StreetController.getInstance().consumeReset();
+        SidewalkController.getInstance().consumeReset();
         AntennaController.getInstance().consumeReset();
         HospitalController.getInstance().consumeReset();
         DroneController.getInstance().consumeReset();
@@ -353,6 +358,30 @@ public class EnvironmentController {
         return  street;
     }
 
+    public Sidewalk createSidewalk(CellView selectedCellView) throws ClickOutsideRegionException {
+
+        String uniqueID = UniqueIDGenenator.generate();
+        return createSidewalk(uniqueID, selectedCellView);
+
+    }
+
+    public Sidewalk createSidewalk(String uniqueID, CellView selectedCellView) throws ClickOutsideRegionException {
+        clearSelectionOnAllSelectableView();
+
+        SidewalkController sidewalkController = SidewalkController.getInstance();
+
+
+        if (selectedCellView == null) {
+            throw new ClickOutsideRegionException();
+        }
+
+
+        Sidewalk sidewalk = sidewalkController.createSidewalk(uniqueID, selectedCellView);
+
+        this.selectedEntityView = CellController.getInstance().getSelectedEntityView(selectedCellView);
+
+        return  sidewalk;
+    }
 
     public SoSPoint createSoS(CellView selectedCellView) throws ClickOutsideRegionException{
         String uniqueID = UniqueIDGenenator.generate();
@@ -552,6 +581,7 @@ public class EnvironmentController {
         AntennaController.getInstance().cleanSelections();
         RiverController.getInstance().cleanSelections();
         StreetController.getInstance().cleanSelections();
+        SidewalkController.getInstance().cleanSelections();
         HospitalController.getInstance().cleanSelections();
         CellController.getInstance().cleanSelections();
         BoatAutomaticController.getInstance().cleanSelections();

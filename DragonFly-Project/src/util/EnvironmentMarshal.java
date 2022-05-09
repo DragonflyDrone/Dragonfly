@@ -5,6 +5,8 @@ import model.Cell;
 import model.entity.*;
 import model.entity.boat.Boat;
 import model.entity.boat.BoatBusinessObject;
+import model.entity.car.Car;
+import model.entity.car.CarBusinessObject;
 import model.entity.drone.Drone;
 import model.entity.drone.DroneBusinessObject;
 import org.w3c.dom.Document;
@@ -50,7 +52,7 @@ abstract public class EnvironmentMarshal {
 
         }
 
-        //Street
+        //STREET
         Element streetElements = document.createElement(ConstantXml.ROOT_STREET_ELEMENT);
         environmentElements.appendChild(streetElements);
 
@@ -62,10 +64,25 @@ abstract public class EnvironmentMarshal {
             streetElement.setAttribute(ConstantXml.SOURCE_COLUMN_POSITION_ATTRIBUTE, String.valueOf(street.getColumnPosition()));
             streetElement.setAttribute(ConstantXml.SOURCE_ROW_POSITION_ATTRIBUTE, String.valueOf(street.getRowPosition()));
 
-            riverElements.appendChild(streetElement);
+            streetElements.appendChild(streetElement);
 
         }
 
+        //SIDEWALK
+        Element sidewalkElements = document.createElement(ConstantXml.ROOT_SIDEWALK_ELEMENT);
+        environmentElements.appendChild(sidewalkElements);
+
+        for(Sidewalk sidewalk : SidewalkController.getInstance().getSidewalkMap().values()){
+
+            Element sidewalkElement = document.createElement(ConstantXml.SIDEWALK_ELEMENT);
+
+            sidewalkElement.setAttribute(ConstantXml.UNIQUE_ID_ATTRIBUTE,sidewalk.getUniqueID());
+            sidewalkElement.setAttribute(ConstantXml.SOURCE_COLUMN_POSITION_ATTRIBUTE, String.valueOf(sidewalk.getColumnPosition()));
+            sidewalkElement.setAttribute(ConstantXml.SOURCE_ROW_POSITION_ATTRIBUTE, String.valueOf(sidewalk.getRowPosition()));
+
+            sidewalkElements.appendChild(sidewalkElement);
+
+        }
 
         //HOSPITAL
         Element hospitalElements = document.createElement(ConstantXml.ROOT_HOSPITAL_ELEMENT);
@@ -201,6 +218,29 @@ abstract public class EnvironmentMarshal {
 
         }
 
+        //CAR
+        Element carElements = document.createElement(ConstantXml.ROOT_CAR_ELEMENT);
+        environmentElements.appendChild(carElements);
+
+        for(Car car : CarAutomaticController.getInstance().getCarMap().values()){
+
+            Element carElement = document.createElement(ConstantXml.CAR_ELEMENT);
+
+            carElement.setAttribute(ConstantXml.UNIQUE_ID_ATTRIBUTE, car.getUniqueID());
+
+            carElement.setAttribute(ConstantXml.LABEL_ATTRIBUTE, car.getLabel());
+
+            carElement.setAttribute(ConstantXml.WRAPPER_ID_ATTRIBUTE, String.valueOf(car.getWrapperId()));
+            carElement.setAttribute(ConstantXml.SOURCE_COLUMN_POSITION_ATTRIBUTE, String.valueOf(car.getSourceCell().getColumnPosition()));
+            carElement.setAttribute(ConstantXml.SOURCE_ROW_POSITION_ATTRIBUTE, String.valueOf(car.getSourceCell().getRowPosition()));
+
+            carElement.setAttribute(ConstantXml.DESTINY_COLUMN_POSITION_ATTRIBUTE, String.valueOf(car.getDestinyCell().getColumnPosition()));
+            carElement.setAttribute(ConstantXml.DESTINY_ROW_POSITION_ATTRIBUTE, String.valueOf(car.getDestinyCell().getRowPosition()));
+
+            carElements.appendChild(carElement);
+
+        }
+
 
         TransformerFactory transformerFactory = TransformerFactory.newInstance();
         Transformer transformer = transformerFactory.newTransformer();
@@ -228,6 +268,8 @@ abstract public class EnvironmentMarshal {
        Node rootRiverElement = root.getElementsByTagName(ConstantXml.ROOT_RIVER_ELEMENT).item(0);
 
        Node rootStreetElement = root.getElementsByTagName(ConstantXml.ROOT_STREET_ELEMENT).item(0);
+
+        Node rootSidewalkElement = root.getElementsByTagName(ConstantXml.ROOT_SIDEWALK_ELEMENT).item(0);
 
        //RIVER
        for(int i=0; i<rootRiverElement.getChildNodes().getLength(); i++){
@@ -274,7 +316,26 @@ abstract public class EnvironmentMarshal {
             CellView cellView = cellController.getCellViewFrom(rowPosition,columnPosition);
 
 
-            RiverController.getInstance().createRiver(uniqueID, cellView);
+            StreetController.getInstance().createStreet(uniqueID, cellView);
+        }
+
+        //SIDEWALK
+        for(int i=0; i<rootSidewalkElement.getChildNodes().getLength(); i++){
+            Node sidewalktNode = rootStreetElement.getChildNodes().item(i);
+
+            if(sidewalktNode.getNodeName().equals("#text")){ // I dont now why this problem
+                continue;
+            }
+
+            String uniqueID = sidewalktNode.getAttributes().getNamedItem(ConstantXml.UNIQUE_ID_ATTRIBUTE).getNodeValue();
+            int columnPosition = Integer.parseInt(sidewalktNode.getAttributes().getNamedItem(ConstantXml.SOURCE_COLUMN_POSITION_ATTRIBUTE).getNodeValue());
+            int rowPosition = Integer.parseInt(sidewalktNode.getAttributes().getNamedItem(ConstantXml.SOURCE_ROW_POSITION_ATTRIBUTE).getNodeValue());
+
+            CellController cellController = CellController.getInstance();
+            CellView cellView = cellController.getCellViewFrom(rowPosition,columnPosition);
+
+
+            SidewalkController.getInstance().createSidewalk(uniqueID, cellView);
         }
 
 
@@ -499,6 +560,41 @@ abstract public class EnvironmentMarshal {
             } catch (ClickOutsideRegionException e) {
                 e.printStackTrace();
             }*/
+
+
+        }
+
+        //CAR
+        Node rootCarElement = root.getElementsByTagName(ConstantXml.ROOT_CAR_ELEMENT).item(0);
+
+
+        for(int i=0; i<rootCarElement.getChildNodes().getLength(); i++){
+            Node carNode = rootBoatElement.getChildNodes().item(i);
+
+            if(carNode.getNodeName().equals("#text")){ // I dont now why this problem
+                continue;
+            }
+
+            String uniqueID = carNode.getAttributes().getNamedItem(ConstantXml.UNIQUE_ID_ATTRIBUTE).getNodeValue();
+            String label = carNode.getAttributes().getNamedItem(ConstantXml.LABEL_ATTRIBUTE).getNodeValue();
+
+            int wrapperId = Integer.parseInt(carNode.getAttributes().getNamedItem(ConstantXml.WRAPPER_ID_ATTRIBUTE).getNodeValue());
+
+            int sourcecolumnPosition = Integer.parseInt(carNode.getAttributes().getNamedItem(ConstantXml.SOURCE_COLUMN_POSITION_ATTRIBUTE).getNodeValue());
+            int sourcerowPosition = Integer.parseInt(carNode.getAttributes().getNamedItem(ConstantXml.SOURCE_ROW_POSITION_ATTRIBUTE).getNodeValue());
+
+            int destinyColumnPosition = Integer.parseInt(carNode.getAttributes().getNamedItem(ConstantXml.DESTINY_COLUMN_POSITION_ATTRIBUTE).getNodeValue());
+            int destinyRowPosition = Integer.parseInt(carNode.getAttributes().getNamedItem(ConstantXml.DESTINY_ROW_POSITION_ATTRIBUTE).getNodeValue());
+
+            CellController cellController = CellController.getInstance();
+            CellView cellView = cellController.getCellViewFrom(sourcerowPosition,sourcecolumnPosition);
+
+            Cell destinyCell = cellController.getCellFrom(destinyRowPosition,destinyColumnPosition);
+
+            Car car = CarAutomaticController.getInstance().createCar(uniqueID,label,cellView);
+            car.setDestinyCell(destinyCell);
+            car.setWrapperId(wrapperId);
+            CarBusinessObject.updateDistances(car);
 
 
         }

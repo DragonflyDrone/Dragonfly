@@ -27,6 +27,7 @@ import view.drone.DroneView;
 import view.hospital.HospitalView;
 import view.house.HouseView;
 import view.river.RiverView;
+import view.sidewalk.SidewalkView;
 import view.sosPoint.SoSPointView;
 import view.street.StreetView;
 
@@ -52,7 +53,7 @@ public class MainController extends Application {
 
     @FXML
     private
-    ToggleButton riverToggleButton, streetToggleButton, hospitalToggleButton, droneToggleButton,
+    ToggleButton riverToggleButton, streetToggleButton, sidewalkToggleButton, hospitalToggleButton, droneToggleButton,
             antennaToggleButton, boatToggleButton, carToggleButton, houseToggleButton, treeToggleButton, sosToggleButton;
 
     @FXML
@@ -131,6 +132,7 @@ public class MainController extends Application {
         ToggleGroup toggleGroup1 = new ToggleGroup();
         riverToggleButton.setToggleGroup(toggleGroup1);
         streetToggleButton.setToggleGroup(toggleGroup1);
+        sidewalkToggleButton.setToggleGroup(toggleGroup1);
         hospitalToggleButton.setToggleGroup(toggleGroup1);
         houseToggleButton.setToggleGroup(toggleGroup1);
         sosToggleButton.setToggleGroup(toggleGroup1);
@@ -245,6 +247,7 @@ public class MainController extends Application {
 
             riverToggleButton.setSelected(false);
             streetToggleButton.setSelected(false);
+            sidewalkToggleButton.setSelected(false);
             hospitalToggleButton.setSelected(false);
             houseToggleButton.setSelected(false);
             sosToggleButton.setSelected(false);
@@ -296,6 +299,7 @@ public class MainController extends Application {
             if(alert.getResult() == ButtonType.YES){
                 riverToggleButton.setSelected(false);
                 streetToggleButton.setSelected(false);
+                sidewalkToggleButton.setSelected(false);
                 droneToggleButton.setSelected(false);
                 antennaToggleButton.setSelected(false);
                 hospitalToggleButton.setSelected(false);
@@ -340,6 +344,10 @@ public class MainController extends Application {
                 }else if( selectableView instanceof StreetView){
                     Street street = StreetController.getInstance().getStreetFrom(selectableView.getUniqueID());
                     StreetController.getInstance().deleteStreet(street);
+
+                }else if( selectableView instanceof SidewalkView){
+                    Sidewalk sideWalk = SidewalkController.getInstance().getSidewalkFrom(selectableView.getUniqueID());
+                    SidewalkController.getInstance().deleteSideWalk(sideWalk);
 
                 }else if( selectableView instanceof AntennaView){
                     Antenna antenna = AntennaController.getInstance().getAntennaFrom(selectableView.getUniqueID());
@@ -441,7 +449,7 @@ public class MainController extends Application {
 
 
     private boolean mustCreateEntitiesView() {
-        return riverToggleButton.isSelected() || streetToggleButton.isSelected() || hospitalToggleButton.isSelected() || antennaToggleButton.isSelected()
+        return riverToggleButton.isSelected() || streetToggleButton.isSelected() || sidewalkToggleButton.isSelected() || hospitalToggleButton.isSelected() || antennaToggleButton.isSelected()
                 || droneToggleButton.isSelected() || boatToggleButton.isSelected() || carToggleButton.isSelected() || houseToggleButton.isSelected()
                 || treeToggleButton.isSelected() || sosToggleButton.isSelected();
     }
@@ -456,6 +464,10 @@ public class MainController extends Application {
         } else if (streetToggleButton.isSelected()) {
                 //todo posso fazer o tratamento p não se sobrepor o mesmo objeto
                 environmentController.createStreet(selectedCellView);
+
+        }else if (sidewalkToggleButton.isSelected()) {
+            //todo posso fazer o tratamento p não se sobrepor o mesmo objeto
+            environmentController.createSidewalk(selectedCellView);
 
         } else if (hospitalToggleButton.isSelected()) {
             //todo posso fazer o tratamento p não se sobrepor o mesmo objeto
@@ -524,6 +536,7 @@ public class MainController extends Application {
 
         riverToggleButton.setDisable(true);
         streetToggleButton.setDisable(true);
+        sidewalkToggleButton.setDisable(true);
         hospitalToggleButton.setDisable(true);
         houseToggleButton.setDisable(true);
         droneToggleButton.setDisable(true);
@@ -541,6 +554,7 @@ public class MainController extends Application {
         //settingsAnchorPane.requestFocus();
         riverToggleButton.setDisable(false);
         streetToggleButton.setDisable(false);
+        sidewalkToggleButton.setDisable(false);
         hospitalToggleButton.setDisable(false);
         houseToggleButton.setDisable(false);
         droneToggleButton.setDisable(false);
