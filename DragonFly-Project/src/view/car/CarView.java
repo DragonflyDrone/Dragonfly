@@ -25,13 +25,13 @@ public class CarView  extends Group implements SelectableView, Car.Listener {
 
     private SelectHelper selectHelper = new SelectHelper(Color.YELLOW);
 
-    public CarView(String uniqueID, String cartLabel, CellView currentCellView) {
+    public CarView(String uniqueID, String carLabel, CellView currentCellView) {
         this.uniqueID = uniqueID;
-        this.carLabel = cartLabel;
+        this.carLabel = carLabel;
         this.currentCellView = currentCellView;
 
         Label label = new Label();
-        label.setText(cartLabel);
+        label.setText(carLabel);
         label.setTextFill(Color.RED);
         label.setTextAlignment(TextAlignment.CENTER);
 

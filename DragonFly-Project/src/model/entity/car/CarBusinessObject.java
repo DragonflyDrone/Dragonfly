@@ -4,7 +4,6 @@ import controller.CellController;
 import controller.EnvironmentController;
 import model.Cell;
 import view.CellView;
-import view.boat.BoatView;
 import view.car.CarView;
 import view.street.StreetView;
 
@@ -284,11 +283,11 @@ public abstract class CarBusinessObject {
         selectedCar.setDistanceSource(distanceHospitalSource);
     }
 
-    public static double calculeteDistanceFrom(Car selectedBoat, Cell cell) {
+    public static double calculeteDistanceFrom(Car selectedCar, Cell cell) {
 
-        int xInitial = (selectedBoat.getCurrentCollunmPosition() + 1) * 30,
+        int xInitial = (selectedCar.getCurrentCollunmPosition() + 1) * 30,
                 xFinal = (cell.getColumnPosition() + 1) * 30,
-                yInitial = (selectedBoat.getCurrentRowPosition() + 1) * 30,
+                yInitial = (selectedCar.getCurrentRowPosition() + 1) * 30,
                 yFinal = (cell.getRowPosition() + 1) * 30;
 
         return Math.sqrt(((xFinal - xInitial) * (xFinal - xInitial)) + ((yFinal - yInitial) * (yFinal - yInitial)));
@@ -300,11 +299,7 @@ public abstract class CarBusinessObject {
 
     }
 
-  /*  public static void generateRoute(BoatView boatView, CellView dstCellView, double distanceMaxFromDestine){
-        Boat boat = BoatAutomaticController.getInstance().getBoatFrom(boatView.getUniqueID());
-        boat.setRoute(AStarAlgorithm.buildRoute(boatView.getCurrentCellView(), dstCellView, distanceMaxFromDestine));
 
-    }*/
 
     public static void normalDestiny(Car car) {
         car.setReturnToHome(false);

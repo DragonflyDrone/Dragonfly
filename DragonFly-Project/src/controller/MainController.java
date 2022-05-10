@@ -3,6 +3,7 @@ package controller;
 import controller.settings_panel.BoatSettingsPanelController;
 import controller.settings_panel.CarSettingsPanelController;
 import controller.settings_panel.DroneSettingsPanelController;
+import controller.settings_panel.PeopleSettingsPanelController;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -17,6 +18,7 @@ import model.entity.*;
 import model.entity.boat.Boat;
 import model.entity.car.Car;
 import model.entity.drone.Drone;
+import model.entity.people.People;
 import util.DirectionEnum;
 import view.CellView;
 import view.SelectableView;
@@ -26,6 +28,7 @@ import view.car.CarView;
 import view.drone.DroneView;
 import view.hospital.HospitalView;
 import view.house.HouseView;
+import view.people.PeopleView;
 import view.river.RiverView;
 import view.sidewalk.SidewalkView;
 import view.sosPoint.SoSPointView;
@@ -54,7 +57,7 @@ public class MainController extends Application {
     @FXML
     private
     ToggleButton riverToggleButton, streetToggleButton, sidewalkToggleButton, hospitalToggleButton, droneToggleButton,
-            antennaToggleButton, boatToggleButton, carToggleButton, houseToggleButton, treeToggleButton, sosToggleButton;
+            antennaToggleButton, boatToggleButton, carToggleButton, peopleToggleButton, houseToggleButton, treeToggleButton, sosToggleButton;
 
     @FXML
     AnchorPane defaultPanelSettingsAnchorPane;
@@ -98,7 +101,7 @@ public class MainController extends Application {
 
         menuControler = new MenuController(rootAnchorPane, primaryStage);
 
-        Scene scene = new Scene(rootAnchorPane, 903, 705);
+        Scene scene = new Scene(rootAnchorPane, 953, 855);
 
         primaryStage.setScene(scene);
         primaryStage.show();
@@ -141,6 +144,7 @@ public class MainController extends Application {
         antennaToggleButton.setToggleGroup(toggleGroup1);
         boatToggleButton.setToggleGroup(toggleGroup1);
         carToggleButton.setToggleGroup(toggleGroup1);
+        peopleToggleButton.setToggleGroup(toggleGroup1);
 
         ToggleGroup toggleGroup4 = new ToggleGroup();
         startToggleButton.setToggleGroup(toggleGroup4);
@@ -238,6 +242,9 @@ public class MainController extends Application {
 
             DroneSettingsPanelController.getInstance().disableSettingsViews();
             BoatSettingsPanelController.getInstance().disableSettingsViews();
+            CarSettingsPanelController.getInstance().disableSettingsViews();
+            PeopleSettingsPanelController.getInstance().disableSettingsViews();
+
 
             environmentController.consumeRunEnviroment();
 
@@ -256,6 +263,7 @@ public class MainController extends Application {
             droneToggleButton.setSelected(false);
             boatToggleButton.setSelected(false);
             carToggleButton.setSelected(false);
+            peopleToggleButton.setSelected(false);
             automaticExecutionCheckBox.setDisable(true);
             cleanButton.setDisable(true);
             deleteButton.setDisable(true);
@@ -308,6 +316,7 @@ public class MainController extends Application {
                 treeToggleButton.setSelected(false);
                 boatToggleButton.setSelected(false);
                 carToggleButton.setSelected(false);
+                peopleToggleButton.setSelected(false);
                 automaticExecutionCheckBox.setSelected(false);
                 environmentController.consumeCleanEnverionment();
             }
@@ -336,6 +345,10 @@ public class MainController extends Application {
                 }else if( selectableView instanceof CarView){
                     Car car = CarAutomaticController.getInstance().getCarFrom(selectableView.getUniqueID());
                     CarAutomaticController.getInstance().deleteCar(car);
+
+                }else if( selectableView instanceof PeopleView){
+                    People people = PeopleAutomaticController.getInstance().getPeopleFrom(selectableView.getUniqueID());
+                    PeopleAutomaticController.getInstance().deletePeople(people);
 
                 }else if( selectableView instanceof RiverView){
                     River river = RiverController.getInstance().getRiverFrom(selectableView.getUniqueID());
@@ -450,7 +463,7 @@ public class MainController extends Application {
 
     private boolean mustCreateEntitiesView() {
         return riverToggleButton.isSelected() || streetToggleButton.isSelected() || sidewalkToggleButton.isSelected() || hospitalToggleButton.isSelected() || antennaToggleButton.isSelected()
-                || droneToggleButton.isSelected() || boatToggleButton.isSelected() || carToggleButton.isSelected() || houseToggleButton.isSelected()
+                || droneToggleButton.isSelected() || boatToggleButton.isSelected() || carToggleButton.isSelected() || peopleToggleButton.isSelected() || houseToggleButton.isSelected()
                 || treeToggleButton.isSelected() || sosToggleButton.isSelected();
     }
 
@@ -483,6 +496,7 @@ public class MainController extends Application {
             DroneSettingsPanelController.getInstance().show();
             BoatSettingsPanelController.getInstance().hide();
             CarSettingsPanelController.getInstance().hide();
+            PeopleSettingsPanelController.getInstance().hide();
 
             canCreateElements = false;
 
@@ -496,7 +510,8 @@ public class MainController extends Application {
             canCreateElements = false;
             DroneSettingsPanelController.getInstance().hide();
             BoatSettingsPanelController.getInstance().show();
-            BoatSettingsPanelController.getInstance().hide();
+            CarSettingsPanelController.getInstance().hide();
+            PeopleSettingsPanelController.getInstance().hide();
 
 
             boatToggleButton.setSelected(false);
@@ -507,9 +522,21 @@ public class MainController extends Application {
             DroneSettingsPanelController.getInstance().hide();
             BoatSettingsPanelController.getInstance().hide();
             CarSettingsPanelController.getInstance().show();
+            PeopleSettingsPanelController.getInstance().hide();
 
 
             carToggleButton.setSelected(false);
+        }else if(peopleToggleButton.isSelected()){
+            environmentController.createPeople(selectedCellView);
+
+            canCreateElements = false;
+            DroneSettingsPanelController.getInstance().hide();
+            BoatSettingsPanelController.getInstance().hide();
+            CarSettingsPanelController.getInstance().hide();
+            PeopleSettingsPanelController.getInstance().show();
+
+
+            peopleToggleButton.setSelected(false);
         }else if(houseToggleButton.isSelected()){
             environmentController.createHouse(selectedCellView);
         }
@@ -543,6 +570,7 @@ public class MainController extends Application {
         antennaToggleButton.setDisable(true);
         boatToggleButton.setDisable(true);
         carToggleButton.setDisable(true);
+        peopleToggleButton.setDisable(true);
         deleteButton.setDisable(true);
         cleanButton.setDisable(true);
         automaticExecutionCheckBox.setDisable(true);
@@ -561,6 +589,7 @@ public class MainController extends Application {
         antennaToggleButton.setDisable(false);
         boatToggleButton.setDisable(false);
         carToggleButton.setDisable(false);
+        peopleToggleButton.setDisable(false);
         deleteButton.setDisable(false);
         cleanButton.setDisable(false);
         automaticExecutionCheckBox.setDisable(false);
@@ -587,6 +616,9 @@ public class MainController extends Application {
 
         CarSettingsPanelController.init(defaultPanelSettingsAnchorPane);
 
+
+        PeopleSettingsPanelController.init(defaultPanelSettingsAnchorPane);
+
     }
 
     public static MainController getInstance(){
@@ -609,11 +641,13 @@ public class MainController extends Application {
             DroneSettingsPanelController.getInstance().notifyMouseClick(currentSelectableView);
             BoatSettingsPanelController.getInstance().notifyMouseClick(currentSelectableView);
             CarSettingsPanelController.getInstance().notifyMouseClick(currentSelectableView);
+            PeopleSettingsPanelController.getInstance().notifyMouseClick(currentSelectableView);
 
             if(running){
                 DroneSettingsPanelController.getInstance().disableSettingsViews();
                 BoatSettingsPanelController.getInstance().disableSettingsViews();
                 CarSettingsPanelController.getInstance().disableSettingsViews();
+                PeopleSettingsPanelController.getInstance().disableSettingsViews();
             }
 
             if(!isEmpty(defaultPanelSettingsAnchorPane))
@@ -681,6 +715,7 @@ public class MainController extends Application {
         droneToggleButton.setSelected(false);
         boatToggleButton.setSelected(false);
         carToggleButton.setSelected(false);
+        peopleToggleButton.setSelected(false);
 
         canCreateElements = true;
 

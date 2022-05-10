@@ -4,12 +4,14 @@ import javafx.scene.Node;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import model.Cell;
+import model.entity.Sidewalk;
 import util.UniqueIDGenenator;
 import view.CellView;
 import view.SelectableView;
 import view.drone.DroneView;
 import view.EnvironmentView;
 import view.river.RiverView;
+import view.sidewalk.SidewalkView;
 import view.street.StreetView;
 
 import java.util.ArrayList;
@@ -325,6 +327,18 @@ public class CellController {
 
         for(javafx.scene.Node node : cellView.getChildren()){
             if(node instanceof StreetView){
+                return true;
+
+            }
+        }
+        return false;
+    }
+
+    public boolean isSidewalkView(int rowPosition, int columnPosition) {
+        CellView cellView =getCellViewFrom(rowPosition, columnPosition);
+
+        for(javafx.scene.Node node : cellView.getChildren()){
+            if(node instanceof SidewalkView){
                 return true;
 
             }

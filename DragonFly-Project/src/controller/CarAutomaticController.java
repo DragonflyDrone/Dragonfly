@@ -3,15 +3,12 @@ package controller;
 import javafx.application.Platform;
 import javafx.scene.input.KeyEvent;
 import model.Cell;
-import model.entity.boat.Boat;
-import model.entity.boat.BoatBusinessObject;
 import model.entity.car.Car;
 import model.entity.car.CarBusinessObject;
 import util.AStarAlgorithm;
 import util.StopWatch;
 import view.CellView;
 import view.SelectableView;
-import view.boat.BoatView;
 import view.car.CarView;
 
 import java.util.*;
@@ -216,8 +213,8 @@ public class CarAutomaticController {
         CellView carCellView = getCarViewFrom(car.getUniqueID()).getCurrentCellView();
 
         LinkedList<CellView> route = routeMap.get(car);
-        int indexFromBoatCellView = route.indexOf(carCellView);
-        int nextIndexCellView = indexFromBoatCellView + 1;
+        int indexFromCarCellView = route.indexOf(carCellView);
+        int nextIndexCellView = indexFromCarCellView + 1;
 
         if (nextIndexCellView > route.size() - 1) {
             return null;
@@ -232,64 +229,9 @@ public class CarAutomaticController {
         return routeMap.containsKey(car);
     }
 
-//    public void navigate(Boat boat) {
-//        System.out.println("entrou no navegation");
-//
-//        BoatView boatView = getBoatViewFrom(boat.getUniqueID());
-//
-//            if(boat.getDistanceDestiny() == 0){
-//                BoatBusinessObject.returnToHome(boat);
-//                BoatBusinessObject.shortage(boat);
-//
-//                BoatBusinessObject.generateRoute(boatView, CellController.getInstance().getCellViewFrom(boat.getSourceCell()),0);
-//
-//
-//
-//            }else if(boat.getDistanceSource() == 0 && boat.isReturnToHome()){
-//                BoatBusinessObject.shutDown(boat);
-//
-//            }
-//
-//
-//
-//            int currentIndex = boat.getRoute().indexOf(boatView.getCurrentCellView());
-//
-//            if(currentIndex+1<=boat.getRoute().size()-1){
-//                CellView nextCellView = boat.getRoute().get(currentIndex+1);
-//
-//                boat.setCurrentRowPosition(nextCellView.getRowPosition());
-//                boat.setCurrentCollunmPosition(nextCellView.getCollunmPosition());
-//            }
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//         /*   if(boat.isReturnToHome()){
-//                CellView cellView = CellController.getInstance().getCellViewFrom(boat.getSourceCell());
-//                goDestinyAutomatic(boatView, cellView);
-//                //   System.out.println(boat.getLabel()+":"+cellView.getRowPosition()+","+cellView.getCollunmPosition());
-//            }else {
-//                CellView cellView = CellController.getInstance().getCellViewFrom(boat.getDestinyCell());
-//                goDestinyAutomatic(boatView, cellView);
-//                //  System.out.println(boat.getLabel()+":"+cellView.getRowPosition()+","+cellView.getCollunmPosition());
-//            }
-//*/
-//
-//            BoatBusinessObject.updateDistances(boat);
-//
-//
-//
-//
-//    }
 
-    public List<Car> getEnableCartList() {
+
+    public List<Car> getEnableCarList() {
         List<Car> enablecarList = new ArrayList<>();
         for (Car car : carMap.values()) {
             if (isEnable(car)) {

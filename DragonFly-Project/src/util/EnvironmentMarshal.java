@@ -9,6 +9,8 @@ import model.entity.car.Car;
 import model.entity.car.CarBusinessObject;
 import model.entity.drone.Drone;
 import model.entity.drone.DroneBusinessObject;
+import model.entity.people.People;
+import model.entity.people.PeopleBusinessObject;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -241,6 +243,29 @@ abstract public class EnvironmentMarshal {
 
         }
 
+        //PEOPLE
+        Element peopleElements = document.createElement(ConstantXml.ROOT_PEOPLE_ELEMENT);
+        environmentElements.appendChild(peopleElements);
+
+        for(People people : PeopleAutomaticController.getInstance().getPeopleMap().values()){
+
+            Element peopleElement = document.createElement(ConstantXml.PEOPLE_ELEMENT);
+
+            peopleElement.setAttribute(ConstantXml.UNIQUE_ID_ATTRIBUTE, people.getUniqueID());
+
+            peopleElement.setAttribute(ConstantXml.LABEL_ATTRIBUTE, people.getLabel());
+
+            peopleElement.setAttribute(ConstantXml.WRAPPER_ID_ATTRIBUTE, String.valueOf(people.getWrapperId()));
+            peopleElement.setAttribute(ConstantXml.SOURCE_COLUMN_POSITION_ATTRIBUTE, String.valueOf(people.getSourceCell().getColumnPosition()));
+            peopleElement.setAttribute(ConstantXml.SOURCE_ROW_POSITION_ATTRIBUTE, String.valueOf(people.getSourceCell().getRowPosition()));
+
+            peopleElement.setAttribute(ConstantXml.DESTINY_COLUMN_POSITION_ATTRIBUTE, String.valueOf(people.getDestinyCell().getColumnPosition()));
+            peopleElement.setAttribute(ConstantXml.DESTINY_ROW_POSITION_ATTRIBUTE, String.valueOf(people.getDestinyCell().getRowPosition()));
+
+            peopleElements.appendChild(peopleElement);
+
+        }
+
 
         TransformerFactory transformerFactory = TransformerFactory.newInstance();
         Transformer transformer = transformerFactory.newTransformer();
@@ -269,7 +294,7 @@ abstract public class EnvironmentMarshal {
 
        Node rootStreetElement = root.getElementsByTagName(ConstantXml.ROOT_STREET_ELEMENT).item(0);
 
-        Node rootSidewalkElement = root.getElementsByTagName(ConstantXml.ROOT_SIDEWALK_ELEMENT).item(0);
+       Node rootSidewalkElement = root.getElementsByTagName(ConstantXml.ROOT_SIDEWALK_ELEMENT).item(0);
 
        //RIVER
        for(int i=0; i<rootRiverElement.getChildNodes().getLength(); i++){
@@ -569,7 +594,7 @@ abstract public class EnvironmentMarshal {
 
 
         for(int i=0; i<rootCarElement.getChildNodes().getLength(); i++){
-            Node carNode = rootBoatElement.getChildNodes().item(i);
+            Node carNode = rootCarElement.getChildNodes().item(i);
 
             if(carNode.getNodeName().equals("#text")){ // I dont now why this problem
                 continue;
@@ -595,6 +620,41 @@ abstract public class EnvironmentMarshal {
             car.setDestinyCell(destinyCell);
             car.setWrapperId(wrapperId);
             CarBusinessObject.updateDistances(car);
+
+
+        }
+
+        //PEOPLE
+        Node rootPeopleElement = root.getElementsByTagName(ConstantXml.ROOT_PEOPLE_ELEMENT).item(0);
+
+
+        for(int i=0; i<rootPeopleElement.getChildNodes().getLength(); i++){
+            Node peopleNode = rootPeopleElement.getChildNodes().item(i);
+
+            if(peopleNode.getNodeName().equals("#text")){ // I dont now why this problem
+                continue;
+            }
+
+            String uniqueID = peopleNode.getAttributes().getNamedItem(ConstantXml.UNIQUE_ID_ATTRIBUTE).getNodeValue();
+            String label = peopleNode.getAttributes().getNamedItem(ConstantXml.LABEL_ATTRIBUTE).getNodeValue();
+
+            int wrapperId = Integer.parseInt(peopleNode.getAttributes().getNamedItem(ConstantXml.WRAPPER_ID_ATTRIBUTE).getNodeValue());
+
+            int sourcecolumnPosition = Integer.parseInt(peopleNode.getAttributes().getNamedItem(ConstantXml.SOURCE_COLUMN_POSITION_ATTRIBUTE).getNodeValue());
+            int sourcerowPosition = Integer.parseInt(peopleNode.getAttributes().getNamedItem(ConstantXml.SOURCE_ROW_POSITION_ATTRIBUTE).getNodeValue());
+
+            int destinyColumnPosition = Integer.parseInt(peopleNode.getAttributes().getNamedItem(ConstantXml.DESTINY_COLUMN_POSITION_ATTRIBUTE).getNodeValue());
+            int destinyRowPosition = Integer.parseInt(peopleNode.getAttributes().getNamedItem(ConstantXml.DESTINY_ROW_POSITION_ATTRIBUTE).getNodeValue());
+
+            CellController cellController = CellController.getInstance();
+            CellView cellView = cellController.getCellViewFrom(sourcerowPosition,sourcecolumnPosition);
+
+            Cell destinyCell = cellController.getCellFrom(destinyRowPosition,destinyColumnPosition);
+
+            People people = PeopleAutomaticController.getInstance().createPeople(uniqueID,label,cellView);
+            people.setDestinyCell(destinyCell);
+            people.setWrapperId(wrapperId);
+            PeopleBusinessObject.updateDistances(people);
 
 
         }
