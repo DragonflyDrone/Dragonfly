@@ -13,119 +13,118 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="mainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="845.0" prefWidth="922.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="mainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="845.0" prefWidth="1117.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane fx:id="environmentAnchorPane" layoutX="-15.0" layoutY="29.0" prefHeight="385.0" prefWidth="916.0" AnchorPane.bottomAnchor="296.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="29.0">
          <children>
-
+            <Label disable="true" layoutX="831.0" layoutY="367.0" text="Trace log panel">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="settingsAnchorPane" layoutX="1.0" layoutY="421.0" prefHeight="424.0" prefWidth="926.0">
+      <AnchorPane fx:id="settingsAnchorPane" layoutY="421.0" prefHeight="424.0" prefWidth="1114.0">
          <children>
 
 
 
 
-            <ToggleButton fx:id="riverToggleButton" focusTraversable="false" layoutX="2.0" layoutY="5.0" selected="false" text="River">
+            <ToggleButton fx:id="riverToggleButton" focusTraversable="false" layoutX="18.0" layoutY="5.0" selected="false" text="River">
 
             </ToggleButton>
-            <ToggleButton fx:id="sidewalkToggleButton" focusTraversable="false" layoutX="140.0" layoutY="165.0" selected="false" text="Sidewalk">
+            <ToggleButton fx:id="sidewalkToggleButton" focusTraversable="false" layoutX="164.0" layoutY="166.0" selected="false" text="Sidewalk">
 
             </ToggleButton>
-            <ToggleButton fx:id="hospitalToggleButton" focusTraversable="false" layoutX="56.0" layoutY="5.0" prefHeight="26.0" prefWidth="76.0" text="Hospital">
+            <ToggleButton fx:id="hospitalToggleButton" focusTraversable="false" layoutX="70.0" layoutY="4.0" prefHeight="26.0" prefWidth="76.0" text="Hospital">
 
             </ToggleButton>
-            <ToggleButton fx:id="droneToggleButton" focusTraversable="false" layoutX="209.0" layoutY="5.0" text="Drone">
+            <ToggleButton fx:id="droneToggleButton" focusTraversable="false" layoutX="252.0" layoutY="5.0" text="Drone">
 
             </ToggleButton>
-            <Label fx:id="strongWindLabel" layoutX="11.0" layoutY="244.0" text="Wind:" />
-            <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="76.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+            <Label fx:id="strongWindLabel" layoutX="17.0" layoutY="269.0" text="Wind:" />
+            <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="92.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@hospital.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="220.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="260.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@selectedDrone.png" />
                </image>
             </ImageView>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ADD8E6" height="32.0" layoutX="7.0" layoutY="41.0" stroke="BLACK" strokeType="INSIDE" width="32.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#808080" height="32.0" layoutX="155.0" layoutY="196.0" stroke="BLACK" strokeType="INSIDE" width="32.0" />
-            <ToggleButton fx:id="antennaToggleButton" focusTraversable="false" layoutX="141.0" layoutY="5.0" mnemonicParsing="false" text="Antenna" />
-            <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="155.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ADD8E6" height="32.0" layoutX="23.0" layoutY="41.0" stroke="BLACK" strokeType="INSIDE" width="32.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#808080" height="32.0" layoutX="180.0" layoutY="196.0" stroke="BLACK" strokeType="INSIDE" width="32.0" />
+            <ToggleButton fx:id="antennaToggleButton" focusTraversable="false" layoutX="166.0" layoutY="5.0" mnemonicParsing="false" text="Antenna" />
+            <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="180.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@antenna.png" />
                </image>
             </ImageView>
-            <Button fx:id="deleteButton" focusTraversable="false" layoutX="146.0" layoutY="286.0" mnemonicParsing="false" text="Delete" />
-            <Button fx:id="cleanButton" focusTraversable="false" layoutX="210.0" layoutY="286.0" mnemonicParsing="false" text="Clean" />
-            <ToggleButton fx:id="boatToggleButton" focusTraversable="false" layoutX="2.0" layoutY="84.0" selected="false" text="Boat" />
-            <ToggleButton fx:id="carToggleButton" focusTraversable="false" layoutX="69.0" layoutY="165.0" selected="false" text="Car" />
-            <ToggleButton fx:id="peopleToggleButton" focusTraversable="false" layoutX="211.0" layoutY="165.0"  selected="false" text="People" />
-            <ImageView layoutX="7.0" layoutY="116.0">
+            <Button fx:id="deleteButton" focusTraversable="false" layoutX="187.0" layoutY="312.0" mnemonicParsing="false" text="Delete" />
+            <Button fx:id="cleanButton" focusTraversable="false" layoutX="253.0" layoutY="312.0" mnemonicParsing="false" text="Clean" />
+            <ToggleButton fx:id="boatToggleButton" focusTraversable="false" layoutX="19.0" layoutY="84.0" selected="false" text="Boat" />
+            <ToggleButton fx:id="carToggleButton" focusTraversable="false" layoutX="91.0" layoutY="166.0" selected="false" text="Car" />
+            <ToggleButton fx:id="peopleToggleButton" focusTraversable="false" layoutX="250.0" layoutY="166.0" selected="false" text="People" />
+            <ImageView layoutX="23.0" layoutY="116.0">
                <image>
                   <Image url="@boat.png" />
                </image>
             </ImageView>
-            <Line endX="-34.0" endY="-22.0" layoutX="301.0" layoutY="27.0" startX="-34.0" startY="299.20709228515625" />
-            <Line endX="591.3999633789062" endY="241.70709228515625" layoutX="333.0" layoutY="85.0" startX="-331.0" startY="241.70709228515625" />
-            <AnchorPane fx:id="defaultPanelSettingsAnchorPane" layoutX="269.0" layoutY="4.0" maxHeight="242.0" maxWidth="337.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="227.0" prefWidth="336.0" />
-            <ImageView fitHeight="26.0" fitWidth="23.0" layoutX="81.0" layoutY="119.0">
+            <Line endX="775.39990234375" endY="241.70709228515625" layoutX="339.0" layoutY="103.0" startX="-331.0" startY="241.70709228515625" />
+            <AnchorPane fx:id="defaultPanelSettingsAnchorPane" layoutX="312.0" layoutY="5.0" maxHeight="242.0" maxWidth="344.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="227.0" prefWidth="344.0" />
+            <ImageView fitHeight="26.0" fitWidth="23.0" layoutX="97.0" layoutY="119.0">
                <image>
                   <Image url="@house.png" />
                </image>
             </ImageView>
-            <ImageView layoutX="155.0" layoutY="116.0">
+            <ImageView layoutX="180.0" layoutY="116.0">
                <image>
                   <Image url="@tree.png" />
                </image>
             </ImageView>
-            <ToggleButton fx:id="houseToggleButton" focusTraversable="false" layoutX="67.0" layoutY="84.0" mnemonicParsing="false" text="House" />
-            <ToggleButton fx:id="treeToggleButton" focusTraversable="false" layoutX="151.0" layoutY="84.0" mnemonicParsing="false" text="Tree" />
-            <ComboBox fx:id="windForceCombBox" focusTraversable="false" layoutX="56.0" layoutY="239.0" prefHeight="26.0" prefWidth="73.0" />
-            <ComboBox fx:id="windDirectionCombBox" focusTraversable="false" layoutX="134.0" layoutY="239.0" prefHeight="26.0" prefWidth="73.0" />
-            <ToggleButton fx:id="sosToggleButton" layoutX="218.0" layoutY="84.0" mnemonicParsing="false" text="SoS" />
-            <ImageView layoutX="224.0" layoutY="116.0">
+            <ToggleButton fx:id="houseToggleButton" focusTraversable="false" layoutX="83.0" layoutY="84.0" mnemonicParsing="false" text="House" />
+            <ToggleButton fx:id="treeToggleButton" focusTraversable="false" layoutX="176.0" layoutY="84.0" mnemonicParsing="false" text="Tree" />
+            <ComboBox fx:id="windForceCombBox" focusTraversable="false" layoutX="55.0" layoutY="265.0" prefHeight="26.0" prefWidth="73.0" />
+            <ComboBox fx:id="windDirectionCombBox" focusTraversable="false" layoutX="139.0" layoutY="265.0" prefHeight="26.0" prefWidth="73.0" />
+            <ToggleButton fx:id="sosToggleButton" layoutX="258.0" layoutY="84.0" mnemonicParsing="false" text="SoS" />
+            <ImageView layoutX="264.0" layoutY="120.0">
                <image>
                   <Image url="@safepoint.png" />
                </image>
             </ImageView>
-            <ToggleButton fx:id="restartToggleButton" disable="false" focusTraversable="false" layoutX="780.0" layoutY="373.0" mnemonicParsing="false" text="Restart" />
-            <ToggleButton fx:id="startToggleButton" disable="false" focusTraversable="false" layoutX="844.0" layoutY="373.0" mnemonicParsing="false" text="Start" />
-            <CheckBox fx:id="automaticExecutionCheckBox" focusTraversable="false" layoutX="753.0" layoutY="334.0" mnemonicParsing="false" text="Automatic Execution" />
-            <ToggleButton fx:id="streetToggleButton" focusTraversable="false" layoutX="3.0" layoutY="166.0" selected="false" text="Street">
+            <ToggleButton fx:id="restartToggleButton" disable="false" focusTraversable="false" layoutX="966.0" layoutY="386.0" mnemonicParsing="false" text="Restart" />
+            <ToggleButton fx:id="startToggleButton" disable="false" focusTraversable="false" layoutX="1035.0" layoutY="386.0" mnemonicParsing="false" text="Start" />
+            <CheckBox fx:id="automaticExecutionCheckBox" focusTraversable="false" layoutX="935.0" layoutY="353.0" mnemonicParsing="false" text="Automatic Execution" />
+            <ToggleButton fx:id="streetToggleButton" focusTraversable="false" layoutX="15.0" layoutY="166.0" selected="false" text="Street">
 
             </ToggleButton>
-            <ImageView fitHeight="21.0" fitWidth="48.0" layoutX="3.0" layoutY="202.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="18.0" fitWidth="46.0" layoutX="17.0" layoutY="202.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@street.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="22.0" fitWidth="42.0" layoutX="73.0" layoutY="201.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="22.0" fitWidth="42.0" layoutX="87.0" layoutY="201.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@car.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="22.0" fitWidth="42.0" layoutX="226.0" layoutY="201.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="26.0" fitWidth="31.0" layoutX="265.0" layoutY="201.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@person.png" />
+                  <Image url="@person_man.png" />
                </image>
             </ImageView>
+            <Line endX="-34.0" endY="-25.600006103515625" layoutX="344.0" layoutY="16.0" startX="-34.000030517578125" startY="324.20709228515625" />
 
 
                                  </children>
       </AnchorPane>
-      <AnchorPane fx:id="loggerAnchorPane" layoutX="602.0" layoutY="421.0" prefHeight="222.0" prefWidth="206.0">
+      <AnchorPane fx:id="loggerAnchorPane" layoutX="661.0" layoutY="441.0" prefHeight="294.0" prefWidth="447.0">
          <children>
-            <TextArea fx:id="loggerTextArea" editable="false" focusTraversable="false" prefHeight="270.0" prefWidth="312.0" />
+            <TextArea fx:id="loggerTextArea" editable="false" focusTraversable="false" layoutX="-1.0" layoutY="-1.0" prefHeight="294.0" prefWidth="456.0" />
          </children>
       </AnchorPane>
       <Label disable="true" layoutX="39.0" layoutY="394.0" text="Graphical elements panel">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Label>
-      <Label disable="true" layoutX="715.0" layoutY="394.0" text="Trace log panel">
          <font>
             <Font size="15.0" />
          </font>

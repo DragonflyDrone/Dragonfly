@@ -73,6 +73,18 @@
                     description="Para de entregar o produto para ajudar o Drone"
                     class-name-settings-controller ="CarSettingsPanelController"/>
 
+    <WrapperElement name-file-aj="BoatExclusiveWrapper"
+                    id="7" name-shown-panel="Car Exclusive"
+                    color="#000000"
+                    description="Car apenas para servir o drone"
+                    class-name-settings-controller ="CarSettingsPanelController"/>
+
+    <WrapperElement name-file-aj="Test"
+                    id="8" name-shown-panel="DSL"
+                    color="#e80000"
+                    description="DSL"
+                    class-name-settings-controller ="DroneSettingsPanelController"/>
+
 
     <!--People Wrappers-->
     <WrapperElement name-file-aj="NonePeopleWrapper"

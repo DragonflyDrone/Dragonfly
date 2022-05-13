@@ -36,7 +36,7 @@ public class PeopleView  extends Group implements SelectableView, People.Listene
         label.setTextAlignment(TextAlignment.CENTER);
 
         peopleImageView = new ImageView();
-        Image image = new Image("/view/res/person.png");
+        Image image = new Image("/view/res/person_man.png");
         peopleImageView.setFitHeight(20);
         peopleImageView.setFitWidth(30);
         peopleImageView.setLayoutY(5);

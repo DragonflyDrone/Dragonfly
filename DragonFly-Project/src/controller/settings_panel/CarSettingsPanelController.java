@@ -192,7 +192,6 @@ public class CarSettingsPanelController extends SettingsPanelController<Car> {
         car.setWrapperId(wrapperId);
 
 
-//        boat.setSourceCell(CellController.getInstance().getCellFrom(srcI, srcJ));
 
         car.setDestinyCell(CellController.getInstance().getCellFrom(destI, destJ));
 

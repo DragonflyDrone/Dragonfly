@@ -4,7 +4,6 @@ import controller.CellController;
 import controller.EnvironmentController;
 import model.Cell;
 import view.CellView;
-import view.car.CarView;
 import view.people.PeopleView;
 import view.sidewalk.SidewalkView;
 

@@ -13,24 +13,22 @@ import view.SelectableView;
 
 public class StreetViewImpl extends StreetView implements Street.Listener{
 
-    private final ImageView streetImageView;
     private final CellView currentCellView;
     SelectHelper selectHelper = new SelectHelper(SelectHelper.DEFAULT_COLOR);
 
     public StreetViewImpl(String uniqueID, CellView currentCellView) {
         this.uniqueID = uniqueID;
 
-        streetImageView = new ImageView();
-        Image image = new Image("/view/res/street.png");
-        streetImageView.setImage(image);
-        streetImageView.setFitHeight(30);
-        streetImageView.setFitWidth(30);
-        streetImageView.setImage(image);
+        Rectangle rectangle = new Rectangle( 30, 30);
+        rectangle.setStroke(Color.BLACK);
+        rectangle.setStrokeWidth(1);
+        rectangle.setFill(Color.BLACK);
 
-        this.getChildren().add(streetImageView);
+        this.getChildren().add(rectangle);
 
         currentCellView.getChildren().add(this);
         this.currentCellView = currentCellView;
+
 
 
     }
