@@ -7,6 +7,7 @@ import javafx.scene.layout.AnchorPane;
 import model.entity.SoSPoint;
 import model.entity.*;
 import model.Environment;
+import model.entity.biker.Biker;
 import model.entity.boat.Boat;
 import model.entity.car.Car;
 import model.entity.cyclist.Cyclist;
@@ -89,6 +90,7 @@ public class EnvironmentController {
             BoatAutomaticController.getInstance().consumeClickEvent(selectedEntityView);
             CarAutomaticController.getInstance().consumeClickEvent(selectedEntityView);
             CyclistAutomaticController.getInstance().consumeClickEvent(selectedEntityView);
+            BikerAutomaticController.getInstance().consumeClickEvent(selectedEntityView);
             PeopleAutomaticController.getInstance().consumeClickEvent(selectedEntityView);
             HouseController.getInstance().consumeClickEvent(selectedEntityView);
             TreeController.getInstance().consumeClickEvent(selectedEntityView);
@@ -123,6 +125,7 @@ public class EnvironmentController {
             BoatAutomaticController.getInstance().consumeOnKeyPressed(selectedEntityView,keyEvent);
             CarAutomaticController.getInstance().consumeOnKeyPressed(selectedEntityView,keyEvent);
             CyclistAutomaticController.getInstance().consumeOnKeyPressed(selectedEntityView,keyEvent);
+            BikerAutomaticController.getInstance().consumeOnKeyPressed(selectedEntityView,keyEvent);
             PeopleAutomaticController.getInstance().consumeOnKeyPressed(selectedEntityView,keyEvent);
             HouseController.getInstance().consumeOnKeyPressed(selectedEntityView,keyEvent);
             TreeController.getInstance().consumeOnKeyPressed(selectedEntityView,keyEvent);
@@ -194,6 +197,7 @@ public class EnvironmentController {
         BoatAutomaticController.getInstance().consumeCleanEnvironment();
         CarAutomaticController.getInstance().consumeCleanEnvironment();
         CyclistAutomaticController.getInstance().consumeCleanEnvironment();
+        BikerAutomaticController.getInstance().consumeCleanEnvironment();
         PeopleAutomaticController.getInstance().consumeCleanEnvironment();
         RiverController.getInstance().consumeClearEnvirironment();
         HouseController.getInstance().consumeCleanEnvironment();
@@ -211,6 +215,7 @@ public class EnvironmentController {
         BoatAutomaticController.getInstance().consumeRunEnviroment();
         CarAutomaticController.getInstance().consumeRunEnviroment();
         CyclistAutomaticController.getInstance().consumeRunEnviroment();
+        BikerAutomaticController.getInstance().consumeRunEnviroment();
         PeopleAutomaticController.getInstance().consumeRunEnviroment();
         CellController.getInstance().consumeRunEnviroment();
         HouseController.getInstance().consumeRunEnviroment();
@@ -234,6 +239,7 @@ public class EnvironmentController {
         BoatAutomaticController.getInstance().consumeReset();
         CarAutomaticController.getInstance().consumeReset();
         CyclistAutomaticController.getInstance().consumeReset();
+        BikerAutomaticController.getInstance().consumeReset();
         PeopleAutomaticController.getInstance().consumeReset();
         HouseController.getInstance().consumeReset();
         TreeController.getInstance().consumeReset();
@@ -549,6 +555,40 @@ public class EnvironmentController {
 
     }
 
+    public Biker createBiker(CellView selectedCellView) throws ClickOutsideRegionException {
+        String uniqueID = UniqueIDGenenator.generate();
+
+        return createBiker(uniqueID, selectedCellView);
+    }
+    public Biker createBiker(String uniqueID, CellView selectedCellView) throws ClickOutsideRegionException {
+
+        StreetView streetView = StreetController.getInstance().getStreetViewFrom(selectedCellView);
+
+        if(streetView == null){
+            throw new ClickOutsideRegionException("You must put the BikerView on top of a StreetView. ");
+        }
+
+        clearSelectionOnAllSelectableView();
+
+        BikerAutomaticController bikerAutomaticController = BikerAutomaticController.getInstance();
+
+
+        if (selectedCellView == null) {
+            throw new ClickOutsideRegionException();
+        }
+
+
+
+
+        String bikerLabel = String.valueOf(Biker.COUNT_BIKER);
+
+        Biker biker = bikerAutomaticController.createBiker(uniqueID, bikerLabel, selectedCellView);
+
+        this.selectedEntityView = CellController.getInstance().getSelectedEntityView(selectedCellView);
+        return biker;
+
+    }
+
     public People createPeople(CellView selectedCellView) throws ClickOutsideRegionException {
         String uniqueID = UniqueIDGenenator.generate();
 
@@ -669,6 +709,7 @@ public class EnvironmentController {
         BoatAutomaticController.getInstance().cleanSelections();
         CarAutomaticController.getInstance().cleanSelections();
         CyclistAutomaticController.getInstance().cleanSelections();
+        BikerAutomaticController.getInstance().cleanSelections();
         PeopleAutomaticController.getInstance().cleanSelections();
         HouseController.getInstance().cleanSelections();
         TreeController.getInstance().cleanSelections();

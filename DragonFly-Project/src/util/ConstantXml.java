@@ -46,6 +46,9 @@ public class ConstantXml {
     public static final String ROOT_CYCLIST_ELEMENT = "cyclistElements";
     public static final String CYCLIST_ELEMENT = "cyclistElement";
 
+    public static final String ROOT_BIKER_ELEMENT = "bikerElements";
+    public static final String BIKER_ELEMENT = "bikerElement";
+
     public static final String ROOT_PEOPLE_ELEMENT = "peopleElements";
     public static final String PEOPLE_ELEMENT = "peopleElement";
 

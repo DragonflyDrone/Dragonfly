@@ -71,13 +71,14 @@
             <ToggleButton fx:id="boatToggleButton" focusTraversable="false" layoutX="19.0" layoutY="84.0" selected="false" text="Boat" />
             <ToggleButton fx:id="carToggleButton" focusTraversable="false" layoutX="103.0" layoutY="166.0" selected="false" text="Car" />
             <ToggleButton fx:id="cyclistToggleButton" focusTraversable="false" layoutX="12.0" layoutY="253.0" selected="false" text="Cyclist" />
+            <ToggleButton fx:id="bikerToggleButton" focusTraversable="false" layoutX="99.0" layoutY="253.0" selected="false" text="Biker" />
             <ToggleButton fx:id="peopleToggleButton" focusTraversable="false" layoutX="266.0" layoutY="166.0" selected="false" text="People" />
             <ImageView layoutX="29.0" layoutY="116.0">
                <image>
                   <Image url="@boat.png" />
                </image>
             </ImageView>
-            <Line endX="848.0" endY="241.70709228515625" layoutX="341.0" layoutY="183.0" startX="-339.0" startY="241.70709228515625" />
+            <Line endX="901.4000244140625" endY="241.70709228515625" layoutX="341.0" layoutY="183.0" startX="-339.0" startY="241.70709228515625" />
             <AnchorPane fx:id="defaultPanelSettingsAnchorPane" layoutX="389.0" layoutY="34.0" maxHeight="242.0" maxWidth="374.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="227.0" prefWidth="374.0" />
             <ImageView fitHeight="26.0" fitWidth="23.0" layoutX="113.0" layoutY="119.0">
                <image>
@@ -99,9 +100,9 @@
                   <Image url="@safepoint.png" />
                </image>
             </ImageView>
-            <ToggleButton fx:id="restartToggleButton" disable="false" focusTraversable="false" layoutX="974.0" layoutY="502.0" mnemonicParsing="false" text="Restart" />
-            <ToggleButton fx:id="startToggleButton" disable="false" focusTraversable="false" layoutX="1047.0" layoutY="502.0" mnemonicParsing="false" text="Start" />
-            <CheckBox fx:id="automaticExecutionCheckBox" focusTraversable="false" layoutX="935.0" layoutY="433.0" mnemonicParsing="false" text="Automatic Execution" />
+            <ToggleButton fx:id="restartToggleButton" disable="false" focusTraversable="false" layoutX="1006.0" layoutY="502.0" mnemonicParsing="false" text="Restart" />
+            <ToggleButton fx:id="startToggleButton" disable="false" focusTraversable="false" layoutX="1088.0" layoutY="502.0" mnemonicParsing="false" text="Start" />
+            <CheckBox fx:id="automaticExecutionCheckBox" focusTraversable="false" layoutX="1022.0" layoutY="435.0" mnemonicParsing="false" text="Automatic Execution" />
             <ToggleButton fx:id="streetToggleButton" focusTraversable="false" layoutX="15.0" layoutY="166.0" selected="false" text="Street">
 
             </ToggleButton>
@@ -118,6 +119,11 @@
             <ImageView fitHeight="22.0" fitWidth="42.0" layoutX="24.0" layoutY="293.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@cyclist.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="22.0" fitWidth="42.0" layoutX="99.0" layoutY="296.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@biker.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="26.0" fitWidth="31.0" layoutX="279.0" layoutY="209.0" pickOnBounds="true" preserveRatio="true">

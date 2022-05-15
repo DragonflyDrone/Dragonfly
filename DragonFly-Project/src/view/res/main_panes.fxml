@@ -71,6 +71,7 @@
             <ToggleButton fx:id="boatToggleButton" focusTraversable="false" layoutX="19.0" layoutY="84.0" selected="false" text="Boat" />
             <ToggleButton fx:id="carToggleButton" focusTraversable="false" layoutX="103.0" layoutY="166.0" selected="false" text="Car" />
             <ToggleButton fx:id="cyclistToggleButton" focusTraversable="false" layoutX="12.0" layoutY="253.0" selected="false" text="Cyclist" />
+            <ToggleButton fx:id="bikerToggleButton" focusTraversable="false" layoutX="99.0" layoutY="253.0" selected="false" text="Biker" />
             <ToggleButton fx:id="peopleToggleButton" focusTraversable="false" layoutX="266.0" layoutY="166.0" selected="false" text="People" />
             <ImageView layoutX="29.0" layoutY="116.0">
                <image>
@@ -118,6 +119,11 @@
             <ImageView fitHeight="22.0" fitWidth="42.0" layoutX="24.0" layoutY="293.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@cyclist.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="22.0" fitWidth="42.0" layoutX="99.0" layoutY="296.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@biker.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="26.0" fitWidth="31.0" layoutX="279.0" layoutY="209.0" pickOnBounds="true" preserveRatio="true">

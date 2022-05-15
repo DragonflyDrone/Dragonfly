@@ -3,6 +3,8 @@ package util;
 import controller.*;
 import model.Cell;
 import model.entity.*;
+import model.entity.biker.Biker;
+import model.entity.biker.BikerBusinessObject;
 import model.entity.boat.Boat;
 import model.entity.boat.BoatBusinessObject;
 import model.entity.car.Car;
@@ -265,6 +267,29 @@ abstract public class EnvironmentMarshal {
             cyclistElement.setAttribute(ConstantXml.DESTINY_ROW_POSITION_ATTRIBUTE, String.valueOf(cyclist.getDestinyCell().getRowPosition()));
 
             cyclistElements.appendChild(cyclistElement);
+
+        }
+
+        //BIKER
+        Element bikerElements = document.createElement(ConstantXml.ROOT_BIKER_ELEMENT);
+        environmentElements.appendChild(bikerElements);
+
+        for(Biker biker : BikerAutomaticController.getInstance().getBikerMap().values()){
+
+            Element bikerElement = document.createElement(ConstantXml.BIKER_ELEMENT);
+
+            bikerElement.setAttribute(ConstantXml.UNIQUE_ID_ATTRIBUTE, biker.getUniqueID());
+
+            bikerElement.setAttribute(ConstantXml.LABEL_ATTRIBUTE, biker.getLabel());
+
+            bikerElement.setAttribute(ConstantXml.WRAPPER_ID_ATTRIBUTE, String.valueOf(biker.getWrapperId()));
+            bikerElement.setAttribute(ConstantXml.SOURCE_COLUMN_POSITION_ATTRIBUTE, String.valueOf(biker.getSourceCell().getColumnPosition()));
+            bikerElement.setAttribute(ConstantXml.SOURCE_ROW_POSITION_ATTRIBUTE, String.valueOf(biker.getSourceCell().getRowPosition()));
+
+            bikerElement.setAttribute(ConstantXml.DESTINY_COLUMN_POSITION_ATTRIBUTE, String.valueOf(biker.getDestinyCell().getColumnPosition()));
+            bikerElement.setAttribute(ConstantXml.DESTINY_ROW_POSITION_ATTRIBUTE, String.valueOf(biker.getDestinyCell().getRowPosition()));
+
+            bikerElements.appendChild(bikerElement);
 
         }
 
@@ -680,6 +705,41 @@ abstract public class EnvironmentMarshal {
             cyclist.setDestinyCell(destinyCell);
             cyclist.setWrapperId(wrapperId);
             CyclistBusinessObject.updateDistances(cyclist);
+
+
+        }
+
+        //BIKER
+        Node rootBikerElement = root.getElementsByTagName(ConstantXml.ROOT_BIKER_ELEMENT).item(0);
+
+
+        for(int i=0; i<rootBikerElement.getChildNodes().getLength(); i++){
+            Node bikerNode = rootBikerElement.getChildNodes().item(i);
+
+            if(bikerNode.getNodeName().equals("#text")){ // I dont now why this problem
+                continue;
+            }
+
+            String uniqueID = bikerNode.getAttributes().getNamedItem(ConstantXml.UNIQUE_ID_ATTRIBUTE).getNodeValue();
+            String label = bikerNode.getAttributes().getNamedItem(ConstantXml.LABEL_ATTRIBUTE).getNodeValue();
+
+            int wrapperId = Integer.parseInt(bikerNode.getAttributes().getNamedItem(ConstantXml.WRAPPER_ID_ATTRIBUTE).getNodeValue());
+
+            int sourcecolumnPosition = Integer.parseInt(bikerNode.getAttributes().getNamedItem(ConstantXml.SOURCE_COLUMN_POSITION_ATTRIBUTE).getNodeValue());
+            int sourcerowPosition = Integer.parseInt(bikerNode.getAttributes().getNamedItem(ConstantXml.SOURCE_ROW_POSITION_ATTRIBUTE).getNodeValue());
+
+            int destinyColumnPosition = Integer.parseInt(bikerNode.getAttributes().getNamedItem(ConstantXml.DESTINY_COLUMN_POSITION_ATTRIBUTE).getNodeValue());
+            int destinyRowPosition = Integer.parseInt(bikerNode.getAttributes().getNamedItem(ConstantXml.DESTINY_ROW_POSITION_ATTRIBUTE).getNodeValue());
+
+            CellController cellController = CellController.getInstance();
+            CellView cellView = cellController.getCellViewFrom(sourcerowPosition,sourcecolumnPosition);
+
+            Cell destinyCell = cellController.getCellFrom(destinyRowPosition,destinyColumnPosition);
+
+            Biker biker = BikerAutomaticController.getInstance().createBiker(uniqueID,label,cellView);
+            biker.setDestinyCell(destinyCell);
+            biker.setWrapperId(wrapperId);
+            BikerBusinessObject.updateDistances(biker);
 
 
         }

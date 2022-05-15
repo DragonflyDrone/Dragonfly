@@ -1,4 +1,4 @@
-package view.cyclist;
+package view.biker;
 
 import controller.CellController;
 import controller.LoggerController;
@@ -9,38 +9,37 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.text.TextAlignment;
-import model.entity.boat.Boat;
-import model.entity.cyclist.Cyclist;
+import model.entity.biker.Biker;
 import util.SelectHelper;
 import view.CellView;
 import view.SelectableView;
 
-public class CyclistView extends Group implements SelectableView, Cyclist.Listener {
+public class BikerView extends Group implements SelectableView, Biker.Listener {
 
-    private final ImageView cyclistImageView;
+    private final ImageView bikerImageView;
     private final ImageView boxImageView;
     private CellView currentCellView;
-    private String cyclistLabel;
+    private String bikerLabel;
     private String uniqueID;
 
     private SelectHelper selectHelper = new SelectHelper(Color.YELLOW);
 
-    public CyclistView(String uniqueID, String cyclistLabel, CellView currentCellView) {
+    public BikerView(String uniqueID, String bikerLabel, CellView currentCellView) {
         this.uniqueID = uniqueID;
-        this.cyclistLabel = cyclistLabel;
+        this.bikerLabel = bikerLabel;
         this.currentCellView = currentCellView;
 
         Label label = new Label();
-        label.setText(cyclistLabel);
+        label.setText(bikerLabel);
         label.setTextFill(Color.RED);
         label.setTextAlignment(TextAlignment.CENTER);
 
-        cyclistImageView = new ImageView();
-        Image image = new Image("/view/res/cyclist.png");
-        cyclistImageView.setFitHeight(20);
-        cyclistImageView.setFitWidth(30);
-        cyclistImageView.setLayoutY(5);
-        cyclistImageView.setImage(image);
+        bikerImageView = new ImageView();
+        Image image = new Image("/view/res/biker.png");
+        bikerImageView.setFitHeight(20);
+        bikerImageView.setFitWidth(30);
+        bikerImageView.setLayoutY(5);
+        bikerImageView.setImage(image);
 
 
         boxImageView = new ImageView();
@@ -50,7 +49,7 @@ public class CyclistView extends Group implements SelectableView, Cyclist.Listen
         boxImageView.setLayoutY(5);
         boxImageView.setVisible(false);
 
-        this.getChildren().addAll(cyclistImageView, boxImageView, label);
+        this.getChildren().addAll(bikerImageView, boxImageView, label);
 
         currentCellView.getChildren().add(this);
 
@@ -89,12 +88,12 @@ public class CyclistView extends Group implements SelectableView, Cyclist.Listen
         this.currentCellView = currentCellView;
     }
 
-    public String getCyclistLabel() {
-        return cyclistLabel;
+    public String getBikerLabel() {
+        return bikerLabel;
     }
 
-    public void setCyclistLabel(String cyclistLabel) {
-        this.cyclistLabel = cyclistLabel;
+    public void setBikerLabel(String bikerLabel) {
+        this.bikerLabel = bikerLabel;
     }
 
     public void setUniqueID(String uniqueID) {
@@ -102,8 +101,8 @@ public class CyclistView extends Group implements SelectableView, Cyclist.Listen
     }
 
     @Override
-    public void onChange(Cyclist cyclist, String methodName, Object oldValue, Object newValue) {
-        if (cyclist.getUniqueID() != uniqueID) {
+    public void onChange(Biker biker, String methodName, Object oldValue, Object newValue) {
+        if (biker.getUniqueID() != uniqueID) {
             return;
         }
 
@@ -129,10 +128,10 @@ public class CyclistView extends Group implements SelectableView, Cyclist.Listen
                 rotation = 270;
             }
 
-            updatateRotation(cyclist,rotation);
+            updatateRotation(biker,rotation);
 
 
-            updadePositionCyclistView(cyclist);
+            updadePositionBikerView(biker);
 
 
             return;
@@ -149,10 +148,10 @@ public class CyclistView extends Group implements SelectableView, Cyclist.Listen
                 rotation = 180;
             }
 
-            updatateRotation(cyclist,rotation);
+            updatateRotation(biker,rotation);
 
 
-            updadePositionCyclistView(cyclist);
+            updadePositionBikerView(biker);
 
 
             return;
@@ -164,11 +163,11 @@ public class CyclistView extends Group implements SelectableView, Cyclist.Listen
 
             if((boolean)newValue){
                 boxImageView.setVisible(true);
-                LoggerController.getInstance().print("Cyclist[" + cyclist.getLabel() + "] " + "Stocked");
+                LoggerController.getInstance().print("Biker[" + biker.getLabel() + "] " + "Stocked");
 
             }else {
                 boxImageView.setVisible(false);
-                LoggerController.getInstance().print("Cyclist[" + cyclist.getLabel() + "] " + "Shortage");
+                LoggerController.getInstance().print("Biker[" + biker.getLabel() + "] " + "Shortage");
 
             }
 
@@ -179,10 +178,10 @@ public class CyclistView extends Group implements SelectableView, Cyclist.Listen
         if(methodName.equals("setStarted") && (boolean)oldValue != (boolean)newValue){
 
             if((boolean)newValue){
-                LoggerController.getInstance().print("Cyclist[" + cyclist.getLabel() + "] " + "Start");
+                LoggerController.getInstance().print("Biker[" + biker.getLabel() + "] " + "Start");
 
             }else {
-                LoggerController.getInstance().print("Cyclist[" + cyclist.getLabel() + "] " + "ShutDown");
+                LoggerController.getInstance().print("Biker[" + biker.getLabel() + "] " + "ShutDown");
 
             }
 
@@ -194,15 +193,15 @@ public class CyclistView extends Group implements SelectableView, Cyclist.Listen
     }
 
 
-    private void updatateRotation(Cyclist cyclist, double rotation) {
-        cyclistImageView.setRotate(0);
+    private void updatateRotation(Biker biker, double rotation) {
+        bikerImageView.setRotate(0);
 
-        cyclistImageView.setRotate(cyclistImageView.getRotate() + rotation);
+        bikerImageView.setRotate(bikerImageView.getRotate() + rotation);
 
 
     }
 
-    private void updadePositionCyclistView(Cyclist cyclist) {
+    private void updadePositionBikerView(Biker biker) {
         if(currentCellView == null){
             return;
         }
@@ -216,7 +215,7 @@ public class CyclistView extends Group implements SelectableView, Cyclist.Listen
             }
         }
 
-        CellView newCellView = CellController.getInstance().getCellViewFrom(cyclist.getCurrentRowPosition(), cyclist.getCurrentCollunmPosition());
+        CellView newCellView = CellController.getInstance().getCellViewFrom(biker.getCurrentRowPosition(), biker.getCurrentCollunmPosition());
         currentCellView = newCellView;
 
         if(currentCellView != null && currentCellView.getChildren()!= null){

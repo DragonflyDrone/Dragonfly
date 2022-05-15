@@ -109,7 +109,7 @@ public class CyclistAutomaticController {
         navigateStopWatch = new StopWatch(0, 1000) {
             @Override
             public void task() {
-                executeAutomaticallyCyclets(routeMap);
+                executeAutomaticallyCyclists(routeMap);
             }
 
             @Override
@@ -120,7 +120,7 @@ public class CyclistAutomaticController {
 
     }
 
-    public void executeAutomaticallyCyclets(Map<Cyclist, LinkedList<CellView>> routeMap) {
+    public void executeAutomaticallyCyclists(Map<Cyclist, LinkedList<CellView>> routeMap) {
 
         for (Cyclist cyclist : cyclistMap.values()) {
 
@@ -210,10 +210,10 @@ public class CyclistAutomaticController {
     }
 
     private CellView getNextCellViewFromRoute(Cyclist cyclist, Map<Cyclist, LinkedList<CellView>> routeMap) {
-        CellView boatCellView = getCyclistViewFrom(cyclist.getUniqueID()).getCurrentCellView();
+        CellView cyclistCellView = getCyclistViewFrom(cyclist.getUniqueID()).getCurrentCellView();
 
         LinkedList<CellView> route = routeMap.get(cyclist);
-        int indexFromCyclistCellView = route.indexOf(boatCellView);
+        int indexFromCyclistCellView = route.indexOf(cyclistCellView);
         int nextIndexCellView = indexFromCyclistCellView + 1;
 
         if (nextIndexCellView > route.size() - 1) {
