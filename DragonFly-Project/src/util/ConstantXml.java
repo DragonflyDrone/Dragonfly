@@ -40,11 +40,14 @@ public class ConstantXml {
     public static final String ROOT_BOAT_ELEMENT = "boatElements";
     public static final String BOAT_ELEMENT = "boatElement";
 
-    public static final String ROOT_CAR_ELEMENT = "cartElements";
+    public static final String ROOT_CAR_ELEMENT = "carElements";
     public static final String CAR_ELEMENT = "carElement";
 
-    public static final String ROOT_PEOPLE_ELEMENT = "cartElements";
-    public static final String PEOPLE_ELEMENT = "carElement";
+    public static final String ROOT_CYCLIST_ELEMENT = "cyclistElements";
+    public static final String CYCLIST_ELEMENT = "cyclistElement";
+
+    public static final String ROOT_PEOPLE_ELEMENT = "peopleElements";
+    public static final String PEOPLE_ELEMENT = "peopleElement";
 
     public static final String ROOT_HOUSE_ELEMENT = "houseElements";
     public static final String HOUSE_ELEMENT = "houseElement";

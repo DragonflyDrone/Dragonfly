@@ -8,10 +8,10 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="peopleSettingsPanelAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="229.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="cyclistSettingsPanelAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="229.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <Label fx:id="currentPeopleLabel" disable="true" layoutX="132.0" layoutY="12.0" text="Current People (ID):" />
-        <TextField fx:id="currentPeopleTextField" disable="true" layoutX="272.0" layoutY="6.0" prefHeight="26.0" prefWidth="58.0" text="0" />
+        <Label fx:id="currentCyclistLabel" disable="true" layoutX="132.0" layoutY="12.0" text="Current Cyclist (ID):" />
+        <TextField fx:id="currentCyclistTextField" disable="true" layoutX="272.0" layoutY="6.0" prefHeight="26.0" prefWidth="58.0" text="0" />
         <Button fx:id="saveButton" disable="true" layoutX="282.0" layoutY="201.0" mnemonicParsing="false" text="Save" />
         <ComboBox fx:id="wrapperComboBox" disable="true" layoutX="159.0" layoutY="51.0" prefWidth="150.0" promptText="None" />
         <Label fx:id="wrapperLabel" disable="true" layoutX="98.0" layoutY="55.0" text="Wrapper:" />

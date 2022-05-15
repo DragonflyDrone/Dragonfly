@@ -7,6 +7,8 @@ import model.entity.boat.Boat;
 import model.entity.boat.BoatBusinessObject;
 import model.entity.car.Car;
 import model.entity.car.CarBusinessObject;
+import model.entity.cyclist.Cyclist;
+import model.entity.cyclist.CyclistBusinessObject;
 import model.entity.drone.Drone;
 import model.entity.drone.DroneBusinessObject;
 import model.entity.people.People;
@@ -240,6 +242,29 @@ abstract public class EnvironmentMarshal {
             carElement.setAttribute(ConstantXml.DESTINY_ROW_POSITION_ATTRIBUTE, String.valueOf(car.getDestinyCell().getRowPosition()));
 
             carElements.appendChild(carElement);
+
+        }
+
+        //CYCLIST
+        Element cyclistElements = document.createElement(ConstantXml.ROOT_CYCLIST_ELEMENT);
+        environmentElements.appendChild(cyclistElements);
+
+        for(Cyclist cyclist : CyclistAutomaticController.getInstance().getCyclistMap().values()){
+
+            Element cyclistElement = document.createElement(ConstantXml.CYCLIST_ELEMENT);
+
+            cyclistElement.setAttribute(ConstantXml.UNIQUE_ID_ATTRIBUTE, cyclist.getUniqueID());
+
+            cyclistElement.setAttribute(ConstantXml.LABEL_ATTRIBUTE, cyclist.getLabel());
+
+            cyclistElement.setAttribute(ConstantXml.WRAPPER_ID_ATTRIBUTE, String.valueOf(cyclist.getWrapperId()));
+            cyclistElement.setAttribute(ConstantXml.SOURCE_COLUMN_POSITION_ATTRIBUTE, String.valueOf(cyclist.getSourceCell().getColumnPosition()));
+            cyclistElement.setAttribute(ConstantXml.SOURCE_ROW_POSITION_ATTRIBUTE, String.valueOf(cyclist.getSourceCell().getRowPosition()));
+
+            cyclistElement.setAttribute(ConstantXml.DESTINY_COLUMN_POSITION_ATTRIBUTE, String.valueOf(cyclist.getDestinyCell().getColumnPosition()));
+            cyclistElement.setAttribute(ConstantXml.DESTINY_ROW_POSITION_ATTRIBUTE, String.valueOf(cyclist.getDestinyCell().getRowPosition()));
+
+            cyclistElements.appendChild(cyclistElement);
 
         }
 
@@ -620,6 +645,41 @@ abstract public class EnvironmentMarshal {
             car.setDestinyCell(destinyCell);
             car.setWrapperId(wrapperId);
             CarBusinessObject.updateDistances(car);
+
+
+        }
+
+        //CYCLIST
+        Node rootCyclistElement = root.getElementsByTagName(ConstantXml.ROOT_CYCLIST_ELEMENT).item(0);
+
+
+        for(int i=0; i<rootCyclistElement.getChildNodes().getLength(); i++){
+            Node cyclistNode = rootCyclistElement.getChildNodes().item(i);
+
+            if(cyclistNode.getNodeName().equals("#text")){ // I dont now why this problem
+                continue;
+            }
+
+            String uniqueID = cyclistNode.getAttributes().getNamedItem(ConstantXml.UNIQUE_ID_ATTRIBUTE).getNodeValue();
+            String label = cyclistNode.getAttributes().getNamedItem(ConstantXml.LABEL_ATTRIBUTE).getNodeValue();
+
+            int wrapperId = Integer.parseInt(cyclistNode.getAttributes().getNamedItem(ConstantXml.WRAPPER_ID_ATTRIBUTE).getNodeValue());
+
+            int sourcecolumnPosition = Integer.parseInt(cyclistNode.getAttributes().getNamedItem(ConstantXml.SOURCE_COLUMN_POSITION_ATTRIBUTE).getNodeValue());
+            int sourcerowPosition = Integer.parseInt(cyclistNode.getAttributes().getNamedItem(ConstantXml.SOURCE_ROW_POSITION_ATTRIBUTE).getNodeValue());
+
+            int destinyColumnPosition = Integer.parseInt(cyclistNode.getAttributes().getNamedItem(ConstantXml.DESTINY_COLUMN_POSITION_ATTRIBUTE).getNodeValue());
+            int destinyRowPosition = Integer.parseInt(cyclistNode.getAttributes().getNamedItem(ConstantXml.DESTINY_ROW_POSITION_ATTRIBUTE).getNodeValue());
+
+            CellController cellController = CellController.getInstance();
+            CellView cellView = cellController.getCellViewFrom(sourcerowPosition,sourcecolumnPosition);
+
+            Cell destinyCell = cellController.getCellFrom(destinyRowPosition,destinyColumnPosition);
+
+            Cyclist cyclist = CyclistAutomaticController.getInstance().createCyclist(uniqueID,label,cellView);
+            cyclist.setDestinyCell(destinyCell);
+            cyclist.setWrapperId(wrapperId);
+            CyclistBusinessObject.updateDistances(cyclist);
 
 
         }

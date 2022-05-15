@@ -1,21 +1,21 @@
-package model.entity.car;
+package model.entity.cyclist;
 
 import controller.CellController;
 import controller.EnvironmentController;
 import model.Cell;
 import view.CellView;
-import view.car.CarView;
-import view.street.StreetView;
+import view.cyclist.CyclistView;
+import view.sidewalk.SidewalkView;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public abstract class CarBusinessObject {
+public abstract class CyclistBusinessObject {
 
-    public static double distanceDroneWentDown(CellView carCellView, CellView dstCellView) {
+    public static double distanceDroneWentDown(CellView cyclistCellView, CellView dstCellView) {
 
-        int initialRowPosition = carCellView.getRowPosition()+1;
-        int initialCollunmPosition = carCellView.getCollunmPosition();
+        int initialRowPosition = cyclistCellView.getRowPosition()+1;
+        int initialCollunmPosition = cyclistCellView.getCollunmPosition();
 
         int finalRowPosition = dstCellView.getRowPosition();
         int finalCollunmPosition = dstCellView.getCollunmPosition();
@@ -24,7 +24,7 @@ public abstract class CarBusinessObject {
         CellController cellController = CellController.getInstance();
 
         CellView cellView = cellController.getCellViewFrom(initialRowPosition, initialCollunmPosition);
-        boolean containStreetView = false;
+        boolean containSidewalkView = false;
 
         if(cellView == null){
             return 999999;
@@ -32,21 +32,21 @@ public abstract class CarBusinessObject {
 
 
         for(javafx.scene.Node node : cellView.getChildren()){
-            if(node instanceof StreetView){
-                containStreetView = true;
+            if(node instanceof SidewalkView){
+                containSidewalkView = true;
             }
         }
 
-        if (initialRowPosition < 0 || !containStreetView) {
+        if (initialRowPosition < 0 || !containSidewalkView) {
             return 999999;
         }
 
         return CellController.getInstance().calculeteDisplacementFrom(initialRowPosition, initialCollunmPosition, finalRowPosition, finalCollunmPosition);
     }
 
-    public static double distanceDroneWentUp(CellView carCellView, CellView dstCellView) {
-        int initialRowPosition = carCellView.getRowPosition()-1;
-        int initialCollunmPosition = carCellView.getCollunmPosition();
+    public static double distanceDroneWentUp(CellView cyclistCellView, CellView dstCellView) {
+        int initialRowPosition = cyclistCellView.getRowPosition()-1;
+        int initialCollunmPosition = cyclistCellView.getCollunmPosition();
 
         int finalRowPosition = dstCellView.getRowPosition();
         int finalCollunmPosition = dstCellView.getCollunmPosition();
@@ -55,7 +55,7 @@ public abstract class CarBusinessObject {
         CellController cellController = CellController.getInstance();
 
         CellView cellView = cellController.getCellViewFrom(initialRowPosition, initialCollunmPosition);
-        boolean containStreetView = false;
+        boolean containSidewalkView = false;
 
         if(cellView == null){
             return 999999;
@@ -63,21 +63,21 @@ public abstract class CarBusinessObject {
 
 
         for(javafx.scene.Node node : cellView.getChildren()){
-            if(node instanceof StreetView){
-                containStreetView = true;
+            if(node instanceof SidewalkView){
+                containSidewalkView = true;
             }
         }
 
-        if (initialRowPosition < 0 || !containStreetView) {
+        if (initialRowPosition < 0 || !containSidewalkView) {
             return 999999;
         }
 
         return CellController.getInstance().calculeteDisplacementFrom(initialRowPosition, initialCollunmPosition, finalRowPosition, finalCollunmPosition);
     }
 
-    public static double distanceDroneWentLeft(CellView carCellView, CellView dstCellView) {
-        int initialRowPosition = carCellView.getRowPosition();
-        int initialCollunmPosition = carCellView.getCollunmPosition()-1;
+    public static double distanceDroneWentLeft(CellView cyclistCellView, CellView dstCellView) {
+        int initialRowPosition = cyclistCellView.getRowPosition();
+        int initialCollunmPosition = cyclistCellView.getCollunmPosition()-1;
 
         int finalRowPosition = dstCellView.getRowPosition();
         int finalCollunmPosition = dstCellView.getCollunmPosition();
@@ -91,23 +91,23 @@ public abstract class CarBusinessObject {
             return 999999;
         }
 
-        boolean containStreetView = false;
+        boolean containSidewalkView = false;
 
         for(javafx.scene.Node node : cellView.getChildren()){
-            if(node instanceof StreetView){
-                containStreetView = true;
+            if(node instanceof SidewalkView){
+                containSidewalkView = true;
             }
         }
-        if (initialCollunmPosition < 0 || !containStreetView) {
+        if (initialCollunmPosition < 0 || !containSidewalkView) {
             return 999999;
         }
 
         return CellController.getInstance().calculeteDisplacementFrom(initialRowPosition, initialCollunmPosition, finalRowPosition, finalCollunmPosition);
     }
 
-    public static double distanceDroneWentRight(CellView carCellView, CellView dstCellView) {
-        int initialRowPosition = carCellView.getRowPosition();
-        int initialCollunmPosition = carCellView.getCollunmPosition()+1;
+    public static double distanceDroneWentRight(CellView cyclistCellView, CellView dstCellView) {
+        int initialRowPosition = cyclistCellView.getRowPosition();
+        int initialCollunmPosition = cyclistCellView.getCollunmPosition()+1;
 
 
         int finalRowPosition = dstCellView.getRowPosition();
@@ -116,7 +116,7 @@ public abstract class CarBusinessObject {
         CellController cellController = CellController.getInstance();
 
         CellView cellView = cellController.getCellViewFrom(initialRowPosition, initialCollunmPosition);
-        boolean containStreetView = false;
+        boolean containSidewalkView = false;
 
         if(cellView == null){
             return 999999;
@@ -124,14 +124,14 @@ public abstract class CarBusinessObject {
 
 
         for(javafx.scene.Node node : cellView.getChildren()){
-            if(node instanceof StreetView){
-                containStreetView = true;
+            if(node instanceof SidewalkView){
+                containSidewalkView = true;
                 break;
             }
         }
 
 
-        if (initialCollunmPosition < 0 || !containStreetView) {
+        if (initialCollunmPosition < 0 || !containSidewalkView) {
             return 999999;
         }
 
@@ -139,36 +139,36 @@ public abstract class CarBusinessObject {
     }
 
     //todo pog
-    Map<CarView,CellView > lastCellViewMap = new HashMap<>();
+    Map<CyclistView,CellView > lastCellViewMap = new HashMap<>();
 
-    public static void goTo(Car car, String mustGO) {
+    public static void goTo(Cyclist cyclist, String mustGO) {
 
         switch (mustGO) {
             case "->":
-                flyingRight(car);
+                flyingRight(cyclist);
                 break;
 
             case "<-":
-                flyingLeft(car);
+                flyingLeft(cyclist);
                 break;
 
             case "/\\":
-                flyingUp(car);
+                flyingUp(cyclist);
                 break;
 
             case "\\/":
-                flyingDown(car);
+                flyingDown(cyclist);
                 break;
         }
 
     }
 
-    public static void flyingDown(Car car) {
+    public static void flyingDown(Cyclist cyclist) {
 
         EnvironmentController environmentController = EnvironmentController.getInstance();
 
-        int newI = car.getCurrentRowPosition();
-        int newJ = car.getCurrentCollunmPosition();
+        int newI = cyclist.getCurrentRowPosition();
+        int newJ = cyclist.getCurrentCollunmPosition();
         newI = newI + 1;
         int minIInEnverionment = 0;
         int maxIInEnverionment = environmentController.getCountRow() - 1;
@@ -179,15 +179,15 @@ public abstract class CarBusinessObject {
         }
 
 
-        car.setCurrentRowPosition(newI);
+        cyclist.setCurrentRowPosition(newI);
     }
 
-    public static void flyingUp(Car car) {
+    public static void flyingUp(Cyclist cyclist) {
 
         EnvironmentController environmentController = EnvironmentController.getInstance();
 
-        int newI = car.getCurrentRowPosition();
-        int newJ = car.getCurrentCollunmPosition();
+        int newI = cyclist.getCurrentRowPosition();
+        int newJ = cyclist.getCurrentCollunmPosition();
         newI = newI - 1;
 
         int minIInEnverionment = 0;
@@ -198,15 +198,15 @@ public abstract class CarBusinessObject {
             return;
         }
 
-        car.setCurrentRowPosition(newI);
+        cyclist.setCurrentRowPosition(newI);
     }
 
-    public static void flyingRight(Car car) {
+    public static void flyingRight(Cyclist cyclist) {
 
         EnvironmentController environmentController = EnvironmentController.getInstance();
 
-        int newI = car.getCurrentRowPosition();
-        int newJ = car.getCurrentCollunmPosition();
+        int newI = cyclist.getCurrentRowPosition();
+        int newJ = cyclist.getCurrentCollunmPosition();
         newJ = newJ + 1;
 
         int minJInEnverionment = 0;
@@ -217,17 +217,17 @@ public abstract class CarBusinessObject {
             return;
         }
 
-        car.setCurrentCollunmPosition(newJ);
+        cyclist.setCurrentCollunmPosition(newJ);
 
     }
 
 
-    public static void flyingLeft(Car car)  {
+    public static void flyingLeft(Cyclist cyclist)  {
 
         EnvironmentController environmentController = EnvironmentController.getInstance();
 
-        int newI = car.getCurrentRowPosition();
-        int newJ = car.getCurrentCollunmPosition();
+        int newI = cyclist.getCurrentRowPosition();
+        int newJ = cyclist.getCurrentCollunmPosition();
         newJ = newJ - 1;
 
         int minJInEnverionment = 0;
@@ -239,79 +239,79 @@ public abstract class CarBusinessObject {
             return;
         }
 
-        car.setCurrentCollunmPosition(newJ);
+        cyclist.setCurrentCollunmPosition(newJ);
     }
 
-    public static void resetSettingsCar(Car car) {
-        car.setCurrentRowPosition(car.getInitialRowPosition());
-        car.setCurrentCollunmPosition(car.getInitialCollunmPosition());
-        car.setStarted(false);
-        car.setReturnToHome(false);
-        car.setStocked(false);
-        updateDistances(car);
+    public static void resetSettingsCyclist(Cyclist cyclist) {
+        cyclist.setCurrentRowPosition(cyclist.getInitialRowPosition());
+        cyclist.setCurrentCollunmPosition(cyclist.getInitialCollunmPosition());
+        cyclist.setStarted(false);
+        cyclist.setReturnToHome(false);
+        cyclist.setStocked(false);
+        updateDistances(cyclist);
 
     }
 
-    public static void start(Car car) {
-        car.setStarted(true);
+    public static void start(Cyclist cyclist) {
+        cyclist.setStarted(true);
     }
 
-    public static void shutDown(Car car) {
-        car.setStarted(false);
+    public static void shutDown(Cyclist cyclist) {
+        cyclist.setStarted(false);
     }
 
-    public static void notifyRunEnviroment(Car car) {
+    public static void notifyRunEnviroment(Cyclist cyclist) {
         //
     }
 
-    public static void updateDistances(Car car) {
-        updateDistanceSource(car);
-        updateDistanceDestiny(car);
+    public static void updateDistances(Cyclist cyclist) {
+        updateDistanceSource(cyclist);
+        updateDistanceDestiny(cyclist);
     }
 
-    static synchronized public void updateDistanceDestiny(Car selectedCar) {
-        double distanceHospitalDestiny = calculeteDistanceFrom(selectedCar, selectedCar.getDestinyCell());
+    static synchronized public void updateDistanceDestiny(Cyclist selectedCyclist) {
+        double distanceHospitalDestiny = calculeteDistanceFrom(selectedCyclist, selectedCyclist.getDestinyCell());
         // System.out.println("distanceHospitalDestiny"+ distanceHospitalDestiny);
 
 
-        selectedCar.setDistanceDestiny(distanceHospitalDestiny);
+        selectedCyclist.setDistanceDestiny(distanceHospitalDestiny);
     }
 
-    static synchronized public void updateDistanceSource(Car selectedCar) {
-        double distanceHospitalSource = calculeteDistanceFrom(selectedCar, selectedCar.getSourceCell());
+    static synchronized public void updateDistanceSource(Cyclist selectedCyclist) {
+        double distanceHospitalSource = calculeteDistanceFrom(selectedCyclist, selectedCyclist.getSourceCell());
         // System.out.println("distanceHospitalSource"+ distanceHospitalSource);
-        selectedCar.setDistanceSource(distanceHospitalSource);
+        selectedCyclist.setDistanceSource(distanceHospitalSource);
     }
 
-    public static double calculeteDistanceFrom(Car selectedCar, Cell cell) {
+    public static double calculeteDistanceFrom(Cyclist selectedCyclist, Cell cell) {
 
-        int xInitial = (selectedCar.getCurrentCollunmPosition() + 1) * 30,
+        int xInitial = (selectedCyclist.getCurrentCollunmPosition() + 1) * 30,
                 xFinal = (cell.getColumnPosition() + 1) * 30,
-                yInitial = (selectedCar.getCurrentRowPosition() + 1) * 30,
+                yInitial = (selectedCyclist.getCurrentRowPosition() + 1) * 30,
                 yFinal = (cell.getRowPosition() + 1) * 30;
 
         return Math.sqrt(((xFinal - xInitial) * (xFinal - xInitial)) + ((yFinal - yInitial) * (yFinal - yInitial)));
 
     }
 
-    public static void returnToHome(Car car) {
-        car.setReturnToHome(true);
+    public static void returnToHome(Cyclist cyclist) {
+        cyclist.setReturnToHome(true);
 
     }
 
 
 
-    public static void normalDestiny(Car car) {
-        car.setReturnToHome(false);
+    public static void normalDestiny(Cyclist cyclist) {
+        cyclist.setReturnToHome(false);
     }
 
 
-    public static void stocked(Car car) {
-        car.setStocked(true);
+    public static void stocked(Cyclist cyclist) {
+        cyclist.setStocked(true);
     }
 
-    public static void shortage(Car car) {
-        car.setStocked(false);
+    public static void shortage(Cyclist cyclist) {
+        cyclist.setStocked(false);
     }
 
 
