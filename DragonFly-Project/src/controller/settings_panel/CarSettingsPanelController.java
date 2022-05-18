@@ -41,13 +41,13 @@ public class CarSettingsPanelController extends SettingsPanelController<Car> {
 
     @FXML
     private
-    Label currentSourceCell, currentDestinyCell, sourceLabel, targetLabel, wrapperLabel;
+    Label currentSourceCell, currentDestinyCell, sourceLabel, targetLabel /*,wrapperLabel*/;
 
-    @FXML
-    private ComboBox wrapperComboBox;
-
-    @FXML
-    ImageView wrapperInformationImageView;
+//    @FXML
+//    private ComboBox wrapperComboBox;
+//
+//    @FXML
+//    ImageView wrapperInformationImageView;
 
     @FXML
     ImageView /*sourceSettingsImageView,*/ destinySettingsImageView;
@@ -77,14 +77,14 @@ public class CarSettingsPanelController extends SettingsPanelController<Car> {
             this.defaultPanelSettingsAnchorPane = defaultPanelSettingsAnchorPane;
 
 
-            WrapperHelper wrapperHelper = WrapperHelper.getInstance();
-            List<String> wrapperNameList = wrapperHelper.getNameShownPanelListFrom(this.getClass().getSimpleName());
-
-
-
-            nameOptions =
-                    FXCollections.observableArrayList(wrapperNameList);
-            wrapperComboBox.setItems(nameOptions);
+//            WrapperHelper wrapperHelper = WrapperHelper.getInstance();
+//            List<String> wrapperNameList = wrapperHelper.getNameShownPanelListFrom(this.getClass().getSimpleName());
+//
+//
+//
+//            nameOptions =
+//                    FXCollections.observableArrayList(wrapperNameList);
+//            wrapperComboBox.setItems(nameOptions);
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -136,16 +136,16 @@ public class CarSettingsPanelController extends SettingsPanelController<Car> {
 
         });
 
-        wrapperInformationImageView.setOnMouseClicked(event -> {
-            String selectedNameItem = (String) wrapperComboBox.getSelectionModel().getSelectedItem();
-            int wrapperId = Integer.parseInt(WrapperHelper.getInstance().getIdFrom(selectedNameItem, this.getClass().getSimpleName()));
-
-            String descriptionWrapper = WrapperHelper.getInstance().getDescriptionFrom(wrapperId);
-            String title = WrapperHelper.getInstance().getNameShownPanelFrom(wrapperId);
-            Text text = new Text(title.concat(":\n") + descriptionWrapper);
-            Alert alert = new Alert(Alert.AlertType.INFORMATION, text.getText(), ButtonType.OK);
-            alert.showAndWait();
-        });
+//        wrapperInformationImageView.setOnMouseClicked(event -> {
+//            String selectedNameItem = (String) wrapperComboBox.getSelectionModel().getSelectedItem();
+//            int wrapperId = Integer.parseInt(WrapperHelper.getInstance().getIdFrom(selectedNameItem, this.getClass().getSimpleName()));
+//
+//            String descriptionWrapper = WrapperHelper.getInstance().getDescriptionFrom(wrapperId);
+//            String title = WrapperHelper.getInstance().getNameShownPanelFrom(wrapperId);
+//            Text text = new Text(title.concat(":\n") + descriptionWrapper);
+//            Alert alert = new Alert(Alert.AlertType.INFORMATION, text.getText(), ButtonType.OK);
+//            alert.showAndWait();
+//        });
 
     }
 
@@ -155,8 +155,8 @@ public class CarSettingsPanelController extends SettingsPanelController<Car> {
 //        sourceSettingsImageView.setDisable(true);
 //        sourceSettingsImageView.setOpacity(0.3);
 
-        wrapperLabel.setDisable(true);
-        wrapperComboBox.setDisable(true);
+//        wrapperLabel.setDisable(true);
+//        wrapperComboBox.setDisable(true);
         destinySettingsImageView.setDisable(true);
         destinySettingsImageView.setOpacity(0.3);
         sourceLabel.setDisable(true);
@@ -171,8 +171,8 @@ public class CarSettingsPanelController extends SettingsPanelController<Car> {
 //        sourceSettingsImageView.setDisable(false);
 //        sourceSettingsImageView.setOpacity(1);
 
-        wrapperLabel.setDisable(false);
-        wrapperComboBox.setDisable(false);
+//        wrapperLabel.setDisable(false);
+//        wrapperComboBox.setDisable(false);
 
         destinySettingsImageView.setDisable(false);
         destinySettingsImageView.setOpacity(1);
@@ -187,9 +187,9 @@ public class CarSettingsPanelController extends SettingsPanelController<Car> {
         int destI = Integer.parseInt(currentDestinyCell.getText().split(",")[0].replace("<",""));
         int destJ = Integer.parseInt(currentDestinyCell.getText().split(",")[1].replace(">",""));
 
-        String selectedItem = (String) wrapperComboBox.getSelectionModel().getSelectedItem();
-        int wrapperId = Integer.parseInt(WrapperHelper.getInstance().getIdFrom(selectedItem, this.getClass().getSimpleName()));
-        car.setWrapperId(wrapperId);
+//        String selectedItem = (String) wrapperComboBox.getSelectionModel().getSelectedItem();
+//        int wrapperId = Integer.parseInt(WrapperHelper.getInstance().getIdFrom(selectedItem, this.getClass().getSimpleName()));
+//        car.setWrapperId(wrapperId);
 
 
 
@@ -216,19 +216,19 @@ public class CarSettingsPanelController extends SettingsPanelController<Car> {
         currentSourceCell.setText(currentSourceCellString);
         currentDestinyCell.setText(currentDestinyCellString);
 
-        int currentWrapperId = car.getWrapperId();
-
-        WrapperHelper wrapperHelper = WrapperHelper.getInstance();
-
-        String nameShownPanel = wrapperHelper.getNameShownPanelFrom(currentWrapperId);
-
-        for(int i = 0; i<nameOptions.size(); i++){
-
-            if(nameOptions.get(i).equals(nameShownPanel)){
-                wrapperComboBox.getSelectionModel().select(i);
-            }
-
-        }
+//        int currentWrapperId = car.getWrapperId();
+//
+//        WrapperHelper wrapperHelper = WrapperHelper.getInstance();
+//
+//        String nameShownPanel = wrapperHelper.getNameShownPanelFrom(currentWrapperId);
+//
+//        for(int i = 0; i<nameOptions.size(); i++){
+//
+//            if(nameOptions.get(i).equals(nameShownPanel)){
+//                wrapperComboBox.getSelectionModel().select(i);
+//            }
+//
+//        }
 
 
 

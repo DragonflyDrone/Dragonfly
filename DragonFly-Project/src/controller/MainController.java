@@ -359,8 +359,8 @@ public class MainController extends Application {
                     StreetController.getInstance().deleteStreet(street);
 
                 }else if( selectableView instanceof SidewalkView){
-                    Sidewalk sideWalk = SidewalkController.getInstance().getSidewalkFrom(selectableView.getUniqueID());
-                    SidewalkController.getInstance().deleteSideWalk(sideWalk);
+                    Sidewalk sideWalk = SideWalkController.getInstance().getSidewalkFrom(selectableView.getUniqueID());
+                    SideWalkController.getInstance().deleteSideWalk(sideWalk);
 
                 }else if( selectableView instanceof AntennaView){
                     Antenna antenna = AntennaController.getInstance().getAntennaFrom(selectableView.getUniqueID());

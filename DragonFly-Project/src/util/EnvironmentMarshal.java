@@ -74,7 +74,7 @@ abstract public class EnvironmentMarshal {
         Element sidewalkElements = document.createElement(ConstantXml.ROOT_SIDEWALK_ELEMENT);
         environmentElements.appendChild(sidewalkElements);
 
-        for(Sidewalk sidewalk : SidewalkController.getInstance().getSidewalkMap().values()){
+        for(Sidewalk sidewalk : SideWalkController.getInstance().getSidewalkMap().values()){
 
             Element sidewalkElement = document.createElement(ConstantXml.SIDEWALK_ELEMENT);
 
@@ -360,7 +360,7 @@ abstract public class EnvironmentMarshal {
             CellView cellView = cellController.getCellViewFrom(rowPosition,columnPosition);
 
 
-            SidewalkController.getInstance().createSidewalk(uniqueID, cellView);
+            SideWalkController.getInstance().createSidewalk(uniqueID, cellView);
         }
 
 

@@ -81,7 +81,7 @@ public class EnvironmentController {
         if( selectedEntityView != null){
             RiverController.getInstance().consumeClickEvent(selectedEntityView);
             StreetController.getInstance().consumeClickEvent(selectedEntityView);
-            SidewalkController.getInstance().consumeClickEvent(selectedEntityView);
+            SideWalkController.getInstance().consumeClickEvent(selectedEntityView);
             AntennaController.getInstance().consumeClickEvent(selectedEntityView);
             HospitalController.getInstance().consumeClickEvent(selectedEntityView);
             DroneController.getInstance().consumeClickEvent(selectedEntityView);
@@ -114,7 +114,7 @@ public class EnvironmentController {
         if (selectedCellView != null) {
             RiverController.getInstance().consumeOnKeyPressed(selectedEntityView, keyEvent);
             StreetController.getInstance().consumeOnKeyPressed(selectedEntityView, keyEvent);
-            SidewalkController.getInstance().consumeOnKeyPressed(selectedEntityView, keyEvent);
+            SideWalkController.getInstance().consumeOnKeyPressed(selectedEntityView, keyEvent);
             AntennaController.getInstance().consumeOnKeyPressed(selectedEntityView, keyEvent);
             HospitalController.getInstance().consumeOnKeyPressed(selectedEntityView, keyEvent);
             DroneController.getInstance().consumeOnKeyPressed(selectedEntityView, keyEvent);
@@ -184,7 +184,7 @@ public class EnvironmentController {
 
         DroneController.getInstance().consumeCleanEnvironment();
         StreetController.getInstance().consumeCleanEnvironment();
-        SidewalkController.getInstance().consumeClearEnvirironment();
+        SideWalkController.getInstance().consumeClearEnvirironment();
         HospitalController.getInstance().consumeCleanEnvironment();
         SoSPointController.getInstance().consumeClearEnvironment();
         AntennaController.getInstance().consumeClearEnvironment();
@@ -200,7 +200,7 @@ public class EnvironmentController {
     public void consumeRunEnviroment() {
         RiverController.getInstance().consumeRunEnviroment();
         StreetController.getInstance().consumeRunEnviroment();
-        SidewalkController.getInstance().consumeRunEnviroment();
+        SideWalkController.getInstance().consumeRunEnviroment();
         AntennaController.getInstance().consumeRunEnviroment();
         HospitalController.getInstance().consumeRunEnviroment();
         DroneController.getInstance().consumeRunEnviroment();
@@ -221,7 +221,7 @@ public class EnvironmentController {
 
         RiverController.getInstance().consumeReset();
         StreetController.getInstance().consumeReset();
-        SidewalkController.getInstance().consumeReset();
+        SideWalkController.getInstance().consumeReset();
         AntennaController.getInstance().consumeReset();
         HospitalController.getInstance().consumeReset();
         DroneController.getInstance().consumeReset();
@@ -375,7 +375,7 @@ public class EnvironmentController {
     public Sidewalk createSidewalk(String uniqueID, CellView selectedCellView) throws ClickOutsideRegionException {
         clearSelectionOnAllSelectableView();
 
-        SidewalkController sidewalkController = SidewalkController.getInstance();
+        SideWalkController sidewalkController = SideWalkController.getInstance();
 
 
         if (selectedCellView == null) {
@@ -517,7 +517,7 @@ public class EnvironmentController {
 
     public People createPeople(String uniqueID, CellView selectedCellView) throws ClickOutsideRegionException {
 
-        SidewalkView sidewalkView = SidewalkController.getInstance().getSideWalkViewFrom(selectedCellView);
+        SidewalkView sidewalkView = SideWalkController.getInstance().getSideWalkViewFrom(selectedCellView);
 
         if(sidewalkView == null){
             throw new ClickOutsideRegionException("You must put the PeopleView on top of a SidewalkView. ");
@@ -623,7 +623,7 @@ public class EnvironmentController {
         AntennaController.getInstance().cleanSelections();
         RiverController.getInstance().cleanSelections();
         StreetController.getInstance().cleanSelections();
-        SidewalkController.getInstance().cleanSelections();
+        SideWalkController.getInstance().cleanSelections();
         HospitalController.getInstance().cleanSelections();
         CellController.getInstance().cleanSelections();
         BoatAutomaticController.getInstance().cleanSelections();

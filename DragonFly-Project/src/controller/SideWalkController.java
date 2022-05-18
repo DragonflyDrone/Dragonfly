@@ -11,20 +11,20 @@ import view.sidewalk.SidewalkViewImpl;
 import java.util.HashMap;
 import java.util.Map;
 
-public class SidewalkController {
-    private static SidewalkController instance;
+public class SideWalkController {
+    private static SideWalkController instance;
     protected Map<String, SidewalkView> sidewalkViewMap = new HashMap<>();
 
 
     protected Map<String, Sidewalk> sidewalkMap = new HashMap<>();
 
-    private SidewalkController() {
+    private SideWalkController() {
 
     }
 
-    public static SidewalkController getInstance() {
+    public static SideWalkController getInstance() {
         if(instance == null){
-            instance = new SidewalkController();
+            instance = new SideWalkController();
         }
 
         return instance;
