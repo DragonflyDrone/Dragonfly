@@ -10,31 +10,30 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import model.Cell;
-import model.entity.people.People;
-import model.entity.people.PeopleBusinessObject;
+import model.entity.cyclist.Cyclist;
+import model.entity.cyclist.CyclistBusinessObject;
 import util.WrapperHelper;
 import view.SelectableView;
-import view.car.CarView;
-import view.people.PeopleView;
+import view.cyclist.CyclistView;
 import view.sidewalk.SidewalkView;
 
 
 import java.io.IOException;
 import java.util.List;
 
-public class PeopleSettingsPanelController extends SettingsPanelController<People> {
+public class CyclistSettingsPanelController extends SettingsPanelController<Cyclist> {
 
-    private static PeopleSettingsPanelController instance;
+    private static CyclistSettingsPanelController instance;
     private  ObservableList<String> nameOptions;
-    private People selectedPeople;
+    private  Cyclist selectedCyclist;
     private AnchorPane defaultPanelSettingsAnchorPane;
-    private AnchorPane peopleSettingsPanelAnchorPane;
+    private AnchorPane cyclistSettingsPanelAnchorPane;
 
     @FXML
     private ButtonBase saveButton;
 
     @FXML
-    private TextField currentPeopleTextField;
+    private TextField currentCyclistTextField;
 
     @FXML
     private
@@ -61,16 +60,16 @@ public class PeopleSettingsPanelController extends SettingsPanelController<Peopl
 
 
         if (instance == null) {
-            instance = new PeopleSettingsPanelController(defaultPanelSettingsAnchorPane);
+            instance = new CyclistSettingsPanelController(defaultPanelSettingsAnchorPane);
         }
     }
 
-    private PeopleSettingsPanelController(AnchorPane defaultPanelSettingsAnchorPane) {
+    private CyclistSettingsPanelController(AnchorPane defaultPanelSettingsAnchorPane) {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/view/res/people/people_settings_panel.fxml"));
+        loader.setLocation(getClass().getResource("/view/res/cyclist/cyclist_settings_panel.fxml"));
         loader.setController(this);
         try {
-            peopleSettingsPanelAnchorPane = loader.load();
+            cyclistSettingsPanelAnchorPane = loader.load();
             this.defaultPanelSettingsAnchorPane = defaultPanelSettingsAnchorPane;
 
 
@@ -89,7 +88,7 @@ public class PeopleSettingsPanelController extends SettingsPanelController<Peopl
 
     }
 
-    public static PeopleSettingsPanelController getInstance() {
+    public static CyclistSettingsPanelController getInstance() {
         return instance;
     }
 
@@ -98,7 +97,7 @@ public class PeopleSettingsPanelController extends SettingsPanelController<Peopl
     void initialize() {
         saveButton.setOnAction(event -> {
 
-            saveAttributesInEntity(selectedPeople);
+            saveAttributesInEntity(selectedCyclist);
 
             disableSettingsViews();
 
@@ -177,7 +176,7 @@ public class PeopleSettingsPanelController extends SettingsPanelController<Peopl
     }
 
     @Override
-    public void saveAttributesInEntity(People people) {
+    public void saveAttributesInEntity(Cyclist cyclist) {
 //        int srcI = Integer.parseInt(currentSourceCell.getText().split(",")[0].replace("<",""));
 //        int srcJ = Integer.parseInt(currentSourceCell.getText().split(",")[1].replace(">",""));
 
@@ -186,34 +185,35 @@ public class PeopleSettingsPanelController extends SettingsPanelController<Peopl
 
         String selectedItem = (String) wrapperComboBox.getSelectionModel().getSelectedItem();
         int wrapperId = Integer.parseInt(WrapperHelper.getInstance().getIdFrom(selectedItem, this.getClass().getSimpleName()));
-        people.setWrapperId(wrapperId);
+        cyclist.setWrapperId(wrapperId);
 
 
+//        cyclist.setSourceCell(CellController.getInstance().getCellFrom(srcI, srcJ));
 
-        people.setDestinyCell(CellController.getInstance().getCellFrom(destI, destJ));
+        cyclist.setDestinyCell(CellController.getInstance().getCellFrom(destI, destJ));
 
-        PeopleBusinessObject.updateDistances(people);
+        CyclistBusinessObject.updateDistances(cyclist);
     }
 
     @Override
-    public void updateSettingsViewsFromEntity(People people) {
+    public void updateSettingsViewsFromEntity(Cyclist cyclist) {
 
-        String peopleLabel = people.getLabel();
+        String cyclistLabel = cyclist.getLabel();
 
-        currentPeopleTextField.setText(peopleLabel);
+        currentCyclistTextField.setText(cyclistLabel);
 
         String currentSourceCellString =
-                "<" + people.getSourceCell().getRowPosition()
-                        + "," + people.getSourceCell().getColumnPosition() + ">";
+                "<" + cyclist.getSourceCell().getRowPosition()
+                        + "," + cyclist.getSourceCell().getColumnPosition() + ">";
 
         String currentDestinyCellString =
-                "<" + people.getDestinyCell().getRowPosition()
-                        + "," + people.getDestinyCell().getColumnPosition() + ">";
+                "<" + cyclist.getDestinyCell().getRowPosition()
+                        + "," + cyclist.getDestinyCell().getColumnPosition() + ">";
 
         currentSourceCell.setText(currentSourceCellString);
         currentDestinyCell.setText(currentDestinyCellString);
 
-        int currentWrapperId = people.getWrapperId();
+        int currentWrapperId = cyclist.getWrapperId();
 
         WrapperHelper wrapperHelper = WrapperHelper.getInstance();
 
@@ -234,7 +234,7 @@ public class PeopleSettingsPanelController extends SettingsPanelController<Peopl
 
     @Override
     public void clearSettingView() {
-        currentPeopleTextField.setText("");
+        currentCyclistTextField.setText("");
         currentSourceCell.setText("<0,0>");
         currentDestinyCell.setText("<0,0>");
     }
@@ -247,29 +247,20 @@ public class PeopleSettingsPanelController extends SettingsPanelController<Peopl
                 SidewalkView sidewalkView = (SidewalkView) selectableView;
                 Cell cell = CellController.getInstance().getCellFrom(sidewalkView.getCurrentCellView().getUniqueID());
 
-//                if (clickedSourceSettings) {
-//                    currentSourceCell.setText("<" + cell.getRowPosition() + "," + cell.getColumnPosition() + ">");
-//                    clickedSourceSettings = false;
-//                }
-//
-//                if (clickedDestinySettings) {
-//                    currentDestinyCell.setText("<" + cell.getRowPosition() + "," + cell.getColumnPosition() + ">");
-//                    clickedDestinySettings = false;
-//                }
 
                 currentDestinyCell.setText("<" + cell.getRowPosition() + "," + cell.getColumnPosition() + ">");
 
                 waitForClickInCell = false;
             }
         }else {
-            if (selectableView instanceof PeopleView) {
-                PeopleView peopleView = (PeopleView) selectableView;
-                People people = PeopleAutomaticController.getInstance().getPeopleFrom(peopleView.getUniqueID());
+            if (selectableView instanceof CyclistView) {
+                CyclistView cyclistView = (CyclistView) selectableView;
+                Cyclist cyclist = CyclistAutomaticController.getInstance().getCyclistFrom(cyclistView.getUniqueID());
 
                 show();
 
                 enableSettingsViews();
-                updateSettingsViewsFromEntity(people);
+                updateSettingsViewsFromEntity(cyclist);
 
             }else {
                 hide();
@@ -282,8 +273,8 @@ public class PeopleSettingsPanelController extends SettingsPanelController<Peopl
     }
     @Override
     public void hide() {
-        if(defaultPanelSettingsAnchorPane.getChildren().contains(peopleSettingsPanelAnchorPane)){
-            defaultPanelSettingsAnchorPane.getChildren().remove(peopleSettingsPanelAnchorPane);
+        if(defaultPanelSettingsAnchorPane.getChildren().contains(cyclistSettingsPanelAnchorPane)){
+            defaultPanelSettingsAnchorPane.getChildren().remove(cyclistSettingsPanelAnchorPane);
         }
 
     }
@@ -293,14 +284,14 @@ public class PeopleSettingsPanelController extends SettingsPanelController<Peopl
 
         hide();
 
-        defaultPanelSettingsAnchorPane.getChildren().add(peopleSettingsPanelAnchorPane);
+        defaultPanelSettingsAnchorPane.getChildren().add(cyclistSettingsPanelAnchorPane);
         enableSettingsViews();
 
 
         SelectableView selectableView = EnvironmentController.getInstance().getSelectedEntityView();
-        PeopleView peopleView = (PeopleView) selectableView;
-        selectedPeople = PeopleAutomaticController.getInstance().getPeopleFrom(peopleView.getUniqueID());
+        CyclistView cyclistView = (CyclistView) selectableView;
+        selectedCyclist = CyclistAutomaticController.getInstance().getCyclistFrom(cyclistView.getUniqueID());
 
-        updateSettingsViewsFromEntity(selectedPeople);
+        updateSettingsViewsFromEntity(selectedCyclist);
     }
 }

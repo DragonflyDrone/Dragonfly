@@ -10,31 +10,30 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import model.Cell;
-import model.entity.people.People;
-import model.entity.people.PeopleBusinessObject;
+import model.entity.biker.Biker;
+import model.entity.biker.BikerBusinessObject;
 import util.WrapperHelper;
 import view.SelectableView;
-import view.car.CarView;
-import view.people.PeopleView;
-import view.sidewalk.SidewalkView;
+import view.biker.BikerView;
+import view.street.StreetView;
 
 
 import java.io.IOException;
 import java.util.List;
 
-public class PeopleSettingsPanelController extends SettingsPanelController<People> {
+public class BikerSettingsPanelController extends SettingsPanelController<Biker> {
 
-    private static PeopleSettingsPanelController instance;
+    private static BikerSettingsPanelController instance;
     private  ObservableList<String> nameOptions;
-    private People selectedPeople;
+    private  Biker selectedBiker;
     private AnchorPane defaultPanelSettingsAnchorPane;
-    private AnchorPane peopleSettingsPanelAnchorPane;
+    private AnchorPane bikerSettingsPanelAnchorPane;
 
     @FXML
     private ButtonBase saveButton;
 
     @FXML
-    private TextField currentPeopleTextField;
+    private TextField currentBikerTextField;
 
     @FXML
     private
@@ -61,16 +60,16 @@ public class PeopleSettingsPanelController extends SettingsPanelController<Peopl
 
 
         if (instance == null) {
-            instance = new PeopleSettingsPanelController(defaultPanelSettingsAnchorPane);
+            instance = new BikerSettingsPanelController(defaultPanelSettingsAnchorPane);
         }
     }
 
-    private PeopleSettingsPanelController(AnchorPane defaultPanelSettingsAnchorPane) {
+    private BikerSettingsPanelController(AnchorPane defaultPanelSettingsAnchorPane) {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/view/res/people/people_settings_panel.fxml"));
+        loader.setLocation(getClass().getResource("/view/res/biker/biker_settings_panel.fxml"));
         loader.setController(this);
         try {
-            peopleSettingsPanelAnchorPane = loader.load();
+            bikerSettingsPanelAnchorPane = loader.load();
             this.defaultPanelSettingsAnchorPane = defaultPanelSettingsAnchorPane;
 
 
@@ -89,7 +88,7 @@ public class PeopleSettingsPanelController extends SettingsPanelController<Peopl
 
     }
 
-    public static PeopleSettingsPanelController getInstance() {
+    public static BikerSettingsPanelController getInstance() {
         return instance;
     }
 
@@ -98,7 +97,7 @@ public class PeopleSettingsPanelController extends SettingsPanelController<Peopl
     void initialize() {
         saveButton.setOnAction(event -> {
 
-            saveAttributesInEntity(selectedPeople);
+            saveAttributesInEntity(selectedBiker);
 
             disableSettingsViews();
 
@@ -177,7 +176,7 @@ public class PeopleSettingsPanelController extends SettingsPanelController<Peopl
     }
 
     @Override
-    public void saveAttributesInEntity(People people) {
+    public void saveAttributesInEntity(Biker biker) {
 //        int srcI = Integer.parseInt(currentSourceCell.getText().split(",")[0].replace("<",""));
 //        int srcJ = Integer.parseInt(currentSourceCell.getText().split(",")[1].replace(">",""));
 
@@ -186,34 +185,35 @@ public class PeopleSettingsPanelController extends SettingsPanelController<Peopl
 
         String selectedItem = (String) wrapperComboBox.getSelectionModel().getSelectedItem();
         int wrapperId = Integer.parseInt(WrapperHelper.getInstance().getIdFrom(selectedItem, this.getClass().getSimpleName()));
-        people.setWrapperId(wrapperId);
+        biker.setWrapperId(wrapperId);
 
 
+//        biker.setSourceCell(CellController.getInstance().getCellFrom(srcI, srcJ));
 
-        people.setDestinyCell(CellController.getInstance().getCellFrom(destI, destJ));
+        biker.setDestinyCell(CellController.getInstance().getCellFrom(destI, destJ));
 
-        PeopleBusinessObject.updateDistances(people);
+        BikerBusinessObject.updateDistances(biker);
     }
 
     @Override
-    public void updateSettingsViewsFromEntity(People people) {
+    public void updateSettingsViewsFromEntity(Biker biker) {
 
-        String peopleLabel = people.getLabel();
+        String cyclistLabel = biker.getLabel();
 
-        currentPeopleTextField.setText(peopleLabel);
+        currentBikerTextField.setText(cyclistLabel);
 
         String currentSourceCellString =
-                "<" + people.getSourceCell().getRowPosition()
-                        + "," + people.getSourceCell().getColumnPosition() + ">";
+                "<" + biker.getSourceCell().getRowPosition()
+                        + "," + biker.getSourceCell().getColumnPosition() + ">";
 
         String currentDestinyCellString =
-                "<" + people.getDestinyCell().getRowPosition()
-                        + "," + people.getDestinyCell().getColumnPosition() + ">";
+                "<" + biker.getDestinyCell().getRowPosition()
+                        + "," + biker.getDestinyCell().getColumnPosition() + ">";
 
         currentSourceCell.setText(currentSourceCellString);
         currentDestinyCell.setText(currentDestinyCellString);
 
-        int currentWrapperId = people.getWrapperId();
+        int currentWrapperId = biker.getWrapperId();
 
         WrapperHelper wrapperHelper = WrapperHelper.getInstance();
 
@@ -234,7 +234,7 @@ public class PeopleSettingsPanelController extends SettingsPanelController<Peopl
 
     @Override
     public void clearSettingView() {
-        currentPeopleTextField.setText("");
+        currentBikerTextField.setText("");
         currentSourceCell.setText("<0,0>");
         currentDestinyCell.setText("<0,0>");
     }
@@ -242,34 +242,25 @@ public class PeopleSettingsPanelController extends SettingsPanelController<Peopl
     @Override
     public void notifyMouseClick(SelectableView selectableView) {
         if(waitForClickInCell){
-            if (selectableView instanceof SidewalkView) {
+            if (selectableView instanceof StreetView) {
 
-                SidewalkView sidewalkView = (SidewalkView) selectableView;
-                Cell cell = CellController.getInstance().getCellFrom(sidewalkView.getCurrentCellView().getUniqueID());
+                StreetView streetView = (StreetView) selectableView;
+                Cell cell = CellController.getInstance().getCellFrom(streetView.getCurrentCellView().getUniqueID());
 
-//                if (clickedSourceSettings) {
-//                    currentSourceCell.setText("<" + cell.getRowPosition() + "," + cell.getColumnPosition() + ">");
-//                    clickedSourceSettings = false;
-//                }
-//
-//                if (clickedDestinySettings) {
-//                    currentDestinyCell.setText("<" + cell.getRowPosition() + "," + cell.getColumnPosition() + ">");
-//                    clickedDestinySettings = false;
-//                }
 
                 currentDestinyCell.setText("<" + cell.getRowPosition() + "," + cell.getColumnPosition() + ">");
 
                 waitForClickInCell = false;
             }
         }else {
-            if (selectableView instanceof PeopleView) {
-                PeopleView peopleView = (PeopleView) selectableView;
-                People people = PeopleAutomaticController.getInstance().getPeopleFrom(peopleView.getUniqueID());
+            if (selectableView instanceof BikerView) {
+                BikerView bikerView = (BikerView) selectableView;
+                Biker biker = BikerAutomaticController.getInstance().getBikerFrom(bikerView.getUniqueID());
 
                 show();
 
                 enableSettingsViews();
-                updateSettingsViewsFromEntity(people);
+                updateSettingsViewsFromEntity(biker);
 
             }else {
                 hide();
@@ -282,8 +273,8 @@ public class PeopleSettingsPanelController extends SettingsPanelController<Peopl
     }
     @Override
     public void hide() {
-        if(defaultPanelSettingsAnchorPane.getChildren().contains(peopleSettingsPanelAnchorPane)){
-            defaultPanelSettingsAnchorPane.getChildren().remove(peopleSettingsPanelAnchorPane);
+        if(defaultPanelSettingsAnchorPane.getChildren().contains(bikerSettingsPanelAnchorPane)){
+            defaultPanelSettingsAnchorPane.getChildren().remove(bikerSettingsPanelAnchorPane);
         }
 
     }
@@ -293,14 +284,14 @@ public class PeopleSettingsPanelController extends SettingsPanelController<Peopl
 
         hide();
 
-        defaultPanelSettingsAnchorPane.getChildren().add(peopleSettingsPanelAnchorPane);
+        defaultPanelSettingsAnchorPane.getChildren().add(bikerSettingsPanelAnchorPane);
         enableSettingsViews();
 
 
         SelectableView selectableView = EnvironmentController.getInstance().getSelectedEntityView();
-        PeopleView peopleView = (PeopleView) selectableView;
-        selectedPeople = PeopleAutomaticController.getInstance().getPeopleFrom(peopleView.getUniqueID());
+        BikerView bikerView = (BikerView) selectableView;
+        selectedBiker = BikerAutomaticController.getInstance().getBikerFrom(bikerView.getUniqueID());
 
-        updateSettingsViewsFromEntity(selectedPeople);
+        updateSettingsViewsFromEntity(selectedBiker);
     }
 }
