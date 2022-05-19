@@ -6,8 +6,12 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TextArea;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -35,6 +39,7 @@ import view.sidewalk.SidewalkView;
 import view.sosPoint.SoSPointView;
 import view.street.StreetView;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -90,6 +95,8 @@ public class MainController extends Application {
     private boolean canCreateElements = true;
     private MenuController menuControler;
 
+    Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -100,9 +107,18 @@ public class MainController extends Application {
         AnchorPane rootAnchorPane = loader.load();
         primaryStage.setTitle("Dragonfly Simulator");
 
+//        Creating the scroll pane
+        ScrollPane scroll = new ScrollPane();
+        scroll.setPrefSize(1280, 650);
+        //Setting content to the scroll pane
+        scroll.setContent(rootAnchorPane);
+        //Setting the stage
+        Group root = new Group();
+        root.getChildren().addAll(scroll);
+
         menuControler = new MenuController(rootAnchorPane, primaryStage);
 
-        Scene scene = new Scene(rootAnchorPane, 1200, 1000);
+        Scene scene = new Scene(root, screenSize.getWidth(), screenSize.getHeight());
 
         primaryStage.setScene(scene);
         primaryStage.show();
@@ -658,7 +674,7 @@ public class MainController extends Application {
         DroneController.init(DroneKeyBoardController.class.getSimpleName());
 
         environmentController = EnvironmentController.getInstance();
-        environmentController.init(12, 30, environmentAnchorPane);
+        environmentController.init(12, 42, environmentAnchorPane);
 
         loggerController = LoggerController.getInstance();
 
